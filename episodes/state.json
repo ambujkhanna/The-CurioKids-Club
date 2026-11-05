@@ -2,10 +2,14 @@
   "episodes": {
     "ep001": {
       "title": "Why Does an Octopus Have 3 Hearts? \ud83d\udc19 Fun Facts for Kids",
-      "rendered_at": "2026-11-05T21:51:00+05:30",
+      "rendered_at": "2026-11-05T21:57:18+05:30",
       "duration_s": 62.55,
-      "status": "rendered",
-      "note": "dry run"
+      "status": "uploaded",
+      "publish_at_ist": "2026-11-05T21:57+05:30",
+      "thumbnail": "not set: not allowed yet - verify the channel (youtube.com/verify) to enable custom thumbnails; <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=55WdsPN5mHY&alt=json&uploadTyp",
+      "video_id": "55WdsPN5mHY",
+      "url": "https://www.youtube.com/shorts/55WdsPN5mHY",
+      "uploaded_at": "2026-11-05T21:57:23+05:30"
     }
   }
 }
