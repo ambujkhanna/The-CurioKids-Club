@@ -50,6 +50,20 @@ def upload(path, ep, publish_at_utc_iso):
             raise
 
 
+def set_thumbnail(video_id, path):
+    """Upload the designed thumbnail. Never fails the run: returns 'set' or the reason it was skipped."""
+    try:
+        from googleapiclient.http import MediaFileUpload
+        _service().thumbnails().set(videoId=video_id, media_body=MediaFileUpload(path, mimetype="image/jpeg")).execute()
+        return "set"
+    except Exception as e:  # e.g. channel not phone-verified for custom thumbnails
+        msg = str(e)
+        if "forbidden" in msg.lower() or "403" in msg:
+            msg = "not allowed yet - verify the channel (youtube.com/verify) to enable custom thumbnails; " + msg[:160]
+        print("thumbnail not set:", msg)
+        return "not set: " + msg[:220]
+
+
 if __name__ == "__main__":
     import json
     ep = json.load(open(sys.argv[2]))

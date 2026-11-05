@@ -70,6 +70,12 @@ Notes:
 
 Your Google project isn't audited, so every upload is Private. As with AInation, open Studio each day and set the new video to **Public** or **Schedule** it.
 
+## 4b. Custom thumbnails
+
+Each run designs a thumbnail and uploads it with the video. YouTube only accepts custom thumbnails from **verified** channels.
+Verify each channel once at https://www.youtube.com/verify (a phone code). Until then the run still succeeds and the run summary says `Thumbnail: not set`.
+The thumbnail JPG is also in the run's Artifacts if you want to add it by hand.
+
 ## 5. Running two channels from one GitHub account
 
 - **AInation Studio** runs at 14:45 IST and posts at 17:00–20:00. **Curio Kids Club** runs at 14:10 IST and posts at 16:00–19:00.

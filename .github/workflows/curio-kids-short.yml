@@ -79,7 +79,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: curio-kids-short-${{ github.run_number }}
-          path: out/*.mp4
+          path: |
+            out/*.mp4
+            out/*_thumbnail.jpg
           retention-days: 14
           if-no-files-found: ignore
 

@@ -435,11 +435,23 @@ def worker(args):
     return len(fs)
 
 
+def make_thumbnail():
+    import thumbnail
+    path = thumbnail.make(os.path.join(B, "thumbnail.jpg"), K, ORDER, EP, ico)
+    print("thumbnail", path)
+
+
 if __name__ == "__main__":
+    if os.environ.get("THUMB_ONLY"):
+        make_thumbnail(); sys.exit(0)
     out = sys.argv[1]; os.makedirs(out, exist_ok=True)
     frames = [int(x) for x in sys.argv[2:]] or list(range(NF))
     n = int(os.environ.get("WORKERS", os.cpu_count() or 2))
     with Pool(n) as pool:
         print("rendered", sum(pool.map(worker, [(out, frames[j::n]) for j in range(n)])))
     pops = sorted(set(round(e[0], 3) for e in ELEMS if e[0] > 0.3))
+    try:
+        make_thumbnail()
+    except Exception as e:  # a thumbnail problem must never block the video
+        print("thumbnail failed:", e)
     json.dump({"frames": NF, "pops": pops, "shots": [(t_, k) for t_, k in SHOTS]}, open(os.path.join(B, "shots.json"), "w"))

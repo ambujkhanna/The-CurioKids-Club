@@ -19,41 +19,13 @@ rng = np.random.default_rng(3)
 d, sr = sf.read(os.path.join(B, "dialogue.wav"))
 d = np.interp(np.arange(N) / SR, np.arange(d.size) / sr, d)
 
-# ---------------------------------------------------------------- original music bed (synthesised here; no third-party audio)
+# ---------------------------------------------------------------- original music bed: a different track per episode (music.py)
+from music import make_music
 t = np.arange(N) / SR
-bpm = 100; beat = 60 / bpm; bar = beat * 4
-chords = [[60, 64, 67, 71], [57, 60, 64, 67], [53, 57, 60, 64], [55, 59, 62, 67]]  # Cmaj7 Am7 Fmaj7 G
-hz = lambda m: 440 * 2 ** ((m - 69) / 12)
-music = np.zeros(N)
-for i in range(int(DUR / bar) + 1):
-    s0 = int(i * bar * SR); s1 = min(N, int((i + 1) * bar * SR))
-    if s0 >= N: break
-    tt = np.arange(s1 - s0) / SR
-    env = np.minimum(1, tt / 0.25) * np.minimum(1, (bar - tt) / 0.3)
-    for m in chords[i % 4]:
-        f = hz(m)
-        music[s0:s1] += env * (np.sin(2 * np.pi * f * tt) + 0.3 * np.sin(2 * np.pi * 2 * f * tt + 0.5)) * 0.06
-    bass = hz(chords[i % 4][0] - 24)
-    music[s0:s1] += env * np.sin(2 * np.pi * bass * tt) * 0.12
-# plucky arpeggio on 8ths
-for k in range(int(DUR / (beat / 2))):
-    s0 = int(k * beat / 2 * SR)
-    if s0 >= N: break
-    ch = chords[int(k * beat / 2 / bar) % 4]
-    f = hz(ch[[0, 2, 1, 3, 2, 1, 3, 2][k % 8]] + 12)
-    L = int(0.35 * SR); tt = np.arange(L) / SR
-    seg = np.sin(2 * np.pi * f * tt) * np.exp(-tt * 9) * 0.05
-    music[s0:s0 + L] += seg[: max(0, min(L, N - s0))]
-# soft kick + hat
-for k in range(int(DUR / beat)):
-    s0 = int(k * beat * SR)
-    L = int(0.25 * SR); tt = np.arange(L) / SR
-    kick = np.sin(2 * np.pi * (50 + 80 * np.exp(-tt * 25)) * tt) * np.exp(-tt * 12) * 0.22
-    music[s0:s0 + L] += kick[: max(0, min(L, N - s0))]
-    h0 = int((k + 0.5) * beat * SR); Lh = int(0.05 * SR)
-    hat = rng.standard_normal(Lh) * np.exp(-np.arange(Lh) / SR * 80) * 0.03
-    hat = np.diff(np.concatenate([[0], hat]))
-    music[h0:h0 + Lh] += hat[: max(0, min(Lh, N - h0))]
+_ep = os.environ.get("EPISODE")
+SEED = json.load(open(_ep, encoding="utf-8"))["id"] if _ep and os.path.exists(_ep) else T["lines"][0]["text"]
+music = make_music(DUR, SEED, SR)[:N]
+music = np.pad(music, (0, N - music.size))
 # fade in/out and duck under speech
 fade = np.minimum(1, t / 1.0) * np.minimum(1, (DUR - t) / 1.2)
 duck = np.ones(N)

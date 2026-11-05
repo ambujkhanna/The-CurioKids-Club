@@ -116,8 +116,13 @@ def main():
     os.makedirs(OUT, exist_ok=True)
     frames = os.path.join(OUT, f"{eid}_frames"); mp4 = os.path.join(OUT, f"CurioKids_{eid}.mp4")
     sh([sys.executable, os.path.join(PIPE, "tts.py")], {"EPISODE": epf})
-    sh([sys.executable, os.path.join(PIPE, "episode_engine.py"), frames], {"EPISODE": epf, "BG": "v2", "DOODLE": "chars"}, cwd=PIPE)
-    sh([sys.executable, os.path.join(PIPE, "finish.py"), frames, "24", mp4])
+    sh([sys.executable, os.path.join(PIPE, "episode_engine.py"), frames], {"EPISODE": epf, "BG": "kids", "DOODLE": "chars"}, cwd=PIPE)
+    sh([sys.executable, os.path.join(PIPE, "finish.py"), frames, "24", mp4], {"EPISODE": epf})
+    thumb = mp4[:-4] + "_thumbnail.jpg"
+    if os.path.exists(os.path.join(PIPE, "build", "thumbnail.jpg")):
+        import shutil; shutil.copy(os.path.join(PIPE, "build", "thumbnail.jpg"), thumb)
+    else:
+        thumb = None
     problems = qc(mp4, ep)
     rec = state["episodes"].setdefault(eid, {})
     rec.update({"title": ep["title"], "rendered_at": dt.datetime.now(IST).isoformat(timespec="seconds"),
@@ -127,12 +132,12 @@ def main():
         json.dump(state, open(STATE, "w"), indent=2)
         print("QC FAILED - not uploading:", problems)
         summary(f"### ❌ QC failed for {eid} — nothing uploaded\n\n" + "\n".join(f"- {p}" for p in problems)); return 1
-    from upload_youtube import have_credentials, upload
+    from upload_youtube import have_credentials, upload, set_thumbnail
     if dry or not have_credentials():
         rec.update({"status": "rendered", "note": "dry run" if dry else "no YouTube credentials configured"})
         json.dump(state, open(STATE, "w"), indent=2)
         print("Rendered + QC passed (not uploaded):", mp4)
-        summary(f"### 🎬 Rendered {eid} (not uploaded: {rec['note']})\n\n- {ep['title']} — {rec['duration_s']} s, QC passed\n- Download it from this run's **Artifacts**.")
+        summary(f"### 🎬 Rendered {eid} (not uploaded: {rec['note']})\n\n- {ep['title']} — {rec['duration_s']} s, QC passed\n- Download the video and its thumbnail from this run's **Artifacts**.")
         return 0
     if now_mode:
         vid = upload(mp4, ep, None); when = "immediately (public now, if the API project is audited)"
@@ -142,11 +147,12 @@ def main():
         vid = upload(mp4, ep, slot.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"))
         when = slot.strftime("%d %b %Y, %H:%M IST"); rec["publish_at_ist"] = slot.isoformat(timespec="minutes")
     rec.pop("note", None)
+    rec["thumbnail"] = set_thumbnail(vid, thumb) if thumb else "not rendered"
     rec.update({"status": "uploaded", "video_id": vid, "url": f"https://www.youtube.com/shorts/{vid}",
                 "uploaded_at": dt.datetime.now(IST).isoformat(timespec="seconds")})
     json.dump(state, open(STATE, "w"), indent=2)
     print("Uploaded:", rec["url"], "publish:", when)
-    summary(f"### ✅ Uploaded {eid}: {ep['title']}\n\n- Link: {rec['url']}\n- Publish: {when}\n- Length: {rec['duration_s']} s\n"
+    summary(f"### ✅ Uploaded {eid}: {ep['title']}\n\n- Link: {rec['url']}\n- Publish: {when}\n- Length: {rec['duration_s']} s\n- Thumbnail: {rec['thumbnail']}\n"
             "- Note: until the YouTube API audit is approved, YouTube keeps API uploads **Private** — "
             "set it to Public (or Schedule) in YouTube Studio → Content.")
     return 0
