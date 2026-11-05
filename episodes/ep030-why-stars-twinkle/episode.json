@@ -1,0 +1,206 @@
+{
+  "id": "ep030",
+  "slug": "why-stars-twinkle",
+  "status": "ready",
+  "title": "Why Do Stars Twinkle? ✨ Fun Facts for Kids",
+  "cover_text": "TWINKLE?",
+  "description": "Stars don't really twinkle: it's our moving air that makes them sparkle! Leo asks, big sister Mia explains, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Space",
+    "#Shorts"
+  ],
+  "tags": [
+    "why do stars twinkle",
+    "star facts for kids",
+    "space for kids",
+    "night sky",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why do stars twinkle?",
+    "cue": "next",
+    "left": "⭐",
+    "right": "✨"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why do stars twinkle?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "⭐",
+          "label": "Stars"
+        },
+        "right": {
+          "icon": "✨",
+          "label": "Twinkle?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Here's a surprise. Stars don't really twinkle! It's our air that makes them look that way.",
+      "punch": "air",
+      "board": {
+        "type": "big",
+        "icon": "🌍",
+        "text": "It's our air!",
+        "cue": "air",
+        "sub": "Stars shine steady",
+        "sub_cue": "stars"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "The air? How?"
+    },
+    {
+      "who": "MIA",
+      "text": "Starlight travels a super long way through space to reach us. At the very end, it has to pass through the air around Earth.",
+      "board": {
+        "type": "steps",
+        "title": "Starlight's trip",
+        "items": [
+          {
+            "icon": "⭐",
+            "label": "A star shines",
+            "cue": "starlight"
+          },
+          {
+            "icon": "🌌",
+            "label": "A long trip in space",
+            "cue": "long"
+          },
+          {
+            "icon": "🌍",
+            "label": "Then through our air",
+            "cue": "through"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Our air is always moving, with warm and cool bits swirling around. They bend the light a tiny bit, this way and that.",
+      "board": {
+        "type": "big",
+        "icon": "💨",
+        "text": "Moving air bends light",
+        "cue": "bend",
+        "sub": "Warm and cool swirls",
+        "sub_cue": "warm"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So the light wobbles?"
+    },
+    {
+      "who": "MIA",
+      "text": "Exactly! The light wobbles, so the star looks like it's flickering. That's the twinkle!",
+      "punch": "twinkle",
+      "board": {
+        "type": "big",
+        "icon": "✨",
+        "text": "Wobbly light = twinkle",
+        "cue": "twinkle",
+        "sub": "Flicker, flicker!",
+        "sub_cue": "flickering"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Do planets twinkle too?"
+    },
+    {
+      "who": "MIA",
+      "text": "Stars are so far away, they look like tiny dots. Planets are much closer to us, so they usually twinkle less.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Stars",
+          "items": [
+            {
+              "text": "Super far",
+              "icon": "🔭",
+              "cue": "far"
+            },
+            {
+              "text": "Tiny dots",
+              "icon": "✨",
+              "cue": "dots"
+            }
+          ]
+        },
+        "right": {
+          "label": "Planets",
+          "items": [
+            {
+              "text": "Much closer",
+              "icon": "🪐",
+              "cue": "closer"
+            },
+            {
+              "text": "Twinkle less",
+              "icon": "🙂",
+              "cue": "less"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What do stars look like from space?"
+    },
+    {
+      "who": "MIA",
+      "text": "Astronauts in space see stars that don't twinkle at all, because there's no air up there!",
+      "board": {
+        "type": "big",
+        "icon": "🚀",
+        "text": "No air, no twinkle",
+        "cue": "astronauts",
+        "sub": "Steady stars in space",
+        "sub_cue": "space"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So the twinkle is starlight wiggling through our moving air!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "⭐",
+            "text": "Starlight travels",
+            "cue": "starlight"
+          },
+          {
+            "icon": "💨",
+            "text": "Air wiggles it",
+            "cue": "wiggling"
+          },
+          {
+            "icon": "✨",
+            "text": "Twinkle!",
+            "cue": "twinkle"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Shine on! Follow Curio Kids Club for more wonders. And next time someone asks... why do stars twinkle?"
+    }
+  ]
+}

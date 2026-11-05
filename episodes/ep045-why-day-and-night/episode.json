@@ -1,0 +1,200 @@
+{
+  "id": "ep045",
+  "slug": "why-day-and-night",
+  "status": "ready",
+  "title": "Why Do We Have Day and Night? 🌍 Space for Kids",
+  "cover_text": "DAY? NIGHT?",
+  "description": "Why do we have day and night? Because the Earth spins! Leo asks, big sister Mia explains, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Space",
+    "#Shorts"
+  ],
+  "tags": [
+    "day and night for kids",
+    "earth spins",
+    "space facts for kids",
+    "sun and earth",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Day and night?",
+    "cue": "next",
+    "left": "☀️",
+    "right": "🌙"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why do we have day and night?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "☀️",
+          "label": "Day"
+        },
+        "right": {
+          "icon": "🌙",
+          "label": "Night"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Because the Earth spins, like a giant spinning top!",
+      "punch": "spins",
+      "board": {
+        "type": "big",
+        "icon": "🌍",
+        "text": "Earth spins!",
+        "cue": "spins",
+        "sub": "Like a spinning top",
+        "sub_cue": "top"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "But I don't feel it spinning!"
+    },
+    {
+      "who": "MIA",
+      "text": "That's because it spins smooth and steady, and everything spins along with it. You, your house, even the air!",
+      "board": {
+        "type": "big",
+        "icon": "🏠",
+        "text": "We all spin together",
+        "cue": "everything",
+        "sub": "Smooth and steady",
+        "sub_cue": "smooth"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So how does spinning make night?"
+    },
+    {
+      "who": "MIA",
+      "text": "The Sun can only light up one side of Earth at a time. The side facing the Sun has day. The side facing away has night.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Facing Sun",
+          "items": [
+            {
+              "text": "Daytime",
+              "icon": "☀️",
+              "cue": "day"
+            }
+          ]
+        },
+        "right": {
+          "label": "Facing away",
+          "items": [
+            {
+              "text": "Nighttime",
+              "icon": "🌙",
+              "cue": "night"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So when it's night here, it's day somewhere else?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! While you're sleeping, kids on the other side of the world are waking up.",
+      "punch": "waking",
+      "board": {
+        "type": "big",
+        "icon": "🌏",
+        "text": "Other side: daytime!",
+        "cue": "other",
+        "sub": "Kids waking up",
+        "sub_cue": "waking"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How long does one spin take?"
+    },
+    {
+      "who": "MIA",
+      "text": "One full spin takes about twenty-four hours. That's one whole day and night!",
+      "board": {
+        "type": "big",
+        "icon": "🕛",
+        "text": "One spin = one day",
+        "cue": "spin",
+        "sub": "About 24 hours",
+        "sub_cue": "twenty"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "But I see the Sun move across the sky!"
+    },
+    {
+      "who": "MIA",
+      "text": "It looks like the Sun rises and sets. But really, it's our Earth turning!",
+      "board": {
+        "type": "steps",
+        "title": "What we see",
+        "items": [
+          {
+            "label": "Sun seems to rise",
+            "icon": "🌅",
+            "cue": "rises"
+          },
+          {
+            "label": "Sun seems to set",
+            "icon": "🌇",
+            "cue": "sets"
+          },
+          {
+            "label": "Really, Earth turns!",
+            "icon": "🌍",
+            "cue": "turning"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "A spinning Earth gives us day and night!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Earth spins",
+            "icon": "🌍",
+            "cue": "spinning"
+          },
+          {
+            "text": "Sunny side: day",
+            "icon": "☀️",
+            "cue": "day"
+          },
+          {
+            "text": "Away side: night",
+            "icon": "🌙",
+            "cue": "night"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "That's right! Follow Curio Kids Club for more wonders. And next time someone asks... why do we have day and night?"
+    }
+  ]
+}

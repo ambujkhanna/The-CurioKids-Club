@@ -1,0 +1,25 @@
+{
+  "id": "ep055", "slug": "what-is-an-echo", "status": "ready",
+  "title": "What Is an Echo? 🔊 Kids Science",
+  "cover_text": "ECHO... ECHO!",
+  "description": "An echo is sound bouncing back to you! Leo asks, Dad explains sound waves, echoes and how bats use them, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": ["#KidsLearning", "#FunFacts", "#Science", "#Shorts"],
+  "tags": ["what is an echo for kids", "sound waves for kids", "echolocation", "everyday science", "science for kids", "kids learning"],
+  "cast": ["LEO", "DAD"],
+  "loop_card": {"text": "What's an echo?", "cue": "next", "left": "🗣️", "right": "🏔️"},
+  "lines": [
+    {"who": "LEO", "text": "Dad, what is an echo?", "board": {"type": "title", "left": {"icon": "🗣️", "label": "Hello!"}, "right": {"icon": "🔁", "label": "Echo?"}, "mid": "?"}},
+    {"who": "DAD", "text": "An echo is a sound that bounces back to you. Like when you shout 'Hello!' near a big cliff, and you hear 'hello' again.", "punch": "bounces", "board": {"type": "big", "icon": "🏔️", "text": "Sound that bounces back", "cue": "bounces", "sub": "Hello... hello!", "sub_cue": "hello"}},
+    {"who": "LEO", "text": "Sound can bounce?"},
+    {"who": "DAD", "text": "It can! Sound travels through the air in invisible waves, a bit like ripples in a pond.", "board": {"type": "big", "icon": "〰️", "text": "Sound travels in waves", "cue": "waves", "sub": "Like ripples in a pond", "sub_cue": "ripples"}},
+    {"who": "DAD", "text": "When those waves hit something big and hard, like a cliff or a wall, they bounce back to your ears.", "board": {"type": "steps", "title": "How an echo works", "items": [{"icon": "〰️", "label": "Sound waves travel", "cue": "waves"}, {"icon": "🧱", "label": "Hit something hard", "cue": "hard"}, {"icon": "👂", "label": "Bounce back to your ears", "cue": "ears"}]}},
+    {"who": "LEO", "text": "Then why don't I hear an echo in my bedroom?"},
+    {"who": "DAD", "text": "Your room is small, so the sound comes back super fast and mixes with your voice. In a big space, it takes longer, so you hear it again.", "board": {"type": "compare", "left": {"label": "Small room", "items": [{"icon": "⚡", "text": "Back super fast", "cue": "fast"}, {"icon": "🔀", "text": "Mixes in", "cue": "mixes"}]}, "right": {"label": "Big space", "items": [{"icon": "⏳", "text": "Takes longer", "cue": "longer"}, {"icon": "🔁", "text": "Hear it again!", "cue": "hear"}]}}},
+    {"who": "DAD", "text": "Soft things like pillows, curtains and soft toys soak up sound, so they make echoes quieter.", "board": {"type": "gallery", "title": "Soft things soak", "items": [{"icon": "🛏️", "label": "Pillows", "cue": "pillows"}, {"icon": "🪟", "label": "Curtains", "cue": "curtains"}, {"icon": "🧸", "label": "Soft toys", "cue": "toys"}]}},
+    {"who": "LEO", "text": "Do animals use echoes?"},
+    {"who": "DAD", "text": "Yes! Bats make high squeaks and listen for the echoes. That helps them find their way and catch bugs in the dark.", "punch": "bats", "board": {"type": "big", "icon": "🦇", "text": "Bats listen for echoes", "cue": "bats", "sub": "To find their way", "sub_cue": "find"}},
+    {"who": "DAD", "text": "Dolphins do it too, underwater! Using echoes like this is called echolocation.", "board": {"type": "big", "icon": "🐬", "text": "Echolocation!", "cue": "echolocation", "sub": "Dolphins do it too", "sub_cue": "dolphins"}},
+    {"who": "LEO", "text": "So an echo is sound bouncing back off something big and hard!", "board": {"type": "summary", "rows": [{"icon": "〰️", "text": "Sound travels in waves", "cue": "sound"}, {"icon": "🧱", "text": "Bounces off hard things", "cue": "bouncing"}, {"icon": "👂", "text": "Comes back to you", "cue": "back"}]}},
+    {"who": "DAD", "text": "That's right! Follow Curio Kids Club for more wonders. And next time someone asks... what is an echo?"}
+  ]
+}

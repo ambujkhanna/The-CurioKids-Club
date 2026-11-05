@@ -1,0 +1,195 @@
+{
+  "id": "ep027",
+  "slug": "plants-make-food",
+  "status": "ready",
+  "title": "How Do Plants Make Their Food? 🌱 Fun Facts for Kids",
+  "cover_text": "PLANT FOOD?",
+  "description": "Plants make their own food from sunlight, water and air, and give us oxygen too! Leo asks, big sister Mia explains, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Plants",
+    "#Shorts"
+  ],
+  "tags": [
+    "how plants make food for kids",
+    "photosynthesis for kids",
+    "plants",
+    "nature for kids",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "How do plants make food?",
+    "cue": "next",
+    "left": "🌱",
+    "right": "☀️"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, how do plants make their food?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🌱",
+          "label": "Plant"
+        },
+        "right": {
+          "icon": "🍽️",
+          "label": "Food?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Plants don't eat like we do. They make their own food, right inside their leaves!",
+      "board": {
+        "type": "big",
+        "icon": "🍃",
+        "text": "Food made in leaves",
+        "cue": "leaves",
+        "sub": "Their very own food",
+        "sub_cue": "own"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What do they need to make it?"
+    },
+    {
+      "who": "MIA",
+      "text": "Just three things: sunlight, water, and air.",
+      "punch": "three",
+      "board": {
+        "type": "gallery",
+        "title": "Plant recipe",
+        "items": [
+          {
+            "icon": "☀️",
+            "label": "Sunlight",
+            "cue": "sunlight"
+          },
+          {
+            "icon": "💧",
+            "label": "Water",
+            "cue": "water"
+          },
+          {
+            "icon": "💨",
+            "label": "Air",
+            "cue": "air"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "The roots drink water from the soil, and it travels up the stem to the leaves.",
+      "board": {
+        "type": "big",
+        "icon": "🌱",
+        "text": "Roots drink water",
+        "cue": "roots",
+        "sub": "Up the stem it goes",
+        "sub_cue": "stem"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And how do they get the air?"
+    },
+    {
+      "who": "MIA",
+      "text": "Leaves have tiny holes, too small to see. They take in a gas from the air called carbon dioxide.",
+      "board": {
+        "type": "big",
+        "icon": "🍃",
+        "text": "Tiny holes take in air",
+        "cue": "holes",
+        "sub": "Carbon dioxide",
+        "sub_cue": "carbon"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "The green stuff in the leaves catches sunlight, and uses it to turn the water and air into sugar. That's plant food!",
+      "board": {
+        "type": "steps",
+        "title": "Making food",
+        "items": [
+          {
+            "icon": "☀️",
+            "label": "Catch the sunlight",
+            "cue": "catches"
+          },
+          {
+            "icon": "🔄",
+            "label": "Turn water and air...",
+            "cue": "turn"
+          },
+          {
+            "icon": "🍬",
+            "label": "...into sugar food!",
+            "cue": "sugar"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Plants make sugar? Cool! Does it have a name?"
+    },
+    {
+      "who": "MIA",
+      "text": "It's called photosynthesis. And there's a bonus: plants give out oxygen, the air we need to breathe!",
+      "punch": "oxygen",
+      "board": {
+        "type": "big",
+        "icon": "🌳",
+        "text": "Plants give us oxygen",
+        "cue": "oxygen",
+        "sub": "Say: FOH-toh-SIN-thuh-sis",
+        "sub_cue": "photosynthesis"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So sunlight, water and air make plant food, and we get oxygen. Thanks, plants!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "☀️",
+            "text": "Sunlight",
+            "cue": "sunlight"
+          },
+          {
+            "icon": "💧",
+            "text": "Water",
+            "cue": "water"
+          },
+          {
+            "icon": "💨",
+            "text": "Air",
+            "cue": "air"
+          },
+          {
+            "icon": "🌳",
+            "text": "Oxygen for us!",
+            "cue": "oxygen"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "You got it! Follow Curio Kids Club for more wonders. And next time someone asks... how do plants make their food?"
+    }
+  ]
+}

@@ -1,0 +1,219 @@
+{
+  "id": "ep040",
+  "slug": "how-soap-washes-germs",
+  "status": "ready",
+  "title": "How Does Soap Wash Away Germs? 🧼 Science for Kids",
+  "cover_text": "BYE GERMS!",
+  "description": "How does soap wash away germs? It grabs the oil, wraps up the germs and rinses them away! Leo asks, Dad explains, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#HealthyHabits",
+    "#Shorts"
+  ],
+  "tags": [
+    "how soap works for kids",
+    "germs for kids",
+    "hand washing",
+    "healthy habits",
+    "kitchen science",
+    "science for kids"
+  ],
+  "cast": [
+    "LEO",
+    "DAD"
+  ],
+  "loop_card": {
+    "text": "How does soap work?",
+    "cue": "next",
+    "left": "🧼",
+    "right": "🦠"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Dad, how does soap wash away germs?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🧼",
+          "label": "Soap"
+        },
+        "right": {
+          "icon": "🦠",
+          "label": "Germs?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Germs are too tiny to see. Lots of them stick to the natural oils on our skin.",
+      "board": {
+        "type": "big",
+        "icon": "🦠",
+        "text": "Tiny germs",
+        "cue": "germs",
+        "sub": "Stuck in skin oils",
+        "sub_cue": "oils"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can't water just wash them off?"
+    },
+    {
+      "who": "DAD",
+      "text": "Water alone isn't great at it, because oil and water don't mix. The germs just slide around.",
+      "punch": "mix",
+      "board": {
+        "type": "big",
+        "icon": "💧",
+        "text": "Oil and water don't mix",
+        "cue": "mix"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So what does soap do?"
+    },
+    {
+      "who": "DAD",
+      "text": "Soap is made of tiny bits with two ends. One end loves water. The other end loves oil and grabs on tight!",
+      "punch": "grabs",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "One end",
+          "items": [
+            {
+              "text": "Loves water",
+              "icon": "💧",
+              "cue": "water"
+            }
+          ]
+        },
+        "right": {
+          "label": "Other end",
+          "items": [
+            {
+              "text": "Loves oil",
+              "icon": "🫒",
+              "cue": "oil"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Like a tiny tug of war?"
+    },
+    {
+      "who": "DAD",
+      "text": "Kind of! The soap bits grab the oil and germs and wrap them up in tiny bubbles. Soap can even break some germs apart.",
+      "board": {
+        "type": "steps",
+        "title": "Soap at work",
+        "items": [
+          {
+            "label": "Grab the oil",
+            "icon": "🧲",
+            "cue": "grab"
+          },
+          {
+            "label": "Wrap up the germs",
+            "icon": "🫧",
+            "cue": "wrap"
+          },
+          {
+            "label": "Break some germs apart",
+            "icon": "💥",
+            "cue": "break"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Then what?"
+    },
+    {
+      "who": "DAD",
+      "text": "Then the water rinses the bubbles away, germs and all!",
+      "board": {
+        "type": "big",
+        "icon": "🚿",
+        "text": "Rinse them away!",
+        "cue": "rinses"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How long should I scrub?"
+    },
+    {
+      "who": "DAD",
+      "text": "Wet your hands, add soap, and scrub for about twenty seconds. Count slowly to twenty, then rinse!",
+      "board": {
+        "type": "checklist",
+        "title": "Hand washing",
+        "icon": "🧼",
+        "items": [
+          {
+            "text": "Wet your hands",
+            "icon": "💧",
+            "cue": "wet",
+            "ok": true
+          },
+          {
+            "text": "Add soap and scrub",
+            "icon": "🧼",
+            "cue": "scrub",
+            "ok": true
+          },
+          {
+            "text": "About 20 seconds",
+            "icon": "⏱️",
+            "cue": "twenty",
+            "ok": true
+          },
+          {
+            "text": "Rinse",
+            "icon": "🚿",
+            "cue": "rinse",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Soap grabs the oil, wraps up the germs, and water washes them away!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Soap grabs oil",
+            "icon": "🧼",
+            "cue": "grabs"
+          },
+          {
+            "text": "Wraps up germs",
+            "icon": "🫧",
+            "cue": "wraps"
+          },
+          {
+            "text": "Water rinses away",
+            "icon": "💧",
+            "cue": "washes"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Squeaky clean! Follow Curio Kids Club for more wonders. And next time someone asks... how does soap wash away germs?"
+    }
+  ]
+}

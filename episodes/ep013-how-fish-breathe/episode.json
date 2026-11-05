@@ -1,0 +1,229 @@
+{
+  "id": "ep013",
+  "slug": "how-fish-breathe",
+  "status": "ready",
+  "title": "How Do Fish Breathe Underwater? 🐟 Fun Facts for Kids",
+  "cover_text": "GILLS!",
+  "description": "Fish breathe with gills that grab oxygen right out of the water! Leo asks, big sister Mia explains how gills work, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Fish",
+    "#Shorts"
+  ],
+  "tags": [
+    "how do fish breathe",
+    "fish facts for kids",
+    "gills",
+    "ocean animals",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "How do fish breathe?",
+    "cue": "next",
+    "left": "🐟",
+    "right": "🌊"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, how do fish breathe underwater?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🐟",
+          "label": "Fish"
+        },
+        "right": {
+          "icon": "🌊",
+          "label": "Breathe?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Fish need oxygen, just like us! But they get it from the water, not the air.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "You",
+          "items": [
+            {
+              "text": "From air",
+              "icon": "💨",
+              "cue": "air"
+            }
+          ]
+        },
+        "right": {
+          "label": "Fish",
+          "items": [
+            {
+              "text": "From water",
+              "icon": "💧",
+              "cue": "water"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "There's oxygen in water?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes, a little bit of oxygen is mixed into water, too small to see. Fish have special parts to catch it, called gills!",
+      "punch": "gills",
+      "board": {
+        "type": "big",
+        "icon": "🐟",
+        "text": "Fish have gills!",
+        "cue": "gills",
+        "sub": "Oxygen is in water",
+        "sub_cue": "oxygen"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Where are the gills?"
+    },
+    {
+      "who": "MIA",
+      "text": "On each side of a fish's head, under little flaps. They look like soft, red feathers.",
+      "board": {
+        "type": "big",
+        "icon": "🪶",
+        "text": "Soft, red and feathery",
+        "cue": "feathers",
+        "sub": "Under little flaps",
+        "sub_cue": "flaps"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How do they work?"
+    },
+    {
+      "who": "MIA",
+      "text": "The fish gulps water into its mouth and pushes it over its gills. The gills grab the oxygen, and the water flows out the sides.",
+      "board": {
+        "type": "steps",
+        "title": "How gills work",
+        "items": [
+          {
+            "label": "Gulp water in",
+            "icon": "👄",
+            "cue": "gulps"
+          },
+          {
+            "label": "Push it over the gills",
+            "icon": "🐟",
+            "cue": "pushes"
+          },
+          {
+            "label": "Grab the oxygen",
+            "icon": "✅",
+            "cue": "grab"
+          },
+          {
+            "label": "Water flows out",
+            "icon": "➡️",
+            "cue": "flows"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can a fish breathe air, like me?"
+    },
+    {
+      "who": "MIA",
+      "text": "Most fish can't. Gills are made to work in water, so fish are happiest swimming in it!",
+      "board": {
+        "type": "big",
+        "icon": "🐠",
+        "text": "Gills work in water",
+        "cue": "gills",
+        "sub": "Happy swimming!",
+        "sub_cue": "swimming"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What about whales and dolphins? They swim in water too!",
+      "board": {
+        "type": "big",
+        "icon": "🐋",
+        "text": "Whales and dolphins?",
+        "cue": "whales"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Surprise! Whales and dolphins aren't fish. They have lungs like us, so they swim up to the top to breathe air.",
+      "punch": "surprise",
+      "board": {
+        "type": "gallery",
+        "title": "Not fish!",
+        "items": [
+          {
+            "icon": "🐋",
+            "label": "Whale",
+            "cue": "whales"
+          },
+          {
+            "icon": "🐬",
+            "label": "Dolphin",
+            "cue": "dolphins"
+          },
+          {
+            "icon": "🫁",
+            "label": "Lungs like us",
+            "cue": "lungs"
+          },
+          {
+            "icon": "⬆️",
+            "label": "Up for air",
+            "cue": "air"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So fish use gills to get oxygen from water, and whales come up for air. Cool!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Fish use gills",
+            "icon": "🐟",
+            "cue": "fish"
+          },
+          {
+            "text": "Oxygen from water",
+            "icon": "💧",
+            "cue": "oxygen"
+          },
+          {
+            "text": "Whales come up for air",
+            "icon": "🐋",
+            "cue": "whales"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "You got it! Follow Curio Kids Club for more wonders. And next time someone asks... how do fish breathe underwater?"
+    }
+  ]
+}

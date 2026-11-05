@@ -1,0 +1,25 @@
+{
+  "id": "ep058", "slug": "how-spiders-spin-webs", "status": "ready",
+  "title": "How Do Spiders Spin Webs? 🕸️ Fun Facts for Kids",
+  "cover_text": "WEB BUILDERS!",
+  "description": "Spiders make silk inside their bodies! Leo asks, big sister Mia explains how a spider builds its web, step by step, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": ["#KidsLearning", "#FunFacts", "#Spiders", "#Shorts"],
+  "tags": ["spider facts for kids", "how spiders spin webs", "spider silk", "animal facts", "science for kids", "kids learning"],
+  "cast": ["LEO", "MIA"],
+  "loop_card": {"text": "Spinning webs?", "cue": "next", "left": "🕷️", "right": "🕸️"},
+  "lines": [
+    {"who": "LEO", "text": "Mia, how do spiders spin webs?", "board": {"type": "title", "left": {"icon": "🕷️", "label": "Spider"}, "right": {"icon": "🕸️", "label": "Web?"}, "mid": "?"}},
+    {"who": "MIA", "text": "Spiders make silk inside their bodies! It comes out of tiny parts at their back end, called spinnerets.", "punch": "silk", "board": {"type": "big", "icon": "🕷️", "text": "Silk from spinnerets", "cue": "spinnerets", "sub": "Made inside the body", "sub_cue": "inside"}},
+    {"who": "LEO", "text": "Is the silk wet or dry?"},
+    {"who": "MIA", "text": "It starts runny inside, but as the spider pulls it out, it turns into a strong, stretchy thread.", "board": {"type": "big", "icon": "🧵", "text": "Runny, then a thread!", "cue": "runny", "sub": "Strong and stretchy", "sub_cue": "strong"}},
+    {"who": "LEO", "text": "How does it start a web between two branches?"},
+    {"who": "MIA", "text": "Many spiders let out a thread and wait for the breeze to carry it across. When it sticks, that's the first bridge!", "board": {"type": "big", "icon": "🌬️", "text": "The breeze carries it", "cue": "breeze", "sub": "The first bridge line!", "sub_cue": "bridge"}},
+    {"who": "MIA", "text": "Next, it adds a frame, then spokes like a bike wheel, and last, a sticky spiral that goes round and round.", "board": {"type": "steps", "title": "Building a web", "items": [{"icon": "🖼️", "label": "Make a frame", "cue": "frame"}, {"icon": "🚲", "label": "Add spokes like a wheel", "cue": "spokes"}, {"icon": "🌀", "label": "Sticky spiral", "cue": "sticky"}]}},
+    {"who": "LEO", "text": "Why doesn't the spider get stuck?"},
+    {"who": "MIA", "text": "Clever trick! Not all the threads are sticky, and the spider steps carefully, mostly on the non-sticky ones.", "punch": "clever", "board": {"type": "big", "icon": "🦶", "text": "Steps on non-sticky threads", "cue": "steps"}},
+    {"who": "LEO", "text": "What is the web for?"},
+    {"who": "MIA", "text": "It's a trap for flying bugs, like flies. And some spiders even eat their old web to make new silk!", "board": {"type": "gallery", "title": "Web facts", "items": [{"icon": "🪰", "label": "Catches flies", "cue": "flies"}, {"icon": "♻️", "label": "Eats old web", "cue": "eat"}]}},
+    {"who": "LEO", "text": "Silk from spinnerets, a bridge, spokes and a sticky spiral. Spiders are smart builders!", "board": {"type": "summary", "rows": [{"icon": "🕷️", "text": "Silk from spinnerets", "cue": "silk"}, {"icon": "🌬️", "text": "A bridge on the breeze", "cue": "bridge"}, {"icon": "🚲", "text": "Spokes", "cue": "spokes"}, {"icon": "🌀", "text": "Sticky spiral", "cue": "sticky"}]}},
+    {"who": "MIA", "text": "They sure are! Follow Curio Kids Club for more wonders. And next time someone asks... how do spiders spin webs?"}
+  ]
+}

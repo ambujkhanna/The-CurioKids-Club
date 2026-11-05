@@ -1,0 +1,231 @@
+{
+  "id": "ep044",
+  "slug": "how-tongue-tastes",
+  "status": "ready",
+  "title": "How Does Your Tongue Taste Food? 👅 Kids Facts",
+  "cover_text": "YUM!",
+  "description": "How does your tongue taste food? Thousands of taste buds, five main tastes, and a little help from your nose! Leo asks, big sister Mia explains, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#HumanBody",
+    "#Shorts"
+  ],
+  "tags": [
+    "taste buds for kids",
+    "how we taste",
+    "five tastes",
+    "human body for kids",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "How do we taste?",
+    "cue": "next",
+    "left": "👅",
+    "right": "🍓"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, how does my tongue taste food?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "👅",
+          "label": "Tongue"
+        },
+        "right": {
+          "icon": "🍓",
+          "label": "Yum?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Your tongue is covered in tiny bumps. Inside them are taste buds, and you have thousands of them!",
+      "punch": "thousands",
+      "board": {
+        "type": "big",
+        "icon": "👅",
+        "text": "Thousands of taste buds",
+        "cue": "taste",
+        "sub": "Hiding in tiny bumps",
+        "sub_cue": "bumps"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How do they work?"
+    },
+    {
+      "who": "MIA",
+      "text": "First, spit makes the food wet. Then your taste buds sense it and send a message to your brain.",
+      "board": {
+        "type": "steps",
+        "title": "How tasting works",
+        "items": [
+          {
+            "label": "Spit makes food wet",
+            "icon": "💧",
+            "cue": "spit"
+          },
+          {
+            "label": "Taste buds sense it",
+            "icon": "👅",
+            "cue": "sense"
+          },
+          {
+            "label": "Brain says yum!",
+            "icon": "🧠",
+            "cue": "brain"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How many tastes are there?"
+    },
+    {
+      "who": "MIA",
+      "text": "There are five main tastes: sweet, salty, sour, bitter, and umami. Umami is a yummy, savory taste.",
+      "board": {
+        "type": "gallery",
+        "title": "Five tastes",
+        "items": [
+          {
+            "icon": "🍯",
+            "label": "Sweet",
+            "cue": "sweet"
+          },
+          {
+            "icon": "🧂",
+            "label": "Salty",
+            "cue": "salty"
+          },
+          {
+            "icon": "🍋",
+            "label": "Sour",
+            "cue": "sour"
+          },
+          {
+            "icon": "🥦",
+            "label": "Bitter",
+            "cue": "bitter"
+          },
+          {
+            "icon": "🍄",
+            "label": "Umami",
+            "cue": "umami"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Does each part of my tongue taste something different?"
+    },
+    {
+      "who": "MIA",
+      "text": "That's a myth! Every part of your tongue with taste buds can taste all five.",
+      "punch": "myth",
+      "board": {
+        "type": "big",
+        "icon": "👅",
+        "text": "All parts taste all five",
+        "cue": "every",
+        "sub": "That old map is a myth!",
+        "sub_cue": "myth"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why does food taste funny when I have a cold?"
+    },
+    {
+      "who": "MIA",
+      "text": "Because your nose helps you taste too! Smell and taste work as a team to make flavor.",
+      "board": {
+        "type": "big",
+        "icon": "👃",
+        "text": "Nose + tongue = flavor",
+        "cue": "nose",
+        "sub": "A tasty team",
+        "sub_cue": "team"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can I test that?"
+    },
+    {
+      "who": "MIA",
+      "text": "Ask a grown-up first! Hold your nose and take a bite of apple. Then let go and taste the difference!",
+      "board": {
+        "type": "checklist",
+        "title": "Taste test",
+        "icon": "🍎",
+        "items": [
+          {
+            "text": "Ask a grown-up",
+            "icon": "🧑",
+            "cue": "ask",
+            "ok": true
+          },
+          {
+            "text": "Hold your nose",
+            "icon": "🤏",
+            "cue": "hold",
+            "ok": true
+          },
+          {
+            "text": "Take a bite",
+            "icon": "🍎",
+            "cue": "bite",
+            "ok": true
+          },
+          {
+            "text": "Let go and taste!",
+            "icon": "😋",
+            "cue": "let",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Taste buds, five tastes, and my nose helps too!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Thousands of taste buds",
+            "icon": "👅",
+            "cue": "taste"
+          },
+          {
+            "text": "Five main tastes",
+            "icon": "🍋",
+            "cue": "five"
+          },
+          {
+            "text": "Your nose helps",
+            "icon": "👃",
+            "cue": "nose"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Delicious! Follow Curio Kids Club for more wonders. And next time someone asks... how does my tongue taste food?"
+    }
+  ]
+}

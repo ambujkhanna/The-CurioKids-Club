@@ -1,0 +1,217 @@
+{
+  "id": "ep028",
+  "slug": "elephant-trunk",
+  "status": "ready",
+  "title": "What Can an Elephant's Trunk Do? 🐘 Fun Facts for Kids",
+  "cover_text": "TRUNK TRICKS!",
+  "description": "Smell, drink, shower, grab and hug: an elephant's trunk does it all! Leo asks, big sister Mia explains, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Elephants",
+    "#Shorts"
+  ],
+  "tags": [
+    "elephant facts for kids",
+    "elephant trunk",
+    "animal facts",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Trunk tricks?",
+    "cue": "next",
+    "left": "🐘",
+    "right": "💧"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, what can an elephant's trunk do?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🐘",
+          "label": "Elephant"
+        },
+        "right": {
+          "icon": "👃",
+          "label": "Trunk?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "So much! A trunk is a nose and an upper lip, joined together into one long, strong tube.",
+      "board": {
+        "type": "big",
+        "icon": "🐘",
+        "text": "Nose + lip = trunk",
+        "cue": "nose",
+        "sub": "Long and strong",
+        "sub_cue": "strong"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So it smells with it?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Elephants are amazing smellers. They can sniff out food and water from far away.",
+      "board": {
+        "type": "big",
+        "icon": "👃",
+        "text": "A super sniffer",
+        "cue": "sniff",
+        "sub": "Food and water, far away",
+        "sub_cue": "far"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Do they drink through it, like a straw?"
+    },
+    {
+      "who": "MIA",
+      "text": "Not quite! They suck water up into the trunk, then squirt it into their mouths.",
+      "punch": "squirt",
+      "board": {
+        "type": "steps",
+        "title": "Drink time",
+        "items": [
+          {
+            "icon": "💧",
+            "label": "Suck water up",
+            "cue": "suck"
+          },
+          {
+            "icon": "🐘",
+            "label": "Squirt into mouth",
+            "cue": "squirt"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "They also spray water to take a shower, or toss dust on their backs, like sunscreen!",
+      "board": {
+        "type": "gallery",
+        "title": "Spray time",
+        "items": [
+          {
+            "icon": "🚿",
+            "label": "Shower",
+            "cue": "shower"
+          },
+          {
+            "icon": "💨",
+            "label": "Dust bath",
+            "cue": "dust"
+          },
+          {
+            "icon": "☀️",
+            "label": "Like sunscreen",
+            "cue": "sunscreen"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can it pick things up?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! A trunk can grab something as small as a single leaf, or as heavy as a big log.",
+      "board": {
+        "type": "big",
+        "icon": "🌿",
+        "text": "Grabs small and big",
+        "cue": "grab",
+        "sub": "A leaf or a log!",
+        "sub_cue": "log"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What else can it do?"
+    },
+    {
+      "who": "MIA",
+      "text": "Elephants use their trunks to say hello, hug their babies, and make loud trumpet sounds!",
+      "board": {
+        "type": "gallery",
+        "title": "Trunk talk",
+        "items": [
+          {
+            "icon": "👋",
+            "label": "Say hello",
+            "cue": "hello"
+          },
+          {
+            "icon": "🤗",
+            "label": "Hug babies",
+            "cue": "hug"
+          },
+          {
+            "icon": "🎺",
+            "label": "Trumpet!",
+            "cue": "trumpet"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "And a trunk has no bones at all, just thousands of muscles. That's why it can bend every which way.",
+      "board": {
+        "type": "big",
+        "icon": "💪",
+        "text": "No bones, lots of muscles",
+        "cue": "bones",
+        "sub": "It bends every way",
+        "sub_cue": "bend"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Smell, drink, shower, grab and hug. A trunk does it all!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "👃",
+            "text": "Smell",
+            "cue": "smell"
+          },
+          {
+            "icon": "💧",
+            "text": "Drink and shower",
+            "cue": "drink"
+          },
+          {
+            "icon": "🌿",
+            "text": "Grab",
+            "cue": "grab"
+          },
+          {
+            "icon": "🤗",
+            "text": "Hug",
+            "cue": "hug"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Trunk-tastic! Follow Curio Kids Club for more wonders. And next time someone asks... what can an elephant's trunk do?"
+    }
+  ]
+}

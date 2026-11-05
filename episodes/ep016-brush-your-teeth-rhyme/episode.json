@@ -1,0 +1,272 @@
+{
+  "id": "ep016",
+  "slug": "brush-your-teeth-rhyme",
+  "status": "ready",
+  "title": "Brush Your Teeth Rhyme 🪥 Morning and Night Poem for Kids",
+  "cover_text": "BRUSH TIME!",
+  "description": "Brush along with a bouncy rhyme, morning and night! Mia shares a tooth-brushing poem with tips for a sparkly smile, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#KidsPoems",
+    "#HealthyHabits",
+    "#Shorts"
+  ],
+  "tags": [
+    "brush your teeth for kids",
+    "tooth brushing rhyme",
+    "healthy habits",
+    "bedtime routine",
+    "kids poems",
+    "kids learning"
+  ],
+  "cast": [
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "When do we brush?",
+    "cue": "next",
+    "left": "🪥",
+    "right": "🦷"
+  },
+  "lines": [
+    {
+      "who": "MIA",
+      "text": "When should you brush your teeth? Let's rhyme it!",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🪥",
+          "label": "Brush"
+        },
+        "right": {
+          "icon": "🦷",
+          "label": "Teeth"
+        },
+        "mid": "?",
+        "subtitle": "Brush Your Teeth Rhyme"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Grab your toothbrush, and brush along with me!",
+      "board": {
+        "type": "big",
+        "icon": "🪥",
+        "text": "Brush along with me!",
+        "cue": "brush"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Good morning! Up I hop from bed, I grab my brush, so bright and red. A tiny dab, a pea-sized squeeze, then open wide and smile, please!",
+      "board": {
+        "type": "poem",
+        "title": "Good morning!",
+        "icon": "🌅",
+        "lines": [
+          {
+            "text": "Good morning! Up I hop from bed",
+            "icon": "🌅",
+            "cue": "morning"
+          },
+          {
+            "text": "I grab my brush, so bright and red",
+            "icon": "🪥",
+            "cue": "grab"
+          },
+          {
+            "text": "A tiny dab, a pea-sized squeeze",
+            "icon": "🟢",
+            "cue": "pea"
+          },
+          {
+            "text": "Then open wide and smile, please!",
+            "icon": "😁",
+            "cue": "smile"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Just a pea-sized dab is plenty. Ask a grown-up to help!",
+      "board": {
+        "type": "big",
+        "icon": "🟢",
+        "text": "Just a pea-sized dab",
+        "cue": "pea",
+        "sub": "Ask a grown-up to help",
+        "sub_cue": "ask"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Little circles, round and round, top teeth, bottom teeth, all around. The front, the back, the chewing tops, I brush them all before I stop!",
+      "board": {
+        "type": "poem",
+        "title": "Round and round",
+        "icon": "🔄",
+        "lines": [
+          {
+            "text": "Little circles, round and round",
+            "icon": "🔄",
+            "cue": "circles"
+          },
+          {
+            "text": "Top and bottom, all around",
+            "icon": "🦷",
+            "cue": "top"
+          },
+          {
+            "text": "Front, back and chewing tops",
+            "icon": "😬",
+            "cue": "front"
+          },
+          {
+            "text": "I brush them all before I stop!",
+            "icon": "✅",
+            "cue": "stop"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Brush for about two minutes. Hum a happy tune!",
+      "punch": "two",
+      "board": {
+        "type": "big",
+        "icon": "⏱️",
+        "text": "Brush for 2 minutes",
+        "cue": "two",
+        "sub": "Hum a happy tune!",
+        "sub_cue": "hum"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "I brush my tongue, so fresh and clean, the brightest smile you've ever seen! I spit it out, don't swallow, no! My teeth are clean, and off I go!",
+      "board": {
+        "type": "poem",
+        "title": "Fresh and clean",
+        "icon": "✨",
+        "lines": [
+          {
+            "text": "Brush my tongue, fresh and clean",
+            "icon": "👅",
+            "cue": "tongue"
+          },
+          {
+            "text": "The brightest smile you've seen!",
+            "icon": "✨",
+            "cue": "brightest"
+          },
+          {
+            "text": "I spit it out, don't swallow, no!",
+            "icon": "🚰",
+            "cue": "spit"
+          },
+          {
+            "text": "My teeth are clean, and off I go!",
+            "icon": "🏃",
+            "cue": "off"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "And when the stars come out at night, I brush again, I brush just right. Then snuggle down and close my eyes, with sparkly teeth, my sleepy prize!",
+      "board": {
+        "type": "poem",
+        "title": "Good night!",
+        "icon": "🌙",
+        "lines": [
+          {
+            "text": "When the stars come out at night",
+            "icon": "⭐",
+            "cue": "stars"
+          },
+          {
+            "text": "I brush again, I brush just right",
+            "icon": "🪥",
+            "cue": "again"
+          },
+          {
+            "text": "Snuggle down and close my eyes",
+            "icon": "😴",
+            "cue": "snuggle"
+          },
+          {
+            "text": "Sparkly teeth, my sleepy prize!",
+            "icon": "✨",
+            "cue": "sparkly"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Morning and night, brushing sweeps away sticky germs and keeps teeth strong!",
+      "punch": "strong",
+      "board": {
+        "type": "checklist",
+        "title": "Happy teeth",
+        "icon": "🦷",
+        "items": [
+          {
+            "text": "Brush in the morning",
+            "icon": "🌅",
+            "cue": "morning",
+            "ok": true
+          },
+          {
+            "text": "Brush at night",
+            "icon": "🌙",
+            "cue": "night",
+            "ok": true
+          },
+          {
+            "text": "Sweep away germs",
+            "icon": "🧹",
+            "cue": "sweeps",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "A tiny dab, little circles, two minutes, morning and night!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "A tiny dab",
+            "icon": "🟢",
+            "cue": "tiny"
+          },
+          {
+            "text": "Little circles",
+            "icon": "🔄",
+            "cue": "circles"
+          },
+          {
+            "text": "Two minutes",
+            "icon": "⏱️",
+            "cue": "two"
+          },
+          {
+            "text": "Morning and night",
+            "icon": "🌙",
+            "cue": "morning"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Sparkly smiles! Follow Curio Kids Club for more wonders. And next time someone asks... when should you brush your teeth?"
+    }
+  ]
+}

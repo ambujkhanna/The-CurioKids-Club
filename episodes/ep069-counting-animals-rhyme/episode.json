@@ -1,0 +1,234 @@
+{
+  "id": "ep069",
+  "slug": "counting-animals-rhyme",
+  "status": "ready",
+  "title": "Counting Animals Rhyme 🐘 Count 1 to 10 for Kids",
+  "cover_text": "1 TO 10!",
+  "description": "Ducks, bees, monkeys and more! Leo and Mia take turns with an original counting rhyme from one to ten, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsPoems",
+    "#Counting",
+    "#KidsLearning",
+    "#Shorts"
+  ],
+  "tags": [
+    "counting rhyme for kids",
+    "count to 10",
+    "animal rhyme",
+    "kids poems",
+    "numbers for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Count to ten!",
+    "cue": "next",
+    "left": "🔢",
+    "right": "🐾"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, can we count animals in a rhyme?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🔢",
+          "label": "1 to 10"
+        },
+        "right": {
+          "icon": "🐾",
+          "label": "Animals"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Let's count from one to ten. We'll take turns saying the lines!",
+      "board": {
+        "type": "big",
+        "icon": "🔢",
+        "text": "Count to ten!",
+        "cue": "count",
+        "sub": "One to ten",
+        "sub_cue": "one"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "One duck says quack, quack, quack, two small dogs go woof right back!",
+      "board": {
+        "type": "poem",
+        "title": "One, two!",
+        "icon": "🦆",
+        "lines": [
+          {
+            "icon": "🦆",
+            "text": "One duck says quack, quack, quack,",
+            "cue": "one"
+          },
+          {
+            "icon": "🐶",
+            "text": "two small dogs go woof right back!",
+            "cue": "two"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Three busy bees buzz round a tree, four little fish swim in the sea.",
+      "board": {
+        "type": "poem",
+        "title": "Three, four!",
+        "icon": "🐝",
+        "lines": [
+          {
+            "icon": "🐝",
+            "text": "Three busy bees buzz round a tree,",
+            "cue": "three"
+          },
+          {
+            "icon": "🐟",
+            "text": "four little fish swim in the sea.",
+            "cue": "four"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "That's a duck, some dogs, some bees and some fish! What's next?",
+      "board": {
+        "type": "gallery",
+        "title": "So far!",
+        "items": [
+          {
+            "icon": "🦆",
+            "label": "Duck",
+            "cue": "duck"
+          },
+          {
+            "icon": "🐶",
+            "label": "Dogs",
+            "cue": "dogs"
+          },
+          {
+            "icon": "🐝",
+            "label": "Bees",
+            "cue": "bees"
+          },
+          {
+            "icon": "🐟",
+            "label": "Fish",
+            "cue": "fish"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Five chicks say peep, peep, peep, six woolly sheep fall fast asleep.",
+      "board": {
+        "type": "poem",
+        "title": "Five, six!",
+        "icon": "🐑",
+        "lines": [
+          {
+            "icon": "🐥",
+            "text": "Five chicks say peep, peep, peep,",
+            "cue": "five"
+          },
+          {
+            "icon": "🐑",
+            "text": "six woolly sheep fall fast asleep.",
+            "cue": "six"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Seven monkeys swing up high, eight little birds go flying by.",
+      "board": {
+        "type": "poem",
+        "title": "Seven, eight!",
+        "icon": "🐒",
+        "lines": [
+          {
+            "icon": "🐒",
+            "text": "Seven monkeys swing up high,",
+            "cue": "seven"
+          },
+          {
+            "icon": "🐦",
+            "text": "eight little birds go flying by.",
+            "cue": "eight"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Shh... for the last two, let's use quiet voices.",
+      "board": {
+        "type": "big",
+        "icon": "🤫",
+        "text": "Quiet voices...",
+        "cue": "quiet",
+        "sub": "The last two!",
+        "sub_cue": "last"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Nine big elephants stomp around, ten tiny mice don't make a sound!",
+      "board": {
+        "type": "poem",
+        "title": "Nine, ten!",
+        "icon": "🐘",
+        "lines": [
+          {
+            "icon": "🐘",
+            "text": "Nine big elephants stomp around,",
+            "cue": "nine"
+          },
+          {
+            "icon": "🐭",
+            "text": "ten tiny mice don't make a sound!",
+            "cue": "ten"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "We did it! We counted all the way to ten!",
+      "punch": "ten",
+      "board": {
+        "type": "big",
+        "icon": "🎉",
+        "text": "We counted to ten!",
+        "cue": "counted"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "My favourite was the stomping elephants. Stomp, stomp!",
+      "board": {
+        "type": "big",
+        "icon": "🐘",
+        "text": "Stomp, stomp!",
+        "cue": "stomping"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Follow Curio Kids Club for more wonders. And next time someone asks... can we count animals in a rhyme?"
+    }
+  ]
+}

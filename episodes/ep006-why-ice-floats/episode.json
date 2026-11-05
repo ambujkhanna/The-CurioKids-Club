@@ -1,0 +1,201 @@
+{
+  "id": "ep006",
+  "slug": "why-ice-floats",
+  "status": "ready",
+  "title": "Why Does Ice Float? 🧊 Fun Science for Kids",
+  "cover_text": "ICE FLOATS?!",
+  "description": "Water does something special when it freezes! Leo asks, Dad explains why ice cubes float in your drink, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#KitchenScience",
+    "#Shorts"
+  ],
+  "tags": [
+    "why does ice float",
+    "ice facts for kids",
+    "kitchen science",
+    "water",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "DAD"
+  ],
+  "loop_card": {
+    "text": "Why does ice float?",
+    "cue": "next",
+    "left": "🧊",
+    "right": "🥤"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Dad, why does ice float?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🧊",
+          "label": "Ice cube"
+        },
+        "right": {
+          "icon": "🥤",
+          "label": "Floats?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Great question! Look in your drink. The ice cubes bob at the top, instead of sinking to the bottom.",
+      "board": {
+        "type": "big",
+        "icon": "🥤",
+        "text": "Ice bobs on top!",
+        "cue": "bob",
+        "sub": "It doesn't sink",
+        "sub_cue": "sinking"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "But ice is hard. Shouldn't it be heavy and sink?"
+    },
+    {
+      "who": "DAD",
+      "text": "Here's the secret. When water freezes, it spreads out and takes up more space.",
+      "punch": "space",
+      "board": {
+        "type": "big",
+        "icon": "🧊",
+        "text": "Freezing water spreads out",
+        "cue": "spreads",
+        "sub": "It takes more space",
+        "sub_cue": "space"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Wait, so ice is bigger than the water it came from?"
+    },
+    {
+      "who": "DAD",
+      "text": "A little bit, yes! In water, the tiny bits are squished close. In ice, they lock together in a pattern with little gaps.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Water",
+          "items": [
+            {
+              "text": "Squished close",
+              "icon": "💧",
+              "cue": "squished"
+            }
+          ]
+        },
+        "right": {
+          "label": "Ice",
+          "items": [
+            {
+              "text": "Locked pattern",
+              "icon": "🧊",
+              "cue": "lock"
+            },
+            {
+              "text": "Little gaps",
+              "icon": "🕳️",
+              "cue": "gaps"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So those gaps make ice lighter?"
+    },
+    {
+      "who": "DAD",
+      "text": "Exactly! Ice is lighter for its size than water, so the water pushes it up and it floats.",
+      "board": {
+        "type": "big",
+        "icon": "⬆️",
+        "text": "Lighter for its size",
+        "cue": "lighter",
+        "sub": "So it floats!",
+        "sub_cue": "floats"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Does everything get bigger when it freezes?"
+    },
+    {
+      "who": "DAD",
+      "text": "Nope! Most things get smaller when they freeze. Water is special, because it gets bigger!",
+      "punch": "special",
+      "board": {
+        "type": "big",
+        "icon": "⭐",
+        "text": "Water is special!",
+        "cue": "special",
+        "sub": "It gets bigger!",
+        "sub_cue": "bigger"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And that helps animals! In winter, ice floats on top of ponds like a lid, and fish stay safe in the water below.",
+      "board": {
+        "type": "gallery",
+        "title": "Ice lid",
+        "items": [
+          {
+            "icon": "❄️",
+            "label": "Winter",
+            "cue": "winter"
+          },
+          {
+            "icon": "🧊",
+            "label": "Ice on top",
+            "cue": "ice"
+          },
+          {
+            "icon": "🐟",
+            "label": "Fish below",
+            "cue": "fish"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So ice has gaps, it's lighter, and it floats. Cool!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Ice has gaps",
+            "icon": "🧊",
+            "cue": "gaps"
+          },
+          {
+            "text": "Lighter for its size",
+            "icon": "🪶",
+            "cue": "lighter"
+          },
+          {
+            "text": "So it floats!",
+            "icon": "⬆️",
+            "cue": "floats"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Very cool! Follow Curio Kids Club for more wonders. And next time someone asks... why does ice float?"
+    }
+  ]
+}

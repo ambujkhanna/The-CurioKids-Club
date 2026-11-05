@@ -1,0 +1,261 @@
+{
+  "id": "ep011",
+  "slug": "eight-planets-rhyme",
+  "status": "ready",
+  "title": "Eight Planets Rhyme 🪐 Learn the Planets in Order",
+  "cover_text": "8 PLANETS!",
+  "description": "Zoom from Mercury to Neptune in one fun rhyme! Leo and big sister Mia take turns with the verses to learn all eight planets in order, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#KidsPoems",
+    "#Planets",
+    "#Shorts"
+  ],
+  "tags": [
+    "planets for kids",
+    "eight planets in order",
+    "solar system rhyme",
+    "space for kids",
+    "kids poems",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Name all 8 planets!",
+    "cue": "next",
+    "left": "🪐",
+    "right": "🌍"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Can you name all eight planets? Let's rhyme them!",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🪐",
+          "label": "Planets"
+        },
+        "right": {
+          "icon": "🎵",
+          "label": "Rhyme!"
+        },
+        "mid": "8",
+        "subtitle": "Eight Planets Rhyme"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "We start by the Sun and zoom out!",
+      "board": {
+        "type": "big",
+        "icon": "🚀",
+        "text": "Start at the Sun!",
+        "cue": "sun",
+        "sub": "Then zoom out!",
+        "sub_cue": "zoom"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "First comes Mercury, small and quick, it zips around the Sun, tick-tick! Then Venus, cloudy, hot and bright, the hottest planet, day and night!",
+      "board": {
+        "type": "poem",
+        "title": "Planets 1 and 2",
+        "icon": "☀️",
+        "lines": [
+          {
+            "text": "First, Mercury: small and quick",
+            "icon": "🌑",
+            "cue": "mercury"
+          },
+          {
+            "text": "It zips around the Sun, tick-tick!",
+            "icon": "💨",
+            "cue": "zips"
+          },
+          {
+            "text": "Then Venus, cloudy, hot and bright",
+            "icon": "🟡",
+            "cue": "venus"
+          },
+          {
+            "text": "The hottest planet, day and night!",
+            "icon": "🔥",
+            "cue": "hottest"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Then Earth comes third, so blue and green, the only home for life we've seen! Then Mars, the red one, dusty, dry, with giant mountains way up high.",
+      "board": {
+        "type": "poem",
+        "title": "Planets 3 and 4",
+        "icon": "🌍",
+        "lines": [
+          {
+            "text": "Earth comes third, blue and green",
+            "icon": "🌍",
+            "cue": "earth"
+          },
+          {
+            "text": "The only home for life we've seen!",
+            "icon": "🌱",
+            "cue": "life"
+          },
+          {
+            "text": "Then Mars, the red one, dusty, dry",
+            "icon": "🔴",
+            "cue": "mars"
+          },
+          {
+            "text": "With giant mountains way up high",
+            "icon": "⛰️",
+            "cue": "mountains"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Those four are the rocky planets. Now come the giants!",
+      "punch": "giants",
+      "board": {
+        "type": "big",
+        "icon": "🪨",
+        "text": "4 rocky planets",
+        "cue": "rocky",
+        "sub": "Now the giants!",
+        "sub_cue": "giants"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Here's Jupiter, it's huge, it's wide, a giant storm swirls on its side! Then Saturn with its shiny rings, of ice and rock, such pretty things!",
+      "board": {
+        "type": "poem",
+        "title": "Planets 5 and 6",
+        "icon": "🪐",
+        "lines": [
+          {
+            "text": "Here's Jupiter, huge and wide",
+            "icon": "🟠",
+            "cue": "jupiter"
+          },
+          {
+            "text": "A giant storm swirls on its side!",
+            "icon": "🌀",
+            "cue": "storm"
+          },
+          {
+            "text": "Then Saturn with its shiny rings",
+            "icon": "🪐",
+            "cue": "saturn"
+          },
+          {
+            "text": "Ice and rock, such pretty things!",
+            "icon": "🧊",
+            "cue": "ice"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Uranus spins tipped on its side, like rolling down a giant slide! Then Neptune, last, so far away, its winds whoosh fast by night and day!",
+      "board": {
+        "type": "poem",
+        "title": "Planets 7 and 8",
+        "icon": "💫",
+        "lines": [
+          {
+            "text": "Uranus spins tipped on its side",
+            "icon": "🔵",
+            "cue": "uranus"
+          },
+          {
+            "text": "Like rolling down a giant slide!",
+            "icon": "🎢",
+            "cue": "rolling"
+          },
+          {
+            "text": "Then Neptune, last, so far away",
+            "icon": "💙",
+            "cue": "neptune"
+          },
+          {
+            "text": "Winds whoosh fast, night and day!",
+            "icon": "💨",
+            "cue": "winds"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Those four are the giant planets, far from the Sun.",
+      "board": {
+        "type": "big",
+        "icon": "🪐",
+        "text": "4 giant planets",
+        "cue": "giant",
+        "sub": "Far from the Sun",
+        "sub_cue": "far"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "From hot to cold, from near to far, they all go round our Sun, a star!",
+      "board": {
+        "type": "poem",
+        "title": "All together",
+        "icon": "⭐",
+        "lines": [
+          {
+            "text": "From hot to cold, from near to far",
+            "icon": "🌡️",
+            "cue": "hot"
+          },
+          {
+            "text": "They all go round our Sun, a star!",
+            "icon": "⭐",
+            "cue": "star"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Four rocky planets, four giants, and all eight go around the Sun!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "4 rocky planets",
+            "icon": "🪨",
+            "cue": "rocky"
+          },
+          {
+            "text": "4 giant planets",
+            "icon": "🪐",
+            "cue": "giants"
+          },
+          {
+            "text": "All go round the Sun",
+            "icon": "☀️",
+            "cue": "around"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Woo-hoo! Follow Curio Kids Club for more wonders. And next time someone asks... can you name all eight planets?"
+    }
+  ]
+}

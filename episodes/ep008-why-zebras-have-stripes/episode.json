@@ -1,0 +1,186 @@
+{
+  "id": "ep008",
+  "slug": "why-zebras-have-stripes",
+  "status": "ready",
+  "title": "Why Do Zebras Have Stripes? 🦓 Fun Facts for Kids",
+  "cover_text": "WHY STRIPES?",
+  "description": "Zebra stripes might be a clever fly-fooling trick! Leo asks, big sister Mia explains what scientists think, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Zebra",
+    "#Shorts"
+  ],
+  "tags": [
+    "zebra facts for kids",
+    "why do zebras have stripes",
+    "animal facts",
+    "africa animals",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why the stripes?",
+    "cue": "next",
+    "left": "🦓",
+    "right": "❓"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why do zebras have stripes?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🦓",
+          "label": "Zebra"
+        },
+        "right": {
+          "icon": "🤔",
+          "label": "Stripes?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "That's a real mystery! Scientists have a few ideas.",
+      "punch": "mystery",
+      "board": {
+        "type": "big",
+        "icon": "🔍",
+        "text": "A zebra mystery!",
+        "cue": "mystery",
+        "sub": "Scientists have ideas",
+        "sub_cue": "scientists"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What's the top idea?"
+    },
+    {
+      "who": "MIA",
+      "text": "Many scientists think stripes help keep biting flies away. The flies get confused by the stripes and don't land well.",
+      "board": {
+        "type": "big",
+        "icon": "🪰",
+        "text": "Bye-bye, biting flies!",
+        "cue": "flies",
+        "sub": "Stripes confuse them",
+        "sub_cue": "confused"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ha! The flies get all mixed up?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! When scientists put striped coats on horses, fewer flies landed on them.",
+      "punch": "fewer",
+      "board": {
+        "type": "big",
+        "icon": "🐴",
+        "text": "Striped coats on horses",
+        "cue": "horses",
+        "sub": "Fewer flies landed!",
+        "sub_cue": "fewer"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Are there other ideas?"
+    },
+    {
+      "who": "MIA",
+      "text": "Some think stripes might help zebras stay cool in the hot sun, or confuse a lion when the whole herd runs together.",
+      "board": {
+        "type": "gallery",
+        "title": "Other ideas",
+        "items": [
+          {
+            "icon": "🌡️",
+            "label": "Stay cool",
+            "cue": "cool"
+          },
+          {
+            "icon": "🦁",
+            "label": "Confuse a lion",
+            "cue": "lion"
+          },
+          {
+            "icon": "🦓",
+            "label": "Herd runs",
+            "cue": "herd"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Do all zebras have the same stripes?"
+    },
+    {
+      "who": "MIA",
+      "text": "Nope! Every zebra's stripes are different, kind of like your fingerprints.",
+      "board": {
+        "type": "big",
+        "icon": "🦓",
+        "text": "No two the same!",
+        "cue": "different",
+        "sub": "Like fingerprints",
+        "sub_cue": "fingerprints"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So is a zebra white with black stripes, or black with white stripes?",
+      "board": {
+        "type": "big",
+        "icon": "🤔",
+        "text": "Black or white?",
+        "cue": "black"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Under its fur, a zebra's skin is dark. So lots of people say it's black with white stripes!",
+      "board": {
+        "type": "big",
+        "icon": "🖤",
+        "text": "Dark skin underneath",
+        "cue": "skin",
+        "sub": "Black with white stripes",
+        "sub_cue": "white"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Fly-fooling stripes that are one of a kind. Zebras are awesome!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Fools biting flies",
+            "icon": "🪰",
+            "cue": "fly"
+          },
+          {
+            "text": "One of a kind",
+            "icon": "🦓",
+            "cue": "one"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "They really are! Follow Curio Kids Club for more wonders. And next time someone asks... why do zebras have stripes?"
+    }
+  ]
+}

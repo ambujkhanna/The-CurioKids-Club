@@ -1,0 +1,223 @@
+{
+  "id": "ep012",
+  "slug": "where-rain-comes-from",
+  "status": "ready",
+  "title": "Where Does Rain Come From? 🌧️ Fun Facts for Kids",
+  "cover_text": "RAIN?",
+  "description": "Rain is water that went on a trip to the sky! Leo asks, big sister Mia explains how clouds are made and why raindrops fall, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Weather",
+    "#Shorts"
+  ],
+  "tags": [
+    "where does rain come from",
+    "rain facts for kids",
+    "clouds",
+    "water cycle",
+    "weather for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Where does rain come from?",
+    "cue": "next",
+    "left": "☁️",
+    "right": "🌧️"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, where does rain come from?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "☁️",
+          "label": "Cloud"
+        },
+        "right": {
+          "icon": "🌧️",
+          "label": "Rain?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "From clouds! And clouds are made of water from rivers, lakes and the sea.",
+      "board": {
+        "type": "big",
+        "icon": "☁️",
+        "text": "Rain comes from clouds",
+        "cue": "clouds",
+        "sub": "Made of water!",
+        "sub_cue": "water"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How does water get way up there?"
+    },
+    {
+      "who": "MIA",
+      "text": "The Sun warms the water, and some of it turns into an invisible gas called water vapour. It floats up into the sky.",
+      "board": {
+        "type": "steps",
+        "title": "Up, up, up",
+        "items": [
+          {
+            "label": "Sun warms the water",
+            "icon": "☀️",
+            "cue": "warms"
+          },
+          {
+            "label": "Turns into vapour",
+            "icon": "💨",
+            "cue": "vapour"
+          },
+          {
+            "label": "Floats up high",
+            "icon": "⬆️",
+            "cue": "floats"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Then what happens?"
+    },
+    {
+      "who": "MIA",
+      "text": "High up, the air is cold. The vapour cools and turns back into teeny drops of water. Lots of drops together make a cloud!",
+      "board": {
+        "type": "big",
+        "icon": "☁️",
+        "text": "Tiny drops = a cloud",
+        "cue": "cloud",
+        "sub": "Cold air up high",
+        "sub_cue": "cold"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So why do the drops fall down?"
+    },
+    {
+      "who": "MIA",
+      "text": "The tiny drops bump into each other and join up. When they get too big and heavy to float, down they fall as rain!",
+      "punch": "heavy",
+      "board": {
+        "type": "steps",
+        "title": "Drop by drop",
+        "items": [
+          {
+            "label": "Drops bump and join",
+            "icon": "💧",
+            "cue": "bump"
+          },
+          {
+            "label": "Too big and heavy",
+            "icon": "💦",
+            "cue": "heavy"
+          },
+          {
+            "label": "Down comes rain!",
+            "icon": "🌧️",
+            "cue": "rain"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why are rain clouds so dark and grey?"
+    },
+    {
+      "who": "MIA",
+      "text": "Thin clouds let sunlight through, so they look white. Rain clouds are thick and full of water, so they look dark and grey.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "White cloud",
+          "items": [
+            {
+              "text": "Thin",
+              "icon": "☁️",
+              "cue": "thin"
+            },
+            {
+              "text": "Light gets in",
+              "icon": "☀️",
+              "cue": "sunlight"
+            }
+          ]
+        },
+        "right": {
+          "label": "Rain cloud",
+          "items": [
+            {
+              "text": "Thick",
+              "icon": "🌧️",
+              "cue": "thick"
+            },
+            {
+              "text": "Looks dark",
+              "icon": "⚫",
+              "cue": "dark"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Try this: breathe on a cold window. The foggy patch is made of tiny water drops, just like a mini cloud!",
+      "board": {
+        "type": "big",
+        "icon": "🪟",
+        "text": "Breathe on a cold window",
+        "cue": "breathe",
+        "sub": "A mini cloud!",
+        "sub_cue": "mini"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So water floats up, makes clouds, then falls back down as rain. Round and round!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Water floats up",
+            "icon": "⬆️",
+            "cue": "floats"
+          },
+          {
+            "text": "Makes clouds",
+            "icon": "☁️",
+            "cue": "clouds"
+          },
+          {
+            "text": "Falls as rain",
+            "icon": "🌧️",
+            "cue": "falls"
+          },
+          {
+            "text": "Round and round",
+            "icon": "🔄",
+            "cue": "round"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "That's the water cycle! Follow Curio Kids Club for more wonders. And next time someone asks... where does rain come from?"
+    }
+  ]
+}

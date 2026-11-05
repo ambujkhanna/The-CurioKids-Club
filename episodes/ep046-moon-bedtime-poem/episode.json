@@ -1,0 +1,276 @@
+{
+  "id": "ep046",
+  "slug": "moon-bedtime-poem",
+  "status": "ready",
+  "title": "The Moon's Bedtime Poem 🌙 Calm Poem for Kids",
+  "cover_text": "GOODNIGHT!",
+  "description": "A cozy, original bedtime poem about the Moon! Mia recites gentle verses about moonlight, Moon shapes and twinkling stars, perfect for winding down.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#KidsPoems",
+    "#Bedtime",
+    "#Shorts"
+  ],
+  "tags": [
+    "bedtime poem for kids",
+    "moon poem",
+    "calm kids video",
+    "poem for kids",
+    "moon for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "A sleepy Moon poem",
+    "cue": "next",
+    "left": "🌙",
+    "right": "😴"
+  },
+  "lines": [
+    {
+      "who": "MIA",
+      "text": "Hey friends, are you ready for a sleepy Moon poem?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🌙",
+          "label": "Moon"
+        },
+        "right": {
+          "icon": "😴",
+          "label": "Bedtime"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Snuggle up, it's nearly bedtime. Here we go...",
+      "board": {
+        "type": "big",
+        "icon": "🛏️",
+        "text": "Snuggle up...",
+        "cue": "snuggle",
+        "sub": "It's bedtime",
+        "sub_cue": "bedtime"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "The Sun slips down, the sky turns blue, the Moon peeks out, hello to you!",
+      "board": {
+        "type": "poem",
+        "title": "The Moon wakes up",
+        "icon": "🌙",
+        "lines": [
+          {
+            "text": "The Sun slips down,",
+            "icon": "🌇",
+            "cue": "sun"
+          },
+          {
+            "text": "the sky turns blue,",
+            "icon": "💙",
+            "cue": "sky"
+          },
+          {
+            "text": "The Moon peeks out,",
+            "icon": "🌙",
+            "cue": "moon"
+          },
+          {
+            "text": "hello to you!",
+            "icon": "👋",
+            "cue": "hello"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "She cannot make her own light, though. She bounces back the Sun's warm glow.",
+      "board": {
+        "type": "poem",
+        "title": "Borrowed light",
+        "icon": "☀️",
+        "lines": [
+          {
+            "text": "She cannot make",
+            "icon": "🌙",
+            "cue": "cannot"
+          },
+          {
+            "text": "her own light, though,",
+            "icon": "💡",
+            "cue": "light"
+          },
+          {
+            "text": "She bounces back",
+            "icon": "↩️",
+            "cue": "bounces"
+          },
+          {
+            "text": "the Sun's warm glow.",
+            "icon": "☀️",
+            "cue": "glow"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Some nights she's thin, a silver smile. Some nights she's round and full a while.",
+      "board": {
+        "type": "poem",
+        "title": "Moon shapes",
+        "icon": "🌗",
+        "lines": [
+          {
+            "text": "Some nights she's thin,",
+            "icon": "🌙",
+            "cue": "thin"
+          },
+          {
+            "text": "a silver smile,",
+            "icon": "😊",
+            "cue": "silver"
+          },
+          {
+            "text": "Some nights she's round",
+            "icon": "🌕",
+            "cue": "round"
+          },
+          {
+            "text": "and full a while.",
+            "icon": "✨",
+            "cue": "full"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Here's a fun fact. The Moon doesn't really change shape. We just see more or less of its sunny side as it travels around Earth.",
+      "punch": "really",
+      "board": {
+        "type": "big",
+        "icon": "🌗",
+        "text": "Same Moon, different view",
+        "cue": "shape",
+        "sub": "We see more or less",
+        "sub_cue": "more"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "The stars come out to twinkle too. They wink and blink the whole night through.",
+      "board": {
+        "type": "poem",
+        "title": "Twinkle stars",
+        "icon": "✨",
+        "lines": [
+          {
+            "text": "The stars come out",
+            "icon": "⭐",
+            "cue": "stars"
+          },
+          {
+            "text": "to twinkle too,",
+            "icon": "✨",
+            "cue": "twinkle"
+          },
+          {
+            "text": "They wink and blink",
+            "icon": "😉",
+            "cue": "wink"
+          },
+          {
+            "text": "the whole night through.",
+            "icon": "🌌",
+            "cue": "through"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "The owls say hoo, the crickets hum. The Moon says, sleepy time has come.",
+      "board": {
+        "type": "poem",
+        "title": "Night sounds",
+        "icon": "🦉",
+        "lines": [
+          {
+            "text": "The owls say hoo,",
+            "icon": "🦉",
+            "cue": "owls"
+          },
+          {
+            "text": "the crickets hum,",
+            "icon": "🦗",
+            "cue": "crickets"
+          },
+          {
+            "text": "The Moon says,",
+            "icon": "🌙",
+            "cue": "says"
+          },
+          {
+            "text": "sleepy time has come.",
+            "icon": "😴",
+            "cue": "sleepy"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "So close your eyes and snuggle tight. The Moon will watch you through the night.",
+      "board": {
+        "type": "poem",
+        "title": "Sweet dreams",
+        "icon": "🌙",
+        "lines": [
+          {
+            "text": "So close your eyes",
+            "icon": "😌",
+            "cue": "close"
+          },
+          {
+            "text": "and snuggle tight,",
+            "icon": "🤗",
+            "cue": "snuggle"
+          },
+          {
+            "text": "The Moon will watch you",
+            "icon": "🌙",
+            "cue": "watch"
+          },
+          {
+            "text": "through the night.",
+            "icon": "🌃",
+            "cue": "night"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Sweet dreams! And in the morning, the Sun will be back to say hello.",
+      "board": {
+        "type": "big",
+        "icon": "☀️",
+        "text": "See you in the morning!",
+        "cue": "morning",
+        "sub": "Sweet dreams",
+        "sub_cue": "sweet"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Goodnight, friends! Follow Curio Kids Club for more wonders. And next time someone asks... are you ready for a sleepy Moon poem?"
+    }
+  ]
+}

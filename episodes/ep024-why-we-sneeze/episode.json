@@ -1,0 +1,210 @@
+{
+  "id": "ep024",
+  "slug": "why-we-sneeze",
+  "status": "ready",
+  "title": "Why Do We Sneeze? 🤧 Fun Facts for Kids",
+  "cover_text": "ACHOO!",
+  "description": "A sneeze is your nose cleaning itself out! Leo asks, big sister Mia explains what makes you go achoo, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#HumanBody",
+    "#Shorts"
+  ],
+  "tags": [
+    "why do we sneeze",
+    "sneeze facts for kids",
+    "human body for kids",
+    "healthy habits",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why do we sneeze?",
+    "cue": "next",
+    "left": "👃",
+    "right": "🤧"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why do we sneeze?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "👃",
+          "label": "Nose"
+        },
+        "right": {
+          "icon": "🤧",
+          "label": "Achoo?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "A sneeze is your nose cleaning itself! Sometimes tiny things get in, like dust, pollen from flowers, or a sprinkle of pepper.",
+      "board": {
+        "type": "gallery",
+        "title": "Tickly things",
+        "items": [
+          {
+            "icon": "💨",
+            "label": "Dust",
+            "cue": "dust"
+          },
+          {
+            "icon": "🌼",
+            "label": "Pollen",
+            "cue": "pollen"
+          },
+          {
+            "icon": "🧂",
+            "label": "Pepper",
+            "cue": "pepper"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And they tickle!"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Your nose feels the tickle and sends a quick message to your brain.",
+      "board": {
+        "type": "big",
+        "icon": "🧠",
+        "text": "Nose tells the brain",
+        "cue": "message",
+        "sub": "Tickle alert!",
+        "sub_cue": "tickle"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Your brain says: blow it out! You take a big breath in, and then... achoo!",
+      "punch": "achoo",
+      "board": {
+        "type": "steps",
+        "title": "Here it comes",
+        "items": [
+          {
+            "icon": "🧠",
+            "label": "Brain: blow it out!",
+            "cue": "blow"
+          },
+          {
+            "icon": "🌬️",
+            "label": "A big breath in",
+            "cue": "breath"
+          },
+          {
+            "icon": "🤧",
+            "label": "ACHOO!",
+            "cue": "achoo"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "My eyes always close when I sneeze!"
+    },
+    {
+      "who": "MIA",
+      "text": "Most people's eyes close when they sneeze. It happens all by itself, without even trying.",
+      "board": {
+        "type": "big",
+        "icon": "😌",
+        "text": "Eyes close by themselves",
+        "cue": "close",
+        "sub": "All by itself",
+        "sub_cue": "itself"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why do I sneeze when I go out in the sunshine?"
+    },
+    {
+      "who": "MIA",
+      "text": "Bright light makes some people sneeze. Scientists still aren't sure exactly why!",
+      "board": {
+        "type": "big",
+        "icon": "☀️",
+        "text": "Sunshine sneezes!",
+        "cue": "bright",
+        "sub": "Scientists aren't sure",
+        "sub_cue": "scientists"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What should I do when I sneeze?"
+    },
+    {
+      "who": "MIA",
+      "text": "Sneeze into a tissue or your elbow, then wash your hands. That stops germs from spreading to your friends.",
+      "board": {
+        "type": "checklist",
+        "title": "Sneeze smart",
+        "icon": "🤧",
+        "items": [
+          {
+            "icon": "🧻",
+            "text": "Use a tissue",
+            "cue": "tissue",
+            "ok": true
+          },
+          {
+            "icon": "💪",
+            "text": "Or your elbow",
+            "cue": "elbow",
+            "ok": true
+          },
+          {
+            "icon": "🧼",
+            "text": "Wash your hands",
+            "cue": "wash",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So a sneeze is my nose blowing the tickly stuff out. Achoo!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "👃",
+            "text": "Nose cleans itself",
+            "cue": "nose"
+          },
+          {
+            "icon": "💨",
+            "text": "Blows it out",
+            "cue": "blowing"
+          },
+          {
+            "icon": "🤧",
+            "text": "Achoo!",
+            "cue": "achoo"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Bless you! Follow Curio Kids Club for more wonders. And next time someone asks... why do we sneeze?"
+    }
+  ]
+}

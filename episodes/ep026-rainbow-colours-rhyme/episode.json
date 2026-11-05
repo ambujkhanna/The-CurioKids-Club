@@ -1,0 +1,255 @@
+{
+  "id": "ep026",
+  "slug": "rainbow-colours-rhyme",
+  "status": "ready",
+  "title": "Colours of the Rainbow Rhyme 🌈 Poem for Kids",
+  "cover_text": "7 COLOURS!",
+  "description": "Red, orange, yellow, green, blue, indigo and violet! Mia shares a rhyme about the rainbow's colours in order, and how rainbows are made, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsPoems",
+    "#KidsLearning",
+    "#Rainbow",
+    "#Shorts"
+  ],
+  "tags": [
+    "rainbow colours for kids",
+    "rainbow rhyme",
+    "colours in order",
+    "poem for kids",
+    "learn colours",
+    "kids learning"
+  ],
+  "cast": [
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Rainbow colours?",
+    "cue": "next",
+    "left": "🌈",
+    "right": "🎨"
+  },
+  "lines": [
+    {
+      "who": "MIA",
+      "text": "Can you name every colour in a rainbow?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🌈",
+          "label": "Rainbow"
+        },
+        "right": {
+          "icon": "🎨",
+          "label": "Colours?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "There are seven! Let's say them in a rhyme, in order, from the top of the rainbow down.",
+      "punch": "seven",
+      "board": {
+        "type": "big",
+        "icon": "🌈",
+        "text": "Seven colours!",
+        "cue": "seven",
+        "sub": "In order, top to bottom",
+        "sub_cue": "order"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Red is first, like apples bright. Orange glows like sunset light.",
+      "board": {
+        "type": "poem",
+        "title": "Red and orange",
+        "icon": "🌈",
+        "lines": [
+          {
+            "text": "Red is first, like apples bright.",
+            "icon": "🍎",
+            "cue": "red"
+          },
+          {
+            "text": "Orange glows like sunset light.",
+            "icon": "🍊",
+            "cue": "orange"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Yellow's next, like a lemon's skin. Green's the grass where frogs jump in!",
+      "board": {
+        "type": "poem",
+        "title": "Yellow and green",
+        "icon": "🌈",
+        "lines": [
+          {
+            "text": "Yellow's next,",
+            "icon": "💛",
+            "cue": "yellow"
+          },
+          {
+            "text": "like a lemon's skin.",
+            "icon": "🍋",
+            "cue": "lemon"
+          },
+          {
+            "text": "Green's the grass",
+            "icon": "🌿",
+            "cue": "green"
+          },
+          {
+            "text": "where frogs jump in!",
+            "icon": "🐸",
+            "cue": "frogs"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Halfway there! Ready for the rest?"
+    },
+    {
+      "who": "MIA",
+      "text": "Blue's the sea, so deep and wide. Indigo is the night outside.",
+      "board": {
+        "type": "poem",
+        "title": "Blue and indigo",
+        "icon": "🌈",
+        "lines": [
+          {
+            "text": "Blue's the sea, so deep and wide.",
+            "icon": "🌊",
+            "cue": "blue"
+          },
+          {
+            "text": "Indigo is the night outside.",
+            "icon": "🌌",
+            "cue": "indigo"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Violet's last, like grapes in a bowl. Seven colours make the rainbow whole!",
+      "board": {
+        "type": "poem",
+        "title": "Violet",
+        "icon": "🌈",
+        "lines": [
+          {
+            "text": "Violet's last,",
+            "icon": "🍇",
+            "cue": "violet"
+          },
+          {
+            "text": "like grapes in a bowl.",
+            "icon": "🥣",
+            "cue": "bowl"
+          },
+          {
+            "text": "Seven colours",
+            "icon": "🌈",
+            "cue": "seven"
+          },
+          {
+            "text": "make the rainbow whole!",
+            "icon": "✨",
+            "cue": "whole"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Here's a secret. Sunlight looks white, but it's really all seven colours mixed together.",
+      "punch": "secret",
+      "board": {
+        "type": "big",
+        "icon": "☀️",
+        "text": "Sunlight is all 7 colours",
+        "cue": "sunlight",
+        "sub": "Mixed together!",
+        "sub_cue": "mixed"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "When sunlight shines through raindrops, the drops split it up into its colours. And that's a rainbow!",
+      "board": {
+        "type": "steps",
+        "title": "Making a rainbow",
+        "items": [
+          {
+            "icon": "☀️",
+            "label": "Sunlight shines",
+            "cue": "shines"
+          },
+          {
+            "icon": "💧",
+            "label": "Through raindrops",
+            "cue": "raindrops"
+          },
+          {
+            "icon": "🌈",
+            "label": "Colours split up!",
+            "cue": "split"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "To spot one, stand with the Sun behind you and the rain in front of you.",
+      "board": {
+        "type": "big",
+        "icon": "👀",
+        "text": "Sun behind, rain in front",
+        "cue": "behind",
+        "sub": "Look for a rainbow!",
+        "sub_cue": "front"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Let's say them all once more. Red, orange, yellow, green and blue, indigo, violet, a rainbow for you!",
+      "board": {
+        "type": "poem",
+        "title": "All together",
+        "icon": "🌈",
+        "lines": [
+          {
+            "text": "Red, orange, yellow,",
+            "icon": "🔴",
+            "cue": "red"
+          },
+          {
+            "text": "green and blue,",
+            "icon": "🟢",
+            "cue": "green"
+          },
+          {
+            "text": "indigo, violet,",
+            "icon": "🟣",
+            "cue": "indigo"
+          },
+          {
+            "text": "a rainbow for you!",
+            "icon": "🌈",
+            "cue": "rainbow"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Beautiful! Follow Curio Kids Club for more wonders. And next time someone asks... can you name every colour in a rainbow?"
+    }
+  ]
+}

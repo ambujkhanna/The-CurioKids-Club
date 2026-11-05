@@ -1,0 +1,172 @@
+{
+  "id": "ep068",
+  "slug": "why-bubbles-are-round",
+  "status": "ready",
+  "title": "Why Are Bubbles Always Round? 🫧 Science for Kids",
+  "cover_text": "ROUND?!",
+  "description": "Even a square wand makes round bubbles! Leo asks, Dad explains the stretchy soapy skin that squeezes bubbles into balls, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#ScienceForKids",
+    "#Bubbles",
+    "#Shorts"
+  ],
+  "tags": [
+    "bubbles for kids",
+    "why are bubbles round",
+    "bubble science",
+    "science for kids",
+    "everyday science",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "DAD"
+  ],
+  "loop_card": {
+    "text": "Why round?",
+    "cue": "next",
+    "left": "🫧",
+    "right": "⚪"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Dad, why are bubbles always round?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🫧",
+          "label": "Bubbles"
+        },
+        "right": {
+          "icon": "⚪",
+          "label": "Round?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "A bubble is a bit of air wrapped in a super thin skin of soapy water.",
+      "board": {
+        "type": "big",
+        "icon": "🫧",
+        "text": "Air in a soapy skin",
+        "cue": "skin",
+        "sub": "Super thin!",
+        "sub_cue": "thin"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "A skin? Like a balloon?"
+    },
+    {
+      "who": "DAD",
+      "text": "Kind of! That soapy skin is always pulling tight, like a stretchy hug squeezing the air inside.",
+      "board": {
+        "type": "big",
+        "icon": "🤗",
+        "text": "The skin pulls tight",
+        "cue": "pulling",
+        "sub": "A stretchy squeeze",
+        "sub_cue": "squeezing"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "But why does that make a ball shape?"
+    },
+    {
+      "who": "DAD",
+      "text": "A ball holds the air with the smallest skin. So when the skin squeezes tight, it makes a ball!",
+      "punch": "ball",
+      "board": {
+        "type": "big",
+        "icon": "🔵",
+        "text": "Ball = smallest skin",
+        "cue": "smallest",
+        "sub": "Squeezed as tight as can be",
+        "sub_cue": "tight"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What if I blow it with a square wand?"
+    },
+    {
+      "who": "DAD",
+      "text": "Even from a square wand, it turns round once it floats free!",
+      "board": {
+        "type": "big",
+        "icon": "🟦",
+        "text": "A square wand?",
+        "cue": "square",
+        "sub": "Still a round bubble!",
+        "sub_cue": "round"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why do bubbles have rainbow colours?"
+    },
+    {
+      "who": "DAD",
+      "text": "Light bounces off the inside and outside of the thin skin, and makes swirly rainbow colours.",
+      "board": {
+        "type": "big",
+        "icon": "🌈",
+        "text": "Light makes the colours",
+        "cue": "light",
+        "sub": "Swirly rainbows!",
+        "sub_cue": "swirly"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And why do they pop?"
+    },
+    {
+      "who": "DAD",
+      "text": "The water in the skin slowly dries up. The skin gets thinner and thinner until... pop!",
+      "punch": "pop",
+      "board": {
+        "type": "big",
+        "icon": "💥",
+        "text": "Pop!",
+        "cue": "pop",
+        "sub": "The skin gets too thin",
+        "sub_cue": "thinner"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So a bubble's skin squeezes tight, and that makes it round!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "🫧",
+            "text": "A soapy skin",
+            "cue": "skin"
+          },
+          {
+            "icon": "🤗",
+            "text": "It squeezes tight",
+            "cue": "squeezes"
+          },
+          {
+            "icon": "⚪",
+            "text": "Round ball shape",
+            "cue": "round"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "That's it! Follow Curio Kids Club for more wonders. And next time someone asks... why are bubbles always round?"
+    }
+  ]
+}

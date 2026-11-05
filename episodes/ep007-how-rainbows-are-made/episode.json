@@ -1,0 +1,237 @@
+{
+  "id": "ep007",
+  "slug": "how-rainbows-are-made",
+  "status": "ready",
+  "title": "How Is a Rainbow Made? 🌈 Fun Facts for Kids",
+  "cover_text": "RAINBOW!",
+  "description": "A rainbow needs just two things: sunshine and raindrops! Leo asks, big sister Mia explains how rainbows are made and where to spot one, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Rainbow",
+    "#Shorts"
+  ],
+  "tags": [
+    "how is a rainbow made",
+    "rainbow facts for kids",
+    "colours",
+    "weather for kids",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "How is a rainbow made?",
+    "cue": "next",
+    "left": "🌈",
+    "right": "❓"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, how is a rainbow made?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🌈",
+          "label": "Rainbow"
+        },
+        "right": {
+          "icon": "🤔",
+          "label": "How?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "You need two things: sunshine and raindrops!",
+      "punch": "two",
+      "board": {
+        "type": "gallery",
+        "title": "Rainbow recipe",
+        "items": [
+          {
+            "icon": "☀️",
+            "label": "Sunshine",
+            "cue": "sunshine"
+          },
+          {
+            "icon": "💧",
+            "label": "Raindrops",
+            "cue": "raindrops"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why those two?"
+    },
+    {
+      "who": "MIA",
+      "text": "Sunlight looks white, but it's really lots of colours mixed together.",
+      "board": {
+        "type": "big",
+        "icon": "☀️",
+        "text": "White light = many colours",
+        "cue": "colours",
+        "sub": "All mixed together",
+        "sub_cue": "mixed"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "When sunlight goes into a raindrop, it bends. Each colour bends a different amount, so they spread apart. Then the light bounces back out toward you.",
+      "board": {
+        "type": "steps",
+        "title": "Inside a raindrop",
+        "items": [
+          {
+            "label": "Light goes in",
+            "icon": "➡️",
+            "cue": "goes"
+          },
+          {
+            "label": "It bends",
+            "icon": "↪️",
+            "cue": "bends"
+          },
+          {
+            "label": "Colours spread out",
+            "icon": "🌈",
+            "cue": "spread"
+          },
+          {
+            "label": "Bounces back to you",
+            "icon": "↩️",
+            "cue": "bounces"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Is that why the colours are always in the same order?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Red, orange, yellow, green, blue, indigo and violet. Red is always on the outside!",
+      "punch": "outside",
+      "board": {
+        "type": "gallery",
+        "title": "Rainbow colours",
+        "items": [
+          {
+            "icon": "🔴",
+            "label": "Red",
+            "cue": "red"
+          },
+          {
+            "icon": "🟠",
+            "label": "Orange",
+            "cue": "orange"
+          },
+          {
+            "icon": "🟡",
+            "label": "Yellow",
+            "cue": "yellow"
+          },
+          {
+            "icon": "🟢",
+            "label": "Green",
+            "cue": "green"
+          },
+          {
+            "icon": "🔵",
+            "label": "Blue",
+            "cue": "blue"
+          },
+          {
+            "icon": "🟣",
+            "label": "Indigo, violet",
+            "cue": "indigo"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "When can I spot one?"
+    },
+    {
+      "who": "MIA",
+      "text": "Look when the Sun is behind you and the rain is in front of you. Early morning or late afternoon is best!",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Behind you",
+          "items": [
+            {
+              "text": "Sun",
+              "icon": "☀️",
+              "cue": "sun"
+            }
+          ]
+        },
+        "right": {
+          "label": "In front",
+          "items": [
+            {
+              "text": "Rain",
+              "icon": "🌧️",
+              "cue": "rain"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can we make our own rainbow?"
+    },
+    {
+      "who": "MIA",
+      "text": "We can! On a sunny day, ask a grown-up to spray a fine mist from a garden hose, with the Sun behind you. Ta-da, a mini rainbow!",
+      "board": {
+        "type": "big",
+        "icon": "🌈",
+        "text": "Make a mini rainbow",
+        "cue": "mini",
+        "sub": "Ask a grown-up!",
+        "sub_cue": "ask"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Sunlight, raindrops, and the Sun behind me. Rainbow time!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Sunlight",
+            "icon": "☀️",
+            "cue": "sunlight"
+          },
+          {
+            "text": "Raindrops",
+            "icon": "💧",
+            "cue": "raindrops"
+          },
+          {
+            "text": "Sun behind you",
+            "icon": "😎",
+            "cue": "behind"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Rainbow time! Follow Curio Kids Club for more wonders. And next time someone asks... how is a rainbow made?"
+    }
+  ]
+}

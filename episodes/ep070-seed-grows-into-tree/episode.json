@@ -1,0 +1,202 @@
+{
+  "id": "ep070",
+  "slug": "seed-grows-into-tree",
+  "status": "ready",
+  "title": "How Does a Seed Grow Into a Tree? 🌳 Fun Facts for Kids",
+  "cover_text": "SEED TO TREE!",
+  "description": "A seed is like a little lunchbox with a baby plant inside! Leo asks, big sister Mia explains how a seed becomes a tree, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#NatureForKids",
+    "#Plants",
+    "#Shorts"
+  ],
+  "tags": [
+    "how seeds grow for kids",
+    "seed to tree",
+    "plant life cycle",
+    "nature for kids",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Seed to tree?",
+    "cue": "next",
+    "left": "🌰",
+    "right": "🌳"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, how does a tiny seed grow into a tree?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🌰",
+          "label": "Tiny seed"
+        },
+        "right": {
+          "icon": "🌳",
+          "label": "Big tree"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "A seed is like a tiny lunchbox. Inside are a baby plant and food to help it grow.",
+      "punch": "lunchbox",
+      "board": {
+        "type": "big",
+        "icon": "🍱",
+        "text": "A seed is a lunchbox",
+        "cue": "lunchbox",
+        "sub": "Baby plant + food",
+        "sub_cue": "baby"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What does it need to wake up?"
+    },
+    {
+      "who": "MIA",
+      "text": "Water, warmth and air! In damp, warm soil, the seed soaks up water and splits open.",
+      "board": {
+        "type": "checklist",
+        "title": "A seed needs",
+        "icon": "🌰",
+        "items": [
+          {
+            "icon": "💧",
+            "text": "Water",
+            "cue": "water",
+            "ok": true
+          },
+          {
+            "icon": "☀️",
+            "text": "Warmth",
+            "cue": "warmth",
+            "ok": true
+          },
+          {
+            "icon": "💨",
+            "text": "Air",
+            "cue": "air",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Then does a leaf pop out?"
+    },
+    {
+      "who": "MIA",
+      "text": "First a root grows down to drink water. Then a little shoot pushes up toward the light.",
+      "board": {
+        "type": "steps",
+        "title": "Sprouting",
+        "items": [
+          {
+            "icon": "⬇️",
+            "label": "A root grows down",
+            "cue": "root"
+          },
+          {
+            "icon": "🌱",
+            "label": "A shoot pushes up",
+            "cue": "shoot"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How does it eat when its lunchbox is empty?"
+    },
+    {
+      "who": "MIA",
+      "text": "Its leaves make food from sunlight, air and water!",
+      "board": {
+        "type": "big",
+        "icon": "🍃",
+        "text": "Leaves make food",
+        "cue": "leaves",
+        "sub": "From sunlight, air and water",
+        "sub_cue": "sunlight"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So how does it get so big?"
+    },
+    {
+      "who": "MIA",
+      "text": "Bit by bit, year after year! The stem gets thick and woody and becomes a trunk.",
+      "board": {
+        "type": "big",
+        "icon": "🌳",
+        "text": "Year after year",
+        "cue": "year",
+        "sub": "The stem becomes a trunk",
+        "sub_cue": "trunk"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How long does that take?"
+    },
+    {
+      "who": "MIA",
+      "text": "Many years! A giant oak starts as one little acorn. And one day, it makes seeds of its own!",
+      "punch": "acorn",
+      "board": {
+        "type": "big",
+        "icon": "🌰",
+        "text": "Oaks start as acorns",
+        "cue": "acorn",
+        "sub": "Then it makes new seeds",
+        "sub_cue": "seeds"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So it goes seed, root, shoot, and then a tree!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "🌰",
+            "text": "Seed",
+            "cue": "seed"
+          },
+          {
+            "icon": "⬇️",
+            "text": "Root",
+            "cue": "root"
+          },
+          {
+            "icon": "🌱",
+            "text": "Shoot",
+            "cue": "shoot"
+          },
+          {
+            "icon": "🌳",
+            "text": "Tree",
+            "cue": "tree"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "You got it! Follow Curio Kids Club for more wonders. And next time someone asks... how does a tiny seed grow into a tree?"
+    }
+  ]
+}

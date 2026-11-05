@@ -1,0 +1,233 @@
+{
+  "id": "ep036",
+  "slug": "why-popcorn-pops",
+  "status": "ready",
+  "title": "Why Does Popcorn Pop? 🍿 Fun Science for Kids",
+  "cover_text": "POP!",
+  "description": "Why does popcorn pop? A tiny drop of water turns into steam! Leo asks, Dad explains the science of popcorn, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#KitchenScience",
+    "#Shorts"
+  ],
+  "tags": [
+    "why does popcorn pop",
+    "popcorn science for kids",
+    "kitchen science",
+    "steam",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "DAD"
+  ],
+  "loop_card": {
+    "text": "Why does popcorn pop?",
+    "cue": "next",
+    "left": "🍿",
+    "right": "💥"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Dad, why does popcorn pop?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🍿",
+          "label": "Popcorn"
+        },
+        "right": {
+          "icon": "💥",
+          "label": "Pop?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Inside every popcorn kernel, there's a tiny drop of water, hiding in soft starch.",
+      "board": {
+        "type": "gallery",
+        "title": "Inside a kernel",
+        "items": [
+          {
+            "icon": "🌽",
+            "label": "Kernel",
+            "cue": "kernel"
+          },
+          {
+            "icon": "💧",
+            "label": "Water drop",
+            "cue": "drop"
+          },
+          {
+            "icon": "🌾",
+            "label": "Soft starch",
+            "cue": "starch"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Water? In a hard little seed?"
+    },
+    {
+      "who": "DAD",
+      "text": "Yep! When the kernel gets hot, that water turns into steam. Steam needs much more space, so it pushes and pushes.",
+      "board": {
+        "type": "steps",
+        "title": "What happens",
+        "items": [
+          {
+            "label": "Kernel gets hot",
+            "icon": "🔥",
+            "cue": "hot"
+          },
+          {
+            "label": "Water turns to steam",
+            "icon": "♨️",
+            "cue": "steam"
+          },
+          {
+            "label": "Steam pushes",
+            "icon": "💨",
+            "cue": "pushes"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "But the shell is so hard!"
+    },
+    {
+      "who": "DAD",
+      "text": "The hard shell holds the steam in, until... POP! The shell bursts open.",
+      "punch": "pop",
+      "board": {
+        "type": "big",
+        "icon": "💥",
+        "text": "POP!",
+        "cue": "pop",
+        "sub": "The shell bursts",
+        "sub_cue": "bursts"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why does it turn fluffy and white?"
+    },
+    {
+      "who": "DAD",
+      "text": "The soft starch puffs out into a white foam. It cools fast and turns into the crunchy, fluffy popcorn you eat.",
+      "board": {
+        "type": "big",
+        "icon": "☁️",
+        "text": "Starch puffs into foam",
+        "cue": "puffs",
+        "sub": "Fluffy and crunchy",
+        "sub_cue": "fluffy"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can any corn pop?"
+    },
+    {
+      "who": "DAD",
+      "text": "No! Popcorn is a special kind of corn with a really tough shell. In other corn, the steam leaks out, so it doesn't pop.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Popcorn",
+          "items": [
+            {
+              "text": "Tough shell",
+              "icon": "🛡️",
+              "cue": "tough"
+            },
+            {
+              "text": "Pops!",
+              "icon": "💥",
+              "cue": "pop"
+            }
+          ]
+        },
+        "right": {
+          "label": "Other corn",
+          "items": [
+            {
+              "text": "Steam leaks",
+              "icon": "💨",
+              "cue": "leaks"
+            },
+            {
+              "text": "No pop",
+              "icon": "😶",
+              "cue": "doesn"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can we make some?"
+    },
+    {
+      "who": "DAD",
+      "text": "Sure! Popping needs heat, so always ask a grown-up to make it. Then we can listen for the pops together.",
+      "board": {
+        "type": "checklist",
+        "title": "Popcorn time",
+        "icon": "🍿",
+        "items": [
+          {
+            "text": "Ask a grown-up",
+            "icon": "🧑",
+            "cue": "ask",
+            "ok": true
+          },
+          {
+            "text": "Listen for the pops",
+            "icon": "👂",
+            "cue": "listen",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Water, steam and POP! Popcorn is science!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Water inside",
+            "icon": "💧",
+            "cue": "water"
+          },
+          {
+            "text": "Steam pushes",
+            "icon": "♨️",
+            "cue": "steam"
+          },
+          {
+            "text": "POP!",
+            "icon": "💥",
+            "cue": "pop"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Tasty science! Follow Curio Kids Club for more wonders. And next time someone asks... why does popcorn pop?"
+    }
+  ]
+}

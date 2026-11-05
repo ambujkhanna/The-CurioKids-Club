@@ -1,0 +1,32 @@
+{
+  "id": "ep001", "slug": "octopus-three-hearts", "status": "ready",
+  "title": "Why Does an Octopus Have 3 Hearts? 🐙 Fun Facts for Kids",
+  "cover_text": "3 HEARTS?!",
+  "description": "An octopus has three hearts and BLUE blood! Leo asks, big sister Mia explains how it works, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": ["#KidsLearning", "#FunFacts", "#Octopus", "#Shorts"],
+  "tags": ["octopus facts for kids", "three hearts", "blue blood", "animal facts", "science for kids", "kids learning"],
+  "cast": ["LEO", "MIA"],
+  "loop_card": {"text": "Three hearts?", "cue": "next", "left": "🐙", "right": "❤️"},
+  "lines": [
+    {"who": "LEO", "text": "Mia, does an octopus really have three hearts?", "punch": "three",
+     "board": {"type": "title", "left": {"icon": "🐙", "label": "Octopus"}, "right": {"icon": "❤️", "label": "3 hearts?"}, "mid": "?"}},
+    {"who": "MIA", "text": "It really does! Two small hearts push blood through its gills, so it can breathe underwater.",
+     "board": {"type": "gallery", "title": "Three hearts", "items": [{"icon": "❤️", "label": "Gill heart", "cue": "two"}, {"icon": "❤️", "label": "Gill heart", "cue": "hearts"}, {"icon": "🌊", "label": "Breathe underwater", "cue": "underwater"}]}},
+    {"who": "LEO", "text": "And what does the third heart do?"},
+    {"who": "MIA", "text": "The big one pumps blood all around its body, all the way to its eight wiggly arms.",
+     "board": {"type": "big", "icon": "🐙", "text": "Heart #3: the whole body", "cue": "big", "sub": "All 8 arms!", "sub_cue": "eight"}},
+    {"who": "LEO", "text": "Is its blood red, like mine?"},
+    {"who": "MIA", "text": "Nope! Octopus blood is blue.", "punch": "blue",
+     "board": {"type": "big", "icon": "💙", "text": "Octopus blood is BLUE", "cue": "blue"}},
+    {"who": "LEO", "text": "Blue? How is that even possible?"},
+    {"who": "MIA", "text": "Our blood uses iron to carry oxygen, and that makes it red. Octopus blood uses copper instead, and copper makes it blue.",
+     "board": {"type": "compare", "left": {"label": "You", "items": [{"icon": "🧲", "text": "Iron", "cue": "iron"}, {"icon": "🔴", "text": "Red blood", "cue": "red"}]},
+               "right": {"label": "Octopus", "items": [{"icon": "🟠", "text": "Copper", "cue": "copper"}, {"icon": "🔵", "text": "Blue blood", "cue": "blue"}]}}},
+    {"who": "LEO", "text": "Whoa. Does all that pumping make it tired?"},
+    {"who": "MIA", "text": "Here's a fun one. When an octopus swims, its big heart takes a little break! So it often likes to crawl instead.",
+     "board": {"type": "big", "icon": "🏊", "text": "Swimming is tiring!", "cue": "swims", "sub": "So it likes to crawl", "sub_cue": "crawl"}},
+    {"who": "LEO", "text": "Three hearts, blue blood and eight arms. Octopuses are amazing!",
+     "board": {"type": "summary", "rows": [{"icon": "❤️", "text": "3 hearts", "cue": "three"}, {"icon": "💙", "text": "Blue blood", "cue": "blue"}, {"icon": "🐙", "text": "8 arms", "cue": "eight"}]}},
+    {"who": "MIA", "text": "They sure are! Follow Curio Kids Club for more wonders. And next time someone asks... does an octopus really have three hearts?"}
+  ]
+}

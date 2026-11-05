@@ -1,0 +1,209 @@
+{
+  "id": "ep037",
+  "slug": "thunder-and-lightning",
+  "status": "ready",
+  "title": "What Makes Thunder and Lightning? ⚡ Kids Science",
+  "cover_text": "ZAP! BOOM!",
+  "description": "What makes thunder and lightning? A giant spark and a big boom! Leo asks, big sister Mia explains storms and how to stay safe, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Weather",
+    "#Shorts"
+  ],
+  "tags": [
+    "thunder and lightning for kids",
+    "weather for kids",
+    "storm safety",
+    "lightning facts",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Thunder and lightning?",
+    "cue": "next",
+    "left": "⚡",
+    "right": "🔊"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, what makes thunder and lightning?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "⚡",
+          "label": "Lightning"
+        },
+        "right": {
+          "icon": "🔊",
+          "label": "Thunder"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "It starts inside big storm clouds. Tiny bits of ice bump and rub together as the wind tosses them around.",
+      "board": {
+        "type": "big",
+        "icon": "⛈️",
+        "text": "Ice bits bump around",
+        "cue": "ice",
+        "sub": "Inside storm clouds",
+        "sub_cue": "storm"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why does bumping matter?"
+    },
+    {
+      "who": "MIA",
+      "text": "Scientists think all that bumping builds up electric charge, a bit like the zap you get from a fuzzy rug.",
+      "board": {
+        "type": "big",
+        "icon": "⚡",
+        "text": "Charge builds up",
+        "cue": "charge",
+        "sub": "Like a tiny zap",
+        "sub_cue": "zap"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And then what?"
+    },
+    {
+      "who": "MIA",
+      "text": "When there's too much charge, it jumps in a giant spark. That giant spark is lightning!",
+      "punch": "lightning",
+      "board": {
+        "type": "big",
+        "icon": "⚡",
+        "text": "A giant spark!",
+        "cue": "spark"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So what's the thunder?"
+    },
+    {
+      "who": "MIA",
+      "text": "Lightning heats the air so fast that the air bursts outward with a BOOM. That boom is thunder!",
+      "board": {
+        "type": "steps",
+        "title": "Making thunder",
+        "items": [
+          {
+            "label": "Lightning flash",
+            "icon": "⚡",
+            "cue": "lightning"
+          },
+          {
+            "label": "Air heats super fast",
+            "icon": "🔥",
+            "cue": "heats"
+          },
+          {
+            "label": "BOOM!",
+            "icon": "🔊",
+            "cue": "boom"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why do I see the flash before I hear the boom?"
+    },
+    {
+      "who": "MIA",
+      "text": "Light travels much faster than sound. So the flash reaches your eyes first, and the rumble comes later.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Light",
+          "items": [
+            {
+              "text": "Fast flash",
+              "icon": "👀",
+              "cue": "flash"
+            }
+          ]
+        },
+        "right": {
+          "label": "Sound",
+          "items": [
+            {
+              "text": "Slower rumble",
+              "icon": "👂",
+              "cue": "rumble"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Is it safe to watch?"
+    },
+    {
+      "who": "MIA",
+      "text": "Here's a rule to remember: when thunder roars, go indoors! You can watch the storm safely from inside.",
+      "punch": "indoors",
+      "board": {
+        "type": "checklist",
+        "title": "Storm safety",
+        "icon": "🏠",
+        "items": [
+          {
+            "text": "Go indoors",
+            "icon": "🏠",
+            "cue": "indoors",
+            "ok": true
+          },
+          {
+            "text": "Watch from inside",
+            "icon": "🪟",
+            "cue": "inside",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Bumping ice, a giant spark and a big boom. Storms are amazing!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Bumping ice",
+            "icon": "🧊",
+            "cue": "ice"
+          },
+          {
+            "text": "Giant spark",
+            "icon": "⚡",
+            "cue": "spark"
+          },
+          {
+            "text": "Big boom",
+            "icon": "🔊",
+            "cue": "boom"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "They sure are! Follow Curio Kids Club for more wonders. And next time someone asks... what makes thunder and lightning?"
+    }
+  ]
+}

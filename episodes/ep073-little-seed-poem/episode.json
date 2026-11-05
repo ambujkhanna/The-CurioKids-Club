@@ -1,0 +1,252 @@
+{
+  "id": "ep073",
+  "slug": "little-seed-poem",
+  "status": "ready",
+  "title": "Little Seed Poem 🌱 How a Plant Grows for Kids",
+  "cover_text": "GROW, SEED!",
+  "description": "Rain, sun and a little time! Mia recites an original poem about how a tiny seed grows into a flower, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsPoems",
+    "#Plants",
+    "#KidsLearning",
+    "#Shorts"
+  ],
+  "tags": [
+    "seed poem for kids",
+    "how plants grow",
+    "plant life cycle",
+    "kids poems",
+    "nature for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Grow, little seed!",
+    "cue": "next",
+    "left": "🌰",
+    "right": "🌻"
+  },
+  "lines": [
+    {
+      "who": "MIA",
+      "text": "Want to hear how a little seed grows?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🌰",
+          "label": "Seed"
+        },
+        "right": {
+          "icon": "🌻",
+          "label": "Flower"
+        },
+        "mid": "?",
+        "subtitle": "A little seed poem"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "This is the Little Seed Poem!",
+      "board": {
+        "type": "big",
+        "icon": "🌱",
+        "text": "The Little Seed Poem",
+        "cue": "little"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "A little seed went in the ground, all tucked in, safe and sound. Down came rain, drip, drop, drip, it gave the seed a cool, long sip.",
+      "board": {
+        "type": "poem",
+        "title": "In the ground",
+        "icon": "🌰",
+        "lines": [
+          {
+            "icon": "🌰",
+            "text": "A little seed went in the ground,",
+            "cue": "ground"
+          },
+          {
+            "icon": "🛏️",
+            "text": "all tucked in, safe and sound.",
+            "cue": "tucked"
+          },
+          {
+            "icon": "🌧️",
+            "text": "Down came rain, drip, drop, drip,",
+            "cue": "rain"
+          },
+          {
+            "icon": "💧",
+            "text": "it gave the seed a cool, long sip.",
+            "cue": "sip"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Water wakes the seed. Next, it needs sunshine!",
+      "board": {
+        "type": "big",
+        "icon": "💧",
+        "text": "Water wakes it up",
+        "cue": "water",
+        "sub": "Next: sunshine!",
+        "sub_cue": "sunshine"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "A tiny root reached down below, a little shoot began to grow. Sunshine came with golden light, new leaves grew green and bright!",
+      "board": {
+        "type": "poem",
+        "title": "Root and shoot",
+        "icon": "🌱",
+        "lines": [
+          {
+            "icon": "⬇️",
+            "text": "A tiny root reached down below,",
+            "cue": "root"
+          },
+          {
+            "icon": "🌱",
+            "text": "a little shoot began to grow.",
+            "cue": "shoot"
+          },
+          {
+            "icon": "☀️",
+            "text": "Sunshine came with golden light,",
+            "cue": "sun"
+          },
+          {
+            "icon": "🍃",
+            "text": "new leaves grew green and bright!",
+            "cue": "leaves"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Leaves are like little kitchens. They make food from sunlight!",
+      "punch": "kitchens",
+      "board": {
+        "type": "big",
+        "icon": "🍃",
+        "text": "Leaves make food",
+        "cue": "leaves",
+        "sub": "Using sunlight",
+        "sub_cue": "sunlight"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "It grew and grew, a little more, up past the window, past the door! Then on the top, one sunny hour, it opened up a yellow flower!",
+      "board": {
+        "type": "poem",
+        "title": "Up and up",
+        "icon": "🌻",
+        "lines": [
+          {
+            "icon": "🌿",
+            "text": "It grew and grew, a little more,",
+            "cue": "grew"
+          },
+          {
+            "icon": "🪟",
+            "text": "up past the window, past the door!",
+            "cue": "window"
+          },
+          {
+            "icon": "☀️",
+            "text": "Then on the top, one sunny hour,",
+            "cue": "sunny"
+          },
+          {
+            "icon": "🌻",
+            "text": "it opened up a yellow flower!",
+            "cue": "flower"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Inside that flower, new seeds form!",
+      "board": {
+        "type": "big",
+        "icon": "🌻",
+        "text": "New seeds inside!",
+        "cue": "seeds"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Then it made new seeds to share, the wind blew them here and there. Plant a seed and you will see, it might grow up as big as me!",
+      "board": {
+        "type": "poem",
+        "title": "Seeds again",
+        "icon": "🌰",
+        "lines": [
+          {
+            "icon": "🌻",
+            "text": "Then it made new seeds to share,",
+            "cue": "made"
+          },
+          {
+            "icon": "🌬️",
+            "text": "the wind blew them here and there.",
+            "cue": "wind"
+          },
+          {
+            "icon": "🌰",
+            "text": "Plant a seed and you will see,",
+            "cue": "plant"
+          },
+          {
+            "icon": "🧒",
+            "text": "it might grow up as big as me!",
+            "cue": "big"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "So a seed needs water, sunshine, air and time. Ask a grown-up to help you plant one!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "💧",
+            "text": "Water",
+            "cue": "water"
+          },
+          {
+            "icon": "☀️",
+            "text": "Sunshine",
+            "cue": "sunshine"
+          },
+          {
+            "icon": "💨",
+            "text": "Air",
+            "cue": "air"
+          },
+          {
+            "icon": "⏳",
+            "text": "Time",
+            "cue": "time"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Follow Curio Kids Club for more wonders. And next time someone asks... want to hear how a little seed grows?"
+    }
+  ]
+}

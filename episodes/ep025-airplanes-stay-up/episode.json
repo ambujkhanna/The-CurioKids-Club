@@ -1,0 +1,175 @@
+{
+  "id": "ep025",
+  "slug": "airplanes-stay-up",
+  "status": "ready",
+  "title": "How Do Airplanes Stay Up? ✈️ Fun Facts for Kids",
+  "cover_text": "HOW DO PLANES FLY?",
+  "description": "Engines push, wings lift, and up the plane goes! Leo asks, Dad explains how a giant airplane stays up in the sky, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Airplanes",
+    "#Shorts"
+  ],
+  "tags": [
+    "how airplanes fly for kids",
+    "how planes stay up",
+    "lift",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "DAD"
+  ],
+  "loop_card": {
+    "text": "How do planes stay up?",
+    "cue": "next",
+    "left": "✈️",
+    "right": "☁️"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Dad, how do airplanes stay up in the sky?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "✈️",
+          "label": "Airplane"
+        },
+        "right": {
+          "icon": "☁️",
+          "label": "Stay up?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "It's all about the wings! Planes have big wings that are shaped and tilted just right.",
+      "board": {
+        "type": "big",
+        "icon": "✈️",
+        "text": "It's the wings!",
+        "cue": "wings",
+        "sub": "Shaped and tilted",
+        "sub_cue": "tilted"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "But the wings don't even flap like a bird's."
+    },
+    {
+      "who": "DAD",
+      "text": "They don't need to! First, big engines push the plane forward, really fast.",
+      "board": {
+        "type": "big",
+        "icon": "💨",
+        "text": "Engines push forward",
+        "cue": "engines",
+        "sub": "Really fast!",
+        "sub_cue": "fast"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "As the plane zooms along, air rushes past the wings. The tilted wings push that air down...",
+      "board": {
+        "type": "steps",
+        "title": "Zoom!",
+        "items": [
+          {
+            "icon": "✈️",
+            "label": "The plane zooms",
+            "cue": "zooms"
+          },
+          {
+            "icon": "💨",
+            "label": "Air rushes past",
+            "cue": "rushes"
+          },
+          {
+            "icon": "⬇️",
+            "label": "Wings push air down",
+            "cue": "down"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "...and the air pushes the wings back up! That upward push is called lift.",
+      "punch": "lift",
+      "board": {
+        "type": "big",
+        "icon": "⬆️",
+        "text": "LIFT!",
+        "cue": "lift",
+        "sub": "Air pushes the wings up",
+        "sub_cue": "upward"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Does a paper airplane have lift too?"
+    },
+    {
+      "who": "DAD",
+      "text": "Yes! Its paper wings make a little bit of lift. And your throw is its engine!",
+      "board": {
+        "type": "big",
+        "icon": "📄",
+        "text": "Your throw = the engine",
+        "cue": "throw",
+        "sub": "Paper wings lift too",
+        "sub_cue": "wings"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How does a big plane come back down?"
+    },
+    {
+      "who": "DAD",
+      "text": "The pilot slows the engines and tips the nose a little lower, so the plane glides gently down to the runway.",
+      "board": {
+        "type": "big",
+        "icon": "🛬",
+        "text": "Slow down, glide down",
+        "cue": "glides",
+        "sub": "Hello, runway!",
+        "sub_cue": "runway"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So the engines push it forward, and the wings lift it up!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "💨",
+            "text": "Engines push",
+            "cue": "engines"
+          },
+          {
+            "icon": "✈️",
+            "text": "Wings lift",
+            "cue": "wings"
+          },
+          {
+            "icon": "⬆️",
+            "text": "Up it goes!",
+            "cue": "up"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Ready for takeoff! Follow Curio Kids Club for more wonders. And next time someone asks... how do airplanes stay up in the sky?"
+    }
+  ]
+}

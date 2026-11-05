@@ -1,0 +1,274 @@
+{
+  "id": "ep019",
+  "slug": "five-senses-rhyme",
+  "status": "ready",
+  "title": "My Five Senses Rhyme 👀 Poem for Kids",
+  "cover_text": "5 SENSES!",
+  "description": "See, hear, smell, taste and touch! Leo and big sister Mia take turns with a rhyme about your five senses, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsPoems",
+    "#KidsLearning",
+    "#FiveSenses",
+    "#Shorts"
+  ],
+  "tags": [
+    "five senses for kids",
+    "five senses rhyme",
+    "poem for kids",
+    "kids poem",
+    "human body for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "How many senses?",
+    "cue": "next",
+    "left": "👀",
+    "right": "🖐️"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, how many senses do I have?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "👀",
+          "label": "Senses"
+        },
+        "right": {
+          "icon": "🖐️",
+          "label": "How many?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Five! Let's say them in a rhyme. I'll start, then you take a turn.",
+      "punch": "five",
+      "board": {
+        "type": "big",
+        "icon": "🖐️",
+        "text": "Five senses!",
+        "cue": "five",
+        "sub": "A rhyme, taking turns",
+        "sub_cue": "rhyme"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "My eyes can see the big blue sky, the yellow sun, a bird up high!",
+      "board": {
+        "type": "poem",
+        "title": "I can see",
+        "icon": "👀",
+        "lines": [
+          {
+            "text": "My eyes can see the big blue sky,",
+            "icon": "👀",
+            "cue": "eyes"
+          },
+          {
+            "text": "the yellow sun, a bird up high!",
+            "icon": "🐦",
+            "cue": "bird"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "My ears can hear the rain go drum, a buzzing bee, a happy hum!",
+      "board": {
+        "type": "poem",
+        "title": "I can hear",
+        "icon": "👂",
+        "lines": [
+          {
+            "text": "My ears can hear the rain go drum,",
+            "icon": "🌧️",
+            "cue": "rain"
+          },
+          {
+            "text": "a buzzing bee, a happy hum!",
+            "icon": "🐝",
+            "cue": "buzzing"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "My nose can smell a baking pie, and flowers as I wander by.",
+      "board": {
+        "type": "poem",
+        "title": "I can smell",
+        "icon": "👃",
+        "lines": [
+          {
+            "text": "My nose can smell a baking pie,",
+            "icon": "🥧",
+            "cue": "pie"
+          },
+          {
+            "text": "and flowers as I wander by.",
+            "icon": "🌸",
+            "cue": "flowers"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "My tongue tastes lemons, sour and bright, and sweet ripe peaches, bite by bite!",
+      "board": {
+        "type": "poem",
+        "title": "I can taste",
+        "icon": "👅",
+        "lines": [
+          {
+            "text": "My tongue tastes lemons,",
+            "icon": "👅",
+            "cue": "tongue"
+          },
+          {
+            "text": "sour and bright,",
+            "icon": "🍋",
+            "cue": "sour"
+          },
+          {
+            "text": "and sweet ripe peaches,",
+            "icon": "🍑",
+            "cue": "peaches"
+          },
+          {
+            "text": "bite by bite!",
+            "icon": "😋",
+            "cue": "bite"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "My hands can touch my kitten's fur, so soft and warm, I hear her purr!",
+      "board": {
+        "type": "poem",
+        "title": "I can touch",
+        "icon": "✋",
+        "lines": [
+          {
+            "text": "My hands can touch",
+            "icon": "✋",
+            "cue": "hands"
+          },
+          {
+            "text": "my kitten's fur,",
+            "icon": "🐱",
+            "cue": "kitten"
+          },
+          {
+            "text": "so soft and warm,",
+            "icon": "🧸",
+            "cue": "soft"
+          },
+          {
+            "text": "I hear her purr!",
+            "icon": "😺",
+            "cue": "purr"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "That's all five! See, hear, smell, taste and touch!",
+      "board": {
+        "type": "gallery",
+        "title": "My five senses",
+        "items": [
+          {
+            "icon": "👀",
+            "label": "See",
+            "cue": "see"
+          },
+          {
+            "icon": "👂",
+            "label": "Hear",
+            "cue": "hear"
+          },
+          {
+            "icon": "👃",
+            "label": "Smell",
+            "cue": "smell"
+          },
+          {
+            "icon": "👅",
+            "label": "Taste",
+            "cue": "taste"
+          },
+          {
+            "icon": "✋",
+            "label": "Touch",
+            "cue": "touch"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Here's a fun fact. Your brain puts all five senses together, so you know what's going on around you.",
+      "board": {
+        "type": "big",
+        "icon": "🧠",
+        "text": "Your brain mixes them!",
+        "cue": "brain",
+        "sub": "All five together",
+        "sub_cue": "together"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So my senses are my brain's little helpers!"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Let's finish together. Five senses help me every day, to learn and grow and laugh and play!",
+      "board": {
+        "type": "poem",
+        "title": "Every day",
+        "icon": "🌈",
+        "lines": [
+          {
+            "text": "Five senses help me",
+            "icon": "🖐️",
+            "cue": "senses"
+          },
+          {
+            "text": "every day,",
+            "icon": "☀️",
+            "cue": "day"
+          },
+          {
+            "text": "to learn and grow",
+            "icon": "🌱",
+            "cue": "grow"
+          },
+          {
+            "text": "and laugh and play!",
+            "icon": "😄",
+            "cue": "play"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Lovely rhyming! Follow Curio Kids Club for more wonders. And next time someone asks... how many senses do I have?"
+    }
+  ]
+}

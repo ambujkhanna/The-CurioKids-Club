@@ -1,0 +1,183 @@
+{
+  "id": "ep029",
+  "slug": "why-we-yawn",
+  "status": "ready",
+  "title": "Why Do We Yawn? 🥱 Fun Facts for Kids",
+  "cover_text": "WHY YAWN?",
+  "description": "Even scientists are still puzzling over yawns, and yes, they're catching! Leo asks, big sister Mia shares the best ideas, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#HumanBody",
+    "#Shorts"
+  ],
+  "tags": [
+    "why do we yawn",
+    "yawning facts for kids",
+    "contagious yawns",
+    "human body for kids",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why do we yawn?",
+    "cue": "next",
+    "left": "🥱",
+    "right": "🤔"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why do we yawn?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🥱",
+          "label": "Yawn"
+        },
+        "right": {
+          "icon": "🤔",
+          "label": "Why?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Here's a funny secret. Scientists still aren't totally sure!",
+      "punch": "sure",
+      "board": {
+        "type": "big",
+        "icon": "🤔",
+        "text": "Scientists aren't sure!",
+        "cue": "scientists"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Really? But everybody yawns!"
+    },
+    {
+      "who": "MIA",
+      "text": "We do! We yawn when we're sleepy, when we wake up, and sometimes when we're bored.",
+      "board": {
+        "type": "gallery",
+        "title": "When we yawn",
+        "items": [
+          {
+            "icon": "😴",
+            "label": "Sleepy",
+            "cue": "sleepy"
+          },
+          {
+            "icon": "🌅",
+            "label": "Waking up",
+            "cue": "wake"
+          },
+          {
+            "icon": "😐",
+            "label": "Bored",
+            "cue": "bored"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So what do scientists think?"
+    },
+    {
+      "who": "MIA",
+      "text": "One big idea is that a yawn helps cool down your brain, with a big gulp of air.",
+      "board": {
+        "type": "big",
+        "icon": "🧠",
+        "text": "Cooling your brain?",
+        "cue": "cool",
+        "sub": "A big gulp of air",
+        "sub_cue": "gulp"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Another idea is that a yawn and a stretch help wake your body up.",
+      "board": {
+        "type": "big",
+        "icon": "🙆",
+        "text": "A wake-up stretch?",
+        "cue": "stretch",
+        "sub": "Wakey, wakey!",
+        "sub_cue": "wake"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why do I yawn when you yawn?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yawns are catching! Just seeing someone yawn, or even hearing about yawns, can make you yawn too.",
+      "punch": "catching",
+      "board": {
+        "type": "big",
+        "icon": "😮",
+        "text": "Yawns are catching!",
+        "cue": "catching",
+        "sub": "Just seeing one works",
+        "sub_cue": "seeing"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Do animals yawn too?"
+    },
+    {
+      "who": "MIA",
+      "text": "Lots of them do! Dogs, cats, lions, and even fish can yawn.",
+      "board": {
+        "type": "gallery",
+        "title": "Yawning animals",
+        "items": [
+          {
+            "icon": "🐶",
+            "label": "Dogs",
+            "cue": "dogs"
+          },
+          {
+            "icon": "🐱",
+            "label": "Cats",
+            "cue": "cats"
+          },
+          {
+            "icon": "🦁",
+            "label": "Lions",
+            "cue": "lions"
+          },
+          {
+            "icon": "🐟",
+            "label": "Fish",
+            "cue": "fish"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Uh oh, I think I'm yawning right now! Are you yawning too?",
+      "board": {
+        "type": "big",
+        "icon": "🥱",
+        "text": "Are you yawning too?",
+        "cue": "yawning"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Told you they're catching! Follow Curio Kids Club for more wonders. And next time someone asks... why do we yawn?"
+    }
+  ]
+}

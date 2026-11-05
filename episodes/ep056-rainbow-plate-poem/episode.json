@@ -1,0 +1,24 @@
+{
+  "id": "ep056", "slug": "rainbow-plate-poem", "status": "ready",
+  "title": "Rainbow Plate Rhyme 🌈 Fruits and Veggies for Kids",
+  "cover_text": "EAT A RAINBOW!",
+  "description": "Red, orange, yellow, green, blue and purple! Leo and Mia take turns with an original rhyme about eating a rainbow of fruits and veggies, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": ["#KidsLearning", "#KidsPoems", "#HealthyEating", "#Shorts"],
+  "tags": ["rainbow plate poem", "fruits and vegetables for kids", "healthy eating rhyme", "colours for kids", "kids poems", "kids learning"],
+  "cast": ["LEO", "MIA"],
+  "loop_card": {"text": "Eat a rainbow!", "cue": "next", "left": "🌈", "right": "🥦"},
+  "lines": [
+    {"who": "LEO", "text": "Mia, can you eat a rainbow?", "board": {"type": "title", "left": {"icon": "🌈", "label": "Rainbow"}, "right": {"icon": "🍽️", "label": "On a plate?"}, "mid": "?"}},
+    {"who": "MIA", "text": "You can! Fruits and veggies come in every colour. Let's take turns with a rhyme!", "board": {"type": "big", "icon": "🥦", "text": "Eat all the colours!", "cue": "colour", "sub": "Let's rhyme!", "sub_cue": "rhyme"}},
+    {"who": "MIA", "text": "Red strawberries, juicy and sweet. Red peppers make a crunchy treat!", "board": {"type": "poem", "title": "Red", "icon": "🍓", "lines": [{"icon": "🍓", "text": "Red strawberries, juicy and sweet,", "cue": "strawberries"}, {"icon": "🌶️", "text": "Red peppers make a crunchy treat!", "cue": "peppers"}]}},
+    {"who": "LEO", "text": "Carrots go crunch, what a sound! Orange oranges, juicy and round!", "board": {"type": "poem", "title": "Orange", "icon": "🥕", "lines": [{"icon": "🥕", "text": "Carrots go crunch, what a sound!", "cue": "carrots"}, {"icon": "🍊", "text": "Orange oranges, juicy and round!", "cue": "oranges"}]}},
+    {"who": "MIA", "text": "Yellow bananas, curvy and bright. Yellow corn kernels, a sunny bite!", "board": {"type": "poem", "title": "Yellow", "icon": "🍌", "lines": [{"icon": "🍌", "text": "Yellow bananas, curvy and bright,", "cue": "bananas"}, {"icon": "🌽", "text": "Yellow corn kernels, a sunny bite!", "cue": "corn"}]}},
+    {"who": "LEO", "text": "Green is for broccoli, tiny trees. Green peas in pods, yes please!", "board": {"type": "poem", "title": "Green", "icon": "🥦", "lines": [{"icon": "🥦", "text": "Green is for broccoli, tiny trees,", "cue": "broccoli"}, {"icon": "🫛", "text": "Green peas in pods, yes please!", "cue": "peas"}]}},
+    {"who": "MIA", "text": "Blue blueberries, tiny and round. Purple grapes, a bunch I found!", "board": {"type": "poem", "title": "Blue and purple", "icon": "🫐", "lines": [{"icon": "🫐", "text": "Blue blueberries, tiny and round,", "cue": "blueberries"}, {"icon": "🍇", "text": "Purple grapes, a bunch I found!", "cue": "grapes"}]}},
+    {"who": "LEO", "text": "But why should I eat all the colours?"},
+    {"who": "MIA", "text": "Different colours have different good stuff inside, and together they help your body grow and stay strong.", "punch": "strong", "board": {"type": "big", "icon": "💪", "text": "Each colour helps you", "cue": "colours", "sub": "Grow and stay strong", "sub_cue": "grow"}},
+    {"who": "LEO", "text": "Every colour helps me grow strong, so I'll eat a rainbow all day long!", "board": {"type": "poem", "title": "The rainbow rule", "icon": "🌈", "lines": [{"icon": "💪", "text": "Every colour helps me grow strong,", "cue": "every"}, {"icon": "🌈", "text": "I'll eat a rainbow all day long!", "cue": "rainbow"}]}},
+    {"who": "MIA", "text": "Red, orange, yellow, green, blue and purple. How many colours can you put on your plate today?", "board": {"type": "gallery", "title": "Rainbow plate", "items": [{"icon": "🍓", "label": "Red", "cue": "red"}, {"icon": "🥕", "label": "Orange", "cue": "orange"}, {"icon": "🍌", "label": "Yellow", "cue": "yellow"}, {"icon": "🥦", "label": "Green", "cue": "green"}, {"icon": "🫐", "label": "Blue", "cue": "blue"}, {"icon": "🍇", "label": "Purple", "cue": "purple"}]}},
+    {"who": "MIA", "text": "Yum! Follow Curio Kids Club for more wonders. And next time someone asks... can you eat a rainbow?"}
+  ]
+}

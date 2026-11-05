@@ -1,0 +1,186 @@
+{
+  "id": "ep017",
+  "slug": "bees-make-honey",
+  "status": "ready",
+  "title": "How Do Bees Make Honey? 🍯 Fun Facts for Kids",
+  "cover_text": "HONEY?!",
+  "description": "Bees turn flower juice into sweet, sticky honey! Leo asks, big sister Mia explains every step, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Bees",
+    "#Shorts"
+  ],
+  "tags": [
+    "bee facts for kids",
+    "how bees make honey",
+    "honey",
+    "nectar",
+    "animal facts",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "How do bees make honey?",
+    "cue": "next",
+    "left": "🐝",
+    "right": "🍯"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, how do bees make honey?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🐝",
+          "label": "Bee"
+        },
+        "right": {
+          "icon": "🍯",
+          "label": "Honey?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "It all starts with flowers! Bees sip a sweet juice from flowers, called nectar.",
+      "board": {
+        "type": "big",
+        "icon": "🌸",
+        "text": "Flower nectar",
+        "cue": "nectar",
+        "sub": "A sweet flower juice",
+        "sub_cue": "sweet"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Do they drink it all up?"
+    },
+    {
+      "who": "MIA",
+      "text": "Not all of it. A bee keeps the nectar in a special honey tummy, and flies it home to the hive.",
+      "board": {
+        "type": "big",
+        "icon": "🐝",
+        "text": "A special honey tummy",
+        "cue": "tummy",
+        "sub": "Then home to the hive",
+        "sub_cue": "hive"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And then it turns into honey?"
+    },
+    {
+      "who": "MIA",
+      "text": "Almost! At the hive, bees pass the nectar from bee to bee. They mix in special juices, then put it in little wax cells.",
+      "board": {
+        "type": "steps",
+        "title": "Back at the hive",
+        "items": [
+          {
+            "icon": "🐝",
+            "label": "Pass it bee to bee",
+            "cue": "pass"
+          },
+          {
+            "icon": "🧪",
+            "label": "Mix in bee juices",
+            "cue": "mix"
+          },
+          {
+            "icon": "🍯",
+            "label": "Into little wax cells",
+            "cue": "cells"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "But nectar is runny. Honey is thick!"
+    },
+    {
+      "who": "MIA",
+      "text": "Great noticing! The bees fan their wings super fast to dry out the water. That makes it thick and sticky.",
+      "punch": "fan",
+      "board": {
+        "type": "big",
+        "icon": "🌬️",
+        "text": "Fanning wings dry it out",
+        "cue": "fan",
+        "sub": "Thick and sticky!",
+        "sub_cue": "thick"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "When it's ready, they close each little cell with a wax lid, like a tiny jar.",
+      "board": {
+        "type": "big",
+        "icon": "🍯",
+        "text": "Sealed with a wax lid",
+        "cue": "wax",
+        "sub": "Like a tiny jar!",
+        "sub_cue": "jar"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why do bees save so much honey?"
+    },
+    {
+      "who": "MIA",
+      "text": "It's their food for winter, when there are no flowers. And honey can keep for a very long time!",
+      "board": {
+        "type": "big",
+        "icon": "❄️",
+        "text": "Food for winter",
+        "cue": "winter",
+        "sub": "Honey keeps a long time",
+        "sub_cue": "keep"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So they sip nectar, pass it around, fan it dry, and seal it up. Honey!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "🌸",
+            "text": "Sip nectar",
+            "cue": "sip"
+          },
+          {
+            "icon": "🐝",
+            "text": "Pass it around",
+            "cue": "pass"
+          },
+          {
+            "icon": "🌬️",
+            "text": "Fan it dry",
+            "cue": "fan"
+          },
+          {
+            "icon": "🍯",
+            "text": "Seal it up",
+            "cue": "seal"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Sweet job! Follow Curio Kids Club for more wonders. And next time someone asks... how do bees make honey?"
+    }
+  ]
+}

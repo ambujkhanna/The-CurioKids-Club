@@ -1,0 +1,196 @@
+{
+  "id": "ep023",
+  "slug": "giraffe-long-necks",
+  "status": "ready",
+  "title": "Why Do Giraffes Have Long Necks? 🦒 Fun Facts for Kids",
+  "cover_text": "LONG NECK?!",
+  "description": "A giraffe's long neck has only seven bones, just like yours! Leo asks, big sister Mia explains why giraffes are so tall, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Giraffe",
+    "#Shorts"
+  ],
+  "tags": [
+    "giraffe facts for kids",
+    "why giraffes have long necks",
+    "animal facts",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why such long necks?",
+    "cue": "next",
+    "left": "🦒",
+    "right": "📏"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why do giraffes have such long necks?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🦒",
+          "label": "Giraffe"
+        },
+        "right": {
+          "icon": "📏",
+          "label": "Long neck?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Giraffes are the tallest animals in the world! Their long necks help them reach yummy leaves way up high.",
+      "punch": "tallest",
+      "board": {
+        "type": "big",
+        "icon": "🦒",
+        "text": "The tallest animal!",
+        "cue": "tallest",
+        "sub": "Reaching leaves up high",
+        "sub_cue": "leaves"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can't they just eat grass?"
+    },
+    {
+      "who": "MIA",
+      "text": "They can, but lots of animals eat the plants down low. Up in the tall trees, giraffes have the leaves almost all to themselves.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Down low",
+          "items": [
+            {
+              "text": "Lots of animals",
+              "icon": "🦓",
+              "cue": "lots"
+            },
+            {
+              "text": "Low plants",
+              "icon": "🌿",
+              "cue": "low"
+            }
+          ]
+        },
+        "right": {
+          "label": "Up high",
+          "items": [
+            {
+              "text": "Just giraffes",
+              "icon": "🦒",
+              "cue": "giraffes"
+            },
+            {
+              "text": "Tall trees",
+              "icon": "🌳",
+              "cue": "tall"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How many bones are in that long neck?"
+    },
+    {
+      "who": "MIA",
+      "text": "Guess what? Just seven, the same as you! A giraffe's neck bones are just super big.",
+      "punch": "seven",
+      "board": {
+        "type": "big",
+        "icon": "🦴",
+        "text": "7 neck bones",
+        "cue": "seven",
+        "sub": "Same as you!",
+        "sub_cue": "same"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "No way! Same as me?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yep! Scientists think long necks also help boy giraffes. They swing their necks to show who's the strongest.",
+      "board": {
+        "type": "big",
+        "icon": "💪",
+        "text": "Neck-swinging contests",
+        "cue": "swing",
+        "sub": "Scientists think",
+        "sub_cue": "scientists"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What about their tongues?"
+    },
+    {
+      "who": "MIA",
+      "text": "Their tongues are really long too, and a dark purple colour. They wrap them around leaves and pull!",
+      "board": {
+        "type": "big",
+        "icon": "👅",
+        "text": "Long, dark tongues",
+        "cue": "tongues",
+        "sub": "Wrap and pull!",
+        "sub_cue": "wrap"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How do they drink water?"
+    },
+    {
+      "who": "MIA",
+      "text": "They spread their front legs wide and bend way down. It looks a bit silly!",
+      "board": {
+        "type": "big",
+        "icon": "💧",
+        "text": "Legs wide to drink",
+        "cue": "spread",
+        "sub": "A bit silly!",
+        "sub_cue": "silly"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Long neck, long tongue, and seven neck bones, just like me!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "🦒",
+            "text": "Long neck",
+            "cue": "neck"
+          },
+          {
+            "icon": "👅",
+            "text": "Long tongue",
+            "cue": "tongue"
+          },
+          {
+            "icon": "🦴",
+            "text": "7 neck bones",
+            "cue": "seven"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Head and shoulders above! Follow Curio Kids Club for more wonders. And next time someone asks... why do giraffes have such long necks?"
+    }
+  ]
+}

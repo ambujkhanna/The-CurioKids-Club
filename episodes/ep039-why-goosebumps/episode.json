@@ -1,0 +1,203 @@
+{
+  "id": "ep039",
+  "slug": "why-goosebumps",
+  "status": "ready",
+  "title": "Why Do We Get Goosebumps? 🥶 Fun Facts for Kids",
+  "cover_text": "BUMPS?!",
+  "description": "Why do we get goosebumps? Tiny muscles make your hairs stand up! Leo asks, big sister Mia explains, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#HumanBody",
+    "#Shorts"
+  ],
+  "tags": [
+    "goosebumps for kids",
+    "why do we get goosebumps",
+    "human body for kids",
+    "body facts",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why goosebumps?",
+    "cue": "next",
+    "left": "🥶",
+    "right": "❓"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why do we get goosebumps?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🥶",
+          "label": "Goosebumps"
+        },
+        "right": {
+          "icon": "❓",
+          "label": "Why?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Goosebumps are tiny bumps on your skin. Each little bump is around a hair.",
+      "board": {
+        "type": "big",
+        "icon": "🧒",
+        "text": "Tiny bumps on skin",
+        "cue": "bumps",
+        "sub": "One at each hair",
+        "sub_cue": "hair"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why are they called goosebumps?"
+    },
+    {
+      "who": "MIA",
+      "text": "Because they look like the bumpy skin of a goose, under all its feathers!",
+      "punch": "goose",
+      "board": {
+        "type": "big",
+        "icon": "🪶",
+        "text": "Like goose skin!",
+        "cue": "goose",
+        "sub": "Under the feathers",
+        "sub_cue": "feathers"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What makes them pop up?"
+    },
+    {
+      "who": "MIA",
+      "text": "Every hair has a tiny muscle at its root. When you feel cold, these muscles squeeze, and the hairs stand up.",
+      "board": {
+        "type": "steps",
+        "title": "How it works",
+        "items": [
+          {
+            "label": "You feel cold",
+            "icon": "🥶",
+            "cue": "cold"
+          },
+          {
+            "label": "Tiny muscles squeeze",
+            "icon": "💪",
+            "cue": "squeeze"
+          },
+          {
+            "label": "Hairs stand up",
+            "icon": "⬆️",
+            "cue": "stand"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How does that help?"
+    },
+    {
+      "who": "MIA",
+      "text": "For furry animals, it helps a lot! Fluffed-up fur traps warm air, like a puffy coat.",
+      "board": {
+        "type": "big",
+        "icon": "🐱",
+        "text": "Fluffy fur traps warmth",
+        "cue": "fluff",
+        "sub": "Like a puffy coat",
+        "sub_cue": "puffy"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "But I'm not very furry!",
+      "punch": "furry"
+    },
+    {
+      "who": "MIA",
+      "text": "True! Our body hair is too thin to help. Scientists think goosebumps are left over from long ago, when our relatives were hairier.",
+      "board": {
+        "type": "big",
+        "icon": "🕰️",
+        "text": "Left over from long ago",
+        "cue": "left",
+        "sub": "Scientists think...",
+        "sub_cue": "scientists"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Do I only get them when I'm cold?"
+    },
+    {
+      "who": "MIA",
+      "text": "Not just when you're cold! Feeling excited, surprised, or hearing music you love can do it too.",
+      "board": {
+        "type": "gallery",
+        "title": "Goosebump times",
+        "items": [
+          {
+            "icon": "🥶",
+            "label": "Feeling cold",
+            "cue": "cold"
+          },
+          {
+            "icon": "🤩",
+            "label": "Excited",
+            "cue": "excited"
+          },
+          {
+            "icon": "😮",
+            "label": "Surprised",
+            "cue": "surprised"
+          },
+          {
+            "icon": "🎵",
+            "label": "Music",
+            "cue": "music"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Tiny muscles, hairs standing up, and a puffy coat from long ago!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Tiny muscles squeeze",
+            "icon": "💪",
+            "cue": "muscles"
+          },
+          {
+            "text": "Hairs stand up",
+            "icon": "⬆️",
+            "cue": "hairs"
+          },
+          {
+            "text": "Left from long ago",
+            "icon": "🕰️",
+            "cue": "long"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "You got it! Follow Curio Kids Club for more wonders. And next time someone asks... why do we get goosebumps?"
+    }
+  ]
+}

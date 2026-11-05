@@ -1,0 +1,5 @@
+out/
+pipeline/build/
+__pycache__/
+*.onnx
+voices.bin

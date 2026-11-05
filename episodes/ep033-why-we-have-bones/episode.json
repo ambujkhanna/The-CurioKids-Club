@@ -1,0 +1,215 @@
+{
+  "id": "ep033",
+  "slug": "why-we-have-bones",
+  "status": "ready",
+  "title": "Why Do We Have Bones? 🦴 Fun Facts for Kids",
+  "cover_text": "BONES!",
+  "description": "Why do we have bones? They hold you up, guard your heart and brain, and help you move! Leo asks, big sister Mia explains, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#HumanBody",
+    "#Shorts"
+  ],
+  "tags": [
+    "bones for kids",
+    "skeleton facts",
+    "human body for kids",
+    "healthy bones",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why bones?",
+    "cue": "next",
+    "left": "🦴",
+    "right": "❓"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why do we have bones?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🦴",
+          "label": "Bones"
+        },
+        "right": {
+          "icon": "🧒",
+          "label": "Why?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Bones are your body's frame! Without them, you would be floppy, like a jelly.",
+      "punch": "floppy",
+      "board": {
+        "type": "big",
+        "icon": "🦴",
+        "text": "Bones hold you up",
+        "cue": "frame",
+        "sub": "No more floppy!",
+        "sub_cue": "floppy"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What else do bones do?"
+    },
+    {
+      "who": "MIA",
+      "text": "They protect the soft parts inside. Your skull guards your brain, and your ribs guard your heart and lungs.",
+      "board": {
+        "type": "gallery",
+        "title": "Bone guards",
+        "items": [
+          {
+            "icon": "🧠",
+            "label": "Skull: brain",
+            "cue": "skull"
+          },
+          {
+            "icon": "❤️",
+            "label": "Ribs: heart",
+            "cue": "ribs"
+          },
+          {
+            "icon": "🫁",
+            "label": "Ribs: lungs",
+            "cue": "lungs"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Do bones help me move, too?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Muscles pull on your bones to move them, and joints like your knees and elbows let you bend.",
+      "board": {
+        "type": "gallery",
+        "title": "Let's move",
+        "items": [
+          {
+            "icon": "💪",
+            "label": "Muscles pull",
+            "cue": "muscles"
+          },
+          {
+            "icon": "🦵",
+            "label": "Knees bend",
+            "cue": "knees"
+          },
+          {
+            "icon": "🤸",
+            "label": "Elbows bend",
+            "cue": "elbows"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How many bones do I have?"
+    },
+    {
+      "who": "MIA",
+      "text": "Grown-ups have 206 bones. Babies are born with more, about 300, and some of them join together as they grow!",
+      "board": {
+        "type": "big",
+        "icon": "👶",
+        "text": "Babies: about 300",
+        "cue": "babies",
+        "sub": "Grown-ups: 206",
+        "sub_cue": "grown"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Whoa! Are bones alive?"
+    },
+    {
+      "who": "MIA",
+      "text": "They are! Bones are living and growing. And inside many bones is soft marrow that makes new blood cells.",
+      "punch": "living",
+      "board": {
+        "type": "big",
+        "icon": "🔴",
+        "text": "Marrow makes blood cells",
+        "cue": "marrow",
+        "sub": "Bones are alive!",
+        "sub_cue": "living"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How do I keep my bones strong?"
+    },
+    {
+      "who": "MIA",
+      "text": "Run, jump and play every day, and eat foods with calcium, like milk, yogurt and leafy greens.",
+      "board": {
+        "type": "checklist",
+        "title": "Strong bones",
+        "icon": "🦴",
+        "items": [
+          {
+            "text": "Run, jump and play",
+            "icon": "🏃",
+            "cue": "run",
+            "ok": true
+          },
+          {
+            "text": "Milk and yogurt",
+            "icon": "🥛",
+            "cue": "milk",
+            "ok": true
+          },
+          {
+            "text": "Leafy greens",
+            "icon": "🥬",
+            "cue": "leafy",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Bones hold me up, protect me and help me move!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Hold you up",
+            "icon": "🦴",
+            "cue": "hold"
+          },
+          {
+            "text": "Protect soft parts",
+            "icon": "🛡️",
+            "cue": "protect"
+          },
+          {
+            "text": "Help you move",
+            "icon": "🤸",
+            "cue": "move"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "That's right! Follow Curio Kids Club for more wonders. And next time someone asks... why do we have bones?"
+    }
+  ]
+}

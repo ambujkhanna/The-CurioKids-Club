@@ -1,0 +1,193 @@
+{
+  "id": "ep022",
+  "slug": "autumn-leaves-colour",
+  "status": "ready",
+  "title": "Why Do Leaves Change Colour in Autumn? 🍂 Fun Facts",
+  "cover_text": "WHY ORANGE?",
+  "description": "Autumn colours were hiding in the leaves all summer! Leo asks, big sister Mia explains where the green goes, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Nature",
+    "#Shorts"
+  ],
+  "tags": [
+    "autumn leaves for kids",
+    "why leaves change colour",
+    "fall leaves",
+    "nature for kids",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why do leaves change colour?",
+    "cue": "next",
+    "left": "🍃",
+    "right": "🍂"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why do leaves change colour?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🍃",
+          "label": "Green"
+        },
+        "right": {
+          "icon": "🍂",
+          "label": "Orange?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "It's a colour secret! In summer, leaves are full of green stuff called chlorophyll.",
+      "board": {
+        "type": "big",
+        "icon": "🍃",
+        "text": "Green chlorophyll",
+        "cue": "green",
+        "sub": "Say: KLOR-oh-fill",
+        "sub_cue": "chlorophyll"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What does chlorophyll do?"
+    },
+    {
+      "who": "MIA",
+      "text": "It helps the leaf turn sunlight into food for the tree.",
+      "board": {
+        "type": "big",
+        "icon": "☀️",
+        "text": "Sunlight into food",
+        "cue": "sunlight",
+        "sub": "Food for the tree",
+        "sub_cue": "food"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So why do leaves turn orange?"
+    },
+    {
+      "who": "MIA",
+      "text": "In autumn, the days get shorter and cooler. The tree stops making chlorophyll, and the green slowly fades away.",
+      "board": {
+        "type": "steps",
+        "title": "In autumn",
+        "items": [
+          {
+            "icon": "🌙",
+            "label": "Shorter days",
+            "cue": "shorter"
+          },
+          {
+            "icon": "🌡️",
+            "label": "Cooler weather",
+            "cue": "cooler"
+          },
+          {
+            "icon": "🍃",
+            "label": "The green fades",
+            "cue": "fades"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "And here's the secret. Yellow and orange were hiding in the leaf all summer long. Now we can finally see them!",
+      "punch": "hiding",
+      "board": {
+        "type": "big",
+        "icon": "🍂",
+        "text": "Hidden yellow and orange",
+        "cue": "hiding",
+        "sub": "There all summer!",
+        "sub_cue": "summer"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What about the red leaves?"
+    },
+    {
+      "who": "MIA",
+      "text": "Some trees make brand new red and purple colours in autumn. That's why maple trees can look so bright.",
+      "board": {
+        "type": "big",
+        "icon": "🍁",
+        "text": "Red is made new!",
+        "cue": "red",
+        "sub": "In trees like maples",
+        "sub_cue": "maple"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Then why do the leaves fall off?"
+    },
+    {
+      "who": "MIA",
+      "text": "The tree lets them go, and rests all winter. Then in spring, brand new green leaves grow!",
+      "board": {
+        "type": "steps",
+        "title": "Then what?",
+        "items": [
+          {
+            "icon": "🍂",
+            "label": "Leaves let go",
+            "cue": "go"
+          },
+          {
+            "icon": "😴",
+            "label": "Tree rests in winter",
+            "cue": "rests"
+          },
+          {
+            "icon": "🌱",
+            "label": "New leaves in spring",
+            "cue": "spring"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So the green goes away, and the hidden colours come out to play!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "🍃",
+            "text": "Green fades away",
+            "cue": "green"
+          },
+          {
+            "icon": "🍂",
+            "text": "Hidden colours show",
+            "cue": "hidden"
+          },
+          {
+            "icon": "🍁",
+            "text": "Colours come out!",
+            "cue": "colours"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "You got it! Follow Curio Kids Club for more wonders. And next time someone asks... why do leaves change colour?"
+    }
+  ]
+}

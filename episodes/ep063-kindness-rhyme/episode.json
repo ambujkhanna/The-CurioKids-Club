@@ -1,0 +1,271 @@
+{
+  "id": "ep063",
+  "slug": "kindness-rhyme",
+  "status": "ready",
+  "title": "Kindness Rhyme for Kids 💛 Sharing and Helping Poem",
+  "cover_text": "BE KIND!",
+  "description": "A cheerful little rhyme about sharing, helping and kind words! Mia recites an original kindness poem for kids, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsPoems",
+    "#Kindness",
+    "#KidsLearning",
+    "#Shorts"
+  ],
+  "tags": [
+    "kindness poem for kids",
+    "sharing rhyme",
+    "helping others",
+    "kids poems",
+    "rhymes for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Be kind!",
+    "cue": "next",
+    "left": "💛",
+    "right": "🤝"
+  },
+  "lines": [
+    {
+      "who": "MIA",
+      "text": "Want to hear a rhyme about being kind?",
+      "punch": "kind",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🤝",
+          "label": "Sharing"
+        },
+        "right": {
+          "icon": "💛",
+          "label": "Helping"
+        },
+        "mid": "+",
+        "subtitle": "A kindness rhyme"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Kindness means sharing, helping and gentle words. Here's my Kindness Rhyme!",
+      "board": {
+        "type": "big",
+        "icon": "💛",
+        "text": "The Kindness Rhyme",
+        "cue": "rhyme",
+        "sub": "Sharing and helping",
+        "sub_cue": "sharing"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "When you have a treat to share, give some to a friend right there. One for you and one for me, sharing makes us smile with glee!",
+      "board": {
+        "type": "poem",
+        "title": "Sharing",
+        "icon": "🍪",
+        "lines": [
+          {
+            "icon": "🍪",
+            "text": "When you have a treat to share,",
+            "cue": "treat"
+          },
+          {
+            "icon": "🤝",
+            "text": "give some to a friend right there.",
+            "cue": "give"
+          },
+          {
+            "icon": "👫",
+            "text": "One for you and one for me,",
+            "cue": "one"
+          },
+          {
+            "icon": "😄",
+            "text": "sharing makes us smile with glee!",
+            "cue": "smile"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "If a friend falls on the ground, help them up and stay around. Ask them, are you feeling sad? A friendly word makes them glad.",
+      "board": {
+        "type": "poem",
+        "title": "Helping",
+        "icon": "🤲",
+        "lines": [
+          {
+            "icon": "🧒",
+            "text": "If a friend falls on the ground,",
+            "cue": "falls"
+          },
+          {
+            "icon": "🤲",
+            "text": "help them up and stay around.",
+            "cue": "help"
+          },
+          {
+            "icon": "💬",
+            "text": "Ask them, are you feeling sad?",
+            "cue": "ask"
+          },
+          {
+            "icon": "🌈",
+            "text": "A friendly word makes them glad.",
+            "cue": "glad"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "You can help at home too, like picking up toys or watering plants.",
+      "board": {
+        "type": "gallery",
+        "title": "Ways to help",
+        "items": [
+          {
+            "icon": "🧸",
+            "label": "Pick up toys",
+            "cue": "toys"
+          },
+          {
+            "icon": "🪴",
+            "label": "Water plants",
+            "cue": "watering"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Hold the door and wait your turn, kind is something we can learn. Say please and thanks every day, kindness is the friendly way!",
+      "board": {
+        "type": "poem",
+        "title": "Manners",
+        "icon": "🚪",
+        "lines": [
+          {
+            "icon": "🚪",
+            "text": "Hold the door and wait your turn,",
+            "cue": "door"
+          },
+          {
+            "icon": "📚",
+            "text": "kind is something we can learn.",
+            "cue": "learn"
+          },
+          {
+            "icon": "🙏",
+            "text": "Say please and thanks every day,",
+            "cue": "please"
+          },
+          {
+            "icon": "💛",
+            "text": "kindness is the friendly way!",
+            "cue": "way"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Tiny kind things make big smiles!",
+      "board": {
+        "type": "big",
+        "icon": "✨",
+        "text": "Tiny kindness, big smiles",
+        "cue": "tiny"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Kindness is a little seed, plant it with each friendly deed. Water it with smiles and care, soon you'll see it everywhere!",
+      "board": {
+        "type": "poem",
+        "title": "Grow kindness",
+        "icon": "🌱",
+        "lines": [
+          {
+            "icon": "🌱",
+            "text": "Kindness is a little seed,",
+            "cue": "seed"
+          },
+          {
+            "icon": "🤲",
+            "text": "plant it with each friendly deed.",
+            "cue": "deed"
+          },
+          {
+            "icon": "💧",
+            "text": "Water it with smiles and care,",
+            "cue": "water"
+          },
+          {
+            "icon": "🌍",
+            "text": "soon you'll see it everywhere!",
+            "cue": "everywhere"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Let's say it together: share, help, be gentle!",
+      "punch": "together",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "🍪",
+            "text": "Share",
+            "cue": "share"
+          },
+          {
+            "icon": "🤲",
+            "text": "Help",
+            "cue": "help"
+          },
+          {
+            "icon": "💬",
+            "text": "Be gentle",
+            "cue": "gentle"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Who will you be kind to today? A friend, a grown-up, or a pet?",
+      "board": {
+        "type": "gallery",
+        "title": "Be kind to...",
+        "items": [
+          {
+            "icon": "👫",
+            "label": "A friend",
+            "cue": "friend"
+          },
+          {
+            "icon": "🧑",
+            "label": "A grown-up",
+            "cue": "grown"
+          },
+          {
+            "icon": "🐶",
+            "label": "A pet",
+            "cue": "pet"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Follow Curio Kids Club for more wonders. And next time someone asks... want to hear a rhyme about being kind?"
+    }
+  ]
+}

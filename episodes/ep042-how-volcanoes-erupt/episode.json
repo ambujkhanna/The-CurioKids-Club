@@ -1,0 +1,215 @@
+{
+  "id": "ep042",
+  "slug": "how-volcanoes-erupt",
+  "status": "ready",
+  "title": "How Do Volcanoes Erupt? 🌋 Science for Kids",
+  "cover_text": "ERUPT!",
+  "description": "How do volcanoes erupt? Melted rock, pushing gas, and out comes lava! Leo asks, big sister Mia explains, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Volcano",
+    "#Shorts"
+  ],
+  "tags": [
+    "volcanoes for kids",
+    "how volcanoes erupt",
+    "magma and lava",
+    "earth science for kids",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "How do volcanoes erupt?",
+    "cue": "next",
+    "left": "🌋",
+    "right": "💥"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, how do volcanoes erupt?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🌋",
+          "label": "Volcano"
+        },
+        "right": {
+          "icon": "💥",
+          "label": "Erupt?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Deep under the ground, it's so hot that some rock melts into a thick, gooey liquid called magma.",
+      "punch": "magma",
+      "board": {
+        "type": "big",
+        "icon": "🔥",
+        "text": "Melted rock: magma",
+        "cue": "magma",
+        "sub": "Deep underground",
+        "sub_cue": "deep"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Melted rock? Whoa!"
+    },
+    {
+      "who": "MIA",
+      "text": "Magma is lighter than the solid rock around it, so it slowly rises up, like a bubble in honey.",
+      "board": {
+        "type": "big",
+        "icon": "🍯",
+        "text": "Magma rises up",
+        "cue": "rises",
+        "sub": "Like a bubble in honey",
+        "sub_cue": "bubble"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Then what happens?"
+    },
+    {
+      "who": "MIA",
+      "text": "It collects in a big pocket called a magma chamber. Gases in the magma push harder and harder, like a shaken-up fizzy drink.",
+      "board": {
+        "type": "steps",
+        "title": "Inside a volcano",
+        "items": [
+          {
+            "label": "Magma chamber",
+            "icon": "🕳️",
+            "cue": "chamber"
+          },
+          {
+            "label": "Gases push",
+            "icon": "💨",
+            "cue": "gases"
+          },
+          {
+            "label": "Like a fizzy drink",
+            "icon": "🥤",
+            "cue": "fizzy"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And then it bursts out?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! The magma bursts out of the top. Once it's outside, we call it lava.",
+      "punch": "lava",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Underground",
+          "items": [
+            {
+              "text": "Magma",
+              "icon": "🔴",
+              "cue": "magma"
+            }
+          ]
+        },
+        "right": {
+          "label": "Outside",
+          "items": [
+            {
+              "text": "Lava",
+              "icon": "🌋",
+              "cue": "lava"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Are all eruptions big and loud?"
+    },
+    {
+      "who": "MIA",
+      "text": "No! Some volcanoes blast out clouds of ash. Others just ooze runny lava that flows like a slow, glowing river.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Blast",
+          "items": [
+            {
+              "text": "Ash clouds",
+              "icon": "💥",
+              "cue": "ash"
+            }
+          ]
+        },
+        "right": {
+          "label": "Ooze",
+          "items": [
+            {
+              "text": "Lava river",
+              "icon": "🟠",
+              "cue": "river"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Is lava good for anything?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! When lava cools, it turns into new rock. Some islands were made by volcanoes, layer by layer!",
+      "board": {
+        "type": "big",
+        "icon": "🏝️",
+        "text": "Volcanoes make islands!",
+        "cue": "islands",
+        "sub": "Lava cools into rock",
+        "sub_cue": "cools"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Melted rock rises, gas pushes, and out comes lava!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Melted rock rises",
+            "icon": "🔥",
+            "cue": "melted"
+          },
+          {
+            "text": "Gas pushes up",
+            "icon": "💨",
+            "cue": "gas"
+          },
+          {
+            "text": "Out comes lava",
+            "icon": "🌋",
+            "cue": "lava"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "You got it! Follow Curio Kids Club for more wonders. And next time someone asks... how do volcanoes erupt?"
+    }
+  ]
+}

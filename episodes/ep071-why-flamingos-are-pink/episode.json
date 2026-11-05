@@ -1,0 +1,190 @@
+{
+  "id": "ep071",
+  "slug": "why-flamingos-are-pink",
+  "status": "ready",
+  "title": "Why Are Flamingos Pink? 🦩 Animal Facts for Kids",
+  "cover_text": "PINK?!",
+  "description": "Flamingos get their pink from the food they eat! Leo asks, big sister Mia explains, plus why baby flamingos are grey, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#AnimalFacts",
+    "#Flamingo",
+    "#Shorts"
+  ],
+  "tags": [
+    "flamingo facts for kids",
+    "why are flamingos pink",
+    "bird facts",
+    "animal facts",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why pink?",
+    "cue": "next",
+    "left": "🦩",
+    "right": "💗"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why are flamingos pink?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🦩",
+          "label": "Flamingo"
+        },
+        "right": {
+          "icon": "💗",
+          "label": "Pink?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Because of what they eat! Tiny shrimp and little water plants called algae.",
+      "punch": "eat",
+      "board": {
+        "type": "gallery",
+        "title": "Flamingo food",
+        "items": [
+          {
+            "icon": "🦐",
+            "label": "Tiny shrimp",
+            "cue": "shrimp"
+          },
+          {
+            "icon": "🌿",
+            "label": "Algae",
+            "cue": "algae"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And the food makes them pink?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! That food has natural colours, like the orange in carrots. The colours go into their feathers and turn them pink.",
+      "board": {
+        "type": "big",
+        "icon": "🥕",
+        "text": "Colours from food",
+        "cue": "colours",
+        "sub": "Into the feathers!",
+        "sub_cue": "feathers"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Are baby flamingos pink too?"
+    },
+    {
+      "who": "MIA",
+      "text": "Nope! Baby flamingos are fluffy and grey. They turn pink as they grow up and eat that food.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Baby",
+          "items": [
+            {
+              "icon": "☁️",
+              "text": "Fluffy and grey",
+              "cue": "grey"
+            }
+          ]
+        },
+        "right": {
+          "label": "Grown-up",
+          "items": [
+            {
+              "icon": "🦩",
+              "text": "Pink feathers",
+              "cue": "pink"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What if a flamingo ate different food?"
+    },
+    {
+      "who": "MIA",
+      "text": "Its feathers would get paler. That's why zoos give flamingos special food, so they stay pink.",
+      "board": {
+        "type": "big",
+        "icon": "🦩",
+        "text": "Less colour, paler bird",
+        "cue": "paler",
+        "sub": "Zoo food keeps them pink",
+        "sub_cue": "zoos"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How do they eat with that funny bent beak?"
+    },
+    {
+      "who": "MIA",
+      "text": "They dip their heads upside down. Their beak works like a strainer, keeping food in and letting water out.",
+      "board": {
+        "type": "big",
+        "icon": "🙃",
+        "text": "Upside-down eating!",
+        "cue": "upside",
+        "sub": "Beak = a strainer",
+        "sub_cue": "strainer"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And why do they stand on one leg?"
+    },
+    {
+      "who": "MIA",
+      "text": "Scientists think it may help them stay warm or save energy. It's still a bit of a mystery!",
+      "punch": "mystery",
+      "board": {
+        "type": "big",
+        "icon": "🤔",
+        "text": "A one-leg mystery",
+        "cue": "mystery",
+        "sub": "Maybe to stay warm",
+        "sub_cue": "warm"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So flamingos are pink because of the shrimp and algae they eat!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "🦐",
+            "text": "Shrimp and algae",
+            "cue": "shrimp"
+          },
+          {
+            "icon": "💗",
+            "text": "Food makes them pink",
+            "cue": "pink"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "That's right! Follow Curio Kids Club for more wonders. And next time someone asks... why are flamingos pink?"
+    }
+  ]
+}

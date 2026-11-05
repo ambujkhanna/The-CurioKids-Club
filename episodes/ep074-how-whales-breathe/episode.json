@@ -1,0 +1,185 @@
+{
+  "id": "ep074",
+  "slug": "how-whales-breathe",
+  "status": "ready",
+  "title": "How Do Whales Breathe? 🐋 Animal Facts for Kids",
+  "cover_text": "BLOWHOLE!",
+  "description": "Whales breathe air, just like you, through a nose on top of their head! Leo asks, big sister Mia explains blowholes, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#AnimalFacts",
+    "#Whales",
+    "#Shorts"
+  ],
+  "tags": [
+    "whale facts for kids",
+    "how do whales breathe",
+    "blowhole",
+    "ocean animals",
+    "animal facts",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "How do whales breathe?",
+    "cue": "next",
+    "left": "🐋",
+    "right": "💨"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, how do whales breathe?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🐋",
+          "label": "Whale"
+        },
+        "right": {
+          "icon": "💨",
+          "label": "Breathe?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Whales breathe air, just like us! They're mammals, not fish.",
+      "punch": "air",
+      "board": {
+        "type": "big",
+        "icon": "🐋",
+        "text": "Whales breathe air!",
+        "cue": "air",
+        "sub": "Mammals, not fish",
+        "sub_cue": "mammals"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Then how do they get air in the ocean?"
+    },
+    {
+      "who": "MIA",
+      "text": "They swim up and breathe through a blowhole. It's like a nose on top of their head!",
+      "board": {
+        "type": "big",
+        "icon": "👃",
+        "text": "The blowhole",
+        "cue": "blowhole",
+        "sub": "A nose on top!",
+        "sub_cue": "nose"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why is it on top?"
+    },
+    {
+      "who": "MIA",
+      "text": "So they don't have to lift their whole head out. They just pop up, take a breath, and dive back down.",
+      "board": {
+        "type": "steps",
+        "title": "Breathing trip",
+        "items": [
+          {
+            "icon": "⬆️",
+            "label": "Pop up",
+            "cue": "pop"
+          },
+          {
+            "icon": "💨",
+            "label": "Take a breath",
+            "cue": "breath"
+          },
+          {
+            "icon": "⬇️",
+            "label": "Dive back down",
+            "cue": "dive"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What's that big spray I see in pictures?"
+    },
+    {
+      "who": "MIA",
+      "text": "That's called a blow! It's mostly warm breath turning into a misty cloud.",
+      "board": {
+        "type": "big",
+        "icon": "☁️",
+        "text": "The blow",
+        "cue": "blow",
+        "sub": "Warm, misty breath",
+        "sub_cue": "misty"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How long can a whale hold its breath?"
+    },
+    {
+      "who": "MIA",
+      "text": "Some big whales can stay underwater for more than an hour! Others come up more often.",
+      "punch": "hour",
+      "board": {
+        "type": "big",
+        "icon": "⏱️",
+        "text": "More than an hour!",
+        "cue": "hour",
+        "sub": "Others come up often",
+        "sub_cue": "others"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Wow! Do baby whales know how to breathe?"
+    },
+    {
+      "who": "MIA",
+      "text": "When a baby whale is born, its mum often helps it up for its very first breath.",
+      "board": {
+        "type": "big",
+        "icon": "🐳",
+        "text": "First breath!",
+        "cue": "first",
+        "sub": "Mum helps it up",
+        "sub_cue": "mum"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So whales breathe air through a blowhole on top of their head!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "💨",
+            "text": "They breathe air",
+            "cue": "air"
+          },
+          {
+            "icon": "👃",
+            "text": "Through a blowhole",
+            "cue": "blowhole"
+          },
+          {
+            "icon": "🐋",
+            "text": "On top of their head",
+            "cue": "top"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "That's right! Follow Curio Kids Club for more wonders. And next time someone asks... how do whales breathe?"
+    }
+  ]
+}

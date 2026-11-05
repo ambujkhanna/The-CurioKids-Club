@@ -1,0 +1,191 @@
+{
+  "id": "ep018",
+  "slug": "how-ears-hear",
+  "status": "ready",
+  "title": "How Do Your Ears Hear? 👂 Fun Facts for Kids",
+  "cover_text": "HOW EARS HEAR",
+  "description": "Sound is wiggly air, and your ears turn it into messages for your brain! Leo asks, big sister Mia follows a sound all the way in, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#HumanBody",
+    "#Shorts"
+  ],
+  "tags": [
+    "how ears work for kids",
+    "hearing",
+    "eardrum",
+    "human body for kids",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "How do ears hear?",
+    "cue": "next",
+    "left": "👂",
+    "right": "🔊"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, how do my ears hear things?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "👂",
+          "label": "Ears"
+        },
+        "right": {
+          "icon": "🔊",
+          "label": "Sounds?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Every sound is a little wiggle in the air. Scientists call it a vibration.",
+      "board": {
+        "type": "big",
+        "icon": "🔊",
+        "text": "Sound is wiggly air",
+        "cue": "wiggle",
+        "sub": "Called a vibration",
+        "sub_cue": "vibration"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Wiggly air? But I can't see it!"
+    },
+    {
+      "who": "MIA",
+      "text": "Nope, it's invisible! The outside of your ear is shaped like a funnel. It catches those wiggles and sends them inside.",
+      "board": {
+        "type": "big",
+        "icon": "👂",
+        "text": "Your ear catches sound",
+        "cue": "funnel",
+        "sub": "Then sends it inside",
+        "sub_cue": "inside"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Where do they go?"
+    },
+    {
+      "who": "MIA",
+      "text": "First they hit your eardrum, a thin, stretchy skin that shakes like a tiny drum.",
+      "board": {
+        "type": "big",
+        "icon": "🥁",
+        "text": "The eardrum shakes",
+        "cue": "eardrum",
+        "sub": "Like a tiny drum",
+        "sub_cue": "drum"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Then three tiny bones pass the shake along. One of them is the smallest bone in your whole body!",
+      "punch": "smallest",
+      "board": {
+        "type": "big",
+        "icon": "🦴",
+        "text": "3 tiny bones",
+        "cue": "three",
+        "sub": "The smallest in your body!",
+        "sub_cue": "smallest"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Whoa! What's next?"
+    },
+    {
+      "who": "MIA",
+      "text": "Next is a curly tube shaped like a snail shell. It's full of liquid and tiny hairs that wiggle too.",
+      "board": {
+        "type": "big",
+        "icon": "🐌",
+        "text": "A snail-shaped tube",
+        "cue": "snail",
+        "sub": "Full of tiny hairs",
+        "sub_cue": "hairs"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Those tiny hairs send a message to your brain, and your brain says: that's a dog barking!",
+      "board": {
+        "type": "big",
+        "icon": "🧠",
+        "text": "Your brain knows!",
+        "cue": "brain",
+        "sub": "Woof! A dog!",
+        "sub_cue": "dog"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So sound goes in my ear, to the drum, to the bones, to the snail, then my brain!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "👂",
+            "text": "Ear catches it",
+            "cue": "ear"
+          },
+          {
+            "icon": "🥁",
+            "text": "Drum shakes",
+            "cue": "drum"
+          },
+          {
+            "icon": "🦴",
+            "text": "Bones pass it on",
+            "cue": "bones"
+          },
+          {
+            "icon": "🐌",
+            "text": "Snail tells brain",
+            "cue": "snail"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Exactly! So be kind to your ears. Turn loud sounds down, and never poke things inside them.",
+      "board": {
+        "type": "checklist",
+        "title": "Kind to your ears",
+        "icon": "👂",
+        "items": [
+          {
+            "icon": "🔉",
+            "text": "Turn loud sounds down",
+            "cue": "loud",
+            "ok": true
+          },
+          {
+            "icon": "🚫",
+            "text": "Poke things inside",
+            "cue": "poke",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Great listening! Follow Curio Kids Club for more wonders. And next time someone asks... how do my ears hear things?"
+    }
+  ]
+}

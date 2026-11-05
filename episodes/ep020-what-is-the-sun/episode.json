@@ -1,0 +1,209 @@
+{
+  "id": "ep020",
+  "slug": "what-is-the-sun",
+  "status": "ready",
+  "title": "What Is the Sun? ☀️ Fun Facts for Kids",
+  "cover_text": "IT'S A STAR!",
+  "description": "The Sun is a star, and the closest one to Earth! Leo asks, big sister Mia explains what the Sun is made of and why we need it, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Space",
+    "#Shorts"
+  ],
+  "tags": [
+    "sun facts for kids",
+    "what is the sun",
+    "the sun is a star",
+    "space for kids",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "What is the Sun?",
+    "cue": "next",
+    "left": "☀️",
+    "right": "⭐"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, what is the Sun, really?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "☀️",
+          "label": "The Sun"
+        },
+        "right": {
+          "icon": "⭐",
+          "label": "What is it?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "The Sun is a star! It's the closest star to Earth.",
+      "punch": "star",
+      "board": {
+        "type": "big",
+        "icon": "⭐",
+        "text": "The Sun is a STAR",
+        "cue": "star",
+        "sub": "Our closest star",
+        "sub_cue": "closest"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "But stars are tiny little dots!"
+    },
+    {
+      "who": "MIA",
+      "text": "Other stars are super far away, so they look tiny. The Sun is much closer, so it looks big and bright.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Other stars",
+          "items": [
+            {
+              "text": "Super far",
+              "icon": "🔭",
+              "cue": "far"
+            },
+            {
+              "text": "Look tiny",
+              "icon": "✨",
+              "cue": "tiny"
+            }
+          ]
+        },
+        "right": {
+          "label": "The Sun",
+          "items": [
+            {
+              "text": "Much closer",
+              "icon": "☀️",
+              "cue": "closer"
+            },
+            {
+              "text": "Big and bright",
+              "icon": "💡",
+              "cue": "bright"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Is the Sun made of fire?"
+    },
+    {
+      "who": "MIA",
+      "text": "Not like a campfire. It's a giant ball of very hot gas that glows.",
+      "board": {
+        "type": "big",
+        "icon": "☀️",
+        "text": "A giant ball of hot gas",
+        "cue": "ball",
+        "sub": "And it glows!",
+        "sub_cue": "glows"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How big is it?"
+    },
+    {
+      "who": "MIA",
+      "text": "Huge! About a million Earths could fit inside it.",
+      "punch": "million",
+      "board": {
+        "type": "big",
+        "icon": "🌍",
+        "text": "A million Earths inside!",
+        "cue": "million"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Wow! What does the Sun do for us?"
+    },
+    {
+      "who": "MIA",
+      "text": "It gives us light and keeps us warm. Plants use sunlight to grow, and plants feed animals and people.",
+      "board": {
+        "type": "gallery",
+        "title": "The Sun gives us",
+        "items": [
+          {
+            "icon": "💡",
+            "label": "Light",
+            "cue": "light"
+          },
+          {
+            "icon": "🌡️",
+            "label": "Warmth",
+            "cue": "warm"
+          },
+          {
+            "icon": "🌱",
+            "label": "Plants grow",
+            "cue": "plants"
+          },
+          {
+            "icon": "🍎",
+            "label": "Food",
+            "cue": "feed"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "One safety rule: never look straight at the Sun, not even with sunglasses. It can hurt your eyes.",
+      "board": {
+        "type": "big",
+        "icon": "🙈",
+        "text": "Never look at the Sun",
+        "cue": "never",
+        "sub": "Keep your eyes safe",
+        "sub_cue": "eyes"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So the Sun is our very own star, a giant glowing ball of gas that keeps us warm!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "⭐",
+            "text": "Our own star",
+            "cue": "star"
+          },
+          {
+            "icon": "☀️",
+            "text": "Glowing hot gas",
+            "cue": "glowing"
+          },
+          {
+            "icon": "🌡️",
+            "text": "Keeps us warm",
+            "cue": "warm"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Shining answer! Follow Curio Kids Club for more wonders. And next time someone asks... what is the Sun, really?"
+    }
+  ]
+}

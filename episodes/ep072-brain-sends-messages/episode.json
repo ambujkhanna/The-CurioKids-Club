@@ -1,0 +1,210 @@
+{
+  "id": "ep072",
+  "slug": "brain-sends-messages",
+  "status": "ready",
+  "title": "How Does Your Brain Talk to Your Body? 🧠 For Kids",
+  "cover_text": "BRAIN MAIL!",
+  "description": "Your nerves carry messages super fast, like tiny wires! Leo asks, big sister Mia explains how your brain talks to your body, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#HumanBody",
+    "#Shorts"
+  ],
+  "tags": [
+    "brain for kids",
+    "how nerves work",
+    "nervous system for kids",
+    "human body for kids",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Brain to body?",
+    "cue": "next",
+    "left": "🧠",
+    "right": "🖐️"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, how does my brain talk to my body?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🧠",
+          "label": "Brain"
+        },
+        "right": {
+          "icon": "🖐️",
+          "label": "Body"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "With nerves! Nerves are like tiny wires going from your brain to every part of you.",
+      "punch": "nerves",
+      "board": {
+        "type": "big",
+        "icon": "🧠",
+        "text": "Nerves are like wires",
+        "cue": "nerves",
+        "sub": "To every part of you",
+        "sub_cue": "every"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Wires? Inside me?"
+    },
+    {
+      "who": "MIA",
+      "text": "Not real wires! Nerves are made of living cells that pass messages along super fast.",
+      "board": {
+        "type": "big",
+        "icon": "⚡",
+        "text": "Tiny, fast messages",
+        "cue": "messages",
+        "sub": "Passed cell to cell",
+        "sub_cue": "cell"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How do messages get all the way down to my toes?"
+    },
+    {
+      "who": "MIA",
+      "text": "Your spinal cord is like a big highway down your back. Messages zoom along it to nerves in your toes.",
+      "board": {
+        "type": "steps",
+        "title": "The message trip",
+        "items": [
+          {
+            "icon": "🛣️",
+            "label": "Spinal cord highway",
+            "cue": "spinal"
+          },
+          {
+            "icon": "🦶",
+            "label": "Out to your toes",
+            "cue": "toes"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So when I want to kick a ball..."
+    },
+    {
+      "who": "MIA",
+      "text": "Your brain sends a message to your leg muscles: kick! And your leg kicks, in a blink.",
+      "board": {
+        "type": "steps",
+        "title": "Kick!",
+        "items": [
+          {
+            "icon": "🧠",
+            "label": "Brain decides",
+            "cue": "brain"
+          },
+          {
+            "icon": "📨",
+            "label": "Message goes down",
+            "cue": "message"
+          },
+          {
+            "icon": "⚽",
+            "label": "Your leg kicks!",
+            "cue": "kicks"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Do messages go the other way too?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Your eyes, ears, nose, tongue and skin send messages up to your brain. That's how you sense the world!",
+      "board": {
+        "type": "gallery",
+        "title": "Your senses",
+        "items": [
+          {
+            "icon": "👀",
+            "label": "See",
+            "cue": "eyes"
+          },
+          {
+            "icon": "👂",
+            "label": "Hear",
+            "cue": "ears"
+          },
+          {
+            "icon": "👃",
+            "label": "Smell",
+            "cue": "nose"
+          },
+          {
+            "icon": "👅",
+            "label": "Taste",
+            "cue": "tongue"
+          },
+          {
+            "icon": "✋",
+            "label": "Feel",
+            "cue": "skin"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Does my brain ever take a break?"
+    },
+    {
+      "who": "MIA",
+      "text": "Never all the way! Even while you sleep, it keeps your heart beating and helps you breathe.",
+      "board": {
+        "type": "big",
+        "icon": "😴",
+        "text": "Always working!",
+        "cue": "sleep",
+        "sub": "Heart and breathing",
+        "sub_cue": "heart"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So nerves carry messages, and my brain is the boss!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "⚡",
+            "text": "Nerves carry messages",
+            "cue": "nerves"
+          },
+          {
+            "icon": "🧠",
+            "text": "The brain is the boss",
+            "cue": "boss"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Exactly! Follow Curio Kids Club for more wonders. And next time someone asks... how does my brain talk to my body?"
+    }
+  ]
+}

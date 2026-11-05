@@ -1,0 +1,205 @@
+{
+  "id": "ep043",
+  "slug": "why-snakes-shed-skin",
+  "status": "ready",
+  "title": "Why Do Snakes Shed Their Skin? 🐍 Kids Facts",
+  "cover_text": "NEW SKIN!",
+  "description": "Why do snakes shed their skin? Their old skin gets too tight, so they wiggle out of it! Leo asks, big sister Mia explains, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Snakes",
+    "#Shorts"
+  ],
+  "tags": [
+    "snake facts for kids",
+    "why snakes shed skin",
+    "reptiles for kids",
+    "animal facts",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why do snakes shed?",
+    "cue": "next",
+    "left": "🐍",
+    "right": "✨"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why do snakes shed their skin?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🐍",
+          "label": "Snake"
+        },
+        "right": {
+          "icon": "✨",
+          "label": "New skin?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "A snake's outer skin doesn't stretch. So as the snake grows bigger, its skin gets too tight.",
+      "board": {
+        "type": "big",
+        "icon": "🐍",
+        "text": "Skin gets too tight",
+        "cue": "tight",
+        "sub": "The snake keeps growing",
+        "sub_cue": "grows"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Like when my shoes get too small?",
+      "punch": "shoes"
+    },
+    {
+      "who": "MIA",
+      "text": "Exactly! So the snake grows a fresh new skin underneath, and wiggles out of the old one.",
+      "board": {
+        "type": "big",
+        "icon": "✨",
+        "text": "Fresh skin underneath",
+        "cue": "fresh",
+        "sub": "Wiggle out of the old",
+        "sub_cue": "wiggles"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How does it get out?"
+    },
+    {
+      "who": "MIA",
+      "text": "It rubs its nose on a rock to loosen the old skin. Then it crawls forward and slides out, like pulling off a sock!",
+      "board": {
+        "type": "steps",
+        "title": "How it sheds",
+        "items": [
+          {
+            "label": "Rub on a rock",
+            "icon": "🪨",
+            "cue": "rubs"
+          },
+          {
+            "label": "Crawl forward",
+            "icon": "🐍",
+            "cue": "crawls"
+          },
+          {
+            "label": "Like pulling off a sock",
+            "icon": "🧦",
+            "cue": "sock"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Does the old skin come off in pieces?"
+    },
+    {
+      "who": "MIA",
+      "text": "Often it comes off in one long piece, inside out, with the pattern of every scale!",
+      "punch": "inside",
+      "board": {
+        "type": "big",
+        "icon": "🧦",
+        "text": "One long piece!",
+        "cue": "piece",
+        "sub": "Inside out",
+        "sub_cue": "inside"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Does a snake know when it's time?"
+    },
+    {
+      "who": "MIA",
+      "text": "Before shedding, its eyes turn cloudy and bluish, because even its eyes get a new clear cover!",
+      "board": {
+        "type": "big",
+        "icon": "👀",
+        "text": "Cloudy blue eyes",
+        "cue": "cloudy",
+        "sub": "Eye covers shed too!",
+        "sub_cue": "cover"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Do we shed skin too?"
+    },
+    {
+      "who": "MIA",
+      "text": "We do! But we shed tiny flakes all the time, so we never notice. Snakes do it all at once.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "You",
+          "items": [
+            {
+              "text": "Tiny flakes",
+              "icon": "🧒",
+              "cue": "flakes"
+            },
+            {
+              "text": "All the time",
+              "icon": "⏰",
+              "cue": "time"
+            }
+          ]
+        },
+        "right": {
+          "label": "Snake",
+          "items": [
+            {
+              "text": "All at once",
+              "icon": "🐍",
+              "cue": "once"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Too-tight skin, a big wiggle, and shiny new scales!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Skin gets too tight",
+            "icon": "🐍",
+            "cue": "too"
+          },
+          {
+            "text": "Wiggle out",
+            "icon": "✨",
+            "cue": "wiggle"
+          },
+          {
+            "text": "Shiny new scales",
+            "icon": "🌟",
+            "cue": "shiny"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "That's it! Follow Curio Kids Club for more wonders. And next time someone asks... why do snakes shed their skin?"
+    }
+  ]
+}

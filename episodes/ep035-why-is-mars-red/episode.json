@@ -1,0 +1,200 @@
+{
+  "id": "ep035",
+  "slug": "why-is-mars-red",
+  "status": "ready",
+  "title": "Why Is Mars Red? 🔴 Space Facts for Kids",
+  "cover_text": "RED PLANET",
+  "description": "Why is Mars red? Its rusty dust! Leo asks, big sister Mia explains rust, pink skies and blue sunsets on Mars, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Space",
+    "#Shorts"
+  ],
+  "tags": [
+    "mars for kids",
+    "why is mars red",
+    "red planet",
+    "space facts for kids",
+    "planets for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why is Mars red?",
+    "cue": "next",
+    "left": "🔴",
+    "right": "❓"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why is Mars red?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🔴",
+          "label": "Mars"
+        },
+        "right": {
+          "icon": "🤔",
+          "label": "Why red?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Mars is covered in rusty dust! Its rocks and dust have lots of iron in them.",
+      "punch": "rusty",
+      "board": {
+        "type": "big",
+        "icon": "🔴",
+        "text": "Rusty red dust",
+        "cue": "rusty",
+        "sub": "Lots of iron",
+        "sub_cue": "iron"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Rust? Like on an old bike?"
+    },
+    {
+      "who": "MIA",
+      "text": "Just like that! Scientists think that long ago, the iron on Mars slowly mixed with oxygen and turned into rust.",
+      "board": {
+        "type": "steps",
+        "title": "Making rust",
+        "items": [
+          {
+            "label": "Iron",
+            "icon": "🧲",
+            "cue": "iron"
+          },
+          {
+            "label": "Mixes with oxygen",
+            "icon": "💨",
+            "cue": "oxygen"
+          },
+          {
+            "label": "Turns to rust",
+            "icon": "🟠",
+            "cue": "rust"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Is the sky red too?"
+    },
+    {
+      "who": "MIA",
+      "text": "Strong winds blow the dust up high. So in the daytime, the sky on Mars often looks a dusty pinkish color!",
+      "board": {
+        "type": "big",
+        "icon": "🌬️",
+        "text": "Dusty winds",
+        "cue": "winds",
+        "sub": "A pinkish sky!",
+        "sub_cue": "pinkish"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What about sunsets on Mars?"
+    },
+    {
+      "who": "MIA",
+      "text": "Here's a surprise. On Mars, sunsets look blue, not orange like on Earth!",
+      "punch": "blue",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Earth",
+          "items": [
+            {
+              "text": "Orange sunsets",
+              "icon": "🌅",
+              "cue": "orange"
+            }
+          ]
+        },
+        "right": {
+          "label": "Mars",
+          "items": [
+            {
+              "text": "Blue sunsets",
+              "icon": "🔵",
+              "cue": "blue"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Is Mars hot?"
+    },
+    {
+      "who": "MIA",
+      "text": "No, Mars is much colder than Earth, because it is farther from the Sun.",
+      "board": {
+        "type": "big",
+        "icon": "🥶",
+        "text": "Colder than Earth",
+        "cue": "colder",
+        "sub": "Farther from the Sun",
+        "sub_cue": "farther"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Has anyone been there?"
+    },
+    {
+      "who": "MIA",
+      "text": "No people yet! But robot rovers drive around on Mars, taking pictures and studying the red rocks.",
+      "board": {
+        "type": "big",
+        "icon": "🤖",
+        "text": "Robot rovers explore",
+        "cue": "robot",
+        "sub": "Studying the rocks",
+        "sub_cue": "rocks"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Rusty dust, a pink sky and blue sunsets. Mars is so cool!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Rusty red dust",
+            "icon": "🔴",
+            "cue": "rusty"
+          },
+          {
+            "text": "Pinkish sky",
+            "icon": "🌸",
+            "cue": "pink"
+          },
+          {
+            "text": "Blue sunsets",
+            "icon": "🔵",
+            "cue": "blue"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "It really is! Follow Curio Kids Club for more wonders. And next time someone asks... why is Mars red?"
+    }
+  ]
+}

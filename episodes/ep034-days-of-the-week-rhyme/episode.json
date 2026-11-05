@@ -1,0 +1,211 @@
+{
+  "id": "ep034",
+  "slug": "days-of-the-week-rhyme",
+  "status": "ready",
+  "title": "Days of the Week Rhyme 📅 Poem for Kids",
+  "cover_text": "7 DAYS!",
+  "description": "Monday to Sunday in one bouncy rhyme! Leo and big sister Mia take turns with the verses, so kids can learn the days of the week in order.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#KidsPoems",
+    "#DaysOfTheWeek",
+    "#Shorts"
+  ],
+  "tags": [
+    "days of the week for kids",
+    "days of the week rhyme",
+    "poem for kids",
+    "learn the days",
+    "preschool learning",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Days of the week!",
+    "cue": "next",
+    "left": "📅",
+    "right": "🎵"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, can we rhyme the days of the week?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "📅",
+          "label": "7 days"
+        },
+        "right": {
+          "icon": "🎵",
+          "label": "Rhyme!"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! There are seven days. Let's take turns, one verse each. I'll start!",
+      "board": {
+        "type": "big",
+        "icon": "📅",
+        "text": "7 days in a week",
+        "cue": "seven",
+        "sub": "Take turns!",
+        "sub_cue": "turns"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "On Monday I wake with a smile, on Tuesday I paint for a while.",
+      "board": {
+        "type": "poem",
+        "title": "Monday, Tuesday",
+        "icon": "☀️",
+        "lines": [
+          {
+            "text": "On Monday I wake with a smile,",
+            "icon": "😊",
+            "cue": "monday"
+          },
+          {
+            "text": "On Tuesday I paint for a while.",
+            "icon": "🎨",
+            "cue": "tuesday"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "On Wednesday I build up a tower, on Thursday I water a flower.",
+      "board": {
+        "type": "poem",
+        "title": "Wednesday, Thursday",
+        "icon": "🌤️",
+        "lines": [
+          {
+            "text": "On Wednesday I build up a tower,",
+            "icon": "🧱",
+            "cue": "wednesday"
+          },
+          {
+            "text": "On Thursday I water a flower.",
+            "icon": "🌷",
+            "cue": "thursday"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "On Friday I dance to a song, on Saturday play all day long!",
+      "board": {
+        "type": "poem",
+        "title": "Friday, Saturday",
+        "icon": "🎉",
+        "lines": [
+          {
+            "text": "On Friday I dance to a song,",
+            "icon": "🎵",
+            "cue": "friday"
+          },
+          {
+            "text": "On Saturday play all day long!",
+            "icon": "⚽",
+            "cue": "saturday"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "On Sunday I rest and I read, then cuddles are all that I need.",
+      "board": {
+        "type": "poem",
+        "title": "Sunday",
+        "icon": "🌙",
+        "lines": [
+          {
+            "text": "On Sunday I rest and I read,",
+            "icon": "📖",
+            "cue": "sunday"
+          },
+          {
+            "text": "Then cuddles are all that I need.",
+            "icon": "🤗",
+            "cue": "cuddles"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "And then it's Monday again! The days go round and round, like a wheel.",
+      "board": {
+        "type": "big",
+        "icon": "🔁",
+        "text": "Back to Monday!",
+        "cue": "monday",
+        "sub": "Round and round",
+        "sub_cue": "round"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Saturday and Sunday are the best!",
+      "punch": "best"
+    },
+    {
+      "who": "MIA",
+      "text": "Those two are called the weekend. The other five are weekdays.",
+      "board": {
+        "type": "big",
+        "icon": "🎉",
+        "text": "Sat + Sun = weekend",
+        "cue": "weekend",
+        "sub": "The other 5 are weekdays",
+        "sub_cue": "five"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Seven little days in a row, round and round the week we go!",
+      "board": {
+        "type": "poem",
+        "title": "All together",
+        "icon": "🗓️",
+        "lines": [
+          {
+            "text": "Seven little days in a row,",
+            "icon": "🗓️",
+            "cue": "seven"
+          },
+          {
+            "text": "Round and round the week we go!",
+            "icon": "🔁",
+            "cue": "round"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Now I can say them all! Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday!",
+      "punch": "sunday",
+      "board": {
+        "type": "big",
+        "icon": "📅",
+        "text": "Mon Tue Wed Thu Fri Sat Sun",
+        "cue": "monday"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Great job, Leo! Follow Curio Kids Club for more wonders. And next time someone asks... can we rhyme the days of the week?"
+    }
+  ]
+}

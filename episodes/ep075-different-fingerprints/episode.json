@@ -1,0 +1,183 @@
+{
+  "id": "ep075",
+  "slug": "different-fingerprints",
+  "status": "ready",
+  "title": "Why Are Fingerprints All Different? 👆 Facts for Kids",
+  "cover_text": "ONLY YOU!",
+  "description": "Nobody in the world has fingerprints just like yours, not even twins! Leo asks, big sister Mia explains, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#HumanBody",
+    "#Shorts"
+  ],
+  "tags": [
+    "fingerprints for kids",
+    "why are fingerprints different",
+    "human body for kids",
+    "body facts",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Different fingerprints?",
+    "cue": "next",
+    "left": "👆",
+    "right": "🔍"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why does everyone have different fingerprints?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "👆",
+          "label": "Fingerprints"
+        },
+        "right": {
+          "icon": "🔍",
+          "label": "Different?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Look at your fingertips. See those tiny swirly lines? Those are ridges.",
+      "board": {
+        "type": "big",
+        "icon": "🔍",
+        "text": "Tiny ridges",
+        "cue": "ridges",
+        "sub": "Swirly lines!",
+        "sub_cue": "swirly"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "When did I get them?"
+    },
+    {
+      "who": "MIA",
+      "text": "Before you were born! They formed while you were growing inside your mum.",
+      "punch": "born",
+      "board": {
+        "type": "big",
+        "icon": "👶",
+        "text": "Made before you were born",
+        "cue": "born"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So why is mine different from yours?"
+    },
+    {
+      "who": "MIA",
+      "text": "Scientists think tiny pushes and bumps shaped your skin as it grew. So the ridges made a pattern all your own.",
+      "board": {
+        "type": "big",
+        "icon": "👆",
+        "text": "A pattern all your own",
+        "cue": "pattern",
+        "sub": "Shaped by tiny pushes",
+        "sub_cue": "pushes"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What about twins? They look exactly the same!"
+    },
+    {
+      "who": "MIA",
+      "text": "Even identical twins have different fingerprints! Their fingertips grew in their own way.",
+      "punch": "twins",
+      "board": {
+        "type": "big",
+        "icon": "👯",
+        "text": "Twins? Still different!",
+        "cue": "twins",
+        "sub": "Each has their own",
+        "sub_cue": "own"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Are there different kinds of fingerprints?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Three main shapes: loops, whorls and arches. With a grown-up, check yours with a magnifying glass!",
+      "board": {
+        "type": "gallery",
+        "title": "Three main shapes",
+        "items": [
+          {
+            "icon": "➰",
+            "label": "Loop",
+            "cue": "loops"
+          },
+          {
+            "icon": "🌀",
+            "label": "Whorl",
+            "cue": "whorls"
+          },
+          {
+            "icon": "🌈",
+            "label": "Arch",
+            "cue": "arches"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What are fingerprints for?"
+    },
+    {
+      "who": "MIA",
+      "text": "Scientists think ridges help us grip and feel. And fun fact: koalas have fingerprints too!",
+      "board": {
+        "type": "big",
+        "icon": "🐨",
+        "text": "Koalas have them too!",
+        "cue": "koalas",
+        "sub": "Ridges help us grip",
+        "sub_cue": "grip"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So my fingerprints grew before I was born, and nobody else has mine!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "👆",
+            "text": "My fingerprints",
+            "cue": "fingerprints"
+          },
+          {
+            "icon": "👶",
+            "text": "Grew before I was born",
+            "cue": "born"
+          },
+          {
+            "icon": "🌟",
+            "text": "Nobody else has mine",
+            "cue": "nobody"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "That's right! Follow Curio Kids Club for more wonders. And next time someone asks... why does everyone have different fingerprints?"
+    }
+  ]
+}

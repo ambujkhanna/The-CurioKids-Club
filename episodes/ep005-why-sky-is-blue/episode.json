@@ -1,0 +1,194 @@
+{
+  "id": "ep005",
+  "slug": "why-sky-is-blue",
+  "status": "ready",
+  "title": "Why Is the Sky Blue? ☀️ Fun Facts for Kids",
+  "cover_text": "WHY BLUE?",
+  "description": "Sunlight is secretly every colour of the rainbow! Leo asks, big sister Mia explains why the sky is blue and sunsets glow orange, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Sky",
+    "#Shorts"
+  ],
+  "tags": [
+    "why is the sky blue",
+    "sky facts for kids",
+    "sunset",
+    "light and colour",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why is the sky blue?",
+    "cue": "next",
+    "left": "🌤️",
+    "right": "🔵"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why is the sky blue?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🌤️",
+          "label": "Sky"
+        },
+        "right": {
+          "icon": "🔵",
+          "label": "Blue?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "It starts with sunlight! Sunlight looks white, but it's really all the colours of the rainbow mixed together.",
+      "punch": "rainbow",
+      "board": {
+        "type": "big",
+        "icon": "☀️",
+        "text": "Sunlight = all colours",
+        "cue": "sunlight",
+        "sub": "Mixed together!",
+        "sub_cue": "mixed"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "All the colours? Even blue?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! When sunlight zooms into our air, it bumps into teeny tiny bits of air, much too small to see.",
+      "board": {
+        "type": "big",
+        "icon": "💨",
+        "text": "Light bumps into air",
+        "cue": "bumps",
+        "sub": "Tiny, tiny bits",
+        "sub_cue": "tiny"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Blue light gets bounced all over the sky, much more than red or yellow light, which mostly go straight.",
+      "punch": "bounced",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Blue",
+          "items": [
+            {
+              "text": "Bounces a lot",
+              "icon": "🔵",
+              "cue": "blue"
+            },
+            {
+              "text": "All over the sky",
+              "icon": "💫",
+              "cue": "sky"
+            }
+          ]
+        },
+        "right": {
+          "label": "Red & yellow",
+          "items": [
+            {
+              "text": "Red: straight",
+              "icon": "🔴",
+              "cue": "red"
+            },
+            {
+              "text": "Yellow: straight",
+              "icon": "🟡",
+              "cue": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So when I look up, blue light is coming from everywhere?",
+      "board": {
+        "type": "big",
+        "icon": "👀",
+        "text": "Blue from everywhere!",
+        "cue": "everywhere"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Exactly! That's why a clear, sunny day looks so blue."
+    },
+    {
+      "who": "LEO",
+      "text": "Then why does the sky turn orange at sunset?",
+      "board": {
+        "type": "big",
+        "icon": "🌅",
+        "text": "Orange sunset?",
+        "cue": "sunset"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "At sunset, sunlight travels through lots more air to reach you. The blue gets scattered away, so reds and oranges are left.",
+      "board": {
+        "type": "steps",
+        "title": "At sunset",
+        "items": [
+          {
+            "label": "Light takes a long trip",
+            "icon": "🛤️",
+            "cue": "travels"
+          },
+          {
+            "label": "Blue scatters away",
+            "icon": "🔵",
+            "cue": "scattered"
+          },
+          {
+            "label": "Reds and oranges left",
+            "icon": "🟠",
+            "cue": "reds"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So sunlight has every colour, blue bounces the most, and at sunset the reds win!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Sunlight: all colours",
+            "icon": "☀️",
+            "cue": "sunlight"
+          },
+          {
+            "text": "Blue bounces the most",
+            "icon": "🔵",
+            "cue": "blue"
+          },
+          {
+            "text": "Sunset: reds win",
+            "icon": "🌅",
+            "cue": "sunset"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "You got it! Follow Curio Kids Club for more wonders. And next time someone asks... why is the sky blue?"
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "id": "ep015",
+  "slug": "why-moon-changes-shape",
+  "status": "ready",
+  "title": "Why Does the Moon Change Shape? 🌙 Fun Facts for Kids",
+  "cover_text": "MOON SHAPES?",
+  "description": "Here's a secret: the Moon never really changes shape! Leo asks, big sister Mia explains the Moon's phases, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Moon",
+    "#Shorts"
+  ],
+  "tags": [
+    "moon phases for kids",
+    "why does the moon change shape",
+    "space for kids",
+    "full moon",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why does the Moon change?",
+    "cue": "next",
+    "left": "🌕",
+    "right": "🌙"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why does the Moon change shape?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🌕",
+          "label": "Round"
+        },
+        "right": {
+          "icon": "🌙",
+          "label": "Skinny?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Here's a secret: the Moon never really changes shape. It's always a big round ball!",
+      "punch": "never",
+      "board": {
+        "type": "big",
+        "icon": "🌕",
+        "text": "Always a round ball",
+        "cue": "round",
+        "sub": "It never changes!",
+        "sub_cue": "never"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Then why does it look different?"
+    },
+    {
+      "who": "MIA",
+      "text": "The Moon doesn't make its own light. It shines because sunlight lights it up, like a flashlight on a ball.",
+      "board": {
+        "type": "big",
+        "icon": "☀️",
+        "text": "Sunlight lights it up",
+        "cue": "sunlight",
+        "sub": "Like a flashlight",
+        "sub_cue": "flashlight"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "The Sun always lights up half of the Moon. The other half is dark.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Sunny half",
+          "items": [
+            {
+              "text": "Lit up",
+              "icon": "☀️",
+              "cue": "lights"
+            }
+          ]
+        },
+        "right": {
+          "label": "Other half",
+          "items": [
+            {
+              "text": "Dark",
+              "icon": "🌑",
+              "cue": "dark"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So why don't we always see the bright half?"
+    },
+    {
+      "who": "MIA",
+      "text": "Because the Moon travels around the Earth. As it moves, we see different amounts of its bright side.",
+      "board": {
+        "type": "big",
+        "icon": "🌍",
+        "text": "Moon circles Earth",
+        "cue": "around",
+        "sub": "We see more, then less",
+        "sub_cue": "different"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "First we see a thin sliver, then half, then a full round Moon. Then it shrinks back again!",
+      "board": {
+        "type": "steps",
+        "title": "Moon shapes",
+        "items": [
+          {
+            "label": "Thin sliver",
+            "icon": "🌒",
+            "cue": "thin"
+          },
+          {
+            "label": "Half moon",
+            "icon": "🌓",
+            "cue": "half"
+          },
+          {
+            "label": "Full moon",
+            "icon": "🌕",
+            "cue": "full"
+          },
+          {
+            "label": "Shrinks back",
+            "icon": "🌘",
+            "cue": "shrinks"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How long does all that take?"
+    },
+    {
+      "who": "MIA",
+      "text": "About a month, from one full Moon to another! In fact, the word month comes from the word Moon.",
+      "punch": "month",
+      "board": {
+        "type": "big",
+        "icon": "📅",
+        "text": "About one month",
+        "cue": "month",
+        "sub": "Month comes from Moon!",
+        "sub_cue": "comes"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Wait, isn't it Earth's shadow covering the Moon?",
+      "board": {
+        "type": "big",
+        "icon": "🤔",
+        "text": "Earth's shadow?",
+        "cue": "shadow"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Nope! It's just how much of the sunny side we can see. Earth's shadow only covers the Moon in an eclipse.",
+      "board": {
+        "type": "checklist",
+        "title": "Moon shapes are...",
+        "icon": "🌙",
+        "items": [
+          {
+            "text": "Earth's shadow",
+            "icon": "🌑",
+            "cue": "shadow",
+            "ok": false
+          },
+          {
+            "text": "How much sunny side",
+            "icon": "☀️",
+            "cue": "sunny",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So the Moon stays round, and we just see more or less of its sunny side!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "The Moon stays round",
+            "icon": "🌕",
+            "cue": "round"
+          },
+          {
+            "text": "Half is always sunny",
+            "icon": "☀️",
+            "cue": "sunny"
+          },
+          {
+            "text": "We see more or less",
+            "icon": "👀",
+            "cue": "more"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Exactly! Follow Curio Kids Club for more wonders. And next time someone asks... why does the Moon change shape?"
+    }
+  ]
+}

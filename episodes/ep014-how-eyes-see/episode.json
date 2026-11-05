@@ -1,0 +1,196 @@
+{
+  "id": "ep014",
+  "slug": "how-eyes-see",
+  "status": "ready",
+  "title": "How Do Your Eyes See? 👀 Fun Facts for Kids",
+  "cover_text": "HOW EYES SEE!",
+  "description": "Your eyes catch light, and your brain does a clever flip! Leo asks, big sister Mia explains how we see, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#HumanBody",
+    "#Shorts"
+  ],
+  "tags": [
+    "how do eyes work",
+    "eye facts for kids",
+    "human body for kids",
+    "senses",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "How do eyes see?",
+    "cue": "next",
+    "left": "👀",
+    "right": "💡"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, how do my eyes see things?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "👀",
+          "label": "Eyes"
+        },
+        "right": {
+          "icon": "💡",
+          "label": "Seeing?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "It all starts with light! Light bounces off everything around you, and some of it comes into your eyes.",
+      "punch": "light",
+      "board": {
+        "type": "big",
+        "icon": "💡",
+        "text": "Light bounces off things",
+        "cue": "bounces",
+        "sub": "Into your eyes!",
+        "sub_cue": "eyes"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How does it get in?"
+    },
+    {
+      "who": "MIA",
+      "text": "Through the black dot in the middle of your eye. It's called the pupil, and it's really a little hole!",
+      "board": {
+        "type": "big",
+        "icon": "⚫",
+        "text": "The pupil: a tiny hole",
+        "cue": "pupil",
+        "sub": "Lets the light in",
+        "sub_cue": "hole"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What's the coloured part around it?"
+    },
+    {
+      "who": "MIA",
+      "text": "That's the iris! It can be brown, blue, green or grey. It makes the pupil bigger in the dark and smaller in bright light.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "In the dark",
+          "items": [
+            {
+              "text": "Pupil gets big",
+              "icon": "🌑",
+              "cue": "bigger"
+            }
+          ]
+        },
+        "right": {
+          "label": "Bright light",
+          "items": [
+            {
+              "text": "Pupil gets small",
+              "icon": "☀️",
+              "cue": "smaller"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Then what happens inside?"
+    },
+    {
+      "who": "MIA",
+      "text": "A clear part called the lens focuses the light onto the back of your eye. And guess what? The picture lands upside down!",
+      "punch": "upside",
+      "board": {
+        "type": "steps",
+        "title": "Inside your eye",
+        "items": [
+          {
+            "label": "Lens focuses light",
+            "icon": "🔍",
+            "cue": "lens"
+          },
+          {
+            "label": "Picture on the back",
+            "icon": "🎯",
+            "cue": "back"
+          },
+          {
+            "label": "It's upside down!",
+            "icon": "🙃",
+            "cue": "upside"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Upside down? But I see everything the right way up!"
+    },
+    {
+      "who": "MIA",
+      "text": "That's your brain's job! Your eye sends a message to your brain, and it flips the picture the right way up.",
+      "board": {
+        "type": "big",
+        "icon": "🧠",
+        "text": "Your brain flips it!",
+        "cue": "flips",
+        "sub": "A message from the eye",
+        "sub_cue": "message"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "One safety rule: never look straight at the Sun. It's much too bright and can hurt your eyes.",
+      "board": {
+        "type": "big",
+        "icon": "🚫",
+        "text": "Never stare at the Sun",
+        "cue": "never",
+        "sub": "Too bright for eyes",
+        "sub_cue": "bright"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So light comes in, the lens focuses it, and my brain flips the picture. Wow!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Light comes in",
+            "icon": "💡",
+            "cue": "light"
+          },
+          {
+            "text": "Lens focuses it",
+            "icon": "🔍",
+            "cue": "lens"
+          },
+          {
+            "text": "Brain flips it",
+            "icon": "🧠",
+            "cue": "brain"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Eye-mazing! Follow Curio Kids Club for more wonders. And next time someone asks... how do my eyes see things?"
+    }
+  ]
+}

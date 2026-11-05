@@ -1,0 +1,253 @@
+{
+  "id": "ep010",
+  "slug": "how-magnets-work",
+  "status": "ready",
+  "title": "How Do Magnets Work? 🧲 Fun Science for Kids",
+  "cover_text": "MAGNET MAGIC?",
+  "description": "Magnets can pull without touching, and the whole Earth acts like one! Leo asks, Dad explains how magnets work, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Magnets",
+    "#Shorts"
+  ],
+  "tags": [
+    "how do magnets work",
+    "magnet facts for kids",
+    "north and south pole",
+    "compass",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "DAD"
+  ],
+  "loop_card": {
+    "text": "How do magnets work?",
+    "cue": "next",
+    "left": "🧲",
+    "right": "❓"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Dad, how do magnets work?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🧲",
+          "label": "Magnet"
+        },
+        "right": {
+          "icon": "🤔",
+          "label": "How?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "A magnet has an invisible pull. It can pull some metal things without even touching them!",
+      "punch": "invisible",
+      "board": {
+        "type": "big",
+        "icon": "🧲",
+        "text": "An invisible pull!",
+        "cue": "invisible",
+        "sub": "No touching needed",
+        "sub_cue": "touching"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Does it pull every kind of metal?"
+    },
+    {
+      "who": "DAD",
+      "text": "Nope! Magnets pull things made with iron, like paper clips and nails. They don't pull wood or plastic.",
+      "board": {
+        "type": "checklist",
+        "title": "Will it stick?",
+        "icon": "🧲",
+        "items": [
+          {
+            "text": "Paper clip",
+            "icon": "📎",
+            "cue": "paper",
+            "ok": true
+          },
+          {
+            "text": "Nails",
+            "icon": "🔩",
+            "cue": "nails",
+            "ok": true
+          },
+          {
+            "text": "Wooden block",
+            "icon": "🪵",
+            "cue": "wood",
+            "ok": false
+          },
+          {
+            "text": "Plastic cup",
+            "icon": "🥤",
+            "cue": "plastic",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why does iron stick, but wood doesn't?"
+    },
+    {
+      "who": "DAD",
+      "text": "Iron is full of teeny tiny magnet bits, all pointing every which way. A magnet lines them up, so they pull together!",
+      "board": {
+        "type": "steps",
+        "title": "Inside iron",
+        "items": [
+          {
+            "label": "Tiny magnet bits",
+            "icon": "✨",
+            "cue": "tiny"
+          },
+          {
+            "label": "Pointing every way",
+            "icon": "🔀",
+            "cue": "pointing"
+          },
+          {
+            "label": "Magnet lines them up",
+            "icon": "➡️",
+            "cue": "lines"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Do magnets ever push instead of pull?"
+    },
+    {
+      "who": "DAD",
+      "text": "Yes! Every magnet has two ends, called north and south. North and south pull together, but two norths push apart!",
+      "punch": "push",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Opposites",
+          "items": [
+            {
+              "text": "North + South",
+              "icon": "🤝",
+              "cue": "together"
+            }
+          ]
+        },
+        "right": {
+          "label": "Same ends",
+          "items": [
+            {
+              "text": "North + North",
+              "icon": "🙅",
+              "cue": "push"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Whoa! Is anything else a magnet?"
+    },
+    {
+      "who": "DAD",
+      "text": "The whole Earth is like a giant magnet! That's why a compass needle always points north.",
+      "board": {
+        "type": "gallery",
+        "title": "Giant magnet",
+        "items": [
+          {
+            "icon": "🌍",
+            "label": "Earth",
+            "cue": "earth"
+          },
+          {
+            "icon": "🧭",
+            "label": "Compass",
+            "cue": "compass"
+          },
+          {
+            "icon": "⬆️",
+            "label": "Points north",
+            "cue": "north"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can I play with magnets?"
+    },
+    {
+      "who": "DAD",
+      "text": "Sure, with a grown-up! Just never put magnets in your mouth, and keep them away from little babies.",
+      "board": {
+        "type": "checklist",
+        "title": "Magnet rules",
+        "icon": "🧲",
+        "items": [
+          {
+            "text": "Play with a grown-up",
+            "icon": "🧑",
+            "cue": "grown",
+            "ok": true
+          },
+          {
+            "text": "Magnets in your mouth",
+            "icon": "👄",
+            "cue": "mouth",
+            "ok": false
+          },
+          {
+            "text": "Away from babies",
+            "icon": "👶",
+            "cue": "babies",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "An invisible pull, north and south ends, and a giant magnet Earth. Magnets are awesome!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Invisible pull",
+            "icon": "🧲",
+            "cue": "invisible"
+          },
+          {
+            "text": "North and south ends",
+            "icon": "↔️",
+            "cue": "north"
+          },
+          {
+            "text": "Earth is a magnet",
+            "icon": "🌍",
+            "cue": "earth"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "They're super attractive! Follow Curio Kids Club for more wonders. And next time someone asks... how do magnets work?"
+    }
+  ]
+}

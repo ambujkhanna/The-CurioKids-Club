@@ -1,0 +1,202 @@
+{
+  "id": "ep062",
+  "slug": "how-muscles-help-you-move",
+  "status": "ready",
+  "title": "How Do Muscles Help You Move? 💪 Fun Facts for Kids",
+  "cover_text": "PULL!",
+  "description": "Your muscles can only PULL, never push! Leo asks, big sister Mia explains how muscles move your bones, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#HumanBody",
+    "#Shorts"
+  ],
+  "tags": [
+    "muscles for kids",
+    "how muscles work",
+    "human body for kids",
+    "science for kids",
+    "body facts",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "How do muscles work?",
+    "cue": "next",
+    "left": "💪",
+    "right": "🦴"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, how do my muscles make me move?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "💪",
+          "label": "Muscles"
+        },
+        "right": {
+          "icon": "🏃",
+          "label": "Move?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Muscles are like stretchy bands tied to your bones. When a muscle gets shorter, it pulls a bone, and you move!",
+      "board": {
+        "type": "big",
+        "icon": "🦴",
+        "text": "Muscles pull on bones",
+        "cue": "pulls",
+        "sub": "And you move!",
+        "sub_cue": "move"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How many muscles do I have?"
+    },
+    {
+      "who": "MIA",
+      "text": "More than six hundred! They help you smile, jump and grab.",
+      "punch": "hundred",
+      "board": {
+        "type": "gallery",
+        "title": "Over 600 muscles!",
+        "items": [
+          {
+            "icon": "😄",
+            "label": "Smile",
+            "cue": "smile"
+          },
+          {
+            "icon": "🦵",
+            "label": "Jump",
+            "cue": "jump"
+          },
+          {
+            "icon": "✋",
+            "label": "Grab",
+            "cue": "grab"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can a muscle push, too?"
+    },
+    {
+      "who": "MIA",
+      "text": "Nope! Muscles only pull, so they work in teams. One bends your arm, and its partner straightens it.",
+      "punch": "pull",
+      "board": {
+        "type": "big",
+        "icon": "🤝",
+        "text": "Muscles work in pairs",
+        "cue": "teams",
+        "sub": "One bends, one straightens",
+        "sub_cue": "bend"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Like a tug of war inside my arm!"
+    },
+    {
+      "who": "MIA",
+      "text": "Kind of! With a grown-up, feel your upper arm and bend your elbow. Feel that bump? That's your muscle!",
+      "board": {
+        "type": "big",
+        "icon": "💪",
+        "text": "Feel your muscle bump",
+        "cue": "bump",
+        "sub": "Try it with a grown-up",
+        "sub_cue": "grown"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Do any muscles work by themselves?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Your heart is a muscle. It pumps all day and all night, even while you sleep.",
+      "board": {
+        "type": "big",
+        "icon": "❤️",
+        "text": "Your heart is a muscle!",
+        "cue": "heart",
+        "sub": "Works day and night",
+        "sub_cue": "night"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How do I make my muscles strong?"
+    },
+    {
+      "who": "MIA",
+      "text": "Run, climb and play! Muscles get stronger when you use them. Good food and sleep help too.",
+      "board": {
+        "type": "checklist",
+        "title": "Strong muscles",
+        "icon": "💪",
+        "items": [
+          {
+            "icon": "🏃",
+            "text": "Run and play",
+            "cue": "run",
+            "ok": true
+          },
+          {
+            "icon": "🥦",
+            "text": "Good food",
+            "cue": "food",
+            "ok": true
+          },
+          {
+            "icon": "😴",
+            "text": "Lots of sleep",
+            "cue": "sleep",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So muscles pull, they work in pairs, and my heart is one too!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "🦴",
+            "text": "Muscles pull",
+            "cue": "pull"
+          },
+          {
+            "icon": "🤝",
+            "text": "They work in pairs",
+            "cue": "pairs"
+          },
+          {
+            "icon": "❤️",
+            "text": "Your heart is one too",
+            "cue": "heart"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Exactly! Follow Curio Kids Club for more wonders. And next time someone asks... how do my muscles make me move?"
+    }
+  ]
+}

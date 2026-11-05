@@ -1,0 +1,178 @@
+{
+  "id": "ep021",
+  "slug": "onions-make-you-cry",
+  "status": "ready",
+  "title": "Why Do Onions Make You Cry? 🧅 Fun Facts for Kids",
+  "cover_text": "ONION TEARS?",
+  "description": "Cutting an onion lets out a sneaky gas that makes your eyes water! Leo asks, Dad explains the onion's secret trick, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#KitchenScience",
+    "#Shorts"
+  ],
+  "tags": [
+    "onion facts for kids",
+    "why onions make you cry",
+    "kitchen science",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "DAD"
+  ],
+  "loop_card": {
+    "text": "Onion tears?",
+    "cue": "next",
+    "left": "🧅",
+    "right": "😢"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Dad, why do onions make you cry?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🧅",
+          "label": "Onion"
+        },
+        "right": {
+          "icon": "😢",
+          "label": "Tears?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Ha! I'm not sad, I promise. The onion has a sneaky trick.",
+      "punch": "sneaky",
+      "board": {
+        "type": "big",
+        "icon": "🧅",
+        "text": "A sneaky onion trick",
+        "cue": "trick"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What trick?"
+    },
+    {
+      "who": "DAD",
+      "text": "An onion is made of tiny bits called cells. When a grown-up cuts it, the cells break open.",
+      "board": {
+        "type": "big",
+        "icon": "🧅",
+        "text": "Cutting breaks the cells",
+        "cue": "cells",
+        "sub": "Only grown-ups cut!",
+        "sub_cue": "grown"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Inside, two kinds of onion juice mix together and make an invisible gas that floats up into the air.",
+      "board": {
+        "type": "steps",
+        "title": "The sneaky gas",
+        "items": [
+          {
+            "icon": "🧪",
+            "label": "Onion juices mix",
+            "cue": "mix"
+          },
+          {
+            "icon": "💨",
+            "label": "They make a gas",
+            "cue": "gas"
+          },
+          {
+            "icon": "⬆️",
+            "label": "It floats up",
+            "cue": "floats"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And the gas goes in your eyes?"
+    },
+    {
+      "who": "DAD",
+      "text": "Yep! It stings a little. So your eyes make tears to wash it away.",
+      "punch": "tears",
+      "board": {
+        "type": "big",
+        "icon": "💧",
+        "text": "Tears wash it away",
+        "cue": "tears",
+        "sub": "Eyes protect themselves",
+        "sub_cue": "eyes"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why would an onion do that?"
+    },
+    {
+      "who": "DAD",
+      "text": "Scientists think it's how onions protect themselves, so animals don't want to munch on them.",
+      "board": {
+        "type": "big",
+        "icon": "🛡️",
+        "text": "Onion protection!",
+        "cue": "protect",
+        "sub": "Scientists think",
+        "sub_cue": "scientists"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can we stop the tears?"
+    },
+    {
+      "who": "DAD",
+      "text": "One trick is to chill the onion in the fridge first. Cold onions let out less gas.",
+      "board": {
+        "type": "big",
+        "icon": "❄️",
+        "text": "Chill it first",
+        "cue": "chill",
+        "sub": "Less gas, fewer tears",
+        "sub_cue": "less"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So cutting breaks the cells, the gas floats up, and my eyes wash it away!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "🧅",
+            "text": "Cells break",
+            "cue": "cutting"
+          },
+          {
+            "icon": "💨",
+            "text": "Gas floats up",
+            "cue": "gas"
+          },
+          {
+            "icon": "💧",
+            "text": "Tears wash it",
+            "cue": "eyes"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "You got it! Follow Curio Kids Club for more wonders. And next time someone asks... why do onions make you cry?"
+    }
+  ]
+}

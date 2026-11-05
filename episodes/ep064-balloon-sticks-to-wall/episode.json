@@ -1,0 +1,184 @@
+{
+  "id": "ep064",
+  "slug": "balloon-sticks-to-wall",
+  "status": "ready",
+  "title": "Why Does a Balloon Stick to the Wall? 🎈 Kids Science",
+  "cover_text": "STUCK!",
+  "description": "Rub a balloon on your hair and it sticks to the wall! Leo asks, Dad explains static electricity in a simple, safe way, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#ScienceForKids",
+    "#StaticElectricity",
+    "#Shorts"
+  ],
+  "tags": [
+    "static electricity for kids",
+    "balloon science",
+    "why balloons stick",
+    "science for kids",
+    "everyday science",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "DAD"
+  ],
+  "loop_card": {
+    "text": "Why does it stick?",
+    "cue": "next",
+    "left": "🎈",
+    "right": "🧱"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Dad, why does a rubbed balloon stick to the wall?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🎈",
+          "label": "Balloon"
+        },
+        "right": {
+          "icon": "🧱",
+          "label": "Wall"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "It's something invisible called static electricity. Rubbing a balloon makes a tiny, harmless bit.",
+      "punch": "static",
+      "board": {
+        "type": "big",
+        "icon": "⚡",
+        "text": "Static electricity!",
+        "cue": "static",
+        "sub": "Tiny and harmless",
+        "sub_cue": "tiny"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Electricity? From my hair?"
+    },
+    {
+      "who": "DAD",
+      "text": "Everything is made of super tiny bits with little charges. Rubbing makes some charges hop from your hair onto the balloon.",
+      "board": {
+        "type": "steps",
+        "title": "Rub, rub, rub!",
+        "items": [
+          {
+            "icon": "💇",
+            "label": "Rub balloon on hair",
+            "cue": "rub"
+          },
+          {
+            "icon": "✨",
+            "label": "Tiny charges hop over",
+            "cue": "hop"
+          },
+          {
+            "icon": "🎈",
+            "label": "Balloon gets charged",
+            "cue": "onto"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Then what happens at the wall?"
+    },
+    {
+      "who": "DAD",
+      "text": "The balloon tugs on the charges in the wall. Opposite charges pull together, so they hold on tight!",
+      "board": {
+        "type": "big",
+        "icon": "🧲",
+        "text": "Opposites pull together",
+        "cue": "opposite",
+        "sub": "Balloon and wall hold on",
+        "sub_cue": "hold"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Is that why my hair sticks up?"
+    },
+    {
+      "who": "DAD",
+      "text": "Yes! Now your hairs all have the same charge. Same charges push apart, so each hair tries to get away.",
+      "board": {
+        "type": "big",
+        "icon": "💇",
+        "text": "Same charges push apart",
+        "cue": "push",
+        "sub": "So your hair stands up!",
+        "sub_cue": "away"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why does the balloon fall down after a while?"
+    },
+    {
+      "who": "DAD",
+      "text": "The charges slowly leak away into the air. Then down it comes.",
+      "board": {
+        "type": "big",
+        "icon": "💨",
+        "text": "Charges leak away",
+        "cue": "leak",
+        "sub": "Then down it comes",
+        "sub_cue": "down"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Is that like the zap from a doorknob?"
+    },
+    {
+      "who": "DAD",
+      "text": "Same idea! That tiny zap is static too. It happens more on dry days.",
+      "board": {
+        "type": "big",
+        "icon": "⚡",
+        "text": "That zap is static too",
+        "cue": "zap",
+        "sub": "More on dry days",
+        "sub_cue": "dry"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So rubbing moves charges, and opposites stick. That's static!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "💇",
+            "text": "Rubbing moves charges",
+            "cue": "rubbing"
+          },
+          {
+            "icon": "🧲",
+            "text": "Opposites stick",
+            "cue": "opposite"
+          },
+          {
+            "icon": "⚡",
+            "text": "That's static!",
+            "cue": "static"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "You got it! Follow Curio Kids Club for more wonders. And next time someone asks... why does a rubbed balloon stick to the wall?"
+    }
+  ]
+}

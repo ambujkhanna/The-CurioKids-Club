@@ -1,0 +1,25 @@
+{
+  "id": "ep050", "slug": "why-astronauts-float", "status": "ready",
+  "title": "Why Do Astronauts Float in Space? 🚀 Fun Facts for Kids",
+  "cover_text": "FLOATING?!",
+  "description": "Astronauts float because they are always falling! Leo asks, big sister Mia explains gravity and orbits in a simple way, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": ["#KidsLearning", "#FunFacts", "#Space", "#Shorts"],
+  "tags": ["space facts for kids", "why astronauts float", "gravity for kids", "orbit explained", "science for kids", "kids learning"],
+  "cast": ["LEO", "MIA"],
+  "loop_card": {"text": "Why do they float?", "cue": "next", "left": "🚀", "right": "🌍"},
+  "lines": [
+    {"who": "LEO", "text": "Mia, why do astronauts float in space?", "board": {"type": "title", "left": {"icon": "🚀", "label": "Astronaut"}, "right": {"icon": "🎈", "label": "Floating?"}, "mid": "?"}},
+    {"who": "MIA", "text": "Here's a surprise: gravity is still there! Up at the space station, Earth is still pulling on them.", "punch": "gravity", "board": {"type": "big", "icon": "🌍", "text": "Gravity is still there!", "cue": "gravity", "sub": "Earth is still pulling", "sub_cue": "pulling"}},
+    {"who": "LEO", "text": "Then why don't they fall down?"},
+    {"who": "MIA", "text": "They are falling! The space station and everyone inside it are falling together, all the time.", "punch": "falling", "board": {"type": "big", "icon": "⬇️", "text": "Always falling!", "cue": "falling", "sub": "All together", "sub_cue": "together"}},
+    {"who": "LEO", "text": "Falling? But they never hit the ground!"},
+    {"who": "MIA", "text": "That's because the station zooms sideways super fast. As it falls, Earth curves away below it, so it keeps missing!", "board": {"type": "steps", "title": "Falling around Earth", "items": [{"icon": "🚀", "label": "Zooms sideways fast", "cue": "sideways"}, {"icon": "⬇️", "label": "Falls toward Earth", "cue": "falls"}, {"icon": "🌍", "label": "Earth curves away", "cue": "curves"}, {"icon": "🔄", "label": "Keeps missing!", "cue": "missing"}]}},
+    {"who": "LEO", "text": "So they go round and round Earth?"},
+    {"who": "MIA", "text": "Yes! Going round and round like that is called being in orbit.", "board": {"type": "big", "icon": "🛰️", "text": "That's an orbit!", "cue": "orbit", "sub": "Round and round Earth", "sub_cue": "round"}},
+    {"who": "MIA", "text": "And because everything falls together, nothing presses down on the floor. So astronauts, their food and even water drops float around!", "board": {"type": "gallery", "title": "Things that float", "items": [{"icon": "🚀", "label": "Astronauts", "cue": "astronauts"}, {"icon": "🥪", "label": "Food", "cue": "food"}, {"icon": "💧", "label": "Water drops", "cue": "water"}]}},
+    {"who": "LEO", "text": "It's like when a roller coaster drops and my tummy feels floaty!"},
+    {"who": "MIA", "text": "Exactly! That floaty feeling is a tiny taste of what astronauts feel all day long.", "board": {"type": "big", "icon": "🎢", "text": "That floaty feeling!", "cue": "floaty", "sub": "All day long in space", "sub_cue": "day"}},
+    {"who": "LEO", "text": "Gravity is there, they're always falling, and they keep missing Earth. So cool!", "board": {"type": "summary", "rows": [{"icon": "🌍", "text": "Gravity still pulls", "cue": "gravity"}, {"icon": "⬇️", "text": "Always falling", "cue": "falling"}, {"icon": "🔄", "text": "Keeps missing Earth", "cue": "missing"}]}},
+    {"who": "MIA", "text": "It really is! Follow Curio Kids Club for more wonders. And next time someone asks... why do astronauts float in space?"}
+  ]
+}

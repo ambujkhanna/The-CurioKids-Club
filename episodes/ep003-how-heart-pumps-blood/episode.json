@@ -1,0 +1,194 @@
+{
+  "id": "ep003",
+  "slug": "how-heart-pumps-blood",
+  "status": "ready",
+  "title": "How Does Your Heart Pump Blood? ❤️ Fun Facts for Kids",
+  "cover_text": "THUMP THUMP!",
+  "description": "Your heart is a muscle about the size of your fist, and it never takes a day off! Leo asks, big sister Mia explains how it pumps blood, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#HumanBody",
+    "#Shorts"
+  ],
+  "tags": [
+    "heart facts for kids",
+    "how the heart works",
+    "human body for kids",
+    "blood",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "How does my heart pump?",
+    "cue": "next",
+    "left": "❤️",
+    "right": "🩸"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, how does my heart pump blood?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "❤️",
+          "label": "Heart"
+        },
+        "right": {
+          "icon": "🩸",
+          "label": "Blood"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Your heart is a strong muscle, about the size of your fist. It sits inside your chest.",
+      "board": {
+        "type": "big",
+        "icon": "✊",
+        "text": "As big as your fist",
+        "cue": "fist",
+        "sub": "Inside your chest",
+        "sub_cue": "chest"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "But how can a muscle push blood?"
+    },
+    {
+      "who": "MIA",
+      "text": "It squeezes, then relaxes, over and over. Each squeeze pushes blood out through tubes called blood vessels.",
+      "punch": "squeezes",
+      "board": {
+        "type": "steps",
+        "title": "Squeeze and relax",
+        "items": [
+          {
+            "label": "Squeeze!",
+            "icon": "💪",
+            "cue": "squeezes"
+          },
+          {
+            "label": "Relax and fill up",
+            "icon": "😌",
+            "cue": "relaxes"
+          },
+          {
+            "label": "Blood rushes down tubes",
+            "icon": "🩸",
+            "cue": "vessels"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Where does all that blood go?"
+    },
+    {
+      "who": "MIA",
+      "text": "One side of your heart sends blood to your lungs, to pick up oxygen from the air you breathe.",
+      "board": {
+        "type": "big",
+        "icon": "🫁",
+        "text": "Off to the lungs!",
+        "cue": "lungs",
+        "sub": "Pick up oxygen",
+        "sub_cue": "oxygen"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "The other side pumps that fresh blood all around your body, to your head, your arms and your toes.",
+      "board": {
+        "type": "gallery",
+        "title": "All around you",
+        "items": [
+          {
+            "icon": "🙂",
+            "label": "Head",
+            "cue": "head"
+          },
+          {
+            "icon": "💪",
+            "label": "Arms",
+            "cue": "arms"
+          },
+          {
+            "icon": "🦶",
+            "label": "Toes",
+            "cue": "toes"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What's that thump-thump sound I can hear?"
+    },
+    {
+      "who": "MIA",
+      "text": "That lub-dub is your heart's little doors, called valves, closing to keep blood going the right way.",
+      "punch": "valves",
+      "board": {
+        "type": "big",
+        "icon": "🚪",
+        "text": "Little doors: valves",
+        "cue": "valves",
+        "sub": "Lub-dub, lub-dub!",
+        "sub_cue": "lub"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why does it beat faster when I run?"
+    },
+    {
+      "who": "MIA",
+      "text": "Busy muscles need more oxygen, so your heart speeds up. Running and playing keep your heart strong!",
+      "board": {
+        "type": "big",
+        "icon": "💓",
+        "text": "Your heart speeds up",
+        "cue": "speeds",
+        "sub": "Play keeps it strong",
+        "sub_cue": "playing"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So my heart squeezes, sends blood to my lungs, then all around me!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Squeeze and relax",
+            "icon": "💪",
+            "cue": "squeezes"
+          },
+          {
+            "text": "To the lungs",
+            "icon": "🫁",
+            "cue": "lungs"
+          },
+          {
+            "text": "All around you",
+            "icon": "🔄",
+            "cue": "around"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Every day and every night, even while you sleep! Follow Curio Kids Club for more wonders. And next time someone asks... how does my heart pump blood?"
+    }
+  ]
+}

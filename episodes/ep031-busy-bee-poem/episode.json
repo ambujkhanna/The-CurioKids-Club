@@ -1,0 +1,279 @@
+{
+  "id": "ep031",
+  "slug": "busy-bee-poem",
+  "status": "ready",
+  "title": "The Busy Bee Poem 🐝 Rhyme for Kids",
+  "cover_text": "BUSY BEE!",
+  "description": "Follow one busy honeybee from sunrise to bedtime! Leo and big sister Mia take turns with a buzzy rhyme, plus real bee facts, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsPoems",
+    "#KidsLearning",
+    "#Bees",
+    "#Shorts"
+  ],
+  "tags": [
+    "bee poem for kids",
+    "busy bee rhyme",
+    "poem for kids",
+    "bee facts for kids",
+    "kids poem",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "What does a bee do all day?",
+    "cue": "next",
+    "left": "🐝",
+    "right": "🌸"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, what does a bee do all day?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🐝",
+          "label": "Busy bee"
+        },
+        "right": {
+          "icon": "🌸",
+          "label": "All day?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Lots! Let's follow one busy bee in a rhyme. You do every other verse!",
+      "punch": "busy",
+      "board": {
+        "type": "big",
+        "icon": "🐝",
+        "text": "A busy bee rhyme",
+        "cue": "busy",
+        "sub": "Taking turns!",
+        "sub_cue": "verse"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Buzz, buzz, buzz, the sun is up! Off flies the bee to a flower cup.",
+      "board": {
+        "type": "poem",
+        "title": "Good morning",
+        "icon": "🌅",
+        "lines": [
+          {
+            "text": "Buzz, buzz, buzz, the sun is up!",
+            "icon": "☀️",
+            "cue": "sun"
+          },
+          {
+            "text": "Off flies the bee to a flower cup.",
+            "icon": "🌷",
+            "cue": "flower"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "She sips sweet nectar, drop by drop, from flower to flower, she doesn't stop!",
+      "board": {
+        "type": "poem",
+        "title": "Sip, sip",
+        "icon": "🌸",
+        "lines": [
+          {
+            "text": "She sips sweet nectar,",
+            "icon": "🐝",
+            "cue": "sips"
+          },
+          {
+            "text": "drop by drop,",
+            "icon": "💧",
+            "cue": "drop"
+          },
+          {
+            "text": "from flower to flower,",
+            "icon": "🌼",
+            "cue": "flower"
+          },
+          {
+            "text": "she doesn't stop!",
+            "icon": "💨",
+            "cue": "stop"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "She packs gold pollen, fluffy and neat, and takes it home for babies to eat!",
+      "board": {
+        "type": "poem",
+        "title": "Pack, pack",
+        "icon": "🐝",
+        "lines": [
+          {
+            "text": "She packs gold pollen,",
+            "icon": "🟡",
+            "cue": "pollen"
+          },
+          {
+            "text": "fluffy and neat,",
+            "icon": "✨",
+            "cue": "fluffy"
+          },
+          {
+            "text": "and takes it home",
+            "icon": "🏠",
+            "cue": "home"
+          },
+          {
+            "text": "for babies to eat!",
+            "icon": "🍼",
+            "cue": "babies"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Bee fact! Carrying pollen from flower to flower helps plants make seeds and fruit.",
+      "board": {
+        "type": "big",
+        "icon": "🍎",
+        "text": "Bees help plants make fruit",
+        "cue": "fruit",
+        "sub": "And seeds too!",
+        "sub_cue": "seeds"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Back at the hive she dances round, to share the flowers she has found!",
+      "board": {
+        "type": "poem",
+        "title": "Dance, dance",
+        "icon": "💃",
+        "lines": [
+          {
+            "text": "Back at the hive",
+            "icon": "🏠",
+            "cue": "hive"
+          },
+          {
+            "text": "she dances round,",
+            "icon": "💃",
+            "cue": "dances"
+          },
+          {
+            "text": "to share the flowers",
+            "icon": "🌸",
+            "cue": "share"
+          },
+          {
+            "text": "she has found!",
+            "icon": "🐝",
+            "cue": "found"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "That's true! Honeybees really do a waggle dance, to show their friends the way to flowers.",
+      "board": {
+        "type": "big",
+        "icon": "🐝",
+        "text": "The waggle dance!",
+        "cue": "waggle",
+        "sub": "It shows the way",
+        "sub_cue": "way"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "They fill the comb with honey gold, to eat in winter when it's cold.",
+      "board": {
+        "type": "poem",
+        "title": "Honey time",
+        "icon": "🍯",
+        "lines": [
+          {
+            "text": "They fill the comb",
+            "icon": "🐝",
+            "cue": "comb"
+          },
+          {
+            "text": "with honey gold,",
+            "icon": "🍯",
+            "cue": "honey"
+          },
+          {
+            "text": "to eat in winter",
+            "icon": "❄️",
+            "cue": "winter"
+          },
+          {
+            "text": "when it's cold.",
+            "icon": "🥶",
+            "cue": "cold"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "At night she rests, her work is done. Goodnight, busy bee, see you with the sun!",
+      "board": {
+        "type": "poem",
+        "title": "Goodnight",
+        "icon": "🌙",
+        "lines": [
+          {
+            "text": "At night she rests,",
+            "icon": "🌙",
+            "cue": "night"
+          },
+          {
+            "text": "her work is done.",
+            "icon": "😴",
+            "cue": "work"
+          },
+          {
+            "text": "Goodnight, busy bee,",
+            "icon": "🐝",
+            "cue": "goodnight"
+          },
+          {
+            "text": "see you with the sun!",
+            "icon": "🌅",
+            "cue": "sun"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "So if you see a bee, stay calm and let it buzz on by. It's busy working!",
+      "board": {
+        "type": "big",
+        "icon": "😊",
+        "text": "Stay calm, let it buzz by",
+        "cue": "calm",
+        "sub": "It's busy working!",
+        "sub_cue": "working"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Buzzy work! Follow Curio Kids Club for more wonders. And next time someone asks... what does a bee do all day?"
+    }
+  ]
+}

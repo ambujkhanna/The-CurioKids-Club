@@ -1,0 +1,230 @@
+{
+  "id": "ep065",
+  "slug": "why-we-have-seasons",
+  "status": "ready",
+  "title": "Why Do We Have Seasons? 🌍 Science for Kids",
+  "cover_text": "TILT!",
+  "description": "It's not about being closer to the Sun! Leo asks, big sister Mia explains how Earth's tilt gives us summer and winter, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#ScienceForKids",
+    "#Seasons",
+    "#Shorts"
+  ],
+  "tags": [
+    "seasons for kids",
+    "why do we have seasons",
+    "earth tilt",
+    "science for kids",
+    "space for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why seasons?",
+    "cue": "next",
+    "left": "☀️",
+    "right": "❄️"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why do we have seasons?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "☀️",
+          "label": "Summer"
+        },
+        "right": {
+          "icon": "❄️",
+          "label": "Winter"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Because Earth is tilted! It leans a little as it travels around the Sun.",
+      "punch": "tilted",
+      "board": {
+        "type": "big",
+        "icon": "🌍",
+        "text": "Earth is tilted!",
+        "cue": "tilted",
+        "sub": "It leans a little",
+        "sub_cue": "leans"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Tilted? Like a wobbly spinning top?"
+    },
+    {
+      "who": "MIA",
+      "text": "A bit! Earth takes one year to go around the Sun, and it keeps leaning the same way.",
+      "board": {
+        "type": "big",
+        "icon": "☀️",
+        "text": "One trip = one year",
+        "cue": "year",
+        "sub": "Always leaning the same way",
+        "sub_cue": "leaning"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So how does leaning make summer?"
+    },
+    {
+      "who": "MIA",
+      "text": "When your half leans toward the Sun, days are longer and warmer. That's summer! When it leans away, days are shorter and colder. That's winter.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Summer",
+          "items": [
+            {
+              "icon": "☀️",
+              "text": "Leans toward Sun",
+              "cue": "toward"
+            },
+            {
+              "icon": "🌞",
+              "text": "Long, warm days",
+              "cue": "longer"
+            }
+          ]
+        },
+        "right": {
+          "label": "Winter",
+          "items": [
+            {
+              "icon": "❄️",
+              "text": "Leans away",
+              "cue": "away"
+            },
+            {
+              "icon": "🌙",
+              "text": "Short, cold days",
+              "cue": "shorter"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What about spring and autumn?"
+    },
+    {
+      "who": "MIA",
+      "text": "Those come in between. In spring, flowers bloom. In autumn, leaves change colour.",
+      "board": {
+        "type": "gallery",
+        "title": "In between",
+        "items": [
+          {
+            "icon": "🌸",
+            "label": "Spring",
+            "cue": "spring"
+          },
+          {
+            "icon": "🌷",
+            "label": "Flowers bloom",
+            "cue": "flowers"
+          },
+          {
+            "icon": "🍂",
+            "label": "Autumn",
+            "cue": "autumn"
+          },
+          {
+            "icon": "🍁",
+            "label": "Leaves change",
+            "cue": "leaves"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Is it summer because we're closer to the Sun?"
+    },
+    {
+      "who": "MIA",
+      "text": "Nope! It's all about the tilt, not how far away the Sun is.",
+      "board": {
+        "type": "big",
+        "icon": "🚫",
+        "text": "Not about distance!",
+        "cue": "far",
+        "sub": "It's all about the tilt",
+        "sub_cue": "tilt"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So is it summer everywhere at the same time?"
+    },
+    {
+      "who": "MIA",
+      "text": "No! When the top half has summer, the bottom half has winter. Then they swap!",
+      "punch": "swap",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Top half",
+          "items": [
+            {
+              "icon": "☀️",
+              "text": "Summer",
+              "cue": "summer"
+            }
+          ]
+        },
+        "right": {
+          "label": "Bottom half",
+          "items": [
+            {
+              "icon": "❄️",
+              "text": "Winter",
+              "cue": "winter"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So seasons happen because Earth is tilted as it goes around the Sun!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "🌍",
+            "text": "Earth is tilted",
+            "cue": "tilted"
+          },
+          {
+            "icon": "🔄",
+            "text": "It goes around the Sun",
+            "cue": "around"
+          },
+          {
+            "icon": "🍂",
+            "text": "That makes seasons",
+            "cue": "seasons"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "That's right! Follow Curio Kids Club for more wonders. And next time someone asks... why do we have seasons?"
+    }
+  ]
+}

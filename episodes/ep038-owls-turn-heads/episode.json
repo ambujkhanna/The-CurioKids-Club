@@ -1,0 +1,191 @@
+{
+  "id": "ep038",
+  "slug": "owls-turn-heads",
+  "status": "ready",
+  "title": "How Can Owls Turn Their Heads So Far? 🦉 Kids Facts",
+  "cover_text": "TWIST!",
+  "description": "How can owls turn their heads so far? Tube-shaped eyes and an extra-bendy neck! Leo asks, big sister Mia explains, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Owls",
+    "#Shorts"
+  ],
+  "tags": [
+    "owl facts for kids",
+    "owl head turn",
+    "animal facts",
+    "birds for kids",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "How do owls turn so far?",
+    "cue": "next",
+    "left": "🦉",
+    "right": "🔄"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, how can owls turn their heads so far?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🦉",
+          "label": "Owl"
+        },
+        "right": {
+          "icon": "🔄",
+          "label": "Turn?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Owls can turn their heads about three-quarters of the way around! That's much farther than you can.",
+      "board": {
+        "type": "big",
+        "icon": "🦉",
+        "text": "Three-quarters around!",
+        "cue": "three",
+        "sub": "Way farther than you",
+        "sub_cue": "farther"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why do they need to?"
+    },
+    {
+      "who": "MIA",
+      "text": "Owl eyes are shaped like tubes, so they can't roll them around like we do. Instead, an owl turns its whole head.",
+      "punch": "tubes",
+      "board": {
+        "type": "big",
+        "icon": "👀",
+        "text": "Eyes can't roll around",
+        "cue": "tubes",
+        "sub": "So the head turns",
+        "sub_cue": "turns"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "But how does the neck do that?"
+    },
+    {
+      "who": "MIA",
+      "text": "An owl's neck has twice as many bones as yours. More little bones make a bendier, twistier neck!",
+      "board": {
+        "type": "big",
+        "icon": "🦴",
+        "text": "Twice the neck bones",
+        "cue": "twice",
+        "sub": "Bendy and twisty",
+        "sub_cue": "bendier"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Doesn't all that twisting hurt?"
+    },
+    {
+      "who": "MIA",
+      "text": "No! Special blood vessels in an owl's neck keep blood flowing to its brain, even when it twists.",
+      "board": {
+        "type": "big",
+        "icon": "🧠",
+        "text": "Blood keeps flowing",
+        "cue": "blood",
+        "sub": "Even mid-twist!",
+        "sub_cue": "twist"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can I try it?"
+    },
+    {
+      "who": "MIA",
+      "text": "Be gentle! Our necks aren't built like that. We move our eyes, and owls move their head.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "You",
+          "items": [
+            {
+              "text": "Eyes move",
+              "icon": "👀",
+              "cue": "eyes"
+            },
+            {
+              "text": "Gentle turns",
+              "icon": "🙂",
+              "cue": "gentle"
+            }
+          ]
+        },
+        "right": {
+          "label": "Owl",
+          "items": [
+            {
+              "text": "Head turns",
+              "icon": "🦉",
+              "cue": "head"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What else is cool about owls?"
+    },
+    {
+      "who": "MIA",
+      "text": "Their super hearing! Many owls can find a mouse in the dark just by listening.",
+      "board": {
+        "type": "big",
+        "icon": "👂",
+        "text": "Super hearing",
+        "cue": "hearing",
+        "sub": "Hunting in the dark",
+        "sub_cue": "dark"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Tube eyes, extra neck bones and super hearing. Owls are awesome!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Tube-shaped eyes",
+            "icon": "👀",
+            "cue": "tube"
+          },
+          {
+            "text": "Extra neck bones",
+            "icon": "🦴",
+            "cue": "extra"
+          },
+          {
+            "text": "Super hearing",
+            "icon": "👂",
+            "cue": "super"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Hoo-ray for owls! Follow Curio Kids Club for more wonders. And next time someone asks... how can owls turn their heads so far?"
+    }
+  ]
+}

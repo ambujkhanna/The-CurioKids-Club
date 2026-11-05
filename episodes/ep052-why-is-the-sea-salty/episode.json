@@ -1,0 +1,25 @@
+{
+  "id": "ep052", "slug": "why-is-the-sea-salty", "status": "ready",
+  "title": "Why Is the Sea Salty? 🌊 Fun Facts for Kids",
+  "cover_text": "SALTY SEA?",
+  "description": "The salt in the sea comes from rocks! Leo asks, big sister Mia explains how rain and rivers carry salt to the sea, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": ["#KidsLearning", "#FunFacts", "#Ocean", "#Shorts"],
+  "tags": ["why is the sea salty", "ocean facts for kids", "salt water", "nature facts", "science for kids", "kids learning"],
+  "cast": ["LEO", "MIA"],
+  "loop_card": {"text": "Why so salty?", "cue": "next", "left": "🌊", "right": "🧂"},
+  "lines": [
+    {"who": "LEO", "text": "Mia, why is the sea salty?", "board": {"type": "title", "left": {"icon": "🌊", "label": "Sea"}, "right": {"icon": "🧂", "label": "Salty?"}, "mid": "?"}},
+    {"who": "MIA", "text": "It starts with rain! When rain falls on land, it slowly washes teeny bits of salt out of rocks and soil.", "board": {"type": "big", "icon": "🌧️", "text": "Rain washes the rocks", "cue": "rain", "sub": "Picks up tiny bits of salt", "sub_cue": "salt"}},
+    {"who": "LEO", "text": "Rocks have salt in them?"},
+    {"who": "MIA", "text": "Tiny bits, yes! Then rivers carry that salt all the way down to the sea.", "board": {"type": "big", "icon": "🏞️", "text": "Rivers carry it to the sea", "cue": "rivers"}},
+    {"who": "LEO", "text": "But river water doesn't taste salty."},
+    {"who": "MIA", "text": "Right! Each river only carries a teeny bit, too little to taste. But in the sea, it keeps adding up.", "board": {"type": "big", "icon": "🤏", "text": "Too little to taste", "cue": "little", "sub": "But it keeps adding up!", "sub_cue": "adding"}},
+    {"who": "LEO", "text": "Why doesn't the salt leave the sea again?"},
+    {"who": "MIA", "text": "The sun warms the sea, and water floats up into the air to make clouds. But the salt can't float up. It stays behind!", "punch": "behind", "board": {"type": "steps", "title": "Salt stays behind", "items": [{"icon": "☀️", "label": "Sun warms the sea", "cue": "sun"}, {"icon": "☁️", "label": "Water floats up", "cue": "floats"}, {"icon": "🧂", "label": "Salt stays behind", "cue": "stays"}]}},
+    {"who": "MIA", "text": "Then the clouds rain again, more salt washes down, and round and round it goes, for a very, very long time.", "board": {"type": "big", "icon": "🔄", "text": "Round and round it goes", "cue": "round", "sub": "For a very long time", "sub_cue": "long"}},
+    {"who": "LEO", "text": "So that's why rain isn't salty, but the sea is!"},
+    {"who": "MIA", "text": "Yep! Rain is fresh water. And some salty stuff also comes from cracks deep under the sea floor.", "board": {"type": "gallery", "title": "Where salt is", "items": [{"icon": "💧", "label": "Rain: fresh", "cue": "rain"}, {"icon": "🌊", "label": "Sea: salty", "cue": "sea"}, {"icon": "🕳️", "label": "Deep sea cracks", "cue": "cracks"}]}},
+    {"who": "LEO", "text": "Rain washes salt from rocks, rivers carry it, and the salt stays in the sea!", "board": {"type": "summary", "rows": [{"icon": "🌧️", "text": "Rain washes rocks", "cue": "rain"}, {"icon": "🏞️", "text": "Rivers carry salt", "cue": "rivers"}, {"icon": "🧂", "text": "Salt stays in the sea", "cue": "stays"}]}},
+    {"who": "MIA", "text": "That's it! Follow Curio Kids Club for more wonders. And next time someone asks... why is the sea salty?"}
+  ]
+}

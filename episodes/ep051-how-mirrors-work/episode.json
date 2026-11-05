@@ -1,0 +1,25 @@
+{
+  "id": "ep051", "slug": "how-mirrors-work", "status": "ready",
+  "title": "How Does a Mirror Show Your Reflection? 🪞 Kids Science",
+  "cover_text": "MIRROR ME?",
+  "description": "A mirror bounces light straight back to your eyes! Leo asks, Dad explains how reflections work, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": ["#KidsLearning", "#FunFacts", "#Science", "#Shorts"],
+  "tags": ["how mirrors work for kids", "reflection for kids", "light science", "everyday science", "science for kids", "kids learning"],
+  "cast": ["LEO", "DAD"],
+  "loop_card": {"text": "Mirror magic?", "cue": "next", "left": "🪞", "right": "👦"},
+  "lines": [
+    {"who": "LEO", "text": "Dad, how does a mirror show my reflection?", "board": {"type": "title", "left": {"icon": "🪞", "label": "Mirror"}, "right": {"icon": "👦", "label": "Me?"}, "mid": "?"}},
+    {"who": "DAD", "text": "It's all about light! Light from a lamp or a window bounces off you, in every direction.", "punch": "light", "board": {"type": "big", "icon": "💡", "text": "Light bounces off you", "cue": "bounces", "sub": "In every direction", "sub_cue": "direction"}},
+    {"who": "LEO", "text": "Light bounces? Like a ball?"},
+    {"who": "DAD", "text": "Just like a ball! Some of that light travels to the mirror. And a mirror is super smooth and shiny.", "board": {"type": "big", "icon": "🪞", "text": "Super smooth and shiny", "cue": "smooth"}},
+    {"who": "DAD", "text": "So the light hits the mirror and bounces straight back, nice and neat, into your eyes. And your eyes see... you!", "board": {"type": "steps", "title": "How you see you", "items": [{"icon": "🪞", "label": "Light hits the mirror", "cue": "hits"}, {"icon": "↩️", "label": "Bounces straight back", "cue": "back"}, {"icon": "👀", "label": "Into your eyes", "cue": "eyes"}]}},
+    {"who": "LEO", "text": "Then why can't I see myself in my t-shirt?"},
+    {"who": "DAD", "text": "A mirror is smooth, so light bounces back neatly. Your t-shirt is bumpy up close, so light scatters every which way.", "board": {"type": "compare", "left": {"label": "Mirror", "items": [{"icon": "✨", "text": "Smooth", "cue": "smooth"}, {"icon": "✅", "text": "Neat bounce", "cue": "neatly"}]}, "right": {"label": "T-shirt", "items": [{"icon": "👕", "text": "Bumpy", "cue": "bumpy"}, {"icon": "🔀", "text": "Scatters", "cue": "scatters"}]}}},
+    {"who": "LEO", "text": "What's a mirror made of?"},
+    {"who": "DAD", "text": "Usually glass, with a very thin, shiny layer of metal on the back. The glass keeps the metal smooth and safe.", "board": {"type": "big", "icon": "✨", "text": "Glass + shiny metal", "cue": "glass", "sub": "Metal layer on the back", "sub_cue": "metal"}},
+    {"who": "LEO", "text": "Hey, when I hold up a word to the mirror, the letters look backwards!"},
+    {"who": "DAD", "text": "That's because a mirror flips things around. Try holding up your name and see!", "punch": "flips", "board": {"type": "big", "icon": "🔄", "text": "Words look backwards!", "cue": "flips", "sub": "Try it with your name", "sub_cue": "name"}},
+    {"who": "LEO", "text": "So light bounces off me, hits the smooth mirror, and comes back to my eyes!", "board": {"type": "summary", "rows": [{"icon": "💡", "text": "Light bounces off you", "cue": "bounces"}, {"icon": "🪞", "text": "Smooth mirror", "cue": "smooth"}, {"icon": "👀", "text": "Back to your eyes", "cue": "eyes"}]}},
+    {"who": "DAD", "text": "You got it! Follow Curio Kids Club for more wonders. And next time someone asks... how does a mirror show your reflection?"}
+  ]
+}

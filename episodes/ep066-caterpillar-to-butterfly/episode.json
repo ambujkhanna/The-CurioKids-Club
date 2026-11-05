@@ -1,0 +1,210 @@
+{
+  "id": "ep066",
+  "slug": "caterpillar-to-butterfly",
+  "status": "ready",
+  "title": "How Does a Caterpillar Become a Butterfly? 🦋 For Kids",
+  "cover_text": "BIG CHANGE!",
+  "description": "From a tiny egg to a beautiful butterfly! Leo asks, big sister Mia explains metamorphosis step by step, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#AnimalFacts",
+    "#Butterfly",
+    "#Shorts"
+  ],
+  "tags": [
+    "butterfly life cycle for kids",
+    "caterpillar to butterfly",
+    "metamorphosis",
+    "animal facts",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Caterpillar to butterfly?",
+    "cue": "next",
+    "left": "🐛",
+    "right": "🦋"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, how does a caterpillar become a butterfly?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🐛",
+          "label": "Caterpillar"
+        },
+        "right": {
+          "icon": "🦋",
+          "label": "Butterfly"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "It's called metamorphosis. That's a big word for a really big change!",
+      "punch": "metamorphosis",
+      "board": {
+        "type": "big",
+        "icon": "✨",
+        "text": "Metamorphosis",
+        "cue": "metamorphosis",
+        "sub": "A really big change!",
+        "sub_cue": "change"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Meta-what? How does it start?"
+    },
+    {
+      "who": "MIA",
+      "text": "It starts as a tiny egg on a leaf. Out hatches a little caterpillar, and it gets right to work eating!",
+      "board": {
+        "type": "steps",
+        "title": "How it starts",
+        "items": [
+          {
+            "icon": "🥚",
+            "label": "A tiny egg on a leaf",
+            "cue": "egg"
+          },
+          {
+            "icon": "🐛",
+            "label": "A caterpillar hatches",
+            "cue": "hatches"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What does it eat?"
+    },
+    {
+      "who": "MIA",
+      "text": "Leaves and more leaves! It eats so much it grows too big for its skin, so it wiggles out of it a few times.",
+      "board": {
+        "type": "big",
+        "icon": "🍃",
+        "text": "Munch, munch, grow!",
+        "cue": "eats",
+        "sub": "It sheds its skin",
+        "sub_cue": "skin"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And then it turns into a butterfly?"
+    },
+    {
+      "who": "MIA",
+      "text": "Not yet! First it makes a hard case around itself, called a chrysalis. Like a wrapped-up present!",
+      "board": {
+        "type": "big",
+        "icon": "🎁",
+        "text": "The chrysalis",
+        "cue": "chrysalis",
+        "sub": "A wrapped-up present",
+        "sub_cue": "present"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What happens inside?"
+    },
+    {
+      "who": "MIA",
+      "text": "Something amazing! Its body changes almost completely. It builds wings, new legs and big new eyes.",
+      "board": {
+        "type": "gallery",
+        "title": "Inside the chrysalis",
+        "items": [
+          {
+            "icon": "🦋",
+            "label": "Wings",
+            "cue": "wings"
+          },
+          {
+            "icon": "🦵",
+            "label": "New legs",
+            "cue": "legs"
+          },
+          {
+            "icon": "👀",
+            "label": "Big new eyes",
+            "cue": "eyes"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How does it get out?"
+    },
+    {
+      "who": "MIA",
+      "text": "The chrysalis splits open, and out comes a butterfly! Its wings dry, then off it flies.",
+      "board": {
+        "type": "steps",
+        "title": "Hello, butterfly!",
+        "items": [
+          {
+            "icon": "🐣",
+            "label": "The case splits open",
+            "cue": "splits"
+          },
+          {
+            "icon": "🌬️",
+            "label": "Wings dry",
+            "cue": "dry"
+          },
+          {
+            "icon": "🦋",
+            "label": "Off it flies!",
+            "cue": "flies"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So it goes egg, caterpillar, chrysalis, butterfly. What a change!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "🥚",
+            "text": "Egg",
+            "cue": "egg"
+          },
+          {
+            "icon": "🐛",
+            "text": "Caterpillar",
+            "cue": "caterpillar"
+          },
+          {
+            "icon": "🎁",
+            "text": "Chrysalis",
+            "cue": "chrysalis"
+          },
+          {
+            "icon": "🦋",
+            "text": "Butterfly",
+            "cue": "butterfly"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Nature is amazing! Follow Curio Kids Club for more wonders. And next time someone asks... how does a caterpillar become a butterfly?"
+    }
+  ]
+}

@@ -1,0 +1,277 @@
+{
+  "id": "ep041",
+  "slug": "wash-your-hands-rhyme",
+  "status": "ready",
+  "title": "Wash Your Hands Rhyme 🧼 Poem for Kids",
+  "cover_text": "SCRUB!",
+  "description": "A bubbly hand washing rhyme for kids! Mia says each step in a verse: tap, soap, scrub, count to twenty, rinse and dry.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#KidsPoems",
+    "#HealthyHabits",
+    "#Shorts"
+  ],
+  "tags": [
+    "hand washing rhyme",
+    "wash your hands song for kids",
+    "poem for kids",
+    "healthy habits for kids",
+    "preschool learning",
+    "kids learning"
+  ],
+  "cast": [
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Hand washing rhyme!",
+    "cue": "next",
+    "left": "🧼",
+    "right": "👐"
+  },
+  "lines": [
+    {
+      "who": "MIA",
+      "text": "Hey friends, do you know the hand washing rhyme?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "👐",
+          "label": "Clean hands"
+        },
+        "right": {
+          "icon": "🎵",
+          "label": "Rhyme!"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "It helps you remember every step. Let's say it together!",
+      "board": {
+        "type": "big",
+        "icon": "🎵",
+        "text": "Say it with me!",
+        "cue": "together",
+        "sub": "Every step",
+        "sub_cue": "step"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Turn on the tap, get your hands wet. Add some soap, it's not done yet!",
+      "board": {
+        "type": "poem",
+        "title": "Tap and soap",
+        "icon": "💧",
+        "lines": [
+          {
+            "text": "Turn on the tap,",
+            "icon": "🚰",
+            "cue": "tap"
+          },
+          {
+            "text": "get your hands wet,",
+            "icon": "💧",
+            "cue": "wet"
+          },
+          {
+            "text": "Add some soap,",
+            "icon": "🧼",
+            "cue": "soap"
+          },
+          {
+            "text": "it's not done yet!",
+            "icon": "🙌",
+            "cue": "done"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Rub your palms, then the backs. Fingers lace like railroad tracks!",
+      "board": {
+        "type": "poem",
+        "title": "Rub and scrub",
+        "icon": "🤲",
+        "lines": [
+          {
+            "text": "Rub your palms, then the backs,",
+            "icon": "🤲",
+            "cue": "palms"
+          },
+          {
+            "text": "Fingers lace like railroad tracks!",
+            "icon": "🛤️",
+            "cue": "fingers"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Thumbs get twisted, nails get scrubbed. Every germ gets rub-a-dubbed!",
+      "punch": "rub",
+      "board": {
+        "type": "poem",
+        "title": "Thumbs and nails",
+        "icon": "👍",
+        "lines": [
+          {
+            "text": "Thumbs get twisted,",
+            "icon": "👍",
+            "cue": "thumbs"
+          },
+          {
+            "text": "nails get scrubbed,",
+            "icon": "💅",
+            "cue": "nails"
+          },
+          {
+            "text": "Every germ gets",
+            "icon": "🦠",
+            "cue": "every"
+          },
+          {
+            "text": "rub-a-dubbed!",
+            "icon": "🫧",
+            "cue": "rub"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Count to twenty, nice and slow. Rinse the bubbles, down they go!",
+      "board": {
+        "type": "poem",
+        "title": "Count and rinse",
+        "icon": "🔢",
+        "lines": [
+          {
+            "text": "Count to twenty, nice and slow,",
+            "icon": "🔢",
+            "cue": "count"
+          },
+          {
+            "text": "Rinse the bubbles, down they go!",
+            "icon": "🚿",
+            "cue": "rinse"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Grab a towel, pat them dry. Clean hands now, so wave bye-bye!",
+      "board": {
+        "type": "poem",
+        "title": "Dry and done",
+        "icon": "✨",
+        "lines": [
+          {
+            "text": "Grab a towel, pat them dry,",
+            "icon": "🙌",
+            "cue": "towel"
+          },
+          {
+            "text": "Clean hands now, so wave bye-bye!",
+            "icon": "👋",
+            "cue": "wave"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "When should you wash? Before you eat, after using the potty, and after playing outside.",
+      "board": {
+        "type": "checklist",
+        "title": "Wash your hands",
+        "icon": "🧼",
+        "items": [
+          {
+            "text": "Before you eat",
+            "icon": "🍎",
+            "cue": "before",
+            "ok": true
+          },
+          {
+            "text": "After the potty",
+            "icon": "🚽",
+            "cue": "potty",
+            "ok": true
+          },
+          {
+            "text": "After playing outside",
+            "icon": "🌳",
+            "cue": "outside",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Before I eat and after play, I wash the germs away each day!",
+      "board": {
+        "type": "poem",
+        "title": "Every day",
+        "icon": "🌞",
+        "lines": [
+          {
+            "text": "Before I eat and after play,",
+            "icon": "🍽️",
+            "cue": "eat"
+          },
+          {
+            "text": "I wash the germs away each day!",
+            "icon": "✨",
+            "cue": "germs"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "One more time, super fast! Tap, soap, scrub, count, rinse and dry!",
+      "punch": "fast",
+      "board": {
+        "type": "steps",
+        "title": "Quick steps",
+        "items": [
+          {
+            "label": "Tap",
+            "icon": "💧",
+            "cue": "tap"
+          },
+          {
+            "label": "Soap",
+            "icon": "🧼",
+            "cue": "soap"
+          },
+          {
+            "label": "Scrub",
+            "icon": "🤲",
+            "cue": "scrub"
+          },
+          {
+            "label": "Count to twenty",
+            "icon": "🔢",
+            "cue": "count"
+          },
+          {
+            "label": "Rinse and dry",
+            "icon": "🚿",
+            "cue": "rinse"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Hooray for clean hands! Follow Curio Kids Club for more wonders. And next time someone asks... do you know the hand washing rhyme?"
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "id": "ep067",
+  "slug": "why-we-lose-baby-teeth",
+  "status": "ready",
+  "title": "Why Do We Lose Our Baby Teeth? 🦷 Fun Facts for Kids",
+  "cover_text": "WIGGLY TOOTH!",
+  "description": "Big teeth are already hiding under your baby teeth! Leo asks, big sister Mia explains why baby teeth fall out, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Teeth",
+    "#Shorts"
+  ],
+  "tags": [
+    "baby teeth for kids",
+    "why teeth fall out",
+    "losing teeth",
+    "human body for kids",
+    "body facts",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why do baby teeth fall out?",
+    "cue": "next",
+    "left": "🦷",
+    "right": "👋"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why do we lose our baby teeth?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🦷",
+          "label": "Baby teeth"
+        },
+        "right": {
+          "icon": "👋",
+          "label": "Bye-bye?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Because you're growing! Your mouth and jaw get bigger, but your baby teeth stay small.",
+      "punch": "growing",
+      "board": {
+        "type": "big",
+        "icon": "📏",
+        "text": "You're growing!",
+        "cue": "growing",
+        "sub": "Your jaw gets bigger",
+        "sub_cue": "jaw"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So small teeth don't fit anymore?"
+    },
+    {
+      "who": "MIA",
+      "text": "Right! A grown-up mouth needs bigger teeth. And they're already waiting in your gums, under your baby teeth.",
+      "board": {
+        "type": "big",
+        "icon": "🦷",
+        "text": "Big teeth wait below",
+        "cue": "waiting",
+        "sub": "Hiding in your gums",
+        "sub_cue": "gums"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Wait, there are teeth hiding in there right now?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yep! A big tooth pushes up, and the baby tooth's roots slowly melt away. So it gets wiggly and falls out.",
+      "board": {
+        "type": "steps",
+        "title": "The tooth swap",
+        "items": [
+          {
+            "icon": "⬆️",
+            "label": "Big tooth pushes up",
+            "cue": "pushes"
+          },
+          {
+            "icon": "💧",
+            "label": "Baby roots melt away",
+            "cue": "roots"
+          },
+          {
+            "icon": "🦷",
+            "label": "Wiggle, wiggle, out!",
+            "cue": "wiggly"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Does it hurt?"
+    },
+    {
+      "who": "MIA",
+      "text": "Usually just a little. And the new tooth soon grows in to fill the gap.",
+      "board": {
+        "type": "big",
+        "icon": "😁",
+        "text": "The new tooth fills the gap",
+        "cue": "gap",
+        "sub": "Just a little wait",
+        "sub_cue": "grows"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How many baby teeth do I have?"
+    },
+    {
+      "who": "MIA",
+      "text": "Most kids have twenty baby teeth. Grown-ups can end up with thirty-two big teeth!",
+      "punch": "twenty",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Kids",
+          "items": [
+            {
+              "icon": "🦷",
+              "text": "20 baby teeth",
+              "cue": "twenty"
+            }
+          ]
+        },
+        "right": {
+          "label": "Grown-ups",
+          "items": [
+            {
+              "icon": "🦷",
+              "text": "32 big teeth",
+              "cue": "thirty"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "When do they start falling out?"
+    },
+    {
+      "who": "MIA",
+      "text": "Often around age six. But every kid is different, so early or late is okay.",
+      "board": {
+        "type": "big",
+        "icon": "🎂",
+        "text": "Often around age 6",
+        "cue": "six",
+        "sub": "Early or late is okay",
+        "sub_cue": "early"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So baby teeth fall out to make room for big, strong teeth!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "🦷",
+            "text": "Baby teeth fall out",
+            "cue": "fall"
+          },
+          {
+            "icon": "⬆️",
+            "text": "Room for big teeth",
+            "cue": "room"
+          },
+          {
+            "icon": "💪",
+            "text": "Big and strong!",
+            "cue": "strong"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Big teeth have to last, so brush every day. Follow Curio Kids Club for more wonders. And next time someone asks... why do we lose our baby teeth?",
+      "board": {
+        "type": "checklist",
+        "title": "Happy teeth",
+        "icon": "🪥",
+        "items": [
+          {
+            "icon": "🪥",
+            "text": "Brush every day",
+            "cue": "brush",
+            "ok": true
+          }
+        ]
+      }
+    }
+  ]
+}

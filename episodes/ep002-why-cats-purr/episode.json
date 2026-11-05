@@ -1,0 +1,188 @@
+{
+  "id": "ep002",
+  "slug": "why-cats-purr",
+  "status": "ready",
+  "title": "Why Do Cats Purr? 🐱 Fun Facts for Kids",
+  "cover_text": "PURRR?",
+  "description": "Cats purr when they're happy, but that's not the whole story! Leo asks, big sister Mia explains the mystery of the purr, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Cats",
+    "#Shorts"
+  ],
+  "tags": [
+    "cat facts for kids",
+    "why do cats purr",
+    "kittens",
+    "animal facts",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why do cats purr?",
+    "cue": "next",
+    "left": "🐱",
+    "right": "❓"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why do cats purr?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🐱",
+          "label": "Cat"
+        },
+        "right": {
+          "icon": "🔊",
+          "label": "Purrr?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "A purr is a cat's soft rumble. Scientists think tiny muscles in its throat buzz as the cat breathes in and out.",
+      "board": {
+        "type": "big",
+        "icon": "🐱",
+        "text": "A rumble in the throat",
+        "cue": "throat",
+        "sub": "Buzz in, buzz out",
+        "sub_cue": "breathes"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So it purrs breathing in AND breathing out?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! That's why a purr can keep going and going, like a tiny engine.",
+      "punch": "engine",
+      "board": {
+        "type": "big",
+        "icon": "🔁",
+        "text": "A non-stop purr!",
+        "cue": "going",
+        "sub": "Like a tiny engine",
+        "sub_cue": "engine"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Do cats purr because they're happy?",
+      "board": {
+        "type": "big",
+        "icon": "😺",
+        "text": "Happy cat?",
+        "cue": "happy"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Often, yes! A cat may purr when it's cozy, cuddled, or ready for a nap.",
+      "board": {
+        "type": "gallery",
+        "title": "Happy purrs",
+        "items": [
+          {
+            "icon": "🛋️",
+            "label": "Cozy",
+            "cue": "cozy"
+          },
+          {
+            "icon": "🤗",
+            "label": "Cuddled",
+            "cue": "cuddled"
+          },
+          {
+            "icon": "😴",
+            "label": "Nap time",
+            "cue": "nap"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Do they ever purr for other reasons?"
+    },
+    {
+      "who": "MIA",
+      "text": "They do! Cats sometimes purr when they're nervous or not feeling well. Scientists think purring may help them feel calm.",
+      "punch": "calm",
+      "board": {
+        "type": "big",
+        "icon": "💗",
+        "text": "Purring to feel calm",
+        "cue": "calm",
+        "sub": "Even when worried",
+        "sub_cue": "nervous"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Do baby kittens purr too?"
+    },
+    {
+      "who": "MIA",
+      "text": "They do, when they're just a few days old! Kittens purr to tell their mum they're okay, and mum purrs back.",
+      "board": {
+        "type": "gallery",
+        "title": "Kitten talk",
+        "items": [
+          {
+            "icon": "🐱",
+            "label": "Kitten",
+            "cue": "kittens"
+          },
+          {
+            "icon": "💬",
+            "label": "I'm okay!",
+            "cue": "okay"
+          },
+          {
+            "icon": "🐈",
+            "label": "Mum purrs back",
+            "cue": "back"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So a purr can mean happy, calm, or I'm okay. Cats are so cool!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Happy",
+            "icon": "😺",
+            "cue": "happy"
+          },
+          {
+            "text": "Calm",
+            "icon": "💗",
+            "cue": "calm"
+          },
+          {
+            "text": "I'm okay",
+            "icon": "👍",
+            "cue": "okay"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "They're purr-fect! Follow Curio Kids Club for more wonders. And next time someone asks... why do cats purr?"
+    }
+  ]
+}

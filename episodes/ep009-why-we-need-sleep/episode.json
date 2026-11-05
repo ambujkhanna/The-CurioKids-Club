@@ -1,0 +1,229 @@
+{
+  "id": "ep009",
+  "slug": "why-we-need-sleep",
+  "status": "ready",
+  "title": "Why Do We Need Sleep? 😴 Fun Facts for Kids",
+  "cover_text": "WHY SLEEP?",
+  "description": "While you sleep, your brain and body are busy! Leo asks, big sister Mia explains why sleep matters, plus easy tips for a good night, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#HumanBody",
+    "#Shorts"
+  ],
+  "tags": [
+    "why do we sleep",
+    "sleep facts for kids",
+    "bedtime",
+    "human body for kids",
+    "healthy habits",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why do we sleep?",
+    "cue": "next",
+    "left": "😴",
+    "right": "🌙"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why do we need sleep?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "😴",
+          "label": "Sleep"
+        },
+        "right": {
+          "icon": "🤔",
+          "label": "Why?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Sleep is like charging your batteries! Your body and brain get to rest and fix themselves up.",
+      "punch": "charging",
+      "board": {
+        "type": "big",
+        "icon": "🔋",
+        "text": "Recharge time!",
+        "cue": "charging",
+        "sub": "Body and brain rest",
+        "sub_cue": "rest"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "But what does my brain do while I sleep?"
+    },
+    {
+      "who": "MIA",
+      "text": "It's busy! Your brain sorts through what you learned today and saves the important parts, like tidying up a toy box.",
+      "board": {
+        "type": "big",
+        "icon": "🧠",
+        "text": "Brain tidy-up time",
+        "cue": "sorts",
+        "sub": "Saves what you learned",
+        "sub_cue": "saves"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Is that when I dream?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes, dreams happen while you sleep. Scientists are still learning why we dream!",
+      "board": {
+        "type": "big",
+        "icon": "💭",
+        "text": "Dream time",
+        "cue": "dreams",
+        "sub": "Still a mystery!",
+        "sub_cue": "scientists"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And what does my body do?"
+    },
+    {
+      "who": "MIA",
+      "text": "While you sleep, your body grows, your muscles get stronger, and it helps you fight off germs.",
+      "board": {
+        "type": "gallery",
+        "title": "Sleep helps you",
+        "items": [
+          {
+            "icon": "📏",
+            "label": "Grow",
+            "cue": "grows"
+          },
+          {
+            "icon": "💪",
+            "label": "Strong muscles",
+            "cue": "muscles"
+          },
+          {
+            "icon": "🛡️",
+            "label": "Fight germs",
+            "cue": "germs"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Is that why I'm grumpy when I stay up late?",
+      "punch": "grumpy",
+      "board": {
+        "type": "big",
+        "icon": "😫",
+        "text": "Grumpy?",
+        "cue": "grumpy"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Yep! Without enough sleep, it's harder to think, play and feel happy. And kids need more sleep than grown-ups.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Kids",
+          "items": [
+            {
+              "text": "More sleep",
+              "icon": "🧒",
+              "cue": "kids"
+            }
+          ]
+        },
+        "right": {
+          "label": "Grown-ups",
+          "items": [
+            {
+              "text": "Less sleep",
+              "icon": "🧑",
+              "cue": "grown"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How can I get good sleep?"
+    },
+    {
+      "who": "MIA",
+      "text": "Try the same bedtime each night, a calm story, and a cozy, dark room. Screens off before bed!",
+      "board": {
+        "type": "checklist",
+        "title": "Good sleep",
+        "icon": "🌙",
+        "items": [
+          {
+            "text": "Same bedtime",
+            "icon": "⏰",
+            "cue": "bedtime",
+            "ok": true
+          },
+          {
+            "text": "A calm story",
+            "icon": "📖",
+            "cue": "story",
+            "ok": true
+          },
+          {
+            "text": "Dark, cozy room",
+            "icon": "🌑",
+            "cue": "dark",
+            "ok": true
+          },
+          {
+            "text": "Screens at bedtime",
+            "icon": "📱",
+            "cue": "screens",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So sleep helps me grow, learn and feel happy. Good night!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Grow",
+            "icon": "📏",
+            "cue": "grow"
+          },
+          {
+            "text": "Learn",
+            "icon": "🧠",
+            "cue": "learn"
+          },
+          {
+            "text": "Feel happy",
+            "icon": "😊",
+            "cue": "happy"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Sweet dreams! Follow Curio Kids Club for more wonders. And next time someone asks... why do we need sleep?"
+    }
+  ]
+}

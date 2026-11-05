@@ -1,0 +1,171 @@
+{
+  "id": "ep032",
+  "slug": "how-birds-fly",
+  "status": "ready",
+  "title": "How Do Birds Fly? 🐦 Fun Facts for Kids",
+  "cover_text": "HOW?!",
+  "description": "How do birds fly? Strong wings, light feathers and hollow bones! Leo asks, big sister Mia explains, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Birds",
+    "#Shorts"
+  ],
+  "tags": [
+    "how birds fly for kids",
+    "bird facts",
+    "feathers",
+    "hollow bones",
+    "animal facts",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "How do birds fly?",
+    "cue": "next",
+    "left": "🐦",
+    "right": "☁️"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, how do birds fly?",
+      "punch": "fly",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🐦",
+          "label": "Bird"
+        },
+        "right": {
+          "icon": "☁️",
+          "label": "Fly?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Birds flap their wings down and back to push the air. That push moves them up and forward!",
+      "board": {
+        "type": "big",
+        "icon": "🐦",
+        "text": "Flap to push the air",
+        "cue": "flap",
+        "sub": "Up and forward!",
+        "sub_cue": "forward"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "But when I flap my arms, nothing happens!",
+      "punch": "nothing"
+    },
+    {
+      "who": "MIA",
+      "text": "Birds have super strong chest muscles. And their wings are curved, so air rushing past gives them a lift.",
+      "board": {
+        "type": "gallery",
+        "title": "Built to fly",
+        "items": [
+          {
+            "icon": "💪",
+            "label": "Strong muscles",
+            "cue": "strong"
+          },
+          {
+            "icon": "🪶",
+            "label": "Curved wings",
+            "cue": "curved"
+          },
+          {
+            "icon": "⬆️",
+            "label": "Lift!",
+            "cue": "lift"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What else helps?"
+    },
+    {
+      "who": "MIA",
+      "text": "Feathers! They are light but strong, and they make a smooth wing shape that catches the air.",
+      "board": {
+        "type": "big",
+        "icon": "🪶",
+        "text": "Feathers: light and strong",
+        "cue": "feathers",
+        "sub": "A smooth wing shape",
+        "sub_cue": "smooth"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Are birds heavy like me?"
+    },
+    {
+      "who": "MIA",
+      "text": "Birds are very light for their size. Many of their bones are hollow, with tiny struts inside, like little bridges.",
+      "punch": "hollow",
+      "board": {
+        "type": "big",
+        "icon": "🦴",
+        "text": "Hollow bones",
+        "cue": "hollow",
+        "sub": "Light but strong inside",
+        "sub_cue": "struts"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Do they have to flap all the time?"
+    },
+    {
+      "who": "MIA",
+      "text": "Not always! Big birds like eagles can glide and soar on rising warm air, hardly flapping at all.",
+      "board": {
+        "type": "big",
+        "icon": "🦅",
+        "text": "Glide and soar",
+        "cue": "glide",
+        "sub": "Riding warm air",
+        "sub_cue": "rising"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Strong wings, feathers and light bones. Birds are built to fly!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Strong wings",
+            "icon": "💪",
+            "cue": "strong"
+          },
+          {
+            "text": "Light feathers",
+            "icon": "🪶",
+            "cue": "feathers"
+          },
+          {
+            "text": "Hollow, light bones",
+            "icon": "🦴",
+            "cue": "light"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "They sure are! Follow Curio Kids Club for more wonders. And next time someone asks... how do birds fly?"
+    }
+  ]
+}

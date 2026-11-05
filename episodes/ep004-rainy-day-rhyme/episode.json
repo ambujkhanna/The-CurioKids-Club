@@ -1,0 +1,277 @@
+{
+  "id": "ep004",
+  "slug": "rainy-day-rhyme",
+  "status": "ready",
+  "title": "Rainy Day Rhyme 🌧️ The Water Cycle Poem for Kids",
+  "cover_text": "RAIN RHYME!",
+  "description": "Follow a raindrop from the sea to the sky and back again! Mia shares a rainy day rhyme about the water cycle, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#KidsPoems",
+    "#WaterCycle",
+    "#Shorts"
+  ],
+  "tags": [
+    "water cycle for kids",
+    "rain poem",
+    "kids rhymes",
+    "nursery poem",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Where does a raindrop go?",
+    "cue": "next",
+    "left": "💧",
+    "right": "🔄"
+  },
+  "lines": [
+    {
+      "who": "MIA",
+      "text": "Where does a raindrop travel? Let's find out in a rhyme!",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "💧",
+          "label": "Raindrop"
+        },
+        "right": {
+          "icon": "🌧️",
+          "label": "Where to?"
+        },
+        "mid": "?",
+        "subtitle": "Rainy Day Rhyme"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "The sun warms up the sea, the water floats up free. It's way too small to spy, it drifts up to the sky.",
+      "board": {
+        "type": "poem",
+        "title": "Up to the sky",
+        "icon": "☀️",
+        "lines": [
+          {
+            "text": "The sun warms up the sea",
+            "icon": "☀️",
+            "cue": "sun"
+          },
+          {
+            "text": "The water floats up free",
+            "icon": "💧",
+            "cue": "floats"
+          },
+          {
+            "text": "It's way too small to spy",
+            "icon": "👀",
+            "cue": "small"
+          },
+          {
+            "text": "It drifts up to the sky",
+            "icon": "⬆️",
+            "cue": "drifts"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "That's evaporation! The water turns into invisible vapour.",
+      "punch": "evaporation",
+      "board": {
+        "type": "big",
+        "icon": "💨",
+        "text": "Evaporation!",
+        "cue": "evaporation",
+        "sub": "Water turns to vapour",
+        "sub_cue": "vapour"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Up high, the air is very cold, the drops join up, so I've been told. They cuddle close and side by side, and make a cloud so big and wide.",
+      "board": {
+        "type": "poem",
+        "title": "Making a cloud",
+        "icon": "☁️",
+        "lines": [
+          {
+            "text": "Up high, the air is very cold",
+            "icon": "❄️",
+            "cue": "cold"
+          },
+          {
+            "text": "Drops join up, so I've been told",
+            "icon": "💧",
+            "cue": "join"
+          },
+          {
+            "text": "They cuddle close and side by side",
+            "icon": "🤗",
+            "cue": "cuddle"
+          },
+          {
+            "text": "And make a cloud so big and wide",
+            "icon": "☁️",
+            "cue": "cloud"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Tiny drops make a cloud. That's condensation!",
+      "board": {
+        "type": "big",
+        "icon": "☁️",
+        "text": "Tiny drops make a cloud",
+        "cue": "cloud",
+        "sub": "That's condensation",
+        "sub_cue": "condensation"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "The drops bump in and grow and grow, too heavy now, it's time to go! Pitter, patter, down they fall, the rain comes down on one and all.",
+      "board": {
+        "type": "poem",
+        "title": "Here comes the rain",
+        "icon": "🌧️",
+        "lines": [
+          {
+            "text": "Drops bump in and grow and grow",
+            "icon": "💧",
+            "cue": "bump"
+          },
+          {
+            "text": "Too heavy now, it's time to go!",
+            "icon": "💦",
+            "cue": "heavy"
+          },
+          {
+            "text": "Pitter, patter, down they fall",
+            "icon": "🌧️",
+            "cue": "pitter"
+          },
+          {
+            "text": "The rain comes down on one and all",
+            "icon": "☔",
+            "cue": "rain"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Heavy drops fall as rain. That's precipitation!",
+      "board": {
+        "type": "big",
+        "icon": "🌧️",
+        "text": "Heavy drops fall",
+        "cue": "fall",
+        "sub": "That's precipitation",
+        "sub_cue": "precipitation"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "It fills the rivers, lakes and sea, for fish and frogs and you and me. Then when the sun is out once more, it starts again, just like before!",
+      "board": {
+        "type": "poem",
+        "title": "Round again",
+        "icon": "🔄",
+        "lines": [
+          {
+            "text": "It fills the rivers, lakes and sea",
+            "icon": "🏞️",
+            "cue": "rivers"
+          },
+          {
+            "text": "For fish and frogs and you and me",
+            "icon": "🐸",
+            "cue": "frogs"
+          },
+          {
+            "text": "Then when the sun is out once more",
+            "icon": "☀️",
+            "cue": "sun"
+          },
+          {
+            "text": "It starts again, just like before!",
+            "icon": "🔄",
+            "cue": "starts"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Water rises, cools into clouds, falls as rain, and flows to the sea. That's the water cycle!",
+      "punch": "cycle",
+      "board": {
+        "type": "steps",
+        "title": "The water cycle",
+        "items": [
+          {
+            "label": "Rises as vapour",
+            "icon": "⬆️",
+            "cue": "rises"
+          },
+          {
+            "label": "Cools into clouds",
+            "icon": "☁️",
+            "cue": "cools"
+          },
+          {
+            "label": "Falls as rain",
+            "icon": "🌧️",
+            "cue": "falls"
+          },
+          {
+            "label": "Flows back to the sea",
+            "icon": "🌊",
+            "cue": "flows"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "So when you hear the pitter-pat, grab your boots and your rain hat. Splash in the puddles, off you go, that rain was sea not long ago!",
+      "board": {
+        "type": "poem",
+        "title": "Puddle time",
+        "icon": "☔",
+        "lines": [
+          {
+            "text": "So when you hear the pitter-pat",
+            "icon": "👂",
+            "cue": "hear"
+          },
+          {
+            "text": "Grab your boots and your rain hat",
+            "icon": "🥾",
+            "cue": "boots"
+          },
+          {
+            "text": "Splash in the puddles, off you go",
+            "icon": "💦",
+            "cue": "splash"
+          },
+          {
+            "text": "That rain was sea not long ago!",
+            "icon": "🌊",
+            "cue": "sea"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Splash! Follow Curio Kids Club for more wonders. And next time someone asks... where does a raindrop travel?"
+    }
+  ]
+}
