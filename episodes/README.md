@@ -46,7 +46,10 @@ python pipeline/validate_episode.py episodes/*/episode.json
 - `icon` is **one emoji** (🐙 ❤️ 🌧️ 🦷 🪐 …). The old named icons (bulb, check, x, sun, eye, brain, globe, book …) still work.
 - `loop_card` is shown at the end, when its `cue` word ("next") is spoken in the last line.
 
-### Scene types (keep board text short; it must fit)
+### Scene types (keep text SHORT: it is shown big so it's readable on a phone)
+
+Board text is drawn very large (50–90 px) and shrinks or wraps automatically if it's too long. **Fewer words = bigger and easier to read.**
+Aim for 1–4 words per label and up to about 5 words for `big` text. Poems show **one verse line at a time** (karaoke style).
 
 | type | fields |
 |---|---|

@@ -72,6 +72,7 @@ def draw_bg(c, t):
 
 import os
 V2 = os.environ.get("BG") == "v2"
+SPEAKER_X = None  # set by episode_engine: function t -> x of the character speaking
 KIDS = os.environ.get("BG") == "kids"   # The CurioKids Club playroom
 
 
@@ -194,7 +195,7 @@ def _kids_room(c, t):
         sp = _star(x, y, r * tw * 1.3, r * tw * 0.55, 0.2 * k)
         c.drawPath(sp, P("#FFD23F")); c.drawPath(sp, P(INK, 3))
     # bunting garland that sways
-    pts = [(-20, 790), (270, 840), (540, 815), (810, 840), (1100, 790)]
+    pts = [(-20, 950), (270, 1000), (540, 975), (810, 1000), (1100, 950)]
     g = skia.Path(); g.moveTo(*pts[0])
     for a_, b_ in zip(pts[1::2], pts[2::2]):
         g.quadTo(a_[0], a_[1], b_[0], b_[1])
@@ -202,8 +203,7 @@ def _kids_room(c, t):
     flags = ("#FF6B6B", "#FFD23F", "#4FC3F7", "#7BD389", "#C9A7FF", "#FF9F45")
     for k in range(13):
         x = 20 + k * 82; u = (x + 20) / 1120.0
-        y = 790 + 50 * math.sin(math.pi * ((x % 540) / 540)) * (1 if True else 0) - 0
-        y = 790 + (50 if 0 < x < 1080 else 0) * math.sin(math.pi * (x % 540) / 540)
+        y = 950 + (50 if 0 < x < 1080 else 0) * math.sin(math.pi * (x % 540) / 540)
         sw = math.sin(t * 2 + k) * 4
         f = skia.Path(); f.moveTo(x - 26, y); f.lineTo(x + 26, y); f.lineTo(x + sw, y + 58); f.close()
         c.drawPath(f, P(flags[k % 6])); c.drawPath(f, P(INK, 4))
@@ -303,7 +303,14 @@ def _props(c, t):
     K.logo(c, 540, 84, 0.95 * (1.0 + (0.18 * math.sin(min(1.0, max(0.0, (t - K.LOGO_T) / 0.5)) * math.pi) if t > K.LOGO_T else 0.0)), tcol="#1D1D1F")
 
 
-def draw_board_frame(c):
+PANEL = os.environ.get("PANEL", "stage")  # kids look: stage (default) | cloud | book
+
+
+def draw_board_frame(c, t=0.0):
+    if KIDS:
+        if PANEL == "stage":
+            import theatre; return theatre.back(c, t)
+        return {"cloud": _kids_cloud, "book": _kids_book}.get(PANEL, _kids_cloud)(c, t)
     r = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(BX, BY, BW, BH), 34, 34)
     sh = P("#000000", a=0.10); sh.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 14))
     c.save(); c.translate(8, 12); c.drawRRect(r, sh); c.restore()
@@ -315,3 +322,78 @@ def draw_board_frame(c):
     for i, col in enumerate(("#FF6B6B", "#FFD23F", "#7BD389")):
         c.drawCircle(BX + 46 + i * 30, BY + 34, 9, P(col)); c.drawCircle(BX + 46 + i * 30, BY + 34, 9, P(INK, 3))
     K.text(c, "FUN FACTS", BX + BW - 36, BY + 34, 24, "#1D1D1F", K.FONT_XB, "r")
+
+
+def _kids_panel(c):
+    """Big sticker-style panel with a rainbow border (no browser bar), so the content can be large."""
+    r = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(BX, BY, BW, BH), 46, 46)
+    sh = P("#000000", a=0.12); sh.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 16))
+    c.save(); c.translate(0, 14); c.drawRRect(r, sh); c.restore()
+    c.drawRRect(r, P("#FFFFFF"))
+    rb = skia.Paint(AntiAlias=True); rb.setStyle(skia.Paint.kStroke_Style); rb.setStrokeWidth(14)
+    rb.setShader(skia.GradientShader.MakeSweep(BX + BW / 2, BY + BH / 2, [hexc(x) for x in ("#FF4D6D", "#FF9F45", "#FFD23F", "#7BD389", "#4FC3F7", "#9B7BFF", "#FF4D6D")]))
+    c.drawRRect(r, rb)
+    inner = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(BX + 7, BY + 7, BW - 14, BH - 14), 40, 40)
+    c.save(); c.clipRRect(inner, doAntiAlias=True)
+
+
+def _clip_inner(c, inset=10, r=40):
+    inner = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(BX + inset, BY + inset, BW - 2 * inset, BH - 2 * inset), r, r)
+    c.save(); c.clipRRect(inner, doAntiAlias=True)
+
+
+def _kids_cloud(c, t):
+    """Fluffy thought-cloud with little bubbles trailing down to whoever is speaking."""
+    body = skia.Path(); body.addRRect(skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(BX, BY, BW, BH), 110, 110))
+    bumps = []
+    for k in range(9):  # top + bottom edges
+        x = BX + 60 + k * (BW - 120) / 8
+        bumps += [(x, BY + 32, 46 + 8 * (k % 2)), (x + 30, BY + BH - 22, 44 + 8 * ((k + 1) % 2))]
+    for k in range(6):  # sides
+        y = BY + 80 + k * (BH - 160) / 5
+        bumps += [(BX + 34, y, 40 + 6 * (k % 2)), (BX + BW - 34, y + 25, 40 + 6 * ((k + 1) % 2))]
+    for x, y, r in bumps:
+        cp = skia.Path(); cp.addCircle(x, y, r); body = skia.Op(body, cp, skia.PathOp.kUnion_PathOp)
+    sh = P("#5B8DEF", a=0.18); sh.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 22))
+    c.save(); c.translate(0, 18); c.drawPath(body, sh); c.restore()
+    fill = skia.Paint(AntiAlias=True)
+    fill.setShader(skia.GradientShader.MakeLinear([skia.Point(0, BY), skia.Point(0, BY + BH)], [hexc("#FFFFFF"), hexc("#F3EEFF")]))
+    c.drawPath(body, fill); c.drawPath(body, P("#6C7BD6", 7))
+    # thought bubbles towards the current speaker
+    sx = SPEAKER_X(t) if SPEAKER_X else 540
+    for k, (dy, r) in enumerate(((BH + 70, 34), (BH + 140, 24), (BH + 195, 15))):
+        x = 540 + (sx - 540) * (0.45 + 0.25 * k); y = BY + dy + math.sin(t * 2.5 + k) * 4
+        c.drawCircle(x, y, r, P("#FFFFFF")); c.drawCircle(x, y, r, P("#6C7BD6", 6))
+    _clip_inner(c, 4, 100)
+
+
+def _kids_book(c, t):
+    """Open picture book: two pages with a spine, page edges and a bookmark ribbon."""
+    cov = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(BX - 14, BY - 10, BW + 28, BH + 34), 30, 30)
+    sh = P("#000000", a=0.16); sh.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 16))
+    c.save(); c.translate(0, 14); c.drawRRect(cov, sh); c.restore()
+    c.drawRRect(cov, P("#E2574C")); c.drawRRect(cov, P(INK, 6))
+    for k in range(3):  # page edges
+        e = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(BX - 4 + k * 2, BY + 4 + k * 5, BW + 8 - k * 4, BH + 4), 18, 18)
+        c.drawRRect(e, P("#FFF8E8")); c.drawRRect(e, P("#D9CBAA", 2))
+    for side in (-1, 1):
+        pg = skia.Path(); x0 = BX + BW / 2
+        if side < 0:
+            pg.moveTo(x0, BY + 20); pg.quadTo(BX + BW * 0.25, BY - 6, BX, BY + 6); pg.lineTo(BX, BY + BH - 6); pg.quadTo(BX + BW * 0.25, BY + BH - 20, x0, BY + BH)
+        else:
+            pg.moveTo(x0, BY + 20); pg.quadTo(BX + BW * 0.75, BY - 6, BX + BW, BY + 6); pg.lineTo(BX + BW, BY + BH - 6); pg.quadTo(BX + BW * 0.75, BY + BH - 20, x0, BY + BH)
+        pg.close()
+        f = skia.Paint(AntiAlias=True)
+        f.setShader(skia.GradientShader.MakeLinear([skia.Point(x0, 0), skia.Point(x0 + side * BW / 2, 0)], [hexc("#EADFC6"), hexc("#FFFDF6"), hexc("#FFFDF6")], [0, 0.12, 1]))
+        c.drawPath(pg, f); c.drawPath(pg, P(INK, 5))
+    c.drawLine(BX + BW / 2, BY + 22, BX + BW / 2, BY + BH - 2, P("#C9B88F", 4))
+    rib = skia.Path(); rx = BX + BW - 120
+    rib.moveTo(rx, BY - 10); rib.lineTo(rx + 34, BY - 10); rib.lineTo(rx + 34, BY + 70); rib.lineTo(rx + 17, BY + 54); rib.lineTo(rx, BY + 70); rib.close()
+    c.drawPath(rib, P("#4FC3F7")); c.drawPath(rib, P(INK, 4))
+    _clip_inner(c, 12, 18)
+
+
+def draw_board_front(c, t):
+    """Layer drawn after the board content (puppet-theatre curtains, valance, footlights)."""
+    if KIDS and PANEL == "stage":
+        import theatre; theatre.front(c, t)

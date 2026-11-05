@@ -1,6 +1,6 @@
 # The CurioKids Club: episode topics (ep001-ep075)
 
-ep001 | animal | Why does an octopus have three hearts? (written)
+ep001 | (removed 2026-11-05 at the owner's request: octopus was only an example)
 ep002 | animal | Why do cats purr?
 ep003 | body | How does your heart pump blood?
 ep004 | poem | POEM: Rainy Day Rhyme (the water cycle)

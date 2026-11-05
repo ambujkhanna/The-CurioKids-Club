@@ -215,7 +215,7 @@ def logo(c, x, y, k=1.0, a=1.0, tcol="#FFFFFF"):
 
 
 # ======================================================================= board content
-BX, BY, BW, BH = 70, 150, 940, 600
+BX, BY, BW, BH = (105, 205, 870, 640) if os.environ.get("BG") == "kids" else (70, 150, 940, 600)  # kids: content area inside the puppet theatre
 BCX, BCY = BX + BW / 2, BY + BH / 2
 
 

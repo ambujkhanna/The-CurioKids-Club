@@ -5,7 +5,7 @@
 The CurioKids Club makes short, curious answers to kids' big questions (animals, the human body, space, nature, everyday science) plus original rhymes and poems. Each Short is about 55 seconds.
 
 - **Cast** (chosen per episode): **Leo**, the curious little brother who asks "why?"; **Mia**, the big sister who explains; and sometimes **Dad**. Poems are often Mia on her own.
-- **Look:** doodle line-art characters in a colourful **playroom** (rainbow, bunting, toys and a play mat), with a whiteboard where emoji pictures pop in as the words are spoken, and Buzz the helper bee.
+- **Look:** a colourful **playroom** with a **puppet theatre** (wooden frame, velvet curtains that open at the start, spotlight, footlights). Big pictures and phone-readable words slide in from the wings like puppets; poems show one big verse line at a time. Doodle line-art characters stand in front, with Buzz the helper bee.
 - **Cost:** no paid services and no AI API. Everything runs free on GitHub Actions.
 
 ## How it works (every day, automatically)
@@ -28,12 +28,13 @@ If any step fails, nothing is uploaded. Setup instructions are in **`docs/SETUP.
 
 | Path | What it is |
 |---|---|
-| `episodes/` | 75 ready episodes (ep001–ep075, about 2.5 months), `TOPICS.md` and the format guide `README.md` |
+| `episodes/` | 74 ready episodes (ep002–ep075, about 2.5 months; ep001 was removed), `TOPICS.md` and the format guide `README.md` |
 | `pipeline/daily.py` | daily run: pick, render, QC, upload |
 | `pipeline/tts.py` | voices and lip-sync timing |
 | `pipeline/episode_engine.py` | whiteboard scenes, acting, camera |
 | `pipeline/char_line.py` | the characters |
-| `pipeline/bg_line.py`, `pipeline/kit2d.py` | room, logo and helper bee |
+| `pipeline/bg_line.py`, `pipeline/kit2d.py` | playroom, logo and helper bee |
+| `pipeline/theatre.py` | the puppet theatre (back layer + curtains in front of the content) |
 | `pipeline/finish.py` | captions, sound mix, MP4 |
 | `pipeline/music.py` | a different original music track per episode (or your own tracks in `music/`) |
 | `pipeline/thumbnail.py` | designed thumbnail for each video |
