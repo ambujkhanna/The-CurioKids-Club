@@ -2,7 +2,7 @@
   "id": "ep047", "slug": "chameleons-change-colour", "status": "ready",
   "title": "How Do Chameleons Change Colour? 🦎 Fun Facts for Kids",
   "cover_text": "COLOUR MAGIC?",
-  "description": "Chameleons change colour with tiny crystals in their skin! Leo asks, big sister Mia explains how it works and why they do it, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "description": "Chameleons change colour with tiny crystals in their skin! Leo asks, big sister Mia explains how it works and why they do it, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
   "hashtags": ["#KidsLearning", "#FunFacts", "#Chameleon", "#Shorts"],
   "tags": ["chameleon facts for kids", "how chameleons change colour", "animal facts", "lizards for kids", "science for kids", "kids learning"],
   "cast": ["LEO", "MIA"],
@@ -20,6 +20,6 @@
     {"who": "LEO", "text": "Do they change colour when they're cold, too?"},
     {"who": "MIA", "text": "Yes! A chameleon can turn darker to soak up more sunshine and warm up.", "board": {"type": "big", "icon": "☀️", "text": "Darker = warmer", "cue": "darker", "sub": "Soaks up the sunshine", "sub_cue": "soak"}},
     {"who": "LEO", "text": "Tiny crystals, feelings and warming up. Chameleons are so cool!", "board": {"type": "summary", "rows": [{"icon": "💎", "text": "Tiny crystals", "cue": "crystals"}, {"icon": "💬", "text": "Show feelings", "cue": "feelings"}, {"icon": "☀️", "text": "Warm up", "cue": "warming"}]}},
-    {"who": "MIA", "text": "They really are! Follow Curio Kids Club for more wonders. And next time someone asks... how do chameleons change colour?"}
+    {"who": "MIA", "text": "They really are! Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... how do chameleons change colour?"}
   ]
 }

@@ -2,7 +2,7 @@
   "id": "ep051", "slug": "how-mirrors-work", "status": "ready",
   "title": "How Does a Mirror Show Your Reflection? 🪞 Kids Science",
   "cover_text": "MIRROR ME?",
-  "description": "A mirror bounces light straight back to your eyes! Leo asks, Dad explains how reflections work, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "description": "A mirror bounces light straight back to your eyes! Leo asks, Dad explains how reflections work, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
   "hashtags": ["#KidsLearning", "#FunFacts", "#Science", "#Shorts"],
   "tags": ["how mirrors work for kids", "reflection for kids", "light science", "everyday science", "science for kids", "kids learning"],
   "cast": ["LEO", "DAD"],
@@ -20,6 +20,6 @@
     {"who": "LEO", "text": "Hey, when I hold up a word to the mirror, the letters look backwards!"},
     {"who": "DAD", "text": "That's because a mirror flips things around. Try holding up your name and see!", "punch": "flips", "board": {"type": "big", "icon": "🔄", "text": "Words look backwards!", "cue": "flips", "sub": "Try it with your name", "sub_cue": "name"}},
     {"who": "LEO", "text": "So light bounces off me, hits the smooth mirror, and comes back to my eyes!", "board": {"type": "summary", "rows": [{"icon": "💡", "text": "Light bounces off you", "cue": "bounces"}, {"icon": "🪞", "text": "Smooth mirror", "cue": "smooth"}, {"icon": "👀", "text": "Back to your eyes", "cue": "eyes"}]}},
-    {"who": "DAD", "text": "You got it! Follow Curio Kids Club for more wonders. And next time someone asks... how does a mirror show your reflection?"}
+    {"who": "DAD", "text": "You got it! Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... how does a mirror show your reflection?"}
   ]
 }

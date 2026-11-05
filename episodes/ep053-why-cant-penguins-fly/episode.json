@@ -2,7 +2,7 @@
   "id": "ep053", "slug": "why-cant-penguins-fly", "status": "ready",
   "title": "Why Can't Penguins Fly? 🐧 Fun Facts for Kids",
   "cover_text": "NO FLYING?",
-  "description": "Penguins DO fly... underwater! Leo asks, big sister Mia explains flipper wings and heavy bones, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "description": "Penguins DO fly... underwater! Leo asks, big sister Mia explains flipper wings and heavy bones, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
   "hashtags": ["#KidsLearning", "#FunFacts", "#Penguin", "#Shorts"],
   "tags": ["penguin facts for kids", "why can't penguins fly", "bird facts", "animal facts", "science for kids", "kids learning"],
   "cast": ["LEO", "MIA"],
@@ -20,6 +20,6 @@
     {"who": "MIA", "text": "Yes! And they're amazing swimmers. They can zip, twist, and even leap out of the water like dolphins.", "punch": "leap", "board": {"type": "gallery", "title": "Super swimmers", "items": [{"icon": "🏊", "label": "Zip", "cue": "zip"}, {"icon": "🌀", "label": "Twist", "cue": "twist"}, {"icon": "🐬", "label": "Leap", "cue": "leap"}]}},
     {"who": "MIA", "text": "On land, they waddle, hop, or slide on their tummies across the ice!", "board": {"type": "gallery", "title": "On land", "items": [{"icon": "🐧", "label": "Waddle", "cue": "waddle"}, {"icon": "⬆️", "label": "Hop", "cue": "hop"}, {"icon": "🛷", "label": "Slide", "cue": "slide"}]}},
     {"who": "LEO", "text": "Flipper wings, heavy bones and super swimming. Penguins are awesome!", "board": {"type": "summary", "rows": [{"icon": "🌊", "text": "Flipper wings", "cue": "flipper"}, {"icon": "🦴", "text": "Heavy bones", "cue": "heavy"}, {"icon": "🏊", "text": "Super swimmers", "cue": "swimming"}]}},
-    {"who": "MIA", "text": "They really are! Follow Curio Kids Club for more wonders. And next time someone asks... why can't penguins fly?"}
+    {"who": "MIA", "text": "They really are! Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... why can't penguins fly?"}
   ]
 }

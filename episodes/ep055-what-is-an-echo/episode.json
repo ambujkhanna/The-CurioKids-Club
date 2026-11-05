@@ -2,7 +2,7 @@
   "id": "ep055", "slug": "what-is-an-echo", "status": "ready",
   "title": "What Is an Echo? 🔊 Kids Science",
   "cover_text": "ECHO... ECHO!",
-  "description": "An echo is sound bouncing back to you! Leo asks, Dad explains sound waves, echoes and how bats use them, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "description": "An echo is sound bouncing back to you! Leo asks, Dad explains sound waves, echoes and how bats use them, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
   "hashtags": ["#KidsLearning", "#FunFacts", "#Science", "#Shorts"],
   "tags": ["what is an echo for kids", "sound waves for kids", "echolocation", "everyday science", "science for kids", "kids learning"],
   "cast": ["LEO", "DAD"],
@@ -20,6 +20,6 @@
     {"who": "DAD", "text": "Yes! Bats make high squeaks and listen for the echoes. That helps them find their way and catch bugs in the dark.", "punch": "bats", "board": {"type": "big", "icon": "🦇", "text": "Bats listen for echoes", "cue": "bats", "sub": "To find their way", "sub_cue": "find"}},
     {"who": "DAD", "text": "Dolphins do it too, underwater! Using echoes like this is called echolocation.", "board": {"type": "big", "icon": "🐬", "text": "Echolocation!", "cue": "echolocation", "sub": "Dolphins do it too", "sub_cue": "dolphins"}},
     {"who": "LEO", "text": "So an echo is sound bouncing back off something big and hard!", "board": {"type": "summary", "rows": [{"icon": "〰️", "text": "Sound travels in waves", "cue": "sound"}, {"icon": "🧱", "text": "Bounces off hard things", "cue": "bouncing"}, {"icon": "👂", "text": "Comes back to you", "cue": "back"}]}},
-    {"who": "DAD", "text": "That's right! Follow Curio Kids Club for more wonders. And next time someone asks... what is an echo?"}
+    {"who": "DAD", "text": "That's right! Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... what is an echo?"}
   ]
 }

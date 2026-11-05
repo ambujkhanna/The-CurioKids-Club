@@ -2,7 +2,7 @@
   "id": "ep054", "slug": "why-we-drink-water", "status": "ready",
   "title": "Why Do We Need to Drink Water? 💧 Fun Facts for Kids",
   "cover_text": "WHY WATER?",
-  "description": "Your body is more than half water! Leo asks, big sister Mia explains all the jobs water does inside you, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "description": "Your body is more than half water! Leo asks, big sister Mia explains all the jobs water does inside you, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
   "hashtags": ["#KidsLearning", "#FunFacts", "#HumanBody", "#Shorts"],
   "tags": ["why drink water for kids", "water facts for kids", "healthy habits", "human body for kids", "science for kids", "kids learning"],
   "cast": ["LEO", "MIA"],
@@ -19,6 +19,6 @@
     {"who": "MIA", "text": "Your body tells you! Feeling thirsty is your body's way of saying, 'Water, please!'", "punch": "thirsty", "board": {"type": "big", "icon": "🗣️", "text": "Thirsty = water, please!", "cue": "thirsty"}},
     {"who": "MIA", "text": "So sip some water through the day, especially when it's hot or you've been running around.", "board": {"type": "checklist", "title": "Time for a sip", "icon": "💧", "items": [{"icon": "🕐", "text": "Through the day", "cue": "day", "ok": true}, {"icon": "☀️", "text": "When it's hot", "cue": "hot", "ok": true}, {"icon": "🏃", "text": "After running around", "cue": "running", "ok": true}]}},
     {"who": "LEO", "text": "Water carries good stuff, keeps me cool, and helps me feel great!", "board": {"type": "summary", "rows": [{"icon": "🚚", "text": "Carries good stuff", "cue": "carries"}, {"icon": "😅", "text": "Keeps you cool", "cue": "cool"}, {"icon": "😊", "text": "Helps you feel great", "cue": "feel"}]}},
-    {"who": "MIA", "text": "Cheers to that! Follow Curio Kids Club for more wonders. And next time someone asks... why do we need to drink water?"}
+    {"who": "MIA", "text": "Cheers to that! Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... why do we need to drink water?"}
   ]
 }

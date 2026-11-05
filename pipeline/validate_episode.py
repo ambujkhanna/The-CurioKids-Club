@@ -1,4 +1,4 @@
-"""Validate a Curio Kids Club episode JSON: schema, cast, scene types, icons, and that every cue word is in its line.
+"""Validate a The CurioKids Club episode JSON: schema, cast, scene types, icons, and that every cue word is in its line.
 
     python pipeline/validate_episode.py episodes/*/episode.json
 """
@@ -64,7 +64,7 @@ def check(path):
         for c in (cues(sc) if sc else []) + ([l["punch"]] if l.get("punch") else []):
             if not any(w.startswith(c.lower()) for w in words): errs.append(f"line {i}: cue '{c}' not in text")
     last = ep["lines"][-1]["text"].lower()
-    if "follow" not in last: errs.append("last line has no Follow call-to-action")
+    if "follow" not in last and "subscribe" not in last: errs.append("last line has no Subscribe/Follow call-to-action")
     lc = ep.get("loop_card")
     if lc:
         if lc.get("cue", "next") not in last: errs.append("loop cue not in last line")

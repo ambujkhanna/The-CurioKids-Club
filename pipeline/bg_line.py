@@ -72,7 +72,7 @@ def draw_bg(c, t):
 
 import os
 V2 = os.environ.get("BG") == "v2"
-KIDS = os.environ.get("BG") == "kids"   # Curio Kids Club playroom
+KIDS = os.environ.get("BG") == "kids"   # The CurioKids Club playroom
 
 
 def rrp(x, y, w, h, r):
@@ -155,7 +155,7 @@ def _star(cx, cy, r1, r2, rot=0.0):
 
 
 def _kids_room(c, t):
-    """Curio Kids Club playroom: pastel wall, rainbow, bunting, window, toy shelf, teddy, rocket, foam play mat."""
+    """The CurioKids Club playroom: pastel wall, rainbow, bunting, window, toy shelf, teddy, rocket, foam play mat."""
     # wall: soft sky-blue with polka dots, mint wainscot
     c.drawRect(skia.Rect.MakeLTRB(-600, -600, W + 600, FLOOR), P("#DDF1FF"))
     for k in range(-2, 16):

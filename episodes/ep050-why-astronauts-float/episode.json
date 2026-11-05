@@ -2,7 +2,7 @@
   "id": "ep050", "slug": "why-astronauts-float", "status": "ready",
   "title": "Why Do Astronauts Float in Space? 🚀 Fun Facts for Kids",
   "cover_text": "FLOATING?!",
-  "description": "Astronauts float because they are always falling! Leo asks, big sister Mia explains gravity and orbits in a simple way, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "description": "Astronauts float because they are always falling! Leo asks, big sister Mia explains gravity and orbits in a simple way, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
   "hashtags": ["#KidsLearning", "#FunFacts", "#Space", "#Shorts"],
   "tags": ["space facts for kids", "why astronauts float", "gravity for kids", "orbit explained", "science for kids", "kids learning"],
   "cast": ["LEO", "MIA"],
@@ -20,6 +20,6 @@
     {"who": "LEO", "text": "It's like when a roller coaster drops and my tummy feels floaty!"},
     {"who": "MIA", "text": "Exactly! That floaty feeling is a tiny taste of what astronauts feel all day long.", "board": {"type": "big", "icon": "🎢", "text": "That floaty feeling!", "cue": "floaty", "sub": "All day long in space", "sub_cue": "day"}},
     {"who": "LEO", "text": "Gravity is there, they're always falling, and they keep missing Earth. So cool!", "board": {"type": "summary", "rows": [{"icon": "🌍", "text": "Gravity still pulls", "cue": "gravity"}, {"icon": "⬇️", "text": "Always falling", "cue": "falling"}, {"icon": "🔄", "text": "Keeps missing Earth", "cue": "missing"}]}},
-    {"who": "MIA", "text": "It really is! Follow Curio Kids Club for more wonders. And next time someone asks... why do astronauts float in space?"}
+    {"who": "MIA", "text": "It really is! Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... why do astronauts float in space?"}
   ]
 }

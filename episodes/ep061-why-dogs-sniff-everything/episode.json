@@ -2,7 +2,7 @@
   "id": "ep061", "slug": "why-dogs-sniff-everything", "status": "ready",
   "title": "Why Do Dogs Sniff Everything? 🐶 Fun Facts for Kids",
   "cover_text": "SNIFF SNIFF!",
-  "description": "A dog's nose is a real superpower! Leo asks, big sister Mia explains what dogs learn from all that sniffing, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "description": "A dog's nose is a real superpower! Leo asks, big sister Mia explains what dogs learn from all that sniffing, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
   "hashtags": ["#KidsLearning", "#FunFacts", "#Dogs", "#Shorts"],
   "tags": ["dog facts for kids", "why do dogs sniff", "dog nose", "animal facts", "science for kids", "kids learning"],
   "cast": ["LEO", "MIA"],
@@ -20,6 +20,6 @@
     {"who": "MIA", "text": "That's a doggy hello! A quick sniff tells them who the other dog is, kind of like reading a name tag.", "punch": "hello", "board": {"type": "big", "icon": "👋", "text": "A doggy hello!", "cue": "hello", "sub": "Like a name tag", "sub_cue": "name"}},
     {"who": "MIA", "text": "Here's a neat trick. When a dog breathes out, air leaves through little slits on the sides of its nose, so new smells keep coming in.", "board": {"type": "big", "icon": "💨", "text": "Side slits on the nose", "cue": "slits", "sub": "New smells keep coming in", "sub_cue": "smells"}},
     {"who": "LEO", "text": "Super noses, sniffing clues and doggy hellos. Dogs are amazing sniffers!", "board": {"type": "summary", "rows": [{"icon": "🦸", "text": "Super noses", "cue": "super"}, {"icon": "🔍", "text": "Sniffing clues", "cue": "clues"}, {"icon": "👋", "text": "Doggy hellos", "cue": "hellos"}]}},
-    {"who": "MIA", "text": "They sure are! Follow Curio Kids Club for more wonders. And next time someone asks... why do dogs sniff everything?"}
+    {"who": "MIA", "text": "They sure are! Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... why do dogs sniff everything?"}
   ]
 }

@@ -2,7 +2,7 @@
   "id": "ep048", "slug": "how-your-nose-smells", "status": "ready",
   "title": "How Does Your Nose Smell Things? 👃 Fun Facts for Kids",
   "cover_text": "SNIFF SNIFF!",
-  "description": "Smells are made of tiny floating bits! Leo asks, big sister Mia explains how your nose and brain work together to smell, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "description": "Smells are made of tiny floating bits! Leo asks, big sister Mia explains how your nose and brain work together to smell, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
   "hashtags": ["#KidsLearning", "#FunFacts", "#HumanBody", "#Shorts"],
   "tags": ["nose facts for kids", "how do we smell", "sense of smell", "human body for kids", "science for kids", "kids learning"],
   "cast": ["LEO", "MIA"],
@@ -20,6 +20,6 @@
     {"who": "LEO", "text": "Does my nose help me taste, too?"},
     {"who": "MIA", "text": "It sure does! Smell and taste work as a team. That's why food can taste plain when you have a stuffy nose.", "board": {"type": "big", "icon": "🤝", "text": "Smell + taste = a team", "cue": "team", "sub": "Stuffy nose, plain food", "sub_cue": "stuffy"}},
     {"who": "LEO", "text": "Tiny smell bits, smell cells and my brain. Noses are awesome!", "board": {"type": "summary", "rows": [{"icon": "🌸", "text": "Tiny smell bits", "cue": "tiny"}, {"icon": "👃", "text": "Smell cells", "cue": "cells"}, {"icon": "🧠", "text": "Your brain", "cue": "brain"}]}},
-    {"who": "MIA", "text": "They sure are! Follow Curio Kids Club for more wonders. And next time someone asks... how does your nose smell things?"}
+    {"who": "MIA", "text": "They sure are! Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... how does your nose smell things?"}
   ]
 }

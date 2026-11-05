@@ -2,7 +2,7 @@
   "id": "ep052", "slug": "why-is-the-sea-salty", "status": "ready",
   "title": "Why Is the Sea Salty? 🌊 Fun Facts for Kids",
   "cover_text": "SALTY SEA?",
-  "description": "The salt in the sea comes from rocks! Leo asks, big sister Mia explains how rain and rivers carry salt to the sea, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "description": "The salt in the sea comes from rocks! Leo asks, big sister Mia explains how rain and rivers carry salt to the sea, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
   "hashtags": ["#KidsLearning", "#FunFacts", "#Ocean", "#Shorts"],
   "tags": ["why is the sea salty", "ocean facts for kids", "salt water", "nature facts", "science for kids", "kids learning"],
   "cast": ["LEO", "MIA"],
@@ -20,6 +20,6 @@
     {"who": "LEO", "text": "So that's why rain isn't salty, but the sea is!"},
     {"who": "MIA", "text": "Yep! Rain is fresh water. And some salty stuff also comes from cracks deep under the sea floor.", "board": {"type": "gallery", "title": "Where salt is", "items": [{"icon": "💧", "label": "Rain: fresh", "cue": "rain"}, {"icon": "🌊", "label": "Sea: salty", "cue": "sea"}, {"icon": "🕳️", "label": "Deep sea cracks", "cue": "cracks"}]}},
     {"who": "LEO", "text": "Rain washes salt from rocks, rivers carry it, and the salt stays in the sea!", "board": {"type": "summary", "rows": [{"icon": "🌧️", "text": "Rain washes rocks", "cue": "rain"}, {"icon": "🏞️", "text": "Rivers carry salt", "cue": "rivers"}, {"icon": "🧂", "text": "Salt stays in the sea", "cue": "stays"}]}},
-    {"who": "MIA", "text": "That's it! Follow Curio Kids Club for more wonders. And next time someone asks... why is the sea salty?"}
+    {"who": "MIA", "text": "That's it! Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... why is the sea salty?"}
   ]
 }

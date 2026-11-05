@@ -1,4 +1,4 @@
-"""Curio Kids Club episode renderer: episode JSON -> PNG frames (cast of 1-2: LEO, MIA, DAD; living room, whiteboard).
+"""The CurioKids Club episode renderer: episode JSON -> PNG frames (cast of 1-2: LEO, MIA, DAD; living room, whiteboard).
 
     EPISODE=episodes/ep002/episode.json python pipeline/tts.py      # voices + build/timing.json
     EPISODE=... BG=v2 DOODLE=chars python pipeline/episode_engine.py <frames_dir> [frame ...]
@@ -311,10 +311,13 @@ for k in range(len(scene_starts)):
 
 # follow pill + loop card on the last line
 last = len(LN) - 1
-T_FOLLOW = wt(last, "follow") if any(w[0].lower().startswith("follow") for w in LN[last]["words"]) else None
+_cta_w = [w for w in LN[last]["words"] if w[0].lower().startswith(("subscrib", "follow"))]
+T_FOLLOW = _cta_w[0][1] if _cta_w else None
+import cta
+KIDS_CTA = True
 if T_FOLLOW:
-    el(T_FOLLOW - 0.05, DUR + 1, lambda c, t, e: (c.drawRRect(rr(BCX - 260, BY + BH - 120, 520, 76, 38), P("#FFC300")),
-                                                 text(c, "FOLLOW FOR MORE", BCX, BY + BH - 82, 36, "#1F2D44")), (BCX + 280, BY + BH - 110), (BCX, BY + BH - 82))
+    for k_ in range(3):  # tap sounds (the card itself is drawn after the board, see below)
+        el(T_FOLLOW + 0.9 + k_ * 1.0, T_FOLLOW + 1.0 + k_ * 1.0, lambda c, t, e: None)
 LOOP = EP.get("loop_card")
 if LOOP:
     tl = wt(last, LOOP.get("cue", "next"))
@@ -424,6 +427,19 @@ for n, c in CH.items():
     CAMS[n] = (c.x + (10 if c.x < 540 else -10 if c.x > 540 else 0), hy, z, z + 0.1)
 PUNCH = [wt(i, l["punch"]) for i, l in enumerate(ELINES) if l.get("punch")]
 
+import kids_fx
+_bursts = [(e[0], (e[4] or e[3])[0], (e[4] or e[3])[1]) for e in ELEMS if e[0] > 0.3 and (e[4] or e[3]) and (T_FOLLOW is None or e[0] < T_FOLLOW - 0.1)]
+_conf = sorted(set([round(p_, 2) for p_ in PUNCH] + ([T_FOLLOW + 0.95] if T_FOLLOW else [])))
+FX = kids_fx.KidsFX(K, _bursts, _conf)
+_top0fx = K.draw_top
+K.draw_top = lambda c, t: (_top0fx(c, t), FX.draw(c, t))
+_top1 = K.draw_top
+K.draw_top = lambda c, t: (_top1(c, t), cta.end_card(c, t, T_FOLLOW, K, KIDS_CTA) if T_FOLLOW else None)
+if not KIDS_CTA:
+    T_REMIND = DUR * 0.42
+    if T_FOLLOW is None or T_REMIND + 3.5 < T_FOLLOW:
+        _top0 = K.draw_top
+        K.draw_top = lambda c, t: (_top0(c, t), cta.reminder(c, t, T_REMIND, K))
 K.CHARS = ORDER; K.SHOTS = SHOTS; K.CAMS = CAMS; K.PUNCH = PUNCH; K.LOGO_T = T_FOLLOW or DUR + 10
 K.draw_board = draw_board; K.CHARMOD = char_line; K.draw_bg = bg_line.draw_bg; K.draw_board_frame = bg_line.draw_board_frame
 

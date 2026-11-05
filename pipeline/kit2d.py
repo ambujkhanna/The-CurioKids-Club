@@ -1,4 +1,4 @@
-"""Curio Kids Club — flat 2D vector animation renderer (skia). Original character designs.
+"""The CurioKids Club — flat 2D vector animation renderer (skia). Original character designs.
 
 Usage: python anim2d.py <out_dir> [frame_start frame_end] [--workers N]
 """
@@ -199,16 +199,18 @@ def draw_char(c, ch, t):
 
 
 def logo(c, x, y, k=1.0, a=1.0, tcol="#FFFFFF"):
-    """Curio Kids Club wordmark: rainbow-letter 'Curio' badge + 'Kids Club'."""
+    """The CurioKids Club wordmark: 'The' + rainbow-letter 'Curio' badge + 'Kids Club'."""
     c.save(); c.translate(x, y); c.scale(k, k)
-    f1 = skia.Font(FONT_XB, 42); f2 = skia.Font(FONT_XB, 40)
-    w1 = f1.measureText("Curio"); w2 = f2.measureText("Kids Club"); pad = 18; gap = 10; wb = w1 + 2 * pad
-    x0 = -(wb + gap + w2) / 2
-    c.drawRRect(rr(x0, -30, wb, 60, 20), P("#FFFFFF", a=a)); c.drawRRect(rr(x0, -30, wb, 60, 20), P("#1F2D44", 4, a=a))
-    xx = x0 + pad
+    f0 = skia.Font(FONT_XB, 30); f1 = skia.Font(FONT_XB, 42); f2 = skia.Font(FONT_XB, 40)
+    w0 = f0.measureText("The"); w1 = f1.measureText("Curio"); w2 = f2.measureText("Kids Club"); pad = 18; gap = 10; wb = w1 + 2 * pad
+    x0 = -(w0 + gap + wb + gap + w2) / 2
+    c.drawString("The", x0, 12, f0, nofx(P(tcol, a=a)))
+    xb = x0 + w0 + gap
+    c.drawRRect(rr(xb, -30, wb, 60, 20), P("#FFFFFF", a=a)); c.drawRRect(rr(xb, -30, wb, 60, 20), P("#1F2D44", 4, a=a))
+    xx = xb + pad
     for ch_, col in zip("Curio", ("#FF4D6D", "#FF8C42", "#F2B600", "#2ECC71", "#0A84FF")):
         c.drawString(ch_, xx, 15, f1, nofx(P(col, a=a))); xx += f1.measureText(ch_)
-    c.drawString("Kids Club", x0 + wb + gap, 14, f2, nofx(P(tcol, a=a)))
+    c.drawString("Kids Club", xb + wb + gap, 14, f2, nofx(P(tcol, a=a)))
     c.restore()
 
 
@@ -453,6 +455,10 @@ def camera(t):
     return cx, cy, z
 
 
+def draw_top(c, t):
+    pass
+
+
 def render_frame(f):
     t = f / FPS
     doodle.SEED = f // 3
@@ -462,6 +468,7 @@ def render_frame(f):
     draw_bg(c, t); draw_board(c, t); draw_bit(c, t)
     for ch_ in CHARS:
         draw_char(c, ch_, t)
+    draw_top(c, t)  # overlays above the characters (end card, reminders, effects)
     c.restore()
     vg = skia.Paint(AntiAlias=True)
     vg.setShader(skia.GradientShader.MakeRadial(skia.Point(W / 2, H * 0.48), 1250, [hexc("#000000", 0.0), hexc("#000000", 0.0), hexc("#0B1E24", 0.10)], [0.0, 0.55, 1.0]))

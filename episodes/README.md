@@ -1,4 +1,4 @@
-# Curio Kids Club: episodes
+# The CurioKids Club: episodes
 
 One folder per episode: `episodes/<id>-<slug>/episode.json`. Each day the automation publishes the next folder, in id order, that has `"status": "ready"` and isn't already listed in `state.json`. The topic plan is in `TOPICS.md`.
 
@@ -27,7 +27,7 @@ python pipeline/validate_episode.py episodes/*/episode.json
   "id": "ep002", "slug": "why-cats-purr", "status": "ready",
   "title": "Why Do Cats Purr? 🐱 Fun Facts for Kids",
   "cover_text": "PURRR?",
-  "description": "First line = the hook ...\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "description": "First line = the hook ...\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
   "hashtags": ["#KidsLearning", "#FunFacts", "#Shorts"],
   "tags": ["cat facts for kids", "..."],
   "cast": ["LEO", "MIA"],
@@ -35,7 +35,7 @@ python pipeline/validate_episode.py episodes/*/episode.json
   "lines": [
     {"who": "LEO", "text": "Hook question?", "board": {"type": "title", "left": {"icon": "🐱", "label": "Cat"}, "right": {"icon": "🔊", "label": "Purr?"}, "mid": "?"}},
     {"who": "MIA", "text": "Answer with a keyword.", "punch": "keyword", "board": {"type": "big", "icon": "💡", "text": "Key idea", "cue": "keyword"}},
-    {"who": "MIA", "text": "... Follow Curio Kids Club for more wonders. And next time someone asks... hook question?"}
+    {"who": "MIA", "text": "... Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... hook question?"}
   ]
 }
 ```
@@ -64,7 +64,7 @@ python pipeline/validate_episode.py episodes/*/episode.json
 - **Audience:** ages 4–9 (parents watch too). Use short sentences and everyday words, one idea per line.
 - **Length:** 11–14 lines, about 50–65 seconds. Each spoken line is 230 characters at most.
 - **Hook:** line 0 is the question, said by the asker in under 3 seconds.
-- **Ending:** the last line is always "… Follow Curio Kids Club for more wonders. And next time someone asks… \<the hook again\>?"
+- **Ending:** the last line is always "… Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks… \<the hook again\>?" (the Subscribe / Like / Share end card pops up on "subscribe")
 - **Facts:** only well-established facts.
   - If scientists aren't sure (yawning, zebra stripes), say "scientists think …".
   - Never invent numbers or sources. Use a round number only when it is well known, and say "about".
@@ -76,6 +76,6 @@ python pipeline/validate_episode.py episodes/*/episode.json
   - brands, real people, or copyrighted songs or characters
   - "comment below" (comments are off on kids' videos)
   - begging for likes
-  - more than one Follow ask
-- **Pronunciation:** write the channel name as "Curio Kids Club".
+  - more than one Subscribe ask
+- **Pronunciation:** in spoken `text`, write the channel name as "The Curio Kids Club" (two words, so it is said clearly). Captions show it as "CurioKids".
 - **Poems:** must be **original**, with simple rhyming couplets and a steady beat. Don't use well-known nursery rhymes.

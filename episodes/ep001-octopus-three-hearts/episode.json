@@ -2,7 +2,7 @@
   "id": "ep001", "slug": "octopus-three-hearts", "status": "ready",
   "title": "Why Does an Octopus Have 3 Hearts? 🐙 Fun Facts for Kids",
   "cover_text": "3 HEARTS?!",
-  "description": "An octopus has three hearts and BLUE blood! Leo asks, big sister Mia explains how it works, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "description": "An octopus has three hearts and BLUE blood! Leo asks, big sister Mia explains how it works, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
   "hashtags": ["#KidsLearning", "#FunFacts", "#Octopus", "#Shorts"],
   "tags": ["octopus facts for kids", "three hearts", "blue blood", "animal facts", "science for kids", "kids learning"],
   "cast": ["LEO", "MIA"],
@@ -27,6 +27,6 @@
      "board": {"type": "big", "icon": "🏊", "text": "Swimming is tiring!", "cue": "swims", "sub": "So it likes to crawl", "sub_cue": "crawl"}},
     {"who": "LEO", "text": "Three hearts, blue blood and eight arms. Octopuses are amazing!",
      "board": {"type": "summary", "rows": [{"icon": "❤️", "text": "3 hearts", "cue": "three"}, {"icon": "💙", "text": "Blue blood", "cue": "blue"}, {"icon": "🐙", "text": "8 arms", "cue": "eight"}]}},
-    {"who": "MIA", "text": "They sure are! Follow Curio Kids Club for more wonders. And next time someone asks... does an octopus really have three hearts?"}
+    {"who": "MIA", "text": "They sure are! Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... does an octopus really have three hearts?"}
   ]
 }

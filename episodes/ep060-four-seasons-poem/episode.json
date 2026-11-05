@@ -2,7 +2,7 @@
   "id": "ep060", "slug": "four-seasons-poem", "status": "ready",
   "title": "The Four Seasons Poem 🍂 A Rhyme for Kids",
   "cover_text": "4 SEASONS!",
-  "description": "Spring, summer, autumn and winter! Mia shares an original rhyme about the four seasons and why they change, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "description": "Spring, summer, autumn and winter! Mia shares an original rhyme about the four seasons and why they change, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
   "hashtags": ["#KidsLearning", "#KidsPoems", "#Seasons", "#Shorts"],
   "tags": ["four seasons poem for kids", "seasons rhyme", "spring summer autumn winter", "nature for kids", "kids poems", "kids learning"],
   "cast": ["MIA"],
@@ -20,6 +20,6 @@
     {"who": "MIA", "text": "Build a snowman, round and white, then cuddle up on a cosy night.", "board": {"type": "poem", "title": "Winter", "icon": "❄️", "lines": [{"icon": "⛄", "text": "Build a snowman, round and white,", "cue": "snowman"}, {"icon": "🛌", "text": "Then cuddle up on a cosy night.", "cue": "cuddle"}]}},
     {"who": "MIA", "text": "Why do seasons change? Earth is tilted, so as it travels around the Sun, your part of Earth gets more sunlight, then less.", "punch": "tilted", "board": {"type": "big", "icon": "🌍", "text": "Earth is tilted!", "cue": "tilted", "sub": "More sunlight, then less", "sub_cue": "sunlight"}},
     {"who": "MIA", "text": "Spring, summer, autumn, winter too. Round and round, the year through!", "board": {"type": "poem", "title": "All year round", "icon": "🔄", "lines": [{"icon": "🌸", "text": "Spring, summer, autumn, winter too", "cue": "spring"}, {"icon": "🔄", "text": "Round and round, the year through!", "cue": "round"}]}},
-    {"who": "MIA", "text": "Which season is your favourite? Follow Curio Kids Club for more wonders. And next time someone asks... do you know all four seasons?"}
+    {"who": "MIA", "text": "Which season is your favourite? Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... do you know all four seasons?"}
   ]
 }

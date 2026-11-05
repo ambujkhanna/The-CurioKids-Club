@@ -1,8 +1,8 @@
-# Curio Kids Club: automated YouTube Shorts for kids
+# The CurioKids Club: automated YouTube Shorts for kids
 
 **Created:** 2026-11-04 (Claude Code session), built from the AInation Studio pipeline.
 
-Curio Kids Club makes short, curious answers to kids' big questions (animals, the human body, space, nature, everyday science) plus original rhymes and poems. Each Short is about 55 seconds.
+The CurioKids Club makes short, curious answers to kids' big questions (animals, the human body, space, nature, everyday science) plus original rhymes and poems. Each Short is about 55 seconds.
 
 - **Cast** (chosen per episode): **Leo**, the curious little brother who asks "why?"; **Mia**, the big sister who explains; and sometimes **Dad**. Poems are often Mia on her own.
 - **Look:** doodle line-art characters in a colourful **playroom** (rainbow, bunting, toys and a play mat), with a whiteboard where emoji pictures pop in as the words are spoken, and Buzz the helper bee.

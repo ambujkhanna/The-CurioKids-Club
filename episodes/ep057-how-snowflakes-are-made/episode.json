@@ -2,7 +2,7 @@
   "id": "ep057", "slug": "how-snowflakes-are-made", "status": "ready",
   "title": "How Are Snowflakes Made? ❄️ Fun Facts for Kids",
   "cover_text": "SNOWFLAKES?",
-  "description": "Every snowflake starts with a tiny speck of dust! Leo asks, big sister Mia explains how snowflakes grow their six sides, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "description": "Every snowflake starts with a tiny speck of dust! Leo asks, big sister Mia explains how snowflakes grow their six sides, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
   "hashtags": ["#KidsLearning", "#FunFacts", "#Snow", "#Shorts"],
   "tags": ["snowflake facts for kids", "how snowflakes form", "winter science", "weather for kids", "science for kids", "kids learning"],
   "cast": ["LEO", "MIA"],
@@ -20,6 +20,6 @@
     {"who": "MIA", "text": "That's why scientists think it's very, very unlikely that two big snowflakes are ever exactly alike!", "board": {"type": "big", "icon": "🔍", "text": "No two exactly alike?", "cue": "alike"}},
     {"who": "MIA", "text": "And when they get heavy enough, they drift down to the ground as snow.", "board": {"type": "big", "icon": "🌨️", "text": "Then they drift down!", "cue": "drift", "sub": "Hello, snow!", "sub_cue": "snow"}},
     {"who": "LEO", "text": "A speck of dust, freezing water, six sides, and every one is different. Wow!", "board": {"type": "summary", "rows": [{"icon": "🟤", "text": "Speck of dust", "cue": "dust"}, {"icon": "🧊", "text": "Water freezes on", "cue": "freezing"}, {"icon": "❄️", "text": "Six sides", "cue": "six"}, {"icon": "🔍", "text": "Each one is different", "cue": "different"}]}},
-    {"who": "MIA", "text": "Snow is amazing! Follow Curio Kids Club for more wonders. And next time someone asks... how are snowflakes made?"}
+    {"who": "MIA", "text": "Snow is amazing! Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... how are snowflakes made?"}
   ]
 }

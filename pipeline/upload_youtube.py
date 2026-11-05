@@ -1,6 +1,6 @@
 """Upload one rendered episode to YouTube (Data API v3), scheduled with publishAt.
 
-Needs env: YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN (OAuth for the Curio Kids Club channel,
+Needs env: YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN (OAuth for The CurioKids Club channel,
 scope https://www.googleapis.com/auth/youtube.upload). Never commit these; store them as GitHub secrets.
 Note: videos uploaded by an unaudited API project are locked to PRIVATE until Google approves the
 project audit. Until then the video is uploaded privately and you flip it to public in YouTube Studio.

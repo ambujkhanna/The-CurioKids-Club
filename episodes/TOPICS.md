@@ -1,4 +1,4 @@
-# Curio Kids Club: episode topics (ep001-ep075)
+# The CurioKids Club: episode topics (ep001-ep075)
 
 ep001 | animal | Why does an octopus have three hearts? (written)
 ep002 | animal | Why do cats purr?

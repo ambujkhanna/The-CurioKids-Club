@@ -2,7 +2,7 @@
   "id": "ep058", "slug": "how-spiders-spin-webs", "status": "ready",
   "title": "How Do Spiders Spin Webs? 🕸️ Fun Facts for Kids",
   "cover_text": "WEB BUILDERS!",
-  "description": "Spiders make silk inside their bodies! Leo asks, big sister Mia explains how a spider builds its web, step by step, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "description": "Spiders make silk inside their bodies! Leo asks, big sister Mia explains how a spider builds its web, step by step, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
   "hashtags": ["#KidsLearning", "#FunFacts", "#Spiders", "#Shorts"],
   "tags": ["spider facts for kids", "how spiders spin webs", "spider silk", "animal facts", "science for kids", "kids learning"],
   "cast": ["LEO", "MIA"],
@@ -20,6 +20,6 @@
     {"who": "LEO", "text": "What is the web for?"},
     {"who": "MIA", "text": "It's a trap for flying bugs, like flies. And some spiders even eat their old web to make new silk!", "board": {"type": "gallery", "title": "Web facts", "items": [{"icon": "🪰", "label": "Catches flies", "cue": "flies"}, {"icon": "♻️", "label": "Eats old web", "cue": "eat"}]}},
     {"who": "LEO", "text": "Silk from spinnerets, a bridge, spokes and a sticky spiral. Spiders are smart builders!", "board": {"type": "summary", "rows": [{"icon": "🕷️", "text": "Silk from spinnerets", "cue": "silk"}, {"icon": "🌬️", "text": "A bridge on the breeze", "cue": "bridge"}, {"icon": "🚲", "text": "Spokes", "cue": "spokes"}, {"icon": "🌀", "text": "Sticky spiral", "cue": "sticky"}]}},
-    {"who": "MIA", "text": "They sure are! Follow Curio Kids Club for more wonders. And next time someone asks... how do spiders spin webs?"}
+    {"who": "MIA", "text": "They sure are! Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... how do spiders spin webs?"}
   ]
 }

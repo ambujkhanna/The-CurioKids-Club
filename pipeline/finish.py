@@ -66,8 +66,8 @@ HL = {"DAD": "&H00FFC04F&", "TEEN": "&H0000D6FF&", "MIA": "&H0097DC3D&", "LEO": 
 for ln in T["lines"]:
     words = []
     for w in ln["words"]:
-        if words and words[-1][0] == "AI" and w[0].lower().startswith("nation"):
-            words[-1] = ["AInation", words[-1][1], w[2]]
+        if words and words[-1][0] == "Curio" and w[0].lower().startswith("kids"):
+            words[-1] = ["CurioKids", words[-1][1], w[2]]
         else:
             words.append(list(w))
     chunks, cur = [], []
@@ -83,7 +83,7 @@ for ln in T["lines"]:
             b = ch[wi + 1][1] if wi + 1 < len(ch) else c_end
             parts = []
             for wj, w2 in enumerate(ch):
-                txt = w2[0] if w2[0] == "AInation" else w2[0].upper()
+                txt = w2[0] if w2[0] == "CurioKids" else w2[0].upper()
                 if wj == wi:
                     parts.append(f"{{\\c{HL.get(ln['speaker'], '&H0000D6FF&')}\\fscx108\\fscy108}}{txt}{{\\c&H00FFFFFF&\\fscx100\\fscy100}}")
                 else:

@@ -2,7 +2,7 @@
   "id": "ep049", "slug": "shapes-all-around-me-poem", "status": "ready",
   "title": "Shapes All Around Me 🔺 A Rhyme for Kids",
   "cover_text": "SHAPE HUNT!",
-  "description": "Circles, squares, triangles and more! Mia shares an original rhyme about the shapes hiding all around us, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "description": "Circles, squares, triangles and more! Mia shares an original rhyme about the shapes hiding all around us, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
   "hashtags": ["#KidsLearning", "#KidsPoems", "#Shapes", "#Shorts"],
   "tags": ["shapes poem for kids", "shapes rhyme", "learn shapes", "preschool shapes", "kids poems", "kids learning"],
   "cast": ["MIA"],
@@ -19,6 +19,6 @@
     {"who": "MIA", "text": "Shapes at home and in the park, shapes in the light and the dark. Look all around, near and far. Shapes are wherever you are!", "board": {"type": "poem", "title": "Shapes everywhere", "icon": "🌍", "lines": [{"icon": "🏡", "text": "Shapes at home and in the park,", "cue": "home"}, {"icon": "🌗", "text": "Shapes in the light and the dark.", "cue": "light"}, {"icon": "🔭", "text": "Look all around, near and far,", "cue": "look"}, {"icon": "✨", "text": "Shapes are wherever you are!", "cue": "wherever"}]}},
     {"who": "MIA", "text": "Circles, squares, triangles, rectangles, stars and hearts. What a great shape hunt!", "board": {"type": "gallery", "title": "Shapes we found", "items": [{"icon": "🔵", "label": "Circle", "cue": "circles"}, {"icon": "🟥", "label": "Square", "cue": "squares"}, {"icon": "🔺", "label": "Triangle", "cue": "triangles"}, {"icon": "🚪", "label": "Rectangle", "cue": "rectangles"}, {"icon": "⭐", "label": "Star", "cue": "stars"}, {"icon": "❤️", "label": "Heart", "cue": "hearts"}]}},
     {"who": "MIA", "text": "Now it's your turn. Draw your favourite shape!", "board": {"type": "big", "icon": "✏️", "text": "Draw your favourite shape!", "cue": "draw"}},
-    {"who": "MIA", "text": "Happy shape hunting! Follow Curio Kids Club for more wonders. And next time someone asks... can you spot the shapes all around you?"}
+    {"who": "MIA", "text": "Happy shape hunting! Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... can you spot the shapes all around you?"}
   ]
 }

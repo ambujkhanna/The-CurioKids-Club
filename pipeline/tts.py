@@ -51,7 +51,7 @@ EP_FILE = os.environ.get("EPISODE")
 if EP_FILE:  # data-driven episode (episodes/<id>/episode.json)
     _ep = json.load(open(EP_FILE))
     LINES = [(l["who"], l["text"]) for l in _ep["lines"]]
-    # Curio Kids Club voices: [kokoro voice, speed, pitch shift in semitones (optional)]. Override per episode with "voices".
+    # The CurioKids Club voices: [kokoro voice, speed, pitch shift in semitones (optional)]. Override per episode with "voices".
     VOICES = {"MIA": ("af_heart", 1.05), "LEO": ("af_sky", 1.08, 2.5), "DAD": ("am_michael", 0.95), "TEEN": ("af_heart", 1.05)}
     VOICES.update({k: tuple(v) for k, v in _ep.get("voices", {}).items()})
 GAP = 0.28  # seconds between lines

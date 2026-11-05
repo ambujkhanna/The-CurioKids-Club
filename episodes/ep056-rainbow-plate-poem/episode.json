@@ -2,7 +2,7 @@
   "id": "ep056", "slug": "rainbow-plate-poem", "status": "ready",
   "title": "Rainbow Plate Rhyme 🌈 Fruits and Veggies for Kids",
   "cover_text": "EAT A RAINBOW!",
-  "description": "Red, orange, yellow, green, blue and purple! Leo and Mia take turns with an original rhyme about eating a rainbow of fruits and veggies, in under a minute.\n\nCurio Kids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "description": "Red, orange, yellow, green, blue and purple! Leo and Mia take turns with an original rhyme about eating a rainbow of fruits and veggies, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
   "hashtags": ["#KidsLearning", "#KidsPoems", "#HealthyEating", "#Shorts"],
   "tags": ["rainbow plate poem", "fruits and vegetables for kids", "healthy eating rhyme", "colours for kids", "kids poems", "kids learning"],
   "cast": ["LEO", "MIA"],
@@ -19,6 +19,6 @@
     {"who": "MIA", "text": "Different colours have different good stuff inside, and together they help your body grow and stay strong.", "punch": "strong", "board": {"type": "big", "icon": "💪", "text": "Each colour helps you", "cue": "colours", "sub": "Grow and stay strong", "sub_cue": "grow"}},
     {"who": "LEO", "text": "Every colour helps me grow strong, so I'll eat a rainbow all day long!", "board": {"type": "poem", "title": "The rainbow rule", "icon": "🌈", "lines": [{"icon": "💪", "text": "Every colour helps me grow strong,", "cue": "every"}, {"icon": "🌈", "text": "I'll eat a rainbow all day long!", "cue": "rainbow"}]}},
     {"who": "MIA", "text": "Red, orange, yellow, green, blue and purple. How many colours can you put on your plate today?", "board": {"type": "gallery", "title": "Rainbow plate", "items": [{"icon": "🍓", "label": "Red", "cue": "red"}, {"icon": "🥕", "label": "Orange", "cue": "orange"}, {"icon": "🍌", "label": "Yellow", "cue": "yellow"}, {"icon": "🥦", "label": "Green", "cue": "green"}, {"icon": "🫐", "label": "Blue", "cue": "blue"}, {"icon": "🍇", "label": "Purple", "cue": "purple"}]}},
-    {"who": "MIA", "text": "Yum! Follow Curio Kids Club for more wonders. And next time someone asks... can you eat a rainbow?"}
+    {"who": "MIA", "text": "Yum! Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... can you eat a rainbow?"}
   ]
 }

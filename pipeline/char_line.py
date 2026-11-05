@@ -55,7 +55,7 @@ SPEC = {
                 hair="#6B5544", torso_h=300, torso_w=96, hip_w=84, leg=330, L1=150, L2=140, shoe="#5A3A26"),
     "TEEN": dict(scale=0.92, skin="#FFE4D2", head=(120, 120), shirt="#FFD23F", shirt_sh="#F2B600", band="#FF4D8D",
                  hair="#7A4428", torso_h=270, torso_w=84, hip_w=78, leg=320, L1=138, L2=128, shoe="#FFFFFF"),
-    # Curio Kids Club cast: big sister Mia (girl drawing, own colours) and little brother Leo
+    # The CurioKids Club cast: big sister Mia (girl drawing, own colours) and little brother Leo
     "MIA": dict(scale=0.92, skin="#FFE4D2", head=(120, 120), shirt="#3DDC97", shirt_sh="#21B57A", band="#FF8C42",
                 hair="#4A2C1D", torso_h=270, torso_w=84, hip_w=78, leg=320, L1=138, L2=128, shoe="#FFFFFF"),
     "LEO": dict(scale=0.78, skin="#FFE2CC", head=(124, 118), shirt="#4FC3F7", shirt_sh="#2BA6DE", stripe="#FFD23F",
