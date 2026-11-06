@@ -156,7 +156,27 @@ def post_instagram(path, cap):
         return f"posted (reel {_ig_wait_publish(ig, cid, tok)})"
     except Exception as e:
         err = str(e)[:160]
-    # 2) fallback: let Instagram fetch the copy that was just posted to the Facebook Page
+    # 2) upload the Instagram-format copy to the Page as a hidden (unpublished) video, then let Instagram fetch it
+    err2 = ""
+    try:
+        page = os.environ["META_PAGE_ID"]
+        bnd = uuid.uuid4().hex
+        with open(path, "rb") as fh:
+            data = fh.read()
+        body = (f"--{bnd}\r\nContent-Disposition: form-data; name=\"published\"\r\n\r\nfalse\r\n"
+                f"--{bnd}\r\nContent-Disposition: form-data; name=\"access_token\"\r\n\r\n{tok}\r\n"
+                f"--{bnd}\r\nContent-Disposition: form-data; name=\"source\"; filename=\"ig.mp4\"\r\nContent-Type: video/mp4\r\n\r\n").encode() \
+               + data + f"\r\n--{bnd}--\r\n".encode()
+        r = _req(f"https://graph-video.facebook.com/v21.0/{page}/videos", raw=body, headers={"Content-Type": f"multipart/form-data; boundary={bnd}"}, timeout=900)
+        hid = r.get("id")
+        src = _fb_source(hid, tok) if hid else None
+        if src:
+            c = _req(f"{GRAPH}/{ig}/media", {"media_type": "REELS", "video_url": src, "caption": cap, "share_to_feed": "true", "access_token": tok})
+            return f"posted via hidden copy (reel {_ig_wait_publish(ig, c['id'], tok)})"
+        err2 = "hidden copy not ready"
+    except Exception as e:
+        err2 = str(e)[:140]
+    # 3) last fallback: let Instagram fetch the Reel that was just posted to the Facebook Page
     vid = LAST.get("fb_video_id")
     if not vid:
         return f"failed: {err} (no Facebook copy to fall back on)"[:300]
@@ -168,7 +188,7 @@ def post_instagram(path, cap):
                                           "share_to_feed": "true", "access_token": tok})
         return f"posted via Facebook copy (reel {_ig_wait_publish(ig, c['id'], tok)})"
     except Exception as e:
-        return f"failed: direct upload: {err}; fallback: {e}"[:300]
+        return f"failed: 1) direct: {err} | 2) hidden copy: {err2} | 3) FB reel copy: {e}"[:600]
 
 
 def post_all(path, ep, brand_line, long=False, done=None):
