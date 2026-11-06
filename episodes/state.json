@@ -16,7 +16,7 @@
       "rendered_at": "2026-11-05T22:55:17+05:30",
       "duration_s": 63.1,
       "publish_at_ist": "2026-11-05T22:55+05:30",
-      "thumbnail": "not set: not allowed yet - verify the channel (youtube.com/verify) to enable custom thumbnails; <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=NSpScrrBzv4&alt=json&uploadTyp",
+      "thumbnail": "set",
       "status": "uploaded",
       "video_id": "NSpScrrBzv4",
       "url": "https://www.youtube.com/shorts/NSpScrrBzv4",
