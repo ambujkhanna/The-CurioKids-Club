@@ -188,8 +188,8 @@ def main():
     from upload_youtube import have_credentials, upload, set_thumbnail
     import meta_post
     if "--social-only" in args and not dry:  # post this episode to Facebook / Instagram only (no YouTube)
-        social = meta_post.post_all(mp4, ep, BRAND_LINE, LONG) if meta_post.have_meta() else {"facebook": "no META secrets configured"}
-        rec.update(social); json.dump(state, open(STATE, "w"), indent=2)
+        social = meta_post.post_all(mp4, ep, BRAND_LINE, LONG, rec) if meta_post.have_meta() else {"facebook": "no META secrets configured"}
+        rec.update({k: v.replace(" (kept, not re-posted)", "") for k, v in social.items()}); json.dump(state, open(STATE, "w"), indent=2)
         print("Social only:", social)
         summary(f"### 📣 Social post for {eid}\n\n" + "\n".join(f"- {k.title()}: {v}" for k, v in social.items())); return 0
     if dry or not have_credentials():
@@ -207,7 +207,7 @@ def main():
         when = slot.strftime("%d %b %Y, %H:%M IST"); rec["publish_at_ist"] = slot.isoformat(timespec="minutes")
     rec.pop("note", None)
     rec["thumbnail"] = set_thumbnail(vid, thumb) if thumb else "not rendered"
-    social = meta_post.post_all(mp4, ep, BRAND_LINE, LONG)  # Facebook Page + Instagram (if META secrets are set)
+    social = meta_post.post_all(mp4, ep, BRAND_LINE, LONG, rec)  # Facebook Page + Instagram (if META secrets are set)
     rec.update(social)
     rec.update({"status": "uploaded", "video_id": vid, "url": f"https://www.youtube.com/{'watch?v=' if LONG else 'shorts/'}{vid}",
                 "uploaded_at": dt.datetime.now(IST).isoformat(timespec="seconds")})

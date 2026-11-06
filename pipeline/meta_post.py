@@ -10,6 +10,20 @@ import json, os, sys, time, urllib.parse, urllib.request, uuid
 GRAPH = "https://graph.facebook.com/v21.0"
 
 
+def _clean(v, kind):
+    """Secrets pasted with quotes, spaces, new lines or an 'access_token:' prefix still work."""
+    import re
+    v = v or ""
+    if kind == "token":
+        m = re.search(r"EAA[A-Za-z0-9]+", v)
+        return m.group(0) if m else "".join(v.split()).strip('",\'')
+    return re.sub(r"\D", "", v)  # IDs: digits only
+
+
+for _k, _kind in (("META_PAGE_ID", "id"), ("META_PAGE_TOKEN", "token"), ("META_IG_USER_ID", "id")):
+    if os.environ.get(_k): os.environ[_k] = _clean(os.environ[_k], _kind)
+
+
 def have_meta():
     return bool(os.environ.get("META_PAGE_ID") and os.environ.get("META_PAGE_TOKEN"))
 
@@ -74,41 +88,89 @@ def post_facebook(path, ep, cap, long=False):
                  headers={"Authorization": f"OAuth {tok}", "offset": "0", "file_size": str(size)})
         _req(f"{GRAPH}/{page}/video_reels", {"upload_phase": "finish", "video_id": vid, "video_state": "PUBLISHED",
                                               "description": cap, "access_token": tok})
+        LAST["fb_video_id"] = vid
         return f"posted (reel {vid})"
     except Exception as e:
         return f"failed: {e}"[:300]
 
 
+LAST = {}
+
+
+def _fb_source(vid, tok, wait=600):
+    """Public CDN link of the Facebook copy (used as a fallback source for Instagram)."""
+    t0 = time.time()
+    while time.time() - t0 < wait:
+        try:
+            r = _req(f"{GRAPH}/{vid}?fields=source,status&access_token={urllib.parse.quote(tok)}")
+            if r.get("source") and (r.get("status", {}).get("video_status") in (None, "ready")):
+                return r["source"]
+        except Exception:
+            pass
+        time.sleep(15)
+    return None
+
+
+def _ig_wait_publish(ig, cid, tok):
+    for _ in range(60):  # wait until Instagram has processed the video (up to ~10 min)
+        s = _req(f"{GRAPH}/{cid}?fields=status_code,status&access_token={urllib.parse.quote(tok)}")
+        if s.get("status_code") == "FINISHED": break
+        if s.get("status_code") in ("ERROR", "EXPIRED"): raise RuntimeError(f"processing {s.get('status', s)}")
+        time.sleep(10)
+    else:
+        raise RuntimeError("Instagram processing timed out")
+    p = _req(f"{GRAPH}/{ig}/media_publish", {"creation_id": cid, "access_token": tok})
+    return p.get("id")
+
+
 def post_instagram(path, cap):
     ig, tok = os.environ["META_IG_USER_ID"], os.environ["META_PAGE_TOKEN"]
+    err = ""
+    # 1) direct (resumable) upload of the file
     try:
         c = _req(f"{GRAPH}/{ig}/media", {"media_type": "REELS", "upload_type": "resumable", "caption": cap,
                                           "share_to_feed": "true", "access_token": tok})
         cid = c["id"]; uri = c.get("uri") or f"https://rupload.facebook.com/ig-api-upload/v21.0/{cid}"
         with open(path, "rb") as fh:
-            _req(uri, raw=fh.read(), headers={"Authorization": f"OAuth {tok}", "offset": "0", "file_size": str(os.path.getsize(path))})
-        for _ in range(60):  # wait until Instagram has processed the video (up to ~10 min)
-            s = _req(f"{GRAPH}/{cid}?fields=status_code,status&access_token={urllib.parse.quote(tok)}")
-            if s.get("status_code") == "FINISHED": break
-            if s.get("status_code") in ("ERROR", "EXPIRED"): return f"failed: processing {s.get('status', s)}"[:300]
-            time.sleep(10)
-        else:
-            return "failed: Instagram processing timed out"
-        p = _req(f"{GRAPH}/{ig}/media_publish", {"creation_id": cid, "access_token": tok})
-        return f"posted (reel {p.get('id')})"
+            data = fh.read()
+        _req(uri, raw=data, headers={"Authorization": f"OAuth {tok}", "offset": "0", "file_size": str(len(data)),
+                                     "Content-Type": "application/octet-stream"})
+        return f"posted (reel {_ig_wait_publish(ig, cid, tok)})"
     except Exception as e:
-        return f"failed: {e}"[:300]
+        err = str(e)[:160]
+    # 2) fallback: let Instagram fetch the copy that was just posted to the Facebook Page
+    vid = LAST.get("fb_video_id")
+    if not vid:
+        return f"failed: {err} (no Facebook copy to fall back on)"[:300]
+    try:
+        src = _fb_source(vid, tok)
+        if not src:
+            return f"failed: {err}; Facebook copy not ready for fallback"[:300]
+        c = _req(f"{GRAPH}/{ig}/media", {"media_type": "REELS", "video_url": src, "caption": cap,
+                                          "share_to_feed": "true", "access_token": tok})
+        return f"posted via Facebook copy (reel {_ig_wait_publish(ig, c['id'], tok)})"
+    except Exception as e:
+        return f"failed: direct upload: {err}; fallback: {e}"[:300]
 
 
-def post_all(path, ep, brand_line, long=False):
-    """Returns {"facebook": status, "instagram": status} (only for configured platforms)."""
-    out = {}
+def post_all(path, ep, brand_line, long=False, done=None):
+    """Returns {"facebook": status, "instagram": status} (only for configured platforms).
+    done: the episode's saved record - platforms that already say "posted" are skipped (no duplicates on re-runs)."""
+    import re
+    out, done = {}, (done or {})
     if not have_meta():
         return out
     cap = caption(ep, brand_line)
-    out["facebook"] = post_facebook(path, ep, cap, long)
+    fb_prev = str(done.get("facebook", ""))
+    if fb_prev.startswith("posted"):
+        m = re.search(r"(\d{6,})", fb_prev)
+        if m: LAST["fb_video_id"] = m.group(1)
+        out["facebook"] = fb_prev + " (kept, not re-posted)"
+    else:
+        out["facebook"] = post_facebook(path, ep, cap, long)
     if have_ig() and not long:  # long 16:9 videos go to Facebook only
-        out["instagram"] = post_instagram(path, cap)
+        ig_prev = str(done.get("instagram", ""))
+        out["instagram"] = ig_prev + " (kept, not re-posted)" if ig_prev.startswith("posted") else post_instagram(path, cap)
     return out
 
 
