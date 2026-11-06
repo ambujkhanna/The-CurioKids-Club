@@ -16,6 +16,10 @@ on:
         description: "Publish immediately (no schedule)"
         type: boolean
         default: false
+      refresh_thumbnails:
+        description: "Only re-make and upload thumbnails for videos already uploaded (no new video)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -72,6 +76,7 @@ jobs:
           if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
           if [ -n "${{ inputs.episode }}" ]; then ARGS="$ARGS --episode ${{ inputs.episode }}"; fi
           if [ "${{ inputs.publish_now }}" = "true" ]; then ARGS="$ARGS --now"; fi
+          if [ "${{ inputs.refresh_thumbnails }}" = "true" ]; then ARGS="$ARGS --refresh-thumbnails"; fi
           python pipeline/daily.py --long $ARGS
 
       - name: Keep the video as a downloadable artifact (14 days)
@@ -82,6 +87,7 @@ jobs:
           path: |
             out/*.mp4
             out/*_thumbnail.jpg
+            out/*.jpg
           retention-days: 14
           if-no-files-found: ignore
 

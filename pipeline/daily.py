@@ -110,8 +110,37 @@ def chapters(ep):
     return "\n".join(f"{int(t // 60)}:{int(t % 60):02d} {name}" for t, name in [(0.0, marks[0][1])] + marks[1:])
 
 
+def refresh_thumbnails():
+    """Re-design and upload the thumbnail of every video already uploaded (e.g. after a thumbnail redesign)."""
+    from upload_youtube import have_credentials, set_thumbnail
+    if not have_credentials():
+        print("No YouTube credentials - nothing to do."); return 0
+    state = load_state(); eps = {}
+    for f in glob.glob(os.path.join(EPDIR, "*", "episode.json")):
+        e = json.load(open(f, encoding="utf-8")); eps[e["id"]] = f
+    done = []
+    for eid, rec in sorted(state["episodes"].items()):
+        if rec.get("status") != "uploaded" or not rec.get("video_id") or eid not in eps: continue
+        env = {"EPISODE": eps[eid], "BG": "kids", "DOODLE": "chars", "FORMAT": "long" if LONG else "short", "THUMB_ONLY": "1"}
+        try:
+            sh([sys.executable, os.path.join(PIPE, "tts.py")], {"EPISODE": eps[eid]})
+            sh([sys.executable, os.path.join(PIPE, "episode_engine.py"), "x"], env, cwd=PIPE)
+            os.makedirs(OUT, exist_ok=True)
+            import shutil; dst = os.path.join(OUT, f"{eid}_thumbnail.jpg"); shutil.copy(os.path.join(PIPE, "build", "thumbnail.jpg"), dst)
+            rec["thumbnail"] = set_thumbnail(rec["video_id"], dst)
+        except Exception as e:
+            rec["thumbnail"] = f"refresh failed: {e}"[:200]
+        done.append(f"- {eid}: {rec['thumbnail']}")
+        print(eid, rec["thumbnail"])
+    json.dump(state, open(STATE, "w"), indent=2)
+    summary("### 🖼️ Thumbnails refreshed\n\n" + ("\n".join(done) or "- no uploaded videos found"))
+    return 0
+
+
 def main():
     args = sys.argv[1:]
+    if "--refresh-thumbnails" in args:
+        return refresh_thumbnails()
     dry = "--dry-run" in args
     forced = args[args.index("--episode") + 1] if "--episode" in args else None
     now_mode = "--now" in args
