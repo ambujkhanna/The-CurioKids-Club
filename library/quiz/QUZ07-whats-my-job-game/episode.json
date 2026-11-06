@@ -1,0 +1,224 @@
+{
+  "id": "QUZ07",
+  "slug": "whats-my-job-game",
+  "status": "ready",
+  "title": "What's My Job? 🚒 Guessing Game for Kids",
+  "cover_text": "MY JOB?",
+  "description": "A big pot, a red truck, a countdown... Can you guess the job? Leo and Mia play a quick What's My Job guessing game for kids.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsGames",
+    "#WhatsMyJob",
+    "#GuessingGame",
+    "#Shorts"
+  ],
+  "tags": [
+    "whats my job game",
+    "jobs for kids",
+    "community helpers",
+    "guessing game for kids",
+    "kids games",
+    "fun for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Red truck job?",
+    "cue": "next",
+    "left": "🚒",
+    "right": "❓"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, let's play What's My Job!",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🧰",
+          "label": "Tools"
+        },
+        "right": {
+          "icon": "❓",
+          "label": "Job?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "I'll give clues, and you guess the job! Ready?",
+      "board": {
+        "type": "big",
+        "icon": "🔍",
+        "text": "Guess the job!",
+        "cue": "guess",
+        "sub": "Clues first!",
+        "sub_cue": "ready"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Clue one, a big pot. Clue two, a wooden spoon. Clue three, a kitchen!",
+      "board": {
+        "type": "guess",
+        "title": "What's my job?",
+        "clues": [
+          {
+            "icon": "🍲",
+            "label": "A big pot",
+            "cue": "pot"
+          },
+          {
+            "icon": "🥄",
+            "label": "A wooden spoon",
+            "cue": "spoon"
+          },
+          {
+            "icon": "🍽️",
+            "label": "A kitchen",
+            "cue": "kitchen"
+          }
+        ],
+        "answer": {
+          "icon": "🍳",
+          "label": "A chef!",
+          "cue": "chef"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Hmm... I smell a yummy answer. A chef!",
+      "punch": "chef"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Next. A big red truck, a long hose, and a shiny helmet.",
+      "board": {
+        "type": "guess",
+        "title": "What's my job?",
+        "clues": [
+          {
+            "icon": "🚒",
+            "label": "Big red truck",
+            "cue": "truck"
+          },
+          {
+            "icon": "💦",
+            "label": "A long hose",
+            "cue": "hose"
+          },
+          {
+            "icon": "⛑️",
+            "label": "A shiny helmet",
+            "cue": "helmet"
+          }
+        ],
+        "answer": {
+          "icon": "🧯",
+          "label": "A firefighter!",
+          "cue": "firefighter"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ooh, nee-naw, nee-naw! A firefighter!"
+    },
+    {
+      "who": "MIA",
+      "text": "Right! Last one, it's tricky. A countdown, lots of stars, and the Moon!",
+      "board": {
+        "type": "guess",
+        "title": "What's my job?",
+        "clues": [
+          {
+            "icon": "🔟",
+            "label": "A countdown",
+            "cue": "countdown"
+          },
+          {
+            "icon": "⭐",
+            "label": "Lots of stars",
+            "cue": "stars"
+          },
+          {
+            "icon": "🌕",
+            "label": "The Moon",
+            "cue": "moon"
+          }
+        ],
+        "answer": {
+          "icon": "🚀",
+          "label": "An astronaut!",
+          "cue": "astronaut"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Hmm... a star chef? No wait... an astronaut!",
+      "punch": "astronaut"
+    },
+    {
+      "who": "MIA",
+      "text": "Three out of three! You're a job-guessing champ!",
+      "board": {
+        "type": "big",
+        "icon": "🏆",
+        "text": "Job champ!",
+        "cue": "champ"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Now you guess! A tractor, lots of cows, and hay!",
+      "board": {
+        "type": "guess",
+        "title": "Your turn, Mia!",
+        "clues": [
+          {
+            "icon": "🚜",
+            "label": "A tractor",
+            "cue": "tractor"
+          },
+          {
+            "icon": "🐄",
+            "label": "Lots of cows",
+            "cue": "cows"
+          },
+          {
+            "icon": "🌾",
+            "label": "Hay",
+            "cue": "hay"
+          }
+        ],
+        "answer": {
+          "icon": "🌽",
+          "label": "A farmer!",
+          "cue": "farmer"
+        }
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Hmm... give me a second... a farmer!"
+    },
+    {
+      "who": "LEO",
+      "text": "Yes! You got it! Moo!",
+      "board": {
+        "type": "big",
+        "icon": "🐄",
+        "text": "Moo! Correct!",
+        "cue": "moo"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Ha! Ask a grown-up to subscribe to The Curio Kids Club for more fun! And next time... what job uses a big red truck?"
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "id": "QUZ10",
+  "slug": "whats-my-job-with-dad",
+  "status": "ready",
+  "title": "What's My Job? ✈️ Dad's Guessing Game for Kids",
+  "cover_text": "GUESS!",
+  "description": "A stethoscope, a runway, a postbox... Dad gives the clues and Leo guesses the job. Then Leo gives Dad a tricky one!\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsGames",
+    "#WhatsMyJob",
+    "#CommunityHelpers",
+    "#Shorts"
+  ],
+  "tags": [
+    "whats my job game",
+    "jobs for kids",
+    "community helpers for kids",
+    "guessing game for kids",
+    "kids games",
+    "fun for kids"
+  ],
+  "cast": [
+    "LEO",
+    "DAD"
+  ],
+  "loop_card": {
+    "text": "Who uses this?",
+    "cue": "next",
+    "left": "🩺",
+    "right": "❓"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Dad, let's play What's My Job!",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🔧",
+          "label": "Clues"
+        },
+        "right": {
+          "icon": "👷",
+          "label": "Job?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Okay! Clue one: a stethoscope to hear your heart. Clue two: bandages. Clue three: a thermometer.",
+      "board": {
+        "type": "guess",
+        "title": "What's my job?",
+        "clues": [
+          {
+            "icon": "🩺",
+            "label": "A stethoscope",
+            "cue": "stethoscope"
+          },
+          {
+            "icon": "🩹",
+            "label": "Bandages",
+            "cue": "bandages"
+          },
+          {
+            "icon": "🌡️",
+            "label": "A thermometer",
+            "cue": "thermometer"
+          }
+        ],
+        "answer": {
+          "icon": "🏥",
+          "label": "A doctor!",
+          "cue": "doctor"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Hmm... say ahh! A doctor!",
+      "punch": "doctor"
+    },
+    {
+      "who": "DAD",
+      "text": "Yes! Next one. Fluffy clouds, a headset, and a long runway.",
+      "board": {
+        "type": "guess",
+        "title": "What's my job?",
+        "clues": [
+          {
+            "icon": "☁️",
+            "label": "Fluffy clouds",
+            "cue": "clouds"
+          },
+          {
+            "icon": "🎧",
+            "label": "A headset",
+            "cue": "headset"
+          },
+          {
+            "icon": "🛬",
+            "label": "A long runway",
+            "cue": "runway"
+          }
+        ],
+        "answer": {
+          "icon": "✈️",
+          "label": "A pilot!",
+          "cue": "pilot"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Hmm... a cloud? No! A pilot! Zoom!"
+    },
+    {
+      "who": "DAD",
+      "text": "Right! Last one. Letters, parcels, and a red postbox.",
+      "board": {
+        "type": "guess",
+        "title": "What's my job?",
+        "clues": [
+          {
+            "icon": "✉️",
+            "label": "Letters",
+            "cue": "letters"
+          },
+          {
+            "icon": "📦",
+            "label": "Parcels",
+            "cue": "parcels"
+          },
+          {
+            "icon": "📮",
+            "label": "A red postbox",
+            "cue": "postbox"
+          }
+        ],
+        "answer": {
+          "icon": "📬",
+          "label": "A mail carrier!",
+          "cue": "mail"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Hmm... a box robot? No... a mail carrier!",
+      "punch": "mail"
+    },
+    {
+      "who": "DAD",
+      "text": "Three for three! Great guessing!",
+      "board": {
+        "type": "big",
+        "icon": "🏆",
+        "text": "Three for three!",
+        "cue": "three",
+        "sub": "Great guessing!",
+        "sub_cue": "great"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "My turn, Dad! Flour, a big oven, and warm bread!",
+      "board": {
+        "type": "guess",
+        "title": "Your turn, Dad!",
+        "clues": [
+          {
+            "icon": "🌾",
+            "label": "Flour",
+            "cue": "flour"
+          },
+          {
+            "icon": "⏲️",
+            "label": "A big oven",
+            "cue": "oven"
+          },
+          {
+            "icon": "🍞",
+            "label": "Warm bread",
+            "cue": "bread"
+          }
+        ],
+        "answer": {
+          "icon": "🥐",
+          "label": "A baker!",
+          "cue": "baker"
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Hmm... is it... a hungry dad? No, a baker!"
+    },
+    {
+      "who": "LEO",
+      "text": "Yes! And you're a hungry dad too!",
+      "board": {
+        "type": "big",
+        "icon": "🥐",
+        "text": "Dad got it!",
+        "cue": "yes"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Ha! Ask a grown-up to subscribe to The Curio Kids Club for more fun! And next time... who uses a stethoscope?"
+    }
+  ]
+}

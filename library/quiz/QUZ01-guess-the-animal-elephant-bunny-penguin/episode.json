@@ -1,0 +1,216 @@
+{
+  "id": "QUZ01",
+  "slug": "guess-the-animal-elephant-bunny-penguin",
+  "status": "ready",
+  "title": "Guess the Animal! 🐘 Fun Game for Kids",
+  "cover_text": "WHO IS IT?",
+  "description": "Long nose? Floppy ears? Can you guess the animal before Leo does? Mia and Leo play three rounds of Guess the Animal!\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsGames",
+    "#GuessTheAnimal",
+    "#Shorts"
+  ],
+  "tags": [
+    "guess the animal",
+    "animal riddles for kids",
+    "kids games",
+    "animal guessing game",
+    "fun for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Guess the animal!",
+    "cue": "next",
+    "left": "🐾",
+    "right": "❓"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, let's play Guess the Animal!",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🐾",
+          "label": "Animal"
+        },
+        "right": {
+          "icon": "❓",
+          "label": "Who is it?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Round one! I have a super long nose, big floppy ears, and I'm super huge!",
+      "board": {
+        "type": "guess",
+        "title": "Round 1!",
+        "clues": [
+          {
+            "icon": "👃",
+            "label": "Super long nose",
+            "cue": "nose"
+          },
+          {
+            "icon": "👂",
+            "label": "Floppy ears",
+            "cue": "floppy"
+          },
+          {
+            "icon": "📏",
+            "label": "Super huge",
+            "cue": "huge"
+          }
+        ],
+        "answer": {
+          "icon": "🐘",
+          "label": "An elephant!",
+          "cue": "elephant"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Hmm... a long nose and floppy ears... I know! It's an elephant!",
+      "punch": "elephant"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Elephants use their trunks to give themselves a shower. Splash!",
+      "board": {
+        "type": "big",
+        "icon": "🐘",
+        "text": "Trunk shower!",
+        "cue": "trunks",
+        "sub": "Splash!",
+        "sub_cue": "splash"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "My turn! Round two! I hop, hop, hop. I have long ears and a fluffy little tail.",
+      "board": {
+        "type": "guess",
+        "title": "Round 2!",
+        "clues": [
+          {
+            "icon": "⬆️",
+            "label": "Hop, hop, hop",
+            "cue": "hop"
+          },
+          {
+            "icon": "👂",
+            "label": "Long ears",
+            "cue": "ears"
+          },
+          {
+            "icon": "☁️",
+            "label": "Fluffy tail",
+            "cue": "fluffy"
+          }
+        ],
+        "answer": {
+          "icon": "🐰",
+          "label": "A bunny!",
+          "cue": "bunny"
+        }
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Hmm... hopping, long ears... a frog? No, frogs don't have long ears! It's a bunny!"
+    },
+    {
+      "who": "LEO",
+      "text": "Yes! And bunnies wiggle their noses when they sniff. Wiggle, wiggle!",
+      "board": {
+        "type": "big",
+        "icon": "🐰",
+        "text": "Wiggly noses!",
+        "cue": "wiggle",
+        "sub": "Sniff, sniff!",
+        "sub_cue": "sniff"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Last round! I'm black and white, I can't fly, and I waddle on the ice.",
+      "board": {
+        "type": "guess",
+        "title": "Round 3!",
+        "clues": [
+          {
+            "icon": "⚫",
+            "label": "Black and white",
+            "cue": "black"
+          },
+          {
+            "icon": "🪶",
+            "label": "Can't fly",
+            "cue": "fly"
+          },
+          {
+            "icon": "🧊",
+            "label": "Waddles on ice",
+            "cue": "waddle"
+          }
+        ],
+        "answer": {
+          "icon": "🐧",
+          "label": "A penguin!",
+          "cue": "penguin"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Hmm... black and white... a zebra? No, zebras don't waddle! It's a penguin!",
+      "punch": "penguin"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Penguins can't fly in the sky, but they zoom through the water like rockets!",
+      "board": {
+        "type": "big",
+        "icon": "🐧",
+        "text": "Zoom like rockets!",
+        "cue": "zoom",
+        "sub": "Super swimmers",
+        "sub_cue": "water"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Elephant, bunny, penguin! We got them all!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Elephant",
+            "icon": "🐘",
+            "cue": "elephant"
+          },
+          {
+            "text": "Bunny",
+            "icon": "🐰",
+            "cue": "bunny"
+          },
+          {
+            "text": "Penguin",
+            "icon": "🐧",
+            "cue": "penguin"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "How many did you guess? Ask a grown-up to subscribe to The Curio Kids Club for more fun! And next time... can you guess the animal?"
+    }
+  ]
+}

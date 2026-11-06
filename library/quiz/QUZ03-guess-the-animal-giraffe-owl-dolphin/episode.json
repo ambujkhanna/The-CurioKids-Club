@@ -1,0 +1,216 @@
+{
+  "id": "QUZ03",
+  "slug": "guess-the-animal-giraffe-owl-dolphin",
+  "status": "ready",
+  "title": "Guess the Animal with Dad! 🦒 Fun Game for Kids",
+  "cover_text": "GUESS WHO?",
+  "description": "Long neck, clicks and whistles, or a head that turns way around? Leo and Dad play Guess the Animal. Can you beat them?\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsGames",
+    "#GuessTheAnimal",
+    "#Shorts"
+  ],
+  "tags": [
+    "guess the animal",
+    "animal guessing game",
+    "kids games",
+    "animal riddles for kids",
+    "fun animal facts"
+  ],
+  "cast": [
+    "LEO",
+    "DAD"
+  ],
+  "loop_card": {
+    "text": "Long neck? Spots?",
+    "cue": "next",
+    "left": "🦒",
+    "right": "❓"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Dad, can we play Guess the Animal?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🐾",
+          "label": "Animal"
+        },
+        "right": {
+          "icon": "🤔",
+          "label": "Who is it?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Sure! Round one. I have a really long neck, brown spots, and I eat leaves from tall trees.",
+      "board": {
+        "type": "guess",
+        "title": "Round 1!",
+        "clues": [
+          {
+            "icon": "📏",
+            "label": "Super long neck",
+            "cue": "neck"
+          },
+          {
+            "icon": "🟫",
+            "label": "Brown spots",
+            "cue": "spots"
+          },
+          {
+            "icon": "🌳",
+            "label": "Eats tree leaves",
+            "cue": "leaves"
+          }
+        ],
+        "answer": {
+          "icon": "🦒",
+          "label": "A giraffe!",
+          "cue": "giraffe"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Hmm... long neck... spots... that's easy! A giraffe!",
+      "punch": "giraffe"
+    },
+    {
+      "who": "DAD",
+      "text": "Right! A giraffe is so tall, it could peek into an upstairs window!",
+      "board": {
+        "type": "big",
+        "icon": "🦒",
+        "text": "Super tall!",
+        "cue": "tall",
+        "sub": "Peek in upstairs!",
+        "sub_cue": "peek"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Round two, Dad! I stay up all night, I say hoo, hoo, and I can turn my head way around.",
+      "board": {
+        "type": "guess",
+        "title": "Round 2!",
+        "clues": [
+          {
+            "icon": "🌙",
+            "label": "Up all night",
+            "cue": "night"
+          },
+          {
+            "icon": "🔊",
+            "label": "Says hoo, hoo",
+            "cue": "hoo"
+          },
+          {
+            "icon": "🔄",
+            "label": "Turns my head",
+            "cue": "head"
+          }
+        ],
+        "answer": {
+          "icon": "🦉",
+          "label": "An owl!",
+          "cue": "owl"
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Hmm... up all night... a cat? No, cats say meow! It's an owl!"
+    },
+    {
+      "who": "LEO",
+      "text": "Yes! Owls turn their whole heads to look around, because their eyes can't move.",
+      "board": {
+        "type": "big",
+        "icon": "🦉",
+        "text": "Turning heads!",
+        "cue": "turn",
+        "sub": "Eyes stay still",
+        "sub_cue": "eyes"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Last round! I live in the sea, I breathe through a hole on my head, and I talk with clicks and whistles!",
+      "board": {
+        "type": "guess",
+        "title": "Round 3!",
+        "clues": [
+          {
+            "icon": "🌊",
+            "label": "Lives in the sea",
+            "cue": "sea"
+          },
+          {
+            "icon": "💨",
+            "label": "Breathes through a hole",
+            "cue": "breathe"
+          },
+          {
+            "icon": "🎵",
+            "label": "Clicks and whistles",
+            "cue": "clicks"
+          }
+        ],
+        "answer": {
+          "icon": "🐬",
+          "label": "A dolphin!",
+          "cue": "dolphin"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Clicks and whistles? Hmm... that sounds like a song! It's a dolphin!",
+      "punch": "dolphin"
+    },
+    {
+      "who": "DAD",
+      "text": "Yes! And a dolphin sleeps with one eye open. Half asleep!",
+      "board": {
+        "type": "big",
+        "icon": "🐬",
+        "text": "One eye open!",
+        "cue": "one",
+        "sub": "Half asleep!",
+        "sub_cue": "half"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Giraffe, owl, dolphin! I want to play again!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Giraffe",
+            "icon": "🦒",
+            "cue": "giraffe"
+          },
+          {
+            "text": "Owl",
+            "icon": "🦉",
+            "cue": "owl"
+          },
+          {
+            "text": "Dolphin",
+            "icon": "🐬",
+            "cue": "dolphin"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Me too! Ask a grown-up to subscribe to The Curio Kids Club for more fun! And next time... who has a long neck and brown spots?"
+    }
+  ]
+}

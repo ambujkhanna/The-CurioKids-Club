@@ -1,0 +1,163 @@
+{
+  "id": "COM03",
+  "slug": "animal-jokes-bull-fish-monkey-bear",
+  "status": "ready",
+  "title": "Funny Animal Jokes for Kids! 🐒 Giggle Time",
+  "cover_text": "ANIMAL JOKES!",
+  "description": "What kind of key opens a banana? Mia and Leo swap their silliest animal jokes. Get ready to giggle!\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsJokes",
+    "#AnimalJokes",
+    "#JokesForKids",
+    "#Shorts"
+  ],
+  "tags": [
+    "animal jokes for kids",
+    "funny jokes for kids",
+    "kids jokes",
+    "animal puns",
+    "silly jokes"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "A sleepy bull?",
+    "cue": "next",
+    "left": "🐂",
+    "right": "😴"
+  },
+  "lines": [
+    {
+      "who": "MIA",
+      "text": "Leo, I have some animal jokes for you!",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🐾",
+          "label": "Animal"
+        },
+        "right": {
+          "icon": "😂",
+          "label": "Jokes!"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Yes! Tell me, tell me!"
+    },
+    {
+      "who": "MIA",
+      "text": "What do you call a sleepy bull?",
+      "board": {
+        "type": "big",
+        "icon": "🐂",
+        "text": "A sleepy bull?",
+        "cue": "sleepy"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Hmm... I don't know. What?"
+    },
+    {
+      "who": "MIA",
+      "text": "You call it a bull-dozer!",
+      "punch": "bull",
+      "board": {
+        "type": "big",
+        "icon": "🐂",
+        "text": "A sleepy bull?",
+        "cue": "call",
+        "sub": "A bull-dozer!",
+        "sub_cue": "bull"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ha ha! My turn. Why do fish live in salt water?",
+      "board": {
+        "type": "big",
+        "icon": "🐟",
+        "text": "Why salty water?",
+        "cue": "salt"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Hmm... why?"
+    },
+    {
+      "who": "LEO",
+      "text": "Because pepper makes them sneeze!",
+      "punch": "pepper",
+      "board": {
+        "type": "big",
+        "icon": "🐟",
+        "text": "Fish in salt water?",
+        "cue": "because",
+        "sub": "Pepper makes them sneeze!",
+        "sub_cue": "pepper"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Achoo! Ha! Okay, what kind of key opens a banana?",
+      "board": {
+        "type": "big",
+        "icon": "🍌",
+        "text": "A key for a banana?",
+        "cue": "key"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "A banana key? Hmm... I give up!"
+    },
+    {
+      "who": "MIA",
+      "text": "The answer is... a monkey!",
+      "board": {
+        "type": "big",
+        "icon": "🐒",
+        "text": "Banana key?",
+        "cue": "answer",
+        "sub": "A mon-key!",
+        "sub_cue": "monkey"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Mon-key! Ha ha! Last one. What do you call a bear with no teeth?",
+      "board": {
+        "type": "big",
+        "icon": "🐻",
+        "text": "A bear with no teeth?",
+        "cue": "bear"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Hmm... a hungry bear? I give up!"
+    },
+    {
+      "who": "LEO",
+      "text": "You call him... a gummy bear!",
+      "board": {
+        "type": "big",
+        "icon": "🐻",
+        "text": "No teeth?",
+        "cue": "call",
+        "sub": "A gummy bear!",
+        "sub_cue": "gummy"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Ha! Ask a grown-up to subscribe to The Curio Kids Club for more fun! And next time... what do you call a sleepy bull?"
+    }
+  ]
+}

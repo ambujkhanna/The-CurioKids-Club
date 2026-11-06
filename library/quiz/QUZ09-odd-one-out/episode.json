@@ -1,0 +1,196 @@
+{
+  "id": "QUZ09",
+  "slug": "odd-one-out",
+  "status": "ready",
+  "title": "Odd One Out! 🥕 Can You Spot It? Kids Game",
+  "cover_text": "ODD ONE?",
+  "description": "Four pictures, one doesn't belong! Can you spot the odd one out before Leo does? A quick thinking game for kids.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsGames",
+    "#OddOneOut",
+    "#BrainGames",
+    "#Shorts"
+  ],
+  "tags": [
+    "odd one out for kids",
+    "which one doesnt belong",
+    "thinking game for kids",
+    "fruits and vegetables",
+    "kids games",
+    "fun for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Odd one out?",
+    "cue": "next",
+    "left": "🔍",
+    "right": "❓"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, how do you play Odd One Out?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🔍",
+          "label": "Odd one"
+        },
+        "right": {
+          "icon": "❓",
+          "label": "Out?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Four pictures, and one doesn't belong! Look: an apple, a banana, a carrot, and grapes.",
+      "board": {
+        "type": "gallery",
+        "title": "Odd one out!",
+        "items": [
+          {
+            "icon": "🍎",
+            "label": "Apple",
+            "cue": "apple"
+          },
+          {
+            "icon": "🍌",
+            "label": "Banana",
+            "cue": "banana"
+          },
+          {
+            "icon": "🥕",
+            "label": "Carrot",
+            "cue": "carrot"
+          },
+          {
+            "icon": "🍇",
+            "label": "Grapes",
+            "cue": "grapes"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Hmm... is it the banana? It's the only yellow one!"
+    },
+    {
+      "who": "MIA",
+      "text": "Good thinking! But look again...",
+      "board": {
+        "type": "big",
+        "icon": "🤔",
+        "text": "Look again...",
+        "cue": "look"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Oh! The carrot! It's a vegetable, and the others are fruits!",
+      "punch": "carrot",
+      "board": {
+        "type": "big",
+        "icon": "🥕",
+        "text": "The carrot!",
+        "cue": "carrot",
+        "sub": "It's a vegetable!",
+        "sub_cue": "vegetable"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Carrots grow under the ground. Round two!"
+    },
+    {
+      "who": "MIA",
+      "text": "A duck, an owl, a parrot, and a dog.",
+      "board": {
+        "type": "gallery",
+        "title": "Odd one out!",
+        "items": [
+          {
+            "icon": "🦆",
+            "label": "Duck",
+            "cue": "duck"
+          },
+          {
+            "icon": "🦉",
+            "label": "Owl",
+            "cue": "owl"
+          },
+          {
+            "icon": "🦜",
+            "label": "Parrot",
+            "cue": "parrot"
+          },
+          {
+            "icon": "🐶",
+            "label": "Dog",
+            "cue": "dog"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Hmm... the owl, because it stays up all night?"
+    },
+    {
+      "who": "MIA",
+      "text": "Owls are night birds, but that's not it. Give up? Who has no wings?",
+      "board": {
+        "type": "big",
+        "icon": "🤔",
+        "text": "Give up?",
+        "cue": "give",
+        "sub": "Who has no wings?",
+        "sub_cue": "wings"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "The dog! It has no wings. The others are all birds!",
+      "punch": "dog",
+      "board": {
+        "type": "big",
+        "icon": "🐶",
+        "text": "The dog!",
+        "cue": "dog",
+        "sub": "No wings, no feathers",
+        "sub_cue": "wings"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Right! Birds have feathers and wings. Dogs have fur, and they say woof!",
+      "board": {
+        "type": "big",
+        "icon": "🐦",
+        "text": "Birds: feathers!",
+        "cue": "birds",
+        "sub": "Dogs: fur and woof!",
+        "sub_cue": "dogs"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Woof! Woof! I'm the odd one out!",
+      "board": {
+        "type": "big",
+        "icon": "🐶",
+        "text": "Woof! Woof!",
+        "cue": "woof"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Ha! Ask a grown-up to subscribe to The Curio Kids Club for more fun! And next time... can you spot the odd one out?"
+    }
+  ]
+}

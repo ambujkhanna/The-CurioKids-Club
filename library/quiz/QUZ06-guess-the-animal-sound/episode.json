@@ -1,0 +1,203 @@
+{
+  "id": "QUZ06",
+  "slug": "guess-the-animal-sound",
+  "status": "ready",
+  "title": "Guess the Animal Sound! 🔊 Fun Game for Kids",
+  "cover_text": "MOO?!",
+  "description": "Moo, quack, hoo-hoo! Mia makes the sounds and Leo guesses the animal. Can you guess before he does? A quick listening game for kids.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsGames",
+    "#AnimalSounds",
+    "#GuessTheAnimal",
+    "#Shorts"
+  ],
+  "tags": [
+    "guess the animal sound",
+    "animal sounds for kids",
+    "kids guessing game",
+    "farm animals",
+    "kids games",
+    "fun for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Who says moo?",
+    "cue": "next",
+    "left": "🔊",
+    "right": "🐄"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, let's play Guess the Sound!",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🔊",
+          "label": "Sound"
+        },
+        "right": {
+          "icon": "🐾",
+          "label": "Animal?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Okay, listen closely! It says moo, it lives on a farm, and it gives us milk.",
+      "board": {
+        "type": "guess",
+        "title": "Guess the sound!",
+        "clues": [
+          {
+            "icon": "🔊",
+            "label": "Moo! Moo!",
+            "cue": "moo"
+          },
+          {
+            "icon": "🚜",
+            "label": "Lives on a farm",
+            "cue": "farm"
+          },
+          {
+            "icon": "🥛",
+            "label": "Gives us milk",
+            "cue": "milk"
+          }
+        ],
+        "answer": {
+          "icon": "🐄",
+          "label": "A cow!",
+          "cue": "cow"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Hmm... that's an easy one. A cow!",
+      "punch": "cow"
+    },
+    {
+      "who": "MIA",
+      "text": "Moo-velous! Next one. It says quack, it loves ponds, and it waddles.",
+      "board": {
+        "type": "guess",
+        "title": "Guess the sound!",
+        "clues": [
+          {
+            "icon": "🔊",
+            "label": "Quack! Quack!",
+            "cue": "quack"
+          },
+          {
+            "icon": "💧",
+            "label": "Loves ponds",
+            "cue": "ponds"
+          },
+          {
+            "icon": "👣",
+            "label": "Waddle, waddle",
+            "cue": "waddles"
+          }
+        ],
+        "answer": {
+          "icon": "🦆",
+          "label": "A duck!",
+          "cue": "duck"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Hmm... is it a dog? No wait, a duck!"
+    },
+    {
+      "who": "MIA",
+      "text": "Last one, and it's tricky! It says hoo-hoo, it's awake at night, and it has big round eyes.",
+      "board": {
+        "type": "guess",
+        "title": "Guess the sound!",
+        "clues": [
+          {
+            "icon": "🔊",
+            "label": "Hoo! Hoo!",
+            "cue": "hoo"
+          },
+          {
+            "icon": "🌙",
+            "label": "Awake at night",
+            "cue": "night"
+          },
+          {
+            "icon": "👀",
+            "label": "Big round eyes",
+            "cue": "eyes"
+          }
+        ],
+        "answer": {
+          "icon": "🦉",
+          "label": "An owl!",
+          "cue": "owl"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Hmm... a train? Choo-choo! No... it's an owl!",
+      "punch": "owl"
+    },
+    {
+      "who": "MIA",
+      "text": "Who-hoo! You got all three! You're a super listener.",
+      "punch": "three",
+      "board": {
+        "type": "big",
+        "icon": "🏆",
+        "text": "3 out of 3!",
+        "cue": "three",
+        "sub": "Super listener!",
+        "sub_cue": "super"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Bonus round! Ribbit, ribbit! Who says that?",
+      "board": {
+        "type": "big",
+        "icon": "🔊",
+        "text": "Ribbit, ribbit!",
+        "cue": "ribbit",
+        "sub": "Who says that?",
+        "sub_cue": "who"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Hmm... a frog, of course! Frogs say ribbit by the pond.",
+      "board": {
+        "type": "big",
+        "icon": "🐸",
+        "text": "A frog!",
+        "cue": "frog"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "I'm a frog! Ribbit! Hop, hop, hop!",
+      "board": {
+        "type": "big",
+        "icon": "🐸",
+        "text": "Hop, hop, hop!",
+        "cue": "hop"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Ha! Ask a grown-up to subscribe to The Curio Kids Club for more fun! And next time... what animal says moo?"
+    }
+  ]
+}

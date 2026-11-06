@@ -1,0 +1,188 @@
+{
+  "id": "QUZ04",
+  "slug": "riddles-with-dad-piano-bottle-corn-tree",
+  "status": "ready",
+  "title": "Riddles with Dad! 🎹 Can You Guess Them?",
+  "cover_text": "CAN YOU GUESS?",
+  "description": "What has keys but can't open a door? Leo and Dad trade four tricky riddles. Can you guess them before they do?\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsJokes",
+    "#Riddles",
+    "#KidsGames",
+    "#Shorts"
+  ],
+  "tags": [
+    "riddles for kids",
+    "easy riddles with answers",
+    "kids jokes",
+    "brain teasers for kids",
+    "family riddles"
+  ],
+  "cast": [
+    "LEO",
+    "DAD"
+  ],
+  "loop_card": {
+    "text": "Keys, but no door?",
+    "cue": "next",
+    "left": "🔑",
+    "right": "🚪"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Dad, riddle time! Ready?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🧩",
+          "label": "Riddles"
+        },
+        "right": {
+          "icon": "🤔",
+          "label": "Can Dad guess?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Ready! Hit me with your trickiest riddle!"
+    },
+    {
+      "who": "LEO",
+      "text": "What has keys, but can't open a door?",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "Keys, but no door?",
+        "cue": "keys"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Hmm... keys... a door... it's a tricky one. I give up!"
+    },
+    {
+      "who": "LEO",
+      "text": "It's a piano! Its keys make music!",
+      "punch": "piano",
+      "board": {
+        "type": "big",
+        "icon": "🎹",
+        "text": "A piano!",
+        "cue": "piano",
+        "sub": "Keys make music!",
+        "sub_cue": "music"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Good one! My turn. What has a neck, but no head?",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "A neck, but no head?",
+        "cue": "neck"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Hmm... a sock? A sweater? I give up!"
+    },
+    {
+      "who": "DAD",
+      "text": "A bottle! It has a neck, right at the top.",
+      "board": {
+        "type": "big",
+        "icon": "🧴",
+        "text": "A bottle!",
+        "cue": "bottle",
+        "sub": "Neck at the top",
+        "sub_cue": "top"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ooh! What has ears, but can't hear?",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "Ears, but can't hear?",
+        "cue": "ears"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Hmm... ears... ears... wait! Corn has ears!"
+    },
+    {
+      "who": "LEO",
+      "text": "Yes! Corn! You can eat an ear of corn!",
+      "punch": "corn",
+      "board": {
+        "type": "big",
+        "icon": "🌽",
+        "text": "Corn!",
+        "cue": "corn",
+        "sub": "An ear of corn",
+        "sub_cue": "ear"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Last one! What has a bark, but no bite?",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "A bark, but no bite?",
+        "cue": "bark"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Hmm... a super friendly puppy? No... I give up!"
+    },
+    {
+      "who": "DAD",
+      "text": "A tree! Trees have bark all over them.",
+      "board": {
+        "type": "big",
+        "icon": "🌳",
+        "text": "A tree!",
+        "cue": "tree",
+        "sub": "Covered in bark!",
+        "sub_cue": "bark"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Piano, bottle, corn, and tree! Ask a grown-up to subscribe to The Curio Kids Club for more fun! And next time... what has keys, but can't open a door?",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "A piano",
+            "icon": "🎹",
+            "cue": "piano"
+          },
+          {
+            "text": "A bottle",
+            "icon": "🧴",
+            "cue": "bottle"
+          },
+          {
+            "text": "Corn",
+            "icon": "🌽",
+            "cue": "corn"
+          },
+          {
+            "text": "A tree",
+            "icon": "🌳",
+            "cue": "tree"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "id": "COM07",
+  "slug": "cookie-jokes-and-riddles",
+  "status": "ready",
+  "title": "Jokes & Riddles! 🍪 Funny Jokes for Kids",
+  "cover_text": "HA HA!",
+  "description": "Why did the cookie go to the doctor? Leo and Mia swap silly jokes and tricky riddles. Can you guess the answers first?\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsJokes",
+    "#Riddles",
+    "#JokesForKids",
+    "#Shorts"
+  ],
+  "tags": [
+    "jokes for kids",
+    "riddles for kids",
+    "funny jokes",
+    "kid friendly jokes",
+    "riddles with answers",
+    "fun for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Cookie joke?",
+    "cue": "next",
+    "left": "🍪",
+    "right": "😂"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, I've got jokes! Wanna hear one?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "😂",
+          "label": "Jokes"
+        },
+        "right": {
+          "icon": "🧩",
+          "label": "Riddles"
+        },
+        "mid": "+"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why did the cookie go to the doctor?",
+      "board": {
+        "type": "big",
+        "icon": "🍪",
+        "text": "Cookie at the doctor?",
+        "cue": "cookie"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Hmm... I don't know. Why?"
+    },
+    {
+      "who": "LEO",
+      "text": "Because it felt crummy!",
+      "punch": "crummy",
+      "board": {
+        "type": "big",
+        "icon": "🍪",
+        "text": "Cookie at the doctor?",
+        "cue": "because",
+        "sub": "It felt crummy!",
+        "sub_cue": "crummy"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Ha! My turn, a riddle. What has hands, but can't clap?",
+      "board": {
+        "type": "big",
+        "icon": "🤔",
+        "text": "Hands, but can't clap?",
+        "cue": "hands"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Hmm... a sleepy monkey?"
+    },
+    {
+      "who": "MIA",
+      "text": "Nope! Give up? It's a clock! Its hands point at the time.",
+      "board": {
+        "type": "big",
+        "icon": "👐",
+        "text": "Hands, but can't clap?",
+        "cue": "give",
+        "sub": "A clock!",
+        "sub_cue": "clock"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ha! Okay, what do you call a sleeping dinosaur?",
+      "board": {
+        "type": "big",
+        "icon": "🦕",
+        "text": "A sleeping dinosaur?",
+        "cue": "sleeping"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Hmm... a sleepy-saurus?"
+    },
+    {
+      "who": "LEO",
+      "text": "Nope! A dino-snore! Zzz...",
+      "punch": "dino",
+      "board": {
+        "type": "big",
+        "icon": "🦕",
+        "text": "A sleeping dinosaur?",
+        "cue": "nope",
+        "sub": "A dino-snore!",
+        "sub_cue": "dino"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Ha ha! Last riddle. What gets wetter the more it dries?",
+      "board": {
+        "type": "big",
+        "icon": "💧",
+        "text": "Wetter as it dries?",
+        "cue": "wetter"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Wetter and drier? Hmm... that's silly! I give up."
+    },
+    {
+      "who": "MIA",
+      "text": "Here's the answer... a towel! The more it dries you, the wetter it gets.",
+      "board": {
+        "type": "big",
+        "icon": "🛁",
+        "text": "Wetter as it dries?",
+        "cue": "answer",
+        "sub": "A towel!",
+        "sub_cue": "towel"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Hee hee! Ask a grown-up to subscribe to The Curio Kids Club for more fun! And next time... why did the cookie go to the doctor?"
+    }
+  ]
+}

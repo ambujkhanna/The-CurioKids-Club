@@ -4,7 +4,7 @@
 """
 import json, sys
 
-TYPES = {"title", "big", "steps", "compare", "checklist", "summary", "poem", "gallery", "body", "cycle", "journey", "orbit"}
+TYPES = {"letter", "count", "guess", "title", "big", "steps", "compare", "checklist", "summary", "poem", "gallery", "body", "cycle", "journey", "orbit"}
 CAST = {"MIA", "LEO", "DAD"}
 LEGACY_ICONS = {"chat", "robot", "check", "sun", "train", "doc", "lock", "target", "search", "calendar", "mail", "suitcase",
                 "warn", "x", "user", "bulb", "shield", "coin", "eye", "book", "globe", "brain", "phone"}
@@ -13,8 +13,9 @@ LIMITS = {"steps": 5, "compare": 4, "checklist": 4, "summary": 4, "poem": 4, "ga
 
 def cues(sc):
     out = [sc.get("cue"), sc.get("sub_cue")]
-    for key in ("items", "rows", "lines", "labels"):
+    for key in ("items", "rows", "lines", "labels", "clues"):
         out += [it.get("cue") for it in sc.get(key, []) if isinstance(it, dict)]
+    # (the guess answer's cue may be spoken in a later line; checked separately in check())
     for side in ("left", "right"):
         if isinstance(sc.get(side), dict):
             out += [it.get("cue") for it in sc[side].get("items", [])]
@@ -22,7 +23,8 @@ def cues(sc):
 
 
 def icons(sc):
-    out = [sc.get("icon"), sc.get("center"), sc.get("traveler")]
+    out = [sc.get("icon"), sc.get("center"), sc.get("traveler")] + ([sc["answer"].get("icon")] if isinstance(sc.get("answer"), dict) else [])
+    out += [it.get("icon") for it in sc.get("clues", []) if isinstance(it, dict)]
     for key in ("items", "rows", "lines"):
         out += [it.get("icon") for it in sc.get(key, []) if isinstance(it, dict)]
     for side in ("left", "right"):
@@ -85,6 +87,11 @@ def check(path):
                 if sc.get("flow") not in (None, "blood", "nerves", "air", "food"): errs.append(f"line {i}: flow must be blood, nerves, air or food")
             for ic in icons(sc):
                 if bad_icon(ic): errs.append(f"line {i}: icon '{ic}' is not an emoji or known icon")
+        if sc and sc.get("type") == "guess" and isinstance(sc.get("answer"), dict) and sc["answer"].get("cue"):
+            nxt = next((j for j in range(i + 1, len(ep["lines"])) if ep["lines"][j].get("board")), len(ep["lines"]))
+            span = " ".join(ep["lines"][j]["text"] for j in range(i, nxt)).lower().split()
+            if not any(w.strip(".,!?'\"…;:").startswith(sc["answer"]["cue"].lower()) for w in span):
+                errs.append(f"line {i}: answer cue '{sc['answer']['cue']}' not spoken before the next board")
         for c in (cues(sc) if sc else []) + ([l["punch"]] if l.get("punch") else []):
             if not any(w.startswith(c.lower()) for w in words): errs.append(f"line {i}: cue '{c}' not in text")
     last = ep["lines"][-1]["text"].lower()

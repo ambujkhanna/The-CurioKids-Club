@@ -1,0 +1,160 @@
+{
+  "id": "COM09",
+  "slug": "dad-jokes-and-riddles",
+  "status": "ready",
+  "title": "Dad Jokes & Riddles! 🐻 Funny Jokes for Kids",
+  "cover_text": "DAD JOKES!",
+  "description": "What do you call a bear with no teeth? Leo and Dad swap silly jokes and riddles. Can you guess them before Leo does?\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsJokes",
+    "#DadJokes",
+    "#Riddles",
+    "#Shorts"
+  ],
+  "tags": [
+    "jokes for kids",
+    "dad jokes for kids",
+    "riddles for kids",
+    "kid friendly jokes",
+    "riddles with answers",
+    "fun for kids"
+  ],
+  "cast": [
+    "LEO",
+    "DAD"
+  ],
+  "loop_card": {
+    "text": "Bear joke?",
+    "cue": "next",
+    "left": "🐻",
+    "right": "😂"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Dad, tell me your best joke!",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "😂",
+          "label": "Dad jokes"
+        },
+        "right": {
+          "icon": "🧩",
+          "label": "Riddles"
+        },
+        "mid": "+"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Okay! What do you call a bear with no teeth?",
+      "board": {
+        "type": "big",
+        "icon": "🐻",
+        "text": "A bear with no teeth?",
+        "cue": "bear"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Hmm... a bear that only eats soup?"
+    },
+    {
+      "who": "DAD",
+      "text": "Nope! A gummy bear!",
+      "punch": "gummy",
+      "board": {
+        "type": "big",
+        "icon": "🐻",
+        "text": "A bear with no teeth?",
+        "cue": "nope",
+        "sub": "A gummy bear!",
+        "sub_cue": "gummy"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ha! My turn. What has a neck, but no head?",
+      "board": {
+        "type": "big",
+        "icon": "🤔",
+        "text": "A neck, but no head?",
+        "cue": "neck"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Hmm... a very short giraffe? I give up!"
+    },
+    {
+      "who": "LEO",
+      "text": "Ready? It's a bottle! Got you, Dad!",
+      "board": {
+        "type": "big",
+        "icon": "🧴",
+        "text": "A neck, but no head?",
+        "cue": "ready",
+        "sub": "A bottle!",
+        "sub_cue": "bottle"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Ha! Why are fish so smart?",
+      "board": {
+        "type": "big",
+        "icon": "🐟",
+        "text": "Why are fish smart?",
+        "cue": "fish"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Hmm... they read lots of books?"
+    },
+    {
+      "who": "DAD",
+      "text": "Close! Because they swim in schools!",
+      "punch": "schools",
+      "board": {
+        "type": "big",
+        "icon": "🐠",
+        "text": "Smart fish?",
+        "cue": "close",
+        "sub": "They swim in schools!",
+        "sub_cue": "schools"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ha ha! Okay, last riddle. What has keys, but can't open a door?",
+      "board": {
+        "type": "big",
+        "icon": "🔑",
+        "text": "Keys, but no door?",
+        "cue": "keys"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Hmm... a very forgetful robot? I give up!"
+    },
+    {
+      "who": "LEO",
+      "text": "Ta-da! A piano! Plink, plonk!",
+      "board": {
+        "type": "big",
+        "icon": "🎹",
+        "text": "Keys, but no door?",
+        "cue": "ta",
+        "sub": "A piano!",
+        "sub_cue": "piano"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Good one, Leo! Ask a grown-up to subscribe to The Curio Kids Club for more fun! And next time... what do you call a bear with no teeth?"
+    }
+  ]
+}

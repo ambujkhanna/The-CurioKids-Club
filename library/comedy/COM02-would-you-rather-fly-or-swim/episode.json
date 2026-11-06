@@ -1,0 +1,204 @@
+{
+  "id": "COM02",
+  "slug": "would-you-rather-fly-or-swim",
+  "status": "ready",
+  "title": "Would You Rather? 🐦 Silly Game for Kids",
+  "cover_text": "WOULD YOU RATHER?",
+  "description": "Fly like a bird or swim like a fish? Honking nose or whistling ears? Leo and Mia play a silly game of Would You Rather!\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsGames",
+    "#WouldYouRather",
+    "#Shorts"
+  ],
+  "tags": [
+    "would you rather for kids",
+    "kids games",
+    "silly questions for kids",
+    "fun game for kids",
+    "this or that kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Fly or swim?",
+    "cue": "next",
+    "left": "🐦",
+    "right": "🐟"
+  },
+  "lines": [
+    {
+      "who": "MIA",
+      "text": "Leo, let's play Would You Rather!",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🤔",
+          "label": "Would You"
+        },
+        "right": {
+          "icon": "🤷",
+          "label": "Rather?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Yay! I love this game! Ask me a silly one!"
+    },
+    {
+      "who": "MIA",
+      "text": "Would you rather fly like a bird, or swim like a fish?",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Fly",
+          "items": [
+            {
+              "text": "Like a bird",
+              "icon": "🐦",
+              "cue": "fly"
+            }
+          ]
+        },
+        "right": {
+          "label": "Swim",
+          "items": [
+            {
+              "text": "Like a fish",
+              "icon": "🐟",
+              "cue": "swim"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Fly! Then I could zoom over the trees and wave at the clouds. Hi, clouds!"
+    },
+    {
+      "who": "MIA",
+      "text": "Ha! Would you rather have a nose that honks, or ears that whistle?",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Honk nose",
+          "items": [
+            {
+              "text": "Nose goes honk!",
+              "icon": "👃",
+              "cue": "nose"
+            }
+          ]
+        },
+        "right": {
+          "label": "Whistle ears",
+          "items": [
+            {
+              "text": "Ears go tweet!",
+              "icon": "👂",
+              "cue": "ears"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "A honking nose! Every time I laugh... HONK! Like a happy goose!",
+      "punch": "honk"
+    },
+    {
+      "who": "LEO",
+      "text": "My turn! Would you rather eat ice cream for breakfast, or pancakes for dinner?",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Ice cream",
+          "items": [
+            {
+              "text": "Ice cream",
+              "icon": "🍦",
+              "cue": "ice"
+            },
+            {
+              "text": "For breakfast",
+              "icon": "☀️",
+              "cue": "breakfast"
+            }
+          ]
+        },
+        "right": {
+          "label": "Pancakes",
+          "items": [
+            {
+              "text": "Pancakes",
+              "icon": "🥞",
+              "cue": "pancakes"
+            },
+            {
+              "text": "For dinner",
+              "icon": "🌙",
+              "cue": "dinner"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Pancakes for dinner! I'd make them in silly shapes, like a pancake moon and pancake stars."
+    },
+    {
+      "who": "LEO",
+      "text": "Last one! Would you rather be as tiny as an ant, or as big as a whale?",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Tiny",
+          "items": [
+            {
+              "text": "Like an ant",
+              "icon": "🐜",
+              "cue": "tiny"
+            }
+          ]
+        },
+        "right": {
+          "label": "Huge",
+          "items": [
+            {
+              "text": "Like a whale",
+              "icon": "🐋",
+              "cue": "big"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Tiny! I'd ride on a butterfly and have a picnic on a leaf!"
+    },
+    {
+      "who": "LEO",
+      "text": "Me? I'd give the biggest hugs, as big as a whale!",
+      "punch": "hugs",
+      "board": {
+        "type": "big",
+        "icon": "🤗",
+        "text": "Biggest hugs ever!",
+        "cue": "biggest",
+        "sub": "As big as a whale",
+        "sub_cue": "whale"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "What would you pick? Ask a grown-up to subscribe to The Curio Kids Club for more fun! And next time... would you rather fly like a bird, or swim like a fish?"
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "id": "COM06",
+  "slug": "silly-but-true-animal-facts",
+  "status": "ready",
+  "title": "Silly but TRUE! 🦦 Funny Animal Facts for Kids",
+  "cover_text": "TRUE?!",
+  "description": "Otters hold hands, cows have best friends, and butterflies taste with their feet! Silly but true animal facts with Leo and Mia.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsGames",
+    "#FunFacts",
+    "#AnimalFacts",
+    "#Shorts"
+  ],
+  "tags": [
+    "silly facts for kids",
+    "funny animal facts",
+    "sea otters hold hands",
+    "cows have best friends",
+    "flamingo flamboyance",
+    "fun facts for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Something silly?",
+    "cue": "next",
+    "left": "🤪",
+    "right": "✅"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, tell me something silly!",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🤪",
+          "label": "Silly"
+        },
+        "right": {
+          "icon": "✅",
+          "label": "True?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Okay! Sea otters hold hands while they sleep, so they don't float apart.",
+      "board": {
+        "type": "big",
+        "icon": "🦦",
+        "text": "Otters hold hands!",
+        "cue": "otters",
+        "sub": "So they don't float apart",
+        "sub_cue": "float"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "No way! Is that really real?"
+    },
+    {
+      "who": "MIA",
+      "text": "Silly but true! They hold paws on the water, like a cozy raft.",
+      "punch": "true",
+      "board": {
+        "type": "big",
+        "icon": "✅",
+        "text": "Silly but TRUE!",
+        "cue": "silly",
+        "sub": "A paw-holding raft",
+        "sub_cue": "raft"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Aww! Okay, give me another one!"
+    },
+    {
+      "who": "MIA",
+      "text": "A big group of flamingos is called a flamboyance.",
+      "board": {
+        "type": "big",
+        "icon": "🦩",
+        "text": "Flamingo group?",
+        "cue": "flamingos",
+        "sub": "A flamboyance!",
+        "sub_cue": "flamboyance"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "A flam-boy-what? Hee hee, that's a fancy word!"
+    },
+    {
+      "who": "MIA",
+      "text": "Here's another. Cows have best friends! Silly but true!",
+      "board": {
+        "type": "big",
+        "icon": "🐄",
+        "text": "Cows have best friends!",
+        "cue": "cows",
+        "sub": "Silly but true!",
+        "sub_cue": "silly"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Best friends? Then they must have moo-sleepovers!",
+      "punch": "moo",
+      "board": {
+        "type": "big",
+        "icon": "🐮",
+        "text": "Moo-sleepovers!",
+        "cue": "moo"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Hmm... ready for the silliest one? Butterflies taste with their feet!",
+      "board": {
+        "type": "big",
+        "icon": "🦋",
+        "text": "Butterflies taste...",
+        "cue": "butterflies",
+        "sub": "...with their feet!",
+        "sub_cue": "feet"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Whoa! So they stand on a flower and taste it? Yum!"
+    },
+    {
+      "who": "MIA",
+      "text": "Silly but true! Tasting with their feet helps them find the right plants.",
+      "board": {
+        "type": "big",
+        "icon": "✅",
+        "text": "Silly but TRUE!",
+        "cue": "true",
+        "sub": "Feet find plants",
+        "sub_cue": "plants"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Otters hold hands, flamingos are a flamboyance, cows have best friends, and butterflies taste with feet!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "🦦",
+            "text": "Otters hold hands",
+            "cue": "otters"
+          },
+          {
+            "icon": "🦩",
+            "text": "A flamboyance",
+            "cue": "flamingos"
+          },
+          {
+            "icon": "🐄",
+            "text": "Cow best friends",
+            "cue": "cows"
+          },
+          {
+            "icon": "🦋",
+            "text": "Tasting feet",
+            "cue": "butterflies"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Silly, but all true! Ask a grown-up to subscribe to The Curio Kids Club for more fun! And next time... can you tell me something silly?"
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "id": "QUZ08",
+  "slug": "guess-the-animal-clues",
+  "status": "ready",
+  "title": "Guess the Animal! 🐘 Fun Clue Game for Kids",
+  "cover_text": "WHO AM I?",
+  "description": "Flappy ears, a pouch, black and white feathers... Mia gives the clues and Leo guesses the animal. Play along and shout your guess!\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsGames",
+    "#GuessTheAnimal",
+    "#AnimalFacts",
+    "#Shorts"
+  ],
+  "tags": [
+    "guess the animal",
+    "animal riddles for kids",
+    "kids guessing game",
+    "elephant penguin kangaroo",
+    "kids games",
+    "fun for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Long trunk?",
+    "cue": "next",
+    "left": "🐾",
+    "right": "❓"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, let's play Guess the Animal!",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🐾",
+          "label": "Animal"
+        },
+        "right": {
+          "icon": "❓",
+          "label": "Who?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Round one! It has big flappy ears, a long trunk, and it sprays water.",
+      "board": {
+        "type": "guess",
+        "title": "Guess the animal!",
+        "clues": [
+          {
+            "icon": "👂",
+            "label": "Big flappy ears",
+            "cue": "ears"
+          },
+          {
+            "icon": "👃",
+            "label": "A long trunk",
+            "cue": "trunk"
+          },
+          {
+            "icon": "💦",
+            "label": "Sprays water",
+            "cue": "sprays"
+          }
+        ],
+        "answer": {
+          "icon": "🐘",
+          "label": "An elephant!",
+          "cue": "elephant"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Hmm... a fan? No! An elephant!",
+      "punch": "elephant"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Round two. It's black and white, it can't fly, but it swims super fast.",
+      "board": {
+        "type": "guess",
+        "title": "Guess the animal!",
+        "clues": [
+          {
+            "icon": "⚫",
+            "label": "Black and white",
+            "cue": "black"
+          },
+          {
+            "icon": "🚫",
+            "label": "Can't fly",
+            "cue": "fly"
+          },
+          {
+            "icon": "🏊",
+            "label": "Swims fast",
+            "cue": "swims"
+          }
+        ],
+        "answer": {
+          "icon": "🐧",
+          "label": "A penguin!",
+          "cue": "penguin"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Black and white... a zebra? No, zebras don't live in the water! A penguin!"
+    },
+    {
+      "who": "MIA",
+      "text": "Right! Last round. It hops, it has a pouch, and its baby is called a joey.",
+      "board": {
+        "type": "guess",
+        "title": "Guess the animal!",
+        "clues": [
+          {
+            "icon": "⬆️",
+            "label": "Hops and hops",
+            "cue": "hops"
+          },
+          {
+            "icon": "👜",
+            "label": "A pouch",
+            "cue": "pouch"
+          },
+          {
+            "icon": "🍼",
+            "label": "Baby joey",
+            "cue": "joey"
+          }
+        ],
+        "answer": {
+          "icon": "🦘",
+          "label": "A kangaroo!",
+          "cue": "kangaroo"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Hmm... a bunny with a backpack? No... a kangaroo!",
+      "punch": "kangaroo"
+    },
+    {
+      "who": "MIA",
+      "text": "Three for three! You're an animal expert!",
+      "board": {
+        "type": "big",
+        "icon": "🏆",
+        "text": "Three for three!",
+        "cue": "three",
+        "sub": "Animal expert!",
+        "sub_cue": "expert"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "The elephant, the penguin, and the kangaroo! Which was your favourite?",
+      "board": {
+        "type": "gallery",
+        "title": "Today's animals",
+        "items": [
+          {
+            "icon": "🐘",
+            "label": "Elephant",
+            "cue": "elephant"
+          },
+          {
+            "icon": "🐧",
+            "label": "Penguin",
+            "cue": "penguin"
+          },
+          {
+            "icon": "🦘",
+            "label": "Kangaroo",
+            "cue": "kangaroo"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "The penguin! It waddles like this... waddle, waddle!",
+      "board": {
+        "type": "big",
+        "icon": "🐧",
+        "text": "Waddle, waddle!",
+        "cue": "waddles"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ha! I'm a kangaroo! Hop, hop, hop!",
+      "board": {
+        "type": "big",
+        "icon": "🦘",
+        "text": "Hop, hop, hop!",
+        "cue": "hop"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "So bouncy! Ask a grown-up to subscribe to The Curio Kids Club for more fun! And next time... what animal has a long trunk?"
+    }
+  ]
+}

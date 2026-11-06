@@ -1,0 +1,224 @@
+{
+  "id": "QUZ02",
+  "slug": "riddles-clock-chair-towel",
+  "status": "ready",
+  "title": "Can You Solve These Riddles? 🧩 Fun Riddles for Kids",
+  "cover_text": "RIDDLE TIME!",
+  "description": "What has hands but can't clap? Leo and Mia swap four silly riddles. Can you shout the answer first?\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsJokes",
+    "#Riddles",
+    "#KidsGames",
+    "#Shorts"
+  ],
+  "tags": [
+    "riddles for kids",
+    "easy riddles",
+    "kids jokes",
+    "brain teasers for kids",
+    "fun for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Hands, but can't clap?",
+    "cue": "next",
+    "left": "🕐",
+    "right": "❓"
+  },
+  "lines": [
+    {
+      "who": "MIA",
+      "text": "Leo, are you ready for some riddles?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🧩",
+          "label": "Riddles"
+        },
+        "right": {
+          "icon": "🤔",
+          "label": "Can you guess"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Yes! I love riddles! Give me a hard one!"
+    },
+    {
+      "who": "MIA",
+      "text": "What has hands, but can't clap?",
+      "board": {
+        "type": "guess",
+        "title": "Riddle 1",
+        "clues": [
+          {
+            "icon": "🙌",
+            "label": "Has hands",
+            "cue": "hands"
+          },
+          {
+            "icon": "👏",
+            "label": "Can't clap",
+            "cue": "clap"
+          }
+        ],
+        "answer": {
+          "icon": "🕐",
+          "label": "A clock!",
+          "cue": "clock"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Hmm... hands, but no clapping... I know! A clock! It has an hour hand and a minute hand!",
+      "punch": "clock"
+    },
+    {
+      "who": "MIA",
+      "text": "Riddle two! What has legs, but can't walk?",
+      "board": {
+        "type": "guess",
+        "title": "Riddle 2",
+        "clues": [
+          {
+            "icon": "🦵",
+            "label": "Has legs",
+            "cue": "legs"
+          },
+          {
+            "icon": "🚶",
+            "label": "Can't walk",
+            "cue": "walk"
+          }
+        ],
+        "answer": {
+          "icon": "🪑",
+          "label": "A chair!",
+          "cue": "chair"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Legs, but can't walk... hmm... a sleepy cat? No! A chair!"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! A chair has four legs, but it stays right where it is.",
+      "board": {
+        "type": "big",
+        "icon": "🪑",
+        "text": "Four legs, no steps!",
+        "cue": "four",
+        "sub": "It stays put!",
+        "sub_cue": "stays"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "My turn! What gets wetter, the more it dries?",
+      "board": {
+        "type": "guess",
+        "title": "Riddle 3",
+        "clues": [
+          {
+            "icon": "💧",
+            "label": "Gets wetter",
+            "cue": "wetter"
+          },
+          {
+            "icon": "🌬️",
+            "label": "The more it dries",
+            "cue": "dries"
+          }
+        ],
+        "answer": {
+          "icon": "🛁",
+          "label": "A towel!",
+          "cue": "towel"
+        }
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Hmm... wetter when it dries... give me a second... a towel!"
+    },
+    {
+      "who": "LEO",
+      "text": "Yes! Last one! What goes up, but never comes down?",
+      "board": {
+        "type": "guess",
+        "title": "Riddle 4",
+        "clues": [
+          {
+            "icon": "⬆️",
+            "label": "Goes up",
+            "cue": "up"
+          },
+          {
+            "icon": "⬇️",
+            "label": "Never comes down",
+            "cue": "never"
+          }
+        ],
+        "answer": {
+          "icon": "🎂",
+          "label": "Your age!",
+          "cue": "age"
+        }
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Hmm... a balloon? No, balloons float back down... Oh! Your age!",
+      "punch": "age"
+    },
+    {
+      "who": "LEO",
+      "text": "Yes! Every birthday, it goes up, up, up!",
+      "board": {
+        "type": "big",
+        "icon": "🎂",
+        "text": "Up every birthday!",
+        "cue": "birthday",
+        "sub": "Up, up, up!",
+        "sub_cue": "up"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Clock, chair, towel, and your age! Ask a grown-up to subscribe to The Curio Kids Club for more fun! And next time... what has hands, but can't clap?",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "A clock",
+            "icon": "🕐",
+            "cue": "clock"
+          },
+          {
+            "text": "A chair",
+            "icon": "🪑",
+            "cue": "chair"
+          },
+          {
+            "text": "A towel",
+            "icon": "🛁",
+            "cue": "towel"
+          },
+          {
+            "text": "Your age",
+            "icon": "🎂",
+            "cue": "age"
+          }
+        ]
+      }
+    }
+  ]
+}

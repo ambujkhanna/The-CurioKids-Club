@@ -5,6 +5,8 @@
     python pipeline/daily.py --episode ep003   # force a specific episode
     python pipeline/daily.py --now             # publish immediately instead of scheduling
     python pipeline/daily.py --long            # weekly LONG video (16:9, 3-8 min) from long/<id>/episode.json
+    python pipeline/daily.py --category quiz   # next episode of a category from library/<category>/<id>/episode.json
+                                                 (comedy, quiz, knowledge, science, abc, counting, rhymes)
 
 Publish time: a random 5-minute slot inside PUBLISH_WINDOW (IST, default "16:00-19:00"), today if there is still
 time left in the window, otherwise tomorrow. Change the window via the repo variable PUBLISH_WINDOW.
@@ -17,7 +19,10 @@ import datetime as dt, glob, json, os, random, re, subprocess, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PIPE = os.path.join(ROOT, "pipeline")
 LONG = "--long" in sys.argv
-EPDIR = os.path.join(ROOT, "long" if LONG else "episodes")
+CATEGORIES = ("comedy", "quiz", "knowledge", "science", "abc", "counting", "rhymes")
+CATEGORY = sys.argv[sys.argv.index("--category") + 1] if "--category" in sys.argv else ""
+CATEGORY = CATEGORY if CATEGORY in CATEGORIES else ""
+EPDIR = os.path.join(ROOT, "long" if LONG else os.path.join("library", CATEGORY) if CATEGORY else "episodes")
 STATE = os.path.join(EPDIR, "state.json")
 OUT = os.path.join(ROOT, "out")
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
@@ -148,7 +153,7 @@ def main():
     state = load_state()
     ep = pick(state, forced)
     if not ep:
-        print("No ready episode left in the backlog. Add episodes/<id>/episode.json files."); return 0
+        print(f"No ready episode left in the backlog. Add {os.path.relpath(EPDIR, ROOT)}/<id>/episode.json files."); return 0
     eid = ep["id"]; epf = ep["_file"]
     print(f"== {eid}: {ep['title']}")
     import images  # download any real illustrations this episode uses (from GitHub), before checking it

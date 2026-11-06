@@ -1,0 +1,151 @@
+{
+  "id": "COM01",
+  "slug": "silly-jokes-teddy-dino-lettuce",
+  "status": "ready",
+  "title": "Silly Jokes for Kids! 😂 Teddy, Dino and Lettuce",
+  "cover_text": "SO SILLY!",
+  "description": "Why did the teddy bear say no to dessert? Leo tells his silliest jokes, and Mia can't stop giggling!\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsJokes",
+    "#JokesForKids",
+    "#KnockKnock",
+    "#Shorts"
+  ],
+  "tags": [
+    "jokes for kids",
+    "knock knock jokes",
+    "funny jokes for kids",
+    "kids jokes",
+    "silly jokes"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why no dessert?",
+    "cue": "next",
+    "left": "🧸",
+    "right": "🍰"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, want to hear a joke? I've got the silliest ones!",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "😂",
+          "label": "Jokes"
+        },
+        "right": {
+          "icon": "🤪",
+          "label": "Silly time!"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Yes, please! Make me giggle!"
+    },
+    {
+      "who": "LEO",
+      "text": "Why did the teddy bear say no to dessert?",
+      "board": {
+        "type": "big",
+        "icon": "🧸",
+        "text": "Teddy and dessert?",
+        "cue": "teddy"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Hmm... I don't know. Why?"
+    },
+    {
+      "who": "LEO",
+      "text": "Because he was already stuffed!",
+      "punch": "stuffed",
+      "board": {
+        "type": "big",
+        "icon": "🧸",
+        "text": "Why no dessert?",
+        "cue": "because",
+        "sub": "He was already stuffed!",
+        "sub_cue": "stuffed"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Stuffed! Ha! Okay, my turn. What do you call a sleeping dinosaur?",
+      "board": {
+        "type": "big",
+        "icon": "🦕",
+        "text": "A sleeping dinosaur?",
+        "cue": "sleeping"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Hmm... a sleepy-saurus? I give up!"
+    },
+    {
+      "who": "MIA",
+      "text": "It's called a dino-snore! Zzzz!",
+      "board": {
+        "type": "big",
+        "icon": "😴",
+        "text": "Sleeping dinosaur?",
+        "cue": "called",
+        "sub": "A dino-snore!",
+        "sub_cue": "dino"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Dino-snore! Ha ha! Okay, knock, knock!",
+      "board": {
+        "type": "big",
+        "icon": "🚪",
+        "text": "Knock, knock!",
+        "cue": "knock"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Who's there?"
+    },
+    {
+      "who": "LEO",
+      "text": "Lettuce!",
+      "board": {
+        "type": "big",
+        "icon": "🥬",
+        "text": "Lettuce!",
+        "cue": "lettuce"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Lettuce who?"
+    },
+    {
+      "who": "LEO",
+      "text": "Lettuce in, it's cold out here! Brrr!",
+      "punch": "cold",
+      "board": {
+        "type": "big",
+        "icon": "🥬",
+        "text": "Lettuce who?",
+        "cue": "lettuce",
+        "sub": "Let us in, it's cold!",
+        "sub_cue": "cold"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Ha! Leo, you're the joke champ! Ask a grown-up to subscribe to The Curio Kids Club for more fun! And next time... why did the teddy bear say no to dessert?"
+    }
+  ]
+}

@@ -128,3 +128,23 @@ After each YouTube upload, the same video is also posted as a **Reel** to the ch
 - **Results:** shown in the run summary (Facebook / Instagram: posted or failed). A failure never blocks the YouTube upload.
 
 **Test, or post an older episode:** Actions → daily workflow → Run workflow → tick **social_only** and enter the **episode** id (e.g. `ep002`). It renders that episode and posts it to Facebook and Instagram only.
+
+## Category videos on demand (comedy, quiz, knowledge, science, ABC, counting, rhymes): added 2026-11-06
+
+To post a video from a particular category, go to Actions → **Daily Curio Kids Short** → Run workflow → pick a **category** from the dropdown, then **Run**.
+
+- **What gets published:** the next unpublished episode from `library/<category>/` is rendered and uploaded to YouTube, Facebook and Instagram, like a normal Short.
+- **What it doesn't affect:** the regular daily Short, which runs when category is "none" or on schedule. Each category keeps its own `state.json`, so nothing repeats.
+- **The categories:**
+
+| Category | What's in it |
+|---|---|
+| comedy | kind jokes, silly stories, would-you-rather, tongue twisters, silly-but-true facts |
+| quiz | guess the animal / sound / job, riddles, odd one out, true or false (the **guess** board flips a ? card to the answer) |
+| knowledge | general knowledge: transport, jobs, the world, habits and safety |
+| science | extra science explainers with diagrams and real drawings |
+| abc | letters A–Z with the giant **letter** board (A a + picture words), plus phonics and review |
+| counting | numbers with the **count** board (objects appear as numbers are spoken), counting by 2s, simple sums |
+| rhymes | original rhymes and poems (karaoke-style lines) |
+
+- **Adding more:** see `library/README.md`.

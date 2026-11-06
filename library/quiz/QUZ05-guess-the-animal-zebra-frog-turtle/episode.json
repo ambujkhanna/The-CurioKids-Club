@@ -1,0 +1,216 @@
+{
+  "id": "QUZ05",
+  "slug": "guess-the-animal-zebra-frog-turtle",
+  "status": "ready",
+  "title": "Guess the Animal! 🦓 Stripes, Ribbit and Shells",
+  "cover_text": "GUESS IT!",
+  "description": "Black and white stripes? Ribbit, ribbit? Leo and Mia take turns giving clues. Can you guess all three animals?\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsGames",
+    "#GuessTheAnimal",
+    "#Shorts"
+  ],
+  "tags": [
+    "guess the animal",
+    "animal guessing game",
+    "kids games",
+    "animal riddles for kids",
+    "zebra frog turtle"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Black and white stripes?",
+    "cue": "next",
+    "left": "🦓",
+    "right": "❓"
+  },
+  "lines": [
+    {
+      "who": "MIA",
+      "text": "Leo, it's Guess the Animal time!",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🐾",
+          "label": "Animal"
+        },
+        "right": {
+          "icon": "🔍",
+          "label": "Who is it?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "I'll give the clues! Round one. I have black and white stripes, I look a bit like a horse, and I live in Africa.",
+      "board": {
+        "type": "guess",
+        "title": "Round 1!",
+        "clues": [
+          {
+            "icon": "⚫",
+            "label": "Black and white",
+            "cue": "black"
+          },
+          {
+            "icon": "🐴",
+            "label": "Like a horse",
+            "cue": "horse"
+          },
+          {
+            "icon": "🌍",
+            "label": "Lives in Africa",
+            "cue": "africa"
+          }
+        ],
+        "answer": {
+          "icon": "🦓",
+          "label": "A zebra!",
+          "cue": "zebra"
+        }
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Hmm... stripes... a horse... it's a zebra!",
+      "punch": "zebra"
+    },
+    {
+      "who": "LEO",
+      "text": "Yes! And every zebra has its very own stripe pattern, like a fingerprint!",
+      "board": {
+        "type": "big",
+        "icon": "🦓",
+        "text": "Its own stripes!",
+        "cue": "own",
+        "sub": "Like a fingerprint",
+        "sub_cue": "fingerprint"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "My turn! I start as a tadpole, I say ribbit, and I love to jump!",
+      "board": {
+        "type": "guess",
+        "title": "Round 2!",
+        "clues": [
+          {
+            "icon": "💧",
+            "label": "Starts as a tadpole",
+            "cue": "tadpole"
+          },
+          {
+            "icon": "🔊",
+            "label": "Says ribbit",
+            "cue": "ribbit"
+          },
+          {
+            "icon": "⬆️",
+            "label": "Loves to jump",
+            "cue": "jump"
+          }
+        ],
+        "answer": {
+          "icon": "🐸",
+          "label": "A frog!",
+          "cue": "frog"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ribbit, ribbit! Hmm... a duck? No, ducks say quack! It's a frog!"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Frogs have strong back legs for big, bouncy jumps!",
+      "board": {
+        "type": "big",
+        "icon": "🐸",
+        "text": "Strong back legs!",
+        "cue": "strong",
+        "sub": "Big, bouncy jumps",
+        "sub_cue": "bouncy"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Round three! I carry my house on my back, I walk very slowly, and I can live a very long time.",
+      "board": {
+        "type": "guess",
+        "title": "Round 3!",
+        "clues": [
+          {
+            "icon": "🏠",
+            "label": "House on my back",
+            "cue": "house"
+          },
+          {
+            "icon": "🐾",
+            "label": "Walks slowly",
+            "cue": "slowly"
+          },
+          {
+            "icon": "🎂",
+            "label": "Lives a long time",
+            "cue": "live"
+          }
+        ],
+        "answer": {
+          "icon": "🐢",
+          "label": "A turtle!",
+          "cue": "turtle"
+        }
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Hmm... a snail? No, a snail is much smaller. It's a turtle!",
+      "punch": "turtle"
+    },
+    {
+      "who": "LEO",
+      "text": "Yes! Lots of turtles can pull their heads into their shells, like a cozy tent!",
+      "board": {
+        "type": "big",
+        "icon": "🐢",
+        "text": "Hide in the shell!",
+        "cue": "pull",
+        "sub": "Like a cozy tent",
+        "sub_cue": "cozy"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Zebra, frog, turtle! That was so much fun!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Zebra",
+            "icon": "🦓",
+            "cue": "zebra"
+          },
+          {
+            "text": "Frog",
+            "icon": "🐸",
+            "cue": "frog"
+          },
+          {
+            "text": "Turtle",
+            "icon": "🐢",
+            "cue": "turtle"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ask a grown-up to subscribe to The Curio Kids Club for more fun! And next time... who has black and white stripes?"
+    }
+  ]
+}

@@ -1,0 +1,219 @@
+{
+  "id": "COM04",
+  "slug": "would-you-rather-dragon-or-unicorn",
+  "status": "ready",
+  "title": "Would You Rather with Dad? 🐉 Silly Kids Game",
+  "cover_text": "DRAGON OR UNICORN?",
+  "description": "A pet dragon or a pet unicorn? Talk like a duck or walk like a crab? Leo and Dad play a super silly Would You Rather!\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsGames",
+    "#WouldYouRather",
+    "#Shorts"
+  ],
+  "tags": [
+    "would you rather for kids",
+    "kids games",
+    "silly questions for kids",
+    "family game",
+    "this or that kids"
+  ],
+  "cast": [
+    "LEO",
+    "DAD"
+  ],
+  "loop_card": {
+    "text": "Dragon or unicorn?",
+    "cue": "next",
+    "left": "🐉",
+    "right": "🦄"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Dad! Let's play Would You Rather!",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🤔",
+          "label": "Would You"
+        },
+        "right": {
+          "icon": "🤷",
+          "label": "Rather?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Okay! Would you rather have a pet dragon, or a pet unicorn?",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Dragon",
+          "items": [
+            {
+              "text": "Pet dragon",
+              "icon": "🐉",
+              "cue": "dragon"
+            }
+          ]
+        },
+        "right": {
+          "label": "Unicorn",
+          "items": [
+            {
+              "text": "Pet unicorn",
+              "icon": "🦄",
+              "cue": "unicorn"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "A dragon! I'd ride it to the park, and it could be my super big pillow!"
+    },
+    {
+      "who": "LEO",
+      "text": "Your turn, Dad! Would you rather talk like a duck, or walk like a crab?",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Duck talk",
+          "items": [
+            {
+              "text": "Talk like a duck",
+              "icon": "🦆",
+              "cue": "talk"
+            }
+          ]
+        },
+        "right": {
+          "label": "Crab walk",
+          "items": [
+            {
+              "text": "Walk like a crab",
+              "icon": "🦀",
+              "cue": "walk"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Walk like a crab! Sideways to the kitchen, sideways to the park! Click, click!",
+      "punch": "sideways"
+    },
+    {
+      "who": "DAD",
+      "text": "Okay! Would you rather have a monkey tail, or bunny ears?",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Monkey tail",
+          "items": [
+            {
+              "text": "Monkey tail",
+              "icon": "🐒",
+              "cue": "monkey"
+            }
+          ]
+        },
+        "right": {
+          "label": "Bunny ears",
+          "items": [
+            {
+              "text": "Bunny ears",
+              "icon": "🐰",
+              "cue": "bunny"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "A monkey tail! I could hold my cup with my tail and wave with both hands!"
+    },
+    {
+      "who": "LEO",
+      "text": "Last one! Would you rather sleep on a marshmallow bed, or take a bath with a mountain of bubbles?",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Marshmallow",
+          "items": [
+            {
+              "text": "Squishy bed",
+              "icon": "☁️",
+              "cue": "marshmallow"
+            }
+          ]
+        },
+        "right": {
+          "label": "Bubbles",
+          "items": [
+            {
+              "text": "Bubble mountain",
+              "icon": "🛁",
+              "cue": "bubbles"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Bubbles! I'd make a bubble beard and a bubble hat. Very fancy!",
+      "punch": "beard"
+    },
+    {
+      "who": "LEO",
+      "text": "I'd pick the marshmallow bed. Boing, boing, then sweet dreams!",
+      "board": {
+        "type": "big",
+        "icon": "☁️",
+        "text": "Marshmallow bed!",
+        "cue": "marshmallow",
+        "sub": "Boing, boing!",
+        "sub_cue": "boing"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Dragon, crab walk, monkey tail, and bubbles! Best game ever!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Pet dragon",
+            "icon": "🐉",
+            "cue": "dragon"
+          },
+          {
+            "text": "Crab walk",
+            "icon": "🦀",
+            "cue": "crab"
+          },
+          {
+            "text": "Monkey tail",
+            "icon": "🐒",
+            "cue": "monkey"
+          },
+          {
+            "text": "Bubbles",
+            "icon": "🛁",
+            "cue": "bubbles"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What would you pick? Ask a grown-up to subscribe to The Curio Kids Club for more fun! And next time... would you rather have a pet dragon, or a pet unicorn?"
+    }
+  ]
+}

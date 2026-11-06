@@ -1,0 +1,262 @@
+{
+  "id": "COM10",
+  "slug": "opposites-game",
+  "status": "ready",
+  "title": "Opposites Game! ❄️ Hot or Cold? Fun for Kids",
+  "cover_text": "HOT? COLD?",
+  "description": "Hot and cold, big and small, up and down! Mia says a word and Leo acts out the opposite. Play along and shout the opposites!\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsGames",
+    "#Opposites",
+    "#KidsLearning",
+    "#Shorts"
+  ],
+  "tags": [
+    "opposites for kids",
+    "opposites game",
+    "hot and cold",
+    "big and small",
+    "kids games",
+    "fun for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Opposite of hot?",
+    "cue": "next",
+    "left": "🔥",
+    "right": "❄️"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, let's play the Opposites Game!",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🔥",
+          "label": "Hot"
+        },
+        "right": {
+          "icon": "❄️",
+          "label": "Cold"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "I say a word, and you say the opposite! Ready? Hot!",
+      "board": {
+        "type": "big",
+        "icon": "🔄",
+        "text": "Say the opposite!",
+        "cue": "opposite"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Hot? Easy... cold! Brrr, I'm a frozen snowman!",
+      "punch": "cold",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Hot",
+          "items": [
+            {
+              "icon": "🔥",
+              "text": "Hot!",
+              "cue": "hot"
+            }
+          ]
+        },
+        "right": {
+          "label": "Cold",
+          "items": [
+            {
+              "icon": "⛄",
+              "text": "Cold! Brrr!",
+              "cue": "cold"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Ha! Next one... big!"
+    },
+    {
+      "who": "LEO",
+      "text": "Big, like an elephant... and small, like a tiny mouse! Squeak!",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Big",
+          "items": [
+            {
+              "icon": "🐘",
+              "text": "Big elephant",
+              "cue": "big"
+            }
+          ]
+        },
+        "right": {
+          "label": "Small",
+          "items": [
+            {
+              "icon": "🐭",
+              "text": "Tiny mouse",
+              "cue": "small"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Super! Now... up!"
+    },
+    {
+      "who": "LEO",
+      "text": "Up like a balloon... and down like a falling leaf! Whoosh!",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Up",
+          "items": [
+            {
+              "icon": "🎈",
+              "text": "Balloon up",
+              "cue": "up"
+            }
+          ]
+        },
+        "right": {
+          "label": "Down",
+          "items": [
+            {
+              "icon": "🍂",
+              "text": "Leaf down",
+              "cue": "down"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Wow, you're fast! Try this one... loud!",
+      "board": {
+        "type": "big",
+        "icon": "⚡",
+        "text": "Super fast!",
+        "cue": "fast"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Loud like a drum, BOOM! And quiet like a... shh... sleeping kitten.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Loud",
+          "items": [
+            {
+              "icon": "🥁",
+              "text": "BOOM!",
+              "cue": "loud"
+            }
+          ]
+        },
+        "right": {
+          "label": "Quiet",
+          "items": [
+            {
+              "icon": "🐱",
+              "text": "Sleepy kitten",
+              "cue": "quiet"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Shh... so quiet! Okay, last one. Fast!"
+    },
+    {
+      "who": "LEO",
+      "text": "Fast like a cheetah... and slow like a snail... sooo... slooow...",
+      "punch": "slow",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Fast",
+          "items": [
+            {
+              "icon": "🐆",
+              "text": "Cheetah",
+              "cue": "fast"
+            }
+          ]
+        },
+        "right": {
+          "label": "Slow",
+          "items": [
+            {
+              "icon": "🐌",
+              "text": "Snail",
+              "cue": "slow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Wow, you're an opposites champ! Let's say them all!",
+      "board": {
+        "type": "big",
+        "icon": "🏆",
+        "text": "Opposites champ!",
+        "cue": "champ"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Hot and cold, big and small, up and down, loud and quiet, fast and slow!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "🌡️",
+            "text": "Hot and cold",
+            "cue": "hot"
+          },
+          {
+            "icon": "🐘",
+            "text": "Big and small",
+            "cue": "big"
+          },
+          {
+            "icon": "🎈",
+            "text": "Up and down",
+            "cue": "up"
+          },
+          {
+            "icon": "🐌",
+            "text": "Fast and slow",
+            "cue": "fast"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Ha! Ask a grown-up to subscribe to The Curio Kids Club for more fun! And next time... what's the opposite of hot?"
+    }
+  ]
+}

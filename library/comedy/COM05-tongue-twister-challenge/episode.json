@@ -1,0 +1,208 @@
+{
+  "id": "COM05",
+  "slug": "tongue-twister-challenge",
+  "status": "ready",
+  "title": "Tongue Twister Challenge! 👅 Fun for Kids",
+  "cover_text": "SAY IT FAST!",
+  "description": "Busy bees buzz by big blue bubbles! Leo tries three silly tongue twisters, gets all twisty, then nails them. Can you say them fast?\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsGames",
+    "#TongueTwisters",
+    "#Shorts"
+  ],
+  "tags": [
+    "tongue twisters for kids",
+    "kids games",
+    "say it fast challenge",
+    "speech fun for kids",
+    "silly challenge"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Tongue twister time!",
+    "cue": "next",
+    "left": "👅",
+    "right": "🌀"
+  },
+  "lines": [
+    {
+      "who": "MIA",
+      "text": "Leo, are you ready for a tongue twister challenge?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "👅",
+          "label": "Tongue"
+        },
+        "right": {
+          "icon": "🌀",
+          "label": "Twisters!"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Yes! My tongue is super fast. Bring it on!"
+    },
+    {
+      "who": "MIA",
+      "text": "Say this fast. Busy bees buzz by big blue bubbles!",
+      "board": {
+        "type": "poem",
+        "title": "Twister 1",
+        "icon": "🐝",
+        "lines": [
+          {
+            "text": "Busy bees",
+            "icon": "🐝",
+            "cue": "busy"
+          },
+          {
+            "text": "buzz by",
+            "icon": "💨",
+            "cue": "buzz"
+          },
+          {
+            "text": "big blue bubbles!",
+            "icon": "🔵",
+            "cue": "big"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Busy bees buzz by big blue... bubble-bubbles... blibble-blubbles! Hee hee!",
+      "punch": "blibble"
+    },
+    {
+      "who": "LEO",
+      "text": "Wait, wait! Busy bees buzz by big blue bubbles! I did it!",
+      "board": {
+        "type": "big",
+        "icon": "🎉",
+        "text": "You got it!",
+        "cue": "did"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Woo-hoo! Twister two. Freddy Frog flips fluffy flapjacks!",
+      "board": {
+        "type": "poem",
+        "title": "Twister 2",
+        "icon": "🐸",
+        "lines": [
+          {
+            "text": "Freddy Frog",
+            "icon": "🐸",
+            "cue": "freddy"
+          },
+          {
+            "text": "flips fluffy",
+            "icon": "🍳",
+            "cue": "flips"
+          },
+          {
+            "text": "flapjacks!",
+            "icon": "🥞",
+            "cue": "flapjacks"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Freddy Frog flaps fluffy flip... flop... flapflops! Ha ha ha!"
+    },
+    {
+      "who": "LEO",
+      "text": "Okay, slowly. Freddy... Frog... flips... fluffy... flapjacks! Yes!",
+      "board": {
+        "type": "big",
+        "icon": "🥞",
+        "text": "Slow and steady!",
+        "cue": "slowly",
+        "sub": "Freddy Frog flips!",
+        "sub_cue": "freddy"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Last and trickiest one! Silly sheep sleep in shiny sheets.",
+      "board": {
+        "type": "poem",
+        "title": "Twister 3",
+        "icon": "🐑",
+        "lines": [
+          {
+            "text": "Silly sheep",
+            "icon": "🐑",
+            "cue": "silly"
+          },
+          {
+            "text": "sleep in",
+            "icon": "😴",
+            "cue": "sleep"
+          },
+          {
+            "text": "shiny sheets!",
+            "icon": "🛏️",
+            "cue": "shiny"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Silly shleep sheep in... sheeny shleets! Hee hee! My tongue is all twisty!",
+      "punch": "twisty"
+    },
+    {
+      "who": "MIA",
+      "text": "Take a big breath, and go nice and slow.",
+      "board": {
+        "type": "big",
+        "icon": "🌬️",
+        "text": "Big breath...",
+        "cue": "breath",
+        "sub": "Nice and slow",
+        "sub_cue": "slow"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Silly sheep sleep in shiny sheets! I did it! I did it!",
+      "board": {
+        "type": "poem",
+        "title": "I did it!",
+        "icon": "🏆",
+        "lines": [
+          {
+            "text": "Silly sheep",
+            "icon": "🐑",
+            "cue": "silly"
+          },
+          {
+            "text": "sleep in",
+            "icon": "😴",
+            "cue": "sleep"
+          },
+          {
+            "text": "shiny sheets!",
+            "icon": "🛏️",
+            "cue": "shiny"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Tongue twister champ! Now you try! Ask a grown-up to subscribe to The Curio Kids Club for more fun! And next time... are you ready for a tongue twister challenge?"
+    }
+  ]
+}

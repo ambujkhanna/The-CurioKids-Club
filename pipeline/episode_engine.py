@@ -315,7 +315,119 @@ def build_compare(i, t0, t1, sc):
     el(t0, t1, lambda c, t, e: c.drawLine(BCX, BY + 130, BCX, BY + BH - 30, P(NAVY, 3, a=0.15)), pivot=(BCX, BCY))
 
 
-BUILD = {"gallery": build_gallery, "poem": build_poem, "title": build_title, "steps": build_steps, "compare": build_compare,
+REVEALS = []  # answer reveal times (confetti)
+
+
+def build_guess(i, t0, t1, sc):
+    """Guessing game: clues pop in on the left, a big '?' card flips to the answer when its cue word is spoken."""
+    clues = sc.get("clues", [])[:3]; ans = sc.get("answer", {})
+    top = BY + 40
+    if sc.get("title"):
+        el(t0, t1, lambda c, t, e: pill(c, BCX, BY + 62, sc["title"], sc.get("color", "#FF8C42"), 44), (BCX + 200, BY + 62))
+        top = BY + 130
+    n = max(1, len(clues)); gap = (BY + BH - 30 - top) / n
+    cx_l, cw = BX + BW * 0.29, BW * 0.52
+    for k, it in enumerate(clues):
+        y = top + gap * (k + 0.5)
+        ti = cue_t(i, it, t0 + 0.4 + k * 0.9)
+        def f(c, t, e, it=it, y=y, k=k):
+            card_bg(c, cx_l, y, cw, gap - 18, TINTS[k % 6], COLS[k % 5])
+            ic = ico(it.get("icon"))
+            if ic: ic(c, cx_l - cw / 2 + 60, y, min(1.4, (gap - 30) / 60))
+            big_text(c, it.get("label", ""), cx_l + 40, y, 44, NAVY, cw - 150, lines=2, min_size=30)
+        el(ti, t1, f, None, (cx_l, y))
+    ta = t1 - 0.6
+    if ans.get("cue"):  # the answer is usually said a line or two later: search this line and the following ones in this scene
+        nxt = min([j for j in scene_starts if j > i] or [len(LN)])
+        for j in range(i, nxt):
+            if any(w[0].lower().strip(".,!?'\"").startswith(ans["cue"].lower()) for w in LN[j]["words"]):
+                ta = wt(j, ans["cue"]); CUES.append((ta, j)); break
+    REVEALS.append(ta)
+    cx_r, cy_r = BX + BW * 0.78, (top + BY + BH) / 2
+    w, h = BW * 0.36, min(BH - 60, (BY + BH - top) - 10)
+    def card(c, t, e):
+        u = max(0.0, min(1.0, (t - ta) / 0.5)); flip = abs(math.cos(u * math.pi))  # 1 -> 0 -> 1
+        shown = u >= 0.5
+        c.save(); c.translate(cx_r, cy_r); c.scale(max(0.02, flip), 1.0 + 0.06 * math.sin(u * math.pi)); c.translate(-cx_r, -cy_r)
+        if not shown:
+            card_bg(c, cx_r, cy_r, w, h, "#8E44AD", "#5B2C83")
+            wob_ = math.sin(t * 5) * 6
+            text(c, "?", cx_r, cy_r + wob_, 220, "#FFFFFF")
+        else:
+            card_bg(c, cx_r, cy_r, w, h, "#FFF6CC", "#F2B600")
+            ic = ico(ans.get("icon"))
+            if ic: ic(c, cx_r, cy_r - h * 0.12, min(3.0, w / 110))
+            big_text(c, ans.get("label", ""), cx_r, cy_r + h * 0.33, 52, NAVY, w - 30, lines=2, min_size=30)
+        c.restore()
+    el(t0 + 0.2, t1, card, None, (cx_r, cy_r))
+
+
+def build_letter(i, t0, t1, sc):
+    """ABC learning: a giant 'A a' with picture words popping around it."""
+    L = sc.get("letter", "A")[:1]
+    words = sc.get("items", [])[:4]
+    cols = ("#FF4D6D", "#0A84FF", "#2E9E5B", "#FF8C42", "#8E44AD")
+    col = cols[(ord(L.upper()) - 65) % 5] if L.isalpha() else "#FF4D6D"
+    ty = BY + BH * (0.40 if words else 0.48)
+    def big(c, t, e):
+        bob = math.sin(t * 2.4) * 8
+        f = skia.Font(FONT_XB, 300); s_ = f"{L.upper()} {L.lower()}"; w = f.measureText(s_)
+        sh = P("#000000", a=0.18); sh.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 10))
+        c.drawString(s_, BCX - w / 2 + 8, ty + 100 + bob + 10, f, sh)
+        c.drawString(s_, BCX - w / 2, ty + 100 + bob, f, P(col))
+        p_ = P("#FFFFFF", 10, a=0.9); c.drawString(s_, BCX - w / 2, ty + 100 + bob, f, p_); c.drawString(s_, BCX - w / 2, ty + 100 + bob, f, P(col))
+    tin = cue_t(i, sc, t0 + 0.15)
+    el(tin, t1, big, None, (BCX, ty))
+    n = len(words)
+    for k, it in enumerate(words):
+        IW = BW - 90; x = BX + 45 + IW * (k + 0.5) / max(1, n); y = BY + BH - 120  # inset so cards clear the curtains
+        ti = cue_t(i, it, tin + 0.6 + k * 0.7)
+        def f(c, t, e, it=it, x=x, y=y, k=k, IW=IW):
+            card_bg(c, x, y, IW / max(1, n) - 18, 200, TINTS[k % 6])
+            ic = ico(it.get("icon"))
+            if ic: ic(c, x, y - 30, 1.5)
+            big_text(c, it.get("label", ""), x, y + 62, 40, NAVY, IW / max(1, n) - 36, lines=1, min_size=24)
+        el(ti, t1, f, None, (x, y))
+
+
+NUM_WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve",
+             "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty"]
+
+
+def build_count(i, t0, t1, sc):
+    """Counting: objects appear one by one as the numbers are spoken; a big number shows the count so far."""
+    n = max(1, min(20, int(sc.get("count", 5)))); icon = sc.get("icon", "⭐")
+    start = int(sc.get("start", 1)); step = int(sc.get("step", 1))
+    times = []
+    words = [w for w in LN[i]["words"]]
+    for k in range(n):
+        val = start + k * step
+        name = NUM_WORDS[val] if 0 <= val < len(NUM_WORDS) else str(val)
+        hit = [w for w in words if w[0].lower().strip(".,!?'\"…").startswith(name) and w[1] > (times[-1] if times else 0)]
+        times.append(hit[0][1] if hit else (times[-1] + 0.6 if times else t0 + 0.4))
+        CUES.append((times[-1], i))
+    cols = 5 if n > 12 else 4 if n > 6 else 3
+    rows = (n + cols - 1) // cols
+    gx0, gx1 = BX + 50, BX + BW * 0.64; gy0, gy1 = BY + 70, BY + BH - 40
+    cw, rh = (gx1 - gx0) / cols, (gy1 - gy0) / rows
+    k_ = min(cw, rh) / 80
+    for k in range(n):
+        r_, c_ = divmod(k, cols); x = gx0 + cw * (c_ + 0.5); y = gy0 + rh * (r_ + 0.5)
+        el(times[k], t1, lambda c, t, e, x=x, y=y: (ico(icon) or IX.icon_bulb)(c, x, y, k_), None, (x, y))
+    def num(c, t, e):
+        shown = sum(1 for tt in times if tt <= t)
+        if shown == 0: return
+        val = start + (shown - 1) * step
+        x = BX + BW * 0.83; y = BCY
+        pop = 1 + 0.15 * max(0.0, 1 - (t - times[shown - 1]) / 0.25)
+        c.save(); c.translate(x, y); c.scale(pop, pop)
+        c.drawCircle(0, 0, 100, P("#FFD23F")); c.drawCircle(0, 0, 100, P(NAVY, 8))
+        text(c, str(val), 0, 0, 130 if val < 100 else 95, NAVY)
+        c.restore()
+    el(t0, t1, num, None, (BX + BW * 0.83, BCY))
+
+
+BUILD = {"letter": build_letter, "count": build_count, "guess": build_guess, "gallery": build_gallery, "poem": build_poem, "title": build_title, "steps": build_steps, "compare": build_compare,
          "checklist": build_checklist, "big": build_big, "summary": build_summary}
 import types, diagrams
 _E = types.SimpleNamespace(el=el, cue_t=cue_t, ico=ico, big_text=big_text, pill=pill, BX=BX, BY=BY, BW=BW, BH=BH,
@@ -420,7 +532,7 @@ for i, ln in enumerate(LN):
         continue
     who = ln["speaker"] if len(CAST) > 1 else ("wide" if i % 3 else ln["speaker"])
     _sc_i = max([j for j in scene_starts if j <= i] or [0])
-    if ELINES[_sc_i].get("board", {}).get("type") in diagrams.BUILDERS:  # keep the animated diagram on screen
+    if ELINES[_sc_i].get("board", {}).get("type") in list(diagrams.BUILDERS) + ["guess", "letter", "count"]:  # keep diagrams / guessing games on screen
         who = "board"
     SHOTS.append((ln["start"] - 0.05, "wide" if i % 4 == 0 or i == last else who))
     cl = cues_by_line.get(i, [])
@@ -450,7 +562,7 @@ PUNCH = [wt(i, l["punch"]) for i, l in enumerate(ELINES) if l.get("punch")]
 
 import kids_fx
 _bursts = [(e[0], (e[4] or e[3])[0], (e[4] or e[3])[1]) for e in ELEMS if e[0] > 0.3 and (e[4] or e[3]) and (T_FOLLOW is None or e[0] < T_FOLLOW - 0.1)]
-_conf = sorted(set([round(p_, 2) for p_ in PUNCH] + ([T_FOLLOW + 0.95] if T_FOLLOW else [])))
+_conf = sorted(set([round(p_, 2) for p_ in PUNCH] + [round(r_ + 0.25, 2) for r_ in REVEALS] + ([T_FOLLOW + 0.95] if T_FOLLOW else [])))
 FX = kids_fx.KidsFX(K, _bursts, _conf)
 _top0fx = K.draw_top
 K.draw_top = lambda c, t: (_top0fx(c, t), FX.draw(c, t))

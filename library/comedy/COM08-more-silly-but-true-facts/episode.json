@@ -1,0 +1,183 @@
+{
+  "id": "COM08",
+  "slug": "more-silly-but-true-facts",
+  "status": "ready",
+  "title": "More Silly but TRUE Facts! 🍌 Fun Facts for Kids",
+  "cover_text": "REALLY?!",
+  "description": "Bananas are berries, owls come in a parliament, and hummingbirds fly backwards! More silly but true facts with Leo and Mia.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsGames",
+    "#FunFacts",
+    "#SillyFacts",
+    "#Shorts"
+  ],
+  "tags": [
+    "silly facts for kids",
+    "bananas are berries",
+    "group of owls parliament",
+    "hummingbirds fly backwards",
+    "koala facts",
+    "fun facts for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "More silly facts?",
+    "cue": "next",
+    "left": "🤪",
+    "right": "✅"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, I want more silly facts!",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🤪",
+          "label": "Silly"
+        },
+        "right": {
+          "icon": "✅",
+          "label": "True?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Okay! Bananas are berries, but strawberries are not!",
+      "board": {
+        "type": "big",
+        "icon": "🍌",
+        "text": "Bananas are berries!",
+        "cue": "bananas",
+        "sub": "Strawberries? Nope!",
+        "sub_cue": "strawberries"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What? That's backwards! Is that really true?"
+    },
+    {
+      "who": "MIA",
+      "text": "Silly but true! Plant scientists really do call bananas berries.",
+      "punch": "true",
+      "board": {
+        "type": "big",
+        "icon": "✅",
+        "text": "Silly but TRUE!",
+        "cue": "silly"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Next! A group of owls is called a parliament.",
+      "board": {
+        "type": "big",
+        "icon": "🦉",
+        "text": "A group of owls...",
+        "cue": "owls",
+        "sub": "...is a parliament!",
+        "sub_cue": "parliament"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "A par-li-a-what? Do they wear tiny ties?"
+    },
+    {
+      "who": "MIA",
+      "text": "Ha! No ties. Next silly fact: koalas sleep up to about twenty hours a day!",
+      "board": {
+        "type": "big",
+        "icon": "🐨",
+        "text": "Sleepy koalas!",
+        "cue": "koalas",
+        "sub": "Up to 20 hours a day!",
+        "sub_cue": "twenty"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Twenty hours? That's way more than my nap! Zzz...",
+      "board": {
+        "type": "big",
+        "icon": "😴",
+        "text": "More than my nap!",
+        "cue": "nap"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Silly but true! Last one. Hummingbirds can fly backwards!",
+      "board": {
+        "type": "big",
+        "icon": "🐦",
+        "text": "Hummingbirds...",
+        "cue": "hummingbirds",
+        "sub": "...can fly backwards!",
+        "sub_cue": "backwards"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Backwards? Like this? Beep, beep, beep!",
+      "punch": "beep",
+      "board": {
+        "type": "big",
+        "icon": "🔙",
+        "text": "Beep, beep, beep!",
+        "cue": "beep"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Ha! Silly but true! They can even hover in one spot, like a tiny helicopter.",
+      "board": {
+        "type": "big",
+        "icon": "🚁",
+        "text": "Hovering birds!",
+        "cue": "hover",
+        "sub": "Like a tiny helicopter",
+        "sub_cue": "helicopter"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Banana berries, owl parliaments, sleepy koalas, and backwards birds!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "🍌",
+            "text": "Bananas are berries",
+            "cue": "banana"
+          },
+          {
+            "icon": "🦉",
+            "text": "Owls: a parliament",
+            "cue": "owl"
+          },
+          {
+            "icon": "🐨",
+            "text": "Sleepy koalas",
+            "cue": "koalas"
+          },
+          {
+            "icon": "🐦",
+            "text": "Backwards birds",
+            "cue": "backwards"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "All silly, all true! Ask a grown-up to subscribe to The Curio Kids Club for more fun! And next time... want to hear more silly facts?"
+    }
+  ]
+}
