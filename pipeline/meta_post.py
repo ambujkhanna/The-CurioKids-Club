@@ -123,8 +123,26 @@ def _ig_wait_publish(ig, cid, tok):
     return p.get("id")
 
 
+def ig_safe(path):
+    """Instagram-friendly copy: H.264 High@4.1, 30 fps, keyframe every 2 s, steady bitrate, AAC 44.1 kHz stereo."""
+    import subprocess
+    out = path[:-4] + "_ig.mp4"
+    cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", path,
+           "-c:v", "libx264", "-profile:v", "high", "-level:v", "4.1", "-pix_fmt", "yuv420p", "-r", "30",
+           "-g", "60", "-keyint_min", "60", "-sc_threshold", "0", "-b:v", "6M", "-maxrate", "8M", "-bufsize", "12M",
+           "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709",
+           "-c:a", "aac", "-ar", "44100", "-ac", "2", "-b:a", "128k", "-movflags", "+faststart", out]
+    try:
+        subprocess.run(cmd, check=True)
+        return out
+    except Exception as e:
+        print("note: could not make Instagram copy:", e)
+        return path
+
+
 def post_instagram(path, cap):
     ig, tok = os.environ["META_IG_USER_ID"], os.environ["META_PAGE_TOKEN"]
+    path = ig_safe(path)
     err = ""
     # 1) direct (resumable) upload of the file
     try:
