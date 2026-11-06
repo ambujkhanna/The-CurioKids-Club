@@ -192,17 +192,17 @@
         "title": "My five senses",
         "items": [
           {
-            "icon": "👀",
+            "icon": "img:Human_physiology/Servier/eye",
             "label": "See",
             "cue": "see"
           },
           {
-            "icon": "👂",
+            "icon": "img:Human_physiology/Servier/ear",
             "label": "Hear",
             "cue": "hear"
           },
           {
-            "icon": "👃",
+            "icon": "img:Human_physiology/Servier/nasal-cavity",
             "label": "Smell",
             "cue": "smell"
           },
@@ -212,7 +212,7 @@
             "cue": "taste"
           },
           {
-            "icon": "✋",
+            "icon": "img:Human_physiology/Servier/hand",
             "label": "Touch",
             "cue": "touch"
           }
@@ -224,7 +224,7 @@
       "text": "Here's a fun fact. Your brain puts all five senses together, so you know what's going on around you.",
       "board": {
         "type": "big",
-        "icon": "🧠",
+        "icon": "img:Human_physiology/Servier/brain-1",
         "text": "Your brain mixes them!",
         "cue": "brain",
         "sub": "All five together",

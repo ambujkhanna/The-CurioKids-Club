@@ -18,6 +18,20 @@ W, H = 1080, 1920
 FONT_XB = skia.Typeface.MakeFromFile("/usr/share/fonts/opentype/inter/Inter-ExtraBold.otf")
 FONT_B = skia.Typeface.MakeFromFile("/usr/share/fonts/opentype/inter/Inter-Bold.otf")
 FONT_SB = skia.Typeface.MakeFromFile("/usr/share/fonts/opentype/inter/Inter-SemiBold.otf")
+# Channel fonts (SIL Open Font License, shipped in fonts/): Fredoka (rounded, friendly) for The CurioKids Club
+_FD = os.path.join(os.path.dirname(HERE), "fonts")
+
+
+def _weight(tf, w):
+    tag = lambda s: (ord(s[0]) << 24) | (ord(s[1]) << 16) | (ord(s[2]) << 8) | ord(s[3])
+    coords = skia.FontArguments.VariationPosition.Coordinates([skia.FontArguments.VariationPosition.Coordinate(tag("wght"), w)])
+    args = skia.FontArguments(); args.setVariationDesignPosition(skia.FontArguments.VariationPosition(coords))
+    return tf.makeClone(args)
+
+
+if os.path.exists(os.path.join(_FD, "Fredoka.ttf")):
+    _fr = skia.Typeface.MakeFromFile(os.path.join(_FD, "Fredoka.ttf"))
+    FONT_XB, FONT_B, FONT_SB = _weight(_fr, 700), _weight(_fr, 600), _weight(_fr, 600)
 if doodle.ON:
     FONT_XB = doodle.typeface("title"); FONT_B = doodle.typeface("body"); FONT_SB = doodle.typeface("body")
 
@@ -459,8 +473,85 @@ def draw_top(c, t):
     pass
 
 
+# ---------------------------------------------------------------- 16:9 long-video layout (FORMAT=long)
+# The scene is still built in the vertical "world" (1080x1920). For long videos the frame is recomposed:
+# the board/stage goes big on the left, the room with the characters on the right, captions under the board.
+LANDSCAPE = os.environ.get("FORMAT") == "long"
+OW, OH = (1920, 1080) if LANDSCAPE else (W, H)
+
+
+def _board_rect():
+    if os.environ.get("BG") == "kids":
+        return (12, 100, 1068, 945)                       # puppet theatre incl. frame + footlights
+    return (BX - 24, BY - 24, BX + BW + 24, BY + BH + 30)  # whiteboard incl. shadow
+
+
+def _fit(src, dst):
+    sx0, sy0, sx1, sy1 = src; dx0, dy0, dx1, dy1 = dst
+    s = min((dx1 - dx0) / (sx1 - sx0), (dy1 - dy0) / (sy1 - sy0))
+    ox = dx0 + ((dx1 - dx0) - (sx1 - sx0) * s) / 2; oy = dy0 + ((dy1 - dy0) - (sy1 - sy0) * s) / 2
+    return s, ox - sx0 * s, oy - sy0 * s
+
+
+ROOM_SRC = (100, 820, 1080, 1900)   # world area with the characters and the room behind them
+BOARD_DST = (34, 92, 1150, 1000)
+ROOM_DST = (1160, 120, 1920, 1080)
+
+
+def _wide_decor(c, t):
+    """Full-width string of glowing lights across the top of the wide frame."""
+    kids = os.environ.get("BG") == "kids"
+    cols = ("#FF6B6B", "#FFD23F", "#4FC3F7", "#7BD389", "#C9A7FF") if kids else ("#FFE9A8",)
+    for seg in range(2):
+        x0, x1 = seg * OW / 2 - 40, (seg + 1) * OW / 2 + 40
+        wire = skia.Path(); wire.moveTo(x0, 18); wire.quadTo((x0 + x1) / 2, 92, x1, 18)
+        c.drawPath(wire, P("#3B3B3B", 3, a=0.7))
+        pm = skia.PathMeasure(wire, False); L = pm.getLength()
+        for k in range(1, 12):
+            r_ = pm.getPosTan(L * k / 12)
+            if not r_: continue
+            pt = r_[0]; col = cols[(k + seg) % len(cols)]
+            tw = 0.6 + 0.4 * math.sin(t * 3 + k * 1.7 + seg)
+            g = P(col, a=0.45 * tw); g.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 10))
+            c.drawCircle(pt.x(), pt.y() + 14, 18, g)
+            c.drawOval(skia.Rect.MakeLTRB(pt.x() - 7, pt.y() + 4, pt.x() + 7, pt.y() + 24), P(col))
+            c.drawRect(skia.Rect.MakeLTRB(pt.x() - 5, pt.y() - 2, pt.x() + 5, pt.y() + 5), P("#5A5A5A"))
+
+
+def _landscape(c, t):
+    z = 1.0
+    for tw in PUNCH:  # keep the little "punch" zooms; no camera cuts in long videos
+        if tw <= t < tw + 0.45:
+            z *= 1 + 0.03 * math.exp(-(t - tw) * 7) * min(1.0, (t - tw) / 0.05)
+    c.save(); c.translate(OW / 2, OH / 2); c.scale(z, z); c.translate(-OW / 2, -OH / 2)
+    rs, rx, ry = _fit(ROOM_SRC, ROOM_DST); ry = ROOM_DST[3] - ROOM_SRC[3] * rs  # room stands on the bottom edge
+    c.save(); c.translate(rx, ry); c.scale(rs, rs)
+    draw_bg(c, t)
+    for ch_ in CHARS:
+        draw_char(c, ch_, t)
+    c.restore()
+    _wide_decor(c, t)
+    bs, bx, by = _fit(_board_rect(), BOARD_DST)
+    b0 = _board_rect(); bottom = by + b0[3] * bs; left = bx + b0[0] * bs; right = bx + b0[2] * bs
+    sh = P("#000000", a=0.22); sh.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 22))
+    c.drawOval(skia.Rect.MakeLTRB(left + 40, bottom - 16, right - 40, bottom + 34), sh)  # contact shadow on the floor
+    c.save(); c.translate(bx, by); c.scale(bs, bs)
+    draw_board(c, t); draw_bit(c, t); draw_top(c, t)
+    c.restore()
+    logo(c, 1530, 122, 1.1, tcol="#1D1D1F")
+    c.restore()
+
+
 def render_frame(f):
     t = f / FPS
+    if LANDSCAPE:
+        doodle.SEED = f // 3
+        surf = skia.Surface(OW, OH); c = surf.getCanvas(); c.clear(hexc("#4FAEA3"))
+        _landscape(c, t)
+        vg = skia.Paint(AntiAlias=True)
+        vg.setShader(skia.GradientShader.MakeRadial(skia.Point(OW / 2, OH * 0.5), 1300, [hexc("#000000", 0.0), hexc("#000000", 0.0), hexc("#0B1E24", 0.10)], [0.0, 0.6, 1.0]))
+        c.drawRect(skia.Rect.MakeWH(OW, OH), vg)
+        return grade(surf.makeImageSnapshot())
     doodle.SEED = f // 3
     surf = skia.Surface(W, H); c = surf.getCanvas(); c.clear(hexc("#4FAEA3"))
     cx, cy, z = camera(t)
@@ -473,7 +564,37 @@ def render_frame(f):
     vg = skia.Paint(AntiAlias=True)
     vg.setShader(skia.GradientShader.MakeRadial(skia.Point(W / 2, H * 0.48), 1250, [hexc("#000000", 0.0), hexc("#000000", 0.0), hexc("#0B1E24", 0.10)], [0.0, 0.55, 1.0]))
     c.drawRect(skia.Rect.MakeWH(W, H), vg)
-    return surf.makeImageSnapshot()
+    return grade(surf.makeImageSnapshot())
+
+
+GRADE = dict(sat=1.22, contrast=1.07, bright=4.0)  # vibrant, fresh look; set sat=1, contrast=1, bright=0 for the plain look
+
+
+def _grade_filter():
+    s, k, b = GRADE["sat"], GRADE["contrast"], GRADE["bright"]
+    lr, lg, lb = 0.2126, 0.7152, 0.0722
+    m = [lr * (1 - s) + s, lg * (1 - s), lb * (1 - s),
+         lr * (1 - s), lg * (1 - s) + s, lb * (1 - s),
+         lr * (1 - s), lg * (1 - s), lb * (1 - s) + s]
+    off = (1 - k) * 128 + b
+    rows = []
+    for r in range(3):
+        rows += [m[r * 3] * k, m[r * 3 + 1] * k, m[r * 3 + 2] * k, 0, off / 255.0]
+    rows += [0, 0, 0, 1, 0]
+    return skia.ColorFilters.Matrix(rows)
+
+
+_GF = None
+
+
+def grade(img):
+    global _GF
+    if GRADE["sat"] == 1 and GRADE["contrast"] == 1 and not GRADE["bright"]:
+        return img
+    _GF = _GF or _grade_filter()
+    s2 = skia.Surface(img.width(), img.height()); c2 = s2.getCanvas()
+    c2.drawImage(img, 0, 0, skia.SamplingOptions(), skia.Paint(ColorFilter=_GF))
+    return s2.makeImageSnapshot()
 
 
 def worker(args):

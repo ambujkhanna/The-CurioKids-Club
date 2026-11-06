@@ -187,21 +187,28 @@
       "who": "LEO",
       "text": "Melted rock rises, gas pushes, and out comes lava!",
       "board": {
-        "type": "summary",
-        "rows": [
+        "type": "journey",
+        "title": "Up comes lava",
+        "traveler": "🔥",
+        "items": [
           {
-            "text": "Melted rock rises",
-            "icon": "🔥",
+            "icon": "🪨",
+            "label": "Rock melts",
             "cue": "melted"
           },
           {
-            "text": "Gas pushes up",
+            "icon": "⬆️",
+            "label": "Magma rises",
+            "cue": "rises"
+          },
+          {
             "icon": "💨",
+            "label": "Gas pushes",
             "cue": "gas"
           },
           {
-            "text": "Out comes lava",
             "icon": "🌋",
+            "label": "Lava out!",
             "cue": "lava"
           }
         ]

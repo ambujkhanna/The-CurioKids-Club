@@ -87,27 +87,28 @@
       "who": "MIA",
       "text": "When sunlight goes into a raindrop, it bends. Each colour bends a different amount, so they spread apart. Then the light bounces back out toward you.",
       "board": {
-        "type": "steps",
-        "title": "Inside a raindrop",
+        "type": "journey",
+        "title": "Light in a drop",
+        "traveler": "✨",
         "items": [
           {
-            "label": "Light goes in",
-            "icon": "➡️",
-            "cue": "goes"
+            "icon": "☀️",
+            "label": "Sunlight",
+            "cue": "sunlight"
           },
           {
-            "label": "It bends",
-            "icon": "↪️",
-            "cue": "bends"
+            "icon": "💧",
+            "label": "Into raindrop",
+            "cue": "raindrop"
           },
           {
-            "label": "Colours spread out",
             "icon": "🌈",
+            "label": "Colours spread",
             "cue": "spread"
           },
           {
-            "label": "Bounces back to you",
-            "icon": "↩️",
+            "icon": "🧒",
+            "label": "Back to you",
             "cue": "bounces"
           }
         ]

@@ -51,7 +51,7 @@
       "text": "Look at your fingertips. See those tiny swirly lines? Those are ridges.",
       "board": {
         "type": "big",
-        "icon": "🔍",
+        "icon": "img:Human_physiology/Servier/skin-normal",
         "text": "Tiny ridges",
         "cue": "ridges",
         "sub": "Swirly lines!",

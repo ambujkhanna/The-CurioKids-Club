@@ -110,39 +110,44 @@
       "who": "MIA",
       "text": "Because the Moon travels around the Earth. As it moves, we see different amounts of its bright side.",
       "board": {
-        "type": "big",
-        "icon": "🌍",
-        "text": "Moon circles Earth",
-        "cue": "around",
-        "sub": "We see more, then less",
-        "sub_cue": "different"
+        "type": "orbit",
+        "title": "Moon goes round",
+        "center": "🌍",
+        "items": [
+          {
+            "icon": "🌙",
+            "label": "Moon",
+            "cue": "moon"
+          }
+        ]
       }
     },
     {
       "who": "MIA",
       "text": "First we see a thin sliver, then half, then a full round Moon. Then it shrinks back again!",
       "board": {
-        "type": "steps",
+        "type": "cycle",
         "title": "Moon shapes",
+        "center": "🌍",
         "items": [
           {
-            "label": "Thin sliver",
             "icon": "🌒",
+            "label": "Thin sliver",
             "cue": "thin"
           },
           {
-            "label": "Half moon",
             "icon": "🌓",
+            "label": "Half",
             "cue": "half"
           },
           {
-            "label": "Full moon",
             "icon": "🌕",
+            "label": "Full Moon",
             "cue": "full"
           },
           {
-            "label": "Shrinks back",
             "icon": "🌘",
+            "label": "Shrinks back",
             "cue": "shrinks"
           }
         ]

@@ -40,7 +40,7 @@
           "label": "Ice cube"
         },
         "right": {
-          "icon": "🥤",
+          "icon": "img:General_items/Servier/glass-cold-drink",
           "label": "Floats?"
         },
         "mid": "?"
@@ -51,7 +51,7 @@
       "text": "Great question! Look in your drink. The ice cubes bob at the top, instead of sinking to the bottom.",
       "board": {
         "type": "big",
-        "icon": "🥤",
+        "icon": "img:General_items/Servier/glass-cold-drink",
         "text": "Ice bobs on top!",
         "cue": "bob",
         "sub": "It doesn't sink",

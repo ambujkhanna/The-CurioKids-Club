@@ -1,0 +1,593 @@
+{
+  "id": "L07",
+  "slug": "why-we-sleep",
+  "status": "ready",
+  "short_id": "ep009",
+  "title": "Why Do We Need Sleep? 😴 What Happens While You Sleep, for Kids",
+  "cover_text": "WHY SLEEP?",
+  "description": "Find out what your body and brain get up to at night: growing, saving memories, sleep stages, dreams, sleepy animals and good bedtime tips! Leo asks, Dad explains, with a quiz at the end.\n\nWant the 60-second version? It's on our Shorts tab.\n\nThe CurioKids Club: curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#HumanBody",
+    "#Sleep",
+    "#ScienceForKids"
+  ],
+  "tags": [
+    "why do we sleep",
+    "sleep facts for kids",
+    "what happens when you sleep",
+    "dreams for kids",
+    "bedtime routine",
+    "healthy habits",
+    "human body for kids"
+  ],
+  "cast": [
+    "LEO",
+    "DAD"
+  ],
+  "loop_card": {
+    "text": "Why do we sleep?",
+    "cue": "next",
+    "left": "😴",
+    "right": "🌙"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Dad, why do I have to go to sleep? I'm not even tired!",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "😴",
+          "label": "Sleep"
+        },
+        "right": {
+          "icon": "🤔",
+          "label": "Why?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Great question! Tonight we'll find out what your body and brain do while you sleep, and why it matters so much.",
+      "board": {
+        "type": "big",
+        "icon": "🌙",
+        "text": "Body and brain at night",
+        "cue": "body",
+        "sub": "Why sleep matters",
+        "sub_cue": "matters"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Do they do anything? I'm just lying there!"
+    },
+    {
+      "who": "DAD",
+      "text": "They're busier than you think! First: sleep is like plugging in a tablet to charge. All day you use up energy, and sleep fills you back up.",
+      "chapter": "Recharge time",
+      "punch": "charge",
+      "board": {
+        "type": "big",
+        "icon": "🔋",
+        "text": "Recharge time!",
+        "cue": "charge",
+        "sub": "Fill up your energy",
+        "sub_cue": "energy"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So I'm like a robot with a battery?"
+    },
+    {
+      "who": "DAD",
+      "text": "Kind of! But even cooler. While you sleep, your body does lots of fixing and growing.",
+      "board": {
+        "type": "big",
+        "icon": "🛠️",
+        "text": "Fixing and growing",
+        "cue": "fixing"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Growing? While I'm asleep?"
+    },
+    {
+      "who": "DAD",
+      "text": "Yes! In deep sleep, your body makes a special helper called growth hormone. So you really do grow while you sleep!",
+      "board": {
+        "type": "big",
+        "icon": "📏",
+        "text": "You grow while you sleep!",
+        "cue": "growth"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So if I sleep all week, I'll be as tall as you!"
+    },
+    {
+      "who": "DAD",
+      "text": "Ha! It happens slowly, a tiny bit at a time. Sleep also helps your muscles get stronger and helps your body fight off germs.",
+      "board": {
+        "type": "gallery",
+        "title": "Sleep helps you",
+        "items": [
+          {
+            "icon": "📏",
+            "label": "Grow slowly",
+            "cue": "slowly"
+          },
+          {
+            "icon": "img:Human_physiology/Servier/muscle-1",
+            "label": "Strong muscles",
+            "cue": "muscles"
+          },
+          {
+            "icon": "img:Microbiology/Servier/bacterium",
+            "label": "Fight germs",
+            "cue": "germs"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What does my brain do at night?",
+      "chapter": "Your busy brain"
+    },
+    {
+      "who": "DAD",
+      "text": "It's like a librarian! It sorts through what you learned today and stores the important things, so you remember them tomorrow.",
+      "punch": "librarian",
+      "board": {
+        "type": "big",
+        "icon": "img:Human_physiology/Servier/brain-1",
+        "text": "Sorting memories",
+        "cue": "sorts",
+        "sub": "Storing what matters",
+        "sub_cue": "stores"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So sleeping makes me smarter?"
+    },
+    {
+      "who": "DAD",
+      "text": "It helps a lot! When you sleep well, it's easier to learn, pay attention and remember things.",
+      "board": {
+        "type": "big",
+        "icon": "🎒",
+        "text": "Easier to learn",
+        "cue": "learn",
+        "sub": "And to remember",
+        "sub_cue": "remember"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Does my brain clean up too?"
+    },
+    {
+      "who": "DAD",
+      "text": "Scientists think so! They think your brain washes away waste while you sleep, like tidying your room at the end of the day.",
+      "board": {
+        "type": "big",
+        "icon": "🧹",
+        "text": "A brain clean-up",
+        "cue": "washes",
+        "sub": "Like tidying your room",
+        "sub_cue": "tidying"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Is sleep the same all night long?",
+      "chapter": "Sleep stages and dreams"
+    },
+    {
+      "who": "DAD",
+      "text": "No! Sleep comes in stages. First light sleep, then deep sleep, then dream sleep. Then it starts again.",
+      "board": {
+        "type": "cycle",
+        "title": "Sleep cycle",
+        "center": "🌙",
+        "items": [
+          {
+            "icon": "😌",
+            "label": "Light sleep",
+            "cue": "light"
+          },
+          {
+            "icon": "😴",
+            "label": "Deep sleep",
+            "cue": "deep"
+          },
+          {
+            "icon": "💭",
+            "label": "Dream sleep",
+            "cue": "dream"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How many times does it go around?"
+    },
+    {
+      "who": "DAD",
+      "text": "Several times every night, round and round, like a merry-go-round.",
+      "board": {
+        "type": "big",
+        "icon": "🎠",
+        "text": "Several rounds a night",
+        "cue": "several"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "When do I have dreams?"
+    },
+    {
+      "who": "DAD",
+      "text": "Most dreams happen in dream sleep. Your eyes even dart around under your eyelids, as if you're watching a movie!",
+      "board": {
+        "type": "big",
+        "icon": "👀",
+        "text": "Eyes dart around",
+        "cue": "eyes",
+        "sub": "Watching a dream",
+        "sub_cue": "watching"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why do we dream, though?"
+    },
+    {
+      "who": "DAD",
+      "text": "That's still a mystery! Scientists think dreams might help your brain sort out feelings and memories. They're still finding out.",
+      "board": {
+        "type": "big",
+        "icon": "💭",
+        "text": "Still a mystery!",
+        "cue": "mystery",
+        "sub": "Scientists are curious",
+        "sub_cue": "scientists"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What does my body do in deep sleep?"
+    },
+    {
+      "who": "DAD",
+      "text": "It gets super calm. Your breathing slows down, and your heart beats slow and steady.",
+      "board": {
+        "type": "body",
+        "title": "Calm body",
+        "show": [
+          "lungs",
+          "heart"
+        ],
+        "flow": "air",
+        "cue": "breathing",
+        "labels": [
+          {
+            "text": "Slow breaths",
+            "at": "lungs",
+            "cue": "slows"
+          },
+          {
+            "text": "Calm heart",
+            "at": "heart",
+            "cue": "heart"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Do animals sleep too?",
+      "chapter": "Sleepy animals"
+    },
+    {
+      "who": "DAD",
+      "text": "Lots of them do! A koala can snooze in a tree for up to about 20 hours a day.",
+      "board": {
+        "type": "big",
+        "icon": "🐨",
+        "text": "Koalas: sleepyheads!",
+        "cue": "koala",
+        "sub": "Up to about 20 hours",
+        "sub_cue": "20"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Twenty hours? Lucky koala!"
+    },
+    {
+      "who": "DAD",
+      "text": "Giraffes sleep only a few hours, often in short naps. And dolphins rest half their brain at a time, so they can keep swimming.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Giraffes",
+          "items": [
+            {
+              "icon": "🦒",
+              "text": "Short naps",
+              "cue": "short"
+            }
+          ]
+        },
+        "right": {
+          "label": "Dolphins",
+          "items": [
+            {
+              "icon": "🐬",
+              "text": "Half a brain",
+              "cue": "half"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Half a brain? That's so weird and cool!"
+    },
+    {
+      "who": "DAD",
+      "text": "And kids need more sleep than grown-ups: often 10 hours or even more!",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Kids",
+          "items": [
+            {
+              "icon": "🧒",
+              "text": "More sleep",
+              "cue": "kids"
+            }
+          ]
+        },
+        "right": {
+          "label": "Grown-ups",
+          "items": [
+            {
+              "icon": "🧑",
+              "text": "Less sleep",
+              "cue": "grown"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What happens if I don't get enough sleep?",
+      "chapter": "Good sleep tips"
+    },
+    {
+      "who": "DAD",
+      "text": "You might feel grumpy, tired and wobbly. It's harder to think, play and get along with friends.",
+      "board": {
+        "type": "big",
+        "icon": "😫",
+        "text": "Grumpy and tired",
+        "cue": "grumpy",
+        "sub": "Harder to think",
+        "sub_cue": "harder"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "That's me after a sleepover!"
+    },
+    {
+      "who": "DAD",
+      "text": "Ha! Here's a cool trick: when it gets dark, your brain makes a sleepy signal. It tells your body: time for bed!",
+      "board": {
+        "type": "journey",
+        "title": "Getting sleepy",
+        "traveler": "🌙",
+        "items": [
+          {
+            "icon": "🌆",
+            "label": "It gets dark",
+            "cue": "dark"
+          },
+          {
+            "icon": "img:Human_physiology/Servier/brain-1",
+            "label": "Sleepy signal",
+            "cue": "sleepy"
+          },
+          {
+            "icon": "🛏️",
+            "label": "Time for bed!",
+            "cue": "bed"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Is that why screens before bed are a bad idea?"
+    },
+    {
+      "who": "DAD",
+      "text": "Yes! Bright screens can trick your brain into thinking it's still daytime. So switch them off a while before bed.",
+      "board": {
+        "type": "big",
+        "icon": "📱",
+        "text": "Screens off before bed",
+        "cue": "screens",
+        "sub": "They trick your brain",
+        "sub_cue": "trick"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What else helps?"
+    },
+    {
+      "who": "DAD",
+      "text": "Go to bed at the same time each night, have a warm bath, read a calm story, and keep your room dark and cozy.",
+      "board": {
+        "type": "checklist",
+        "title": "Good sleep",
+        "icon": "🌙",
+        "items": [
+          {
+            "icon": "⏰",
+            "text": "Same bedtime",
+            "cue": "same",
+            "ok": true
+          },
+          {
+            "icon": "🛁",
+            "text": "Warm bath",
+            "cue": "bath",
+            "ok": true
+          },
+          {
+            "icon": "📖",
+            "text": "Calm story",
+            "cue": "story",
+            "ok": true
+          },
+          {
+            "icon": "🌑",
+            "text": "Dark, cozy room",
+            "cue": "dark",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And a cuddly teddy!",
+      "board": {
+        "type": "big",
+        "icon": "🧸",
+        "text": "A cuddly teddy!",
+        "cue": "teddy"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Quiz time! Question one: in which kind of sleep do most dreams happen? Think...",
+      "chapter": "Quiz time",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "Quiz time!",
+        "cue": "quiz",
+        "sub": "Where are dreams?",
+        "sub_cue": "dreams"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Dream sleep!",
+      "board": {
+        "type": "big",
+        "icon": "💭",
+        "text": "Dream sleep!",
+        "cue": "dream"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Yes! Question two: which animal can rest half its brain at a time? Think...",
+      "board": {
+        "type": "big",
+        "icon": "🤔",
+        "text": "Half-brain sleeper?",
+        "cue": "half"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "The dolphin!",
+      "board": {
+        "type": "big",
+        "icon": "🐬",
+        "text": "The dolphin!",
+        "cue": "dolphin"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Right! Last one: do kids need more sleep or less sleep than grown-ups? Think...",
+      "board": {
+        "type": "big",
+        "icon": "⚖️",
+        "text": "More or less?",
+        "cue": "more"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "More sleep! So I can grow!",
+      "board": {
+        "type": "big",
+        "icon": "🧒",
+        "text": "More sleep!",
+        "cue": "more"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Super! So sleep recharges your energy, helps you grow, saves what you learned, and helps you feel happy.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "🔋",
+            "text": "Recharge energy",
+            "cue": "recharges"
+          },
+          {
+            "icon": "📏",
+            "text": "Grow",
+            "cue": "grow"
+          },
+          {
+            "icon": "img:Human_physiology/Servier/brain-1",
+            "text": "Save memories",
+            "cue": "saves"
+          },
+          {
+            "icon": "😊",
+            "text": "Feel happy",
+            "cue": "happy"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Okay, okay... I'll go to bed. Good night, Dad!",
+      "board": {
+        "type": "big",
+        "icon": "🌙",
+        "text": "Good night!",
+        "cue": "night"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Sweet dreams! Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... why do we need sleep?"
+    }
+  ]
+}

@@ -72,7 +72,7 @@
         "items": [
           {
             "label": "Iron",
-            "icon": "🧲",
+            "icon": "🔩",
             "cue": "iron"
           },
           {
@@ -144,12 +144,21 @@
       "who": "MIA",
       "text": "No, Mars is much colder than Earth, because it is farther from the Sun.",
       "board": {
-        "type": "big",
-        "icon": "🥶",
-        "text": "Colder than Earth",
-        "cue": "colder",
-        "sub": "Farther from the Sun",
-        "sub_cue": "farther"
+        "type": "orbit",
+        "title": "Farther is colder",
+        "center": "☀️",
+        "items": [
+          {
+            "icon": "🌍",
+            "label": "Earth",
+            "cue": "earth"
+          },
+          {
+            "icon": "🔴",
+            "label": "Mars",
+            "cue": "farther"
+          }
+        ]
       }
     },
     {

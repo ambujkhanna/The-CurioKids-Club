@@ -55,7 +55,7 @@
         "title": "Flamingo food",
         "items": [
           {
-            "icon": "🦐",
+            "icon": "img:Animals/DBCLS/Japanese_tiger_prawn",
             "label": "Tiny shrimp",
             "cue": "shrimp"
           },
@@ -96,7 +96,7 @@
           "label": "Baby",
           "items": [
             {
-              "icon": "☁️",
+              "icon": "🐣",
               "text": "Fluffy and grey",
               "cue": "grey"
             }

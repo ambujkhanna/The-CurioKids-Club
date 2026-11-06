@@ -1,0 +1,694 @@
+{
+  "id": "L03",
+  "slug": "water-cycle",
+  "status": "ready",
+  "short_id": "ep012",
+  "title": "The Water Cycle: Where Rain Comes From | Full Video for Kids",
+  "cover_text": "RAIN'S BIG TRIP!",
+  "description": "Follow water on its giant trip: up into the sky as vapour, into a cloud, down as rain, snow or hail, and back to the sea. Learn evaporation, condensation and precipitation with Leo and big sister Mia, plus a little rhyme and a quiz!\n\nWant the 60-second version? Find it on our Shorts tab.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#WaterCycle",
+    "#ScienceForKids",
+    "#FunFacts"
+  ],
+  "tags": [
+    "water cycle for kids",
+    "where does rain come from",
+    "evaporation for kids",
+    "condensation for kids",
+    "precipitation for kids",
+    "clouds for kids",
+    "weather for kids",
+    "science for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Where does rain come from?",
+    "cue": "next",
+    "left": "☁️",
+    "right": "🌧️"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, where does rain come from?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "☁️",
+          "label": "Cloud"
+        },
+        "right": {
+          "icon": "🌧️",
+          "label": "Rain?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Ooh, that's a big one, Leo! Rain is part of a giant trip that water takes, again and again, all over the world.",
+      "board": {
+        "type": "big",
+        "icon": "🌍",
+        "text": "Water's giant trip",
+        "cue": "trip",
+        "sub": "Again and again!",
+        "sub_cue": "again"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Water goes on a trip?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Today we'll follow water up into the sky, into a cloud, and back down as rain. It's called the water cycle.",
+      "board": {
+        "type": "steps",
+        "title": "Today's trip",
+        "items": [
+          {
+            "label": "Up into the sky",
+            "icon": "⬆️",
+            "cue": "up"
+          },
+          {
+            "label": "Into a cloud",
+            "icon": "☁️",
+            "cue": "cloud"
+          },
+          {
+            "label": "Back down as rain",
+            "icon": "🌧️",
+            "cue": "rain"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Where is all the water to start with?",
+      "chapter": "Where water lives"
+    },
+    {
+      "who": "MIA",
+      "text": "Everywhere! In oceans, rivers, lakes, puddles, and even in the ground. Most of Earth's water is in the big, salty sea.",
+      "board": {
+        "type": "gallery",
+        "title": "Water is everywhere",
+        "items": [
+          {
+            "icon": "🌊",
+            "label": "Oceans",
+            "cue": "oceans"
+          },
+          {
+            "icon": "🏞️",
+            "label": "Rivers",
+            "cue": "rivers"
+          },
+          {
+            "icon": "🦆",
+            "label": "Lakes",
+            "cue": "lakes"
+          },
+          {
+            "icon": "☔",
+            "label": "Puddles",
+            "cue": "puddles"
+          },
+          {
+            "icon": "🌱",
+            "label": "In the ground",
+            "cue": "ground"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Does the water ever run out?"
+    },
+    {
+      "who": "MIA",
+      "text": "Nope! Earth keeps using the same water over and over. Some of the water in your glass might once have been rain on a dinosaur!",
+      "board": {
+        "type": "big",
+        "icon": "🦕",
+        "text": "Same water, over and over",
+        "cue": "same",
+        "sub": "Maybe dinosaur rain!",
+        "sub_cue": "dinosaur"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Dinosaur water? Wow!",
+      "punch": "dinosaur"
+    },
+    {
+      "who": "LEO",
+      "text": "So how does water get up into the sky?",
+      "chapter": "Up into the sky"
+    },
+    {
+      "who": "MIA",
+      "text": "The Sun warms the water. Some of it turns into an invisible gas called water vapour, and floats up into the air.",
+      "board": {
+        "type": "steps",
+        "title": "Up, up, up",
+        "items": [
+          {
+            "label": "Sun warms the water",
+            "icon": "img:General_items/Servier/sun",
+            "cue": "warms"
+          },
+          {
+            "label": "Turns into vapour",
+            "icon": "💨",
+            "cue": "vapour"
+          },
+          {
+            "label": "Floats up high",
+            "icon": "⬆️",
+            "cue": "floats"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "This is called evaporation. It happens all the time, even when you can't see it. That's how puddles dry up on a sunny day!",
+      "board": {
+        "type": "big",
+        "icon": "img:General_items/Servier/pot-water-hot",
+        "text": "Evaporation!",
+        "cue": "evaporation",
+        "sub": "Puddles dry up!",
+        "sub_cue": "puddles"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So the puddle didn't just disappear? It went up into the sky?"
+    },
+    {
+      "who": "MIA",
+      "text": "Exactly! Wet washing on a line dries the same way. And plants give off water from their leaves too!",
+      "board": {
+        "type": "steps",
+        "title": "Water floats up from...",
+        "items": [
+          {
+            "label": "Wet washing",
+            "icon": "👕",
+            "cue": "washing"
+          },
+          {
+            "label": "Plant leaves",
+            "icon": "🌿",
+            "cue": "leaves"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Is sea water salty when it goes up?"
+    },
+    {
+      "who": "MIA",
+      "text": "Nope! Only the water floats up. The salt stays behind in the sea. That's why rain isn't salty.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Water",
+          "items": [
+            {
+              "text": "Floats up",
+              "icon": "⬆️",
+              "cue": "floats"
+            }
+          ]
+        },
+        "right": {
+          "label": "Salt",
+          "items": [
+            {
+              "text": "Stays behind",
+              "icon": "🧂",
+              "cue": "stays"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Then how does the vapour turn into a cloud?",
+      "chapter": "Making clouds"
+    },
+    {
+      "who": "MIA",
+      "text": "High up in the sky, the air is cold. The vapour cools down and turns back into teeny, tiny drops of water.",
+      "board": {
+        "type": "big",
+        "icon": "❄️",
+        "text": "Cold air up high",
+        "cue": "cold",
+        "sub": "Vapour turns to drops",
+        "sub_cue": "turns"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "The drops are so small and light that they float. Billions of them together make a cloud! This is called condensation.",
+      "punch": "condensation",
+      "board": {
+        "type": "big",
+        "icon": "☁️",
+        "text": "Tiny drops = a cloud",
+        "cue": "cloud",
+        "sub": "That's condensation",
+        "sub_cue": "condensation"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How do the drops find each other?"
+    },
+    {
+      "who": "MIA",
+      "text": "Each drop forms around a speck of dust, so tiny you can't see it. Then lots of drops crowd close together.",
+      "board": {
+        "type": "big",
+        "icon": "✨",
+        "text": "Drops grow on dust specks",
+        "cue": "dust",
+        "sub": "Too tiny to see",
+        "sub_cue": "tiny"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can I make a cloud?"
+    },
+    {
+      "who": "MIA",
+      "text": "Sort of! Breathe on a cold window. The foggy patch is tiny water drops, just like a mini cloud!",
+      "board": {
+        "type": "big",
+        "icon": "🪟",
+        "text": "Breathe on a cold window",
+        "cue": "breathe",
+        "sub": "A mini cloud!",
+        "sub_cue": "mini"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "And a cold drink gets wet on the outside. That's water vapour from the air turning into drops on the cold glass!",
+      "board": {
+        "type": "big",
+        "icon": "img:General_items/Servier/glass-cold-drink",
+        "text": "A cold glass gets wet",
+        "cue": "cold",
+        "sub": "Drops from the air!",
+        "sub_cue": "air"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What about fog?"
+    },
+    {
+      "who": "MIA",
+      "text": "Fog is a cloud that sits right down on the ground! When you walk in fog, you're walking through a cloud.",
+      "board": {
+        "type": "big",
+        "icon": "🌫️",
+        "text": "Fog: a cloud on the ground",
+        "cue": "fog",
+        "sub": "Walk through a cloud!",
+        "sub_cue": "walk"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So when does the cloud start raining?",
+      "chapter": "Rain and back again"
+    },
+    {
+      "who": "MIA",
+      "text": "The tiny drops bump into each other and join up. They get bigger and bigger. When they're too heavy to float, down they fall!",
+      "board": {
+        "type": "steps",
+        "title": "Drop by drop",
+        "items": [
+          {
+            "label": "Drops bump and join",
+            "icon": "💧",
+            "cue": "bump"
+          },
+          {
+            "label": "Bigger and bigger",
+            "icon": "💦",
+            "cue": "bigger"
+          },
+          {
+            "label": "Too heavy, down they fall!",
+            "icon": "🌧️",
+            "cue": "heavy"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "That's called precipitation. It's a long word for water falling from the sky.",
+      "board": {
+        "type": "big",
+        "icon": "🌧️",
+        "text": "Precipitation!",
+        "cue": "precipitation",
+        "sub": "Water falling down",
+        "sub_cue": "falling"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why are rain clouds so dark and grey?"
+    },
+    {
+      "who": "MIA",
+      "text": "Thin clouds let sunlight through, so they look white. Rain clouds are thick and full of water, so they look dark.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "White cloud",
+          "items": [
+            {
+              "text": "Thin",
+              "icon": "☁️",
+              "cue": "thin"
+            },
+            {
+              "text": "Light gets in",
+              "icon": "☀️",
+              "cue": "sunlight"
+            }
+          ]
+        },
+        "right": {
+          "label": "Rain cloud",
+          "items": [
+            {
+              "text": "Thick",
+              "icon": "🌧️",
+              "cue": "thick"
+            },
+            {
+              "text": "Looks dark",
+              "icon": "⚫",
+              "cue": "dark"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Does it always come down as rain?"
+    },
+    {
+      "who": "MIA",
+      "text": "Not always! It can be rain. When it's really cold, it falls as snow. And sometimes it falls as little balls of ice, called hail!",
+      "board": {
+        "type": "gallery",
+        "title": "Water from the sky",
+        "items": [
+          {
+            "icon": "🌧️",
+            "label": "Rain",
+            "cue": "rain"
+          },
+          {
+            "icon": "❄️",
+            "label": "Snow",
+            "cue": "snow"
+          },
+          {
+            "icon": "🧊",
+            "label": "Hail",
+            "cue": "hail"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What shape is a raindrop? Like a teardrop?"
+    },
+    {
+      "who": "MIA",
+      "text": "Surprise! Small raindrops are round like a ball. Bigger ones get squished flat on the bottom, like a little bun!",
+      "board": {
+        "type": "checklist",
+        "title": "Raindrop shape",
+        "icon": "💧",
+        "items": [
+          {
+            "text": "Teardrop shape",
+            "icon": "💧",
+            "cue": "surprise",
+            "ok": false
+          },
+          {
+            "text": "Round like a ball",
+            "icon": "⚪",
+            "cue": "round",
+            "ok": true
+          },
+          {
+            "text": "Like a little bun",
+            "icon": "🍞",
+            "cue": "bun",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Where does the rain go after it lands?"
+    },
+    {
+      "who": "MIA",
+      "text": "Some soaks into the ground for plants to drink. Some runs into rivers, and the rivers flow all the way to the sea.",
+      "board": {
+        "type": "journey",
+        "title": "A raindrop's trip",
+        "traveler": "💧",
+        "items": [
+          {
+            "icon": "🌱",
+            "label": "Into ground",
+            "cue": "ground"
+          },
+          {
+            "icon": "🏞️",
+            "label": "Rivers",
+            "cue": "rivers"
+          },
+          {
+            "icon": "🌊",
+            "label": "The sea",
+            "cue": "sea"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And then the Sun warms it up again?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Round and round it goes. Water rises, cools into clouds, falls as rain, and flows back to the sea. That's the water cycle!",
+      "board": {
+        "type": "cycle",
+        "title": "The water cycle",
+        "center": "☀️",
+        "items": [
+          {
+            "icon": "💧",
+            "label": "Water rises",
+            "cue": "rises"
+          },
+          {
+            "icon": "☁️",
+            "label": "Clouds form",
+            "cue": "clouds"
+          },
+          {
+            "icon": "🌧️",
+            "label": "Rain falls",
+            "cue": "falls"
+          },
+          {
+            "icon": "🌊",
+            "label": "Back to sea",
+            "cue": "flows"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Here's a rhyme to remember it! The Sun warms up the sea, the water floats up free. It cools to clouds up high, then rains down from the sky!",
+      "board": {
+        "type": "poem",
+        "title": "Water cycle rhyme",
+        "icon": "🎵",
+        "lines": [
+          {
+            "text": "The Sun warms up the sea",
+            "icon": "☀️",
+            "cue": "sun"
+          },
+          {
+            "text": "The water floats up free",
+            "icon": "💧",
+            "cue": "floats"
+          },
+          {
+            "text": "It cools to clouds up high",
+            "icon": "☁️",
+            "cue": "cools"
+          },
+          {
+            "text": "Then rains down from the sky!",
+            "icon": "🌧️",
+            "cue": "rains"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Then splash, back to the sea, and round again!"
+    },
+    {
+      "who": "MIA",
+      "text": "Quiz time, Leo! Question one: what do we call it when water turns into vapour and floats up? Think...",
+      "chapter": "Quiz time",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "What's it called?",
+        "cue": "call",
+        "sub": "Water turns to vapour",
+        "sub_cue": "vapour"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Evaporation!",
+      "board": {
+        "type": "big",
+        "icon": "img:General_items/Servier/pot-water-hot",
+        "text": "Evaporation!",
+        "cue": "evaporation"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Question two: what is a cloud made of? Think...",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "What is a cloud made of?",
+        "cue": "cloud"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Teeny, tiny drops of water, floating in the sky!",
+      "board": {
+        "type": "big",
+        "icon": "☁️",
+        "text": "Tiny drops of water",
+        "cue": "tiny"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Super! Last one: why isn't rain salty, even when it comes from the sea? Think...",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "Why isn't rain salty?",
+        "cue": "salty"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Because only the water floats up. The salt stays in the sea!",
+      "board": {
+        "type": "big",
+        "icon": "🧂",
+        "text": "The salt stays behind",
+        "cue": "salt"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Three for three, Leo! Let's sum it up.",
+      "chapter": "Recap",
+      "board": {
+        "type": "big",
+        "icon": "🏆",
+        "text": "Three for three!",
+        "cue": "three"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "The Sun warms the water and it floats up. It cools into clouds. Drops get heavy and fall as rain. Then it flows back to the sea!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Sun warms, water rises",
+            "icon": "☀️",
+            "cue": "sun"
+          },
+          {
+            "text": "Cools into clouds",
+            "icon": "☁️",
+            "cue": "cools"
+          },
+          {
+            "text": "Heavy drops fall",
+            "icon": "🌧️",
+            "cue": "heavy"
+          },
+          {
+            "text": "Back to the sea",
+            "icon": "🌊",
+            "cue": "flows"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Round and round, again and again! Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... where does rain come from?"
+    }
+  ]
+}

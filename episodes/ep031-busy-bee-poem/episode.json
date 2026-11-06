@@ -146,12 +146,31 @@
       "who": "MIA",
       "text": "Bee fact! Carrying pollen from flower to flower helps plants make seeds and fruit.",
       "board": {
-        "type": "big",
-        "icon": "🍎",
-        "text": "Bees help plants make fruit",
-        "cue": "fruit",
-        "sub": "And seeds too!",
-        "sub_cue": "seeds"
+        "type": "journey",
+        "title": "Pollen helps",
+        "traveler": "🐝",
+        "items": [
+          {
+            "icon": "🌸",
+            "label": "Pollen",
+            "cue": "pollen"
+          },
+          {
+            "icon": "🌼",
+            "label": "Next flower",
+            "cue": "flower"
+          },
+          {
+            "icon": "🌱",
+            "label": "Seeds",
+            "cue": "seeds"
+          },
+          {
+            "icon": "🍎",
+            "label": "Fruit",
+            "cue": "fruit"
+          }
+        ]
       }
     },
     {
@@ -190,7 +209,7 @@
       "text": "That's true! Honeybees really do a waggle dance, to show their friends the way to flowers.",
       "board": {
         "type": "big",
-        "icon": "🐝",
+        "icon": "img:Animals/DBCLS/honey_bee_waggle_dance",
         "text": "The waggle dance!",
         "cue": "waggle",
         "sub": "It shows the way",

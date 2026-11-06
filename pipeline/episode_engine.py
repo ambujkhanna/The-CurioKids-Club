@@ -51,9 +51,31 @@ def _emoji_drawer(s):
     return draw
 
 
+_SVG = {}
+
+
+def _svg_drawer(name):
+    import re as _re, images
+    path = images.resolve(name)
+    if not path:
+        print("warning: picture not found", name); return None
+    txt = open(path, encoding="utf-8").read()
+    m = _re.search(r'viewBox="([-\d.\s,]+)"', txt)
+    vb = [float(x) for x in _re.split(r"[\s,]+", m.group(1).strip())] if m else [0, 0, 100, 100]
+    dom = skia.SVGDOM.MakeFromStream(skia.Stream.MakeFromFile(path)); dom.setContainerSize(skia.Size(vb[2], vb[3]))
+    def draw(c, x, y, k=1.0, dom=dom, vb=vb):
+        box = 66 * k * 1.25  # real illustrations a bit larger than emoji
+        s = box / max(vb[2], vb[3])
+        c.save(); c.translate(x - vb[2] * s / 2, y - vb[3] * s / 2); c.scale(s, s); c.translate(-vb[0], -vb[1]); dom.render(c); c.restore()
+    return draw
+
+
 def ico(name):
     if not name: return None
     if name in ICONS: return ICONS[name]
+    if isinstance(name, str) and name.startswith("img:"):
+        if name not in _SVG: _SVG[name] = _svg_drawer(name)
+        return _SVG[name] or ICONS["bulb"]
     if name not in _EMO:
         _EMO[name] = _emoji_drawer(name)
         if _EMO[name] is None: print("warning: no emoji glyph for", repr(name), "- using bulb")
@@ -175,7 +197,9 @@ def pill(c, x, y, label, col, size=46):
 
 
 def card_bg(c, x, y, w, h, col, border="#1F2D44"):
-    r = rr(x - w / 2, y - h / 2, w, h, 34); shadow_rrect(c, r, 8, 6, 0.18); c.drawRRect(r, P(col)); c.drawRRect(r, P(border, 5))
+    r = rr(x - w / 2, y - h / 2, w, h, 34); shadow_rrect(c, r, 8, 6, 0.18); c.drawRRect(r, P(col))
+    pth = skia.Path(); pth.addRRect(r); c.drawPath(pth, char_line.shade_paint(pth, 0.6, fx=False))
+    c.drawRRect(r, P(border, 5))
 
 
 TINTS = ("#FFF1B8", "#DCEBFF", "#FFE0EC", "#DDF7E8", "#EFE3FF", "#FFE6D5")
@@ -293,6 +317,11 @@ def build_compare(i, t0, t1, sc):
 
 BUILD = {"gallery": build_gallery, "poem": build_poem, "title": build_title, "steps": build_steps, "compare": build_compare,
          "checklist": build_checklist, "big": build_big, "summary": build_summary}
+import types, diagrams
+_E = types.SimpleNamespace(el=el, cue_t=cue_t, ico=ico, big_text=big_text, pill=pill, BX=BX, BY=BY, BW=BW, BH=BH,
+                           BCX=BCX, BCY=BCY, LN=LN, K=K)
+for _name, _fn in diagrams.BUILDERS.items():
+    BUILD[_name] = (lambda f: (lambda i, t0, t1, sc: f(_E, i, t0, t1, sc)))(_fn)
 for k in range(len(scene_starts)):
     i, t0, t1 = scene_window(k)
     sc = ELINES[i]["board"]
@@ -390,6 +419,9 @@ for i, ln in enumerate(LN):
     if i == 0:
         continue
     who = ln["speaker"] if len(CAST) > 1 else ("wide" if i % 3 else ln["speaker"])
+    _sc_i = max([j for j in scene_starts if j <= i] or [0])
+    if ELINES[_sc_i].get("board", {}).get("type") in diagrams.BUILDERS:  # keep the animated diagram on screen
+        who = "board"
     SHOTS.append((ln["start"] - 0.05, "wide" if i % 4 == 0 or i == last else who))
     cl = cues_by_line.get(i, [])
     if cl and ln["end"] - ln["start"] > 2.5:

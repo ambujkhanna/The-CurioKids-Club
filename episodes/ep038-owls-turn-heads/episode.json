@@ -100,7 +100,7 @@
       "text": "No! Special blood vessels in an owl's neck keep blood flowing to its brain, even when it twists.",
       "board": {
         "type": "big",
-        "icon": "🧠",
+        "icon": "img:Human_physiology/Servier/capillaries",
         "text": "Blood keeps flowing",
         "cue": "blood",
         "sub": "Even mid-twist!",

@@ -67,23 +67,24 @@
       "who": "DAD",
       "text": "Everything is made of super tiny bits with little charges. Rubbing makes some charges hop from your hair onto the balloon.",
       "board": {
-        "type": "steps",
-        "title": "Rub, rub, rub!",
+        "type": "journey",
+        "title": "Hop, charges!",
+        "traveler": "⚡",
         "items": [
           {
-            "icon": "💇",
-            "label": "Rub balloon on hair",
-            "cue": "rub"
+            "icon": "✋",
+            "label": "Rubbing",
+            "cue": "rubbing"
           },
           {
-            "icon": "✨",
-            "label": "Tiny charges hop over",
-            "cue": "hop"
+            "icon": "🧒",
+            "label": "Your hair",
+            "cue": "hair"
           },
           {
             "icon": "🎈",
-            "label": "Balloon gets charged",
-            "cue": "onto"
+            "label": "Balloon",
+            "cue": "balloon"
           }
         ]
       }

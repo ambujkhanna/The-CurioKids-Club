@@ -67,23 +67,29 @@
       "who": "MIA",
       "text": "Starlight travels a super long way through space to reach us. At the very end, it has to pass through the air around Earth.",
       "board": {
-        "type": "steps",
+        "type": "journey",
         "title": "Starlight's trip",
+        "traveler": "✨",
         "items": [
           {
             "icon": "⭐",
-            "label": "A star shines",
+            "label": "Starlight",
             "cue": "starlight"
           },
           {
             "icon": "🌌",
-            "label": "A long trip in space",
-            "cue": "long"
+            "label": "Through space",
+            "cue": "space"
+          },
+          {
+            "icon": "💨",
+            "label": "Our air",
+            "cue": "air"
           },
           {
             "icon": "🌍",
-            "label": "Then through our air",
-            "cue": "through"
+            "label": "Earth",
+            "cue": "earth"
           }
         ]
       }

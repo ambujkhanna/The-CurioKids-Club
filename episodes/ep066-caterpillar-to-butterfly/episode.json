@@ -108,7 +108,7 @@
       "text": "Not yet! First it makes a hard case around itself, called a chrysalis. Like a wrapped-up present!",
       "board": {
         "type": "big",
-        "icon": "🎁",
+        "icon": "img:Animals/DBCLS/pupa_icon",
         "text": "The chrysalis",
         "cue": "chrysalis",
         "sub": "A wrapped-up present",
@@ -177,26 +177,28 @@
       "who": "LEO",
       "text": "So it goes egg, caterpillar, chrysalis, butterfly. What a change!",
       "board": {
-        "type": "summary",
-        "rows": [
+        "type": "cycle",
+        "title": "Butterfly cycle",
+        "center": "🌿",
+        "items": [
           {
             "icon": "🥚",
-            "text": "Egg",
+            "label": "Egg",
             "cue": "egg"
           },
           {
             "icon": "🐛",
-            "text": "Caterpillar",
+            "label": "Caterpillar",
             "cue": "caterpillar"
           },
           {
-            "icon": "🎁",
-            "text": "Chrysalis",
+            "icon": "img:Animals/DBCLS/pupa_icon",
+            "label": "Chrysalis",
             "cue": "chrysalis"
           },
           {
             "icon": "🦋",
-            "text": "Butterfly",
+            "label": "Butterfly",
             "cue": "butterfly"
           }
         ]

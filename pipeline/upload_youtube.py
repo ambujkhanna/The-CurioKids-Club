@@ -25,7 +25,9 @@ def _service():
 def upload(path, ep, publish_at_utc_iso):
     from googleapiclient.errors import HttpError
     from googleapiclient.http import MediaFileUpload
-    desc = ep["description"].rstrip() + "\n\n" + " ".join(ep.get("hashtags", []))
+    import images  # credits required by CC BY illustrations
+    cred = images.credits(ep)
+    desc = ep["description"].rstrip() + ("\n\n" + cred if cred else "") + "\n\n" + " ".join(ep.get("hashtags", []))
     body = {
         "snippet": {"title": ep["title"][:100], "description": desc[:4900], "tags": ep.get("tags", [])[:15],
                     "categoryId": "27", "defaultLanguage": "en", "defaultAudioLanguage": "en"},

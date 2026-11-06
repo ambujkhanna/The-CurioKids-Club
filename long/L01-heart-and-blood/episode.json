@@ -1,0 +1,769 @@
+{
+  "id": "L01",
+  "slug": "heart-and-blood",
+  "status": "ready",
+  "short_id": "ep003",
+  "title": "How Your Heart Works | Full Video for Kids",
+  "cover_text": "THUMP THUMP!",
+  "description": "Find out how your heart pumps blood, what its little valve doors do, how blood travels through your blood vessels, and why your heart beats faster when you play! Leo asks, big sister Mia explains, and there's a quiz at the end.\n\nWant the 60-second version? Find it on our Shorts tab.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#HumanBody",
+    "#ScienceForKids",
+    "#FunFacts"
+  ],
+  "tags": [
+    "heart for kids",
+    "how the heart works",
+    "blood for kids",
+    "heart valves",
+    "blood vessels for kids",
+    "human body for kids",
+    "science for kids",
+    "kids learning video"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "How does my heart pump?",
+    "cue": "next",
+    "left": "❤️",
+    "right": "🩸"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, how does my heart pump blood?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "img:Human_physiology/Servier/heart-front",
+          "label": "Heart"
+        },
+        "right": {
+          "icon": "🩸",
+          "label": "Blood"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Great question, Leo! Today we're going on a big trip with your heart and your blood.",
+      "board": {
+        "type": "big",
+        "icon": "🗺️",
+        "text": "A trip with your heart",
+        "cue": "trip",
+        "sub": "And your blood!",
+        "sub_cue": "blood"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Will we find out why it goes thump-thump?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! We'll meet your heart, follow your blood, hear the lub-dub, and find out why it speeds up.",
+      "board": {
+        "type": "steps",
+        "title": "What we'll find out",
+        "items": [
+          {
+            "label": "Meet your heart",
+            "icon": "❤️",
+            "cue": "meet"
+          },
+          {
+            "label": "Follow your blood",
+            "icon": "🩸",
+            "cue": "follow"
+          },
+          {
+            "label": "Hear the lub-dub",
+            "icon": "👂",
+            "cue": "lub"
+          },
+          {
+            "label": "Why it speeds up",
+            "icon": "🏃",
+            "cue": "speeds"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So where is my heart, and how big is it?",
+      "chapter": "Meet your heart"
+    },
+    {
+      "who": "MIA",
+      "text": "Your heart sits in the middle of your chest, tipped a little to the left. It's about as big as your fist.",
+      "board": {
+        "type": "big",
+        "icon": "img:Human_physiology/Servier/heart-front",
+        "text": "Middle of your chest",
+        "cue": "middle",
+        "sub": "As big as your fist",
+        "sub_cue": "fist"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "My fist is small! Is my heart small too?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Your heart grows as you grow. Make a fist, and that's about the size of your heart right now.",
+      "board": {
+        "type": "big",
+        "icon": "✊",
+        "text": "Make a fist!",
+        "cue": "fist",
+        "sub": "That's your heart's size",
+        "sub_cue": "size"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Is it shaped like a love heart?"
+    },
+    {
+      "who": "MIA",
+      "text": "Not really! A real heart is shaped more like a big, lumpy strawberry. And it's made of strong muscle.",
+      "board": {
+        "type": "big",
+        "icon": "img:Human_physiology/Servier/heart-front",
+        "text": "A real heart",
+        "cue": "real",
+        "sub": "Strong muscle!",
+        "sub_cue": "muscle"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Inside, your heart has four little rooms. Two rooms on top take blood in. Two rooms on the bottom pump it out.",
+      "board": {
+        "type": "big",
+        "icon": "img:Human_physiology/Servier/heart-chambers-visible",
+        "text": "Four little rooms",
+        "cue": "four",
+        "sub": "Top in, bottom out",
+        "sub_cue": "top"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Four rooms? My heart is like a tiny house!",
+      "punch": "house"
+    },
+    {
+      "who": "MIA",
+      "text": "A tiny house with a wall down the middle! The right side and the left side each have a different job.",
+      "board": {
+        "type": "big",
+        "icon": "🏠",
+        "text": "A wall down the middle",
+        "cue": "wall",
+        "sub": "Two sides, two jobs",
+        "sub_cue": "different"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What are the two jobs?",
+      "chapter": "Blood's big trip"
+    },
+    {
+      "who": "MIA",
+      "text": "The right side sends blood to your lungs. There, the blood picks up oxygen from the air you breathe in.",
+      "board": {
+        "type": "big",
+        "icon": "img:Human_physiology/Servier/healthy-lung",
+        "text": "Off to the lungs!",
+        "cue": "lungs",
+        "sub": "Pick up oxygen",
+        "sub_cue": "oxygen"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What's oxygen?"
+    },
+    {
+      "who": "MIA",
+      "text": "Oxygen is an invisible gas in the air. Every part of your body needs it to stay alive and make energy.",
+      "board": {
+        "type": "big",
+        "icon": "💨",
+        "text": "Oxygen is in the air",
+        "cue": "oxygen",
+        "sub": "Your body needs it",
+        "sub_cue": "needs"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Then the blood goes back to your heart. The left side squeezes hard and pumps it to your head, your arms, your tummy and your toes!",
+      "board": {
+        "type": "body",
+        "title": "Blood's big trip",
+        "show": [
+          "heart",
+          "lungs"
+        ],
+        "flow": "blood",
+        "cue": "squeezes",
+        "labels": [
+          {
+            "text": "Head",
+            "at": "head",
+            "cue": "head"
+          },
+          {
+            "text": "Arms",
+            "at": "arm",
+            "cue": "arms"
+          },
+          {
+            "text": "Tummy",
+            "at": "stomach",
+            "cue": "tummy"
+          },
+          {
+            "text": "Toes",
+            "at": "foot",
+            "cue": "toes"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How does the blood get all the way to my toes?"
+    },
+    {
+      "who": "MIA",
+      "text": "Through tubes called blood vessels. They go everywhere in your body, like roads in a big city.",
+      "board": {
+        "type": "big",
+        "icon": "🛣️",
+        "text": "Blood vessels",
+        "cue": "vessels",
+        "sub": "Like roads in a city",
+        "sub_cue": "roads"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Arteries are big tubes that carry blood away from your heart. Veins are tubes that bring it back again.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Arteries",
+          "items": [
+            {
+              "text": "Big tubes",
+              "icon": "🩸",
+              "cue": "arteries"
+            },
+            {
+              "text": "Away from heart",
+              "icon": "➡️",
+              "cue": "away"
+            }
+          ]
+        },
+        "right": {
+          "label": "Veins",
+          "items": [
+            {
+              "text": "Back to heart",
+              "icon": "⬅️",
+              "cue": "back"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "And the tiniest tubes are called capillaries. They're thinner than a hair! They pass oxygen to every part of you.",
+      "board": {
+        "type": "big",
+        "icon": "🧵",
+        "text": "Capillaries: super tiny!",
+        "cue": "capillaries",
+        "sub": "Thinner than a hair",
+        "sub_cue": "thinner"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Wait, my veins look blue. Is some of my blood blue?"
+    },
+    {
+      "who": "MIA",
+      "text": "Nope! Blood is always red. Veins only look blue because you see them through your skin.",
+      "board": {
+        "type": "checklist",
+        "title": "Blood is...",
+        "icon": "🩸",
+        "items": [
+          {
+            "text": "Sometimes blue",
+            "icon": "🔵",
+            "cue": "nope",
+            "ok": false
+          },
+          {
+            "text": "Always red",
+            "icon": "🔴",
+            "cue": "red",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And then the blood comes back to my heart?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Your body uses up the oxygen and makes waste air. The blood carries it back, and your lungs breathe it out.",
+      "board": {
+        "type": "steps",
+        "title": "Coming home",
+        "items": [
+          {
+            "label": "Body uses oxygen",
+            "icon": "💪",
+            "cue": "uses"
+          },
+          {
+            "label": "Blood carries waste air",
+            "icon": "🩸",
+            "cue": "carries"
+          },
+          {
+            "label": "Lungs breathe it out",
+            "icon": "🫁",
+            "cue": "breathe"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "So your blood goes round and round: heart to lungs, back to heart, out to your body, and home again!",
+      "board": {
+        "type": "cycle",
+        "title": "Round and round",
+        "center": "🩸",
+        "items": [
+          {
+            "icon": "❤️",
+            "label": "Heart",
+            "cue": "heart"
+          },
+          {
+            "icon": "🫁",
+            "label": "Lungs",
+            "cue": "lungs"
+          },
+          {
+            "icon": "💗",
+            "label": "Back to heart",
+            "cue": "back"
+          },
+          {
+            "icon": "🧍",
+            "label": "Your body",
+            "cue": "body"
+          },
+          {
+            "icon": "🏠",
+            "label": "Home again",
+            "cue": "home"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Round and round, like a race track!"
+    },
+    {
+      "who": "LEO",
+      "text": "Mia, what makes the lub-dub sound?",
+      "chapter": "The lub-dub doors",
+      "board": {
+        "type": "big",
+        "icon": "👂",
+        "text": "Lub-dub?",
+        "cue": "lub"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Your heart has four little doors inside, called valves. They open to let blood through, then snap shut.",
+      "board": {
+        "type": "big",
+        "icon": "img:Human_physiology/Servier/heart-valves",
+        "text": "Four valves",
+        "cue": "valves",
+        "sub": "Open, then snap shut",
+        "sub_cue": "open"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why do they snap shut?"
+    },
+    {
+      "who": "MIA",
+      "text": "So blood can only go one way! The doors stop it from sliding backwards, like a door that only opens one way.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Open",
+          "items": [
+            {
+              "text": "Blood flows on",
+              "icon": "➡️",
+              "cue": "one"
+            }
+          ]
+        },
+        "right": {
+          "label": "Shut",
+          "items": [
+            {
+              "text": "No going back",
+              "icon": "🚫",
+              "cue": "backwards"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "When the valves close, they make the sound. Lub is one set of doors closing. Dub is the other set!",
+      "board": {
+        "type": "steps",
+        "title": "Lub-dub",
+        "items": [
+          {
+            "label": "Lub: doors close",
+            "icon": "🚪",
+            "cue": "lub"
+          },
+          {
+            "label": "Dub: more doors close",
+            "icon": "🚪",
+            "cue": "dub"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can I hear my own heart?"
+    },
+    {
+      "who": "MIA",
+      "text": "Doctors use a listening tool called a stethoscope. You can also feel your heartbeat. Ask a grown-up to help you find it on your wrist or neck.",
+      "board": {
+        "type": "big",
+        "icon": "🩺",
+        "text": "A stethoscope",
+        "cue": "stethoscope",
+        "sub": "Feel it on your wrist",
+        "sub_cue": "wrist"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Each bump you feel is called your pulse. It's your blood being pushed along with every heartbeat.",
+      "board": {
+        "type": "big",
+        "icon": "💓",
+        "text": "That's your pulse!",
+        "cue": "pulse",
+        "sub": "One bump, one beat",
+        "sub_cue": "every"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "When I run, my heart goes really fast. Why?",
+      "chapter": "Fast and slow",
+      "board": {
+        "type": "big",
+        "icon": "🏃",
+        "text": "Why so fast?",
+        "cue": "fast"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "When you run, your muscles work hard and need extra oxygen. So your heart beats faster to bring more blood to them.",
+      "punch": "faster",
+      "board": {
+        "type": "steps",
+        "title": "Running!",
+        "items": [
+          {
+            "label": "Muscles work hard",
+            "icon": "img:Human_physiology/Servier/muscle-1",
+            "cue": "muscles"
+          },
+          {
+            "label": "Need more oxygen",
+            "icon": "💨",
+            "cue": "oxygen"
+          },
+          {
+            "label": "Heart beats faster",
+            "icon": "💓",
+            "cue": "faster"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Who tells my heart to go faster?"
+    },
+    {
+      "who": "MIA",
+      "text": "Your brain does! It sends a message, and your heart speeds up. You don't even have to think about it.",
+      "board": {
+        "type": "big",
+        "icon": "img:Human_physiology/Servier/brain-1",
+        "text": "Your brain helps",
+        "cue": "brain",
+        "sub": "No thinking needed!",
+        "sub_cue": "think"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "And your heart has its own tiny spark inside. It tells the heart when to squeeze, again and again, all day and all night.",
+      "board": {
+        "type": "big",
+        "icon": "⚡",
+        "text": "Its own tiny spark",
+        "cue": "spark",
+        "sub": "Squeeze, squeeze, squeeze!",
+        "sub_cue": "squeeze"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "When does it go slow?"
+    },
+    {
+      "who": "MIA",
+      "text": "When you play, it beats fast. When you rest or sleep, your body needs less oxygen, so your heart slows down.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Playing",
+          "items": [
+            {
+              "text": "Fast beats",
+              "icon": "🏃",
+              "cue": "play"
+            }
+          ]
+        },
+        "right": {
+          "label": "Sleeping",
+          "items": [
+            {
+              "text": "Slow beats",
+              "icon": "😴",
+              "cue": "sleep"
+            },
+            {
+              "text": "Less oxygen",
+              "icon": "💨",
+              "cue": "less"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Wow. How many times does my heart beat?"
+    },
+    {
+      "who": "MIA",
+      "text": "A grown-up's heart beats about a hundred thousand times every day! And a kid's heart beats even a bit faster.",
+      "board": {
+        "type": "big",
+        "icon": "🔢",
+        "text": "About 100,000 a day!",
+        "cue": "hundred",
+        "sub": "Kids' hearts: faster!",
+        "sub_cue": "kid"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How can I keep my heart strong?"
+    },
+    {
+      "who": "MIA",
+      "text": "Run, jump and play every day! Eat lots of fruit and veggies, drink water, and get good sleep.",
+      "board": {
+        "type": "checklist",
+        "title": "Strong heart",
+        "icon": "❤️",
+        "items": [
+          {
+            "text": "Run, jump and play",
+            "icon": "🏃",
+            "cue": "run",
+            "ok": true
+          },
+          {
+            "text": "Fruit and veggies",
+            "icon": "🍎",
+            "cue": "fruit",
+            "ok": true
+          },
+          {
+            "text": "Drink water",
+            "icon": "💧",
+            "cue": "drink",
+            "ok": true
+          },
+          {
+            "text": "Good sleep",
+            "icon": "😴",
+            "cue": "sleep",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Quiz time, Leo! Question one: what is your heart made of? Think...",
+      "chapter": "Quiz time",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "What is your heart made of?",
+        "cue": "made"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Muscle! A strong muscle about the size of my fist.",
+      "board": {
+        "type": "big",
+        "icon": "img:Human_physiology/Servier/heart-front",
+        "text": "Muscle!",
+        "cue": "muscle",
+        "sub": "As big as your fist",
+        "sub_cue": "fist"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Right! Question two: what do the valves do? Think...",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "What do valves do?",
+        "cue": "valves"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "They're little doors that keep blood going one way. Lub-dub!",
+      "board": {
+        "type": "big",
+        "icon": "img:Human_physiology/Servier/heart-valves",
+        "text": "Doors: one way only",
+        "cue": "doors",
+        "sub": "Lub-dub!",
+        "sub_cue": "lub"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Last one: where does blood go to pick up oxygen? Think...",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "Where does blood get oxygen?",
+        "cue": "oxygen"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "To the lungs!",
+      "board": {
+        "type": "big",
+        "icon": "img:Human_physiology/Servier/healthy-lung",
+        "text": "The lungs!",
+        "cue": "lungs"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "You got them all! Let's sum it all up.",
+      "chapter": "Recap",
+      "board": {
+        "type": "big",
+        "icon": "🏆",
+        "text": "You got them all!",
+        "cue": "got"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "My heart is a muscle that squeezes. It sends blood to my lungs, then all around me. Valves keep it going one way, and it speeds up when I play!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "A squeezing muscle",
+            "icon": "💪",
+            "cue": "muscle"
+          },
+          {
+            "text": "To lungs, then body",
+            "icon": "🫁",
+            "cue": "lungs"
+          },
+          {
+            "text": "Valves: one way",
+            "icon": "🚪",
+            "cue": "valves"
+          },
+          {
+            "text": "Faster when you play",
+            "icon": "🏃",
+            "cue": "speeds"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Every day and every night, even while you sleep! Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... how does my heart pump blood?"
+    }
+  ]
+}

@@ -27,7 +27,7 @@
     "text": "How do whales breathe?",
     "cue": "next",
     "left": "🐋",
-    "right": "💨"
+    "right": "img:Human_physiology/Servier/healthy-lung"
   },
   "lines": [
     {
@@ -40,7 +40,7 @@
           "label": "Whale"
         },
         "right": {
-          "icon": "💨",
+          "icon": "img:Human_physiology/Servier/healthy-lung",
           "label": "Breathe?"
         },
         "mid": "?"
@@ -68,7 +68,7 @@
       "text": "They swim up and breathe through a blowhole. It's like a nose on top of their head!",
       "board": {
         "type": "big",
-        "icon": "👃",
+        "icon": "🐳",
         "text": "The blowhole",
         "cue": "blowhole",
         "sub": "A nose on top!",
@@ -83,8 +83,9 @@
       "who": "MIA",
       "text": "So they don't have to lift their whole head out. They just pop up, take a breath, and dive back down.",
       "board": {
-        "type": "steps",
-        "title": "Breathing trip",
+        "type": "cycle",
+        "title": "Up and down",
+        "center": "🐋",
         "items": [
           {
             "icon": "⬆️",
@@ -98,7 +99,7 @@
           },
           {
             "icon": "⬇️",
-            "label": "Dive back down",
+            "label": "Dive down",
             "cue": "dive"
           }
         ]
@@ -165,7 +166,7 @@
             "cue": "air"
           },
           {
-            "icon": "👃",
+            "icon": "🐳",
             "text": "Through a blowhole",
             "cue": "blowhole"
           },

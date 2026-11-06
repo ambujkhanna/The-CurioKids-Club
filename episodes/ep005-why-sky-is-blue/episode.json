@@ -67,12 +67,26 @@
       "who": "MIA",
       "text": "Yes! When sunlight zooms into our air, it bumps into teeny tiny bits of air, much too small to see.",
       "board": {
-        "type": "big",
-        "icon": "💨",
-        "text": "Light bumps into air",
-        "cue": "bumps",
-        "sub": "Tiny, tiny bits",
-        "sub_cue": "tiny"
+        "type": "journey",
+        "title": "Sunlight's trip",
+        "traveler": "✨",
+        "items": [
+          {
+            "icon": "☀️",
+            "label": "Sunlight",
+            "cue": "sunlight"
+          },
+          {
+            "icon": "💨",
+            "label": "Into our air",
+            "cue": "zooms"
+          },
+          {
+            "icon": "💥",
+            "label": "Bumps air bits",
+            "cue": "bumps"
+          }
+        ]
       }
     },
     {

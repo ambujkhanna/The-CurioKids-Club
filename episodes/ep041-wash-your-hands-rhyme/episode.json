@@ -26,7 +26,7 @@
     "text": "Hand washing rhyme!",
     "cue": "next",
     "left": "🧼",
-    "right": "👐"
+    "right": "img:General_items/Servier/hand-washing"
   },
   "lines": [
     {
@@ -35,7 +35,7 @@
       "board": {
         "type": "title",
         "left": {
-          "icon": "👐",
+          "icon": "img:General_items/Servier/hand-washing",
           "label": "Clean hands"
         },
         "right": {
@@ -130,7 +130,7 @@
           },
           {
             "text": "Every germ gets",
-            "icon": "🦠",
+            "icon": "img:Microbiology/Servier/bacterium",
             "cue": "every"
           },
           {

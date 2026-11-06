@@ -26,7 +26,7 @@
   "loop_card": {
     "text": "Why goosebumps?",
     "cue": "next",
-    "left": "🥶",
+    "left": "img:Human_physiology/Servier/skin",
     "right": "❓"
   },
   "lines": [
@@ -36,7 +36,7 @@
       "board": {
         "type": "title",
         "left": {
-          "icon": "🥶",
+          "icon": "img:Human_physiology/Servier/skin",
           "label": "Goosebumps"
         },
         "right": {
@@ -51,7 +51,7 @@
       "text": "Goosebumps are tiny bumps on your skin. Each little bump is around a hair.",
       "board": {
         "type": "big",
-        "icon": "🧒",
+        "icon": "img:Human_physiology/Servier/skin",
         "text": "Tiny bumps on skin",
         "cue": "bumps",
         "sub": "One at each hair",
@@ -83,22 +83,23 @@
       "who": "MIA",
       "text": "Every hair has a tiny muscle at its root. When you feel cold, these muscles squeeze, and the hairs stand up.",
       "board": {
-        "type": "steps",
-        "title": "How it works",
+        "type": "journey",
+        "title": "Goosebump time",
+        "traveler": "🥶",
         "items": [
           {
-            "label": "You feel cold",
-            "icon": "🥶",
+            "icon": "🌬️",
+            "label": "Feel cold",
             "cue": "cold"
           },
           {
-            "label": "Tiny muscles squeeze",
-            "icon": "💪",
+            "icon": "img:Human_physiology/Servier/muscle-1",
+            "label": "Muscles pull",
             "cue": "squeeze"
           },
           {
-            "label": "Hairs stand up",
             "icon": "⬆️",
+            "label": "Hair stands up",
             "cue": "stand"
           }
         ]
@@ -179,7 +180,7 @@
         "rows": [
           {
             "text": "Tiny muscles squeeze",
-            "icon": "💪",
+            "icon": "img:Human_physiology/Servier/muscle-1",
             "cue": "muscles"
           },
           {

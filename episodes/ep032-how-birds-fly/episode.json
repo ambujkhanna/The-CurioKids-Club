@@ -73,7 +73,7 @@
         "title": "Built to fly",
         "items": [
           {
-            "icon": "💪",
+            "icon": "img:Human_physiology/Servier/muscle-1",
             "label": "Strong muscles",
             "cue": "strong"
           },

@@ -4,6 +4,7 @@
     python pipeline/daily.py --dry-run    # render + QC only
     python pipeline/daily.py --episode ep003   # force a specific episode
     python pipeline/daily.py --now             # publish immediately instead of scheduling
+    python pipeline/daily.py --long            # weekly LONG video (16:9, 3-8 min) from long/<id>/episode.json
 
 Publish time: a random 5-minute slot inside PUBLISH_WINDOW (IST, default "16:00-19:00"), today if there is still
 time left in the window, otherwise tomorrow. Change the window via the repo variable PUBLISH_WINDOW.
@@ -15,7 +16,9 @@ import datetime as dt, glob, json, os, random, re, subprocess, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PIPE = os.path.join(ROOT, "pipeline")
-STATE = os.path.join(ROOT, "episodes", "state.json")
+LONG = "--long" in sys.argv
+EPDIR = os.path.join(ROOT, "long" if LONG else "episodes")
+STATE = os.path.join(EPDIR, "state.json")
 OUT = os.path.join(ROOT, "out")
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
 
@@ -31,7 +34,7 @@ def load_state():
 
 def pick(state, forced=None):
     eps = []
-    for f in sorted(glob.glob(os.path.join(ROOT, "episodes", "*", "episode.json"))):
+    for f in sorted(glob.glob(os.path.join(EPDIR, "*", "episode.json"))):
         ep = json.load(open(f)); ep["_file"] = f
         eps.append(ep)
     if forced:
@@ -75,8 +78,9 @@ def qc(path, ep):
     dur = float(p["format"]["duration"])
     v = [s for s in p["streams"] if s["codec_type"] == "video"]
     a = [s for s in p["streams"] if s["codec_type"] == "audio"]
-    if not (45 <= dur <= 180): problems.append(f"duration {dur:.1f}s outside 45-180s")
-    if not v or (v[0]["width"], v[0]["height"]) != (1080, 1920): problems.append("video is not 1080x1920")
+    lo, hi, size = (90, 900, (1920, 1080)) if LONG else (45, 180, (1080, 1920))
+    if not (lo <= dur <= hi): problems.append(f"duration {dur:.1f}s outside {lo}-{hi}s")
+    if not v or (v[0]["width"], v[0]["height"]) != size: problems.append(f"video is not {size[0]}x{size[1]}")
     if not a: problems.append("no audio stream")
     r = subprocess.run(["ffmpeg", "-hide_banner", "-i", path, "-af", "volumedetect", "-f", "null", "-"], capture_output=True, text=True)
     m = re.search(r"mean_volume: (-?[\d.]+) dB", r.stderr)
@@ -96,6 +100,16 @@ def summary(md):
             fh.write(md + "\n")
 
 
+def chapters(ep):
+    """YouTube chapters (m:ss Title) from lines that carry "chapter"; needs >= 3, first at 0:00."""
+    T = json.load(open(os.path.join(PIPE, "build", "timing.json")))
+    marks = [(0.0 if i == 0 else T["lines"][i]["start"], l["chapter"]) for i, l in enumerate(ep["lines"]) if l.get("chapter")]
+    if not marks or marks[0][0] > 0.5: marks.insert(0, (0.0, "Intro"))
+    marks = [m for k, m in enumerate(marks) if k == 0 or m[0] - marks[k - 1][0] >= 10]
+    if len(marks) < 3: return ""
+    return "\n".join(f"{int(t // 60)}:{int(t % 60):02d} {name}" for t, name in [(0.0, marks[0][1])] + marks[1:])
+
+
 def main():
     args = sys.argv[1:]
     dry = "--dry-run" in args
@@ -107,6 +121,11 @@ def main():
         print("No ready episode left in the backlog. Add episodes/<id>/episode.json files."); return 0
     eid = ep["id"]; epf = ep["_file"]
     print(f"== {eid}: {ep['title']}")
+    import images  # download any real illustrations this episode uses (from GitHub), before checking it
+    try:
+        images.fetch(images.used(json.load(open(ep["_file"], encoding="utf-8"))))
+    except Exception as e:
+        print("note: could not fetch pictures:", e)
     from validate_episode import check
     errs = check(epf)
     if errs:
@@ -114,10 +133,10 @@ def main():
         json.dump(state, open(STATE, "w"), indent=2)
         print("Episode file invalid - not rendering:", errs); return 1
     os.makedirs(OUT, exist_ok=True)
-    frames = os.path.join(OUT, f"{eid}_frames"); mp4 = os.path.join(OUT, f"CurioKids_{eid}.mp4")
+    frames = os.path.join(OUT, f"{eid}_frames"); mp4 = os.path.join(OUT, f"CurioKids_{'long_' if LONG else ''}{eid}.mp4")
     sh([sys.executable, os.path.join(PIPE, "tts.py")], {"EPISODE": epf})
-    sh([sys.executable, os.path.join(PIPE, "episode_engine.py"), frames], {"EPISODE": epf, "BG": "kids", "DOODLE": "chars"}, cwd=PIPE)
-    sh([sys.executable, os.path.join(PIPE, "finish.py"), frames, "24", mp4], {"EPISODE": epf})
+    sh([sys.executable, os.path.join(PIPE, "episode_engine.py"), frames], {"EPISODE": epf, "BG": "kids", "DOODLE": "chars", "FORMAT": "long" if LONG else "short"}, cwd=PIPE)
+    sh([sys.executable, os.path.join(PIPE, "finish.py"), frames, "24", mp4], {"EPISODE": epf, "FORMAT": "long" if LONG else "short"})
     thumb = mp4[:-4] + "_thumbnail.jpg"
     if os.path.exists(os.path.join(PIPE, "build", "thumbnail.jpg")):
         import shutil; shutil.copy(os.path.join(PIPE, "build", "thumbnail.jpg"), thumb)
@@ -132,6 +151,10 @@ def main():
         json.dump(state, open(STATE, "w"), indent=2)
         print("QC FAILED - not uploading:", problems)
         summary(f"### ❌ QC failed for {eid} — nothing uploaded\n\n" + "\n".join(f"- {p}" for p in problems)); return 1
+    if LONG:  # chapters from the "chapter" markers + no #Shorts tag
+        ch = chapters(ep)
+        if ch: ep["description"] = ep["description"].rstrip() + "\n\nChapters:\n" + ch
+        ep["hashtags"] = [h for h in ep.get("hashtags", []) if h.lower() != "#shorts"]
     from upload_youtube import have_credentials, upload, set_thumbnail
     if dry or not have_credentials():
         rec.update({"status": "rendered", "note": "dry run" if dry else "no YouTube credentials configured"})
@@ -148,7 +171,7 @@ def main():
         when = slot.strftime("%d %b %Y, %H:%M IST"); rec["publish_at_ist"] = slot.isoformat(timespec="minutes")
     rec.pop("note", None)
     rec["thumbnail"] = set_thumbnail(vid, thumb) if thumb else "not rendered"
-    rec.update({"status": "uploaded", "video_id": vid, "url": f"https://www.youtube.com/shorts/{vid}",
+    rec.update({"status": "uploaded", "video_id": vid, "url": f"https://www.youtube.com/{'watch?v=' if LONG else 'shorts/'}{vid}",
                 "uploaded_at": dt.datetime.now(IST).isoformat(timespec="seconds")})
     json.dump(state, open(STATE, "w"), indent=2)
     print("Uploaded:", rec["url"], "publish:", when)

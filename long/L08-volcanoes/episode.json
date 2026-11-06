@@ -1,0 +1,613 @@
+{
+  "id": "L08",
+  "slug": "volcanoes",
+  "status": "ready",
+  "short_id": "ep042",
+  "title": "How Do Volcanoes Erupt? 🌋 Magma, Lava & Volcano Islands for Kids",
+  "cover_text": "ERUPT!",
+  "description": "Dig deep inside the Earth to find melted rock, watch a volcano erupt, and see how volcanoes build brand-new islands! Leo asks, big sister Mia explains, with a quiz at the end.\n\nWant the 60-second version? It's on our Shorts tab.\n\nThe CurioKids Club: curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#Volcano",
+    "#EarthScience",
+    "#ScienceForKids"
+  ],
+  "tags": [
+    "volcanoes for kids",
+    "how volcanoes erupt",
+    "magma and lava",
+    "layers of the earth for kids",
+    "ring of fire",
+    "earth science for kids",
+    "science for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "How do volcanoes erupt?",
+    "cue": "next",
+    "left": "🌋",
+    "right": "💥"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, how do volcanoes erupt? And where does all that lava come from?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🌋",
+          "label": "Volcano"
+        },
+        "right": {
+          "icon": "💥",
+          "label": "Erupt?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Great questions! Let's dig deep into the Earth, find the melted rock, and watch it burst out of the top.",
+      "board": {
+        "type": "big",
+        "icon": "⛏️",
+        "text": "Dig deep!",
+        "cue": "dig",
+        "sub": "Find the melted rock",
+        "sub_cue": "melted"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Dig? I'll get my shovel!"
+    },
+    {
+      "who": "MIA",
+      "text": "We'll need a super long pretend shovel! The Earth is made of layers, a bit like a peach.",
+      "chapter": "Inside the Earth",
+      "board": {
+        "type": "big",
+        "icon": "img:General_items/Servier/earth",
+        "text": "Earth has layers",
+        "cue": "layers",
+        "sub": "A bit like a peach",
+        "sub_cue": "peach"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "A peach? Yum!"
+    },
+    {
+      "who": "MIA",
+      "text": "On the outside is the crust, thin like the peach skin. That's where we live. Below it is the mantle: thick, very hot rock.",
+      "board": {
+        "type": "steps",
+        "title": "Earth's layers",
+        "items": [
+          {
+            "icon": "🏡",
+            "label": "Crust: where we live",
+            "cue": "crust"
+          },
+          {
+            "icon": "🔥",
+            "label": "Mantle: hot rock",
+            "cue": "mantle"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And in the very middle?"
+    },
+    {
+      "who": "MIA",
+      "text": "The core! It's like the peach's pit, and it's super, super hot.",
+      "board": {
+        "type": "big",
+        "icon": "🟠",
+        "text": "The core: super hot!",
+        "cue": "core",
+        "sub": "Like the peach pit",
+        "sub_cue": "pit"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So where does magma come from?"
+    },
+    {
+      "who": "MIA",
+      "text": "In some places deep down, it's hot enough for rock to melt. Melted rock underground is called magma.",
+      "punch": "magma",
+      "board": {
+        "type": "big",
+        "icon": "🔥",
+        "text": "Melted rock",
+        "cue": "melted",
+        "sub": "Called magma!",
+        "sub_cue": "magma"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How does the magma get out?",
+      "chapter": "How it erupts"
+    },
+    {
+      "who": "MIA",
+      "text": "Magma is lighter than the solid rock around it, so it slowly rises, like a bubble in honey.",
+      "board": {
+        "type": "big",
+        "icon": "🍯",
+        "text": "Lighter, so it rises",
+        "cue": "lighter",
+        "sub": "Like a bubble in honey",
+        "sub_cue": "bubble"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Then where does it go?"
+    },
+    {
+      "who": "MIA",
+      "text": "It gathers in a big underground pocket called a magma chamber, under the volcano.",
+      "board": {
+        "type": "big",
+        "icon": "🕳️",
+        "text": "Magma chamber",
+        "cue": "chamber",
+        "sub": "Under the volcano",
+        "sub_cue": "volcano"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And then it just waits there?"
+    },
+    {
+      "who": "MIA",
+      "text": "Magma has gas mixed in, like the bubbles in a fizzy drink. The gas pushes harder and harder.",
+      "board": {
+        "type": "big",
+        "icon": "🥤",
+        "text": "Gas bubbles inside",
+        "cue": "gas",
+        "sub": "Like a fizzy drink",
+        "sub_cue": "fizzy"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Like a shaken-up bottle of fizzy water?"
+    },
+    {
+      "who": "MIA",
+      "text": "Exactly! When the push gets too strong, the magma bursts up through cracks and out of the top. Eruption!",
+      "punch": "eruption",
+      "board": {
+        "type": "journey",
+        "title": "Eruption!",
+        "traveler": "🔥",
+        "items": [
+          {
+            "icon": "💨",
+            "label": "Gas pushes",
+            "cue": "push"
+          },
+          {
+            "icon": "⬆️",
+            "label": "Up the cracks",
+            "cue": "cracks"
+          },
+          {
+            "icon": "🌋",
+            "label": "Out the top",
+            "cue": "top"
+          },
+          {
+            "icon": "💥",
+            "label": "Eruption!",
+            "cue": "eruption"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And then it's called lava!"
+    },
+    {
+      "who": "MIA",
+      "text": "Right! Magma is underground, lava is outside. Fresh lava is much hotter than an oven, and it glows red and orange.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Underground",
+          "items": [
+            {
+              "icon": "🔴",
+              "text": "Magma",
+              "cue": "magma"
+            }
+          ]
+        },
+        "right": {
+          "label": "Outside",
+          "items": [
+            {
+              "icon": "🌋",
+              "text": "Lava",
+              "cue": "lava"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What else comes out?"
+    },
+    {
+      "who": "MIA",
+      "text": "Clouds of ash and gas, and sometimes chunks of rock! Volcano ash is made of tiny bits of rock.",
+      "board": {
+        "type": "gallery",
+        "title": "What comes out",
+        "items": [
+          {
+            "icon": "☁️",
+            "label": "Ash clouds",
+            "cue": "ash"
+          },
+          {
+            "icon": "💨",
+            "label": "Gas",
+            "cue": "gas"
+          },
+          {
+            "icon": "🪨",
+            "label": "Rocks",
+            "cue": "rock"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Do all volcanoes look the same?",
+      "chapter": "Kinds of volcanoes"
+    },
+    {
+      "who": "MIA",
+      "text": "Nope! Some are tall and pointy, with steep sides. Their eruptions are often explosive.",
+      "board": {
+        "type": "big",
+        "icon": "⛰️",
+        "text": "Tall and steep",
+        "cue": "tall",
+        "sub": "Often explosive",
+        "sub_cue": "explosive"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Boom!"
+    },
+    {
+      "who": "MIA",
+      "text": "Others are wide and gently sloping, like a shield lying on the ground. Their runny lava oozes out like a slow, glowing river.",
+      "board": {
+        "type": "big",
+        "icon": "🛡️",
+        "text": "Shield volcanoes",
+        "cue": "shield",
+        "sub": "Runny lava flows",
+        "sub_cue": "runny"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Is every volcano erupting all the time?"
+    },
+    {
+      "who": "MIA",
+      "text": "No! Volcanoes that can still erupt are called active. Ones taking a long rest are dormant. And ones that are done for good are extinct.",
+      "board": {
+        "type": "steps",
+        "title": "Volcano moods",
+        "items": [
+          {
+            "icon": "🌋",
+            "label": "Active: can erupt",
+            "cue": "active"
+          },
+          {
+            "icon": "😴",
+            "label": "Dormant: resting",
+            "cue": "dormant"
+          },
+          {
+            "icon": "🏁",
+            "label": "Extinct: all done",
+            "cue": "extinct"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Where are most volcanoes?"
+    },
+    {
+      "who": "MIA",
+      "text": "Earth's crust is cracked into giant pieces called plates. Lots of volcanoes are where the plates meet.",
+      "board": {
+        "type": "big",
+        "icon": "🧩",
+        "text": "Cracked into plates",
+        "cue": "cracked",
+        "sub": "Volcanoes where they meet",
+        "sub_cue": "meet"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Like a giant puzzle!"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Around the Pacific Ocean there are so many volcanoes, it's nicknamed the Ring of Fire.",
+      "board": {
+        "type": "big",
+        "icon": "🌊",
+        "text": "Around the Pacific",
+        "cue": "pacific",
+        "sub": "The Ring of Fire!",
+        "sub_cue": "ring"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ring of Fire! That sounds like a superhero name!"
+    },
+    {
+      "who": "MIA",
+      "text": "Here's something amazing: volcanoes can build brand-new land!",
+      "chapter": "Volcanoes make land",
+      "board": {
+        "type": "big",
+        "icon": "🏝️",
+        "text": "Brand-new land!",
+        "cue": "land"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Brand-new land? How?"
+    },
+    {
+      "who": "MIA",
+      "text": "Some volcanoes start deep under the ocean. They erupt again and again. Lava cools into rock, layer on layer, until an island pokes out of the sea!",
+      "board": {
+        "type": "journey",
+        "title": "Making an island",
+        "traveler": "🌋",
+        "items": [
+          {
+            "icon": "🌊",
+            "label": "Under the sea",
+            "cue": "ocean"
+          },
+          {
+            "icon": "🔁",
+            "label": "Erupt again",
+            "cue": "erupt"
+          },
+          {
+            "icon": "🪨",
+            "label": "Lava cools",
+            "cue": "cools"
+          },
+          {
+            "icon": "🧱",
+            "label": "Layer on layer",
+            "cue": "layer"
+          },
+          {
+            "icon": "🏝️",
+            "label": "Island!",
+            "cue": "island"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So an island can be a giant pile of cooled lava?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! The islands of Hawaii were made by volcanoes, just like that.",
+      "board": {
+        "type": "big",
+        "icon": "🏝️",
+        "text": "Hawaii: volcano islands",
+        "cue": "hawaii"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Are volcanoes good for anything else?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Volcano ash makes soil rich, so plants grow really well. And heat from deep underground can even make electricity.",
+      "board": {
+        "type": "gallery",
+        "title": "Volcano gifts",
+        "items": [
+          {
+            "icon": "🌱",
+            "label": "Rich soil",
+            "cue": "soil"
+          },
+          {
+            "icon": "🌽",
+            "label": "Plants grow",
+            "cue": "plants"
+          },
+          {
+            "icon": "⚡",
+            "label": "Power from heat",
+            "cue": "heat"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Are there volcanoes anywhere else?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! The biggest volcano we know of is on Mars. It's called Olympus Mons, and it's much taller than any mountain on Earth.",
+      "board": {
+        "type": "big",
+        "icon": "🔴",
+        "text": "Biggest one: on Mars!",
+        "cue": "biggest",
+        "sub": "Olympus Mons",
+        "sub_cue": "olympus"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Whoa! Volcanoes in space!"
+    },
+    {
+      "who": "MIA",
+      "text": "And scientists called volcanologists keep a close eye on volcanoes, measuring shaking and gas, to help warn people early.",
+      "board": {
+        "type": "big",
+        "icon": "🔭",
+        "text": "Volcano scientists",
+        "cue": "volcanologists",
+        "sub": "They help warn people",
+        "sub_cue": "warn"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Quiz time! Question one: what do we call melted rock while it's still underground? Think...",
+      "chapter": "Quiz time",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "Quiz time!",
+        "cue": "quiz",
+        "sub": "Underground melted rock?",
+        "sub_cue": "underground"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Magma!",
+      "board": {
+        "type": "big",
+        "icon": "🔥",
+        "text": "Magma!",
+        "cue": "magma"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Question two: what pushes the magma up and out, like in a fizzy drink? Think...",
+      "board": {
+        "type": "big",
+        "icon": "🥤",
+        "text": "What pushes it out?",
+        "cue": "pushes"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Gas!",
+      "board": {
+        "type": "big",
+        "icon": "💨",
+        "text": "Gas!",
+        "cue": "gas"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Right! Last one: which planet has the biggest volcano we know of? Think...",
+      "board": {
+        "type": "big",
+        "icon": "🪐",
+        "text": "Biggest volcano?",
+        "cue": "biggest"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Mars!",
+      "board": {
+        "type": "big",
+        "icon": "🔴",
+        "text": "Mars!",
+        "cue": "mars"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Awesome! So: rock melts into magma, gas pushes it up, it bursts out as lava, and cooled lava builds new land.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "🔥",
+            "text": "Rock melts: magma",
+            "cue": "melts"
+          },
+          {
+            "icon": "💨",
+            "text": "Gas pushes it up",
+            "cue": "gas"
+          },
+          {
+            "icon": "🌋",
+            "text": "Out comes lava",
+            "cue": "lava"
+          },
+          {
+            "icon": "🏝️",
+            "text": "Lava builds new land",
+            "cue": "builds"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Volcanoes are hot, loud and amazing!",
+      "board": {
+        "type": "big",
+        "icon": "🌋",
+        "text": "Hot and amazing!",
+        "cue": "amazing"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "They sure are! Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... how do volcanoes erupt?"
+    }
+  ]
+}

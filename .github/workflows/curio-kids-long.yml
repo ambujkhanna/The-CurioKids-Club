@@ -1,0 +1,94 @@
+name: Weekly Curio Kids Long Video
+
+on:
+  schedule:
+    - cron: "30 4 * * 6"    # 04:30 UTC Saturday = 10:00 IST; publishes inside PUBLISH_WINDOW
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Render + QC only (no upload)"
+        type: boolean
+        default: false
+      episode:
+        description: "Force an episode id (e.g. ep003); empty = next in backlog"
+        required: false
+      publish_now:
+        description: "Publish immediately (no schedule)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly-long
+  cancel-in-progress: false
+
+jobs:
+  render-and-upload:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pipeline/requirements.txt
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: System packages (ffmpeg with libass + rubberband, Inter font, colour emoji)
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q ffmpeg fonts-inter fonts-noto-color-emoji libegl1 libgl1 libfontconfig1
+
+      - name: Python packages
+        run: pip install -r pipeline/requirements.txt
+
+      - name: Cache voice model files
+        uses: actions/cache@v4
+        with:
+          path: |
+            kokoro-q8.onnx
+            voices.bin
+            kokoro-dur.onnx
+          key: kokoro-q8-v1
+
+      - name: Prepare voice models
+        run: python pipeline/setup_models.py
+
+      - name: Render, QC, upload
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          PUBLISH_WINDOW: ${{ vars.PUBLISH_WINDOW || '16:00-19:00' }}
+        run: |
+          ARGS=""
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+          if [ -n "${{ inputs.episode }}" ]; then ARGS="$ARGS --episode ${{ inputs.episode }}"; fi
+          if [ "${{ inputs.publish_now }}" = "true" ]; then ARGS="$ARGS --now"; fi
+          python pipeline/daily.py --long $ARGS
+
+      - name: Keep the video as a downloadable artifact (14 days)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: long-video-${{ github.run_number }}
+          path: |
+            out/*.mp4
+            out/*_thumbnail.jpg
+          retention-days: 14
+          if-no-files-found: ignore
+
+      - name: Commit run state
+        if: always()
+        run: |
+          git config user.name "curio-kids-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add long/state.json || true
+          git diff --cached --quiet || (git commit -m "Weekly long run: update state" && git push)

@@ -6,20 +6,20 @@
   "hashtags": ["#KidsLearning", "#FunFacts", "#HumanBody", "#Shorts"],
   "tags": ["hiccups for kids", "why do we hiccup", "diaphragm", "human body for kids", "science for kids", "kids learning"],
   "cast": ["LEO", "MIA"],
-  "loop_card": {"text": "Why hiccups?", "cue": "next", "left": "😲", "right": "🫁"},
+  "loop_card": {"text": "Why hiccups?", "cue": "next", "left": "😲", "right": "img:Human_physiology/Servier/healthy-lung"},
   "lines": [
     {"who": "LEO", "text": "Mia, why do we get hiccups? Hic!", "board": {"type": "title", "left": {"icon": "😲", "label": "Hic!"}, "right": {"icon": "🤔", "label": "Why?"}, "mid": "?"}},
-    {"who": "MIA", "text": "It starts with a muscle under your lungs called the diaphragm. It helps you breathe in and out.", "punch": "diaphragm", "board": {"type": "big", "icon": "🫁", "text": "Meet the diaphragm", "cue": "diaphragm", "sub": "Under your lungs", "sub_cue": "under"}},
+    {"who": "MIA", "text": "It starts with a muscle under your lungs called the diaphragm. It helps you breathe in and out.", "punch": "diaphragm", "board": {"type": "big", "icon": "img:Human_physiology/Servier/healthy-lung", "text": "Meet the diaphragm", "cue": "diaphragm", "sub": "Under your lungs", "sub_cue": "under"}},
     {"who": "MIA", "text": "Usually it moves smoothly, down and up. But sometimes it gives a sudden little jump!", "board": {"type": "big", "icon": "⚡", "text": "A sudden little jump", "cue": "sudden"}},
     {"who": "LEO", "text": "And that makes the hic sound?"},
-    {"who": "MIA", "text": "Yes! The jump makes you suck in air fast. Then your vocal cords in your throat snap shut. Hic!", "board": {"type": "steps", "title": "How a hic happens", "items": [{"icon": "⬇️", "label": "Diaphragm jumps", "cue": "jump"}, {"icon": "💨", "label": "Air rushes in", "cue": "air"}, {"icon": "🚪", "label": "Vocal cords snap shut", "cue": "snap"}, {"icon": "🔊", "label": "Hic!", "cue": "hic"}]}},
+    {"who": "MIA", "text": "Yes! The jump makes you suck in air fast. Then your vocal cords in your throat snap shut. Hic!", "board": {"type": "body", "title": "Hic!", "show": ["lungs"], "flow": "air", "cue": "suck", "labels": [{"text": "Air in fast", "at": "lungs", "cue": "suck"}, {"text": "Hic!", "at": "mouth", "cue": "hic"}]}},
     {"who": "LEO", "text": "What makes the diaphragm jump?"},
     {"who": "MIA", "text": "Often it's eating too fast, gulping fizzy drinks, or laughing a lot. A very full tummy can bother it too.", "board": {"type": "gallery", "title": "Hiccup starters", "items": [{"icon": "⏩", "label": "Eating fast", "cue": "eating"}, {"icon": "🥤", "label": "Fizzy drinks", "cue": "fizzy"}, {"icon": "😂", "label": "Laughing", "cue": "laughing"}, {"icon": "🍽️", "label": "Full tummy", "cue": "full"}]}},
     {"who": "LEO", "text": "But why do we have hiccups at all?"},
     {"who": "MIA", "text": "That's a mystery! Scientists still aren't sure. Even babies hiccup, before they're born!", "punch": "mystery", "board": {"type": "big", "icon": "👶", "text": "Even babies hiccup!", "cue": "babies", "sub": "Scientists still wonder", "sub_cue": "scientists"}},
     {"who": "LEO", "text": "How do I make them stop?"},
     {"who": "MIA", "text": "Good news: hiccups usually stop on their own after a few minutes. Some people find that slow, calm breaths help.", "board": {"type": "big", "icon": "⏱️", "text": "They stop on their own", "cue": "stop", "sub": "Slow, calm breaths", "sub_cue": "slow"}},
-    {"who": "LEO", "text": "A jumpy diaphragm, a gulp of air, and the vocal cords go hic!", "board": {"type": "summary", "rows": [{"icon": "🫁", "text": "Jumpy diaphragm", "cue": "jumpy"}, {"icon": "💨", "text": "Gulp of air", "cue": "gulp"}, {"icon": "🔊", "text": "Snap! Hic!", "cue": "hic"}]}},
+    {"who": "LEO", "text": "A jumpy diaphragm, a gulp of air, and the vocal cords go hic!", "board": {"type": "summary", "rows": [{"icon": "img:Human_physiology/Servier/healthy-lung", "text": "Jumpy diaphragm", "cue": "jumpy"}, {"icon": "💨", "text": "Gulp of air", "cue": "gulp"}, {"icon": "img:Human_physiology/Servier/vocal-chord-phonation", "text": "Snap! Hic!", "cue": "hic"}]}},
     {"who": "MIA", "text": "Hic! Ha! Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... why do we get hiccups?"}
   ]
 }

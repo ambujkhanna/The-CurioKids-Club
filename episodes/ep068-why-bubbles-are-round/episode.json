@@ -67,7 +67,7 @@
       "text": "Kind of! That soapy skin is always pulling tight, like a stretchy hug squeezing the air inside.",
       "board": {
         "type": "big",
-        "icon": "🤗",
+        "icon": "🫧",
         "text": "The skin pulls tight",
         "cue": "pulling",
         "sub": "A stretchy squeeze",
@@ -147,12 +147,12 @@
         "type": "summary",
         "rows": [
           {
-            "icon": "🫧",
+            "icon": "🧼",
             "text": "A soapy skin",
             "cue": "skin"
           },
           {
-            "icon": "🤗",
+            "icon": "🫧",
             "text": "It squeezes tight",
             "cue": "squeezes"
           },

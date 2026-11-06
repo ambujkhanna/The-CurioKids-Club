@@ -178,10 +178,31 @@
       "who": "MIA",
       "text": "Inside that flower, new seeds form!",
       "board": {
-        "type": "big",
-        "icon": "🌻",
-        "text": "New seeds inside!",
-        "cue": "seeds"
+        "type": "cycle",
+        "title": "Seed to seed",
+        "center": "☀️",
+        "items": [
+          {
+            "icon": "🌰",
+            "label": "Seed",
+            "cue": "inside"
+          },
+          {
+            "icon": "🌱",
+            "label": "Sprout",
+            "cue": "that"
+          },
+          {
+            "icon": "🌼",
+            "label": "Flower",
+            "cue": "flower"
+          },
+          {
+            "icon": "✨",
+            "label": "New seeds",
+            "cue": "seeds"
+          }
+        ]
       }
     },
     {

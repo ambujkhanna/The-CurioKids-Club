@@ -67,12 +67,16 @@
       "who": "MIA",
       "text": "A bit! Earth takes one year to go around the Sun, and it keeps leaning the same way.",
       "board": {
-        "type": "big",
-        "icon": "☀️",
-        "text": "One trip = one year",
-        "cue": "year",
-        "sub": "Always leaning the same way",
-        "sub_cue": "leaning"
+        "type": "orbit",
+        "title": "One year trip",
+        "center": "☀️",
+        "items": [
+          {
+            "icon": "🌍",
+            "label": "Earth",
+            "cue": "earth"
+          }
+        ]
       }
     },
     {

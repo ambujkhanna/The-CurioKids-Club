@@ -95,7 +95,7 @@
       "text": "One big idea is that a yawn helps cool down your brain, with a big gulp of air.",
       "board": {
         "type": "big",
-        "icon": "🧠",
+        "icon": "img:Human_physiology/Servier/brain-1",
         "text": "Cooling your brain?",
         "cue": "cool",
         "sub": "A big gulp of air",

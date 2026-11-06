@@ -52,8 +52,8 @@
       "punch": "lunchbox",
       "board": {
         "type": "big",
-        "icon": "🍱",
-        "text": "A seed is a lunchbox",
+        "icon": "🌰",
+        "text": "Inside a seed",
         "cue": "lunchbox",
         "sub": "Baby plant + food",
         "sub_cue": "baby"
@@ -169,26 +169,28 @@
       "who": "LEO",
       "text": "So it goes seed, root, shoot, and then a tree!",
       "board": {
-        "type": "summary",
-        "rows": [
+        "type": "cycle",
+        "title": "Seed to tree",
+        "center": "☀️",
+        "items": [
           {
             "icon": "🌰",
-            "text": "Seed",
+            "label": "Seed",
             "cue": "seed"
           },
           {
             "icon": "⬇️",
-            "text": "Root",
+            "label": "Root",
             "cue": "root"
           },
           {
             "icon": "🌱",
-            "text": "Shoot",
+            "label": "Shoot",
             "cue": "shoot"
           },
           {
             "icon": "🌳",
-            "text": "Tree",
+            "label": "Tree",
             "cue": "tree"
           }
         ]

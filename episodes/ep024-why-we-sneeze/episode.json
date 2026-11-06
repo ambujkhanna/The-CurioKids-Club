@@ -36,7 +36,7 @@
       "board": {
         "type": "title",
         "left": {
-          "icon": "👃",
+          "icon": "img:Human_physiology/Servier/nasal-cavity",
           "label": "Nose"
         },
         "right": {
@@ -80,7 +80,7 @@
       "text": "Yes! Your nose feels the tickle and sends a quick message to your brain.",
       "board": {
         "type": "big",
-        "icon": "🧠",
+        "icon": "img:Human_physiology/Servier/brain-1",
         "text": "Nose tells the brain",
         "cue": "message",
         "sub": "Tickle alert!",
@@ -92,22 +92,28 @@
       "text": "Your brain says: blow it out! You take a big breath in, and then... achoo!",
       "punch": "achoo",
       "board": {
-        "type": "steps",
-        "title": "Here it comes",
-        "items": [
+        "type": "body",
+        "title": "Achoo!",
+        "show": [
+          "brain",
+          "lungs"
+        ],
+        "flow": "air",
+        "cue": "breath",
+        "labels": [
           {
-            "icon": "🧠",
-            "label": "Brain: blow it out!",
-            "cue": "blow"
+            "text": "Brain",
+            "at": "brain",
+            "cue": "brain"
           },
           {
-            "icon": "🌬️",
-            "label": "A big breath in",
+            "text": "Big breath",
+            "at": "lungs",
             "cue": "breath"
           },
           {
-            "icon": "🤧",
-            "label": "ACHOO!",
+            "text": "Achoo!",
+            "at": "nose",
             "cue": "achoo"
           }
         ]

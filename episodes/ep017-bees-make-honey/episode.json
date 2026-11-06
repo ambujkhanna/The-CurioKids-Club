@@ -153,27 +153,34 @@
       "who": "LEO",
       "text": "So they sip nectar, pass it around, fan it dry, and seal it up. Honey!",
       "board": {
-        "type": "summary",
-        "rows": [
+        "type": "journey",
+        "title": "Nectar to honey",
+        "traveler": "🐝",
+        "items": [
           {
             "icon": "🌸",
-            "text": "Sip nectar",
+            "label": "Sip nectar",
             "cue": "sip"
           },
           {
-            "icon": "🐝",
-            "text": "Pass it around",
+            "icon": "🔁",
+            "label": "Pass it on",
             "cue": "pass"
           },
           {
-            "icon": "🌬️",
-            "text": "Fan it dry",
+            "icon": "💨",
+            "label": "Fan it dry",
             "cue": "fan"
           },
           {
-            "icon": "🍯",
-            "text": "Seal it up",
+            "icon": "🔒",
+            "label": "Seal it up",
             "cue": "seal"
+          },
+          {
+            "icon": "🍯",
+            "label": "Honey!",
+            "cue": "honey"
           }
         ]
       }

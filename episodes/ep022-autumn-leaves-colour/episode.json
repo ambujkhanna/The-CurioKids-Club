@@ -140,23 +140,29 @@
       "who": "MIA",
       "text": "The tree lets them go, and rests all winter. Then in spring, brand new green leaves grow!",
       "board": {
-        "type": "steps",
-        "title": "Then what?",
+        "type": "cycle",
+        "title": "A tree's year",
+        "center": "🌳",
         "items": [
           {
             "icon": "🍂",
-            "label": "Leaves let go",
-            "cue": "go"
+            "label": "Leaves fall",
+            "cue": "lets"
           },
           {
-            "icon": "😴",
-            "label": "Tree rests in winter",
-            "cue": "rests"
+            "icon": "❄️",
+            "label": "Tree rests",
+            "cue": "winter"
           },
           {
             "icon": "🌱",
-            "label": "New leaves in spring",
+            "label": "New leaves",
             "cue": "spring"
+          },
+          {
+            "icon": "☀️",
+            "label": "Summer green",
+            "cue": "grow"
           }
         ]
       }

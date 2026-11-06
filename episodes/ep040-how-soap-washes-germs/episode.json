@@ -27,7 +27,7 @@
     "text": "How does soap work?",
     "cue": "next",
     "left": "🧼",
-    "right": "🦠"
+    "right": "img:Microbiology/Servier/bacterium"
   },
   "lines": [
     {
@@ -40,7 +40,7 @@
           "label": "Soap"
         },
         "right": {
-          "icon": "🦠",
+          "icon": "img:Microbiology/Servier/bacterium",
           "label": "Germs?"
         },
         "mid": "?"
@@ -51,7 +51,7 @@
       "text": "Germs are too tiny to see. Lots of them stick to the natural oils on our skin.",
       "board": {
         "type": "big",
-        "icon": "🦠",
+        "icon": "img:Microbiology/Servier/bacterium",
         "text": "Tiny germs",
         "cue": "germs",
         "sub": "Stuck in skin oils",
@@ -113,22 +113,23 @@
       "who": "DAD",
       "text": "Kind of! The soap bits grab the oil and germs and wrap them up in tiny bubbles. Soap can even break some germs apart.",
       "board": {
-        "type": "steps",
+        "type": "journey",
         "title": "Soap at work",
+        "traveler": "🦠",
         "items": [
           {
-            "label": "Grab the oil",
-            "icon": "🧲",
+            "icon": "🧼",
+            "label": "Soap grabs",
             "cue": "grab"
           },
           {
-            "label": "Wrap up the germs",
             "icon": "🫧",
+            "label": "Wrapped up",
             "cue": "wrap"
           },
           {
-            "label": "Break some germs apart",
             "icon": "💥",
+            "label": "Germs break",
             "cue": "break"
           }
         ]
@@ -158,7 +159,7 @@
       "board": {
         "type": "checklist",
         "title": "Hand washing",
-        "icon": "🧼",
+        "icon": "img:General_items/Servier/hand-washing",
         "items": [
           {
             "text": "Wet your hands",

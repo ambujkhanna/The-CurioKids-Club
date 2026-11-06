@@ -83,7 +83,7 @@
       "punch": "evaporation",
       "board": {
         "type": "big",
-        "icon": "💨",
+        "icon": "img:General_items/Servier/pot-water-hot",
         "text": "Evaporation!",
         "cue": "evaporation",
         "sub": "Water turns to vapour",
@@ -212,27 +212,28 @@
       "text": "Water rises, cools into clouds, falls as rain, and flows to the sea. That's the water cycle!",
       "punch": "cycle",
       "board": {
-        "type": "steps",
+        "type": "cycle",
         "title": "The water cycle",
+        "center": "☀️",
         "items": [
           {
-            "label": "Rises as vapour",
-            "icon": "⬆️",
+            "icon": "💧",
+            "label": "Water rises",
             "cue": "rises"
           },
           {
-            "label": "Cools into clouds",
             "icon": "☁️",
-            "cue": "cools"
+            "label": "Clouds form",
+            "cue": "clouds"
           },
           {
-            "label": "Falls as rain",
             "icon": "🌧️",
+            "label": "Rain falls",
             "cue": "falls"
           },
           {
-            "label": "Flows back to the sea",
             "icon": "🌊",
+            "label": "Back to sea",
             "cue": "flows"
           }
         ]

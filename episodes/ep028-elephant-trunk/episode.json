@@ -82,18 +82,29 @@
       "text": "Not quite! They suck water up into the trunk, then squirt it into their mouths.",
       "punch": "squirt",
       "board": {
-        "type": "steps",
-        "title": "Drink time",
+        "type": "journey",
+        "title": "Trunk drink",
+        "traveler": "💧",
         "items": [
           {
-            "icon": "💧",
-            "label": "Suck water up",
+            "icon": "🌊",
+            "label": "Suck up water",
             "cue": "suck"
           },
           {
             "icon": "🐘",
-            "label": "Squirt into mouth",
+            "label": "In the trunk",
+            "cue": "trunk"
+          },
+          {
+            "icon": "💦",
+            "label": "Squirt!",
             "cue": "squirt"
+          },
+          {
+            "icon": "👄",
+            "label": "Into mouth",
+            "cue": "mouths"
           }
         ]
       }
@@ -173,7 +184,7 @@
       "text": "And a trunk has no bones at all, just thousands of muscles. That's why it can bend every which way.",
       "board": {
         "type": "big",
-        "icon": "💪",
+        "icon": "img:Human_physiology/Servier/muscle-1",
         "text": "No bones, lots of muscles",
         "cue": "bones",
         "sub": "It bends every way",

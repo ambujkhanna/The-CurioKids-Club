@@ -107,7 +107,7 @@
       "punch": "tears",
       "board": {
         "type": "big",
-        "icon": "💧",
+        "icon": "img:Human_physiology/Servier/tear-duct",
         "text": "Tears wash it away",
         "cue": "tears",
         "sub": "Eyes protect themselves",
@@ -150,22 +150,29 @@
       "who": "LEO",
       "text": "So cutting breaks the cells, the gas floats up, and my eyes wash it away!",
       "board": {
-        "type": "summary",
-        "rows": [
+        "type": "journey",
+        "title": "Onion tears",
+        "traveler": "💨",
+        "items": [
           {
             "icon": "🧅",
-            "text": "Cells break",
-            "cue": "cutting"
+            "label": "Cells break",
+            "cue": "breaks"
           },
           {
             "icon": "💨",
-            "text": "Gas floats up",
-            "cue": "gas"
+            "label": "Gas floats up",
+            "cue": "floats"
+          },
+          {
+            "icon": "👀",
+            "label": "Eyes sting",
+            "cue": "eyes"
           },
           {
             "icon": "💧",
-            "text": "Tears wash it",
-            "cue": "eyes"
+            "label": "Tears wash",
+            "cue": "wash"
           }
         ]
       }

@@ -97,23 +97,29 @@
       "who": "MIA",
       "text": "Lightning heats the air so fast that the air bursts outward with a BOOM. That boom is thunder!",
       "board": {
-        "type": "steps",
+        "type": "journey",
         "title": "Making thunder",
+        "traveler": "💨",
         "items": [
           {
-            "label": "Lightning flash",
             "icon": "⚡",
+            "label": "Lightning",
             "cue": "lightning"
           },
           {
-            "label": "Air heats super fast",
-            "icon": "🔥",
+            "icon": "🌡️",
+            "label": "Hot air",
             "cue": "heats"
           },
           {
+            "icon": "💥",
             "label": "BOOM!",
-            "icon": "🔊",
             "cue": "boom"
+          },
+          {
+            "icon": "🔊",
+            "label": "Thunder",
+            "cue": "thunder"
           }
         ]
       }

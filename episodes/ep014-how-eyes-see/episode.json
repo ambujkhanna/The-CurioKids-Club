@@ -36,7 +36,7 @@
       "board": {
         "type": "title",
         "left": {
-          "icon": "👀",
+          "icon": "img:Human_physiology/Servier/eye",
           "label": "Eyes"
         },
         "right": {
@@ -68,7 +68,7 @@
       "text": "Through the black dot in the middle of your eye. It's called the pupil, and it's really a little hole!",
       "board": {
         "type": "big",
-        "icon": "⚫",
+        "icon": "img:Human_physiology/Servier/eye",
         "text": "The pupil: a tiny hole",
         "cue": "pupil",
         "sub": "Lets the light in",
@@ -120,12 +120,12 @@
         "items": [
           {
             "label": "Lens focuses light",
-            "icon": "🔍",
+            "icon": "img:Human_physiology/Servier/eye-crosssection",
             "cue": "lens"
           },
           {
             "label": "Picture on the back",
-            "icon": "🎯",
+            "icon": "img:Human_physiology/Servier/retina",
             "cue": "back"
           },
           {
@@ -145,7 +145,7 @@
       "text": "That's your brain's job! Your eye sends a message to your brain, and it flips the picture the right way up.",
       "board": {
         "type": "big",
-        "icon": "🧠",
+        "icon": "img:Human_physiology/Servier/brain-1",
         "text": "Your brain flips it!",
         "cue": "flips",
         "sub": "A message from the eye",
@@ -168,21 +168,23 @@
       "who": "LEO",
       "text": "So light comes in, the lens focuses it, and my brain flips the picture. Wow!",
       "board": {
-        "type": "summary",
-        "rows": [
+        "type": "journey",
+        "title": "Light's trip",
+        "traveler": "✨",
+        "items": [
           {
-            "text": "Light comes in",
             "icon": "💡",
+            "label": "Light comes in",
             "cue": "light"
           },
           {
-            "text": "Lens focuses it",
-            "icon": "🔍",
+            "icon": "img:Human_physiology/Servier/eye-crosssection",
+            "label": "Lens focuses",
             "cue": "lens"
           },
           {
-            "text": "Brain flips it",
             "icon": "🧠",
+            "label": "Brain flips it",
             "cue": "brain"
           }
         ]

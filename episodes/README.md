@@ -62,6 +62,17 @@ Aim for 1–4 words per label and up to about 5 words for `big` text. Poems show
 | `checklist` | `title`, `icon`, `items`: up to 4 × `{text ≤ 26, icon, cue, ok: true/false}` |
 | `summary` | `rows`: up to 4 × `{text ≤ 26, icon, cue}` |
 
+### Animated diagrams (use them whenever the topic shows a process; they make the video much clearer)
+
+| type | what it shows | fields |
+|---|---|---|
+| `body` | friendly kid-body outline; organs; **animated flow** | `title`, `show`: list from heart, lungs, brain, stomach, bones, eyes, ears, muscles; `flow`: `blood` (red out from the heart / blue back), `nerves` (sparks from the brain to hands and feet), `air` (in and out of the lungs), `food` (mouth → stomach); `cue`: the word when the flow starts; `labels`: up to 4 × `{text ≤ 12, at: body part, cue}` (parts: brain, head, eyes, ears, nose, mouth, lungs, heart, stomach, arm, hand, leg, foot, muscles, skin, bones) |
+| `cycle` | 3–6 steps in an oval with arrows; a glowing dot keeps going round | `title`, `center` (emoji, optional), `items`: `{icon, label ≤ 14, cue}`. Water cycle, life cycles, seasons, plant growth |
+| `journey` | 2–5 stops on a dotted road; a traveller emoji moves to each stop as it is spoken | `title`, `traveler` (emoji), `items`: `{icon, label ≤ 14, cue}`. Sound to the ear, light to the eye, nectar → honey, food → energy |
+| `orbit` | the Sun (or any `center`) with 1–4 things circling it | `title`, `center`, `items`: `{icon, label ≤ 10, cue}`. Planets, Moon around Earth, seasons (Earth around the Sun). Not for day and night: that comes from Earth spinning |
+
+The camera automatically stays on the stage while a diagram is showing. Use at most 2 diagrams per episode, and keep the other scenes as they are.
+
 ## Writing rules
 
 - **Audience:** ages 4–9 (parents watch too). Use short sentences and everyday words, one idea per line.

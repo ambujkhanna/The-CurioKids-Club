@@ -32,9 +32,26 @@ def oval_p(cx, cy, rx, ry):
     p = skia.Path(); p.addOval(ell(cx, cy, rx, ry)); return p
 
 
+SHADE = 1.0  # strength of the light/shadow gradient on every filled shape (0 = flat colours)
+
+
+def shade_paint(path, k=1.0, fx=True):
+    """Soft volume: light from the top-left, shadow towards the bottom-right, over the flat fill."""
+    b = path.computeTightBounds(); w, h = max(b.width(), 1.0), max(b.height(), 1.0)
+    p = skia.Paint(AntiAlias=True)
+    p.setShader(skia.GradientShader.MakeLinear(
+        [skia.Point(b.left() + w * 0.15, b.top()), skia.Point(b.right(), b.bottom())],
+        [skia.Color(255, 255, 255, int(95 * k)), skia.Color(255, 255, 255, 0), skia.Color(0, 0, 0, 0), skia.Color(20, 10, 40, int(70 * k))],
+        [0.0, 0.38, 0.55, 1.0]))
+    if fx: doodle.apply_char(p, False)
+    return p
+
+
 def F(c, path, col, lw=LW, a=1.0):
     if doodle.CHARS:  # marker fill slightly off the ink line + a second sketchy pass
-        c.save(); c.translate(3.5, 2.5); c.drawPath(path, P(col, a=a)); c.restore()
+        c.save(); c.translate(3.5, 2.5); c.drawPath(path, P(col, a=a))
+        if SHADE: c.drawPath(path, shade_paint(path, SHADE))
+        c.restore()
         if lw:
             c.drawPath(path, P(INK, lw))
             seed = doodle.SEED; doodle.SEED = seed + 57
@@ -42,6 +59,7 @@ def F(c, path, col, lw=LW, a=1.0):
             doodle.SEED = seed
         return
     c.drawPath(path, P(col, a=a))
+    if SHADE: c.drawPath(path, shade_paint(path, SHADE))
     if lw:
         c.drawPath(path, P(INK, lw))
 

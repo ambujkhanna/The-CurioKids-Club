@@ -26,7 +26,7 @@
   "loop_card": {
     "text": "How do muscles work?",
     "cue": "next",
-    "left": "💪",
+    "left": "img:Human_physiology/Servier/muscle-1",
     "right": "🦴"
   },
   "lines": [
@@ -36,7 +36,7 @@
       "board": {
         "type": "title",
         "left": {
-          "icon": "💪",
+          "icon": "img:Human_physiology/Servier/muscle-1",
           "label": "Muscles"
         },
         "right": {
@@ -50,12 +50,29 @@
       "who": "MIA",
       "text": "Muscles are like stretchy bands tied to your bones. When a muscle gets shorter, it pulls a bone, and you move!",
       "board": {
-        "type": "big",
-        "icon": "🦴",
-        "text": "Muscles pull on bones",
-        "cue": "pulls",
-        "sub": "And you move!",
-        "sub_cue": "move"
+        "type": "body",
+        "title": "Pull and move",
+        "show": [
+          "muscles",
+          "bones"
+        ],
+        "labels": [
+          {
+            "text": "Muscle",
+            "at": "muscles",
+            "cue": "muscles"
+          },
+          {
+            "text": "Bone",
+            "at": "bones",
+            "cue": "bone"
+          },
+          {
+            "text": "Move!",
+            "at": "leg",
+            "cue": "move"
+          }
+        ]
       }
     },
     {
@@ -98,7 +115,7 @@
       "punch": "pull",
       "board": {
         "type": "big",
-        "icon": "🤝",
+        "icon": "💪",
         "text": "Muscles work in pairs",
         "cue": "teams",
         "sub": "One bends, one straightens",
@@ -114,7 +131,7 @@
       "text": "Kind of! With a grown-up, feel your upper arm and bend your elbow. Feel that bump? That's your muscle!",
       "board": {
         "type": "big",
-        "icon": "💪",
+        "icon": "img:Human_physiology/Servier/muscle-3",
         "text": "Feel your muscle bump",
         "cue": "bump",
         "sub": "Try it with a grown-up",
@@ -129,12 +146,20 @@
       "who": "MIA",
       "text": "Yes! Your heart is a muscle. It pumps all day and all night, even while you sleep.",
       "board": {
-        "type": "big",
-        "icon": "❤️",
-        "text": "Your heart is a muscle!",
-        "cue": "heart",
-        "sub": "Works day and night",
-        "sub_cue": "night"
+        "type": "body",
+        "title": "Heart muscle",
+        "show": [
+          "heart"
+        ],
+        "flow": "blood",
+        "cue": "pumps",
+        "labels": [
+          {
+            "text": "Heart",
+            "at": "heart",
+            "cue": "heart"
+          }
+        ]
       }
     },
     {
@@ -177,17 +202,17 @@
         "type": "summary",
         "rows": [
           {
-            "icon": "🦴",
+            "icon": "img:Human_physiology/Servier/muscle-1",
             "text": "Muscles pull",
             "cue": "pull"
           },
           {
-            "icon": "🤝",
+            "icon": "💪",
             "text": "They work in pairs",
             "cue": "pairs"
           },
           {
-            "icon": "❤️",
+            "icon": "img:Human_physiology/Servier/heart-front",
             "text": "Your heart is one too",
             "cue": "heart"
           }

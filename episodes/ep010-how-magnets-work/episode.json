@@ -142,7 +142,7 @@
           "items": [
             {
               "text": "North + South",
-              "icon": "🤝",
+              "icon": "🧲",
               "cue": "together"
             }
           ]
@@ -152,7 +152,7 @@
           "items": [
             {
               "text": "North + North",
-              "icon": "🙅",
+              "icon": "↔️",
               "cue": "push"
             }
           ]

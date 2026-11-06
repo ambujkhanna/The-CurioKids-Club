@@ -85,7 +85,7 @@
       "punch": "fewer",
       "board": {
         "type": "big",
-        "icon": "🐴",
+        "icon": "img:Animals/Servier/horse",
         "text": "Striped coats on horses",
         "cue": "horses",
         "sub": "Fewer flies landed!",
@@ -152,7 +152,7 @@
       "text": "Under its fur, a zebra's skin is dark. So lots of people say it's black with white stripes!",
       "board": {
         "type": "big",
-        "icon": "🖤",
+        "icon": "🦓",
         "text": "Dark skin underneath",
         "cue": "skin",
         "sub": "Black with white stripes",

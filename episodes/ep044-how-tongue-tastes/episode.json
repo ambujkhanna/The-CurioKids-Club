@@ -52,7 +52,7 @@
       "punch": "thousands",
       "board": {
         "type": "big",
-        "icon": "👅",
+        "icon": "img:Human_physiology/Servier/taste-buds",
         "text": "Thousands of taste buds",
         "cue": "taste",
         "sub": "Hiding in tiny bumps",
@@ -67,22 +67,23 @@
       "who": "MIA",
       "text": "First, spit makes the food wet. Then your taste buds sense it and send a message to your brain.",
       "board": {
-        "type": "steps",
-        "title": "How tasting works",
+        "type": "journey",
+        "title": "Taste trip",
+        "traveler": "🍎",
         "items": [
           {
-            "label": "Spit makes food wet",
-            "icon": "💧",
+            "icon": "💦",
+            "label": "Spit",
             "cue": "spit"
           },
           {
-            "label": "Taste buds sense it",
-            "icon": "👅",
-            "cue": "sense"
+            "icon": "img:Human_physiology/Servier/papillae",
+            "label": "Taste buds",
+            "cue": "taste"
           },
           {
-            "label": "Brain says yum!",
-            "icon": "🧠",
+            "icon": "img:Human_physiology/Servier/brain-1",
+            "label": "Brain",
             "cue": "brain"
           }
         ]
@@ -207,7 +208,7 @@
         "rows": [
           {
             "text": "Thousands of taste buds",
-            "icon": "👅",
+            "icon": "img:Human_physiology/Servier/taste-buds",
             "cue": "taste"
           },
           {

@@ -1,0 +1,672 @@
+{
+  "id": "L06",
+  "slug": "brain-and-nerves",
+  "status": "ready",
+  "short_id": "ep072",
+  "title": "How Does Your Brain Talk to Your Body? 🧠 Nerves & Senses for Kids",
+  "cover_text": "BRAIN MAIL!",
+  "description": "Meet your brain, follow its super-fast nerve messages, and find out how your five senses work! Leo asks, big sister Mia explains, with reflexes and a quiz at the end.\n\nWant the 60-second version? It's on our Shorts tab.\n\nThe CurioKids Club: curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#HumanBody",
+    "#Brain",
+    "#ScienceForKids"
+  ],
+  "tags": [
+    "brain for kids",
+    "how nerves work",
+    "nervous system for kids",
+    "five senses for kids",
+    "reflexes for kids",
+    "human body for kids",
+    "science for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Brain to body?",
+    "cue": "next",
+    "left": "img:Human_physiology/Servier/brain-1",
+    "right": "🖐️"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, how does my brain talk to the rest of my body?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "img:Human_physiology/Servier/brain-1",
+          "label": "Brain"
+        },
+        "right": {
+          "icon": "🖐️",
+          "label": "Body"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "With super-fast messages! Today we'll meet your brain, follow its messages, and find out how your senses work.",
+      "board": {
+        "type": "big",
+        "icon": "⚡",
+        "text": "Super-fast messages",
+        "cue": "super",
+        "sub": "And your senses!",
+        "sub_cue": "senses"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "My senses? Like seeing and hearing?"
+    },
+    {
+      "who": "MIA",
+      "text": "Exactly! But first, let's meet the boss.",
+      "board": {
+        "type": "big",
+        "icon": "img:Human_physiology/Servier/brain-1",
+        "text": "Meet the boss!",
+        "cue": "boss"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Your brain lives in your head, safe inside your skull. Your skull is like a built-in helmet!",
+      "chapter": "Meet your brain",
+      "board": {
+        "type": "big",
+        "icon": "🪖",
+        "text": "Safe in your skull",
+        "cue": "skull",
+        "sub": "A built-in helmet",
+        "sub_cue": "helmet"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What does my brain look like?"
+    },
+    {
+      "who": "MIA",
+      "text": "It's soft and wrinkly, a bit like a giant walnut.",
+      "board": {
+        "type": "big",
+        "icon": "🌰",
+        "text": "Soft and wrinkly",
+        "cue": "wrinkly",
+        "sub": "Like a walnut",
+        "sub_cue": "walnut"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And what's it made of?"
+    },
+    {
+      "who": "MIA",
+      "text": "Billions of tiny cells called neurons. They're also called nerve cells.",
+      "punch": "neurons",
+      "board": {
+        "type": "big",
+        "icon": "img:Cell_types/almaCELL/Neurons",
+        "text": "Neurons",
+        "cue": "neurons",
+        "sub": "Tiny nerve cells",
+        "sub_cue": "nerve"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What does my brain actually do?"
+    },
+    {
+      "who": "MIA",
+      "text": "Everything! It helps you think, remember, feel, move, and even dream.",
+      "board": {
+        "type": "gallery",
+        "title": "Your brain helps you",
+        "items": [
+          {
+            "icon": "🤔",
+            "label": "Think",
+            "cue": "think"
+          },
+          {
+            "icon": "💭",
+            "label": "Remember",
+            "cue": "remember"
+          },
+          {
+            "icon": "❤️",
+            "label": "Feel",
+            "cue": "feel"
+          },
+          {
+            "icon": "🏃",
+            "label": "Move",
+            "cue": "move"
+          },
+          {
+            "icon": "😴",
+            "label": "Dream",
+            "cue": "dream"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Even when I'm asleep?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! It never fully switches off. While you sleep, it helps keep your heart beating and you breathing.",
+      "board": {
+        "type": "big",
+        "icon": "😴",
+        "text": "Never switches off",
+        "cue": "switches",
+        "sub": "Heart and breathing",
+        "sub_cue": "heart"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "But how does my brain tell my hand to wave?",
+      "chapter": "Nerve messages"
+    },
+    {
+      "who": "MIA",
+      "text": "Through nerves! Nerves are long lines of nerve cells that reach every part of your body, like tiny wires.",
+      "punch": "nerves",
+      "board": {
+        "type": "big",
+        "icon": "⚡",
+        "text": "Nerves: tiny wires",
+        "cue": "nerves",
+        "sub": "To every part of you",
+        "sub_cue": "every"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Real wires? Inside me?"
+    },
+    {
+      "who": "MIA",
+      "text": "Not metal wires! Living cells. Each nerve cell passes the message to the next one, like a relay race.",
+      "board": {
+        "type": "big",
+        "icon": "🏃",
+        "text": "Cell to cell",
+        "cue": "passes",
+        "sub": "Like a relay race",
+        "sub_cue": "relay"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How do messages get all the way down to my toes?"
+    },
+    {
+      "who": "MIA",
+      "text": "Down your back runs your spinal cord, a big bundle of nerves. It's like a highway for messages.",
+      "board": {
+        "type": "big",
+        "icon": "🛣️",
+        "text": "The spinal cord",
+        "cue": "spinal",
+        "sub": "A message highway",
+        "sub_cue": "highway"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So when I want to kick a ball..."
+    },
+    {
+      "who": "MIA",
+      "text": "Your brain sends a message down your spinal cord, out along a nerve, to your leg muscles. Kick!",
+      "board": {
+        "type": "body",
+        "title": "Kick message",
+        "show": [
+          "brain",
+          "muscles"
+        ],
+        "flow": "nerves",
+        "cue": "sends",
+        "labels": [
+          {
+            "text": "Brain",
+            "at": "brain",
+            "cue": "brain"
+          },
+          {
+            "text": "Kick!",
+            "at": "leg",
+            "cue": "kick"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And it all happens in a blink!"
+    },
+    {
+      "who": "MIA",
+      "text": "Messages go both ways! Down from your brain, they tell muscles to move. Up to your brain, they tell it what you sense.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Down",
+          "items": [
+            {
+              "icon": "🏃",
+              "text": "Move!",
+              "cue": "move"
+            }
+          ]
+        },
+        "right": {
+          "label": "Up",
+          "items": [
+            {
+              "icon": "👀",
+              "text": "Sense!",
+              "cue": "sense"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So what are my senses?",
+      "chapter": "Your five senses"
+    },
+    {
+      "who": "MIA",
+      "text": "You have five main senses: sight, hearing, smell, taste and touch. Each one sends news to your brain.",
+      "board": {
+        "type": "gallery",
+        "title": "Five senses",
+        "items": [
+          {
+            "icon": "👀",
+            "label": "Sight",
+            "cue": "sight"
+          },
+          {
+            "icon": "👂",
+            "label": "Hearing",
+            "cue": "hearing"
+          },
+          {
+            "icon": "👃",
+            "label": "Smell",
+            "cue": "smell"
+          },
+          {
+            "icon": "👅",
+            "label": "Taste",
+            "cue": "taste"
+          },
+          {
+            "icon": "✋",
+            "label": "Touch",
+            "cue": "touch"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Let's start with seeing!"
+    },
+    {
+      "who": "MIA",
+      "text": "Light bounces off things and goes into your eyes. Your eyes turn the light into nerve messages and send them to your brain.",
+      "board": {
+        "type": "journey",
+        "title": "How you see",
+        "traveler": "✨",
+        "items": [
+          {
+            "icon": "💡",
+            "label": "Light bounces",
+            "cue": "light"
+          },
+          {
+            "icon": "img:Human_physiology/Servier/eye",
+            "label": "Into your eye",
+            "cue": "eyes"
+          },
+          {
+            "icon": "⚡",
+            "label": "Nerve message",
+            "cue": "nerve"
+          },
+          {
+            "icon": "img:Human_physiology/Servier/brain-1",
+            "label": "Brain: I see!",
+            "cue": "brain"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So I really see with my brain?"
+    },
+    {
+      "who": "MIA",
+      "text": "In a way, yes! Your eyes catch the light, but your brain works out what the picture means.",
+      "board": {
+        "type": "big",
+        "icon": "img:Human_physiology/Servier/eye",
+        "text": "Eyes catch light",
+        "cue": "eyes",
+        "sub": "Brain makes the picture",
+        "sub_cue": "brain"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What about hearing?"
+    },
+    {
+      "who": "MIA",
+      "text": "Sounds are tiny wiggles in the air called vibrations. Your ears catch them and send messages to your brain.",
+      "board": {
+        "type": "big",
+        "icon": "img:Human_physiology/Servier/ear",
+        "text": "Sounds are wiggles",
+        "cue": "sounds",
+        "sub": "Ears catch them",
+        "sub_cue": "ears"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And smelling?"
+    },
+    {
+      "who": "MIA",
+      "text": "When you sniff, tiny bits from a cookie float into your nose. Special cells there tell your brain: cookies!",
+      "board": {
+        "type": "big",
+        "icon": "img:Human_physiology/Servier/nasal-cavity",
+        "text": "Sniff, sniff!",
+        "cue": "sniff",
+        "sub": "Smell cells in your nose",
+        "sub_cue": "nose"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Yum! What about taste?"
+    },
+    {
+      "who": "MIA",
+      "text": "Your tongue is covered in tiny taste buds. They can tell sweet, salty, sour and bitter.",
+      "board": {
+        "type": "gallery",
+        "title": "Taste buds",
+        "items": [
+          {
+            "icon": "🍭",
+            "label": "Sweet",
+            "cue": "sweet"
+          },
+          {
+            "icon": "🥨",
+            "label": "Salty",
+            "cue": "salty"
+          },
+          {
+            "icon": "🍋",
+            "label": "Sour",
+            "cue": "sour"
+          },
+          {
+            "icon": "🥦",
+            "label": "Bitter",
+            "cue": "bitter"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And the last sense is touch?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Your skin is full of tiny sensors. They feel soft, rough, hot, cold, and even tickles!",
+      "board": {
+        "type": "big",
+        "icon": "img:Human_physiology/Servier/skin-normal",
+        "text": "Skin feels it all",
+        "cue": "skin",
+        "sub": "Even tickles!",
+        "sub_cue": "tickles"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Tickles! My favorite sense!"
+    },
+    {
+      "who": "MIA",
+      "text": "Sometimes your body moves before your brain even thinks. That's called a reflex.",
+      "chapter": "Super-fast reflexes",
+      "punch": "reflex",
+      "board": {
+        "type": "big",
+        "icon": "⚡",
+        "text": "Move before you think",
+        "cue": "moves",
+        "sub": "That's a reflex!",
+        "sub_cue": "reflex"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Like what?"
+    },
+    {
+      "who": "MIA",
+      "text": "Touch something too hot, and a message zooms to your spinal cord, which says: pull away! Your hand moves before you even feel ouch.",
+      "board": {
+        "type": "journey",
+        "title": "Hot! Pull away!",
+        "traveler": "⚡",
+        "items": [
+          {
+            "icon": "🔥",
+            "label": "Too hot!",
+            "cue": "hot"
+          },
+          {
+            "icon": "🛣️",
+            "label": "Spinal cord",
+            "cue": "spinal"
+          },
+          {
+            "icon": "✋",
+            "label": "Pull away!",
+            "cue": "pull"
+          },
+          {
+            "icon": "img:Human_physiology/Servier/brain-1",
+            "label": "Then: ouch!",
+            "cue": "ouch"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Whoa, my body protects me all by itself!"
+    },
+    {
+      "who": "MIA",
+      "text": "Blinking is a reflex too. If something flies at your face, your eyes blink shut to keep them safe.",
+      "board": {
+        "type": "big",
+        "icon": "😉",
+        "text": "Blink! A reflex too",
+        "cue": "blinking",
+        "sub": "Keeps eyes safe",
+        "sub_cue": "safe"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How can I take care of my brain?"
+    },
+    {
+      "who": "MIA",
+      "text": "Wear a helmet when you ride your bike, get lots of sleep, drink water, and keep learning new things!",
+      "board": {
+        "type": "checklist",
+        "title": "Brain care",
+        "icon": "🧠",
+        "items": [
+          {
+            "icon": "🪖",
+            "text": "Wear a helmet",
+            "cue": "helmet",
+            "ok": true
+          },
+          {
+            "icon": "😴",
+            "text": "Lots of sleep",
+            "cue": "sleep",
+            "ok": true
+          },
+          {
+            "icon": "💧",
+            "text": "Drink water",
+            "cue": "water",
+            "ok": true
+          },
+          {
+            "icon": "📚",
+            "text": "Keep learning",
+            "cue": "learning",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Quiz time! Question one: what's the big highway of nerves down your back called? Think...",
+      "chapter": "Quiz time",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "Quiz time!",
+        "cue": "quiz",
+        "sub": "Nerve highway?",
+        "sub_cue": "highway"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "The spinal cord!",
+      "board": {
+        "type": "big",
+        "icon": "🛣️",
+        "text": "Spinal cord!",
+        "cue": "spinal"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Question two: where do your taste buds live? Think...",
+      "board": {
+        "type": "big",
+        "icon": "🤔",
+        "text": "Where are taste buds?",
+        "cue": "taste"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "On my tongue!",
+      "board": {
+        "type": "big",
+        "icon": "👅",
+        "text": "On your tongue!",
+        "cue": "tongue"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Right! Last one: when your hand jumps away from something hot, what's that called? Think...",
+      "board": {
+        "type": "big",
+        "icon": "🔥",
+        "text": "Hot! What's that?",
+        "cue": "hot"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "A reflex!",
+      "board": {
+        "type": "big",
+        "icon": "⚡",
+        "text": "A reflex!",
+        "cue": "reflex"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Amazing! So: your brain is the boss, nerves carry messages both ways, and your senses send news to your brain.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "img:Human_physiology/Servier/brain-1",
+            "text": "Brain is the boss",
+            "cue": "brain"
+          },
+          {
+            "icon": "img:Cell_types/almaCELL/Neurons",
+            "text": "Nerves carry messages",
+            "cue": "nerves"
+          },
+          {
+            "icon": "👀",
+            "text": "Senses send news",
+            "cue": "senses"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "My brain is the boss... of fun!",
+      "board": {
+        "type": "big",
+        "icon": "🎉",
+        "text": "Boss of fun!",
+        "cue": "boss"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "It sure is! Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... how does my brain talk to my body?"
+    }
+  ]
+}

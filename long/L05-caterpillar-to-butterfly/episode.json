@@ -1,0 +1,567 @@
+{
+  "id": "L05",
+  "slug": "caterpillar-to-butterfly",
+  "status": "ready",
+  "short_id": "ep066",
+  "title": "How Does a Caterpillar Become a Butterfly? 🦋 Metamorphosis for Kids",
+  "cover_text": "BIG CHANGE!",
+  "description": "Follow one tiny egg all the way to a butterfly: hungry caterpillars, the chrysalis, and the amazing change called metamorphosis! Leo asks, big sister Mia explains, with a quiz at the end.\n\nWant the 60-second version? It's on our Shorts tab.\n\nThe CurioKids Club: curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#AnimalFacts",
+    "#Butterfly",
+    "#ScienceForKids"
+  ],
+  "tags": [
+    "butterfly life cycle for kids",
+    "caterpillar to butterfly",
+    "metamorphosis for kids",
+    "chrysalis",
+    "animal facts",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Caterpillar to butterfly?",
+    "cue": "next",
+    "left": "🐛",
+    "right": "🦋"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, how does a crawly caterpillar turn into a butterfly with wings?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🐛",
+          "label": "Caterpillar"
+        },
+        "right": {
+          "icon": "🦋",
+          "label": "Butterfly"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "It's one of the biggest changes in nature! Today we'll follow one tiny egg all the way to a butterfly.",
+      "board": {
+        "type": "big",
+        "icon": "✨",
+        "text": "The biggest change!",
+        "cue": "biggest",
+        "sub": "From egg to wings",
+        "sub_cue": "egg"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Wait, it starts as an egg?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yep! And this change has a special name: metamorphosis. It means a big change in shape.",
+      "punch": "metamorphosis",
+      "board": {
+        "type": "big",
+        "icon": "🔄",
+        "text": "Metamorphosis",
+        "cue": "metamorphosis",
+        "sub": "A big change in shape",
+        "sub_cue": "shape"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Meta-mor-pho-sis. Got it! Let's go!"
+    },
+    {
+      "who": "MIA",
+      "text": "First, a mother butterfly looks for just the right plant. She tastes the leaves with her feet!",
+      "chapter": "A tiny egg",
+      "board": {
+        "type": "big",
+        "icon": "🦋",
+        "text": "Find the right plant",
+        "cue": "plant",
+        "sub": "Taste with feet!",
+        "sub_cue": "feet"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "With her feet? That's so silly!"
+    },
+    {
+      "who": "MIA",
+      "text": "Then she lays tiny eggs, often under a leaf, where they stay hidden. Each egg is about as small as a pinhead!",
+      "board": {
+        "type": "steps",
+        "title": "Egg time",
+        "items": [
+          {
+            "icon": "🥚",
+            "label": "Tiny eggs",
+            "cue": "eggs"
+          },
+          {
+            "icon": "🍃",
+            "label": "Under a leaf",
+            "cue": "under"
+          },
+          {
+            "icon": "📌",
+            "label": "Pinhead small",
+            "cue": "pinhead"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And what comes out of the egg?"
+    },
+    {
+      "who": "MIA",
+      "text": "A teeny caterpillar! And guess what its very first meal often is? Its own eggshell!",
+      "punch": "eggshell",
+      "board": {
+        "type": "big",
+        "icon": "🥚",
+        "text": "First snack: eggshell!",
+        "cue": "eggshell"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Then what does it eat?",
+      "chapter": "Hungry caterpillar"
+    },
+    {
+      "who": "MIA",
+      "text": "Leaves, leaves and more leaves! A caterpillar is like a tiny eating machine. Its main job is to eat and grow.",
+      "board": {
+        "type": "big",
+        "icon": "🍃",
+        "text": "A tiny eating machine",
+        "cue": "machine",
+        "sub": "Eat and grow!",
+        "sub_cue": "grow"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "That sounds like the best job ever!"
+    },
+    {
+      "who": "MIA",
+      "text": "Each kind of caterpillar likes its own plants. Monarch caterpillars only eat milkweed leaves.",
+      "board": {
+        "type": "big",
+        "icon": "🌿",
+        "text": "Each kind, its own plant",
+        "cue": "kind",
+        "sub": "Monarchs: milkweed",
+        "sub_cue": "milkweed"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "But if it eats so much, won't its skin get too tight?"
+    },
+    {
+      "who": "MIA",
+      "text": "Great thinking! Its skin can't stretch forever. So it wriggles out of its old skin, and there's a new, bigger skin underneath.",
+      "board": {
+        "type": "journey",
+        "title": "Growing up",
+        "traveler": "🐛",
+        "items": [
+          {
+            "icon": "👕",
+            "label": "Tight skin",
+            "cue": "skin"
+          },
+          {
+            "icon": "🌀",
+            "label": "Wriggle out",
+            "cue": "wriggles"
+          },
+          {
+            "icon": "✨",
+            "label": "Bigger skin",
+            "cue": "bigger"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Like taking off a sweater that's too small!"
+    },
+    {
+      "who": "MIA",
+      "text": "Exactly! It does this a few times, and each time it gets bigger and bigger.",
+      "board": {
+        "type": "big",
+        "icon": "📏",
+        "text": "A few new skins",
+        "cue": "few",
+        "sub": "Bigger and bigger!",
+        "sub_cue": "bigger"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And when it's big enough?",
+      "chapter": "The chrysalis"
+    },
+    {
+      "who": "MIA",
+      "text": "It finds a safe spot and hangs upside down, often in a little J shape.",
+      "board": {
+        "type": "big",
+        "icon": "🙃",
+        "text": "Hang upside down",
+        "cue": "hangs",
+        "sub": "Like a letter J",
+        "sub_cue": "j"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Is it doing a trick?"
+    },
+    {
+      "who": "MIA",
+      "text": "Kind of! Its skin splits one last time, and underneath is a hard, shiny case. That case is called a chrysalis.",
+      "punch": "chrysalis",
+      "board": {
+        "type": "big",
+        "icon": "🎁",
+        "text": "A hard, shiny case",
+        "cue": "hard",
+        "sub": "Called a chrysalis",
+        "sub_cue": "chrysalis"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Is that the same as a cocoon?"
+    },
+    {
+      "who": "MIA",
+      "text": "Not quite! Moth caterpillars usually spin a cocoon out of silk. Butterflies make a chrysalis from their own skin.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Moths",
+          "items": [
+            {
+              "icon": "🧶",
+              "text": "Silk cocoon",
+              "cue": "cocoon"
+            }
+          ]
+        },
+        "right": {
+          "label": "Butterflies",
+          "items": [
+            {
+              "icon": "🎁",
+              "text": "Chrysalis",
+              "cue": "chrysalis"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So what's happening in there? Is it sleeping?"
+    },
+    {
+      "who": "MIA",
+      "text": "It looks still, but inside it's super busy! Much of the caterpillar's body breaks down into a kind of goo.",
+      "board": {
+        "type": "big",
+        "icon": "🌀",
+        "text": "Super busy inside!",
+        "cue": "busy",
+        "sub": "Turns into goo",
+        "sub_cue": "goo"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Goo?! Then how does it become a butterfly?"
+    },
+    {
+      "who": "MIA",
+      "text": "Some special groups of cells were waiting inside all along. They use the goo like building blocks to make a brand-new body.",
+      "board": {
+        "type": "big",
+        "icon": "🧱",
+        "text": "Building blocks",
+        "cue": "building",
+        "sub": "A brand-new body",
+        "sub_cue": "brand"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What does it build?"
+    },
+    {
+      "who": "MIA",
+      "text": "Wings, long legs, big eyes, and a long, curly tongue for sipping.",
+      "board": {
+        "type": "gallery",
+        "title": "Brand-new parts",
+        "items": [
+          {
+            "icon": "🦋",
+            "label": "Wings",
+            "cue": "wings"
+          },
+          {
+            "icon": "🦵",
+            "label": "Long legs",
+            "cue": "legs"
+          },
+          {
+            "icon": "👀",
+            "label": "Big eyes",
+            "cue": "eyes"
+          },
+          {
+            "icon": "👅",
+            "label": "Curly tongue",
+            "cue": "tongue"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How long does it stay in there?",
+      "chapter": "Hello, butterfly!"
+    },
+    {
+      "who": "MIA",
+      "text": "For many butterflies, about one or two weeks. Then the chrysalis cracks open, and out comes a butterfly!",
+      "board": {
+        "type": "steps",
+        "title": "Coming out",
+        "items": [
+          {
+            "icon": "🐣",
+            "label": "The case cracks open",
+            "cue": "cracks"
+          },
+          {
+            "icon": "🦋",
+            "label": "Out comes a butterfly",
+            "cue": "out"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can it fly right away?"
+    },
+    {
+      "who": "MIA",
+      "text": "Not yet! Its wings are soft and crumpled. It pumps fluid into them, then waits for them to dry and harden.",
+      "board": {
+        "type": "steps",
+        "title": "Getting ready",
+        "items": [
+          {
+            "icon": "🦋",
+            "label": "Soft, crumpled wings",
+            "cue": "soft"
+          },
+          {
+            "icon": "💧",
+            "label": "Pump them up",
+            "cue": "pumps"
+          },
+          {
+            "icon": "🌬️",
+            "label": "Dry and harden",
+            "cue": "dry"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And then... whoosh?"
+    },
+    {
+      "who": "MIA",
+      "text": "Then off it flies! Now it drinks sweet nectar from flowers, using its tongue like a straw.",
+      "board": {
+        "type": "big",
+        "icon": "🌸",
+        "text": "Sipping nectar",
+        "cue": "nectar",
+        "sub": "Tongue like a straw",
+        "sub_cue": "straw"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "A butterfly with a built-in straw!"
+    },
+    {
+      "who": "MIA",
+      "text": "Later, she lays her own eggs. Each egg hatches into a caterpillar, which makes a chrysalis, which turns into a butterfly. Round and round: a life cycle!",
+      "board": {
+        "type": "cycle",
+        "title": "Butterfly life cycle",
+        "center": "🌿",
+        "items": [
+          {
+            "icon": "🥚",
+            "label": "Egg",
+            "cue": "eggs"
+          },
+          {
+            "icon": "🐛",
+            "label": "Caterpillar",
+            "cue": "caterpillar"
+          },
+          {
+            "icon": "🎁",
+            "label": "Chrysalis",
+            "cue": "chrysalis"
+          },
+          {
+            "icon": "🦋",
+            "label": "Butterfly",
+            "cue": "butterfly"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Round and round, like a merry-go-round!"
+    },
+    {
+      "who": "MIA",
+      "text": "Quiz time! Question one: what is a caterpillar's very first meal, most of the time? Think...",
+      "chapter": "Quiz time",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "Quiz time!",
+        "cue": "quiz",
+        "sub": "First meal?",
+        "sub_cue": "first"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Its own eggshell!",
+      "board": {
+        "type": "big",
+        "icon": "🥚",
+        "text": "Its eggshell!",
+        "cue": "eggshell"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Question two: what's the hard case called, where the caterpillar changes? Think...",
+      "board": {
+        "type": "big",
+        "icon": "🤔",
+        "text": "What's the case called?",
+        "cue": "case"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "A chrysalis!",
+      "board": {
+        "type": "big",
+        "icon": "🎁",
+        "text": "Chrysalis!",
+        "cue": "chrysalis"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Right! Last one: how does a butterfly taste a leaf? Think...",
+      "board": {
+        "type": "big",
+        "icon": "🍃",
+        "text": "How does it taste?",
+        "cue": "taste"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "With its feet! Still so silly!",
+      "board": {
+        "type": "big",
+        "icon": "🦶",
+        "text": "With its feet!",
+        "cue": "feet"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Brilliant! So, a tiny egg hatches, the caterpillar eats and grows, the chrysalis rebuilds its body, and a butterfly flies away.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "🥚",
+            "text": "Egg hatches",
+            "cue": "egg"
+          },
+          {
+            "icon": "🐛",
+            "text": "Eat and grow",
+            "cue": "eats"
+          },
+          {
+            "icon": "🎁",
+            "text": "Chrysalis rebuilds",
+            "cue": "chrysalis"
+          },
+          {
+            "icon": "🦋",
+            "text": "Butterfly flies!",
+            "cue": "butterfly"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Metamorphosis! The biggest change in nature!",
+      "board": {
+        "type": "big",
+        "icon": "✨",
+        "text": "Metamorphosis!",
+        "cue": "metamorphosis"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Next time you see a butterfly, remember it was once a caterpillar! Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... how does a caterpillar become a butterfly?"
+    }
+  ]
+}

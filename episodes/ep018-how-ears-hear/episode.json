@@ -36,7 +36,7 @@
       "board": {
         "type": "title",
         "left": {
-          "icon": "👂",
+          "icon": "img:Human_physiology/Servier/ear",
           "label": "Ears"
         },
         "right": {
@@ -83,7 +83,7 @@
       "text": "First they hit your eardrum, a thin, stretchy skin that shakes like a tiny drum.",
       "board": {
         "type": "big",
-        "icon": "🥁",
+        "icon": "img:Human_physiology/Servier/ear",
         "text": "The eardrum shakes",
         "cue": "eardrum",
         "sub": "Like a tiny drum",
@@ -124,7 +124,7 @@
       "text": "Those tiny hairs send a message to your brain, and your brain says: that's a dog barking!",
       "board": {
         "type": "big",
-        "icon": "🧠",
+        "icon": "img:Human_physiology/Servier/brain-1",
         "text": "Your brain knows!",
         "cue": "brain",
         "sub": "Woof! A dog!",
@@ -135,27 +135,34 @@
       "who": "LEO",
       "text": "So sound goes in my ear, to the drum, to the bones, to the snail, then my brain!",
       "board": {
-        "type": "summary",
-        "rows": [
+        "type": "journey",
+        "title": "Sound's trip",
+        "traveler": "🎵",
+        "items": [
           {
             "icon": "👂",
-            "text": "Ear catches it",
+            "label": "Into ear",
             "cue": "ear"
           },
           {
-            "icon": "🥁",
-            "text": "Drum shakes",
+            "icon": "img:Human_physiology/Servier/ear",
+            "label": "Eardrum",
             "cue": "drum"
           },
           {
             "icon": "🦴",
-            "text": "Bones pass it on",
+            "label": "Tiny bones",
             "cue": "bones"
           },
           {
             "icon": "🐌",
-            "text": "Snail tells brain",
+            "label": "Snail tube",
             "cue": "snail"
+          },
+          {
+            "icon": "🧠",
+            "label": "Brain",
+            "cue": "brain"
           }
         ]
       }

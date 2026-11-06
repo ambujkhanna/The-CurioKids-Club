@@ -36,7 +36,7 @@
       "board": {
         "type": "title",
         "left": {
-          "icon": "🐟",
+          "icon": "img:Animals/Servier/fish-1",
           "label": "Fish"
         },
         "right": {
@@ -99,7 +99,7 @@
       "text": "On each side of a fish's head, under little flaps. They look like soft, red feathers.",
       "board": {
         "type": "big",
-        "icon": "🪶",
+        "icon": "img:Animals/Servier/fish-1",
         "text": "Soft, red and feathery",
         "cue": "feathers",
         "sub": "Under little flaps",
@@ -114,27 +114,28 @@
       "who": "MIA",
       "text": "The fish gulps water into its mouth and pushes it over its gills. The gills grab the oxygen, and the water flows out the sides.",
       "board": {
-        "type": "steps",
-        "title": "How gills work",
+        "type": "journey",
+        "title": "Water's trip",
+        "traveler": "💧",
         "items": [
           {
-            "label": "Gulp water in",
             "icon": "👄",
-            "cue": "gulps"
+            "label": "Into mouth",
+            "cue": "mouth"
           },
           {
-            "label": "Push it over the gills",
             "icon": "🐟",
+            "label": "Over gills",
             "cue": "pushes"
           },
           {
-            "label": "Grab the oxygen",
             "icon": "✅",
+            "label": "Oxygen grabbed",
             "cue": "grab"
           },
           {
-            "label": "Water flows out",
-            "icon": "➡️",
+            "icon": "🌊",
+            "label": "Out the sides",
             "cue": "flows"
           }
         ]
@@ -185,7 +186,7 @@
             "cue": "dolphins"
           },
           {
-            "icon": "🫁",
+            "icon": "img:Human_physiology/Servier/healthy-lung",
             "label": "Lungs like us",
             "cue": "lungs"
           },

@@ -92,12 +92,26 @@
       "who": "MIA",
       "text": "The roots drink water from the soil, and it travels up the stem to the leaves.",
       "board": {
-        "type": "big",
-        "icon": "🌱",
-        "text": "Roots drink water",
-        "cue": "roots",
-        "sub": "Up the stem it goes",
-        "sub_cue": "stem"
+        "type": "journey",
+        "title": "Water's trip",
+        "traveler": "💧",
+        "items": [
+          {
+            "icon": "🌱",
+            "label": "Roots drink",
+            "cue": "roots"
+          },
+          {
+            "icon": "🌿",
+            "label": "Up the stem",
+            "cue": "stem"
+          },
+          {
+            "icon": "🍃",
+            "label": "To the leaves",
+            "cue": "leaves"
+          }
+        ]
       }
     },
     {
@@ -134,7 +148,7 @@
             "cue": "turn"
           },
           {
-            "icon": "🍬",
+            "icon": "img:General_items/Servier/sugar",
             "label": "...into sugar food!",
             "cue": "sugar"
           }

@@ -39,7 +39,7 @@
           "label": "Brush"
         },
         "right": {
-          "icon": "🦷",
+          "icon": "img:Human_physiology/Servier/teeth-gum-child",
           "label": "Teeth"
         },
         "mid": "?",
@@ -228,7 +228,7 @@
           },
           {
             "text": "Sweep away germs",
-            "icon": "🧹",
+            "icon": "img:Microbiology/Servier/bacterium",
             "cue": "sweeps",
             "ok": true
           }

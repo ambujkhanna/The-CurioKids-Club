@@ -190,26 +190,28 @@
       "who": "LEO",
       "text": "So water floats up, makes clouds, then falls back down as rain. Round and round!",
       "board": {
-        "type": "summary",
-        "rows": [
+        "type": "cycle",
+        "title": "The water cycle",
+        "center": "☀️",
+        "items": [
           {
-            "text": "Water floats up",
-            "icon": "⬆️",
-            "cue": "floats"
+            "icon": "💧",
+            "label": "Water rises",
+            "cue": "water"
           },
           {
-            "text": "Makes clouds",
             "icon": "☁️",
+            "label": "Clouds form",
             "cue": "clouds"
           },
           {
-            "text": "Falls as rain",
             "icon": "🌧️",
+            "label": "Rain falls",
             "cue": "falls"
           },
           {
-            "text": "Round and round",
-            "icon": "🔄",
+            "icon": "🔁",
+            "label": "Round again",
             "cue": "round"
           }
         ]

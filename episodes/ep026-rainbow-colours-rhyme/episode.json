@@ -183,23 +183,29 @@
       "who": "MIA",
       "text": "When sunlight shines through raindrops, the drops split it up into its colours. And that's a rainbow!",
       "board": {
-        "type": "steps",
+        "type": "journey",
         "title": "Making a rainbow",
+        "traveler": "✨",
         "items": [
           {
             "icon": "☀️",
-            "label": "Sunlight shines",
-            "cue": "shines"
+            "label": "Sunlight",
+            "cue": "sunlight"
           },
           {
             "icon": "💧",
-            "label": "Through raindrops",
+            "label": "Raindrops",
             "cue": "raindrops"
           },
           {
-            "icon": "🌈",
-            "label": "Colours split up!",
+            "icon": "🎨",
+            "label": "Colours split",
             "cue": "split"
+          },
+          {
+            "icon": "🌈",
+            "label": "Rainbow!",
+            "cue": "rainbow"
           }
         ]
       }

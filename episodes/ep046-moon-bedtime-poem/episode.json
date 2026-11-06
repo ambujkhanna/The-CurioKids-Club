@@ -155,12 +155,16 @@
       "text": "Here's a fun fact. The Moon doesn't really change shape. We just see more or less of its sunny side as it travels around Earth.",
       "punch": "really",
       "board": {
-        "type": "big",
-        "icon": "🌗",
-        "text": "Same Moon, different view",
-        "cue": "shape",
-        "sub": "We see more or less",
-        "sub_cue": "more"
+        "type": "orbit",
+        "title": "Moon's trip",
+        "center": "🌍",
+        "items": [
+          {
+            "icon": "🌙",
+            "label": "Moon",
+            "cue": "moon"
+          }
+        ]
       }
     },
     {

@@ -36,7 +36,7 @@
       "board": {
         "type": "title",
         "left": {
-          "icon": "❤️",
+          "icon": "img:Human_physiology/Servier/heart-front",
           "label": "Heart"
         },
         "right": {
@@ -97,7 +97,7 @@
       "text": "One side of your heart sends blood to your lungs, to pick up oxygen from the air you breathe.",
       "board": {
         "type": "big",
-        "icon": "🫁",
+        "icon": "img:Human_physiology/Servier/healthy-lung",
         "text": "Off to the lungs!",
         "cue": "lungs",
         "sub": "Pick up oxygen",
@@ -108,22 +108,33 @@
       "who": "MIA",
       "text": "The other side pumps that fresh blood all around your body, to your head, your arms and your toes.",
       "board": {
-        "type": "gallery",
-        "title": "All around you",
-        "items": [
+        "type": "body",
+        "title": "Blood's big trip",
+        "show": [
+          "heart",
+          "lungs"
+        ],
+        "flow": "blood",
+        "cue": "blood",
+        "labels": [
           {
-            "icon": "🙂",
-            "label": "Head",
+            "text": "Heart",
+            "at": "heart",
+            "cue": "pumps"
+          },
+          {
+            "text": "Head",
+            "at": "head",
             "cue": "head"
           },
           {
-            "icon": "💪",
-            "label": "Arms",
+            "text": "Arms",
+            "at": "arm",
             "cue": "arms"
           },
           {
-            "icon": "🦶",
-            "label": "Toes",
+            "text": "Toes",
+            "at": "foot",
             "cue": "toes"
           }
         ]
@@ -139,8 +150,8 @@
       "punch": "valves",
       "board": {
         "type": "big",
-        "icon": "🚪",
-        "text": "Little doors: valves",
+        "icon": "img:Human_physiology/Servier/heart-valves",
+        "text": "Heart valves",
         "cue": "valves",
         "sub": "Lub-dub, lub-dub!",
         "sub_cue": "lub"

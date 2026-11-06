@@ -26,7 +26,7 @@
   "loop_card": {
     "text": "Brain to body?",
     "cue": "next",
-    "left": "🧠",
+    "left": "img:Human_physiology/Servier/brain-1",
     "right": "🖐️"
   },
   "lines": [
@@ -36,7 +36,7 @@
       "board": {
         "type": "title",
         "left": {
-          "icon": "🧠",
+          "icon": "img:Human_physiology/Servier/brain-1",
           "label": "Brain"
         },
         "right": {
@@ -52,8 +52,8 @@
       "punch": "nerves",
       "board": {
         "type": "big",
-        "icon": "🧠",
-        "text": "Nerves are like wires",
+        "icon": "img:Cell_types/almaCELL/Neurons",
+        "text": "Nerves go everywhere",
         "cue": "nerves",
         "sub": "To every part of you",
         "sub_cue": "every"
@@ -87,8 +87,8 @@
         "title": "The message trip",
         "items": [
           {
-            "icon": "🛣️",
-            "label": "Spinal cord highway",
+            "icon": "⬇️",
+            "label": "Down the spinal cord",
             "cue": "spinal"
           },
           {
@@ -107,23 +107,24 @@
       "who": "MIA",
       "text": "Your brain sends a message to your leg muscles: kick! And your leg kicks, in a blink.",
       "board": {
-        "type": "steps",
-        "title": "Kick!",
-        "items": [
+        "type": "body",
+        "title": "Kick message",
+        "show": [
+          "brain",
+          "muscles"
+        ],
+        "flow": "nerves",
+        "cue": "sends",
+        "labels": [
           {
-            "icon": "🧠",
-            "label": "Brain decides",
+            "text": "Brain",
+            "at": "brain",
             "cue": "brain"
           },
           {
-            "icon": "📨",
-            "label": "Message goes down",
-            "cue": "message"
-          },
-          {
-            "icon": "⚽",
-            "label": "Your leg kicks!",
-            "cue": "kicks"
+            "text": "Kick!",
+            "at": "leg",
+            "cue": "kick"
           }
         ]
       }
@@ -190,7 +191,7 @@
         "type": "summary",
         "rows": [
           {
-            "icon": "⚡",
+            "icon": "img:Cell_types/almaCELL/Neurons",
             "text": "Nerves carry messages",
             "cue": "nerves"
           },

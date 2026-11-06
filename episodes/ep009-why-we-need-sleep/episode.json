@@ -52,7 +52,7 @@
       "punch": "charging",
       "board": {
         "type": "big",
-        "icon": "🔋",
+        "icon": "🛌",
         "text": "Recharge time!",
         "cue": "charging",
         "sub": "Body and brain rest",
@@ -68,7 +68,7 @@
       "text": "It's busy! Your brain sorts through what you learned today and saves the important parts, like tidying up a toy box.",
       "board": {
         "type": "big",
-        "icon": "🧠",
+        "icon": "img:Human_physiology/Servier/brain-1",
         "text": "Brain tidy-up time",
         "cue": "sorts",
         "sub": "Saves what you learned",
@@ -108,12 +108,12 @@
             "cue": "grows"
           },
           {
-            "icon": "💪",
+            "icon": "img:Human_physiology/Servier/muscle-1",
             "label": "Strong muscles",
             "cue": "muscles"
           },
           {
-            "icon": "🛡️",
+            "icon": "img:Microbiology/Servier/bacterium",
             "label": "Fight germs",
             "cue": "germs"
           }

@@ -79,22 +79,28 @@
       "who": "DAD",
       "text": "Yep! When the kernel gets hot, that water turns into steam. Steam needs much more space, so it pushes and pushes.",
       "board": {
-        "type": "steps",
-        "title": "What happens",
+        "type": "journey",
+        "title": "Pop power",
+        "traveler": "💧",
         "items": [
           {
-            "label": "Kernel gets hot",
-            "icon": "🔥",
+            "icon": "🌡️",
+            "label": "Gets hot",
             "cue": "hot"
           },
           {
-            "label": "Water turns to steam",
+            "icon": "💧",
+            "label": "Water inside",
+            "cue": "water"
+          },
+          {
             "icon": "♨️",
+            "label": "Turns to steam",
             "cue": "steam"
           },
           {
-            "label": "Steam pushes",
-            "icon": "💨",
+            "icon": "💥",
+            "label": "Push, push!",
             "cue": "pushes"
           }
         ]
@@ -147,7 +153,7 @@
           "items": [
             {
               "text": "Tough shell",
-              "icon": "🛡️",
+              "icon": "🌽",
               "cue": "tough"
             },
             {

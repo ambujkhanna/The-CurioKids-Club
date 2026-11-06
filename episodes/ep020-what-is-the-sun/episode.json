@@ -36,7 +36,7 @@
       "board": {
         "type": "title",
         "left": {
-          "icon": "☀️",
+          "icon": "img:General_items/Servier/sun",
           "label": "The Sun"
         },
         "right": {
@@ -93,7 +93,7 @@
             },
             {
               "text": "Big and bright",
-              "icon": "💡",
+              "icon": "🔆",
               "cue": "bright"
             }
           ]
@@ -139,18 +139,14 @@
       "who": "MIA",
       "text": "It gives us light and keeps us warm. Plants use sunlight to grow, and plants feed animals and people.",
       "board": {
-        "type": "gallery",
-        "title": "The Sun gives us",
+        "type": "journey",
+        "title": "Sunshine food",
+        "traveler": "✨",
         "items": [
           {
-            "icon": "💡",
-            "label": "Light",
+            "icon": "☀️",
+            "label": "Sunlight",
             "cue": "light"
-          },
-          {
-            "icon": "🌡️",
-            "label": "Warmth",
-            "cue": "warm"
           },
           {
             "icon": "🌱",
@@ -158,9 +154,14 @@
             "cue": "plants"
           },
           {
-            "icon": "🍎",
-            "label": "Food",
-            "cue": "feed"
+            "icon": "🐄",
+            "label": "Animals eat",
+            "cue": "animals"
+          },
+          {
+            "icon": "🧒",
+            "label": "People too",
+            "cue": "people"
           }
         ]
       }

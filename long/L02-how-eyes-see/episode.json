@@ -1,0 +1,728 @@
+{
+  "id": "L02",
+  "slug": "how-eyes-see",
+  "status": "ready",
+  "short_id": "ep014",
+  "title": "How Your Eyes See | Full Video for Kids",
+  "cover_text": "EYE-MAZING!",
+  "description": "Find out how your eyes see: how light gets in through the pupil, how the lens makes a picture on the retina, why that picture is upside down, and how your brain flips it. Plus a thumb trick and a quiz! Leo asks, big sister Mia explains.\n\nWant the 60-second version? Find it on our Shorts tab.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#HumanBody",
+    "#ScienceForKids",
+    "#FunFacts"
+  ],
+  "tags": [
+    "how eyes see for kids",
+    "eyes for kids",
+    "parts of the eye",
+    "pupil and iris",
+    "retina for kids",
+    "human body for kids",
+    "science for kids",
+    "kids learning video"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "How do eyes see?",
+    "cue": "next",
+    "left": "👀",
+    "right": "💡"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, how do my eyes see things?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "img:Human_physiology/Servier/eye",
+          "label": "Eyes"
+        },
+        "right": {
+          "icon": "💡",
+          "label": "Seeing?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Your eyes are amazing, Leo! Today we'll look inside an eye and follow light on a trip all the way to your brain.",
+      "board": {
+        "type": "big",
+        "icon": "img:Human_physiology/Servier/eye",
+        "text": "Look inside an eye",
+        "cue": "look",
+        "sub": "Follow the light!",
+        "sub_cue": "follow"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "A trip? Light goes on trips?"
+    },
+    {
+      "who": "MIA",
+      "text": "It sure does! We'll find out what light is doing, meet the parts of your eye, and see how your brain helps.",
+      "board": {
+        "type": "steps",
+        "title": "Today",
+        "items": [
+          {
+            "label": "What light does",
+            "icon": "💡",
+            "cue": "light"
+          },
+          {
+            "label": "Parts of your eye",
+            "icon": "img:Human_physiology/Servier/eye-crosssection",
+            "cue": "parts"
+          },
+          {
+            "label": "How your brain helps",
+            "icon": "img:Human_physiology/Servier/brain-1",
+            "cue": "brain"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So how does seeing start?",
+      "chapter": "It starts with light"
+    },
+    {
+      "who": "MIA",
+      "text": "It all starts with light! Light from the Sun or a lamp bounces off everything around you, and some of it zooms into your eyes.",
+      "board": {
+        "type": "big",
+        "icon": "💡",
+        "text": "Light bounces off things",
+        "cue": "bounces",
+        "sub": "Into your eyes!",
+        "sub_cue": "eyes"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What if there's no light at all?"
+    },
+    {
+      "who": "MIA",
+      "text": "Then you can't see anything! In a totally dark room, nothing bounces into your eyes. That's why we need a light to read at night.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Dark room",
+          "items": [
+            {
+              "text": "Can't see",
+              "icon": "🌑",
+              "cue": "dark"
+            }
+          ]
+        },
+        "right": {
+          "label": "Light on",
+          "items": [
+            {
+              "text": "You can see!",
+              "icon": "💡",
+              "cue": "light"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So I see the light, not the actual things?"
+    },
+    {
+      "who": "MIA",
+      "text": "Kind of! You see the light that bounces off things. A red apple bounces red light into your eyes. That's why it looks red!",
+      "board": {
+        "type": "big",
+        "icon": "🍎",
+        "text": "Red light from a red apple",
+        "cue": "red",
+        "sub": "Into your eyes",
+        "sub_cue": "eyes"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How does the light get inside my eye?",
+      "chapter": "Parts of your eye"
+    },
+    {
+      "who": "MIA",
+      "text": "First it goes through the cornea. That's a clear, curved window at the very front of your eye.",
+      "board": {
+        "type": "big",
+        "icon": "img:Human_physiology/Servier/eye-crosssection",
+        "text": "The cornea",
+        "cue": "cornea",
+        "sub": "A clear window",
+        "sub_cue": "clear"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Next is the black dot in the middle, the pupil. It looks black, but it's really a little hole that lets the light in!",
+      "board": {
+        "type": "big",
+        "icon": "img:Human_physiology/Servier/eye",
+        "text": "The pupil: a tiny hole",
+        "cue": "pupil",
+        "sub": "Lets light in",
+        "sub_cue": "hole"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And the coloured ring around it?"
+    },
+    {
+      "who": "MIA",
+      "text": "That's the iris! Irises can be brown, blue, green, grey or hazel. That's what gives you your eye colour.",
+      "board": {
+        "type": "gallery",
+        "title": "Iris colours",
+        "items": [
+          {
+            "icon": "🟤",
+            "label": "Brown",
+            "cue": "brown"
+          },
+          {
+            "icon": "🔵",
+            "label": "Blue",
+            "cue": "blue"
+          },
+          {
+            "icon": "🟢",
+            "label": "Green",
+            "cue": "green"
+          },
+          {
+            "icon": "⚪",
+            "label": "Grey",
+            "cue": "grey"
+          },
+          {
+            "icon": "🌰",
+            "label": "Hazel",
+            "cue": "hazel"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "The iris is a muscle. In the dark, it makes the pupil big to let in more light. In bright light, it makes the pupil small.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "In the dark",
+          "items": [
+            {
+              "text": "Pupil gets big",
+              "icon": "🌑",
+              "cue": "big"
+            }
+          ]
+        },
+        "right": {
+          "label": "Bright light",
+          "items": [
+            {
+              "text": "Pupil gets small",
+              "icon": "☀️",
+              "cue": "small"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ooh, I want to see that!"
+    },
+    {
+      "who": "MIA",
+      "text": "Try it with a grown-up and a mirror. Look at your pupils in a dim room, then turn on the light. Watch them get smaller!",
+      "board": {
+        "type": "big",
+        "icon": "🪞",
+        "text": "Try it with a mirror",
+        "cue": "mirror",
+        "sub": "Watch pupils shrink",
+        "sub_cue": "smaller"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What's behind the pupil?"
+    },
+    {
+      "who": "MIA",
+      "text": "The lens! It's clear and bendy, like a tiny magnifying glass. It bends the light to make a sharp picture.",
+      "board": {
+        "type": "big",
+        "icon": "img:Human_physiology/Servier/eye-crosssection",
+        "text": "The lens",
+        "cue": "lens",
+        "sub": "Makes a sharp picture",
+        "sub_cue": "sharp"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Your lens even changes shape. It gets fatter to look at things close up, and flatter to look at things far away.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Close up",
+          "items": [
+            {
+              "text": "Fatter lens",
+              "icon": "🔍",
+              "cue": "fatter"
+            }
+          ]
+        },
+        "right": {
+          "label": "Far away",
+          "items": [
+            {
+              "text": "Flatter lens",
+              "icon": "🏔️",
+              "cue": "flatter"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Where does the picture go?",
+      "chapter": "The picture screen"
+    },
+    {
+      "who": "MIA",
+      "text": "To the back of your eye, onto the retina. It's like a screen covered in millions of tiny light catchers.",
+      "board": {
+        "type": "big",
+        "icon": "img:Human_physiology/Servier/retina",
+        "text": "The retina",
+        "cue": "retina",
+        "sub": "Tiny light catchers",
+        "sub_cue": "light"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Some light catchers help you see in dim light. Others see colours. That's why colours look faded at night!",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Dim light",
+          "items": [
+            {
+              "text": "See shapes",
+              "icon": "🌑",
+              "cue": "dim"
+            }
+          ]
+        },
+        "right": {
+          "label": "Colours",
+          "items": [
+            {
+              "text": "See colours",
+              "icon": "🌈",
+              "cue": "colours"
+            },
+            {
+              "text": "Faded at night",
+              "icon": "🌙",
+              "cue": "faded"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Then the picture is done?"
+    },
+    {
+      "who": "MIA",
+      "text": "Almost! But here's a funny thing. The picture on your retina is upside down!",
+      "punch": "upside",
+      "board": {
+        "type": "big",
+        "icon": "🙃",
+        "text": "It's upside down!",
+        "cue": "upside"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Upside down? But I see everything the right way up!"
+    },
+    {
+      "who": "MIA",
+      "text": "That's your brain's job! The retina sends a message along a cable called the optic nerve, straight to your brain.",
+      "board": {
+        "type": "big",
+        "icon": "img:Human_physiology/Servier/brain-1",
+        "text": "The optic nerve",
+        "cue": "optic",
+        "sub": "A cable to your brain",
+        "sub_cue": "straight"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Your brain flips the picture the right way up and works out what you're looking at. Ball! Dog! Mum!",
+      "board": {
+        "type": "big",
+        "icon": "🧠",
+        "text": "Your brain flips it!",
+        "cue": "flips",
+        "sub": "And works out what it is",
+        "sub_cue": "works"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So light goes on a trip from the lamp all the way to my brain!"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Light bounces off a thing, goes through the pupil, the lens bends it, it lands on the retina, and a message zooms to your brain.",
+      "board": {
+        "type": "journey",
+        "title": "Light's trip",
+        "traveler": "✨",
+        "items": [
+          {
+            "icon": "💡",
+            "label": "Bounces off",
+            "cue": "bounces"
+          },
+          {
+            "icon": "img:Human_physiology/Servier/eye",
+            "label": "Pupil",
+            "cue": "pupil"
+          },
+          {
+            "icon": "img:Human_physiology/Servier/eye-crosssection",
+            "label": "Lens",
+            "cue": "lens"
+          },
+          {
+            "icon": "img:Human_physiology/Servier/retina",
+            "label": "Retina",
+            "cue": "retina"
+          },
+          {
+            "icon": "🧠",
+            "label": "Brain",
+            "cue": "brain"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why do I have two eyes, not one?",
+      "chapter": "Eye tricks and care"
+    },
+    {
+      "who": "MIA",
+      "text": "Each eye sees things from a slightly different spot. Your brain mixes the two pictures together into one.",
+      "board": {
+        "type": "big",
+        "icon": "👀",
+        "text": "Two eyes, one picture",
+        "cue": "each",
+        "sub": "Your brain mixes them",
+        "sub_cue": "mixes"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "That helps you tell how far away things are. It's super handy for catching a ball!",
+      "board": {
+        "type": "big",
+        "icon": "⚾",
+        "text": "How far away is it?",
+        "cue": "far",
+        "sub": "Great for catching!",
+        "sub_cue": "catching"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Show me a trick!"
+    },
+    {
+      "who": "MIA",
+      "text": "Hold up your thumb. Close one eye, then switch to the other eye. Your thumb seems to jump!",
+      "punch": "jump",
+      "board": {
+        "type": "steps",
+        "title": "Thumb trick",
+        "items": [
+          {
+            "label": "Hold up your thumb",
+            "icon": "👍",
+            "cue": "hold"
+          },
+          {
+            "label": "Close one eye",
+            "icon": "😉",
+            "cue": "close"
+          },
+          {
+            "label": "Switch eyes",
+            "icon": "👁️",
+            "cue": "switch"
+          },
+          {
+            "label": "Your thumb jumps!",
+            "icon": "🦘",
+            "cue": "jump"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Here's teamwork! Your eyes spot the ball, your brain works out where it's going, and sends a message to your hands. Catch!",
+      "board": {
+        "type": "body",
+        "title": "Eyes and brain team",
+        "show": [
+          "eyes",
+          "brain"
+        ],
+        "flow": "nerves",
+        "cue": "teamwork",
+        "labels": [
+          {
+            "text": "Eyes",
+            "at": "eyes",
+            "cue": "eyes"
+          },
+          {
+            "text": "Brain",
+            "at": "brain",
+            "cue": "brain"
+          },
+          {
+            "text": "Hands",
+            "at": "hand",
+            "cue": "hands"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Do my eyes have any other secrets?"
+    },
+    {
+      "who": "MIA",
+      "text": "Each eye has a tiny blind spot, where the optic nerve leaves. There are no light catchers there, so your brain fills in the gap!",
+      "board": {
+        "type": "big",
+        "icon": "🧩",
+        "text": "A tiny blind spot",
+        "cue": "blind",
+        "sub": "Your brain fills it in",
+        "sub_cue": "fills"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "And your eyes look after themselves. Eyelashes catch dust, blinking wipes your eyes clean, and tears keep them wet.",
+      "board": {
+        "type": "gallery",
+        "title": "Eye helpers",
+        "items": [
+          {
+            "icon": "👁️",
+            "label": "Eyelashes",
+            "cue": "eyelashes"
+          },
+          {
+            "icon": "😉",
+            "label": "Blinking",
+            "cue": "blinking"
+          },
+          {
+            "icon": "💧",
+            "label": "Tears",
+            "cue": "tears"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Some people's eyes don't focus quite right, so things look blurry. Glasses help bend the light so the picture is sharp again.",
+      "board": {
+        "type": "big",
+        "icon": "👓",
+        "text": "Glasses help focus",
+        "cue": "glasses",
+        "sub": "Blurry becomes sharp",
+        "sub_cue": "sharp"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And never look at the Sun, right?"
+    },
+    {
+      "who": "MIA",
+      "text": "Right! Never look straight at the Sun. It's much too bright and can hurt your eyes. Sunglasses help on sunny days.",
+      "board": {
+        "type": "checklist",
+        "title": "Eye safety",
+        "icon": "😎",
+        "items": [
+          {
+            "text": "Look at the Sun",
+            "icon": "☀️",
+            "cue": "look",
+            "ok": false
+          },
+          {
+            "text": "Wear sunglasses",
+            "icon": "😎",
+            "cue": "sunglasses",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Quiz time! Question one: what is the black dot in your eye called? Think...",
+      "chapter": "Quiz time",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "What's the black dot?",
+        "cue": "black"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "The pupil! It's a little hole that lets the light in.",
+      "board": {
+        "type": "big",
+        "icon": "img:Human_physiology/Servier/eye",
+        "text": "The pupil!",
+        "cue": "pupil",
+        "sub": "A hole for light",
+        "sub_cue": "hole"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Question two: which way up is the picture on your retina? Think...",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "Which way up?",
+        "cue": "which"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Upside down! And my brain flips it the right way up.",
+      "board": {
+        "type": "big",
+        "icon": "🙃",
+        "text": "Upside down!",
+        "cue": "upside",
+        "sub": "Brain flips it",
+        "sub_cue": "flips"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Brilliant! Last one: why do things look less colourful at night? Think...",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "Why fewer colours at night?",
+        "cue": "colourful"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Because the colour catchers need lots of light, and at night there isn't much!",
+      "board": {
+        "type": "big",
+        "icon": "img:Human_physiology/Servier/retina",
+        "text": "Colour catchers need light",
+        "cue": "colour"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Wow, three out of three! Let's sum it up.",
+      "chapter": "Recap",
+      "board": {
+        "type": "big",
+        "icon": "🏆",
+        "text": "Three out of three!",
+        "cue": "three"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Light bounces into my eye. The lens makes a picture on the retina. My brain flips it. And two eyes work as a team!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Light bounces in",
+            "icon": "💡",
+            "cue": "light"
+          },
+          {
+            "text": "Lens makes a picture",
+            "icon": "img:Human_physiology/Servier/eye-crosssection",
+            "cue": "lens"
+          },
+          {
+            "text": "Brain flips it",
+            "icon": "🧠",
+            "cue": "brain"
+          },
+          {
+            "text": "Two eyes, one team",
+            "icon": "👀",
+            "cue": "two"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Eye-mazing! Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... how do my eyes see things?"
+    }
+  ]
+}

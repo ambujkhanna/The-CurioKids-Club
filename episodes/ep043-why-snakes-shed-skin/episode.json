@@ -83,23 +83,24 @@
       "who": "MIA",
       "text": "It rubs its nose on a rock to loosen the old skin. Then it crawls forward and slides out, like pulling off a sock!",
       "board": {
-        "type": "steps",
-        "title": "How it sheds",
+        "type": "journey",
+        "title": "Out of old skin",
+        "traveler": "🐍",
         "items": [
           {
-            "label": "Rub on a rock",
             "icon": "🪨",
+            "label": "Rub nose",
             "cue": "rubs"
           },
           {
+            "icon": "➡️",
             "label": "Crawl forward",
-            "icon": "🐍",
             "cue": "crawls"
           },
           {
-            "label": "Like pulling off a sock",
             "icon": "🧦",
-            "cue": "sock"
+            "label": "Slide out",
+            "cue": "slides"
           }
         ]
       }
@@ -114,7 +115,7 @@
       "punch": "inside",
       "board": {
         "type": "big",
-        "icon": "🧦",
+        "icon": "🐍",
         "text": "One long piece!",
         "cue": "piece",
         "sub": "Inside out",
@@ -151,7 +152,7 @@
           "items": [
             {
               "text": "Tiny flakes",
-              "icon": "🧒",
+              "icon": "img:Human_physiology/Servier/skin-normal",
               "cue": "flakes"
             },
             {

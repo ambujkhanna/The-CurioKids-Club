@@ -12,9 +12,34 @@ BX, BY, BW, BH = K.BX, K.BY, K.BW, K.BH
 FLOOR = 1560
 
 
+def _shade(c, path, k=0.75):
+    from char_line import shade_paint
+    c.drawPath(path, shade_paint(path, k, fx=False))
+
+
 def outline_rr(c, x, y, w, h, r, fill, lw=6):
     rr = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(x, y, w, h), r, r)
-    c.drawRRect(rr, P(fill)); c.drawRRect(rr, P(INK, lw))
+    c.drawRRect(rr, P(fill)); pth = skia.Path(); pth.addRRect(rr); _shade(c, pth); c.drawRRect(rr, P(INK, lw))
+
+
+def light_pass(c, t, win=None):
+    """Room lighting: brighter wall top, soft shadow where wall meets floor, floor depth, sunbeam from the window."""
+    g = skia.Paint(AntiAlias=True)
+    g.setShader(skia.GradientShader.MakeLinear([skia.Point(0, 170), skia.Point(0, FLOOR)],
+                [skia.Color(255, 255, 255, 70), skia.Color(255, 255, 255, 0), skia.Color(40, 30, 60, 38)], [0.0, 0.55, 1.0]))
+    c.drawRect(skia.Rect.MakeLTRB(-1900, 170, W + 1900, FLOOR), g)
+    ao = skia.Paint(AntiAlias=True)
+    ao.setShader(skia.GradientShader.MakeLinear([skia.Point(0, FLOOR - 70), skia.Point(0, FLOOR)], [skia.Color(30, 20, 40, 0), skia.Color(30, 20, 40, 55)]))
+    c.drawRect(skia.Rect.MakeLTRB(-1900, FLOOR - 70, W + 1900, FLOOR), ao)
+    fl = skia.Paint(AntiAlias=True)
+    fl.setShader(skia.GradientShader.MakeLinear([skia.Point(0, FLOOR), skia.Point(0, 1920)], [skia.Color(40, 25, 20, 60), skia.Color(40, 25, 20, 0), skia.Color(255, 255, 255, 35)], [0, 0.45, 1]))
+    c.drawRect(skia.Rect.MakeLTRB(-1900, FLOOR, W + 1900, 2600), fl)
+    if win:  # soft sunbeam falling from the window onto the floor
+        wx, wy, ww, wh, dirx = win
+        beam = skia.Path(); beam.moveTo(wx, wy); beam.lineTo(wx + ww, wy); beam.lineTo(wx + ww + dirx * 380, 1920); beam.lineTo(wx + dirx * 380 - 120 * dirx, 1920); beam.close()
+        bp = skia.Paint(AntiAlias=True, Color=skia.Color(255, 250, 225, int(34 + 8 * math.sin(t * 0.7))))
+        bp.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 30))
+        c.drawPath(beam, bp)
 
 
 _PAPER = None
@@ -34,10 +59,10 @@ def paper():
 
 
 def draw_bg_doodle(c, t):
-    c.drawRect(skia.Rect.MakeLTRB(-600, -600, W + 600, 2600), P("#FBF7EE"))
-    c.drawImageRect(paper(), skia.Rect.MakeLTRB(-600, -600, W + 600, 2600), skia.SamplingOptions(skia.FilterMode.kLinear))
+    c.drawRect(skia.Rect.MakeLTRB(-1900, -600, W + 1900, 2600), P("#FBF7EE"))
+    c.drawImageRect(paper(), skia.Rect.MakeLTRB(-1900, -600, W + 1900, 2600), skia.SamplingOptions(skia.FilterMode.kLinear))
     # floor: pencil hatching instead of boards
-    c.drawLine(-600, FLOOR, W + 600, FLOOR, P(INK, 6))
+    c.drawLine(-600, FLOOR, W + 1900, FLOOR, P(INK, 6))
     for k in range(-30, 40):
         x0 = k * 46
         c.drawLine(x0, FLOOR + 14, x0 - 60, FLOOR + 74, P("#B9AE98", 3))
@@ -50,6 +75,7 @@ def draw_bg_doodle(c, t):
 def draw_bg(c, t):
     if KIDS:
         _kids_room(c, t)
+        light_pass(c, t, (870, 930, 190, 250, -1))
         K.logo(c, 540, 84, 0.95 * (1.0 + (0.18 * math.sin(min(1.0, max(0.0, (t - K.LOGO_T) / 0.5)) * math.pi) if t > K.LOGO_T else 0.0)), tcol="#1D1D1F")
         return
     if doodle.ON:
@@ -57,23 +83,26 @@ def draw_bg(c, t):
         _props(c, t)
         return
     # wall + floor
-    c.drawRect(skia.Rect.MakeLTRB(-600, -600, W + 600, FLOOR), P("#FAF7F0"))
+    c.drawRect(skia.Rect.MakeLTRB(-1900, -600, W + 1900, FLOOR), P("#FAF7F0"))
     for i in range(-6, 20):  # faint wallpaper stripes
         c.drawLine(i * 90, -600, i * 90, FLOOR, P("#EFE9DD", 3))
-    c.drawRect(skia.Rect.MakeLTRB(-600, FLOOR, W + 600, 2600), P("#E9DFCC"))
+    c.drawRect(skia.Rect.MakeLTRB(-1900, FLOOR, W + 1900, 2600), P("#E9DFCC"))
     for k in range(-6, 22):  # floorboards
         c.drawLine(k * 110, FLOOR, k * 110 - 140, 2400, P("#DCCFB6", 3))
-    c.drawLine(-600, FLOOR, W + 600, FLOOR, P(INK, 6))
+    c.drawLine(-600, FLOOR, W + 1900, FLOOR, P(INK, 6))
     # rug
     c.drawOval(ell(540, 1690, 450, 62), P("#FFE08A")); c.drawOval(ell(540, 1690, 450, 62), P(INK, 5))
     c.drawOval(ell(540, 1690, 400, 46), P("#F2B600", 3))
     _props(c, t)
+    light_pass(c, t, (18, 1060, 190, 270, 1) if V2 else None)
 
 
 import os
 V2 = os.environ.get("BG") == "v2"
 SPEAKER_X = None  # set by episode_engine: function t -> x of the character speaking
 KIDS = os.environ.get("BG") == "kids"   # The CurioKids Club playroom
+if KIDS:
+    INK = "#2E4457"  # softer blue-grey outlines for the room (characters keep their own ink)
 
 
 def rrp(x, y, w, h, r):
@@ -81,7 +110,7 @@ def rrp(x, y, w, h, r):
 
 
 def ink(c, path, fill, lw=6):
-    c.drawPath(path, P(fill)); c.drawPath(path, P(INK, lw))
+    c.drawPath(path, P(fill)); _shade(c, path); c.drawPath(path, P(INK, lw))
 
 
 def _living_room(c, t):
@@ -158,23 +187,23 @@ def _star(cx, cy, r1, r2, rot=0.0):
 def _kids_room(c, t):
     """The CurioKids Club playroom: pastel wall, rainbow, bunting, window, toy shelf, teddy, rocket, foam play mat."""
     # wall: soft sky-blue with polka dots, mint wainscot
-    c.drawRect(skia.Rect.MakeLTRB(-600, -600, W + 600, FLOOR), P("#DDF1FF"))
+    c.drawRect(skia.Rect.MakeLTRB(-1900, -600, W + 1900, FLOOR), P("#8ED5CE"))
     for k in range(-2, 16):
         for j in range(0, 12):
             x = k * 90 + (45 if j % 2 else 0); y = 60 + j * 110
-            if y < 1330: c.drawCircle(x, y, 7, P("#C6E6FF"))
-    c.drawRect(skia.Rect.MakeLTRB(-600, 1330, W + 600, FLOOR), P("#CFF3E2"))
-    c.drawLine(-600, 1330, W + 600, 1330, P(INK, 5))
+            if y < 1330: c.drawCircle(x, y, 7, P("#9EDDD6"))
+    c.drawRect(skia.Rect.MakeLTRB(-1900, 1330, W + 1900, FLOOR), P("#5DB5AF"))
+    c.drawLine(-600, 1330, W + 1900, 1330, P(INK, 5))
     for k in range(-4, 30):
-        c.drawLine(k * 48, 1340, k * 48, FLOOR - 6, P("#B5E8D1", 4))
+        c.drawLine(k * 48, 1340, k * 48, FLOOR - 6, P("#54A9A3", 4))
     # floor: warm wood + foam play mat (coloured tiles)
-    c.drawRect(skia.Rect.MakeLTRB(-600, FLOOR, W + 600, 2600), P("#F2DDB6"))
+    c.drawRect(skia.Rect.MakeLTRB(-1900, FLOOR, W + 1900, 2600), P("#5F80AA"))
     for k in range(-6, 22):
-        c.drawLine(k * 110, FLOOR, k * 110 - 140, 2400, P("#E3C998", 3))
-    c.drawLine(-600, FLOOR, W + 600, FLOOR, P(INK, 6))
+        c.drawLine(k * 110, FLOOR, k * 110 - 140, 2400, P("#56769E", 3))
+    c.drawLine(-600, FLOOR, W + 1900, FLOOR, P(INK, 6))
     mat = skia.Path(); mat.moveTo(120, 1630); mat.lineTo(960, 1630); mat.lineTo(1040, 1800); mat.lineTo(40, 1800); mat.close()
     c.save(); c.clipPath(mat, doAntiAlias=True)
-    cols = ("#FF8FA3", "#FFD23F", "#7BD389", "#7CC6FF", "#C9A7FF")
+    cols = ("#F7A1B0", "#FFD66B", "#8ED9A0", "#8FCBF2", "#C7B3F2")
     for i in range(10):
         for j in range(2):
             x0 = 40 + i * 100; y0 = 1630 + j * 85

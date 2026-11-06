@@ -71,17 +71,17 @@
         "title": "Bone guards",
         "items": [
           {
-            "icon": "🧠",
+            "icon": "img:Human_physiology/Servier/brain-1",
             "label": "Skull: brain",
             "cue": "skull"
           },
           {
-            "icon": "❤️",
+            "icon": "img:Human_physiology/Servier/heart-front",
             "label": "Ribs: heart",
             "cue": "ribs"
           },
           {
-            "icon": "🫁",
+            "icon": "img:Human_physiology/Servier/healthy-lung",
             "label": "Ribs: lungs",
             "cue": "lungs"
           }
@@ -100,7 +100,7 @@
         "title": "Let's move",
         "items": [
           {
-            "icon": "💪",
+            "icon": "img:Human_physiology/Servier/muscle-1",
             "label": "Muscles pull",
             "cue": "muscles"
           },
@@ -143,7 +143,7 @@
       "punch": "living",
       "board": {
         "type": "big",
-        "icon": "🔴",
+        "icon": "img:Blood_Immunology/Servier/erythrocyte",
         "text": "Marrow makes blood cells",
         "cue": "marrow",
         "sub": "Bones are alive!",

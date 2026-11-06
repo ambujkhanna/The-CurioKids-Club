@@ -185,7 +185,7 @@
           },
           {
             "text": "Then Neptune, last, so far away",
-            "icon": "💙",
+            "icon": "🔵",
             "cue": "neptune"
           },
           {
@@ -233,22 +233,19 @@
       "who": "LEO",
       "text": "Four rocky planets, four giants, and all eight go around the Sun!",
       "board": {
-        "type": "summary",
-        "rows": [
+        "type": "orbit",
+        "title": "All go round the Sun",
+        "center": "☀️",
+        "items": [
           {
-            "text": "4 rocky planets",
-            "icon": "🪨",
+            "icon": "🌍",
+            "label": "4 rocky",
             "cue": "rocky"
           },
           {
-            "text": "4 giant planets",
             "icon": "🪐",
+            "label": "4 giants",
             "cue": "giants"
-          },
-          {
-            "text": "All go round the Sun",
-            "icon": "☀️",
-            "cue": "around"
           }
         ]
       }

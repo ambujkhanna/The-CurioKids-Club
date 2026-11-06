@@ -56,12 +56,16 @@ def ts(x):
     x = max(0, x); h = int(x // 3600); m = int(x % 3600 // 60); s = x % 60
     return f"{h}:{m:02d}:{s:05.2f}"
 
-ass = ["[Script Info]", "ScriptType: v4.00+", "PlayResX: 1080", "PlayResY: 1920", "WrapStyle: 2", "",
+LONG = os.environ.get("FORMAT") == "long"
+OUTW, OUTH = (1920, 1080) if LONG else (1080, 1920)
+ass = ["[Script Info]", "ScriptType: v4.00+", f"PlayResX: {OUTW}", f"PlayResY: {OUTH}", "WrapStyle: 2", "",
        "[V4+ Styles]",
        "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding",
-       "Style: Cap,Inter ExtraBold,82,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,1,0,0,0,100,100,0,0,1,7,3,2,60,60,330,1",
-       "Style: Who,Inter ExtraBold,40,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,1,0,0,0,100,100,2,0,1,5,0,2,60,60,450,1",
+       "Style: Cap,Lilita One,82,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,7,3,2,60,60,330,1",
+       "Style: Who,Lilita One,40,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,1,0,0,0,100,100,2,0,1,5,0,2,60,60,450,1",
        "", "[Events]", "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text"]
+if LONG:  # widescreen: smaller captions, centred under the board on the left
+    ass = [l.replace("Style: Cap,Lilita One,82,", "Style: Cap,Lilita One,74,").replace(",1,7,3,2,60,60,330,1", ",1,6,3,2,40,800,24,1") for l in ass]
 HL = {"DAD": "&H00FFC04F&", "TEEN": "&H0000D6FF&", "MIA": "&H0097DC3D&", "LEO": "&H0000D6FF&"}  # BGR
 for ln in T["lines"]:
     words = []
@@ -91,12 +95,12 @@ for ln in T["lines"]:
             pop = "{\\fad(40,0)}" if wi == 0 else ""
             ass.append(f"Dialogue: 0,{ts(a)},{ts(b)},Cap,,0,0,0,,{pop}{' '.join(parts)}")
 if os.environ.get("DOODLE") == "1":
-    ass = [l.replace("Style: Cap,Inter ExtraBold,82,", "Style: Cap,Patrick Hand,96,") for l in ass]
+    ass = [l.replace("Style: Cap,Lilita One,82,", "Style: Cap,Patrick Hand,96,") for l in ass]
 assf = os.path.join(B, "captions.ass"); open(assf, "w").write("\n".join(ass) + "\n")
 
 # ---------------------------------------------------------------- encode
 cmd = ["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(ffps), "-pattern_type", "glob", "-i", os.path.join(frames, "f*.png"),
-       "-i", wav, "-vf", f"scale=1080:1920:flags=lanczos,fps=24,ass={assf}:fontsdir={os.path.join(os.path.dirname(HERE), 'fonts')}",
+       "-i", wav, "-vf", f"scale={OUTW}:{OUTH}:flags=lanczos,fps=24,ass={assf}:fontsdir={os.path.join(os.path.dirname(HERE), 'fonts')}",
        "-c:v", "libx264", "-preset", "slow", "-crf", "18", "-pix_fmt", "yuv420p", "-profile:v", "high",
        "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", "-shortest", out]
 subprocess.run(cmd, check=True)

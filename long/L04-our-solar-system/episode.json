@@ -1,0 +1,663 @@
+{
+  "id": "L04",
+  "slug": "our-solar-system",
+  "status": "ready",
+  "short_id": "ep011",
+  "title": "Our Solar System: Sun, Planets and Moon | Full Video for Kids",
+  "cover_text": "SPACE TRIP!",
+  "description": "Take a trip through our solar system: meet the Sun, fly past all 8 planets in order, and visit our Moon. Learn the rocky planets and the giant planets, a silly way to remember them, and why the Moon shines. Leo asks, big sister Mia explains, with a quiz at the end!\n\nWant the 60-second version? Find it on our Shorts tab.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#SolarSystem",
+    "#SpaceForKids",
+    "#FunFacts"
+  ],
+  "tags": [
+    "solar system for kids",
+    "8 planets for kids",
+    "planets in order",
+    "the sun for kids",
+    "the moon for kids",
+    "space for kids",
+    "astronomy for kids",
+    "science for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "What's in our solar system?",
+    "cue": "next",
+    "left": "☀️",
+    "right": "🪐"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, what's in our solar system?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "☀️",
+          "label": "Sun"
+        },
+        "right": {
+          "icon": "🪐",
+          "label": "Planets"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Our solar system is the Sun and everything that goes around it: eight planets, lots of moons, and space rocks too!",
+      "board": {
+        "type": "big",
+        "icon": "☀️",
+        "text": "The Sun and its family",
+        "cue": "sun",
+        "sub": "8 planets and more!",
+        "sub_cue": "eight"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Eight planets! Can we visit them all?"
+    },
+    {
+      "who": "MIA",
+      "text": "Let's zoom! First we'll meet the Sun, then fly past all eight planets, and then visit our Moon.",
+      "board": {
+        "type": "steps",
+        "title": "Our space trip",
+        "items": [
+          {
+            "label": "Meet the Sun",
+            "icon": "☀️",
+            "cue": "sun"
+          },
+          {
+            "label": "Fly past 8 planets",
+            "icon": "🚀",
+            "cue": "fly"
+          },
+          {
+            "label": "Visit our Moon",
+            "icon": "🌙",
+            "cue": "moon"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What is the Sun, anyway?",
+      "chapter": "Our star, the Sun"
+    },
+    {
+      "who": "MIA",
+      "text": "The Sun is a star! It's a giant ball of super hot, glowing gas. It's the closest star to us, so it looks much bigger and brighter than other stars.",
+      "punch": "star",
+      "board": {
+        "type": "big",
+        "icon": "img:General_items/Servier/sun",
+        "text": "The Sun is a star!",
+        "cue": "star",
+        "sub": "A ball of hot gas",
+        "sub_cue": "ball"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How big is it?"
+    },
+    {
+      "who": "MIA",
+      "text": "Huge! About a million Earths could fit inside the Sun.",
+      "board": {
+        "type": "big",
+        "icon": "☀️",
+        "text": "A million Earths inside!",
+        "cue": "million"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Its light warms our planet and helps plants grow. Sunlight takes about eight minutes to zoom all the way to Earth!",
+      "board": {
+        "type": "big",
+        "icon": "🌻",
+        "text": "Warms us, grows plants",
+        "cue": "warms",
+        "sub": "Light: 8 minutes to us",
+        "sub_cue": "minutes"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "We should never look straight at the Sun, right?",
+      "board": {
+        "type": "big",
+        "icon": "🚫",
+        "text": "Never look at the Sun",
+        "cue": "never"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Right! It's way too bright. Now, all eight planets travel around the Sun on paths called orbits. Gravity holds them close.",
+      "board": {
+        "type": "big",
+        "icon": "🔄",
+        "text": "Planets orbit the Sun",
+        "cue": "planets",
+        "sub": "Gravity holds them",
+        "sub_cue": "gravity"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Which planet is closest to the Sun?",
+      "chapter": "The rocky planets"
+    },
+    {
+      "who": "MIA",
+      "text": "Mercury! It's the smallest planet, and the fastest. It zips around the Sun quicker than any other planet.",
+      "board": {
+        "type": "big",
+        "icon": "🌑",
+        "text": "Mercury: small and fast",
+        "cue": "mercury",
+        "sub": "The quickest trip round",
+        "sub_cue": "zips"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Next is Venus. Its thick clouds trap the heat, so it's the hottest planet of all, even hotter than Mercury!",
+      "board": {
+        "type": "big",
+        "icon": "🟡",
+        "text": "Venus: the hottest!",
+        "cue": "venus",
+        "sub": "Thick clouds trap heat",
+        "sub_cue": "thick"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Then Earth! That's us!"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Earth has air, oceans of water, and just the right warmth. It's the only planet where we know there is life.",
+      "board": {
+        "type": "big",
+        "icon": "img:General_items/Servier/earth",
+        "text": "Earth: home sweet home",
+        "cue": "earth",
+        "sub": "The only life we know",
+        "sub_cue": "life"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Then comes Mars, the red planet. It's covered in rusty red dust, and it has the tallest volcano in the solar system!",
+      "board": {
+        "type": "big",
+        "icon": "🔴",
+        "text": "Mars: the red planet",
+        "cue": "mars",
+        "sub": "Rusty red dust",
+        "sub_cue": "rusty"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So Mercury, Venus, Earth and Mars go round first?",
+      "board": {
+        "type": "orbit",
+        "title": "The rocky planets",
+        "center": "☀️",
+        "items": [
+          {
+            "icon": "🌑",
+            "label": "Mercury",
+            "cue": "mercury"
+          },
+          {
+            "icon": "🟡",
+            "label": "Venus",
+            "cue": "venus"
+          },
+          {
+            "icon": "🌍",
+            "label": "Earth",
+            "cue": "earth"
+          },
+          {
+            "icon": "🔴",
+            "label": "Mars",
+            "cue": "mars"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Those four are the rocky planets. They're made of rock and metal, with hard ground."
+    },
+    {
+      "who": "LEO",
+      "text": "What comes after Mars?",
+      "chapter": "The giant planets"
+    },
+    {
+      "who": "MIA",
+      "text": "Jupiter, the biggest planet of all! It's so big that all the other planets could fit inside it.",
+      "board": {
+        "type": "big",
+        "icon": "🟠",
+        "text": "Jupiter: the biggest!",
+        "cue": "jupiter",
+        "sub": "Fits all the others!",
+        "sub_cue": "fit"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Jupiter has a giant swirling storm called the Great Red Spot. It's bigger than the whole Earth!",
+      "board": {
+        "type": "big",
+        "icon": "🌀",
+        "text": "A storm bigger than Earth",
+        "cue": "storm",
+        "sub": "The Great Red Spot",
+        "sub_cue": "great"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Whoa! What about the planet with rings?"
+    },
+    {
+      "who": "MIA",
+      "text": "That's Saturn! Its rings are made of billions of chunks of ice and rock, all whizzing around it.",
+      "board": {
+        "type": "big",
+        "icon": "🪐",
+        "text": "Saturn's shiny rings",
+        "cue": "saturn",
+        "sub": "Ice and rock chunks",
+        "sub_cue": "ice"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "And Saturn is so light for its size, it could float in water, if you had a bathtub big enough!",
+      "board": {
+        "type": "big",
+        "icon": "🛁",
+        "text": "Saturn could float!",
+        "cue": "float",
+        "sub": "In a giant bathtub",
+        "sub_cue": "bathtub"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ha! A planet in the bath!"
+    },
+    {
+      "who": "MIA",
+      "text": "Next is Uranus. It spins tipped over on its side, like a ball rolling along! Scientists think something huge bumped into it long ago.",
+      "board": {
+        "type": "big",
+        "icon": "🔵",
+        "text": "Uranus rolls on its side",
+        "cue": "uranus",
+        "sub": "Maybe a big bump!",
+        "sub_cue": "bumped"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "And last is Neptune, the farthest planet from the Sun. It's icy cold and has the fastest winds of any planet.",
+      "board": {
+        "type": "big",
+        "icon": "🔵",
+        "text": "Neptune: far and windy",
+        "cue": "neptune",
+        "sub": "Super fast winds",
+        "sub_cue": "winds"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So Jupiter, Saturn, Uranus and Neptune are the giants!",
+      "board": {
+        "type": "orbit",
+        "title": "The giant planets",
+        "center": "☀️",
+        "items": [
+          {
+            "icon": "🟠",
+            "label": "Jupiter",
+            "cue": "jupiter"
+          },
+          {
+            "icon": "🪐",
+            "label": "Saturn",
+            "cue": "saturn"
+          },
+          {
+            "icon": "🔵",
+            "label": "Uranus",
+            "cue": "uranus"
+          },
+          {
+            "icon": "🔵",
+            "label": "Neptune",
+            "cue": "neptune"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! The rocky planets have solid ground. The giants are huge balls of gas and ice, with no ground to stand on.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "4 rocky",
+          "items": [
+            {
+              "text": "Solid ground",
+              "icon": "🪨",
+              "cue": "solid"
+            }
+          ]
+        },
+        "right": {
+          "label": "4 giants",
+          "items": [
+            {
+              "text": "Gas and ice",
+              "icon": "💨",
+              "cue": "gas"
+            },
+            {
+              "text": "Nowhere to stand",
+              "icon": "🚫",
+              "cue": "stand"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How can I remember them all in order?"
+    },
+    {
+      "who": "MIA",
+      "text": "Try this silly sentence: My Very Excited Monkey Just Swung Under Noodles! Each first letter is a planet.",
+      "board": {
+        "type": "big",
+        "icon": "🐒",
+        "text": "My Very Excited Monkey",
+        "cue": "my",
+        "sub": "Just Swung Under Noodles!",
+        "sub_cue": "just"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune! I did it!",
+      "punch": "did",
+      "board": {
+        "type": "poem",
+        "title": "In order!",
+        "icon": "🪐",
+        "lines": [
+          {
+            "text": "Mercury, Venus",
+            "icon": "🌑",
+            "cue": "mercury"
+          },
+          {
+            "text": "Earth and Mars",
+            "icon": "🌍",
+            "cue": "earth"
+          },
+          {
+            "text": "Jupiter, Saturn",
+            "icon": "🟠",
+            "cue": "jupiter"
+          },
+          {
+            "text": "Uranus, Neptune!",
+            "icon": "🔵",
+            "cue": "uranus"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Wait, what about Pluto?"
+    },
+    {
+      "who": "MIA",
+      "text": "Pluto is now called a dwarf planet. It's smaller than our Moon, and it's far out past Neptune.",
+      "board": {
+        "type": "big",
+        "icon": "🧊",
+        "text": "Pluto: a dwarf planet",
+        "cue": "pluto",
+        "sub": "Smaller than our Moon",
+        "sub_cue": "smaller"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And what about our Moon? Is it a planet too?",
+      "chapter": "Our Moon"
+    },
+    {
+      "who": "MIA",
+      "text": "Nope! The Moon goes around our Earth. It takes about a month to go all the way round.",
+      "board": {
+        "type": "big",
+        "icon": "🌙",
+        "text": "Moon goes round Earth",
+        "cue": "moon",
+        "sub": "About a month",
+        "sub_cue": "month"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Does the Moon glow like the Sun?"
+    },
+    {
+      "who": "MIA",
+      "text": "No! The Moon doesn't make its own light. It shines because sunlight bounces off it, like a flashlight on a ball.",
+      "board": {
+        "type": "big",
+        "icon": "☀️",
+        "text": "Sunlight lights it up",
+        "cue": "sunlight",
+        "sub": "Like a flashlight",
+        "sub_cue": "flashlight"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "That's why it seems to change shape. As it goes round, we see more or less of its sunny side: thin, half, full, then it shrinks back!",
+      "board": {
+        "type": "cycle",
+        "title": "Moon shapes",
+        "center": "🌍",
+        "items": [
+          {
+            "icon": "🌒",
+            "label": "Thin sliver",
+            "cue": "thin"
+          },
+          {
+            "icon": "🌓",
+            "label": "Half",
+            "cue": "half"
+          },
+          {
+            "icon": "🌕",
+            "label": "Full Moon",
+            "cue": "full"
+          },
+          {
+            "icon": "🌘",
+            "label": "Shrinks back",
+            "cue": "shrinks"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can people go to the Moon?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Astronauts have walked on the Moon. There's no wind or rain there, so scientists think their footprints are still there!",
+      "board": {
+        "type": "big",
+        "icon": "👣",
+        "text": "Footprints on the Moon",
+        "cue": "walked",
+        "sub": "Still there today!",
+        "sub_cue": "still"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "The Moon is also covered in round holes called craters, made by space rocks crashing into it long, long ago.",
+      "board": {
+        "type": "big",
+        "icon": "🌕",
+        "text": "Craters everywhere",
+        "cue": "craters",
+        "sub": "From space rocks",
+        "sub_cue": "space"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Quiz time, Leo! Question one: which planet is the biggest? Think...",
+      "chapter": "Quiz time",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "Which is the biggest?",
+        "cue": "biggest"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Jupiter! All the other planets could fit inside it.",
+      "board": {
+        "type": "big",
+        "icon": "🟠",
+        "text": "Jupiter!",
+        "cue": "jupiter"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Question two: is the Sun a planet or a star? Think...",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "Planet or star?",
+        "cue": "planet"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "A star! A giant ball of hot, glowing gas.",
+      "board": {
+        "type": "big",
+        "icon": "⭐",
+        "text": "A star!",
+        "cue": "star",
+        "sub": "Hot, glowing gas",
+        "sub_cue": "hot"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Right! Last one: why does the Moon shine? Think...",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "Why does the Moon shine?",
+        "cue": "moon"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Because sunlight bounces off it! It doesn't make its own light.",
+      "board": {
+        "type": "big",
+        "icon": "🌙",
+        "text": "Sunlight bounces off!",
+        "cue": "sunlight"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "You're a space expert, Leo! Let's sum it up.",
+      "chapter": "Recap",
+      "board": {
+        "type": "big",
+        "icon": "🚀",
+        "text": "Space expert!",
+        "cue": "space"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "The Sun is a star. Four rocky planets, four giant planets, all going round the Sun. And our Moon goes round the Earth!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "The Sun is a star",
+            "icon": "☀️",
+            "cue": "sun"
+          },
+          {
+            "text": "4 rocky planets",
+            "icon": "🌍",
+            "cue": "rocky"
+          },
+          {
+            "text": "4 giant planets",
+            "icon": "🪐",
+            "cue": "giant"
+          },
+          {
+            "text": "Moon goes round Earth",
+            "icon": "🌙",
+            "cue": "moon"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Out of this world! Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... what's in our solar system?"
+    }
+  ]
+}

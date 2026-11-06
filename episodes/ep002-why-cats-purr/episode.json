@@ -36,7 +36,7 @@
       "board": {
         "type": "title",
         "left": {
-          "icon": "🐱",
+          "icon": "img:Animals/Servier/cat",
           "label": "Cat"
         },
         "right": {
@@ -51,7 +51,7 @@
       "text": "A purr is a cat's soft rumble. Scientists think tiny muscles in its throat buzz as the cat breathes in and out.",
       "board": {
         "type": "big",
-        "icon": "🐱",
+        "icon": "img:Human_physiology/Servier/larynx",
         "text": "A rumble in the throat",
         "cue": "throat",
         "sub": "Buzz in, buzz out",
