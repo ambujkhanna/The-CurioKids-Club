@@ -35,10 +35,16 @@
     },
     "ep004": {
       "title": "Rainy Day Rhyme \ud83c\udf27\ufe0f The Water Cycle Poem for Kids",
-      "rendered_at": "2026-11-06T18:43:36+05:30",
+      "rendered_at": "2026-11-06T21:49:32+05:30",
       "duration_s": 76.97,
-      "facebook": "posted (reel 1728749192110385)",
-      "instagram": "failed: 1) direct: HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}} | 2) hidden copy: processing Error: Media upload has failed with error code 2207076 | 3) FB reel copy: processing Error: Media upload has failed with error code 2207076"
+      "facebook": "posted (reel 1728749192110385) (kept, not re-posted)",
+      "instagram": "failed: 1) direct: HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}} | 2) hidden copy: processing Error: Media upload has failed with error code 2207076 | 3) FB reel copy: processing Error: Media upload has failed with error code 2207076",
+      "publish_at_ist": "2026-11-07T17:20+05:30",
+      "thumbnail": "set",
+      "status": "uploaded",
+      "video_id": "TkcXGEyIvME",
+      "url": "https://www.youtube.com/shorts/TkcXGEyIvME",
+      "uploaded_at": "2026-11-06T21:53:28+05:30"
     }
   }
 }
