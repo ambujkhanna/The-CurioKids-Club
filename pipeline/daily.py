@@ -21,6 +21,7 @@ EPDIR = os.path.join(ROOT, "long" if LONG else "episodes")
 STATE = os.path.join(EPDIR, "state.json")
 OUT = os.path.join(ROOT, "out")
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
+BRAND_LINE = "🌈 More fun science for curious kids: search The CurioKids Club on YouTube"
 
 
 def sh(cmd, env=None, cwd=ROOT):
@@ -185,6 +186,12 @@ def main():
         if ch: ep["description"] = ep["description"].rstrip() + "\n\nChapters:\n" + ch
         ep["hashtags"] = [h for h in ep.get("hashtags", []) if h.lower() != "#shorts"]
     from upload_youtube import have_credentials, upload, set_thumbnail
+    import meta_post
+    if "--social-only" in args and not dry:  # post this episode to Facebook / Instagram only (no YouTube)
+        social = meta_post.post_all(mp4, ep, BRAND_LINE, LONG) if meta_post.have_meta() else {"facebook": "no META secrets configured"}
+        rec.update(social); json.dump(state, open(STATE, "w"), indent=2)
+        print("Social only:", social)
+        summary(f"### 📣 Social post for {eid}\n\n" + "\n".join(f"- {k.title()}: {v}" for k, v in social.items())); return 0
     if dry or not have_credentials():
         rec.update({"status": "rendered", "note": "dry run" if dry else "no YouTube credentials configured"})
         json.dump(state, open(STATE, "w"), indent=2)
@@ -200,11 +207,13 @@ def main():
         when = slot.strftime("%d %b %Y, %H:%M IST"); rec["publish_at_ist"] = slot.isoformat(timespec="minutes")
     rec.pop("note", None)
     rec["thumbnail"] = set_thumbnail(vid, thumb) if thumb else "not rendered"
+    social = meta_post.post_all(mp4, ep, BRAND_LINE, LONG)  # Facebook Page + Instagram (if META secrets are set)
+    rec.update(social)
     rec.update({"status": "uploaded", "video_id": vid, "url": f"https://www.youtube.com/{'watch?v=' if LONG else 'shorts/'}{vid}",
                 "uploaded_at": dt.datetime.now(IST).isoformat(timespec="seconds")})
     json.dump(state, open(STATE, "w"), indent=2)
     print("Uploaded:", rec["url"], "publish:", when)
-    summary(f"### ✅ Uploaded {eid}: {ep['title']}\n\n- Link: {rec['url']}\n- Publish: {when}\n- Length: {rec['duration_s']} s\n- Thumbnail: {rec['thumbnail']}\n"
+    summary(f"### ✅ Uploaded {eid}: {ep['title']}\n\n- Link: {rec['url']}\n- Publish: {when}\n- Length: {rec['duration_s']} s\n- Thumbnail: {rec['thumbnail']}\n" + "".join(f"- {k.title()}: {v}\n" for k, v in social.items()) +
             "- Note: until the YouTube API audit is approved, YouTube keeps API uploads **Private** — "
             "set it to Public (or Schedule) in YouTube Studio → Content.")
     return 0

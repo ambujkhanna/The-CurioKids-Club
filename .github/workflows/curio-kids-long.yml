@@ -16,6 +16,10 @@ on:
         description: "Publish immediately (no schedule)"
         type: boolean
         default: false
+      social_only:
+        description: "Only post the chosen episode (fill 'episode') to Facebook + Instagram - no YouTube upload"
+        type: boolean
+        default: false
       refresh_thumbnails:
         description: "Only re-make and upload thumbnails for videos already uploaded (no new video)"
         type: boolean
@@ -70,6 +74,9 @@ jobs:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          META_IG_USER_ID: ${{ secrets.META_IG_USER_ID }}
           PUBLISH_WINDOW: ${{ vars.PUBLISH_WINDOW || '16:00-19:00' }}
         run: |
           ARGS=""
@@ -77,6 +84,7 @@ jobs:
           if [ -n "${{ inputs.episode }}" ]; then ARGS="$ARGS --episode ${{ inputs.episode }}"; fi
           if [ "${{ inputs.publish_now }}" = "true" ]; then ARGS="$ARGS --now"; fi
           if [ "${{ inputs.refresh_thumbnails }}" = "true" ]; then ARGS="$ARGS --refresh-thumbnails"; fi
+          if [ "${{ inputs.social_only }}" = "true" ]; then ARGS="$ARGS --social-only"; fi
           python pipeline/daily.py --long $ARGS
 
       - name: Keep the video as a downloadable artifact (14 days)

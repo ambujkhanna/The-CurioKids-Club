@@ -105,3 +105,26 @@ The thumbnail JPG is also in the run's Artifacts if you want to add it by hand.
 - **Real science drawings:** any icon can be `img:<Category>/<Author>/<name>`; the full list is in `assets/IMAGE_INDEX.txt`. They come from Bioicons (Servier Medical Art and others), using only licences that allow commercial use. The daily run downloads any missing drawing from GitHub, and the credits required by CC BY are **added to the YouTube description automatically**.
 - **Animated diagrams:** `body` (blood, nerve, air and food flows), `cycle`, `journey` and `orbit`. See `episodes/README.md` and `pipeline/diagrams.py`.
 - **Fonts** (SIL Open Font License, licence files in `fonts/`): The CurioKids Club uses Fredoka for boards and Lilita One for captions. AInation Studio uses Poppins.
+
+## Facebook Page + Instagram (Reels) — added 2026-11-06
+
+After each YouTube upload, the same video is also posted as a **Reel** to the channel's Facebook Page and Instagram (long 16:9 videos go to Facebook only, as a normal video). It does nothing until these GitHub secrets exist:
+
+| Secret | Where it comes from |
+|---|---|
+| `META_PAGE_ID` | Graph API Explorer → `me/accounts?fields=id,name,access_token,instagram_business_account` → the Page's `id` |
+| `META_PAGE_TOKEN` | the Page's `access_token` from that same query, run **with the extended (long) user token**. Check that it says "Expires: Never" |
+| `META_IG_USER_ID` | `instagram_business_account.id` from that same query |
+
+**One-time setup:**
+1. Create a Facebook Page and an Instagram **Business** account, then link the Instagram account to the Page (Page → Settings → Linked accounts).
+2. Create a Meta developer app (Business type). Add the use cases "Manage everything on your Page" and "Manage messaging & content on Instagram (API setup with Facebook login)".
+3. Add a **Facebook Login for Business** configuration with these permissions: pages_show_list, pages_read_engagement, pages_manage_posts, instagram_basic, instagram_content_publish and business_management.
+4. In the Graph API Explorer, generate a token with that configuration, extend it in the Access Token Debugger, then run the query above.
+
+**How it posts:**
+- **When:** right after the YouTube upload. Instagram's API can't schedule.
+- **Caption:** the title, the first paragraph of the description, the brand line and the hashtags.
+- **Results:** shown in the run summary (Facebook / Instagram: posted or failed). A failure never blocks the YouTube upload.
+
+**Test, or post an older episode:** Actions → daily workflow → Run workflow → tick **social_only** and enter the **episode** id (e.g. `ep002`). It renders that episode and posts it to Facebook and Instagram only.
