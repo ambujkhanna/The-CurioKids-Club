@@ -11,8 +11,9 @@ This is the same process as AInation Studio, so you can reuse most of what you a
      ```bash
      sed -i 's/@CurioKidsClub/@NEWHANDLE/g' episodes/*/episode.json episodes/README.md
      ```
-3. In YouTube Studio for the new channel, go to **Settings → Channel → Advanced settings → Audience** and choose
-   **"Yes, set this channel as made for kids"**. Save.
+3. In YouTube Studio for the new channel, go to **Settings → Channel → Advanced settings → Audience** and choose the audience.
+   The uploader follows the repo variable `MADE_FOR_KIDS` (default `false` = "No, it's not made for kids"; set it to `true` to mark videos as made for kids).
+   With `false`, choose **"I want to review this setting for every video"** here. Otherwise the channel setting overrides each video.
 
 **What "Made for Kids" means:** YouTube's law-based rules for children's content (COPPA) apply:
 - comments are turned off
@@ -20,7 +21,10 @@ This is the same process as AInation Studio, so you can reuse most of what you a
 - no notification bell and no mini-player on these videos
 - the uploader also marks every video as Made for Kids
 
-This is required for content aimed at children. Don't switch it off.
+**Owner decision (2026-11-07):** videos are uploaded as **not made for kids** (`MADE_FOR_KIDS=false`).
+YouTube and the FTC judge the content itself (cartoon characters, nursery-style topics) and can override this setting.
+Wrongly marking child-directed videos as not made for kids can lead to penalties under COPPA.
+To go back, add the repo variable `MADE_FOR_KIDS` = `true`, then run the workflow with **fix_existing**.
 
 ## 2. Put the code on GitHub
 
@@ -51,6 +55,7 @@ You can use the **same** Google Cloud project, "AInation Automation". It's alrea
    ```text
    https://www.googleapis.com/auth/youtube.upload
    ```
+   (`youtube.upload` is enough. Use `https://www.googleapis.com/auth/youtube` instead only if you want automatic playlists or fix_existing.)
    Click **Authorize APIs**. When asked which channel, **choose The CurioKids Club**.
 4. In Step 2, click **Exchange authorization code for tokens** and copy the **Refresh token**.
 5. In the new repo, go to **Settings → Secrets and variables → Actions → New repository secret**, three times:
@@ -148,3 +153,14 @@ To post a video from a particular category, go to Actions → **Daily Curio Kids
 | rhymes | original rhymes and poems (karaoke-style lines) |
 
 - **Adding more:** see `library/README.md`.
+
+## Playlist, audience and Instagram test: added 2026-11-07
+
+- **Playlist:** **off by default.** The owner adds videos to the **curiokids** playlist by hand in YouTube Studio.
+  - To automate it later: make a refresh token with the `https://www.googleapis.com/auth/youtube` scope (section 3) and update `YT_REFRESH_TOKEN`.
+  - Then add the repo variable `YT_PLAYLIST` = `curiokids` (Settings → Secrets and variables → Actions → Variables). Every upload is then added automatically.
+- **Audience:** repo variable `MADE_FOR_KIDS` (default `false`). See section 1.
+- **fix_existing:** Run workflow → tick **fix_existing**. It adds every already-uploaded video to the playlist (no duplicates) and applies the `MADE_FOR_KIDS` setting, keeping each video's privacy and schedule. No new video is made.
+- **ig_test:** Run workflow → tick **ig_test**. It posts an 8-second test clip (a colour test pattern) to Instagram only and shows the account details and the 24-hour publishing limit.
+  - **If it posts:** the account works and the problem is in our episode videos. Delete the test Reel.
+  - **If it fails:** the problem is the Instagram account, app or token.

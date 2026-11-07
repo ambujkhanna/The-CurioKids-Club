@@ -5,6 +5,8 @@
     python pipeline/daily.py --episode ep003   # force a specific episode
     python pipeline/daily.py --now             # publish immediately instead of scheduling
     python pipeline/daily.py --long            # weekly LONG video (16:9, 3-8 min) from long/<id>/episode.json
+    python pipeline/daily.py --ig-test         # post a short test clip to Instagram only (diagnoses Instagram problems)
+    python pipeline/daily.py --fix-existing    # add already-uploaded videos to the playlist + apply MADE_FOR_KIDS
     python pipeline/daily.py --category quiz   # next episode of a category from library/<category>/<id>/episode.json
                                                  (comedy, quiz, knowledge, science, abc, counting, rhymes)
 
@@ -143,8 +145,67 @@ def refresh_thumbnails():
     return 0
 
 
+def ig_test():
+    """Post an 8-second test clip (made by ffmpeg) to Instagram only, plus account checks, to tell an account
+    problem from a video problem. If it succeeds, delete the test Reel from Instagram afterwards."""
+    import meta_post
+    if not meta_post.have_ig():
+        summary("### 🧪 Instagram test\n\n- META_PAGE_ID / META_PAGE_TOKEN / META_IG_USER_ID secrets are not all set"); return 0
+    lines = []
+    ig, tok = os.environ["META_IG_USER_ID"], os.environ["META_PAGE_TOKEN"]
+    import urllib.parse
+    q = urllib.parse.quote(tok)
+    for label, url in (("Account", f"{meta_post.GRAPH}/{ig}?fields=username,name,media_count&access_token={q}"),
+                       ("Publishing limit (24 h)", f"{meta_post.GRAPH}/{ig}/content_publishing_limit?fields=config,quota_usage&access_token={q}")):
+        try:
+            lines.append(f"- {label}: `{json.dumps(meta_post._req(url))[:300]}`")
+        except Exception as e:
+            lines.append(f"- {label}: failed: {e}"[:300])
+    os.makedirs(OUT, exist_ok=True); clip = os.path.join(OUT, "ig_test.mp4")
+    sh(["ffmpeg", "-y", "-loglevel", "error", "-f", "lavfi", "-i", "testsrc2=size=1080x1920:rate=30:duration=8",
+        "-f", "lavfi", "-i", "sine=frequency=440:sample_rate=44100:duration=8",
+        "-c:v", "libx264", "-profile:v", "high", "-level:v", "4.1", "-pix_fmt", "yuv420p", "-b:v", "4M",
+        "-c:a", "aac", "-ar", "44100", "-ac", "2", "-b:a", "128k", "-shortest", "-movflags", "+faststart", clip])
+    st = meta_post.post_instagram(clip, "Test post from The CurioKids Club automation (safe to delete).")
+    lines.append(f"- Test clip (8 s, 1080x1920, H.264 + AAC): {st}")
+    verdict = ("**The test clip posted, so the account and token work: the problem is in our episode videos.** "
+               "Delete the test Reel from Instagram.") if st.startswith("posted") else \
+              ("**Even a plain 8-second test clip failed, so the problem is the Instagram account, app or token, "
+               "not our videos.** Post a Reel by hand in the Instagram app and check Settings > Account status.")
+    summary("### 🧪 Instagram test\n\n" + "\n".join(lines) + "\n\n" + verdict)
+    print("\n".join(lines)); return 0
+
+
+def fix_existing():
+    """Add every uploaded video to the playlist and apply MADE_FOR_KIDS to it (daily, long and category videos)."""
+    from upload_youtube import have_credentials, add_to_playlist, playlist_videos, set_made_for_kids
+    if not have_credentials():
+        print("No YouTube credentials - nothing to do."); return 0
+    try:
+        have = playlist_videos() if (os.environ.get("YT_PLAYLIST") or "").strip() else None
+    except Exception as e:
+        have = None; print("could not read the playlist:", e)
+    done = []
+    for st_file in [os.path.join(ROOT, "episodes", "state.json"), os.path.join(ROOT, "long", "state.json")] + \
+                   sorted(glob.glob(os.path.join(ROOT, "library", "*", "state.json"))):
+        if not os.path.exists(st_file): continue
+        state = json.load(open(st_file))
+        for eid, rec in sorted(state.get("episodes", {}).items()):
+            if rec.get("status") != "uploaded" or not rec.get("video_id"): continue
+            rec["playlist"] = add_to_playlist(rec["video_id"], have)
+            rec["made_for_kids"] = set_made_for_kids(rec["video_id"])
+            done.append(f"- {eid}: playlist {rec['playlist']}; {rec['made_for_kids']}"); print(done[-1])
+        json.dump(state, open(st_file, "w"), indent=2)
+    summary("### 🔧 Existing videos updated\n\n" + ("\n".join(done) or "- no uploaded videos found"))
+    return 0
+
+
 def main():
     args = sys.argv[1:]
+    if "--ig-test" in args:
+        return ig_test()
+    if "--fix-existing" in args:
+        return fix_existing()
     if "--refresh-thumbnails" in args:
         return refresh_thumbnails()
     dry = "--dry-run" in args
@@ -190,7 +251,7 @@ def main():
         ch = chapters(ep)
         if ch: ep["description"] = ep["description"].rstrip() + "\n\nChapters:\n" + ch
         ep["hashtags"] = [h for h in ep.get("hashtags", []) if h.lower() != "#shorts"]
-    from upload_youtube import have_credentials, upload, set_thumbnail
+    from upload_youtube import have_credentials, upload, set_thumbnail, add_to_playlist, made_for_kids
     import meta_post
     if "--social-only" in args and not dry:  # post this episode to Facebook / Instagram only (no YouTube)
         social = meta_post.post_all(mp4, ep, BRAND_LINE, LONG, rec) if meta_post.have_meta() else {"facebook": "no META secrets configured"}
@@ -212,13 +273,15 @@ def main():
         when = slot.strftime("%d %b %Y, %H:%M IST"); rec["publish_at_ist"] = slot.isoformat(timespec="minutes")
     rec.pop("note", None)
     rec["thumbnail"] = set_thumbnail(vid, thumb) if thumb else "not rendered"
+    rec["playlist"] = add_to_playlist(vid)
+    rec["made_for_kids"] = "yes" if made_for_kids() else "no"
     social = meta_post.post_all(mp4, ep, BRAND_LINE, LONG, rec)  # Facebook Page + Instagram (if META secrets are set)
     rec.update(social)
     rec.update({"status": "uploaded", "video_id": vid, "url": f"https://www.youtube.com/{'watch?v=' if LONG else 'shorts/'}{vid}",
                 "uploaded_at": dt.datetime.now(IST).isoformat(timespec="seconds")})
     json.dump(state, open(STATE, "w"), indent=2)
     print("Uploaded:", rec["url"], "publish:", when)
-    summary(f"### ✅ Uploaded {eid}: {ep['title']}\n\n- Link: {rec['url']}\n- Publish: {when}\n- Length: {rec['duration_s']} s\n- Thumbnail: {rec['thumbnail']}\n" + "".join(f"- {k.title()}: {v}\n" for k, v in social.items()) +
+    summary(f"### ✅ Uploaded {eid}: {ep['title']}\n\n- Link: {rec['url']}\n- Publish: {when}\n- Length: {rec['duration_s']} s\n- Thumbnail: {rec['thumbnail']}\n- Playlist: {rec['playlist']}\n- Made for kids: {rec['made_for_kids']}\n" + "".join(f"- {k.title()}: {v}\n" for k, v in social.items()) +
             "- Note: until the YouTube API audit is approved, YouTube keeps API uploads **Private** — "
             "set it to Public (or Schedule) in YouTube Studio → Content.")
     return 0

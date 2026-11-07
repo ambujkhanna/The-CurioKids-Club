@@ -78,6 +78,8 @@ jobs:
           META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
           META_IG_USER_ID: ${{ secrets.META_IG_USER_ID }}
           PUBLISH_WINDOW: ${{ vars.PUBLISH_WINDOW || '16:00-19:00' }}
+          MADE_FOR_KIDS: ${{ vars.MADE_FOR_KIDS || 'false' }}
+          YT_PLAYLIST: ${{ vars.YT_PLAYLIST }}
         run: |
           ARGS=""
           if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
