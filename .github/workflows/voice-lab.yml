@@ -1,10 +1,16 @@
-name: Voice Lab (Chatterbox voice samples)
+name: Voice Lab (Chatterbox / Turbo voice samples)
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      which:
+        description: "Which samples to make"
+        type: choice
+        default: turbo
+        options: [turbo, chatterbox]
 
 jobs:
-  chatterbox:
+  samples:
     runs-on: ubuntu-24.04
     timeout-minutes: 120
     steps:
@@ -19,11 +25,11 @@ jobs:
           pip install torch==2.6.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cpu
           pip install chatterbox-tts
       - name: Make samples
-        run: python voicelab/voice_lab.py chatterbox
+        run: python voicelab/voice_lab.py ${{ inputs.which }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: voice-lab-chatterbox
+          name: voice-lab-${{ inputs.which }}
           path: voicelab/out/
           retention-days: 14
 

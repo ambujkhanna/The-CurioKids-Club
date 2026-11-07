@@ -144,21 +144,41 @@ def ig_check(path):
         return f"rejected: {e}"[:200]
 
 
-def ig_safe(path):
-    """Instagram-friendly copy: H.264 High@4.1, 30 fps, keyframe every 2 s, steady bitrate, AAC 44.1 kHz stereo."""
+def ig_safe(path, target_mb=24):
+    """Instagram copy: 720x1280 H.264 High, 30 fps, AAC 44.1 kHz, sized under ~target_mb.
+    (Tested 2026-11-07: this account's API rejected files over ~30 MB with ProcessingFailedError,
+    and accepted 19-28 MB files.)"""
     import subprocess
     out = path[:-4] + "_ig.mp4"
-    cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", path,
-           "-c:v", "libx264", "-profile:v", "high", "-level:v", "4.1", "-pix_fmt", "yuv420p", "-r", "30",
-           "-g", "60", "-keyint_min", "60", "-sc_threshold", "0", "-b:v", "6M", "-maxrate", "8M", "-bufsize", "12M",
-           "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709",
+    try:
+        dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", path],
+                                   capture_output=True, text=True, check=True).stdout.strip())
+    except Exception:
+        dur = 90.0
+    kb = int(max(900, min(3000, target_mb * 8192 / max(dur, 1) - 160)))  # video kbit/s within the size budget
+    vf = "scale=720:1280:force_original_aspect_ratio=decrease,pad=720:1280:(ow-iw)/2:(oh-ih)/2" if not long_video(path) else "scale=1280:720"
+    cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", path, "-vf", vf,
+           "-c:v", "libx264", "-preset", "slow", "-profile:v", "high", "-level:v", "4.1", "-pix_fmt", "yuv420p", "-r", "30",
+           "-g", "60", "-keyint_min", "60", "-sc_threshold", "0", "-b:v", f"{kb}k", "-maxrate", f"{int(kb * 1.3)}k",
+           "-bufsize", f"{kb * 2}k", "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709",
            "-c:a", "aac", "-ar", "44100", "-ac", "2", "-b:a", "128k", "-movflags", "+faststart", out]
     try:
         subprocess.run(cmd, check=True)
+        print(f"Instagram copy: {os.path.getsize(out) / 1e6:.1f} MB at {kb} kbit/s")
         return out
     except Exception as e:
         print("note: could not make Instagram copy:", e)
         return path
+
+
+def long_video(path):
+    try:
+        import subprocess
+        r = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height",
+                            "-of", "csv=p=0", path], capture_output=True, text=True, check=True).stdout.strip().split(",")
+        return int(r[0]) > int(r[1])
+    except Exception:
+        return False
 
 
 def post_instagram(path, cap):

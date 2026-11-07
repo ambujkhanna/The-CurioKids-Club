@@ -1,6 +1,7 @@
 """Voice Lab: try expressive open-source voices on GitHub's computer and save samples to listen to.
 
     python voicelab/voice_lab.py chatterbox     # Chatterbox (MIT): expressive, keeps Mia/Leo voices (clones mia_ref.wav / leo_ref.wav)
+    python voicelab/voice_lab.py turbo          # Chatterbox-Turbo (MIT): real laughs/chuckles with [laugh] [chuckle] tags
 
 Writes MP3s to voicelab/out/. Each model runs separately so one failing does not stop the other.
 """
@@ -38,6 +39,28 @@ def chatterbox():
             mp3(p, f"chatterbox_ex{int(ex*10)}_{name}"); print(f"  {time.time() - t0:.0f}s", flush=True)
 
 
+TURBO_LINES = [  # (name, speaker, text) - comedy lines with real laugh tags
+    ("leo_laugh_reaction", "LEO", "[laugh] No way! That is SO silly! [laugh] Tell me another one!"),
+    ("mia_punchline_chuckle", "MIA", "Because... it felt crummy! [chuckle]"),
+    ("leo_giggle_fit", "LEO", "Hee hee... [laugh] okay, okay, I can't stop laughing!"),
+    ("mia_joke_champ", "MIA", "[laugh] Ha! Leo, you're the joke champ!"),
+    ("leo_teddy_joke", "LEO", "Why did the teddy bear say no to dessert? [chuckle] Because it was already stuffed!"),
+    ("mia_reacts", "MIA", "[gasp] Oh my! [laugh] That's the funniest one yet!"),
+    ("science_calm", "MIA", "Your heart beats about one hundred thousand times every single day. Isn't that amazing?"),
+]
+
+
+def turbo():
+    import torchaudio as ta
+    from chatterbox.tts_turbo import ChatterboxTurboTTS
+    model = ChatterboxTurboTTS.from_pretrained(device="cpu")
+    for name, who, text in TURBO_LINES:
+        t0 = time.time()
+        wav = model.generate(text, audio_prompt_path=MIA if who == "MIA" else LEO)
+        p = os.path.join(OUT, f"turbo_{name}.wav"); ta.save(p, wav, model.sr)
+        mp3(p, f"turbo_{name}"); print(f"  {time.time() - t0:.0f}s", flush=True)
+
+
 def bark():
     import numpy as np
     from scipy.io import wavfile
@@ -61,7 +84,7 @@ def bark():
 if __name__ == "__main__":
     which = sys.argv[1] if len(sys.argv) > 1 else "chatterbox"
     try:
-        {"chatterbox": chatterbox, "bark": bark}[which]()
+        {"chatterbox": chatterbox, "turbo": turbo, "bark": bark}[which]()
     except Exception as e:
         import traceback; traceback.print_exc()
         open(os.path.join(OUT, f"{which}_FAILED.txt"), "w").write(str(e))
