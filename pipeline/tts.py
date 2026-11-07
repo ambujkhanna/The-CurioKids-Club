@@ -1,4 +1,11 @@
-"""Generate dialogue audio with Kokoro and exact per-phoneme timings."""
+"""Generate dialogue audio and exact per-phoneme timings (build/dialogue.wav + build/timing.json).
+
+Voices: Kokoro (default), or Chatterbox when TTS_ENGINE=chatterbox and CB_PYTHON points to a Python that has
+chatterbox-tts installed (see the workflow). With Chatterbox, each line is also read by Kokoro and the two are
+matched (DTW on MFCC features) so lip-sync, captions and board cues stay on the right words. If Chatterbox fails
+for any reason, the whole episode falls back to Kokoro.
+Chatterbox exaggeration: CB_EXAGGERATION (0.5 natural .. 0.8 animated), or "exaggeration" in episode.json.
+"""
 import json, os, re
 import numpy as np, onnxruntime as ort, soundfile as sf
 from kokoro_onnx import Kokoro
@@ -80,10 +87,9 @@ k = Kokoro(os.path.join(S, "kokoro-q8.onnx"), os.path.join(S, "voices.bin"))
 sess = ort.InferenceSession(os.path.join(S, "kokoro-dur.onnx"))
 vocab = k.tokenizer.vocab
 
-audio = [np.zeros(int(LEAD * SR), np.float32)]
-t = LEAD
-lines = []
-for spk, text in LINES:
+
+def kokoro_line(spk, text):
+    """Kokoro audio for one line + phonemes/words with times relative to the start of the clip."""
     voice, speed, semis = (tuple(VOICES[spk]) + (0,))[:3]
     ph = k.tokenizer.phonemize(text, "en-us")
     chars = [c for c in ph if c in vocab]
@@ -93,10 +99,8 @@ for spk, text in LINES:
                                "style": style, "speed": np.array([speed], np.float32)})
     wav = wav.ravel().astype(np.float32); dur = np.array(dur).ravel()
     assert abs(wav.size - dur.sum() * HOP) < HOP, (wav.size, dur.sum())
-    # trim: keep BOS silence partly, it's natural lead-in
     edges = np.concatenate([[0], np.cumsum(dur)]) * HOP / SR
-    phon = [(chars[i], t + edges[i + 1], t + edges[i + 2]) for i in range(len(chars))]
-    # words: split phoneme string on spaces, align with text words
+    phon = [(chars[i], edges[i + 1], edges[i + 2]) for i in range(len(chars))]
     words_txt = text.split()
     groups, cur = [], []
     for c, a, b in phon:
@@ -105,11 +109,9 @@ for spk, text in LINES:
         else:
             cur.append((c, a, b))
     if cur: groups.append(cur)
-    # drop groups that are only punctuation
     groups = [g for g in groups if any(re.match(r"\w", c) or c not in ".,!?;:…—\"'" for c, _, _ in g)]
     if len(groups) != len(words_txt):
         print("note: word timing via weighted fallback for:", text[:50])
-        # fallback: spread the spoken span over the words, weighted by each word's own phoneme count
         a0, b0 = phon[0][1], phon[-1][2]
         wts = [max(1, len([c for c in k.tokenizer.phonemize(w, "en-us") if c in vocab and c not in " .,!?"])) for w in words_txt]
         tot = sum(wts); acc = 0; words = []
@@ -117,10 +119,126 @@ for spk, text in LINES:
             words.append((w, a0 + (b0 - a0) * acc / tot, a0 + (b0 - a0) * (acc + n_) / tot)); acc += n_
     else:
         words = [(w, g[0][1], g[-1][2]) for w, g in zip(words_txt, groups)]
-    if semis:
-        wav = pitch_shift(wav, semis)
-    peak = np.abs(wav).max(); wav = wav / peak * 0.85
-    start, end = t + edges[1], t + edges[-2]
+    return wav, phon, words, edges[1], edges[-2], ph, semis
+
+
+# ------------------------------------------------------------------ Chatterbox + alignment
+def _mfcc(wav, hop=480, win=960, n_mel=40, n_cep=13):
+    """MFCC features, 20 ms hop (numpy only)."""
+    if wav.size < win: wav = np.pad(wav, (0, win - wav.size))
+    n = 1 + (wav.size - win) // hop
+    fr = np.lib.stride_tricks.as_strided(wav, (n, win), (wav.strides[0] * hop, wav.strides[0])) * np.hanning(win)
+    spec = np.abs(np.fft.rfft(fr, 1024)) ** 2
+    mel = lambda f: 2595 * np.log10(1 + f / 700)
+    pts = 700 * (10 ** (np.linspace(mel(60), mel(7600), n_mel + 2) / 2595) - 1)
+    bins = np.floor((1024 + 1) * pts / SR).astype(int)
+    fb = np.zeros((n_mel, spec.shape[1]))
+    for m in range(1, n_mel + 1):
+        a, b, c = bins[m - 1], bins[m], bins[m + 1]
+        if b > a: fb[m - 1, a:b] = (np.arange(a, b) - a) / (b - a)
+        if c > b: fb[m - 1, b:c] = (c - np.arange(b, c)) / (c - b)
+    lm = np.log(spec @ fb.T + 1e-8)
+    dct = np.cos(np.pi / n_mel * (np.arange(n_mel) + 0.5)[None, :] * np.arange(n_cep)[:, None])
+    cep = lm @ dct.T
+    cep = cep[:, 1:]  # drop c0 (voices differ in loudness)
+    cep = (cep - cep.mean(0)) / (cep.std(0) + 1e-6)
+    # speech/silence feature so pauses line up with pauses (expressive readers pause longer)
+    e = np.log((fr ** 2).mean(1) + 1e-10); e = (e - e.max()) / 10
+    vad = (e > -0.45).astype(float)  # ~ -45 dB below the loudest frame
+    cep = cep * vad[:, None]  # silence frames all look alike
+    return np.hstack([cep, 4.0 * vad[:, None]])
+
+
+def _dtw(A, B):
+    """Monotonic alignment of feature sequences A (n) and B (m). Returns a time map: A frame -> B frame (float)."""
+    n, m = len(A), len(B)
+    C = np.sqrt(((A[:, None, :] - B[None, :, :]) ** 2).sum(-1))
+    band = max(int(0.25 * max(n, m)), abs(n - m) + 10)
+    D = np.full((n + 1, m + 1), np.inf); D[0, 0] = 0
+    for i in range(1, n + 1):
+        jc = i * m / n; lo, hi = max(1, int(jc - band)), min(m, int(jc + band))
+        prev, row, ci = D[i - 1], D[i], C[i - 1]
+        for j in range(lo, hi + 1):
+            row[j] = ci[j - 1] + min(prev[j], prev[j - 1], row[j - 1])
+    i, j, path = n, m, []
+    while i > 0 and j > 0:
+        path.append((i - 1, j - 1))
+        k_ = int(np.argmin([D[i - 1, j - 1], D[i - 1, j], D[i, j - 1]]))
+        i, j = (i - 1, j - 1) if k_ == 0 else (i - 1, j) if k_ == 1 else (i, j - 1)
+    path.reverse()
+    mp = np.zeros(n)
+    for a in range(n):
+        js = [b for x, b in path if x == a]
+        mp[a] = np.mean(js) if js else (mp[a - 1] if a else 0)
+    return np.maximum.accumulate(mp)
+
+
+def _speech_span(wav, thr=0.02):
+    """First/last sample with speech (energy above thr x peak, 10 ms frames)."""
+    fr = wav[: wav.size // 240 * 240].reshape(-1, 240)
+    e = np.sqrt((fr ** 2).mean(1)); on = np.where(e > thr * (e.max() + 1e-9))[0]
+    if not on.size: return 0, wav.size
+    return max(0, on[0] * 240 - 480), min(wav.size, (on[-1] + 1) * 240 + 960)
+
+
+def align(kwav, ka, kb, cwav):
+    """Map Kokoro times (speech from ka..kb s) onto the Chatterbox clip. Returns (trimmed clip, f(t))."""
+    c0, c1 = _speech_span(cwav); cwav = cwav[c0:c1]
+    ks, ke = int(ka * SR), int(kb * SR)
+    A, B = _mfcc(kwav[ks:ke]), _mfcc(cwav)
+    mp = _dtw(A, B) * 0.02  # Kokoro frame (20 ms) -> Chatterbox seconds
+    ta = np.arange(len(mp)) * 0.02
+    def f(t):
+        return float(np.interp(t - ka, ta, mp, left=0, right=mp[-1] + (t - kb if t > kb else 0)))
+    return cwav, f
+
+
+def chatterbox_all():
+    """Generate every line with Chatterbox (in its own Python). Returns a list of wavs, or None to fall back."""
+    import subprocess, tempfile
+    py = os.environ.get("CB_PYTHON")
+    if os.environ.get("TTS_ENGINE", "kokoro") != "chatterbox" or not py:
+        return None
+    refs = {n: os.path.join(S, "assets", "voices", n.lower() + ".wav") for n in ("MIA", "LEO", "DAD", "TEEN")}
+    refs["TEEN"] = refs["MIA"]
+    ex = float((_ep.get("exaggeration") if EP_FILE else None) or os.environ.get("CB_EXAGGERATION") or 0.5)
+    seed0 = sum(map(ord, _ep.get("id", "x"))) if EP_FILE else 7
+    d = tempfile.mkdtemp(); job = os.path.join(d, "job.json")
+    json.dump({"out": d, "refs": refs, "lines": [{"who": spk, "text": text, "ex": ex, "seed": seed0 * 100 + i}
+                                                  for i, (spk, text) in enumerate(LINES)]}, open(job, "w"))
+    try:
+        subprocess.run([py, os.path.join(S, "pipeline", "cb_gen.py"), job], check=True, timeout=3 * 3600)
+        out = []
+        for i in range(len(LINES)):
+            w, sr = sf.read(os.path.join(d, f"line_{i}.wav"), dtype="float32")
+            w = w if w.ndim == 1 else w.mean(1)
+            assert sr == SR and w.size > SR * 0.3, "bad chatterbox audio"
+            out.append(w)
+        print(f"voices: Chatterbox (exaggeration {ex})")
+        return out
+    except Exception as e:
+        print("note: Chatterbox failed, using Kokoro voices:", e)
+        return None
+
+
+CB = chatterbox_all()
+ENGINE = "chatterbox" if CB else "kokoro"
+audio = [np.zeros(int(LEAD * SR), np.float32)]
+t = LEAD
+lines = []
+for li, (spk, text) in enumerate(LINES):
+    kwav, phon, words, ka, kb, ph, semis = kokoro_line(spk, text)
+    if CB:
+        wav, f = align(kwav, ka, kb, CB[li])
+        phon = [(c, f(a), max(f(a), f(b))) for c, a, b in phon]
+        words = [(w, f(a), max(f(a) + 0.04, f(b))) for w, a, b in words]
+        ka, kb = f(ka), f(kb)
+    else:
+        wav = kwav
+        if semis: wav = pitch_shift(wav, semis)
+    peak = np.abs(wav).max(); wav = wav / (peak + 1e-9) * 0.85
+    phon = [(c, t + a, t + b) for c, a, b in phon]; words = [(w, t + a, t + b) for w, a, b in words]
+    start, end = t + ka, t + kb
     lines.append(dict(speaker=spk, text=text, start=start, end=end, phonemes=phon, words=words, ipa=ph))
     audio.append(wav); t += wav.size / SR
     audio.append(np.zeros(int(GAP * SR), np.float32)); t += GAP
@@ -129,5 +247,5 @@ for spk, text in LINES:
 audio.append(np.zeros(int(0.8 * SR), np.float32))
 full = np.concatenate(audio)
 sf.write(os.path.join(OUT, "dialogue.wav"), full, SR)
-json.dump(dict(duration=full.size / SR, lines=lines), open(os.path.join(OUT, "timing.json"), "w"), indent=1)
-print("total", full.size / SR)
+json.dump(dict(duration=full.size / SR, engine=ENGINE, lines=lines), open(os.path.join(OUT, "timing.json"), "w"), indent=1)
+print("total", full.size / SR, "voices:", ENGINE)

@@ -1,7 +1,6 @@
 """Voice Lab: try expressive open-source voices on GitHub's computer and save samples to listen to.
 
     python voicelab/voice_lab.py chatterbox     # Chatterbox (MIT): expressive, keeps Mia/Leo voices (clones mia_ref.wav / leo_ref.wav)
-    python voicelab/voice_lab.py bark           # Bark (MIT): can laugh / giggle, excited reactions
 
 Writes MP3s to voicelab/out/. Each model runs separately so one failing does not stop the other.
 """

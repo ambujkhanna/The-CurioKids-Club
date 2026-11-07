@@ -161,6 +161,22 @@ To post a video from a particular category, go to Actions → **Daily Curio Kids
   - Then add the repo variable `YT_PLAYLIST` = `curiokids` (Settings → Secrets and variables → Actions → Variables). Every upload is then added automatically.
 - **Audience:** repo variable `MADE_FOR_KIDS` (default `false`). See section 1.
 - **fix_existing:** Run workflow → tick **fix_existing**. It adds every already-uploaded video to the playlist (no duplicates) and applies the `MADE_FOR_KIDS` setting, keeping each video's privacy and schedule. No new video is made.
+- **ig_test with an episode:** tick **ig_test** and also type an episode id (e.g. `ep004`). The run renders that episode and checks 6 versions with Instagram **without posting anything**: full length, first 30 s, first 60 s, first 89 s, no audio, and 720×1280. Instagram accepts or rejects each one, which shows what to change.
 - **ig_test:** Run workflow → tick **ig_test**. It posts an 8-second test clip (a colour test pattern) to Instagram only and shows the account details and the 24-hour publishing limit.
   - **If it posts:** the account works and the problem is in our episode videos. Delete the test Reel.
   - **If it fails:** the problem is the Instagram account, app or token.
+
+## Voices: Chatterbox (added 2026-11-07)
+
+- **The voices:** the kids channel now speaks with **Chatterbox** (MIT licence, by Resemble AI), an expressive open-source voice model. It runs on GitHub's computer like everything else.
+  - Mia, Leo and Dad keep their voices: Chatterbox copies the voice in `assets/voices/mia.wav`, `leo.wav` and `dad.wav`.
+  - To change a character's voice, replace their file with a clean 5–10 second recording.
+- **Style per category** (`EXAGGERATION` in `pipeline/daily.py`):
+  - comedy and quiz are **animated** (0.8)
+  - everything else (daily Shorts, science, knowledge, ABC, counting, rhymes, long videos) is **natural** (0.5)
+  - one episode can override this with `"exaggeration": 0.6` in its episode.json
+- **Lip-sync and cues:** each line is also read silently by Kokoro, and the two readings are matched. Mouths, captions and board pop-ins still land on the right words (median error under 0.02 s).
+- **Speed:** the first run installs Chatterbox and downloads its model (about 5–10 extra minutes); later runs reuse the cache. A Short takes roughly 20–40 minutes in total, a long video longer.
+- **Safety net:** if Chatterbox fails for any reason, or a Short comes out longer than 3 minutes, the run uses the Kokoro voices instead and still posts. The run summary shows `Voices: chatterbox` or `Voices: kokoro`.
+- **Switching back:** add the repo variable `TTS_ENGINE` = `kokoro` (Settings → Secrets and variables → Actions → Variables).
+- **Voice Lab:** Actions → Voice Lab still makes Chatterbox samples (Bark was removed: it failed on GitHub's computer).

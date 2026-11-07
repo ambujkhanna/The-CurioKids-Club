@@ -123,6 +123,27 @@ def _ig_wait_publish(ig, cid, tok):
     return p.get("id")
 
 
+def ig_check(path):
+    """Upload a video to Instagram as an UNPUBLISHED Reel container and wait for processing.
+    Nothing is posted (unpublished containers expire after 24 h). Returns 'accepted' or the error."""
+    ig, tok = os.environ["META_IG_USER_ID"], os.environ["META_PAGE_TOKEN"]
+    try:
+        c = _req(f"{GRAPH}/{ig}/media", {"media_type": "REELS", "upload_type": "resumable", "caption": "check",
+                                          "share_to_feed": "true", "access_token": tok})
+        cid = c["id"]; uri = c.get("uri") or f"https://rupload.facebook.com/ig-api-upload/v21.0/{cid}"
+        data = open(path, "rb").read()
+        _req(uri, raw=data, headers={"Authorization": f"OAuth {tok}", "offset": "0", "file_size": str(len(data)),
+                                     "Content-Type": "application/octet-stream"})
+        for _ in range(60):
+            s = _req(f"{GRAPH}/{cid}?fields=status_code,status&access_token={urllib.parse.quote(tok)}")
+            if s.get("status_code") == "FINISHED": return "accepted"
+            if s.get("status_code") in ("ERROR", "EXPIRED"): return f"rejected: {s.get('status', s)}"[:200]
+            time.sleep(10)
+        return "timed out"
+    except Exception as e:
+        return f"rejected: {e}"[:200]
+
+
 def ig_safe(path):
     """Instagram-friendly copy: H.264 High@4.1, 30 fps, keyframe every 2 s, steady bitrate, AAC 44.1 kHz stereo."""
     import subprocess
