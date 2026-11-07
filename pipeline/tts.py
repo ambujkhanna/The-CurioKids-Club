@@ -63,7 +63,7 @@ if EP_FILE:  # data-driven episode (episodes/<id>/episode.json)
     VOICES.update({k: tuple(v) for k, v in _ep.get("voices", {}).items()})
 GAP = 0.28  # seconds between lines
 if EP_FILE:
-    GAP = float(_ep.get("gap", 0.45))
+    GAP = float(_ep.get("gap") or os.environ.get("TTS_GAP") or 0.45)
 LEAD = 0.25  # silence before first line
 
 def pitch_shift(wav, semis):
@@ -202,9 +202,10 @@ def chatterbox_all():
     refs = {n: os.path.join(S, "assets", "voices", n.lower() + ".wav") for n in ("MIA", "LEO", "DAD", "TEEN")}
     refs["TEEN"] = refs["MIA"]
     ex = float((_ep.get("exaggeration") if EP_FILE else None) or os.environ.get("CB_EXAGGERATION") or 0.5)
+    cfg = float((_ep.get("cfg") if EP_FILE else None) or os.environ.get("CB_CFG") or 0.35)
     seed0 = sum(map(ord, _ep.get("id", "x"))) if EP_FILE else 7
     d = tempfile.mkdtemp(); job = os.path.join(d, "job.json")
-    json.dump({"out": d, "refs": refs, "lines": [{"who": spk, "text": text, "ex": ex, "seed": seed0 * 100 + i}
+    json.dump({"out": d, "refs": refs, "lines": [{"who": spk, "text": text, "ex": ex, "cfg": cfg, "seed": seed0 * 100 + i}
                                                   for i, (spk, text) in enumerate(LINES)]}, open(job, "w"))
     try:
         subprocess.run([py, os.path.join(S, "pipeline", "cb_gen.py"), job], check=True, timeout=3 * 3600)
@@ -214,7 +215,7 @@ def chatterbox_all():
             w = w if w.ndim == 1 else w.mean(1)
             assert sr == SR and w.size > SR * 0.3, "bad chatterbox audio"
             out.append(w)
-        print(f"voices: Chatterbox (exaggeration {ex})")
+        print(f"voices: Chatterbox (exaggeration {ex}, cfg {cfg}, gap {GAP})")
         return out
     except Exception as e:
         print("note: Chatterbox failed, using Kokoro voices:", e)

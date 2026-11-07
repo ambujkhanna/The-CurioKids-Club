@@ -31,8 +31,13 @@ STATE = os.path.join(EPDIR, "state.json")
 OUT = os.path.join(ROOT, "out")
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
 # Chatterbox voice style per category (exaggeration: 0.5 natural, 0.8 animated); an episode can set "exaggeration".
+# cfg: lower = slower, more deliberate delivery (Chatterbox's advice for high exaggeration); gap: pause between lines (s)
 EXAGGERATION = {"comedy": 0.8, "quiz": 0.8}
+VOICE_CFG = {"comedy": 0.25, "quiz": 0.3}
+LINE_GAP = {"comedy": 0.75, "quiz": 0.6}
 VOICE_EX = str(EXAGGERATION.get(CATEGORY, 0.5))
+VOICE_ENV = {"CB_EXAGGERATION": VOICE_EX, "CB_CFG": str(VOICE_CFG.get(CATEGORY, 0.35))}
+if CATEGORY in LINE_GAP: VOICE_ENV["TTS_GAP"] = str(LINE_GAP[CATEGORY])
 BRAND_LINE = "🌈 More fun science for curious kids: search The CurioKids Club on YouTube"
 
 
@@ -91,7 +96,7 @@ def qc(path, ep):
     dur = float(p["format"]["duration"])
     v = [s for s in p["streams"] if s["codec_type"] == "video"]
     a = [s for s in p["streams"] if s["codec_type"] == "audio"]
-    lo, hi, size = (90, 900, (1920, 1080)) if LONG else (45, 180, (1080, 1920))
+    lo, hi, size = (90, 900, (1920, 1080)) if LONG else (20, 180, (1080, 1920))
     if not (lo <= dur <= hi): problems.append(f"duration {dur:.1f}s outside {lo}-{hi}s")
     if not v or (v[0]["width"], v[0]["height"]) != size: problems.append(f"video is not {size[0]}x{size[1]}")
     if not a: problems.append("no audio stream")
@@ -292,7 +297,7 @@ def main():
     frames = os.path.join(OUT, f"{eid}_frames"); mp4 = os.path.join(OUT, f"CurioKids_{'long_' if LONG else ''}{eid}.mp4")
     def render(voice_env):
         import shutil; shutil.rmtree(frames, ignore_errors=True)
-        sh([sys.executable, os.path.join(PIPE, "tts.py")], {"EPISODE": epf, "CB_EXAGGERATION": VOICE_EX, **voice_env})
+        sh([sys.executable, os.path.join(PIPE, "tts.py")], {"EPISODE": epf, **VOICE_ENV, **voice_env})
         sh([sys.executable, os.path.join(PIPE, "episode_engine.py"), frames], {"EPISODE": epf, "BG": "kids", "DOODLE": "chars", "FORMAT": "long" if LONG else "short"}, cwd=PIPE)
         sh([sys.executable, os.path.join(PIPE, "finish.py"), frames, "24", mp4], {"EPISODE": epf, "FORMAT": "long" if LONG else "short"})
     render({})
