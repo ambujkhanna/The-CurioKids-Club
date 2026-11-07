@@ -3,12 +3,13 @@
     "COM01": {
       "voices": "chatterbox",
       "title": "Silly Jokes for Kids! \ud83d\ude02 Teddy, Dino and Lettuce",
-      "rendered_at": "2026-11-07T21:10:10+05:30",
-      "duration_s": 44.94,
-      "status": "qc_failed",
+      "rendered_at": "2026-11-07T21:46:06+05:30",
+      "duration_s": 48.74,
+      "status": "rendered",
       "problems": [
         "duration 44.9s outside 45-180s"
-      ]
+      ],
+      "note": "dry run"
     }
   }
 }
