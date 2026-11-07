@@ -123,12 +123,12 @@ def _ig_wait_publish(ig, cid, tok):
     return p.get("id")
 
 
-def ig_check(path):
+def ig_check(path, cap="check"):
     """Upload a video to Instagram as an UNPUBLISHED Reel container and wait for processing.
     Nothing is posted (unpublished containers expire after 24 h). Returns 'accepted' or the error."""
     ig, tok = os.environ["META_IG_USER_ID"], os.environ["META_PAGE_TOKEN"]
     try:
-        c = _req(f"{GRAPH}/{ig}/media", {"media_type": "REELS", "upload_type": "resumable", "caption": "check",
+        c = _req(f"{GRAPH}/{ig}/media", {"media_type": "REELS", "upload_type": "resumable", "caption": cap,
                                           "share_to_feed": "true", "access_token": tok})
         cid = c["id"]; uri = c.get("uri") or f"https://rupload.facebook.com/ig-api-upload/v21.0/{cid}"
         data = open(path, "rb").read()
@@ -156,11 +156,10 @@ def ig_safe(path, target_mb=24):
     except Exception:
         dur = 90.0
     kb = int(max(900, min(3000, target_mb * 8192 / max(dur, 1) - 160)))  # video kbit/s within the size budget
-    vf = "scale=720:1280:force_original_aspect_ratio=decrease,pad=720:1280:(ow-iw)/2:(oh-ih)/2" if not long_video(path) else "scale=1280:720"
-    cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", path, "-vf", vf,
-           "-c:v", "libx264", "-preset", "slow", "-profile:v", "high", "-level:v", "4.1", "-pix_fmt", "yuv420p", "-r", "30",
-           "-g", "60", "-keyint_min", "60", "-sc_threshold", "0", "-b:v", f"{kb}k", "-maxrate", f"{int(kb * 1.3)}k",
-           "-bufsize", f"{kb * 2}k", "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709",
+    vf = "scale=1280:720" if long_video(path) else "scale=720:1280"
+    # exactly the plain recipe Instagram accepted in the 2026-11-07 test (no profile/level/GOP/colour flags)
+    cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", path, "-vf", vf, "-c:v", "libx264", "-pix_fmt", "yuv420p", "-r", "30",
+           "-b:v", f"{kb}k", "-maxrate", f"{int(kb * 1.3)}k", "-bufsize", f"{kb * 2}k",
            "-c:a", "aac", "-ar", "44100", "-ac", "2", "-b:a", "128k", "-movflags", "+faststart", out]
     try:
         subprocess.run(cmd, check=True)

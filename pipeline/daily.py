@@ -186,27 +186,27 @@ def ig_test():
     print("\n".join(lines)); return 0
 
 
-def ig_episode_test(mp4, eid):
+def ig_episode_test(mp4, eid, ep=None):
+    """Which version of this episode does Instagram accept? Uploads unpublished containers only (nothing is posted)."""
     import meta_post
     if not meta_post.have_ig():
         summary("### 🧪 Instagram test\n\n- META secrets are not all set"); return 0
-    base = meta_post.ig_safe(mp4); dur = float(probe(base)["format"]["duration"])
-    def cut(name, extra):
+    def enc(name, extra):
         out = os.path.join(OUT, f"igt_{name}.mp4")
-        sh(["ffmpeg", "-y", "-loglevel", "error", "-i", base] + extra + ["-movflags", "+faststart", out]); return out
-    enc = ["-c:v", "libx264", "-pix_fmt", "yuv420p", "-r", "30", "-b:v", "5M", "-c:a", "aac", "-ar", "44100", "-ac", "2"]
-    tests = [(f"Full episode ({dur:.0f} s, Instagram copy)", base),
-             ("First 30 s", cut("30", ["-t", "30"] + enc)),
-             ("First 60 s", cut("60", ["-t", "60"] + enc)),
-             ("First 89 s", cut("89", ["-t", "89"] + enc)) if dur > 89 else None,
-             ("Full length, no audio", cut("mute", ["-an", "-c:v", "copy"])),
-             ("Full length, 720x1280, 3 Mbps", cut("720", ["-vf", "scale=720:1280", "-c:v", "libx264", "-pix_fmt", "yuv420p",
-                                                         "-b:v", "3M", "-c:a", "aac", "-ar", "44100", "-ac", "2"]))]
+        sh(["ffmpeg", "-y", "-loglevel", "error", "-i", mp4] + extra + ["-movflags", "+faststart", out]); return out
+    plain = ["-c:v", "libx264", "-pix_fmt", "yuv420p", "-r", "30", "-c:a", "aac", "-ar", "44100", "-ac", "2"]
+    copy = meta_post.ig_safe(mp4)
+    cap = meta_post.caption(ep, BRAND_LINE) if ep else "check"
+    mb = lambda p: f"{os.path.getsize(p) / 1e6:.0f} MB"
+    tests = [(f"Posting copy ({mb(copy)}), short caption", copy, "check"),
+             (f"Posting copy ({mb(copy)}), real caption", copy, cap),
+             ("720x1280 at 3 Mbps (accepted last time), real caption", enc("720", ["-vf", "scale=720:1280", "-b:v", "3M"] + plain), cap),
+             ("First 30 s at 1080x1920 (accepted last time)", enc("30", ["-t", "30", "-b:v", "5M"] + plain), "check")]
     lines = []
-    for t in [t for t in tests if t]:
-        r = meta_post.ig_check(t[1]); lines.append(f"- {t[0]}: **{r}**"); print(lines[-1])
+    for name, path, c in tests:
+        r = meta_post.ig_check(path, c); lines.append(f"- {name}: **{r}**"); print(lines[-1])
     summary(f"### 🧪 Instagram test with {eid} (nothing was posted)\n\n" + "\n".join(lines) +
-            "\n\nSend this list to Claude: the versions Instagram accepts show what to change.")
+            "\n\nSend this list to Claude.")
     return 0
 
 
@@ -224,7 +224,10 @@ def social_backfill(n):
             if rec.get("status") != "uploaded": continue
             need = not str(rec.get("facebook", "")).startswith("posted") or \
                    (meta_post.have_ig() and not str(rec.get("instagram", "")).startswith("posted"))
-            if need: todo.append((rec.get("uploaded_at", ""), eid, cat))
+            folder = os.path.join(ROOT, "library", cat) if cat else os.path.join(ROOT, "episodes")
+            exists = any(json.load(open(f, encoding="utf-8")).get("id") == eid
+                         for f in glob.glob(os.path.join(folder, "*", "episode.json")))
+            if need and exists: todo.append((rec.get("uploaded_at", ""), eid, cat))
     todo.sort(); done = []
     for _, eid, cat in todo[:n]:
         cmd = [sys.executable, os.path.join(PIPE, "daily.py"), "--social-only", "--episode", eid] + (["--category", cat] if cat else [])
@@ -327,7 +330,7 @@ def main():
     from upload_youtube import have_credentials, upload, set_thumbnail, add_to_playlist, made_for_kids
     import meta_post
     if "--ig-test" in args:  # which version of this episode does Instagram accept? (nothing is posted)
-        return ig_episode_test(mp4, eid)
+        return ig_episode_test(mp4, eid, ep)
     if "--social-only" in args and not dry:  # post this episode to Facebook / Instagram only (no YouTube)
         social = meta_post.post_all(mp4, ep, BRAND_LINE, LONG, rec) if meta_post.have_meta() else {"facebook": "no META secrets configured"}
         rec.update({k: v.replace(" (kept, not re-posted)", "") for k, v in social.items()}); json.dump(state, open(STATE, "w"), indent=2)
