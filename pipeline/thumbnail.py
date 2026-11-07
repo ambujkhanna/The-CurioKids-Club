@@ -91,6 +91,16 @@ def _wrap(text, tf, size, maxw, max_lines):
 
 
 def _text(c, K, s, x, y, size, col, tf, outline=None, ow=0):
+    if s.strip() in ("→", "->", "➜", "➡", "➡️"):  # brand fonts have no arrow glyph: draw a chunky arrow instead
+        h = size * 0.30; L = size * 0.62; yy = y - size * 0.36
+        pa = skia.Path(); pa.moveTo(x - L, yy - h * 0.45); pa.lineTo(x + L * 0.15, yy - h * 0.45); pa.lineTo(x + L * 0.15, yy - h * 1.15)
+        pa.lineTo(x + L, yy); pa.lineTo(x + L * 0.15, yy + h * 1.15); pa.lineTo(x + L * 0.15, yy + h * 0.45)
+        pa.lineTo(x - L, yy + h * 0.45); pa.close()
+        if outline: c.drawPath(pa, _P(K, outline, ow))
+        c.drawPath(pa, _P(K, col)); return
+    if any(ch.strip() and skia.Font(tf).unicharToGlyph(ord(ch)) == 0 for ch in s):  # missing glyph: use a system font that has it
+        m = skia.FontMgr().matchFamilyStyleCharacter("", skia.FontStyle.Bold(), ["en"], ord(next(ch for ch in s if ch.strip() and skia.Font(tf).unicharToGlyph(ord(ch)) == 0)))
+        tf = m or tf
     f = skia.Font(tf, size); w = f.measureText(s)
     if outline:
         c.drawString(s, x - w / 2, y, f, _P(K, outline, ow))

@@ -63,7 +63,18 @@ def ell(cx, cy, rx, ry):
     return skia.Rect.MakeLTRB(cx - rx, cy - ry, cx + rx, cy + ry)
 
 
+ARROWS = ("→", "->", "➜", "➡", "➡️")
+
+
 def text(c, s, x, y, size, color, tf=FONT_XB, align="c", a=1.0):
+    if s.strip() in ARROWS:  # the brand fonts have no arrow glyph: draw a chunky arrow
+        h = size * 0.30; L = size * 0.62; cx = x + {"c": 0, "l": L, "r": -L}[align]
+        pa = skia.Path(); pa.moveTo(cx - L, y - h * 0.45); pa.lineTo(cx + L * 0.15, y - h * 0.45); pa.lineTo(cx + L * 0.15, y - h * 1.15)
+        pa.lineTo(cx + L, y); pa.lineTo(cx + L * 0.15, y + h * 1.15); pa.lineTo(cx + L * 0.15, y + h * 0.45); pa.lineTo(cx - L, y + h * 0.45); pa.close()
+        c.drawPath(pa, nofx(P(color, a=a))); return 2 * L
+    miss = [ch for ch in s if ch.strip() and skia.Font(tf).unicharToGlyph(ord(ch)) == 0]
+    if miss:  # missing glyph (e.g. a symbol): use a system font that has it
+        tf = skia.FontMgr().matchFamilyStyleCharacter("", skia.FontStyle.Bold(), ["en"], ord(miss[0])) or tf
     f = skia.Font(tf, size)
     w = f.measureText(s)
     dx = {"c": -w / 2, "l": 0, "r": -w}[align]
