@@ -27,8 +27,8 @@
     },
     "ep003": {
       "title": "How Does Your Heart Pump Blood? \u2764\ufe0f Fun Facts for Kids",
-      "rendered_at": "2026-11-08T08:18:01+05:30",
-      "duration_s": 71.38,
+      "rendered_at": "2026-11-08T09:04:32+05:30",
+      "duration_s": 71.12,
       "publish_at_ist": "2026-11-06T08:46+05:30",
       "thumbnail": "set",
       "status": "uploaded",
@@ -37,14 +37,14 @@
       "uploaded_at": "2026-11-06T08:46:44+05:30",
       "voices": "kokoro",
       "facebook": "posted (reel 4521931254743078)",
-      "instagram": "failed: 1) direct: HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}} | 2) hidden copy: processing Error: Media upload has failed with error code 2207076 | 3) FB reel copy: processing Error: Media upload has failed with error code 2207076"
+      "instagram": "posted (reel 17939434722383426)"
     },
     "ep004": {
       "title": "Rainy Day Rhyme \ud83c\udf27\ufe0f The Water Cycle Poem for Kids",
-      "rendered_at": "2026-11-08T08:24:13+05:30",
-      "duration_s": 76.97,
+      "rendered_at": "2026-11-08T09:12:35+05:30",
+      "duration_s": 77.22,
       "facebook": "posted (reel 1728749192110385)",
-      "instagram": "failed: 1) direct: HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}} | 2) hidden copy: processing Error: Media upload has failed with error code 2207076 | 3) FB reel copy: processing Error: Media upload has failed with error code 2207076",
+      "instagram": "posted (reel 18360024679173734)",
       "publish_at_ist": "2026-11-07T17:20+05:30",
       "thumbnail": "set",
       "status": "uploaded",
