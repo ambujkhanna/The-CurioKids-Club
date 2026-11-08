@@ -1,6 +1,6 @@
 # Channels reference: The CurioKids Club & AInation Studio
 
-**Last updated:** 2026-11-08 12:46 IST (07:16 UTC)
+**Last updated:** 2026-11-08 13:09 IST (07:39 UTC)
 
 This is the quick reference for both channels: links, schedules, workflow options, secrets and variables. It's updated whenever any of these change; see the change log at the bottom. The full history is in `TheCurioKidsClub_handoff.md` and `AInation_Studio_handoff.md`.
 
@@ -24,6 +24,8 @@ This is the quick reference for both channels: links, schedules, workflow option
 | **Short publish time** | Alternate days: **Hindi 09:00–11:00** (from Mon 9 Nov 2026), **English 17:00–20:00** on the days in between | 17:00–20:00 every day |
 | **Weekly long video (16:9)** | *Weekly Curio Kids Long Video*: Saturday 10:00 | *Weekly AInation Long Video*: Sunday 10:00 |
 | **Voice Lab** | *Voice Lab (Chatterbox / Turbo voice samples)*: manual only | – |
+| **Channel hashtag** | **#TheCurioKidsClub** (always included) | **#AInationstudio** (always included) |
+| **Hashtag limits** | YouTube max 15 (channel tag in the first 3, + #Shorts) · Instagram max **5** · Facebook max 10 | same |
 | **Facebook / Instagram** | Posted automatically right after each YouTube upload (Reel, designed cover) | Same |
 | **Uploads on YouTube** | Private until the API audit; publish or schedule in Studio | Same |
 
@@ -84,3 +86,4 @@ Never paste tokens into chat, files or commits; they go only into GitHub Secrets
 |---|---|
 | 2026-11-08 12:32 IST (07:02 UTC) | File created. Kids weekly long workflow: default `PUBLISH_WINDOW` corrected from 16:00-19:00 to 17:00-20:00 (also copied to the repos as `docs/CHANNELS_REFERENCE.md`). |
 | 2026-11-08 12:46 IST (07:16 UTC) | **Script → video** for both channels: workflow option `script` (kids: replaces `fix_existing` in the form to stay within 10 options). New `pipeline/script2episode.py`, guide `scripts/README.md`, `scripts/TEMPLATE.txt`, example scripts; progress kept in `custom/state.json`. |
+| 2026-11-08 13:09 IST (07:39 UTC) | **Channel hashtags**: #TheCurioKidsClub / #AInationstudio always included, in 2nd place; per-platform limits YouTube 15, Instagram 5, Facebook 10 (`pipeline/hashtags.py`). Hindi videos keep #Hindi in the first three. |

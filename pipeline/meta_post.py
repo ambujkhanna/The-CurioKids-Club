@@ -47,12 +47,13 @@ def _req(url, data=None, headers=None, method=None, raw=None, timeout=600):
         raise RuntimeError(f"HTTP {e.code}: {msg[:300]}")
 
 
-def caption(ep, brand_line):
-    """Short social caption: title, first paragraph of the description, brand line, hashtags (no YouTube-only lines)."""
+def caption(ep, brand_line, platform="instagram"):
+    """Short social caption: title, first paragraph of the description, brand line, hashtags (no YouTube-only lines).
+    Hashtags follow the platform's limit and always include the channel's own tag (pipeline/hashtags.py)."""
+    import hashtags
     desc = ep.get("description", "").split("\n\n")[0].strip()
-    tags = [h if h.startswith("#") else "#" + h for h in ep.get("hashtags", []) if h.lower() != "#shorts"]
-    extra = ep.get("social_hashtags", [])
-    out = f"{ep['title']}\n\n{desc}\n\n{brand_line}\n\n" + " ".join(dict.fromkeys(tags + extra))
+    tags = hashtags.pick(list(ep.get("hashtags", [])) + list(ep.get("social_hashtags", [])), platform)
+    out = f"{ep['title']}\n\n{desc}\n\n{brand_line}\n\n" + " ".join(tags)
     return out[:2100]
 
 
@@ -298,7 +299,7 @@ def post_all(path, ep, brand_line, long=False, done=None, thumb=None):
     out, done = {}, (done or {})
     if not have_meta():
         return out
-    cap = caption(ep, brand_line)
+    cap = caption(ep, brand_line, "instagram"); cap_fb = caption(ep, brand_line, "facebook")
     COVER.clear(); COVER["jpg"] = thumb or (path[:-4] + "_thumbnail.jpg")  # the designed thumbnail, if rendered
     fb_prev = str(done.get("facebook", ""))
     if fb_prev.startswith("posted"):
@@ -306,7 +307,7 @@ def post_all(path, ep, brand_line, long=False, done=None, thumb=None):
         if m: LAST["fb_video_id"] = m.group(1)
         out["facebook"] = fb_prev + " (kept, not re-posted)"
     else:
-        out["facebook"] = post_facebook(path, ep, cap, long)
+        out["facebook"] = post_facebook(path, ep, cap_fb, long)
     if have_ig() and not long:  # long 16:9 videos go to Facebook only
         ig_prev = str(done.get("instagram", ""))
         out["instagram"] = ig_prev + " (kept, not re-posted)" if ig_prev.startswith("posted") else post_instagram(path, cap)

@@ -240,7 +240,7 @@ def hindi_ep(ep):
     e = dict(ep, lang="hi", title=f"{hi['title_hi']} | {en_title}"[:100],
              description=hi["description_hi"].strip() + "\n\n" + ep["description"],
              tags=(ep.get("tags", []) + ["hindi", "हिंदी", "bachon ke liye"])[:15],
-             hashtags=[h for h in ep.get("hashtags", []) if h.lower() != "#shorts"] + ["#Hindi", "#हिंदी", "#Shorts"])
+             hashtags=(lambda t: t[:1] + ["#Hindi"] + t[1:] + ["#हिंदी", "#Shorts"])([h for h in ep.get("hashtags", []) if h.lower() != "#shorts"]))
     return e
 
 
