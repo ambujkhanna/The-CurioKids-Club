@@ -31,7 +31,12 @@ changes = {}
 for f in files:
     mine = json.load(open(os.path.join(ROOT, f))).get("episodes", {})
     base = show("HEAD", f).get("episodes", {})
-    ch = {k: v for k, v in mine.items() if base.get(k) != v}
+    # per episode, only the FIELDS this run changed (an English and a Hindi run may update the same episode)
+    ch = {}
+    for k, v in mine.items():
+        b = base.get(k, {}) if isinstance(base.get(k), dict) else {}
+        if base.get(k) != v:
+            ch[k] = {fk: fv for fk, fv in v.items() if b.get(fk) != fv} if isinstance(v, dict) else v
     if ch: changes[f] = ch
 if not changes:
     print("state: nothing changed"); sys.exit(0)
@@ -41,7 +46,10 @@ for attempt in range(6):
     git("fetch", "origin", branch)
     git("reset", "-q", "--hard", f"origin/{branch}")
     for f, ch in changes.items():
-        st = show("HEAD", f); st.setdefault("episodes", {}).update(ch)
+        st = show("HEAD", f); eps = st.setdefault("episodes", {})
+        for k, v in ch.items():
+            if isinstance(v, dict) and isinstance(eps.get(k), dict): eps[k].update(v)
+            else: eps[k] = v
         os.makedirs(os.path.dirname(os.path.join(ROOT, f)), exist_ok=True)
         json.dump(st, open(os.path.join(ROOT, f), "w"), indent=2)
         git("add", f)

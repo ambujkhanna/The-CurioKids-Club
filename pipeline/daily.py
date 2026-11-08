@@ -7,6 +7,8 @@
     python pipeline/daily.py --long            # weekly LONG video (16:9, 3-8 min) from long/<id>/episode.json
     python pipeline/daily.py --ig-test         # post a short test clip to Instagram only (diagnoses Instagram problems)
     python pipeline/daily.py --ig-test --episode ep004   # render ep004 and test versions of it on Instagram WITHOUT posting
+    python pipeline/daily.py --lang hi         # Hindi version (episodes/<id>/hi.json): Hindi voices, English captions
+    python pipeline/daily.py --auto            # scheduled runs: alternate days, Hindi 09-11 IST / English 17-20 IST
     python pipeline/daily.py --social-backfill 3   # post up to 3 already-uploaded YouTube videos to Facebook/Instagram
     python pipeline/daily.py --fix-existing    # add already-uploaded videos to the playlist + apply MADE_FOR_KIDS
     python pipeline/daily.py --category quiz   # next episode of a category from library/<category>/<id>/episode.json
@@ -30,6 +32,19 @@ EPDIR = os.path.join(ROOT, "long" if LONG else os.path.join("library", CATEGORY)
 STATE = os.path.join(EPDIR, "state.json")
 OUT = os.path.join(ROOT, "out")
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
+HI = "--lang" in sys.argv and sys.argv[sys.argv.index("--lang") + 1] == "hi"
+HINDI_START = dt.date(2026, 11, 9)  # alternate days: Hindi on this date and every second day after it, English in between
+BRAND_LINE_HI = "🌈 बच्चों के लिए मज़ेदार साइंस: YouTube पर The CurioKids Club खोजें"
+
+
+def hindi_day(d):
+    return (d - HINDI_START).days % 2 == 0
+
+
+def window(lang):
+    return os.environ.get("PUBLISH_WINDOW_HI" if lang == "hi" else "PUBLISH_WINDOW") or ("09:00-11:00" if lang == "hi" else "17:00-20:00")
+
+
 # Chatterbox voice style per category (exaggeration: 0.5 natural, 0.8 animated); an episode can set "exaggeration".
 # cfg: lower = slower, more deliberate delivery (Chatterbox's advice for high exaggeration); gap: pause between lines (s)
 EXAGGERATION = {"comedy": 0.8, "quiz": 0.8}
@@ -58,28 +73,54 @@ def pick(state, forced=None):
     if forced:
         return next(e for e in eps if e["id"] == forced)
     for ep in eps:
-        st = state["episodes"].get(ep["id"], {}).get("status")
-        if ep.get("status") == "ready" and st not in ("uploaded", "published", "manual"):
+        r = state["episodes"].get(ep["id"], {})
+        if HI:  # Hindi track: its own progress (rec["hi"]); needs episodes/<id>/hi.json
+            if not os.path.exists(os.path.join(os.path.dirname(ep["_file"]), "hi.json")): continue
+            r = r.get("hi", {})
+        if ep.get("status") == "ready" and r.get("status") not in ("uploaded", "published", "manual"):
             return ep
     return None
 
 
-def next_slot(now=None, window=None):
-    """Random 5-minute slot inside the publish window (IST); today if possible, else tomorrow."""
-    window = window or os.environ.get("PUBLISH_WINDOW") or "16:00-19:00"
+def plan_auto(state, now=None):
+    """Scheduled runs: which video is due next? Alternate days (Hindi 09-11, English 17-20 IST).
+    Returns (lang, day) for the earliest unfilled slot that starts within 20 h and can still be scheduled, else None."""
+    now = now or dt.datetime.now(IST)
+    filled = set()
+    for r in state["episodes"].values():
+        for lg, rr in (("en", r), ("hi", r.get("hi") or {})):
+            if rr.get("status") == "uploaded" and rr.get("publish_at_ist"):
+                filled.add((lg, rr["publish_at_ist"][:10]))
+    for add in (0, 1):
+        d = (now + dt.timedelta(days=add)).date()
+        lg = "hi" if hindi_day(d) else "en"
+        a, b = window(lg).split("-")
+        start = dt.datetime.combine(d, dt.time(*map(int, a.split(":"))), IST)
+        end = dt.datetime.combine(d, dt.time(*map(int, b.split(":"))), IST)
+        if end - dt.timedelta(minutes=50) < now or start - now > dt.timedelta(hours=20): continue
+        if (lg, d.isoformat()) in filled: continue
+        return lg, d
+    return None
+
+
+def next_slot(now=None, window=None, day=None):
+    """Random 5-minute slot inside the publish window (IST); today if possible, else tomorrow (or only `day`)."""
+    window = window or os.environ.get("PUBLISH_WINDOW") or "17:00-20:00"
     a, b = window.split("-")
     (ah, am), (bh, bm) = (map(int, a.split(":")), map(int, b.split(":")))
     now = now or dt.datetime.now(IST)
     earliest = now + dt.timedelta(minutes=45)  # YouTube needs publishAt comfortably in the future
-    for add in (0, 1):
-        day = (now + dt.timedelta(days=add)).date()
-        start = dt.datetime(day.year, day.month, day.day, ah, am, tzinfo=IST)
-        end = dt.datetime(day.year, day.month, day.day, bh, bm, tzinfo=IST)
+    for d_ in ([day] if day else [(now + dt.timedelta(days=add)).date() for add in (0, 1)]):
+        day_ = d_
+        start = dt.datetime(day_.year, day_.month, day_.day, ah, am, tzinfo=IST)
+        end = dt.datetime(day_.year, day_.month, day_.day, bh, bm, tzinfo=IST)
         lo = max(start, earliest)
         if lo <= end - dt.timedelta(minutes=5):
             steps = int((end - lo).total_seconds() // 300)
             slot = lo + dt.timedelta(minutes=5 * random.randint(0, steps))
             return slot.replace(minute=slot.minute - slot.minute % 5, second=0, microsecond=0) if slot.minute % 5 else slot.replace(second=0, microsecond=0)
+    if day:  # the planned day's window has passed (e.g. a delayed run): use the next possible window
+        return next_slot(now, window)
     raise RuntimeError("no slot found")
 
 
@@ -186,6 +227,32 @@ def ig_test():
     print("\n".join(lines)); return 0
 
 
+def hindi_ep(ep):
+    """Upload/social metadata of the Hindi version: 'Hindi | English' title, Hindi + English description."""
+    hi = json.load(open(os.path.join(os.path.dirname(ep["_file"]), "hi.json"), encoding="utf-8"))
+    en_title = re.sub(r"\s*Fun Facts for Kids\s*$", "", ep["title"]).strip(" |-")
+    e = dict(ep, lang="hi", title=f"{hi['title_hi']} | {en_title}"[:100],
+             description=hi["description_hi"].strip() + "\n\n" + ep["description"],
+             tags=(ep.get("tags", []) + ["hindi", "हिंदी", "bachon ke liye"])[:15],
+             hashtags=[h for h in ep.get("hashtags", []) if h.lower() != "#shorts"] + ["#Hindi", "#हिंदी", "#Shorts"])
+    return e
+
+
+def hindi_badge(jpg):
+    """Small 'HINDI' tag on the thumbnail."""
+    try:
+        import skia
+        img = skia.Image.open(jpg); W, H = img.width(), img.height()
+        surf = skia.Surface(W, H); c = surf.getCanvas(); c.drawImage(img, 0, 0)
+        tf = skia.Typeface.MakeFromFile(os.path.join(ROOT, "fonts", "LilitaOne-Regular.ttf"))
+        f = skia.Font(tf, H * 0.05); tw = f.measureText("HINDI"); h = H * 0.075; x, y = (W - tw - h * 0.9) / 2, H * 0.408  # centred, between the icons and the bunting
+        c.drawRRect(skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(x, y, tw + h * 0.9, h), h / 2, h / 2), skia.Paint(AntiAlias=True, Color=skia.Color(255, 122, 0)))
+        c.drawString("HINDI", x + h * 0.45, y + h * 0.72, f, skia.Paint(AntiAlias=True, Color=skia.ColorWHITE))
+        surf.makeImageSnapshot().save(jpg, skia.kJPEG, 90)
+    except Exception as e:
+        print("note: no Hindi badge:", e)
+
+
 def ig_episode_test(mp4, eid, ep=None):
     """Which version of this episode does Instagram accept? Uploads unpublished containers only (nothing is posted)."""
     import meta_post
@@ -276,10 +343,20 @@ def main():
         return social_backfill(int(args[args.index("--social-backfill") + 1]))
     if "--refresh-thumbnails" in args:
         return refresh_thumbnails()
+    global HI
     dry = "--dry-run" in args
     forced = args[args.index("--episode") + 1] if "--episode" in args else None
     now_mode = "--now" in args
     state = load_state()
+    target_day = None
+    if "--auto" in args and not CATEGORY and not LONG:
+        plan = plan_auto(state)
+        if not plan:
+            print("Nothing due right now (alternate days: Hindi 09-11 IST, English 17-20 IST)."); return 0
+        HI = plan[0] == "hi"; target_day = plan[1]
+        print(f"== auto: {'Hindi' if HI else 'English'} video for {target_day}")
+    if HI and (CATEGORY or LONG):
+        print("Hindi versions are made for the daily Shorts (episodes/) only."); return 1
     ep = pick(state, forced)
     if not ep:
         print(f"No ready episode left in the backlog. Add {os.path.relpath(EPDIR, ROOT)}/<id>/episode.json files."); return 0
@@ -290,31 +367,34 @@ def main():
         images.fetch(images.used(json.load(open(ep["_file"], encoding="utf-8"))))
     except Exception as e:
         print("note: could not fetch pictures:", e)
-    from validate_episode import check
-    errs = check(epf)
+    from validate_episode import check, check_hi
+    errs = check(epf) + (check_hi(epf) if HI else [])
     if errs:
         rec = state["episodes"].setdefault(eid, {}); rec.update({"status": "invalid", "problems": errs})
         json.dump(state, open(STATE, "w"), indent=2)
         print("Episode file invalid - not rendering:", errs); return 1
     os.makedirs(OUT, exist_ok=True)
-    frames = os.path.join(OUT, f"{eid}_frames"); mp4 = os.path.join(OUT, f"CurioKids_{'long_' if LONG else ''}{eid}.mp4")
+    frames = os.path.join(OUT, f"{eid}_frames"); mp4 = os.path.join(OUT, f"CurioKids_{'long_' if LONG else ''}{eid}{'_hi' if HI else ''}.mp4")
     def render(voice_env):
         import shutil; shutil.rmtree(frames, ignore_errors=True)
-        sh([sys.executable, os.path.join(PIPE, "tts.py")], {"EPISODE": epf, **VOICE_ENV, **voice_env})
+        sh([sys.executable, os.path.join(PIPE, "tts.py")], {"EPISODE": epf, **VOICE_ENV, "TTS_LANG": "hi" if HI else "en", **voice_env})
         sh([sys.executable, os.path.join(PIPE, "episode_engine.py"), frames], {"EPISODE": epf, "BG": "kids", "DOODLE": "chars", "FORMAT": "long" if LONG else "short"}, cwd=PIPE)
         sh([sys.executable, os.path.join(PIPE, "finish.py"), frames, "24", mp4], {"EPISODE": epf, "FORMAT": "long" if LONG else "short"})
     render({})
-    if json.load(open(os.path.join(PIPE, "build", "timing.json"))).get("engine") == "chatterbox" and \
+    if not HI and json.load(open(os.path.join(PIPE, "build", "timing.json"))).get("engine") == "chatterbox" and \
             float(probe(mp4)["format"]["duration"]) > (900 if LONG else 180):  # too long with the expressive voices
         print("note: video too long with Chatterbox voices - re-rendering with Kokoro voices")
         render({"TTS_ENGINE": "kokoro"})
     thumb = mp4[:-4] + "_thumbnail.jpg"
     if os.path.exists(os.path.join(PIPE, "build", "thumbnail.jpg")):
         import shutil; shutil.copy(os.path.join(PIPE, "build", "thumbnail.jpg"), thumb)
+        if HI: hindi_badge(thumb)
     else:
         thumb = None
     problems = qc(mp4, ep)
     rec = state["episodes"].setdefault(eid, {})
+    if HI:  # the Hindi version keeps its own record inside the episode's record
+        rec = rec.setdefault("hi", {}); ep = hindi_ep(ep)
     rec["voices"] = json.load(open(os.path.join(PIPE, "build", "timing.json"))).get("engine", "kokoro")
     rec.update({"title": ep["title"], "rendered_at": dt.datetime.now(IST).isoformat(timespec="seconds"),
                 "duration_s": round(float(probe(mp4)["format"]["duration"]), 2)})
@@ -332,7 +412,7 @@ def main():
     if "--ig-test" in args:  # which version of this episode does Instagram accept? (nothing is posted)
         return ig_episode_test(mp4, eid, ep)
     if "--social-only" in args and not dry:  # post this episode to Facebook / Instagram only (no YouTube)
-        social = meta_post.post_all(mp4, ep, BRAND_LINE, LONG, rec) if meta_post.have_meta() else {"facebook": "no META secrets configured"}
+        social = meta_post.post_all(mp4, ep, BRAND_LINE_HI if HI else BRAND_LINE, LONG, rec) if meta_post.have_meta() else {"facebook": "no META secrets configured"}
         rec.update({k: v.replace(" (kept, not re-posted)", "") for k, v in social.items()}); json.dump(state, open(STATE, "w"), indent=2)
         print("Social only:", social)
         summary(f"### 📣 Social post for {eid}\n\n" + "\n".join(f"- {k.title()}: {v}" for k, v in social.items())); return 0
@@ -340,26 +420,26 @@ def main():
         rec.update({"status": "rendered", "note": "dry run" if dry else "no YouTube credentials configured"})
         json.dump(state, open(STATE, "w"), indent=2)
         print("Rendered + QC passed (not uploaded):", mp4)
-        summary(f"### 🎬 Rendered {eid} (not uploaded: {rec['note']})\n\n- {ep['title']} — {rec['duration_s']} s, QC passed, voices: {rec['voices']}\n- Download the video and its thumbnail from this run's **Artifacts**.")
+        summary(f"### 🎬 Rendered {eid}{' (Hindi)' if HI else ''} (not uploaded: {rec['note']})\n\n- {ep['title']} — {rec['duration_s']} s, QC passed, voices: {rec['voices']}\n- Download the video and its thumbnail from this run's **Artifacts**.")
         return 0
     if now_mode:
         vid = upload(mp4, ep, None); when = "immediately (public now, if the API project is audited)"
         rec["publish_at_ist"] = dt.datetime.now(IST).isoformat(timespec="minutes")
     else:
-        slot = next_slot()
+        slot = next_slot(window=window("hi" if HI else "en"), day=target_day)
         vid = upload(mp4, ep, slot.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"))
         when = slot.strftime("%d %b %Y, %H:%M IST"); rec["publish_at_ist"] = slot.isoformat(timespec="minutes")
     rec.pop("note", None)
     rec["thumbnail"] = set_thumbnail(vid, thumb) if thumb else "not rendered"
     rec["playlist"] = add_to_playlist(vid)
     rec["made_for_kids"] = "yes" if made_for_kids() else "no"
-    social = meta_post.post_all(mp4, ep, BRAND_LINE, LONG, rec)  # Facebook Page + Instagram (if META secrets are set)
+    social = meta_post.post_all(mp4, ep, BRAND_LINE_HI if HI else BRAND_LINE, LONG, rec)  # Facebook Page + Instagram (if META secrets are set)
     rec.update(social)
     rec.update({"status": "uploaded", "video_id": vid, "url": f"https://www.youtube.com/{'watch?v=' if LONG else 'shorts/'}{vid}",
                 "uploaded_at": dt.datetime.now(IST).isoformat(timespec="seconds")})
     json.dump(state, open(STATE, "w"), indent=2)
     print("Uploaded:", rec["url"], "publish:", when)
-    summary(f"### ✅ Uploaded {eid}: {ep['title']}\n\n- Link: {rec['url']}\n- Publish: {when}\n- Length: {rec['duration_s']} s\n- Voices: {rec['voices']}\n- Thumbnail: {rec['thumbnail']}\n- Playlist: {rec['playlist']}\n- Made for kids: {rec['made_for_kids']}\n" + "".join(f"- {k.title()}: {v}\n" for k, v in social.items()) +
+    summary(f"### ✅ Uploaded {eid}{' (Hindi)' if HI else ''}: {ep['title']}\n\n- Link: {rec['url']}\n- Publish: {when}\n- Length: {rec['duration_s']} s\n- Voices: {rec['voices']}\n- Thumbnail: {rec['thumbnail']}\n- Playlist: {rec['playlist']}\n- Made for kids: {rec['made_for_kids']}\n" + "".join(f"- {k.title()}: {v}\n" for k, v in social.items()) +
             "- Note: until the YouTube API audit is approved, YouTube keeps API uploads **Private** — "
             "set it to Public (or Schedule) in YouTube Studio → Content.")
     return 0

@@ -61,6 +61,9 @@ def strip_tags(t):
 
 
 RAW = LINES
+LANG = os.environ.get("TTS_LANG", "en")  # "hi" = Hindi voices from episodes/<id>/hi.json, English captions
+KLANG = {"en": "en-us", "hi": "hi"}[LANG]
+EN_TEXT = None
 EP_FILE = os.environ.get("EPISODE")
 if EP_FILE:  # data-driven episode (episodes/<id>/episode.json)
     _ep = json.load(open(EP_FILE))
@@ -69,6 +72,13 @@ if EP_FILE:  # data-driven episode (episodes/<id>/episode.json)
     # The CurioKids Club voices: [kokoro voice, speed, pitch shift in semitones (optional)]. Override per episode with "voices".
     VOICES = {"MIA": ("af_heart", 1.05), "LEO": ("af_sky", 1.08, 2.5), "DAD": ("am_michael", 0.95), "TEEN": ("af_heart", 1.05)}
     VOICES.update({k: tuple(v) for k, v in _ep.get("voices", {}).items()})
+    if LANG == "hi":  # Hindi version: lines from hi.json (same order/count), English text kept for the captions
+        _hi = json.load(open(os.path.join(os.path.dirname(EP_FILE), "hi.json"), encoding="utf-8"))
+        assert len(_hi["lines"]) == len(RAW), "hi.json must have the same number of lines as episode.json"
+        EN_TEXT = [strip_tags(t) for _, t in RAW]
+        RAW = [(w, h) for (w, _), h in zip(RAW, _hi["lines"])]
+        LINES = [(w, strip_tags(t)) for w, t in RAW]
+        VOICES = {"MIA": ("hf_alpha", 1.0), "LEO": ("hf_beta", 1.05, 2.5), "DAD": ("hm_omega", 0.95), "TEEN": ("hf_alpha", 1.0)}
 GAP = 0.28  # seconds between lines
 if EP_FILE:
     GAP = float(_ep.get("gap") or os.environ.get("TTS_GAP") or 0.45)
@@ -99,7 +109,7 @@ vocab = k.tokenizer.vocab
 def kokoro_line(spk, text):
     """Kokoro audio for one line + phonemes/words with times relative to the start of the clip."""
     voice, speed, semis = (tuple(VOICES[spk]) + (0,))[:3]
-    ph = k.tokenizer.phonemize(text, "en-us")
+    ph = k.tokenizer.phonemize(text, KLANG)
     chars = [c for c in ph if c in vocab]
     toks = [vocab[c] for c in chars]
     style = k.get_voice_style(voice)[len(toks)]
@@ -121,7 +131,7 @@ def kokoro_line(spk, text):
     if len(groups) != len(words_txt):
         print("note: word timing via weighted fallback for:", text[:50])
         a0, b0 = phon[0][1], phon[-1][2]
-        wts = [max(1, len([c for c in k.tokenizer.phonemize(w, "en-us") if c in vocab and c not in " .,!?"])) for w in words_txt]
+        wts = [max(1, len([c for c in k.tokenizer.phonemize(w, KLANG) if c in vocab and c not in " .,!?"])) for w in words_txt]
         tot = sum(wts); acc = 0; words = []
         for w, n_ in zip(words_txt, wts):
             words.append((w, a0 + (b0 - a0) * acc / tot, a0 + (b0 - a0) * (acc + n_) / tot)); acc += n_
@@ -201,7 +211,7 @@ def align(kwav, ka, kb, cwav):
     return cwav, f
 
 
-LAUGH = re.compile(r"^(?:(?:ha|hah|hee|he|ho|heh)[\s,-]*)+[!.,…]*$", re.I)
+LAUGH = re.compile(r"^(?:(?:ha|hah|hee|he|ho|heh|हा|ही|हे|हो|हाहा|हीही)[\s,-]*)+[!.,…।]*$", re.I)
 SNORE = re.compile(r"^z{2,}[!.,…]*$", re.I)  # "Zzz", "Zzzz!" -> a cartoon snore sound, never read out
 PAUSE_BEFORE_LAUGH, PAUSE_AFTER_LAUGH, PAUSE_SFX, PAUSE_JOIN = 0.55, 0.3, 0.25, 0.12
 
@@ -210,15 +220,16 @@ def chunks(raw):
     """Split a line into [(kind, text)], kind = "speech" (normal Chatterbox), "turbo" (Chatterbox-Turbo: laughs like
     'Ha ha!' and sentences with [tags]) or "sfx" (sound effect, e.g. 'Zzzz!'). Neighbouring speech parts are joined."""
     out = []
-    for p in re.findall(r"[^.!?…]+(?:[.!?…]+|$)", raw.strip()):
+    for p in re.findall(r"[^.!?…।]+(?:[.!?…।]+|$)", raw.strip()):
         p = p.strip()
         if not p: continue
-        m = re.match(r"^((?:(?:ha|hah|hee|he|ho|heh)[\s-]*)+[,.…]+)\s*(.+)$", p, re.I)  # "Hee hee, that's fancy!"
+        m = re.match(r"^((?:(?:ha|hah|hee|he|ho|heh|हा|ही|हे|हो)[\s-]*)+[,.…]+)\s*(.+)$", p, re.I)  # "Hee hee, that's fancy!"
         for q in ([m.group(1), m.group(2)] if m else [p]):
             if SNORE.match(q):
                 out.append(("sfx", "snore"))
             elif LAUGH.match(q):
-                big = len(re.findall(r"ha|hee|he|ho", q, re.I)) > 1
+                big = len(re.findall(r"ha|hee|he|ho|हा|ही|हे|हो", q, re.I)) > 1
+                if re.search(r"[\u0900-\u097F]", q): q = "Ha ha!" if big else "Ha!"  # Turbo laughs are language-free
                 out.append(("turbo", q.rstrip(",") + (" [laugh]" if big else " [chuckle]")))
             elif re.search(r"\[[a-z_ ]+\]", q):
                 out.append(("turbo", q))
@@ -242,6 +253,9 @@ def chatterbox_all():
         return None
     vdir = os.path.join(S, "assets", "voices")
     refs = {n: os.path.join(vdir, n.lower() + ".wav") for n in ("MIA", "LEO", "DAD", "TEEN")}
+    if LANG != "en":  # a language-specific clip (assets/voices/hi/mia.wav) is used if present
+        refs = {n: (os.path.join(vdir, LANG, n.lower() + ".wav") if os.path.exists(os.path.join(vdir, LANG, n.lower() + ".wav")) else r)
+                for n, r in refs.items()}
     for a, b in (("TEEN", "MIA"), ("MIA", "TEEN")):  # a character without its own clip borrows the closest voice
         if not os.path.exists(refs[a]): refs[a] = refs[b]
     ex = float((_ep.get("exaggeration") if EP_FILE else None) or os.environ.get("CB_EXAGGERATION") or 0.5)
@@ -257,7 +271,8 @@ def chatterbox_all():
             if kind == "sfx":
                 parts.append((kind, txt, None)); continue
             parts.append((kind, txt, len(items)))
-            items.append({"who": spk, "text": txt, "ex": ex, "cfg": cfg, "seed": seed0 * 100 + i * 7 + k, "turbo": kind == "turbo"})
+            items.append({"who": spk, "text": txt, "ex": ex, "cfg": cfg, "seed": seed0 * 100 + i * 7 + k, "turbo": kind == "turbo",
+                          "lang": LANG})
         plan.append(parts)
     json.dump({"out": d, "refs": refs, "lines": items}, open(job, "w"))
     try:
@@ -311,7 +326,13 @@ for li, (spk, text) in enumerate(LINES):
     peak = np.abs(wav).max(); wav = wav / (peak + 1e-9) * 0.85
     phon = [(c, t + a, t + b) for c, a, b in phon]; words = [(w, t + a, t + b) for w, a, b in words]
     start, end = t + ka, t + kb
-    lines.append(dict(speaker=spk, text=text, start=start, end=end, phonemes=phon, words=words, ipa=ph))
+    line = dict(speaker=spk, text=text, start=start, end=end, phonemes=phon, words=words, ipa=ph)
+    if EN_TEXT:  # Hindi audio: captions + board cues use the English words, spread over the Hindi speech
+        ew = EN_TEXT[li].split(); wts = [len(w) + 2 for w in ew]; tot = sum(wts); acc = 0; words = []
+        for w, n_ in zip(ew, wts):
+            words.append((w, start + (end - start) * acc / tot, start + (end - start) * (acc + n_) / tot)); acc += n_
+        line.update(text=EN_TEXT[li], text_hi=text, words=words)
+    lines.append(line)
     audio.append(wav); t += wav.size / SR
     audio.append(np.zeros(int(GAP * SR), np.float32)); t += GAP
     print(f"{spk:5s} {start:6.2f}-{end:6.2f} {text}")
@@ -319,5 +340,5 @@ for li, (spk, text) in enumerate(LINES):
 audio.append(np.zeros(int(0.8 * SR), np.float32))
 full = np.concatenate(audio)
 sf.write(os.path.join(OUT, "dialogue.wav"), full, SR)
-json.dump(dict(duration=full.size / SR, engine=ENGINE, lines=lines), open(os.path.join(OUT, "timing.json"), "w"), indent=1)
+json.dump(dict(duration=full.size / SR, engine=ENGINE, lang=LANG, lines=lines), open(os.path.join(OUT, "timing.json"), "w"), indent=1)
 print("total", full.size / SR, "voices:", ENGINE)

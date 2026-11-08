@@ -12,9 +12,31 @@ ONNX, VOICES, DUR = (os.path.join(ROOT, n) for n in ("kokoro-q8.onnx", "voices.b
 SHA_PREFIX = "fbae9257"
 
 
+HINDI = ("hf_alpha", "hf_beta", "hm_omega", "hm_psi")
+V1_URL = "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin"
+
+
+def add_hindi_voices():
+    """Add Kokoro v1.0's Hindi voices (Apache-2.0) to voices.bin if missing (for the Hindi videos)."""
+    have = dict(np.load(VOICES))
+    if all(h in have for h in HINDI): return
+    import urllib.request
+    tmp = tempfile.mkdtemp(); f = os.path.join(tmp, "v1.bin")
+    urllib.request.urlretrieve(V1_URL, f)
+    v1 = np.load(f)
+    for h in HINDI: have[h] = v1[h]
+    with open(VOICES, "wb") as fh:
+        np.savez(fh, **have)
+    shutil.rmtree(tmp, ignore_errors=True)
+    print("added Hindi voices:", ", ".join(HINDI))
+
+
 def main():
     if all(os.path.exists(p) for p in (ONNX, VOICES, DUR)):
-        print("models already present"); return
+        print("models already present")
+        try: add_hindi_voices()
+        except Exception as e: print("note: could not add Hindi voices:", e)
+        return
     tmp = tempfile.mkdtemp()
     subprocess.run(["npm", "pack", "kokoro-q8-shards@1.0.0", "kokoro-local-runtime@0.1.0"], cwd=tmp, check=True,
                    stdout=subprocess.DEVNULL)
@@ -40,6 +62,8 @@ def main():
     m.graph.output.append(onnx.helper.make_tensor_value_info("/encoder/Cast_output_0", to, None))
     onnx.save(m, DUR)
     shutil.rmtree(tmp, ignore_errors=True)
+    try: add_hindi_voices()
+    except Exception as e: print("note: could not add Hindi voices:", e)
     print("models ready:", ONNX, VOICES, DUR)
 
 

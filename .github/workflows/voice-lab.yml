@@ -6,8 +6,8 @@ on:
       which:
         description: "Which samples to make"
         type: choice
-        default: turbo
-        options: [turbo, chatterbox]
+        default: hindi
+        options: [hindi, turbo, chatterbox]
 
 jobs:
   samples:

@@ -37,7 +37,7 @@ def upload(path, ep, publish_at_utc_iso):
     desc = ep["description"].rstrip() + ("\n\n" + cred if cred else "") + "\n\n" + " ".join(ep.get("hashtags", []))
     body = {
         "snippet": {"title": ep["title"][:100], "description": desc[:4900], "tags": ep.get("tags", [])[:15],
-                    "categoryId": "27", "defaultLanguage": "en", "defaultAudioLanguage": "en"},
+                    "categoryId": "27", "defaultLanguage": ep.get("lang", "en"), "defaultAudioLanguage": ep.get("lang", "en")},
         "status": {"privacyStatus": "private", "publishAt": publish_at_utc_iso, "selfDeclaredMadeForKids": made_for_kids(),
                    "containsSyntheticMedia": True},
     }

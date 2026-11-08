@@ -2,7 +2,8 @@ name: Daily Curio Kids Short
 
 on:
   schedule:
-    - cron: "40 8 * * *"     # 08:40 UTC = 14:10 IST; upload is scheduled inside the 16:00-19:00 IST window
+    - cron: "40 8 * * *"     # 08:40 UTC = 14:10 IST } scheduled runs use --auto: alternate days, the English video
+    - cron: "40 15 * * *"    # 15:40 UTC = 21:10 IST }   posts 17:00-20:00 IST, the Hindi video 09:00-11:00 IST
   workflow_dispatch:
     inputs:
       dry_run:
@@ -16,6 +17,11 @@ on:
         description: "Publish immediately (no schedule)"
         type: boolean
         default: false
+      language:
+        description: "Language of the video (manual runs): en = English, hi = Hindi voices + English subtitles"
+        type: choice
+        default: en
+        options: [en, hi]
       category:
         description: "Publish the next episode of a CATEGORY instead of the daily Short (leave as none for normal)"
         type: choice
@@ -116,7 +122,8 @@ jobs:
           META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
           META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
           META_IG_USER_ID: ${{ secrets.META_IG_USER_ID }}
-          PUBLISH_WINDOW: ${{ vars.PUBLISH_WINDOW || '16:00-19:00' }}
+          PUBLISH_WINDOW: ${{ vars.PUBLISH_WINDOW || '17:00-20:00' }}
+          PUBLISH_WINDOW_HI: ${{ vars.PUBLISH_WINDOW_HI || '09:00-11:00' }}
           TTS_ENGINE: ${{ vars.TTS_ENGINE || 'chatterbox' }}
           CB_PYTHON: /home/runner/cbenv/bin/python
           CB_TURBO_LAUGHS: ${{ vars.CB_TURBO_LAUGHS || '1' }}
@@ -133,6 +140,8 @@ jobs:
           if [ "${{ inputs.ig_test }}" = "true" ]; then ARGS="$ARGS --ig-test"; fi
           if [ "${{ inputs.fix_existing }}" = "true" ]; then ARGS="$ARGS --fix-existing"; fi
           if [ -n "${{ inputs.social_backfill }}" ] && [ "${{ inputs.social_backfill }}" != "0" ]; then ARGS="$ARGS --social-backfill ${{ inputs.social_backfill }}"; fi
+          if [ "${{ github.event_name }}" = "schedule" ]; then ARGS="--auto"; fi
+          if [ "${{ inputs.language }}" = "hi" ]; then ARGS="$ARGS --lang hi"; fi
           python pipeline/daily.py $ARGS
 
       - name: Keep the video as a downloadable artifact (14 days)

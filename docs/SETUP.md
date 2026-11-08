@@ -184,3 +184,20 @@ To post a video from a particular category, go to Actions → **Daily Curio Kids
   - Scripts can also use the tags `[laugh]`, `[chuckle]`, `[gasp]`, `[sigh]` and `[cough]`, e.g. `"[gasp] Whoa! That's huge!"`. The sentence with the tag is performed by Turbo, and the tags never show in captions.
   - To switch Turbo off, set the repo variable `CB_TURBO_LAUGHS` = `0`.
 - **Voice Lab:** Actions → Voice Lab → which: `turbo` or `chatterbox` makes sample MP3s (Bark was removed: it failed on GitHub's computer).
+
+## Hindi videos, alternate days (added 2026-11-08)
+
+- **Schedule:** the channel alternates every day. **Hindi** videos post **09:00–11:00 IST** (starting Monday 9 Nov 2026) and **English** videos post **17:00–20:00 IST** on the days in between.
+  - The workflow runs twice a day (14:10 and 21:10 IST) in automatic mode and makes whichever video is due next. Many runs simply say "Nothing due right now", which is normal.
+  - Change the windows with the repo variables `PUBLISH_WINDOW` (English) and `PUBLISH_WINDOW_HI` (Hindi). The alternation start date is `HINDI_START` in `pipeline/daily.py`.
+- **What a Hindi video is:** the same episode, pictures and boards (in English), with **Hindi voices** and **English subtitles**, so Hindi speakers can listen and everyone else can read.
+  - Title: `Hindi title | English title`. Description: Hindi first, then English. YouTube's audio language is set to Hindi.
+  - The thumbnail gets an orange **HINDI** tag.
+  - The same Facebook Page and Instagram post it too, with a Hindi caption.
+- **Scripts:** each episode has `episodes/<id>/hi.json` with `title_hi`, `description_hi` and `lines`: one Hindi line per English line, in the same order. The style is simple everyday Hindi, with common English words written in Devanagari (साइंस, ब्रेन). The last line must contain सब्सक्राइब.
+  - Check a script with `python3 pipeline/validate_episode.py episodes/<id>/episode.json`, which checks the Hindi file too.
+  - An episode without `hi.json` is simply skipped by the Hindi track.
+- **Voices:** Chatterbox's multilingual model speaks Hindi in Mia's, Leo's and Dad's voices. To use separate Hindi voice clips, put them in `assets/voices/hi/mia.wav` (and `leo.wav`, `dad.wav`).
+  - If Chatterbox fails, Kokoro's Hindi voices are used instead (added automatically by `setup_models.py`).
+  - Hear samples first: Actions → Voice Lab → which: `hindi`.
+- **Manual runs:** Run workflow → language: `hi`, optionally with an episode id and dry_run. Hindi progress is tracked separately from English: the Hindi track starts from the first episode again, which is a new audience.

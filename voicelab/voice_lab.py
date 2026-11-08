@@ -1,6 +1,7 @@
 """Voice Lab: try expressive open-source voices on GitHub's computer and save samples to listen to.
 
     python voicelab/voice_lab.py chatterbox     # Chatterbox (MIT): expressive, keeps Mia/Leo voices (clones mia_ref.wav / leo_ref.wav)
+    python voicelab/voice_lab.py hindi          # Hindi: Mia, Leo and Dad in Hindi (multilingual Chatterbox, same cloned voices)
     python voicelab/voice_lab.py turbo          # Chatterbox-Turbo (MIT): real laughs/chuckles with [laugh] [chuckle] tags
 
 Writes MP3s to voicelab/out/. Each model runs separately so one failing does not stop the other.
@@ -61,6 +62,30 @@ def turbo():
         mp3(p, f"turbo_{name}"); print(f"  {time.time() - t0:.0f}s", flush=True)
 
 
+DAD = os.path.join(os.path.dirname(HERE), "assets", "voices", "dad.wav")
+HINDI_LINES = [
+    ("mia_explains", "MIA", "घुरघुराहट बिल्ली की हल्की-सी गुनगुनाहट है। साइंटिस्ट मानते हैं कि उसके गले की छोटी-छोटी मसल्स थरथराती हैं।"),
+    ("leo_asks", "LEO", "मिया दीदी, बिल्लियाँ घुरघुराती क्यों हैं?"),
+    ("leo_excited", "LEO", "अरे वाह! ये तो कमाल है! एक और बताओ ना!"),
+    ("mia_joke", "MIA", "सोते हुए डायनासोर को क्या कहते हैं? डायनो-खर्राटा!"),
+    ("dad_calm", "DAD", "जब बिजली चमके, तो घर के अंदर आ जाओ। तूफ़ान को खिड़की से देखना सबसे सेफ़ है।"),
+    ("mia_subscribe", "MIA", "और मज़ेदार बातों के लिए किसी बड़े से द क्यूरियो किड्स क्लब को सब्सक्राइब करने को कहो!"),
+]
+
+
+def hindi():
+    import torchaudio as ta
+    from chatterbox.mtl_tts import ChatterboxMultilingualTTS
+    model = ChatterboxMultilingualTTS.from_pretrained(device="cpu")
+    refs = {"MIA": MIA, "LEO": LEO, "DAD": DAD}
+    for ex in (0.5, 0.7):
+        for name, who, text in HINDI_LINES:
+            t0 = time.time()
+            wav = model.generate(text, language_id="hi", audio_prompt_path=refs[who], exaggeration=ex, cfg_weight=0.35)
+            p = os.path.join(OUT, f"hindi_ex{int(ex * 10)}_{name}.wav"); ta.save(p, wav, model.sr)
+            mp3(p, f"hindi_ex{int(ex * 10)}_{name}"); print(f"  {time.time() - t0:.0f}s", flush=True)
+
+
 def bark():
     import numpy as np
     from scipy.io import wavfile
@@ -84,7 +109,7 @@ def bark():
 if __name__ == "__main__":
     which = sys.argv[1] if len(sys.argv) > 1 else "chatterbox"
     try:
-        {"chatterbox": chatterbox, "turbo": turbo, "bark": bark}[which]()
+        {"chatterbox": chatterbox, "turbo": turbo, "hindi": hindi, "bark": bark}[which]()
     except Exception as e:
         import traceback; traceback.print_exc()
         open(os.path.join(OUT, f"{which}_FAILED.txt"), "w").write(str(e))

@@ -110,9 +110,29 @@ def check(path):
     return errs
 
 
+def check_hi(path):
+    """Hindi version (hi.json next to episode.json): same number of lines, Devanagari text, Subscribe call-to-action."""
+    import os, re
+    hp = os.path.join(os.path.dirname(path), "hi.json")
+    if not os.path.exists(hp): return ["no hi.json (Hindi version) for this episode"]
+    ep = json.load(open(path, encoding="utf-8")); hi = json.load(open(hp, encoding="utf-8")); errs = []
+    for k in ("title_hi", "description_hi", "lines"):
+        if not hi.get(k): errs.append(f"hi.json: missing {k}")
+    if errs: return errs
+    if len(hi["lines"]) != len(ep["lines"]): errs.append(f"hi.json: {len(hi['lines'])} lines, episode has {len(ep['lines'])}")
+    if len(hi["title_hi"]) + len(ep["title"]) > 97: errs.append("hi.json: 'Hindi | English' title longer than 100 chars")
+    for i, t in enumerate(hi["lines"]):
+        if not re.search(r"[\u0900-\u097F]", t): errs.append(f"hi.json line {i}: not in Devanagari")
+        if re.search(r"[A-Za-z]{3,}", re.sub(r"\b[Zz]{2,}\b", "", re.sub(r"\[[a-z_ ]+\]", "", t))): errs.append(f"hi.json line {i}: write English words in Devanagari (e.g. साइंस)")
+        if len(t) > 260: errs.append(f"hi.json line {i}: too long (> 260 chars)")
+    if "सब्सक्राइब" not in hi["lines"][-1]: errs.append("hi.json: last line has no सब्सक्राइब call-to-action")
+    return errs
+
+
 if __name__ == "__main__":
     bad = 0
     for p in sys.argv[1:]:
-        e = check(p); bad += bool(e)
+        import os
+        e = check(p) + (check_hi(p) if os.path.exists(os.path.join(os.path.dirname(p), "hi.json")) else []); bad += bool(e)
         print(("OK   " if not e else "FAIL ") + p + ("" if not e else "\n  - " + "\n  - ".join(e)))
     sys.exit(1 if bad else 0)

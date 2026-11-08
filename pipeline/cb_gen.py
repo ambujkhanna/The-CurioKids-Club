@@ -6,6 +6,7 @@ Writes out/line_<i>.wav (24 kHz mono). Each character keeps their voice by cloni
 (assets/voices/<name>.wav). "ex" is Chatterbox's exaggeration (0.5 natural .. 0.8 animated).
 Items with "turbo": true use Chatterbox-Turbo, which performs tags like [laugh] [chuckle] [gasp] (used only for
 short laughs/reactions - Turbo reads long lines too fast).
+Items with "lang" other than "en" (e.g. "hi" for Hindi) use the multilingual Chatterbox model (23 languages).
 """
 import json, os, sys, time
 import torch, torchaudio as ta
@@ -16,7 +17,13 @@ os.makedirs(job["out"], exist_ok=True)
 _m = {}
 
 
-def model(turbo):
+def model(turbo, lang="en"):
+    key = "mtl" if (lang != "en" and not turbo) else turbo
+    if key == "mtl":
+        if key not in _m:
+            from chatterbox.mtl_tts import ChatterboxMultilingualTTS
+            _m[key] = ChatterboxMultilingualTTS.from_pretrained(device="cpu")
+        return _m[key]
     if turbo not in _m:
         if turbo:
             from chatterbox.tts_turbo import ChatterboxTurboTTS
@@ -30,8 +37,12 @@ def model(turbo):
 for i, ln in enumerate(job["lines"]):
     t0 = time.time(); turbo = bool(ln.get("turbo"))
     torch.manual_seed(int(ln.get("seed", i)))
-    m = model(turbo)
-    if turbo:
+    lang = ln.get("lang", "en")
+    m = model(turbo, lang)
+    if lang != "en" and not turbo:
+        wav = m.generate(ln["text"], language_id=lang, audio_prompt_path=job["refs"][ln["who"]],
+                         exaggeration=float(ln.get("ex", 0.5)), cfg_weight=float(ln.get("cfg", 0.35)))
+    elif turbo:
         wav = m.generate(ln["text"], audio_prompt_path=job["refs"][ln["who"]])
     else:
         wav = m.generate(ln["text"], audio_prompt_path=job["refs"][ln["who"]],
