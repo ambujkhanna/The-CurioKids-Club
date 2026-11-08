@@ -233,8 +233,10 @@ def chatterbox_all():
     py = os.environ.get("CB_PYTHON")
     if os.environ.get("TTS_ENGINE", "kokoro") != "chatterbox" or not py:
         return None
-    refs = {n: os.path.join(S, "assets", "voices", n.lower() + ".wav") for n in ("MIA", "LEO", "DAD", "TEEN")}
-    refs["TEEN"] = refs["MIA"]
+    vdir = os.path.join(S, "assets", "voices")
+    refs = {n: os.path.join(vdir, n.lower() + ".wav") for n in ("MIA", "LEO", "DAD", "TEEN")}
+    for a, b in (("TEEN", "MIA"), ("MIA", "TEEN")):  # a character without its own clip borrows the closest voice
+        if not os.path.exists(refs[a]): refs[a] = refs[b]
     ex = float((_ep.get("exaggeration") if EP_FILE else None) or os.environ.get("CB_EXAGGERATION") or 0.5)
     cfg = float((_ep.get("cfg") if EP_FILE else None) or os.environ.get("CB_CFG") or 0.35)
     use_turbo = os.environ.get("CB_TURBO_LAUGHS", "1") == "1"

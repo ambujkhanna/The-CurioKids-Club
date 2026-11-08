@@ -35,7 +35,7 @@ for f in files:
     if ch: changes[f] = ch
 if not changes:
     print("state: nothing changed"); sys.exit(0)
-git("config", "user.name", "curio-kids-bot"); git("config", "user.email", "actions@users.noreply.github.com")
+git("config", "user.name", os.environ.get("STATE_BOT", "curio-kids-bot")); git("config", "user.email", "actions@users.noreply.github.com")
 branch = os.environ.get("GITHUB_REF_NAME") or "main"
 for attempt in range(6):
     git("fetch", "origin", branch)
