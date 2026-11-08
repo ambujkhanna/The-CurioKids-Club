@@ -13,7 +13,7 @@
     },
     "ep002": {
       "title": "Why Do Cats Purr? \ud83d\udc31 Fun Facts for Kids",
-      "rendered_at": "2026-11-07T22:20:38+05:30",
+      "rendered_at": "2026-11-08T08:13:06+05:30",
       "duration_s": 63.1,
       "publish_at_ist": "2026-11-05T22:55+05:30",
       "thumbnail": "set",
@@ -23,11 +23,11 @@
       "uploaded_at": "2026-11-05T22:55:23+05:30",
       "voices": "kokoro",
       "facebook": "posted (reel 2195295161372827)",
-      "instagram": "failed: 1) direct: HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}} | 2) hidden copy: processing Error: Media upload has failed with error code 2207076 | 3) FB reel copy: processing Error: Media upload has failed with error code 2207076"
+      "instagram": "posted (reel 18121071130960562)"
     },
     "ep003": {
       "title": "How Does Your Heart Pump Blood? \u2764\ufe0f Fun Facts for Kids",
-      "rendered_at": "2026-11-07T22:26:36+05:30",
+      "rendered_at": "2026-11-08T08:18:01+05:30",
       "duration_s": 71.38,
       "publish_at_ist": "2026-11-06T08:46+05:30",
       "thumbnail": "set",
@@ -41,31 +41,33 @@
     },
     "ep004": {
       "title": "Rainy Day Rhyme \ud83c\udf27\ufe0f The Water Cycle Poem for Kids",
-      "rendered_at": "2026-11-06T21:49:32+05:30",
+      "rendered_at": "2026-11-08T08:24:13+05:30",
       "duration_s": 76.97,
-      "facebook": "posted (reel 1728749192110385) (kept, not re-posted)",
+      "facebook": "posted (reel 1728749192110385)",
       "instagram": "failed: 1) direct: HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}} | 2) hidden copy: processing Error: Media upload has failed with error code 2207076 | 3) FB reel copy: processing Error: Media upload has failed with error code 2207076",
       "publish_at_ist": "2026-11-07T17:20+05:30",
       "thumbnail": "set",
       "status": "uploaded",
       "video_id": "TkcXGEyIvME",
       "url": "https://www.youtube.com/shorts/TkcXGEyIvME",
-      "uploaded_at": "2026-11-06T21:53:28+05:30"
+      "uploaded_at": "2026-11-06T21:53:28+05:30",
+      "voices": "kokoro"
     },
     "ep005": {
       "title": "Why Is the Sky Blue? \u2600\ufe0f Fun Facts for Kids",
-      "rendered_at": "2026-11-07T20:40:26+05:30",
+      "rendered_at": "2026-11-08T08:30:24+05:30",
       "duration_s": 62.38,
       "publish_at_ist": "2026-11-08T17:45+05:30",
       "thumbnail": "set",
       "playlist": "off (added by hand)",
       "made_for_kids": "no",
       "facebook": "posted (reel 29028579776780651)",
-      "instagram": "failed: 1) direct: HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}} | 2) hidden copy: processing Error: Media upload has failed with error code 2207076 | 3) FB reel copy: processing Error: Media upload has failed with error code 2207076",
+      "instagram": "posted (reel 18137883013710508)",
       "status": "uploaded",
       "video_id": "uX0INx1C8oo",
       "url": "https://www.youtube.com/shorts/uX0INx1C8oo",
-      "uploaded_at": "2026-11-07T20:43:29+05:30"
+      "uploaded_at": "2026-11-07T20:43:29+05:30",
+      "voices": "kokoro"
     }
   }
 }
