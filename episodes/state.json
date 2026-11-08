@@ -55,7 +55,23 @@
       "voices": "kokoro",
       "facebook": "posted (reel 4521931254743078)",
       "instagram": "posted (reel 17939434722383426)",
-      "facebook_cover": "cover set"
+      "facebook_cover": "cover set",
+      "hi": {
+        "voices": "chatterbox",
+        "title": "\u0939\u092e\u093e\u0930\u093e \u0926\u093f\u0932 \u0916\u0942\u0928 \u0915\u0948\u0938\u0947 \u092a\u0902\u092a \u0915\u0930\u0924\u093e \u0939\u0948? | How Does Your Heart Pump Blood? \u2764\ufe0f",
+        "rendered_at": "2026-11-08T21:23:53+05:30",
+        "duration_s": 87.0,
+        "publish_at_ist": "2026-11-09T10:20+05:30",
+        "thumbnail": "set",
+        "playlist": "off (added by hand)",
+        "made_for_kids": "no",
+        "facebook": "posted (reel 2044157099608468)",
+        "instagram": "failed: 1) direct: [size-budget] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Reque [3 Mbps] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Reque [2 Mbps] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"R | 2) hidden copy: processing Error: Media upload has failed with error code 2207076 | 3) FB reel copy: processing Error: Media upload has failed with error code 2207076",
+        "status": "uploaded",
+        "video_id": "F9q2n1zZqtM",
+        "url": "https://www.youtube.com/shorts/F9q2n1zZqtM",
+        "uploaded_at": "2026-11-08T21:32:17+05:30"
+      }
     },
     "ep004": {
       "title": "Rainy Day Rhyme \ud83c\udf27\ufe0f The Water Cycle Poem for Kids",
