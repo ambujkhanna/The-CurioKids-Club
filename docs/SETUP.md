@@ -179,4 +179,8 @@ To post a video from a particular category, go to Actions → **Daily Curio Kids
 - **Speed:** the first run installs Chatterbox and downloads its model (about 5–10 extra minutes); later runs reuse the cache. A Short takes roughly 20–40 minutes in total, a long video longer.
 - **Safety net:** if Chatterbox fails for any reason, or a Short comes out longer than 3 minutes, the run uses the Kokoro voices instead and still posts. The run summary shows `Voices: chatterbox` or `Voices: kokoro`.
 - **Switching back:** add the repo variable `TTS_ENGINE` = `kokoro` (Settings → Secrets and variables → Actions → Variables).
-- **Voice Lab:** Actions → Voice Lab still makes Chatterbox samples (Bark was removed: it failed on GitHub's computer).
+- **Real laughs (Chatterbox-Turbo):**
+  - Written laughs in a line ("Ha!", "Ha ha!", "Hee hee!") are performed as real laughs/chuckles by **Chatterbox-Turbo**. The rest of the line keeps the normal voice; Turbo reads long lines too fast, so it is only used for these short bits.
+  - Scripts can also use the tags `[laugh]`, `[chuckle]`, `[gasp]`, `[sigh]` and `[cough]`, e.g. `"[gasp] Whoa! That's huge!"`. The sentence with the tag is performed by Turbo, and the tags never show in captions.
+  - To switch Turbo off, set the repo variable `CB_TURBO_LAUGHS` = `0`.
+- **Voice Lab:** Actions → Voice Lab → which: `turbo` or `chatterbox` makes sample MP3s (Bark was removed: it failed on GitHub's computer).

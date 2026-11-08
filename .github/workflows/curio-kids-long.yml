@@ -101,6 +101,7 @@ jobs:
           PUBLISH_WINDOW: ${{ vars.PUBLISH_WINDOW || '16:00-19:00' }}
           TTS_ENGINE: ${{ vars.TTS_ENGINE || 'chatterbox' }}
           CB_PYTHON: /home/runner/cbenv/bin/python
+          CB_TURBO_LAUGHS: ${{ vars.CB_TURBO_LAUGHS || '1' }}
           MADE_FOR_KIDS: ${{ vars.MADE_FOR_KIDS || 'false' }}
           YT_PLAYLIST: ${{ vars.YT_PLAYLIST }}
         run: |

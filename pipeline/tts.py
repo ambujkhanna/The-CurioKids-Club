@@ -54,10 +54,18 @@ SCRIPTS = {
     ],
 }
 LINES = SCRIPTS[VARIANT]
+
+
+def strip_tags(t):
+    return re.sub(r"\s{2,}", " ", re.sub(r"\[[a-z_ ]+\]", "", t)).strip()
+
+
+RAW = LINES
 EP_FILE = os.environ.get("EPISODE")
 if EP_FILE:  # data-driven episode (episodes/<id>/episode.json)
     _ep = json.load(open(EP_FILE))
-    LINES = [(l["who"], l["text"]) for l in _ep["lines"]]
+    RAW = [(l["who"], l["text"]) for l in _ep["lines"]]  # may contain Chatterbox-Turbo tags like [laugh] [gasp]
+    LINES = [(w, strip_tags(t)) for w, t in RAW]  # tags are performed, never shown or read by Kokoro
     # The CurioKids Club voices: [kokoro voice, speed, pitch shift in semitones (optional)]. Override per episode with "voices".
     VOICES = {"MIA": ("af_heart", 1.05), "LEO": ("af_sky", 1.08, 2.5), "DAD": ("am_michael", 0.95), "TEEN": ("af_heart", 1.05)}
     VOICES.update({k: tuple(v) for k, v in _ep.get("voices", {}).items()})
@@ -193,6 +201,32 @@ def align(kwav, ka, kb, cwav):
     return cwav, f
 
 
+LAUGH = re.compile(r"^(?:(?:ha|hah|hee|he|ho|heh)[\s,-]*)+[!.,…]*$", re.I)
+
+
+def chunks(raw):
+    """Split a line into [(turbo?, text)]: laughs ('Ha ha!', 'Hee hee,') and sentences with [tags] go to Turbo
+    (it performs real laughs), everything else to the normal Chatterbox voice. Neighbouring normal parts are joined."""
+    parts = re.findall(r"[^.!?…]+(?:[.!?…]+|$)", raw.strip())
+    out = []
+    for p in parts:
+        p = p.strip()
+        if not p: continue
+        m = re.match(r"^((?:(?:ha|hah|hee|he|ho|heh)[\s-]*)+[,.…]+)\s*(.+)$", p, re.I)  # "Hee hee, that's fancy!"
+        pieces = [m.group(1), m.group(2)] if m else [p]
+        for q in pieces:
+            if LAUGH.match(q):
+                big = len(re.findall(r"ha|hee|he|ho", q, re.I)) > 1
+                out.append((True, q.rstrip(",") + (" [laugh]" if big else " [chuckle]")))
+            elif re.search(r"\[[a-z_ ]+\]", q):
+                out.append((True, q))
+            elif out and not out[-1][0]:
+                out[-1] = (False, out[-1][1] + " " + q)
+            else:
+                out.append((False, q))
+    return out or [(False, raw)]
+
+
 def chatterbox_all():
     """Generate every line with Chatterbox (in its own Python). Returns a list of wavs, or None to fall back."""
     import subprocess, tempfile
@@ -203,19 +237,33 @@ def chatterbox_all():
     refs["TEEN"] = refs["MIA"]
     ex = float((_ep.get("exaggeration") if EP_FILE else None) or os.environ.get("CB_EXAGGERATION") or 0.5)
     cfg = float((_ep.get("cfg") if EP_FILE else None) or os.environ.get("CB_CFG") or 0.35)
+    use_turbo = os.environ.get("CB_TURBO_LAUGHS", "1") == "1"
     seed0 = sum(map(ord, _ep.get("id", "x"))) if EP_FILE else 7
     d = tempfile.mkdtemp(); job = os.path.join(d, "job.json")
-    json.dump({"out": d, "refs": refs, "lines": [{"who": spk, "text": text, "ex": ex, "cfg": cfg, "seed": seed0 * 100 + i}
-                                                  for i, (spk, text) in enumerate(LINES)]}, open(job, "w"))
+    items, plan = [], []
+    for i, (spk, raw) in enumerate(RAW):
+        cs = chunks(raw) if use_turbo else [(False, strip_tags(raw))]
+        ids = []
+        for k, (tb, txt) in enumerate(cs):
+            ids.append(len(items))
+            items.append({"who": spk, "text": txt, "ex": ex, "cfg": cfg, "seed": seed0 * 100 + i * 7 + k, "turbo": tb})
+        plan.append(ids)
+    json.dump({"out": d, "refs": refs, "lines": items}, open(job, "w"))
     try:
         subprocess.run([py, os.path.join(S, "pipeline", "cb_gen.py"), job], check=True, timeout=3 * 3600)
         out = []
-        for i in range(len(LINES)):
-            w, sr = sf.read(os.path.join(d, f"line_{i}.wav"), dtype="float32")
-            w = w if w.ndim == 1 else w.mean(1)
-            assert sr == SR and w.size > SR * 0.3, "bad chatterbox audio"
-            out.append(w)
-        print(f"voices: Chatterbox (exaggeration {ex}, cfg {cfg}, gap {GAP})")
+        for ids in plan:
+            parts = []
+            for j in ids:
+                w, sr = sf.read(os.path.join(d, f"line_{j}.wav"), dtype="float32")
+                w = w if w.ndim == 1 else w.mean(1)
+                assert sr == SR and w.size > SR * 0.2, "bad chatterbox audio"
+                a, b = _speech_span(w); w = w[a:b]
+                w = w / (np.percentile(np.abs(w), 99.5) + 1e-6) * 0.7  # match loudness between the two models
+                parts += [w, np.zeros(int(0.12 * SR), np.float32)]
+            out.append(np.concatenate(parts[:-1]).astype(np.float32))
+        n_t = sum(1 for it in items if it["turbo"])
+        print(f"voices: Chatterbox (exaggeration {ex}, cfg {cfg}, gap {GAP}; {n_t} laugh/reaction parts with Turbo)")
         return out
     except Exception as e:
         print("note: Chatterbox failed, using Kokoro voices:", e)

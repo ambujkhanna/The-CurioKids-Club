@@ -144,7 +144,7 @@ def ig_check(path, cap="check"):
         return f"rejected: {e}"[:200]
 
 
-def ig_safe(path, target_mb=24):
+def ig_safe(path, target_mb=26):
     """Instagram copy: 720x1280 H.264 High, 30 fps, AAC 44.1 kHz, sized under ~target_mb.
     (Tested 2026-11-07: this account's API rejected files over ~30 MB with ProcessingFailedError,
     and accepted 19-28 MB files.)"""
@@ -158,9 +158,10 @@ def ig_safe(path, target_mb=24):
     kb = int(max(900, min(3000, target_mb * 8192 / max(dur, 1) - 160)))  # video kbit/s within the size budget
     vf = "scale=1280:720" if long_video(path) else "scale=720:1280"
     # exactly the plain recipe Instagram accepted in the 2026-11-07 test (no profile/level/GOP/colour flags)
-    cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", path, "-vf", vf, "-c:v", "libx264", "-pix_fmt", "yuv420p", "-r", "30",
-           "-b:v", f"{kb}k", "-maxrate", f"{int(kb * 1.3)}k", "-bufsize", f"{kb * 2}k",
-           "-c:a", "aac", "-ar", "44100", "-ac", "2", "-b:a", "128k", "-movflags", "+faststart", out]
+    # 2026-11-08 test: files with a bitrate cap (-maxrate/-bufsize) were always rejected; this exact plain recipe was accepted
+    cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", path, "-vf", vf, "-b:v", f"{kb}k",
+           "-c:v", "libx264", "-pix_fmt", "yuv420p", "-r", "30", "-c:a", "aac", "-ar", "44100", "-ac", "2",
+           "-movflags", "+faststart", out]
     try:
         subprocess.run(cmd, check=True)
         print(f"Instagram copy: {os.path.getsize(out) / 1e6:.1f} MB at {kb} kbit/s")

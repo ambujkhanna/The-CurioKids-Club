@@ -73,6 +73,10 @@ def check(path):
     for i, l in enumerate(ep["lines"]):
         if l.get("who") not in cast: errs.append(f"line {i}: who '{l.get('who')}' is not in cast {cast}")
         if len(l.get("text", "")) > 230: errs.append(f"line {i}: text too long (> 230 chars)")
+        import re as _re
+        if _re.search(r"\[(?!laugh\]|chuckle\]|gasp\]|sigh\]|cough\])[^\]]*\]", l.get("text", "")):
+            errs.append(f"line {i}: unknown [tag] (use [laugh], [chuckle], [gasp], [sigh] or [cough])")
+        l = dict(l, text=_re.sub(r"\s{2,}", " ", _re.sub(r"\[[a-z_ ]+\]", "", l.get("text", ""))).strip())
         words = [w.lower().strip(".,!?'\"…;:") for w in l["text"].split()]
         sc = l.get("board")
         if sc:
