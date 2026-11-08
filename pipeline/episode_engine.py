@@ -73,6 +73,13 @@ def _svg_drawer(name):
 def ico(name):
     if not name: return None
     if name in ICONS: return ICONS[name]
+    if isinstance(name, str) and "+" in name and len(name) > 2:  # "🦕+💤": main picture with a small badge floating above
+        main, badge = (ico(p_.strip()) for p_ in name.split("+", 1))
+        if main and badge:
+            def combo(c, x, y, k, main=main, badge=badge):
+                main(c, x, y, k)
+                c.save(); c.translate(x + 16 * k, y - 22 * k); c.rotate(-8); badge(c, 0, 0, k * 0.5); c.restore()
+            return combo
     if isinstance(name, str) and name.startswith("img:"):
         if name not in _SVG: _SVG[name] = _svg_drawer(name)
         return _SVG[name] or ICONS["bulb"]

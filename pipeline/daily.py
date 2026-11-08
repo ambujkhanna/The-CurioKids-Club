@@ -34,7 +34,7 @@ IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
 # cfg: lower = slower, more deliberate delivery (Chatterbox's advice for high exaggeration); gap: pause between lines (s)
 EXAGGERATION = {"comedy": 0.8, "quiz": 0.8}
 VOICE_CFG = {"comedy": 0.25, "quiz": 0.3}
-LINE_GAP = {"comedy": 0.75, "quiz": 0.6}
+LINE_GAP = {"comedy": 1.0, "quiz": 0.8}  # pause between speakers: lets a joke land before the reply
 VOICE_EX = str(EXAGGERATION.get(CATEGORY, 0.5))
 VOICE_ENV = {"CB_EXAGGERATION": VOICE_EX, "CB_CFG": str(VOICE_CFG.get(CATEGORY, 0.35))}
 if CATEGORY in LINE_GAP: VOICE_ENV["TTS_GAP"] = str(LINE_GAP[CATEGORY])

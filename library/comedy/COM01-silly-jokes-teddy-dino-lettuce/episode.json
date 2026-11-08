@@ -95,7 +95,7 @@
       "text": "It's called a dino-snore! Zzzz!",
       "board": {
         "type": "big",
-        "icon": "😴",
+        "icon": "🦕+💤",
         "text": "Sleeping dinosaur?",
         "cue": "called",
         "sub": "A dino-snore!",

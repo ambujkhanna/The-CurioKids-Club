@@ -119,8 +119,8 @@
       "punch": "dino",
       "board": {
         "type": "big",
-        "icon": "🦕",
-        "text": "A sleeping dinosaur?",
+        "icon": "🦕+💤",
+        "text": "Zzz... a sleepy dino!",
         "cue": "nope",
         "sub": "A dino-snore!",
         "sub_cue": "dino"

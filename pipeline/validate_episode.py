@@ -35,6 +35,8 @@ def icons(sc):
 
 
 def bad_icon(i):
+    if "+" in i and len(i) > 2:  # combined picture "🦕+💤"
+        return any(bad_icon(p.strip()) for p in i.split("+", 1))
     if i in LEGACY_ICONS: return False
     if i.startswith("img:"):  # real illustration: must be in assets/IMAGE_INDEX.txt
         return i not in _INDEX()

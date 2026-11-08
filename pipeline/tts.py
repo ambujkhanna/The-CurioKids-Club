@@ -202,34 +202,41 @@ def align(kwav, ka, kb, cwav):
 
 
 LAUGH = re.compile(r"^(?:(?:ha|hah|hee|he|ho|heh)[\s,-]*)+[!.,…]*$", re.I)
+SNORE = re.compile(r"^z{2,}[!.,…]*$", re.I)  # "Zzz", "Zzzz!" -> a cartoon snore sound, never read out
+PAUSE_BEFORE_LAUGH, PAUSE_AFTER_LAUGH, PAUSE_SFX, PAUSE_JOIN = 0.55, 0.3, 0.25, 0.12
 
 
 def chunks(raw):
-    """Split a line into [(turbo?, text)]: laughs ('Ha ha!', 'Hee hee,') and sentences with [tags] go to Turbo
-    (it performs real laughs), everything else to the normal Chatterbox voice. Neighbouring normal parts are joined."""
-    parts = re.findall(r"[^.!?…]+(?:[.!?…]+|$)", raw.strip())
+    """Split a line into [(kind, text)], kind = "speech" (normal Chatterbox), "turbo" (Chatterbox-Turbo: laughs like
+    'Ha ha!' and sentences with [tags]) or "sfx" (sound effect, e.g. 'Zzzz!'). Neighbouring speech parts are joined."""
     out = []
-    for p in parts:
+    for p in re.findall(r"[^.!?…]+(?:[.!?…]+|$)", raw.strip()):
         p = p.strip()
         if not p: continue
         m = re.match(r"^((?:(?:ha|hah|hee|he|ho|heh)[\s-]*)+[,.…]+)\s*(.+)$", p, re.I)  # "Hee hee, that's fancy!"
-        pieces = [m.group(1), m.group(2)] if m else [p]
-        for q in pieces:
-            if LAUGH.match(q):
+        for q in ([m.group(1), m.group(2)] if m else [p]):
+            if SNORE.match(q):
+                out.append(("sfx", "snore"))
+            elif LAUGH.match(q):
                 big = len(re.findall(r"ha|hee|he|ho", q, re.I)) > 1
-                out.append((True, q.rstrip(",") + (" [laugh]" if big else " [chuckle]")))
+                out.append(("turbo", q.rstrip(",") + (" [laugh]" if big else " [chuckle]")))
             elif re.search(r"\[[a-z_ ]+\]", q):
-                out.append((True, q))
-            elif out and not out[-1][0]:
-                out[-1] = (False, out[-1][1] + " " + q)
+                out.append(("turbo", q))
+            elif out and out[-1][0] == "speech":
+                out[-1] = ("speech", out[-1][1] + " " + q)
             else:
-                out.append((False, q))
-    return out or [(False, raw)]
+                out.append(("speech", q))
+    return out or [("speech", raw)]
+
+
+def is_laugh(kind, text):
+    return kind == "turbo" and ("[laugh]" in text or "[chuckle]" in text)
 
 
 def chatterbox_all():
-    """Generate every line with Chatterbox (in its own Python). Returns a list of wavs, or None to fall back."""
+    """Generate every line with Chatterbox (in its own Python). Returns (list of wavs, lead pauses), or None."""
     import subprocess, tempfile
+    import sfx
     py = os.environ.get("CB_PYTHON")
     if os.environ.get("TTS_ENGINE", "kokoro") != "chatterbox" or not py:
         return None
@@ -244,35 +251,47 @@ def chatterbox_all():
     d = tempfile.mkdtemp(); job = os.path.join(d, "job.json")
     items, plan = [], []
     for i, (spk, raw) in enumerate(RAW):
-        cs = chunks(raw) if use_turbo else [(False, strip_tags(raw))]
-        ids = []
-        for k, (tb, txt) in enumerate(cs):
-            ids.append(len(items))
-            items.append({"who": spk, "text": txt, "ex": ex, "cfg": cfg, "seed": seed0 * 100 + i * 7 + k, "turbo": tb})
-        plan.append(ids)
+        cs = chunks(raw) if use_turbo else [("speech", strip_tags(raw))]
+        parts = []
+        for k, (kind, txt) in enumerate(cs):
+            if kind == "sfx":
+                parts.append((kind, txt, None)); continue
+            parts.append((kind, txt, len(items)))
+            items.append({"who": spk, "text": txt, "ex": ex, "cfg": cfg, "seed": seed0 * 100 + i * 7 + k, "turbo": kind == "turbo"})
+        plan.append(parts)
     json.dump({"out": d, "refs": refs, "lines": items}, open(job, "w"))
     try:
         subprocess.run([py, os.path.join(S, "pipeline", "cb_gen.py"), job], check=True, timeout=3 * 3600)
-        out = []
-        for ids in plan:
-            parts = []
-            for j in ids:
-                w, sr = sf.read(os.path.join(d, f"line_{j}.wav"), dtype="float32")
-                w = w if w.ndim == 1 else w.mean(1)
-                assert sr == SR and w.size > SR * 0.2, "bad chatterbox audio"
-                a, b = _speech_span(w); w = w[a:b]
-                w = w / (np.percentile(np.abs(w), 99.5) + 1e-6) * 0.7  # match loudness between the two models
-                parts += [w, np.zeros(int(0.12 * SR), np.float32)]
-            out.append(np.concatenate(parts[:-1]).astype(np.float32))
-        n_t = sum(1 for it in items if it["turbo"])
-        print(f"voices: Chatterbox (exaggeration {ex}, cfg {cfg}, gap {GAP}; {n_t} laugh/reaction parts with Turbo)")
-        return out
+        out, leads = [], []
+        for i, parts in enumerate(plan):
+            seg = []
+            for k, (kind, txt, j) in enumerate(parts):
+                if kind == "sfx":
+                    w = sfx.snore(seed=i * 10 + k) * 0.8
+                else:
+                    w, sr = sf.read(os.path.join(d, f"line_{j}.wav"), dtype="float32")
+                    w = w if w.ndim == 1 else w.mean(1)
+                    assert sr == SR and w.size > SR * 0.2, "bad chatterbox audio"
+                    a, b = _speech_span(w); w = w[a:b]
+                    w = w / (np.percentile(np.abs(w), 99.5) + 1e-6) * 0.7  # match loudness between the two models
+                if seg:  # comic timing: a beat before a laugh, a breath after it
+                    prev_kind, prev_txt = parts[k - 1][0], parts[k - 1][1]
+                    gap = PAUSE_BEFORE_LAUGH if is_laugh(kind, txt) else PAUSE_AFTER_LAUGH if is_laugh(prev_kind, prev_txt) \
+                        else PAUSE_SFX if "sfx" in (kind, prev_kind) else PAUSE_JOIN
+                    seg.append(np.zeros(int(gap * SR), np.float32))
+                seg.append(w.astype(np.float32))
+            out.append(np.concatenate(seg))
+            leads.append(PAUSE_BEFORE_LAUGH * 0.6 if i and parts and is_laugh(parts[0][0], parts[0][1]) else 0.0)
+        n_t = sum(1 for it in items if it["turbo"]); n_s = sum(1 for ps in plan for p_ in ps if p_[0] == "sfx")
+        print(f"voices: Chatterbox (exaggeration {ex}, cfg {cfg}, gap {GAP}; {n_t} laugh/reaction parts with Turbo, {n_s} sound effects)")
+        return out, leads
     except Exception as e:
         print("note: Chatterbox failed, using Kokoro voices:", e)
         return None
 
 
-CB = chatterbox_all()
+_cb = chatterbox_all()
+CB, LEADS = (_cb if _cb else (None, None))
 ENGINE = "chatterbox" if CB else "kokoro"
 audio = [np.zeros(int(LEAD * SR), np.float32)]
 t = LEAD
@@ -280,6 +299,8 @@ lines = []
 for li, (spk, text) in enumerate(LINES):
     kwav, phon, words, ka, kb, ph, semis = kokoro_line(spk, text)
     if CB:
+        if LEADS[li]:  # a reaction that starts with a laugh waits a beat after the previous line's punchline
+            audio.append(np.zeros(int(LEADS[li] * SR), np.float32)); t += LEADS[li]
         wav, f = align(kwav, ka, kb, CB[li])
         phon = [(c, f(a), max(f(a), f(b))) for c, a, b in phon]
         words = [(w, f(a), max(f(a) + 0.04, f(b))) for w, a, b in words]
