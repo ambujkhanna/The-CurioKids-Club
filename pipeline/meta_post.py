@@ -144,18 +144,18 @@ def ig_check(path, cap="check"):
         return f"rejected: {e}"[:200]
 
 
-def ig_safe(path, target_mb=26):
+def ig_safe(path, target_mb=26, kb=None, tag="ig"):
     """Instagram copy: 720x1280 H.264 High, 30 fps, AAC 44.1 kHz, sized under ~target_mb.
     (Tested 2026-11-07: this account's API rejected files over ~30 MB with ProcessingFailedError,
     and accepted 19-28 MB files.)"""
     import subprocess
-    out = path[:-4] + "_ig.mp4"
+    out = path[:-4] + f"_{tag}.mp4"
     try:
         dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", path],
                                    capture_output=True, text=True, check=True).stdout.strip())
     except Exception:
         dur = 90.0
-    kb = int(max(900, min(3000, target_mb * 8192 / max(dur, 1) - 160)))  # video kbit/s within the size budget
+    kb = kb or int(max(900, min(3000, target_mb * 8192 / max(dur, 1) - 160)))  # video kbit/s within the size budget
     vf = "scale=1280:720" if long_video(path) else "scale=720:1280"
     # exactly the plain recipe Instagram accepted in the 2026-11-07 test (no profile/level/GOP/colour flags)
     # 2026-11-08 test: files with a bitrate cap (-maxrate/-bufsize) were always rejected; this exact plain recipe was accepted
@@ -181,22 +181,35 @@ def long_video(path):
         return False
 
 
+def _ig_direct(ig, tok, path, cap):
+    c = _req(f"{GRAPH}/{ig}/media", {"media_type": "REELS", "upload_type": "resumable", "caption": cap,
+                                      "share_to_feed": "true", "access_token": tok})
+    cid = c["id"]; uri = c.get("uri") or f"https://rupload.facebook.com/ig-api-upload/v21.0/{cid}"
+    with open(path, "rb") as fh:
+        data = fh.read()
+    _req(uri, raw=data, headers={"Authorization": f"OAuth {tok}", "offset": "0", "file_size": str(len(data)),
+                                 "Content-Type": "application/octet-stream"})
+    return _ig_wait_publish(ig, cid, tok)
+
+
 def post_instagram(path, cap):
     ig, tok = os.environ["META_IG_USER_ID"], os.environ["META_PAGE_TOKEN"]
-    path = ig_safe(path)
+    src = path
+    path = ig_safe(src)
     err = ""
-    # 1) direct (resumable) upload of the file
-    try:
-        c = _req(f"{GRAPH}/{ig}/media", {"media_type": "REELS", "upload_type": "resumable", "caption": cap,
-                                          "share_to_feed": "true", "access_token": tok})
-        cid = c["id"]; uri = c.get("uri") or f"https://rupload.facebook.com/ig-api-upload/v21.0/{cid}"
-        with open(path, "rb") as fh:
-            data = fh.read()
-        _req(uri, raw=data, headers={"Authorization": f"OAuth {tok}", "offset": "0", "file_size": str(len(data)),
-                                     "Content-Type": "application/octet-stream"})
-        return f"posted (reel {_ig_wait_publish(ig, cid, tok)})"
-    except Exception as e:
-        err = str(e)[:160]
+    # 1) direct (resumable) upload; Instagram sometimes rejects one encoding and accepts another
+    #    (2026-11-08: two of four episodes were rejected with the same recipe), so try a ladder of encodings
+    tries = [("size-budget", path), ("3 Mbps", None), ("2 Mbps", None), ("1.5 Mbps", None)]
+    for k, (name, p) in enumerate(tries):
+        try:
+            if p is None:
+                p = ig_safe(src, kb={"3 Mbps": 3000, "2 Mbps": 2000, "1.5 Mbps": 1500}[name], tag=f"ig{k}")
+            vid = _ig_direct(ig, tok, p, cap)
+            return f"posted (reel {vid})" + (f" with the {name} copy" if k else "")
+        except Exception as e:
+            err = f"{err} [{name}] {str(e)[:90]}"
+            time.sleep(20)
+    err = err.strip()[:300]
     # 2) upload the Instagram-format copy to the Page as a hidden (unpublished) video, then let Instagram fetch it
     err2 = ""
     try:
