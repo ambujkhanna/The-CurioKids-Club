@@ -1,0 +1,17 @@
+# Example script - lines starting with # are notes and are ignored
+TITLE: How Do Bees Make Honey? 🐝 Fun Facts for Kids
+COVER: BEE MAGIC
+HASHTAGS: #Bees #Honey #ScienceForKids
+TITLE_BOARD: 🌸 Flowers -> 🍯 Honey
+---
+LEO: Mia, how do bees make honey?
+MIA: It starts with flowers! Bees sip a sweet juice called nectar.   | 🌸 Sweet nectar
+LEO: Like drinking juice with a straw?
+MIA: Exactly! Their tongue works like a tiny straw.   | 👅 A tongue straw!
+LEO: Then what happens?
+MIA: They carry the nectar home to the hive in a special honey stomach.   | 🏠 Honey stomach
+LEO: A stomach just for honey? Ha ha! That's so silly!
+MIA: At the hive, bees pass the nectar to each other and fan it with their wings until it gets thick.   | 🐝 Fan, fan, fan! ; until it's thick
+LEO: So the wind from their wings dries it out?
+MIA: Yes! Then they seal it in wax cells to keep it fresh.   | 🍯 Sealed in wax
+LEO: Bees are busy little chefs!

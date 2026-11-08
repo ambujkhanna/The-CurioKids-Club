@@ -26,7 +26,7 @@ def show(ref, path):
 
 files = sorted({os.path.relpath(p, ROOT) for p in
                 glob.glob(os.path.join(ROOT, "episodes", "state.json")) + glob.glob(os.path.join(ROOT, "long", "state.json")) +
-                glob.glob(os.path.join(ROOT, "library", "*", "state.json"))})
+                glob.glob(os.path.join(ROOT, "library", "*", "state.json")) + glob.glob(os.path.join(ROOT, "custom", "state.json"))})
 changes = {}
 for f in files:
     mine = json.load(open(os.path.join(ROOT, f))).get("episodes", {})

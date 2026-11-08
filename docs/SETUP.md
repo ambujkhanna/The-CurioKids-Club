@@ -201,3 +201,10 @@ To post a video from a particular category, go to Actions → **Daily Curio Kids
   - If Chatterbox fails, Kokoro's Hindi voices are used instead (added automatically by `setup_models.py`).
   - Hear samples first: Actions → Voice Lab → which: `hindi`.
 - **Manual runs:** Run workflow → language: `hi`, optionally with an episode id and dry_run. Hindi progress is tracked separately from English: the Hindi track starts from the first episode again, which is a new audience.
+
+## Videos from your own script (added 2026-11-08)
+
+Write a script in `scripts/` (a plain text file), then Run workflow → **script**: `scripts/<file>.txt`. Tick **dry_run** the first time to watch the MP4 from Artifacts.
+- **Format and limits:** see `scripts/README.md`: header (`TITLE:` and optional `COVER:`, `HASHTAGS:`, `TITLE_BOARD:`), `---`, then `NAME: text | emoji Board text` lines. Use 9–16 lines and about 110–180 words.
+- **Problems** stop the run before rendering and are listed in the run summary.
+- **One file = one video.** A file that was already uploaded is never uploaded again; save the script under a new name instead.

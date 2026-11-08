@@ -1,0 +1,11 @@
+# TEMPLATE - copy this into a new file in scripts/ (name like my-topic.txt, no spaces)
+# Lines starting with # are notes and are ignored. Full guide: scripts/README.md
+TITLE: How Do Bees Make Honey? 🐝 Fun Facts for Kids
+COVER: BEE MAGIC
+HASHTAGS: #Bees #Honey #ScienceForKids
+TITLE_BOARD: 🌸 Flowers -> 🍯 Honey
+---
+# 9-16 lines (best 11-14), about 110-180 words. Add "| emoji Short text" every 2-3 lines for a board picture.
+LEO: Mia, how do bees make honey?
+MIA: It starts with flowers! Bees sip a sweet juice called nectar.   | 🌸 Sweet nectar
+LEO: Like drinking juice with a straw?

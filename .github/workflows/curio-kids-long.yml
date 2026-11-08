@@ -98,7 +98,7 @@ jobs:
           META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
           META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
           META_IG_USER_ID: ${{ secrets.META_IG_USER_ID }}
-          PUBLISH_WINDOW: ${{ vars.PUBLISH_WINDOW || '16:00-19:00' }}
+          PUBLISH_WINDOW: ${{ vars.PUBLISH_WINDOW || '17:00-20:00' }}
           TTS_ENGINE: ${{ vars.TTS_ENGINE || 'chatterbox' }}
           CB_PYTHON: /home/runner/cbenv/bin/python
           CB_TURBO_LAUGHS: ${{ vars.CB_TURBO_LAUGHS || '1' }}

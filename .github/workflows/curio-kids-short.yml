@@ -44,10 +44,9 @@ on:
         type: choice
         default: "0"
         options: ["0", "1", "2", "3", "4"]
-      fix_existing:
-        description: "Add all already-uploaded videos to the playlist + apply the made-for-kids setting (no new video)"
-        type: boolean
-        default: false
+      script:
+        description: "Make a video from YOUR script: path of the file, e.g. scripts/bees.txt (format: scripts/README.md)"
+        required: false
 
 permissions:
   contents: write
@@ -138,7 +137,7 @@ jobs:
           if [ "${{ inputs.social_only }}" = "true" ]; then ARGS="$ARGS --social-only"; fi
           if [ -n "${{ inputs.category }}" ] && [ "${{ inputs.category }}" != "none" ]; then ARGS="$ARGS --category ${{ inputs.category }}"; fi
           if [ "${{ inputs.ig_test }}" = "true" ]; then ARGS="$ARGS --ig-test"; fi
-          if [ "${{ inputs.fix_existing }}" = "true" ]; then ARGS="$ARGS --fix-existing"; fi
+          if [ -n "${{ inputs.script }}" ]; then ARGS="$ARGS --script ${{ inputs.script }}"; fi
           if [ -n "${{ inputs.social_backfill }}" ] && [ "${{ inputs.social_backfill }}" != "0" ]; then ARGS="$ARGS --social-backfill ${{ inputs.social_backfill }}"; fi
           if [ "${{ github.event_name }}" = "schedule" ]; then ARGS="--auto"; fi
           if [ "${{ inputs.language }}" = "hi" ]; then ARGS="$ARGS --lang hi"; fi
