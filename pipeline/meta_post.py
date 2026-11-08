@@ -79,6 +79,7 @@ def post_facebook(path, ep, cap, long=False):
                     off, end = int(r["start_offset"]), int(r["end_offset"])
             _req(f"{GRAPH}/{page}/videos", {"upload_phase": "finish", "upload_session_id": sid, "access_token": tok,
                                              "title": ep["title"][:250], "description": cap})
+            if vid: fb_set_thumbnail(vid)
             return f"posted (video {vid})"
         # Reel: start -> upload bytes -> finish (published now)
         st = _req(f"{GRAPH}/{page}/video_reels", {"upload_phase": "start", "access_token": tok})
@@ -89,12 +90,57 @@ def post_facebook(path, ep, cap, long=False):
         _req(f"{GRAPH}/{page}/video_reels", {"upload_phase": "finish", "video_id": vid, "video_state": "PUBLISHED",
                                               "description": cap, "access_token": tok})
         LAST["fb_video_id"] = vid
+        fb_set_thumbnail(vid)
         return f"posted (reel {vid})"
     except Exception as e:
         return f"failed: {e}"[:300]
 
 
 LAST = {}
+COVER = {}  # {"jpg": designed thumbnail path, "url": public CDN link of it (via a hidden Page photo)}
+
+
+def _multipart(fields, file_field=None, file_name=None, data=None, ctype="image/jpeg"):
+    bnd = uuid.uuid4().hex; body = b""
+    for k, v in fields.items():
+        body += f"--{bnd}\r\nContent-Disposition: form-data; name=\"{k}\"\r\n\r\n{v}\r\n".encode()
+    if file_field:
+        body += (f"--{bnd}\r\nContent-Disposition: form-data; name=\"{file_field}\"; filename=\"{file_name}\"\r\n"
+                 f"Content-Type: {ctype}\r\n\r\n").encode() + data + b"\r\n"
+    return body + f"--{bnd}--\r\n".encode(), {"Content-Type": f"multipart/form-data; boundary={bnd}"}
+
+
+def cover_url():
+    """Public link to the designed thumbnail (Instagram needs a URL for a Reel cover): uploaded to the Page as an
+    UNPUBLISHED photo (never shown on the Page). Returns None if it can't be made."""
+    if "url" in COVER or not COVER.get("jpg") or not os.path.exists(COVER["jpg"]): return COVER.get("url")
+    page, tok = os.environ["META_PAGE_ID"], os.environ["META_PAGE_TOKEN"]
+    try:
+        body, hd = _multipart({"published": "false", "access_token": tok}, "source", "cover.jpg", open(COVER["jpg"], "rb").read())
+        pid = _req(f"{GRAPH}/{page}/photos", raw=body, headers=hd)["id"]
+        imgs = _req(f"{GRAPH}/{pid}?fields=images&access_token={urllib.parse.quote(tok)}").get("images", [])
+        COVER["url"] = max(imgs, key=lambda i: i.get("width", 0))["source"] if imgs else None
+    except Exception as e:
+        print("note: no cover link:", str(e)[:150]); COVER["url"] = None
+    return COVER["url"]
+
+
+def _cover_params():
+    u = cover_url()
+    return {"cover_url": u} if u else {"thumb_offset": "3000"}  # else a frame after the curtains open
+
+
+def fb_set_thumbnail(vid, jpg=None):
+    """Use the designed thumbnail as the Facebook video/Reel cover (best effort). Returns a short status."""
+    jpg = jpg or COVER.get("jpg")
+    if not jpg or not os.path.exists(jpg): return "no thumbnail"
+    try:
+        body, hd = _multipart({"is_preferred": "true", "access_token": os.environ["META_PAGE_TOKEN"]}, "source", "thumb.jpg",
+                              open(jpg, "rb").read())
+        _req(f"{GRAPH}/{vid}/thumbnails", raw=body, headers=hd)
+        return "cover set"
+    except Exception as e:
+        print("note: Facebook cover not set:", str(e)[:150]); return "cover not set: " + str(e)[:120]
 
 
 def _fb_source(vid, tok, wait=600):
@@ -129,7 +175,7 @@ def ig_check(path, cap="check"):
     ig, tok = os.environ["META_IG_USER_ID"], os.environ["META_PAGE_TOKEN"]
     try:
         c = _req(f"{GRAPH}/{ig}/media", {"media_type": "REELS", "upload_type": "resumable", "caption": cap,
-                                          "share_to_feed": "true", "access_token": tok})
+                                          "share_to_feed": "true", "access_token": tok, **_cover_params()})
         cid = c["id"]; uri = c.get("uri") or f"https://rupload.facebook.com/ig-api-upload/v21.0/{cid}"
         data = open(path, "rb").read()
         _req(uri, raw=data, headers={"Authorization": f"OAuth {tok}", "offset": "0", "file_size": str(len(data)),
@@ -183,7 +229,7 @@ def long_video(path):
 
 def _ig_direct(ig, tok, path, cap):
     c = _req(f"{GRAPH}/{ig}/media", {"media_type": "REELS", "upload_type": "resumable", "caption": cap,
-                                      "share_to_feed": "true", "access_token": tok})
+                                      "share_to_feed": "true", "access_token": tok, **_cover_params()})
     cid = c["id"]; uri = c.get("uri") or f"https://rupload.facebook.com/ig-api-upload/v21.0/{cid}"
     with open(path, "rb") as fh:
         data = fh.read()
@@ -225,7 +271,7 @@ def post_instagram(path, cap):
         hid = r.get("id")
         src = _fb_source(hid, tok) if hid else None
         if src:
-            c = _req(f"{GRAPH}/{ig}/media", {"media_type": "REELS", "video_url": src, "caption": cap, "share_to_feed": "true", "access_token": tok})
+            c = _req(f"{GRAPH}/{ig}/media", {"media_type": "REELS", "video_url": src, "caption": cap, "share_to_feed": "true", "access_token": tok, **_cover_params()})
             return f"posted via hidden copy (reel {_ig_wait_publish(ig, c['id'], tok)})"
         err2 = "hidden copy not ready"
     except Exception as e:
@@ -239,13 +285,13 @@ def post_instagram(path, cap):
         if not src:
             return f"failed: {err}; Facebook copy not ready for fallback"[:300]
         c = _req(f"{GRAPH}/{ig}/media", {"media_type": "REELS", "video_url": src, "caption": cap,
-                                          "share_to_feed": "true", "access_token": tok})
+                                          "share_to_feed": "true", "access_token": tok, **_cover_params()})
         return f"posted via Facebook copy (reel {_ig_wait_publish(ig, c['id'], tok)})"
     except Exception as e:
         return f"failed: 1) direct: {err} | 2) hidden copy: {err2} | 3) FB reel copy: {e}"[:600]
 
 
-def post_all(path, ep, brand_line, long=False, done=None):
+def post_all(path, ep, brand_line, long=False, done=None, thumb=None):
     """Returns {"facebook": status, "instagram": status} (only for configured platforms).
     done: the episode's saved record - platforms that already say "posted" are skipped (no duplicates on re-runs)."""
     import re
@@ -253,6 +299,7 @@ def post_all(path, ep, brand_line, long=False, done=None):
     if not have_meta():
         return out
     cap = caption(ep, brand_line)
+    COVER.clear(); COVER["jpg"] = thumb or (path[:-4] + "_thumbnail.jpg")  # the designed thumbnail, if rendered
     fb_prev = str(done.get("facebook", ""))
     if fb_prev.startswith("posted"):
         m = re.search(r"(\d{6,})", fb_prev)

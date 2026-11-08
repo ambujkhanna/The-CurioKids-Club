@@ -187,12 +187,17 @@ def refresh_thumbnails():
             os.makedirs(OUT, exist_ok=True)
             import shutil; dst = os.path.join(OUT, f"{eid}_thumbnail.jpg"); shutil.copy(os.path.join(PIPE, "build", "thumbnail.jpg"), dst)
             rec["thumbnail"] = set_thumbnail(rec["video_id"], dst)
+            import meta_post, re as _re  # also update the cover of the Facebook Reel/video, if it was posted there
+            m = _re.search(r"(\d{6,})", str(rec.get("facebook", "")))
+            if m and meta_post.have_meta() and str(rec.get("facebook", "")).startswith("posted"):
+                rec["facebook_cover"] = meta_post.fb_set_thumbnail(m.group(1), dst)
         except Exception as e:
             rec["thumbnail"] = f"refresh failed: {e}"[:200]
-        done.append(f"- {eid}: {rec['thumbnail']}")
+        done.append(f"- {eid}: YouTube {rec['thumbnail']}" + (f" | Facebook {rec['facebook_cover']}" if rec.get("facebook_cover") else ""))
         print(eid, rec["thumbnail"])
     json.dump(state, open(STATE, "w"), indent=2)
-    summary("### 🖼️ Thumbnails refreshed\n\n" + ("\n".join(done) or "- no uploaded videos found"))
+    summary("### 🖼️ Thumbnails refreshed\n\n" + ("\n".join(done) or "- no uploaded videos found") +
+            "\n\nInstagram covers of already-posted Reels can't be changed by the API: in the Instagram app use Edit → Edit cover.")
     return 0
 
 
