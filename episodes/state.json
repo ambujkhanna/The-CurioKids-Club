@@ -104,6 +104,22 @@
       "uploaded_at": "2026-11-07T20:43:29+05:30",
       "voices": "kokoro",
       "facebook_cover": "cover not set: HTTP 400: Unsupported post request. Object with ID '29028579776780651' does not exist, cannot be loaded due to missing p"
+    },
+    "ep006": {
+      "voices": "chatterbox",
+      "title": "Why Does Ice Float? \ud83e\uddca Fun Science for Kids",
+      "rendered_at": "2026-11-10T00:51:14+05:30",
+      "duration_s": 65.56,
+      "publish_at_ist": "2026-11-10T19:35+05:30",
+      "thumbnail": "set",
+      "playlist": "off (added by hand)",
+      "made_for_kids": "no",
+      "facebook": "posted (reel 1431761895253118)",
+      "instagram": "posted (reel 18022240388949483)",
+      "status": "uploaded",
+      "video_id": "fTbBW1Um2zs",
+      "url": "https://www.youtube.com/shorts/fTbBW1Um2zs",
+      "uploaded_at": "2026-11-10T00:53:00+05:30"
     }
   }
 }
