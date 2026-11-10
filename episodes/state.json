@@ -80,7 +80,7 @@
       "facebook": "posted (reel 1728749192110385)",
       "instagram": "posted (reel 18360024679173734)",
       "publish_at_ist": "2026-11-07T17:20+05:30",
-      "thumbnail": "not set: <HttpError 404 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=TkcXGEyIvME&alt=json&uploadType=media returned \"The video that you are trying to insert a thumbnail image for cannot ",
+      "thumbnail": "not set: video not found on YouTube (deleted?)",
       "status": "uploaded",
       "video_id": "TkcXGEyIvME",
       "url": "https://www.youtube.com/shorts/TkcXGEyIvME",
@@ -103,7 +103,7 @@
       "url": "https://www.youtube.com/shorts/uX0INx1C8oo",
       "uploaded_at": "2026-11-07T20:43:29+05:30",
       "voices": "kokoro",
-      "facebook_cover": "cover not set: HTTP 400: Unsupported post request. Object with ID '29028579776780651' does not exist, cannot be loaded due to missing p"
+      "facebook_cover": "cover not set: video not found on the Page (deleted?)"
     },
     "ep006": {
       "voices": "chatterbox",
@@ -119,7 +119,8 @@
       "status": "uploaded",
       "video_id": "fTbBW1Um2zs",
       "url": "https://www.youtube.com/shorts/fTbBW1Um2zs",
-      "uploaded_at": "2026-11-10T00:53:00+05:30"
+      "uploaded_at": "2026-11-10T00:53:00+05:30",
+      "facebook_cover": "cover set"
     }
   }
 }
