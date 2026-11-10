@@ -1,6 +1,6 @@
 # Channels reference: The CurioKids Club & AInation Studio
 
-**Last updated:** 2026-11-10 15:53 IST (10:23 UTC)
+**Last updated:** 2026-11-10 16:24 IST (10:54 UTC)
 
 This is the quick reference for both channels: links, schedules, workflow options, secrets and variables. It's updated whenever any of these change; see the change log at the bottom. The full history is in `TheCurioKidsClub_handoff.md` and `AInation_Studio_handoff.md`.
 
@@ -27,9 +27,9 @@ This is the quick reference for both channels: links, schedules, workflow option
 | **Opening hook** | The episode's question in big yellow letters for the first 2.3 s; curtains start half open (optional `"hook"` field in episode.json overrides the text) | Same (no curtains) |
 | **Ending** | Spoken: "…subscribe… and share this with a friend!"; end card with Subscribe / Like / Share + "Search "The CurioKids Club" on YouTube, Instagram, Facebook" | Spoken: "Subscribe to AI Nation Studio, and share this with a friend!"; same end card with "Search "AInation Studio" …" |
 | **Caption / description** | Save & share line (IG: "📌 Save this… share it with a curious kid", FB/YouTube share lines) | Same, AI wording |
-| **Channel hashtag** | **#TheCurioKidsClub** (always included) | **#AInationstudio** (always included) |
+| **Channel hashtag** | **#TheCurioKidsClub**: right after the YouTube title and the first line of FB/IG captions (visible without 'more'), counted once | **#AInationstudio**: same |
 | **Hashtag limits** | YouTube max 15 (channel tag in the first 3, + #Shorts) · Instagram max **5** · Facebook max 10 | same |
-| **Facebook / Instagram** | Posted automatically right after each YouTube upload (Reel, designed cover) | Same |
+| **Facebook / Instagram** | Posted automatically right after each YouTube upload (Reel, designed cover; Facebook cover set once processing is done, result in the run summary) | Same |
 | **Uploads on YouTube** | Private until the API audit; publish or schedule in Studio | Same |
 
 ## Run workflow options: Daily Shorts
@@ -107,3 +107,4 @@ Never paste tokens into chat, files or commits; they go only into GitHub Secrets
 | 2026-11-10 14:35 IST (09:05 UTC) | AInation: board look can be chosen **per video**: new Run workflow option `board_style` (daily and weekly), episode field `"board_style"`, script line `BOARD:`. Order: run option > episode > repo variable `BOARD_STYLE` > hanging. Validator and script check reject unknown looks. |
 | 2026-11-10 15:47 IST (10:17 UTC) | Kids: **Hindi accent fix, choose by ear**: native Hindi voice clips `assets/voices/hi/` (Kokoro Hindi voices); repo variables `HI_VOICE_CLIP` (english/hindi) and `CB_CFG_HI`; Voice Lab `hindi` now makes an A/B/C/D comparison on varnamala lines. Default sound unchanged until the owner picks. |
 | 2026-11-10 15:53 IST (10:23 UTC) | Kids: owner approved the Kokoro native Hindi sample → **Hindi videos now use Kokoro's Hindi voices** (repo variable `HI_TTS_ENGINE`, default `kokoro`); English stays on Chatterbox. Leo's Hindi voice slowed (speed 1.05 → 0.92). |
+| 2026-11-10 16:24 IST (10:54 UTC) | Both: owner saw no channel hashtag and no designed cover on a new AInation video (ep011). **Channel tag now right after the title** on YouTube and in the first line of Facebook/Instagram captions (Shorts/Reels hide the description); tag counted once so Instagram stays at 5. **Facebook cover** is set after Facebook finishes processing (it silently failed when set straight after upload); the run summary shows `cover set` / `designed cover`. Old Facebook covers: run `refresh_thumbnails`. Old YouTube titles stay as they are (changing them needs a wider token). |

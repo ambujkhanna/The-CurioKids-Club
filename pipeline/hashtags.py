@@ -22,6 +22,14 @@ ENGAGE = {
 }
 
 
+def with_brand(title, limit=100):
+    """Title + the channel hashtag (visible in the Shorts player / Reel feed, where the description is hidden).
+    Left unchanged when it is already there or would not fit."""
+    t = (title or "").strip()
+    if BRAND.lower() in t.lower() or len(t) + 1 + len(BRAND) > limit: return t
+    return f"{t} {BRAND}"
+
+
 def pick(tags, platform):
     """tags: the episode's hashtags (+ extras). Returns the list for this platform: clean, no duplicates,
     the channel tag second (after the topic tag), '#Shorts' only on YouTube, and within the platform's limit."""
