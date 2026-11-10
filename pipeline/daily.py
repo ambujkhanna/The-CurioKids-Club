@@ -25,7 +25,7 @@ import datetime as dt, glob, json, os, random, re, subprocess, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PIPE = os.path.join(ROOT, "pipeline")
 LONG = "--long" in sys.argv
-CATEGORIES = ("comedy", "quiz", "knowledge", "science", "abc", "counting", "rhymes")
+CATEGORIES = ("comedy", "quiz", "knowledge", "science", "abc", "counting", "rhymes", "varnamala")
 CATEGORY = sys.argv[sys.argv.index("--category") + 1] if "--category" in sys.argv else ""
 CATEGORY = CATEGORY if CATEGORY in CATEGORIES else ""
 SCRIPT = sys.argv[sys.argv.index("--script") + 1] if "--script" in sys.argv else ""  # scripts/<name>.txt -> custom/<id>/

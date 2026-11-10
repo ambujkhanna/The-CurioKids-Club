@@ -17,22 +17,43 @@ def _P(K, col, stroke=None, a=1.0):
     return p
 
 
+def _deva():
+    try:
+        import deva; return deva
+    except Exception:
+        return None
+
+
+def _ms(f, s):
+    """measure text: Hindi via HarfBuzz shaping, everything else via skia"""
+    d = _deva()
+    return d.measure(s, f.getSize()) if d and d.has(s) else f.measureText(s)
+
+
+def _ds(c, s, x, y, f, p):
+    """drawString that also handles Hindi (shaped); (x, y) = left baseline like skia's drawString"""
+    d = _deva()
+    if d and d.has(s): d.draw(c, s, x, y - f.getSize() * 0.30, f.getSize(), p, align="l")
+    else: c.drawString(s, x, y, f, p)
+
+
+
 def text3d(c, K, s, x, y, size, tf, align="c", depth=None, face=("#FFF27A", "#FFC21A", "#FF8F1F"), side="#1F2D44"):
     """Extruded 3D headline: stacked dark layers (depth), outline, gradient face, glossy top highlight."""
-    f = skia.Font(tf, size); w = f.measureText(s); depth = depth or max(6, int(size * 0.11))
+    f = skia.Font(tf, size); w = _ms(f, s); depth = depth or max(6, int(size * 0.11))
     x0 = x - w / 2 if align == "c" else x
     sh = _P(K, "#000000", a=0.35); sh.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, size * 0.08))
-    c.drawString(s, x0 + depth + 6, y + depth + 10, f, sh)
+    _ds(c, s, x0 + depth + 6, y + depth + 10, f, sh)
     for d in range(depth, 0, -1):  # extrusion
-        c.drawString(s, x0 + d * 0.8, y + d, f, _P(K, side))
-        c.drawString(s, x0 + d * 0.8, y + d, f, _P(K, side, size * 0.09))
-    c.drawString(s, x0, y, f, _P(K, side, size * 0.13))
+        _ds(c, s, x0 + d * 0.8, y + d, f, _P(K, side))
+        _ds(c, s, x0 + d * 0.8, y + d, f, _P(K, side, size * 0.09))
+    _ds(c, s, x0, y, f, _P(K, side, size * 0.13))
     g = skia.Paint(AntiAlias=True)
     g.setShader(skia.GradientShader.MakeLinear([skia.Point(0, y - size * 0.75), skia.Point(0, y + size * 0.1)], [K.hexc(face[0]), K.hexc(face[1]), K.hexc(face[2])], [0, 0.55, 1]))
-    c.drawString(s, x0, y, f, g)
+    _ds(c, s, x0, y, f, g)
     hl = skia.Paint(AntiAlias=True)
     hl.setShader(skia.GradientShader.MakeLinear([skia.Point(0, y - size * 0.75), skia.Point(0, y - size * 0.35)], [skia.Color(255, 255, 255, 150), skia.Color(255, 255, 255, 0)]))
-    c.drawString(s, x0, y, f, hl)
+    _ds(c, s, x0, y, f, hl)
 
 
 def badge3d(c, K, x, y, r, fn=None, k=1.0):
@@ -62,7 +83,8 @@ def sunburst(c, K, cx, cy, R, n=18, col="#FFFFFF", a=0.10):
 
 def _clean(K, s, tf):
     f = skia.Font(tf, 40)
-    s = "".join(ch for ch in s if ch.isascii() or 0 not in f.textToGlyphs(ch))
+    d = _deva()
+    s = "".join(ch for ch in s if ch.isascii() or (d and d.has(ch)) or 0 not in f.textToGlyphs(ch))
     return re.sub(r"\s+", " ", s).strip()
 
 
@@ -79,11 +101,11 @@ def _wrap(text, tf, size, maxw, max_lines):
         f = skia.Font(tf, size); words = text.split(); lines = [""]
         for w in words:
             trial = (lines[-1] + " " + w).strip()
-            if f.measureText(trial) <= maxw: lines[-1] = trial
+            if _ms(f, trial) <= maxw: lines[-1] = trial
             else: lines.append(w)
-        if len(lines) <= max_lines and all(f.measureText(l) <= maxw for l in lines):
+        if len(lines) <= max_lines and all(_ms(f, l) <= maxw for l in lines):
             if len(lines) == 2:  # balance the two lines
-                best = min(range(1, len(words)), key=lambda k: max(f.measureText(" ".join(words[:k])), f.measureText(" ".join(words[k:]))))
+                best = min(range(1, len(words)), key=lambda k: max(_ms(f, " ".join(words[:k])), _ms(f, " ".join(words[k:]))))
                 lines = [" ".join(words[:best]), " ".join(words[best:])]
             return lines, size
         size -= 4
@@ -101,10 +123,10 @@ def _text(c, K, s, x, y, size, col, tf, outline=None, ow=0):
     if any(ch.strip() and skia.Font(tf).unicharToGlyph(ord(ch)) == 0 for ch in s):  # missing glyph: use a system font that has it
         m = skia.FontMgr().matchFamilyStyleCharacter("", skia.FontStyle.Bold(), ["en"], ord(next(ch for ch in s if ch.strip() and skia.Font(tf).unicharToGlyph(ord(ch)) == 0)))
         tf = m or tf
-    f = skia.Font(tf, size); w = f.measureText(s)
+    f = skia.Font(tf, size); w = _ms(f, s)
     if outline:
-        c.drawString(s, x - w / 2, y, f, _P(K, outline, ow))
-    c.drawString(s, x - w / 2, y, f, _P(K, col))
+        _ds(c, s, x - w / 2, y, f, _P(K, outline, ow))
+    _ds(c, s, x - w / 2, y, f, _P(K, col))
 
 
 def _icons(ep, ico):
@@ -140,7 +162,7 @@ def make_wide(path, K, chars, ep, ico, t_pose=None):
     r = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(30, y - 10, 680, len(sl) * ss * 1.2 + 30), 28, 28); c.drawRRect(r, _P(K, WHITE))
     yy = y + 5 + ss * 0.95
     for ln in sl:
-        f = skia.Font(tf, ss); c.drawString(ln, 55, yy, f, _P(K, NAVY)); yy += ss * 1.2
+        f = skia.Font(tf, ss); _ds(c, ln, 55, yy, f, _P(K, NAVY)); yy += ss * 1.2
     icons, mid = _icons(ep, ico)
     box_bottom = y - 10 + len(sl) * ss * 1.2 + 30
     rad = max(48, min(78, (H - 12 - box_bottom) / 2 - 6)); cy = box_bottom + 8 + rad
@@ -148,7 +170,7 @@ def make_wide(path, K, chars, ep, ico, t_pose=None):
         x = 40 + rad + k_ * (rad * 2 + 40)
         badge3d(c, K, x, cy, rad, fn, rad / 50)
     tag = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(W - 300, H - 90, 270, 60), 30, 30)
-    c.drawRRect(tag, _P(K, "#FF0033")); f = skia.Font(tf, 32); c.drawString("FULL VIDEO", W - 270, H - 48, f, _P(K, WHITE))
+    c.drawRRect(tag, _P(K, "#FF0033")); f = skia.Font(tf, 32); _ds(c, "FULL VIDEO", W - 270, H - 48, f, _P(K, WHITE))
     img = surf.makeImageSnapshot()
     if hasattr(K, "grade"): img = K.grade(img)
     img.save(path, skia.kJPEG, 90)

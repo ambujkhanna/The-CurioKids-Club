@@ -1,0 +1,162 @@
+{
+  "id": "VAR02",
+  "slug": "swar-u-uu-ri-e",
+  "status": "ready",
+  "title": "Hindi Letters उ ऊ ऋ ए! 🔤 Learn Hindi Swar for Kids",
+  "cover_text": "उ ऊ ऋ ए",
+  "description": "Mia and Leo learn four more Hindi vowels: उ, ऊ, ऋ and ए! Meet an owl, a camel and a wise rishi along the way.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#LearnHindi",
+    "#HindiAlphabet",
+    "#KidsLearning",
+    "#Shorts"
+  ],
+  "tags": [
+    "hindi alphabet for kids",
+    "hindi varnamala",
+    "learn hindi swar",
+    "hindi vowels for kids",
+    "u oo ri e hindi"
+  ],
+  "cast": [
+    "MIA",
+    "LEO"
+  ],
+  "lines": [
+    {
+      "who": "MIA",
+      "text": "Leo, remember a, aa, i and ee? Let's learn four more Hindi vowels!",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🔤",
+          "label": "HINDI"
+        },
+        "right": {
+          "icon": "⭐",
+          "label": "VOWELS"
+        },
+        "mid": "+",
+        "subtitle": "उ ऊ ऋ ए"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Yes! Four more? Bring them on!"
+    },
+    {
+      "who": "MIA",
+      "text": "This is u! U as in ullu, an owl, and uphaar, a gift!",
+      "board": {
+        "type": "letter",
+        "letter": "उ",
+        "items": [
+          {
+            "icon": "🦉",
+            "label": "उल्लू",
+            "cue": "ullu"
+          },
+          {
+            "icon": "🎁",
+            "label": "उपहार",
+            "cue": "uphaar"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "U, u, ullu! Hoo, hoo!"
+    },
+    {
+      "who": "MIA",
+      "text": "Now oo, a long u! Oo as in oont, a camel, and oon, soft wool!",
+      "board": {
+        "type": "letter",
+        "letter": "ऊ",
+        "items": [
+          {
+            "icon": "🐪",
+            "label": "ऊँट",
+            "cue": "oont"
+          },
+          {
+            "icon": "🧶",
+            "label": "ऊन",
+            "cue": "oon"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Oooo! The camel is so tall!"
+    },
+    {
+      "who": "MIA",
+      "text": "This one is special, ri! Ri as in rishi, a wise sage, and ritu, a season!",
+      "board": {
+        "type": "letter",
+        "letter": "ऋ",
+        "items": [
+          {
+            "icon": "🧘",
+            "label": "ऋषि",
+            "cue": "rishi"
+          },
+          {
+            "icon": "🌦️",
+            "label": "ऋतु",
+            "cue": "ritu"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ri, ri, rishi! So calm!"
+    },
+    {
+      "who": "MIA",
+      "text": "And this is e, it sounds like ay! E as in edi, your heel, and ek, the number one!",
+      "board": {
+        "type": "letter",
+        "letter": "ए",
+        "items": [
+          {
+            "icon": "🦶",
+            "label": "एड़ी",
+            "cue": "edi"
+          },
+          {
+            "icon": "☝️",
+            "label": "एक",
+            "cue": "ek"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "E, e, ek! One finger up!"
+    },
+    {
+      "who": "MIA",
+      "text": "Say them with me: u, oo, ri, e!",
+      "board": {
+        "type": "big",
+        "icon": "⭐",
+        "text": "उ ऊ ऋ ए",
+        "cue": "u"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "U, oo, ri, e! Easy peasy!"
+    },
+    {
+      "who": "MIA",
+      "text": "Well done, Leo! Ask a grown-up to subscribe to The Curio Kids Club for more fun, and share this with a friend! And next time... let's learn ai, o, au, am and ah!"
+    }
+  ]
+}

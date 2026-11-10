@@ -181,8 +181,12 @@ def cue_t(i, item, default):
 def big_text(c, s, x, y, size, color, maxw, tf=FONT_XB, min_size=46, lines=2, outline=None):
     """Fit text in maxw: shrink a little, then wrap to 2 lines, then shrink more. Centred on (x, y)."""
     words = s.split()
+    import deva
+    class _F:  # measure Hindi with HarfBuzz, everything else with skia
+        def __init__(self, sz): self.sz = sz; self.f = skia.Font(tf, sz)
+        def measureText(self, t): return deva.measure(t, self.sz) if deva.has(t) else self.f.measureText(t)
     for sz in range(size, min_size - 1, -2):
-        f = skia.Font(tf, sz)
+        f = _F(sz)
         if f.measureText(s) <= maxw:
             rows = [s]; break
         if lines >= 2 and len(words) > 1 and sz <= size * 0.9:
@@ -190,13 +194,16 @@ def big_text(c, s, x, y, size, color, maxw, tf=FONT_XB, min_size=46, lines=2, ou
             rows = [" ".join(words[:best]), " ".join(words[best:])]
             if max(f.measureText(r) for r in rows) <= maxw: break
     else:
-        f = skia.Font(tf, min_size); rows = [s]; sz = min_size
+        f = _F(min_size); rows = [s]; sz = min_size
     lh = sz * 1.08; y0 = y - lh * (len(rows) - 1) / 2
     for r_ in rows:
-        if outline:
+        if outline and deva.has(r_):
+            p = skia.Paint(AntiAlias=True, Color=K.hexc(outline)); p.setStyle(skia.Paint.kStroke_Style); p.setStrokeWidth(sz * 0.16)
+            p.setStrokeJoin(skia.Paint.kRound_Join); deva.draw(c, r_, x, y0, sz, p)
+        elif outline:
             p = skia.Paint(AntiAlias=True, Color=K.hexc(outline)); p.setStyle(skia.Paint.kStroke_Style); p.setStrokeWidth(sz * 0.16)
             p.setStrokeJoin(skia.Paint.kRound_Join)
-            w_ = f.measureText(r_); c.drawString(r_, x - w_ / 2, y0 + sz * 0.36, f, p)
+            w_ = f.measureText(r_); c.drawString(r_, x - w_ / 2, y0 + sz * 0.36, f.f, p)
         text(c, r_, x, y0, sz, color, tf)
         y0 += lh
 
@@ -375,15 +382,22 @@ def build_guess(i, t0, t1, sc):
 
 def build_letter(i, t0, t1, sc):
     """ABC learning: a giant 'A a' with picture words popping around it."""
-    L = sc.get("letter", "A")[:1]
+    import deva
+    L = sc.get("letter", "A")
+    L = L if deva.has(L) else L[:1]  # Hindi letters can be 2+ code points (क्ष, ज्ञ, अं)
     words = sc.get("items", [])[:4]
     cols = ("#FF4D6D", "#0A84FF", "#2E9E5B", "#FF8C42", "#8E44AD")
-    col = cols[(ord(L.upper()) - 65) % 5] if L.isalpha() else "#FF4D6D"
+    col = cols[(ord(L[0].upper()) - 65) % 5] if L.isascii() and L.isalpha() else cols[ord(L[0]) % 5]
     ty = BY + BH * (0.40 if words else 0.48)
     def big(c, t, e):
         bob = math.sin(t * 2.4) * 8
-        f = skia.Font(FONT_XB, 300); s_ = f"{L.upper()} {L.lower()}"; w = f.measureText(s_)
         sh = P("#000000", a=0.18); sh.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 10))
+        if deva.has(L):  # Hindi letter (क, अ ...): one big shaped letter
+            import deva as _dv
+            yy = ty + bob - 10
+            _dv.draw(c, L, BCX + 8, yy + 10, 300, sh); _dv.draw(c, L, BCX, yy, 300, P("#FFFFFF", 10, a=0.9)); _dv.draw(c, L, BCX, yy, 300, P(col))
+            return
+        f = skia.Font(FONT_XB, 300); s_ = f"{L.upper()} {L.lower()}"; w = f.measureText(s_)
         c.drawString(s_, BCX - w / 2 + 8, ty + 100 + bob + 10, f, sh)
         c.drawString(s_, BCX - w / 2, ty + 100 + bob, f, P(col))
         p_ = P("#FFFFFF", 10, a=0.9); c.drawString(s_, BCX - w / 2, ty + 100 + bob, f, p_); c.drawString(s_, BCX - w / 2, ty + 100 + bob, f, P(col))

@@ -1,0 +1,173 @@
+{
+  "id": "VAR06",
+  "slug": "ta-tha-da-dha-na-retroflex",
+  "status": "ready",
+  "title": "Hindi Letters ट ठ ड ढ ण! 🔤 Learn Hindi Vyanjan for Kids",
+  "cover_text": "ट ठ ड ढ ण",
+  "description": "Curl your tongue for ट, ठ, ड, ढ and ण! Mia and Leo find a tomato, a box, a big dhol drum and a deer.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#LearnHindi",
+    "#HindiAlphabet",
+    "#KidsLearning",
+    "#Shorts"
+  ],
+  "tags": [
+    "hindi alphabet for kids",
+    "hindi varnamala",
+    "ta tha da dha",
+    "learn hindi vyanjan",
+    "hindi consonants for kids"
+  ],
+  "cast": [
+    "MIA",
+    "LEO"
+  ],
+  "lines": [
+    {
+      "who": "MIA",
+      "text": "Leo, curl your tongue up! These Hindi letters are said with a curled tongue!",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🔤",
+          "label": "HINDI"
+        },
+        "right": {
+          "icon": "⭐",
+          "label": "LETTERS"
+        },
+        "mid": "+",
+        "subtitle": "ट ठ ड ढ ण"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Like this? My tongue is curled!"
+    },
+    {
+      "who": "MIA",
+      "text": "This is ta, the hard ta! Ta as in tamaatar, a tomato, and topi, a cap!",
+      "board": {
+        "type": "letter",
+        "letter": "ट",
+        "items": [
+          {
+            "icon": "🍅",
+            "label": "टमाटर",
+            "cue": "tamaatar"
+          },
+          {
+            "icon": "🧢",
+            "label": "टोपी",
+            "cue": "topi"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ta, ta, tamaatar! Red and round!"
+    },
+    {
+      "who": "MIA",
+      "text": "Next is tha, with a puff! Tha as in thela, a handcart, and thanda, cold!",
+      "board": {
+        "type": "letter",
+        "letter": "ठ",
+        "items": [
+          {
+            "icon": "🛒",
+            "label": "ठेला",
+            "cue": "thela"
+          },
+          {
+            "icon": "🥶",
+            "label": "ठंडा",
+            "cue": "thanda"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Tha, tha, thanda! Brrr!"
+    },
+    {
+      "who": "MIA",
+      "text": "This is da, the hard da! Da as in dibba, a box, and daak, the mail!",
+      "board": {
+        "type": "letter",
+        "letter": "ड",
+        "items": [
+          {
+            "icon": "📦",
+            "label": "डिब्बा",
+            "cue": "dibba"
+          },
+          {
+            "icon": "📮",
+            "label": "डाक",
+            "cue": "daak"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Da, da, dibba! What's inside?"
+    },
+    {
+      "who": "MIA",
+      "text": "Now dha, a strong da! Dha as in dhol, a big drum! Dhum, dhum!",
+      "board": {
+        "type": "letter",
+        "letter": "ढ",
+        "items": [
+          {
+            "icon": "🥁",
+            "label": "ढोल",
+            "cue": "dhol"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Dha, dha, dhol! Let's dance!"
+    },
+    {
+      "who": "MIA",
+      "text": "And this is na, the curled-tongue na! No words start with it, but you hear it at the end of baan, an arrow, and hiran, a deer!",
+      "board": {
+        "type": "letter",
+        "letter": "ण",
+        "items": [
+          {
+            "icon": "🏹",
+            "label": "बाण",
+            "cue": "baan"
+          },
+          {
+            "icon": "🦌",
+            "label": "हिरण",
+            "cue": "hiran"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Let me say them all! Ta, tha, da, dha, na!",
+      "board": {
+        "type": "big",
+        "icon": "⭐",
+        "text": "ट ठ ड ढ ण",
+        "cue": "ta"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Fantastic, Leo! Ask a grown-up to subscribe to The Curio Kids Club for more fun, and share this with a friend! And next time... let's learn ta, tha, da, dha and na, with your tongue on your teeth!"
+    }
+  ]
+}

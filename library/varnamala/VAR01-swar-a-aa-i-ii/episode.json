@@ -1,0 +1,162 @@
+{
+  "id": "VAR01",
+  "slug": "swar-a-aa-i-ii",
+  "status": "ready",
+  "title": "Hindi Letters अ आ इ ई! 🔤 Learn Hindi Swar for Kids",
+  "cover_text": "अ आ इ ई",
+  "description": "Mia teaches Leo the first Hindi vowels: अ, आ, इ and ई! Say each letter out loud with fun picture words like आम and इंद्रधनुष.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#LearnHindi",
+    "#HindiAlphabet",
+    "#KidsLearning",
+    "#Shorts"
+  ],
+  "tags": [
+    "hindi alphabet for kids",
+    "hindi varnamala",
+    "learn hindi swar",
+    "hindi vowels for kids",
+    "a aa i ee hindi"
+  ],
+  "cast": [
+    "MIA",
+    "LEO"
+  ],
+  "lines": [
+    {
+      "who": "MIA",
+      "text": "Leo, did you know Hindi has its very own alphabet? It's called varnamala! Let's learn the first letters!",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🔤",
+          "label": "HINDI"
+        },
+        "right": {
+          "icon": "⭐",
+          "label": "VOWELS"
+        },
+        "mid": "+",
+        "subtitle": "अ आ इ ई"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Yes! I'm ready! Teach me, Mia!"
+    },
+    {
+      "who": "MIA",
+      "text": "First letter: a! A as in ananas, a pineapple, and akhbaar, a newspaper!",
+      "board": {
+        "type": "letter",
+        "letter": "अ",
+        "items": [
+          {
+            "icon": "🍍",
+            "label": "अनानास",
+            "cue": "ananas"
+          },
+          {
+            "icon": "📰",
+            "label": "अखबार",
+            "cue": "akhbaar"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "A, a, ananas! Yummy!"
+    },
+    {
+      "who": "MIA",
+      "text": "Next is aa, a long a! Aa as in aam, a mango, and aag, fire! Hot, hot!",
+      "board": {
+        "type": "letter",
+        "letter": "आ",
+        "items": [
+          {
+            "icon": "🥭",
+            "label": "आम",
+            "cue": "aam"
+          },
+          {
+            "icon": "🔥",
+            "label": "आग",
+            "cue": "aag"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Aaaa! Like when the doctor checks my throat!"
+    },
+    {
+      "who": "MIA",
+      "text": "This is i, a short little sound! I as in indradhanush, a rainbow, and injan, a train engine!",
+      "board": {
+        "type": "letter",
+        "letter": "इ",
+        "items": [
+          {
+            "icon": "🌈",
+            "label": "इंद्रधनुष",
+            "cue": "indradhanush"
+          },
+          {
+            "icon": "🚂",
+            "label": "इंजन",
+            "cue": "injan"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "I, i, indradhanush! That's a big word!"
+    },
+    {
+      "who": "MIA",
+      "text": "And this is ee, a long i! Ee as in eent, a brick, and eed, a happy festival!",
+      "board": {
+        "type": "letter",
+        "letter": "ई",
+        "items": [
+          {
+            "icon": "🧱",
+            "label": "ईंट",
+            "cue": "eent"
+          },
+          {
+            "icon": "🌙",
+            "label": "ईद",
+            "cue": "eed"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Eee! Short i, long ee. Got it!"
+    },
+    {
+      "who": "MIA",
+      "text": "Say them with me: a, aa, i, ee!",
+      "board": {
+        "type": "big",
+        "icon": "⭐",
+        "text": "अ आ इ ई",
+        "cue": "a"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "A, aa, i, ee! I did it!"
+    },
+    {
+      "who": "MIA",
+      "text": "Great job, Leo! Ask a grown-up to subscribe to The Curio Kids Club for more fun, and share this with a friend! And next time... let's learn u, oo, ri and e!"
+    }
+  ]
+}

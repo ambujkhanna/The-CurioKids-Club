@@ -1,0 +1,178 @@
+{
+  "id": "VAR04",
+  "slug": "ka-kha-ga-gha-nga",
+  "status": "ready",
+  "title": "Hindi Letters क ख ग घ ङ! 🔤 Learn Hindi Vyanjan for Kids",
+  "cover_text": "क ख ग घ ङ",
+  "description": "Time for Hindi consonants: क, ख, ग, घ and ङ! Mia teaches Leo with a pigeon, a rabbit, a cow and a ticking clock.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#LearnHindi",
+    "#HindiAlphabet",
+    "#KidsLearning",
+    "#Shorts"
+  ],
+  "tags": [
+    "hindi alphabet for kids",
+    "hindi varnamala",
+    "ka kha ga gha",
+    "learn hindi vyanjan",
+    "hindi consonants for kids"
+  ],
+  "cast": [
+    "MIA",
+    "LEO"
+  ],
+  "lines": [
+    {
+      "who": "MIA",
+      "text": "Leo, now let's learn Hindi consonants! They're called vyanjan!",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🔤",
+          "label": "HINDI"
+        },
+        "right": {
+          "icon": "⭐",
+          "label": "LETTERS"
+        },
+        "mid": "+",
+        "subtitle": "क ख ग घ ङ"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Vyanjan? Ooh, that sounds tasty!"
+    },
+    {
+      "who": "MIA",
+      "text": "This is ka! Ka as in kabootar, a pigeon, and kela, a banana!",
+      "board": {
+        "type": "letter",
+        "letter": "क",
+        "items": [
+          {
+            "icon": "🕊️",
+            "label": "कबूतर",
+            "cue": "kabootar"
+          },
+          {
+            "icon": "🍌",
+            "label": "केला",
+            "cue": "kela"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ka, ka, kela! Banana time!"
+    },
+    {
+      "who": "MIA",
+      "text": "Next is kha, with a puff of air! Kha as in khargosh, a rabbit, and kheera, a cucumber!",
+      "board": {
+        "type": "letter",
+        "letter": "ख",
+        "items": [
+          {
+            "icon": "🐇",
+            "label": "खरगोश",
+            "cue": "khargosh"
+          },
+          {
+            "icon": "🥒",
+            "label": "खीरा",
+            "cue": "kheera"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Kha, kha, khargosh! Hop, hop!"
+    },
+    {
+      "who": "MIA",
+      "text": "This is ga! Ga as in gaay, a cow, and gaajar, a carrot!",
+      "board": {
+        "type": "letter",
+        "letter": "ग",
+        "items": [
+          {
+            "icon": "🐄",
+            "label": "गाय",
+            "cue": "gaay"
+          },
+          {
+            "icon": "🥕",
+            "label": "गाजर",
+            "cue": "gaajar"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ga, ga, gaay! Moooo!"
+    },
+    {
+      "who": "MIA",
+      "text": "Now gha, a big strong ga! Gha as in ghadi, a clock, and ghar, a home!",
+      "board": {
+        "type": "letter",
+        "letter": "घ",
+        "items": [
+          {
+            "icon": "⏰",
+            "label": "घड़ी",
+            "cue": "ghadi"
+          },
+          {
+            "icon": "🏠",
+            "label": "घर",
+            "cue": "ghar"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Gha, gha, ghadi! Tick, tock!"
+    },
+    {
+      "who": "MIA",
+      "text": "And this is nga, a sound in your nose! No words start with it, but it hides inside words like rang, a color, and ganga, a river!",
+      "board": {
+        "type": "letter",
+        "letter": "ङ",
+        "items": [
+          {
+            "icon": "🎨",
+            "label": "रङ्ग",
+            "cue": "rang"
+          },
+          {
+            "icon": "🏞️",
+            "label": "गङ्गा",
+            "cue": "ganga"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Let me say them all! Ka, kha, ga, gha, nga!",
+      "board": {
+        "type": "big",
+        "icon": "⭐",
+        "text": "क ख ग घ ङ",
+        "cue": "ka"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Super, Leo! Ask a grown-up to subscribe to The Curio Kids Club for more fun, and share this with a friend! And next time... let's learn cha, chha, ja, jha and nya!"
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "id": "VAR05",
+  "slug": "cha-chha-ja-jha-nya",
+  "status": "ready",
+  "title": "Hindi Letters च छ ज झ ञ! 🔤 Learn Hindi Vyanjan for Kids",
+  "cover_text": "च छ ज झ ञ",
+  "description": "Mia and Leo learn the cha family: च, छ, ज, झ and ञ! Spot the moon, an umbrella, a big ship and a broom.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#LearnHindi",
+    "#HindiAlphabet",
+    "#KidsLearning",
+    "#Shorts"
+  ],
+  "tags": [
+    "hindi alphabet for kids",
+    "hindi varnamala",
+    "cha chha ja jha",
+    "learn hindi vyanjan",
+    "hindi consonants for kids"
+  ],
+  "cast": [
+    "MIA",
+    "LEO"
+  ],
+  "lines": [
+    {
+      "who": "MIA",
+      "text": "Leo, ready for more Hindi letters? Here comes the cha family!",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🔤",
+          "label": "HINDI"
+        },
+        "right": {
+          "icon": "⭐",
+          "label": "LETTERS"
+        },
+        "mid": "+",
+        "subtitle": "च छ ज झ ञ"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "The cha family? Hello, cha!"
+    },
+    {
+      "who": "MIA",
+      "text": "This is cha! Cha as in chammach, a spoon, and chaand, the moon!",
+      "board": {
+        "type": "letter",
+        "letter": "च",
+        "items": [
+          {
+            "icon": "🥄",
+            "label": "चम्मच",
+            "cue": "chammach"
+          },
+          {
+            "icon": "🌙",
+            "label": "चाँद",
+            "cue": "chaand"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Cha, cha, chaand! Hello, moon!"
+    },
+    {
+      "who": "MIA",
+      "text": "Next is chha, with a puff! Chha as in chhaata, an umbrella, and chhipkali, a lizard!",
+      "board": {
+        "type": "letter",
+        "letter": "छ",
+        "items": [
+          {
+            "icon": "☔",
+            "label": "छाता",
+            "cue": "chhaata"
+          },
+          {
+            "icon": "🦎",
+            "label": "छिपकली",
+            "cue": "chhipkali"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Chha, chha, chhaata! No rain on me!"
+    },
+    {
+      "who": "MIA",
+      "text": "This is ja! Ja as in jahaaz, a big ship, and joota, a shoe!",
+      "board": {
+        "type": "letter",
+        "letter": "ज",
+        "items": [
+          {
+            "icon": "🚢",
+            "label": "जहाज़",
+            "cue": "jahaaz"
+          },
+          {
+            "icon": "👟",
+            "label": "जूता",
+            "cue": "joota"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ja, ja, joota! Shoes on!"
+    },
+    {
+      "who": "MIA",
+      "text": "Now jha, a strong ja! Jha as in jhaadu, a broom, and jheenga, a shrimp!",
+      "board": {
+        "type": "letter",
+        "letter": "झ",
+        "items": [
+          {
+            "icon": "🧹",
+            "label": "झाड़ू",
+            "cue": "jhaadu"
+          },
+          {
+            "icon": "🦐",
+            "label": "झींगा",
+            "cue": "jheenga"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Jha, jha, jhaadu! Sweep, sweep!"
+    },
+    {
+      "who": "MIA",
+      "text": "And this is nya, a nose sound! No words start with it, but you can hear it hiding inside panja, a paw!",
+      "board": {
+        "type": "letter",
+        "letter": "ञ",
+        "items": [
+          {
+            "icon": "🐾",
+            "label": "पञ्जा",
+            "cue": "panja"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Let me say them all! Cha, chha, ja, jha, nya!",
+      "board": {
+        "type": "big",
+        "icon": "⭐",
+        "text": "च छ ज झ ञ",
+        "cue": "cha"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Amazing, Leo! Ask a grown-up to subscribe to The Curio Kids Club for more fun, and share this with a friend! And next time... let's learn ta, tha, da, dha and na, the tongue-curling letters!"
+    }
+  ]
+}

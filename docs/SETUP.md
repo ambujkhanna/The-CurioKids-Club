@@ -15,13 +15,12 @@ This is the same process as AInation Studio, so you can reuse most of what you a
    The uploader follows the repo variable `MADE_FOR_KIDS` (default `false` = "No, it's not made for kids"; set it to `true` to mark videos as made for kids).
    With `false`, choose **"I want to review this setting for every video"** here. Otherwise the channel setting overrides each video.
 
-**What "Made for Kids" means:** YouTube's law-based rules for children's content (COPPA) apply:
+**What "Made for Kids" would mean** (if `MADE_FOR_KIDS` were set to `true`): YouTube's law-based rules for children's content (COPPA) apply:
 - comments are turned off
 - no personalised ads (so earnings per view are lower)
 - no notification bell and no mini-player on these videos
-- the uploader also marks every video as Made for Kids
 
-**Owner decision (2026-11-07):** videos are uploaded as **not made for kids** (`MADE_FOR_KIDS=false`).
+**Owner decision (2026-11-07, confirmed 2026-11-10):** videos are uploaded as **not made for kids** (`MADE_FOR_KIDS=false`), chosen deliberately for wider audience and reach.
 YouTube and the FTC judge the content itself (cartoon characters, nursery-style topics) and can override this setting.
 Wrongly marking child-directed videos as not made for kids can lead to penalties under COPPA.
 To go back, add the repo variable `MADE_FOR_KIDS` = `true`, then run the workflow with **fix_existing**.
@@ -71,7 +70,7 @@ Notes:
 
 1. **Test without uploading:** Actions → **Daily Curio Kids Short** → **Run workflow**, tick **dry_run**.
    After about 15 minutes, download the MP4 from the run's **Artifacts** and watch it. Listen to Leo's voice especially. If you want a different voice, see "Changing voices" in `README.md`.
-2. **Real run:** run the workflow again with dry_run unticked. The video arrives in YouTube Studio for The CurioKids Club as **Private**, scheduled for 16:00–19:00 IST.
+2. **Real run:** run the workflow again with dry_run unticked. The video arrives in YouTube Studio for The CurioKids Club as **Private**, scheduled inside the day's window (English 17:00–20:00 IST, Hindi 09:00–11:00 IST).
 
 Your Google project isn't audited, so every upload is Private. As with AInation, open Studio each day and set the new video to **Public** or **Schedule** it.
 
@@ -83,7 +82,7 @@ The thumbnail JPG is also in the run's Artifacts if you want to add it by hand.
 
 ## 5. Running two channels from one GitHub account
 
-- **AInation Studio** runs at 14:45 IST and posts at 17:00–20:00. **The CurioKids Club** runs at 14:10 IST and posts at 16:00–19:00.
+- **AInation Studio** runs at 14:45 IST and posts at 17:00–20:00. **The CurioKids Club** runs at 14:10 and 21:10 IST and posts on alternate days: Hindi 09:00–11:00, English 17:00–20:00.
 - **GitHub's free minutes:** private repos get 2,000 minutes a month in total, shared by both repos. Each run takes about 15 minutes, so two channels use about 900 minutes a month, which is fine.
 - **When episodes run out:** the run stays green and says "No ready episode left in the backlog". Add more episode files.
 
@@ -210,3 +209,10 @@ Write a script in `scripts/` (a plain text file), then Run workflow → **script
 - **Format and limits:** see `scripts/README.md`: header (`TITLE:` and optional `COVER:`, `HASHTAGS:`, `TITLE_BOARD:`), `---`, then `NAME: text | emoji Board text` lines. Use 9–16 lines and about 110–180 words.
 - **Problems** stop the run before rendering and are listed in the run summary.
 - **One file = one video.** A file that was already uploaded is never uploaded again; save the script under a new name instead.
+
+## Hindi alphabet (varnamala), added 2026-11-10
+
+- **The series:** category `varnamala` (`library/varnamala/`) has 11 episodes: swar अ–अः (VAR01–VAR03), vyanjan क–ह (VAR04–VAR10) and joined letters क्ष त्र ज्ञ श्र (VAR11).
+- **How to post one:** Run workflow → category `varnamala` + language `hi` (Hindi audio, English subtitles), or language `en` (an English video teaching Hindi letters).
+- **Letter board:** shows one big Hindi letter plus up to 4 picture words (`"type": "letter", "letter": "क"`).
+- **Hindi text** on boards and thumbnails uses **Poppins Bold** (OFL). It's shaped with HarfBuzz (`uharfbuzz`, Apache-2.0, in `pipeline/requirements.txt`), so joined letters (क्ष, ज्ञ, त्र) and vowel signs (ि) display correctly (`pipeline/deva.py`).

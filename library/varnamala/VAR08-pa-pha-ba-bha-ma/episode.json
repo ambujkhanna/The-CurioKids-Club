@@ -1,0 +1,178 @@
+{
+  "id": "VAR08",
+  "slug": "pa-pha-ba-bha-ma",
+  "status": "ready",
+  "title": "Hindi Letters प फ ब भ म! 🔤 Learn Hindi Vyanjan for Kids",
+  "cover_text": "प फ ब भ म",
+  "description": "Press your lips together for प, फ, ब, भ and म! Mia and Leo meet a monkey, a bear, a fish and a peacock.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#LearnHindi",
+    "#HindiAlphabet",
+    "#KidsLearning",
+    "#Shorts"
+  ],
+  "tags": [
+    "hindi alphabet for kids",
+    "hindi varnamala",
+    "pa pha ba bha ma",
+    "learn hindi vyanjan",
+    "hindi consonants for kids"
+  ],
+  "cast": [
+    "MIA",
+    "LEO"
+  ],
+  "lines": [
+    {
+      "who": "MIA",
+      "text": "Leo, these letters use your lips! Press them together!",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🔤",
+          "label": "HINDI"
+        },
+        "right": {
+          "icon": "⭐",
+          "label": "LETTERS"
+        },
+        "mid": "+",
+        "subtitle": "प फ ब भ म"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Mmm... my lips are ready!"
+    },
+    {
+      "who": "MIA",
+      "text": "This is pa! Pa as in ped, a tree, and paani, water!",
+      "board": {
+        "type": "letter",
+        "letter": "प",
+        "items": [
+          {
+            "icon": "🌳",
+            "label": "पेड़",
+            "cue": "ped"
+          },
+          {
+            "icon": "💧",
+            "label": "पानी",
+            "cue": "paani"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Pa, pa, paani! Splash!"
+    },
+    {
+      "who": "MIA",
+      "text": "Next is pha, with a puff! Pha as in phool, a flower, and phal, a fruit!",
+      "board": {
+        "type": "letter",
+        "letter": "फ",
+        "items": [
+          {
+            "icon": "🌸",
+            "label": "फूल",
+            "cue": "phool"
+          },
+          {
+            "icon": "🍎",
+            "label": "फल",
+            "cue": "phal"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Pha, pha, phool! It smells so nice!"
+    },
+    {
+      "who": "MIA",
+      "text": "This is ba! Ba as in batakh, a duck, and bandar, a monkey!",
+      "board": {
+        "type": "letter",
+        "letter": "ब",
+        "items": [
+          {
+            "icon": "🦆",
+            "label": "बतख",
+            "cue": "batakh"
+          },
+          {
+            "icon": "🐒",
+            "label": "बंदर",
+            "cue": "bandar"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ba, ba, bandar! Ooh ooh, aah aah!"
+    },
+    {
+      "who": "MIA",
+      "text": "Now bha, a strong ba! Bha as in bhaalu, a bear, and bhed, a sheep!",
+      "board": {
+        "type": "letter",
+        "letter": "भ",
+        "items": [
+          {
+            "icon": "🐻",
+            "label": "भालू",
+            "cue": "bhaalu"
+          },
+          {
+            "icon": "🐑",
+            "label": "भेड़",
+            "cue": "bhed"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Bha, bha, bhaalu! Big bear hug!"
+    },
+    {
+      "who": "MIA",
+      "text": "And this is ma! Ma as in machhli, a fish, and mor, a peacock!",
+      "board": {
+        "type": "letter",
+        "letter": "म",
+        "items": [
+          {
+            "icon": "🐟",
+            "label": "मछली",
+            "cue": "machhli"
+          },
+          {
+            "icon": "🦚",
+            "label": "मोर",
+            "cue": "mor"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Let me say them all! Pa, pha, ba, bha, ma!",
+      "board": {
+        "type": "big",
+        "icon": "⭐",
+        "text": "प फ ब भ म",
+        "cue": "pa"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Wonderful, Leo! Ask a grown-up to subscribe to The Curio Kids Club for more fun, and share this with a friend! And next time... let's learn ya, ra, la and va!"
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "id": "VAR11",
+  "slug": "ksha-tra-gya-shra",
+  "status": "ready",
+  "title": "Hindi Letters क्ष त्र ज्ञ श्र! 🔤 Joined Hindi Letters for Kids",
+  "cover_text": "क्ष त्र ज्ञ श्र",
+  "description": "Meet the super letters क्ष, त्र, ज्ञ and श्र, each made of two letters joined together! Mia and Leo find a trident, a triangle and a coconut.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#LearnHindi",
+    "#HindiAlphabet",
+    "#KidsLearning",
+    "#Shorts"
+  ],
+  "tags": [
+    "hindi alphabet for kids",
+    "hindi varnamala",
+    "ksha tra gya",
+    "hindi sanyukt akshar",
+    "learn hindi letters"
+  ],
+  "cast": [
+    "MIA",
+    "LEO"
+  ],
+  "lines": [
+    {
+      "who": "MIA",
+      "text": "Leo, these are super letters! Each one is two letters joined together!",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🔤",
+          "label": "HINDI"
+        },
+        "right": {
+          "icon": "⭐",
+          "label": "SUPER"
+        },
+        "mid": "+",
+        "subtitle": "क्ष त्र ज्ञ श्र"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Two in one? Like a superhero team!"
+    },
+    {
+      "who": "MIA",
+      "text": "This is ksha, ka plus ssha! Ksha as in kshama, forgiveness, and it hides in kaksha, a classroom!",
+      "board": {
+        "type": "letter",
+        "letter": "क्ष",
+        "items": [
+          {
+            "icon": "🙏",
+            "label": "क्षमा",
+            "cue": "kshama"
+          },
+          {
+            "icon": "🏫",
+            "label": "कक्षा",
+            "cue": "kaksha"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ksha, ksha, kaksha! My classroom!"
+    },
+    {
+      "who": "MIA",
+      "text": "Next is tra, ta plus ra! Tra as in trishool, a trident, and trikon, a triangle!",
+      "board": {
+        "type": "letter",
+        "letter": "त्र",
+        "items": [
+          {
+            "icon": "🔱",
+            "label": "त्रिशूल",
+            "cue": "trishool"
+          },
+          {
+            "icon": "🔺",
+            "label": "त्रिकोण",
+            "cue": "trikon"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Tra, tra, trikon! Three sides!"
+    },
+    {
+      "who": "MIA",
+      "text": "This is gya, ja plus nya! Gya as in gyaan, knowledge, and it hides in vigyaan, science!",
+      "board": {
+        "type": "letter",
+        "letter": "ज्ञ",
+        "items": [
+          {
+            "icon": "📖",
+            "label": "ज्ञान",
+            "cue": "gyaan"
+          },
+          {
+            "icon": "🔬",
+            "label": "विज्ञान",
+            "cue": "vigyaan"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Gya, gya, vigyaan! I love science!"
+    },
+    {
+      "who": "MIA",
+      "text": "And this is shra, sha plus ra! Shra as in shramik, a worker, and shreephal, a coconut!",
+      "board": {
+        "type": "letter",
+        "letter": "श्र",
+        "items": [
+          {
+            "icon": "👷",
+            "label": "श्रमिक",
+            "cue": "shramik"
+          },
+          {
+            "icon": "🥥",
+            "label": "श्रीफल",
+            "cue": "shreephal"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Shra, shra, shreephal! Another name for coconut? Cool!"
+    },
+    {
+      "who": "MIA",
+      "text": "Say them with me: ksha, tra, gya, shra!",
+      "board": {
+        "type": "big",
+        "icon": "⭐",
+        "text": "क्ष त्र ज्ञ श्र",
+        "cue": "ksha"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ksha, tra, gya, shra! I know the whole varnamala now!"
+    },
+    {
+      "who": "MIA",
+      "text": "You did it, Leo! Ask a grown-up to subscribe to The Curio Kids Club for more fun, and share this with a friend! And next time... let's sing the whole Hindi alphabet together!"
+    }
+  ]
+}

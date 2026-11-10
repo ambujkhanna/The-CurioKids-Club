@@ -26,7 +26,7 @@ on:
         description: "Publish the next episode of a CATEGORY instead of the daily Short (leave as none for normal)"
         type: choice
         default: none
-        options: [none, comedy, quiz, knowledge, science, abc, counting, rhymes]
+        options: [none, comedy, quiz, knowledge, science, abc, counting, rhymes, varnamala]
       social_only:
         description: "Only post the chosen episode (fill 'episode') to Facebook + Instagram - no YouTube upload"
         type: boolean
