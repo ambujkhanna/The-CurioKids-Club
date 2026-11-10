@@ -203,6 +203,17 @@ To post a video from a particular category, go to Actions → **Daily Curio Kids
   - Where a joke had to be rewritten for Hindi (an English pun that doesn't work in Hindi), `hi.json` has a `"boards"` section. It replaces those boards for the Hindi video only, still in English text, so the pictures match the Hindi joke.
 - **Manual runs:** Run workflow → language: `hi`, optionally with an episode id and dry_run. Hindi progress is tracked separately from English: the Hindi track starts from the first episode again, which is a new audience.
 
+### Hindi accent (added 2026-11-10 15:47 IST)
+
+**Default since 2026-11-10 15:53 IST: Hindi videos use Kokoro's native Hindi voices** (Mia hf_alpha, Leo hf_beta at speed 0.92 with a higher pitch, Dad hm_omega); English videos keep Chatterbox. Repo variable `HI_TTS_ENGINE` = `chatterbox` switches Hindi back to cloned voices, and then the options below apply.
+
+With Chatterbox, Hindi lines are cloned from the voice clips of Mia, Leo and Dad. By default these are the **English** clips (`assets/voices/*.wav`), and Chatterbox carries some of their English accent into Hindi. Two repo variables let you change that without new code:
+
+- `HI_VOICE_CLIP` = `hindi`: clone from the **native Hindi** clips in `assets/voices/hi/` (made with Kokoro's Hindi voices, Apache-2.0). Default `english` = today's sound.
+- `CB_CFG_HI` = a number such as `0` or `0.2`: lower means less English accent but slightly flatter speech. Empty = 0.35 (today).
+
+**Pick by ear first:** run **Actions → Voice Lab → which: hindi**. The Artifact has each test line in 4 versions: `A_today`, `B_en_cfg0`, `C_hiclip`, `D_hiclip_cfg02`. Then set the variables for the winner (A: nothing; B: `CB_CFG_HI=0`; C: `HI_VOICE_CLIP=hindi`; D: `HI_VOICE_CLIP=hindi` + `CB_CFG_HI=0.2`). The run log shows `voices: Chatterbox (Hindi clips, … cfg …)`. A recording of a real Hindi speaker (about 10 s, clear, no music) saved as `assets/voices/hi/<name>.wav` works even better.
+
 ## Videos from your own script (added 2026-11-08)
 
 Write a script in `scripts/` (a plain text file), then Run workflow → **script**: `scripts/<file>.txt`. Tick **dry_run** the first time to watch the MP4 from Artifacts.

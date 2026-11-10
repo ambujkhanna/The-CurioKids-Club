@@ -78,7 +78,7 @@ if EP_FILE:  # data-driven episode (episodes/<id>/episode.json)
         EN_TEXT = [strip_tags(t) for _, t in RAW]
         RAW = [(w, h) for (w, _), h in zip(RAW, _hi["lines"])]
         LINES = [(w, strip_tags(t)) for w, t in RAW]
-        VOICES = {"MIA": ("hf_alpha", 1.0), "LEO": ("hf_beta", 1.05, 2.5), "DAD": ("hm_omega", 0.95), "TEEN": ("hf_alpha", 1.0)}
+        VOICES = {"MIA": ("hf_alpha", 1.0), "LEO": ("hf_beta", 0.92, 2.5), "DAD": ("hm_omega", 0.95), "TEEN": ("hf_alpha", 1.0)}  # Leo slowed 1.05 -> 0.92 (owner 2026-11-10)
 GAP = 0.28  # seconds between lines
 if EP_FILE:
     GAP = float(_ep.get("gap") or os.environ.get("TTS_GAP") or 0.45)
@@ -251,15 +251,21 @@ def chatterbox_all():
     py = os.environ.get("CB_PYTHON")
     if os.environ.get("TTS_ENGINE", "kokoro") != "chatterbox" or not py:
         return None
+    if LANG != "en" and os.environ.get("HI_TTS_ENGINE", "kokoro").strip().lower() != "chatterbox":
+        print("Hindi voices: Kokoro native Hindi (owner's choice 2026-11-10; repo variable HI_TTS_ENGINE=chatterbox to clone instead)")
+        return None
     vdir = os.path.join(S, "assets", "voices")
     refs = {n: os.path.join(vdir, n.lower() + ".wav") for n in ("MIA", "LEO", "DAD", "TEEN")}
-    if LANG != "en":  # a language-specific clip (assets/voices/hi/mia.wav) is used if present
+    hi_clip = os.environ.get("HI_VOICE_CLIP", "english").strip().lower() == "hindi"
+    if LANG != "en" and hi_clip:  # repo variable HI_VOICE_CLIP=hindi: clone from native Hindi clips (assets/voices/hi/*.wav)
         refs = {n: (os.path.join(vdir, LANG, n.lower() + ".wav") if os.path.exists(os.path.join(vdir, LANG, n.lower() + ".wav")) else r)
                 for n, r in refs.items()}
     for a, b in (("TEEN", "MIA"), ("MIA", "TEEN")):  # a character without its own clip borrows the closest voice
         if not os.path.exists(refs[a]): refs[a] = refs[b]
     ex = float((_ep.get("exaggeration") if EP_FILE else None) or os.environ.get("CB_EXAGGERATION") or 0.5)
     cfg = float((_ep.get("cfg") if EP_FILE else None) or os.environ.get("CB_CFG") or 0.35)
+    if LANG != "en" and os.environ.get("CB_CFG_HI", "").strip():  # repo variable CB_CFG_HI (lower = less English accent)
+        cfg = float(os.environ["CB_CFG_HI"])
     use_turbo = os.environ.get("CB_TURBO_LAUGHS", "1") == "1"
     seed0 = sum(map(ord, _ep.get("id", "x"))) if EP_FILE else 7
     d = tempfile.mkdtemp(); job = os.path.join(d, "job.json")
@@ -298,7 +304,7 @@ def chatterbox_all():
             out.append(np.concatenate(seg))
             leads.append(PAUSE_BEFORE_LAUGH * 0.6 if i and parts and is_laugh(parts[0][0], parts[0][1]) else 0.0)
         n_t = sum(1 for it in items if it["turbo"]); n_s = sum(1 for ps in plan for p_ in ps if p_[0] == "sfx")
-        print(f"voices: Chatterbox (exaggeration {ex}, cfg {cfg}, gap {GAP}; {n_t} laugh/reaction parts with Turbo, {n_s} sound effects)")
+        print(f"voices: Chatterbox ({'Hindi clips' if LANG != 'en' and hi_clip else 'English clips'}, exaggeration {ex}, cfg {cfg}, gap {GAP}; {n_t} laugh/reaction parts with Turbo, {n_s} sound effects)")
         return out, leads
     except Exception as e:
         print("note: Chatterbox failed, using Kokoro voices:", e)

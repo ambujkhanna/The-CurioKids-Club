@@ -1,6 +1,6 @@
 # Channels reference: The CurioKids Club & AInation Studio
 
-**Last updated:** 2026-11-10 14:35 IST (09:05 UTC)
+**Last updated:** 2026-11-10 15:53 IST (10:23 UTC)
 
 This is the quick reference for both channels: links, schedules, workflow options, secrets and variables. It's updated whenever any of these change; see the change log at the bottom. The full history is in `TheCurioKidsClub_handoff.md` and `AInation_Studio_handoff.md`.
 
@@ -13,7 +13,7 @@ This is the quick reference for both channels: links, schedules, workflow option
 | **Facebook Page** | https://www.facebook.com/profile.php?id=61596461063065 | https://www.facebook.com/profile.php?id=61596527993377 (Graph Page id 1419246047936930) |
 | **Instagram** | https://www.instagram.com/thecuriokidsclub/ | https://www.instagram.com/ai.nationstudio/ |
 | **Characters** | Mia (big sister), Leo (little brother), Dad | Dad, Teen |
-| **Voices** | Chatterbox (cloned Mia/Leo/Dad) + Turbo for laughs/[tags]; Hindi via multilingual Chatterbox; Kokoro as backup | Chatterbox (cloned Dad/Teen) + Turbo for laughs/[tags]; Kokoro as backup |
+| **Voices** | Chatterbox (cloned Mia/Leo/Dad) + Turbo for laughs/[tags]; **Hindi: Kokoro native Hindi voices** (Leo slowed); Kokoro as backup | Chatterbox (cloned Dad/Teen) + Turbo for laughs/[tags]; Kokoro as backup |
 | **Meta app** | "Studio Publisher" (shared by both channels) | "Studio Publisher" (shared) |
 
 ## Workflows and automatic schedule (IST)
@@ -51,7 +51,7 @@ This is the quick reference for both channels: links, schedules, workflow option
 
 **Weekly long workflows (both channels):** dry_run, episode, publish_now, social_only, refresh_thumbnails (+ **board_style** on AInation).
 **Board look for one AInation video:** Run-workflow `board_style` > episode `"board_style"` / script `BOARD:` line > repo variable `BOARD_STYLE` > `hanging`.
-**Voice Lab (kids):** `which` = hindi / turbo / chatterbox.
+**Voice Lab (kids):** `which` = hindi / turbo / chatterbox. `hindi` = Hindi accent test: every line in versions A (today) / B (cfg 0) / C (Hindi clip) / D (Hindi clip, cfg 0.2).
 
 ## GitHub Secrets (required, same names in both repos, different values)
 
@@ -74,6 +74,9 @@ Never paste tokens into chat, files or commits; they go only into GitHub Secrets
 | `PUBLISH_WINDOW` | `17:00-20:00` (English Shorts and weekly long video) | ✅ | ✅ |
 | `PUBLISH_WINDOW_HI` | `09:00-11:00` (Hindi Shorts) | ✅ | – |
 | `BOARD_STYLE` | `hanging` (dark border, ceiling rods) · `display` (3D screen, black bezel) · `whiteboard` (aluminium frame, magnets, marker tray) | – | ✅ |
+| `HI_TTS_ENGINE` | `kokoro` (native Hindi voices; `chatterbox` = cloned voices) | ✅ | – |
+| `HI_VOICE_CLIP` | `english` (`hindi` = clone Hindi lines from the native Hindi clips in `assets/voices/hi/`) | ✅ | – |
+| `CB_CFG_HI` | empty = 0.35 (lower, e.g. `0` or `0.2` = less English accent in Hindi) | ✅ | – |
 | `MADE_FOR_KIDS` | `false` | ✅ | – |
 | `YT_PLAYLIST` | empty (off; videos are added to playlists by hand) | ✅ | – |
 
@@ -102,3 +105,5 @@ Never paste tokens into chat, files or commits; they go only into GitHub Secrets
 | 2026-11-10 14:08 IST (08:38 UTC) | AInation: **modern UI** inside the board: content stays inside the screen (no avatar cut off by the bezel), messenger-style chat (blue bubble for you on the right, white bubble with avatar for the AI on the left, typing dots), soft-shadow cards, pills that shrink to fit. Kids: owner approved the thick 'tube' limbs (default). |
 | 2026-11-10 14:20 IST (08:50 UTC) | AInation: owner chose the **hanging board** as the default look (`BOARD_STYLE` default `hanging` in `bg_line.py` and both workflows). `display` and `whiteboard` still selectable with the repo variable. |
 | 2026-11-10 14:35 IST (09:05 UTC) | AInation: board look can be chosen **per video**: new Run workflow option `board_style` (daily and weekly), episode field `"board_style"`, script line `BOARD:`. Order: run option > episode > repo variable `BOARD_STYLE` > hanging. Validator and script check reject unknown looks. |
+| 2026-11-10 15:47 IST (10:17 UTC) | Kids: **Hindi accent fix, choose by ear**: native Hindi voice clips `assets/voices/hi/` (Kokoro Hindi voices); repo variables `HI_VOICE_CLIP` (english/hindi) and `CB_CFG_HI`; Voice Lab `hindi` now makes an A/B/C/D comparison on varnamala lines. Default sound unchanged until the owner picks. |
+| 2026-11-10 15:53 IST (10:23 UTC) | Kids: owner approved the Kokoro native Hindi sample → **Hindi videos now use Kokoro's Hindi voices** (repo variable `HI_TTS_ENGINE`, default `kokoro`); English stays on Chatterbox. Leo's Hindi voice slowed (speed 1.05 → 0.92). |
