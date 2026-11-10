@@ -1,25 +1,219 @@
 {
-  "id": "ep053", "slug": "why-cant-penguins-fly", "status": "ready",
+  "id": "ep053",
+  "slug": "why-cant-penguins-fly",
+  "status": "ready",
   "title": "Why Can't Penguins Fly? 🐧 Fun Facts for Kids",
   "cover_text": "NO FLYING?",
   "description": "Penguins DO fly... underwater! Leo asks, big sister Mia explains flipper wings and heavy bones, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
-  "hashtags": ["#KidsLearning", "#FunFacts", "#Penguin", "#Shorts"],
-  "tags": ["penguin facts for kids", "why can't penguins fly", "bird facts", "animal facts", "science for kids", "kids learning"],
-  "cast": ["LEO", "MIA"],
-  "loop_card": {"text": "Why no flying?", "cue": "next", "left": "🐧", "right": "🌊"},
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Penguin",
+    "#Shorts"
+  ],
+  "tags": [
+    "penguin facts for kids",
+    "why can't penguins fly",
+    "bird facts",
+    "animal facts",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why no flying?",
+    "cue": "next",
+    "left": "🐧",
+    "right": "🌊"
+  },
   "lines": [
-    {"who": "LEO", "text": "Mia, why can't penguins fly?", "board": {"type": "title", "left": {"icon": "🐧", "label": "Penguin"}, "right": {"icon": "🐦", "label": "Fly?"}, "mid": "?"}},
-    {"who": "MIA", "text": "Penguins do fly... underwater! Their wings are stiff, flat flippers, perfect for zooming through the sea.", "punch": "underwater", "board": {"type": "big", "icon": "🌊", "text": "They fly underwater!", "cue": "underwater", "sub": "Wings = flippers", "sub_cue": "flippers"}},
-    {"who": "LEO", "text": "So why can't the flippers flap in the air?"},
-    {"who": "MIA", "text": "Flying in the air takes big, light wings. Penguin wings are short and strong, great for pushing water, but too small to lift a penguin.", "board": {"type": "compare", "left": {"label": "Flying bird", "items": [{"icon": "🪶", "text": "Big wings", "cue": "big"}, {"icon": "🎈", "text": "Light", "cue": "light"}]}, "right": {"label": "Penguin", "items": [{"icon": "💪", "text": "Short, strong", "cue": "short"}, {"icon": "🌊", "text": "Push water", "cue": "pushing"}]}}},
-    {"who": "LEO", "text": "Are penguins heavy?"},
-    {"who": "MIA", "text": "For their size, yes! They have solid, heavy bones, and most flying birds have light ones. Heavy bones help penguins dive deep.", "board": {"type": "big", "icon": "🦴", "text": "Solid, heavy bones", "cue": "solid", "sub": "Help them dive deep", "sub_cue": "dive"}},
-    {"who": "LEO", "text": "Did penguins ever fly?"},
-    {"who": "MIA", "text": "Scientists think penguins' great-great-great grandparents, long, long ago, could fly. Over time, their wings changed to be better for swimming.", "board": {"type": "big", "icon": "🕰️", "text": "Long ago, they flew", "cue": "long", "sub": "Wings changed for swimming", "sub_cue": "swimming"}},
-    {"who": "LEO", "text": "So they swapped flying for swimming!"},
-    {"who": "MIA", "text": "Yes! And they're amazing swimmers. They can zip, twist, and even leap out of the water like dolphins.", "punch": "leap", "board": {"type": "gallery", "title": "Super swimmers", "items": [{"icon": "🏊", "label": "Zip", "cue": "zip"}, {"icon": "🌀", "label": "Twist", "cue": "twist"}, {"icon": "🐬", "label": "Leap", "cue": "leap"}]}},
-    {"who": "MIA", "text": "On land, they waddle, hop, or slide on their tummies across the ice!", "board": {"type": "gallery", "title": "On land", "items": [{"icon": "🐧", "label": "Waddle", "cue": "waddle"}, {"icon": "⬆️", "label": "Hop", "cue": "hop"}, {"icon": "🛷", "label": "Slide", "cue": "slide"}]}},
-    {"who": "LEO", "text": "Flipper wings, heavy bones and super swimming. Penguins are awesome!", "board": {"type": "summary", "rows": [{"icon": "🌊", "text": "Flipper wings", "cue": "flipper"}, {"icon": "🦴", "text": "Heavy bones", "cue": "heavy"}, {"icon": "🏊", "text": "Super swimmers", "cue": "swimming"}]}},
-    {"who": "MIA", "text": "They really are! Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... why can't penguins fly?"}
+    {
+      "who": "LEO",
+      "text": "Mia, why can't penguins fly?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🐧",
+          "label": "Penguin"
+        },
+        "right": {
+          "icon": "🐦",
+          "label": "Fly?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Penguins do fly... underwater! Their wings are stiff, flat flippers, perfect for zooming through the sea.",
+      "punch": "underwater",
+      "board": {
+        "type": "big",
+        "icon": "🌊",
+        "text": "They fly underwater!",
+        "cue": "underwater",
+        "sub": "Wings = flippers",
+        "sub_cue": "flippers"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So why can't the flippers flap in the air?"
+    },
+    {
+      "who": "MIA",
+      "text": "Flying in the air takes big, light wings. Penguin wings are short and strong, great for pushing water, but too small to lift a penguin.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Flying bird",
+          "items": [
+            {
+              "icon": "🪶",
+              "text": "Big wings",
+              "cue": "big"
+            },
+            {
+              "icon": "🎈",
+              "text": "Light",
+              "cue": "light"
+            }
+          ]
+        },
+        "right": {
+          "label": "Penguin",
+          "items": [
+            {
+              "icon": "💪",
+              "text": "Short, strong",
+              "cue": "short"
+            },
+            {
+              "icon": "🌊",
+              "text": "Push water",
+              "cue": "pushing"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Are penguins heavy?"
+    },
+    {
+      "who": "MIA",
+      "text": "For their size, yes! They have solid, heavy bones, and most flying birds have light ones. Heavy bones help penguins dive deep.",
+      "board": {
+        "type": "big",
+        "icon": "🦴",
+        "text": "Solid, heavy bones",
+        "cue": "solid",
+        "sub": "Help them dive deep",
+        "sub_cue": "dive"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Did penguins ever fly?"
+    },
+    {
+      "who": "MIA",
+      "text": "Scientists think penguins' great-great-great grandparents, long, long ago, could fly. Over time, their wings changed to be better for swimming.",
+      "board": {
+        "type": "big",
+        "icon": "🕰️",
+        "text": "Long ago, they flew",
+        "cue": "long",
+        "sub": "Wings changed for swimming",
+        "sub_cue": "swimming"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So they swapped flying for swimming!"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! And they're amazing swimmers. They can zip, twist, and even leap out of the water like dolphins.",
+      "punch": "leap",
+      "board": {
+        "type": "gallery",
+        "title": "Super swimmers",
+        "items": [
+          {
+            "icon": "🏊",
+            "label": "Zip",
+            "cue": "zip"
+          },
+          {
+            "icon": "🌀",
+            "label": "Twist",
+            "cue": "twist"
+          },
+          {
+            "icon": "🐬",
+            "label": "Leap",
+            "cue": "leap"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "On land, they waddle, hop, or slide on their tummies across the ice!",
+      "board": {
+        "type": "gallery",
+        "title": "On land",
+        "items": [
+          {
+            "icon": "🐧",
+            "label": "Waddle",
+            "cue": "waddle"
+          },
+          {
+            "icon": "⬆️",
+            "label": "Hop",
+            "cue": "hop"
+          },
+          {
+            "icon": "🛷",
+            "label": "Slide",
+            "cue": "slide"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Flipper wings, heavy bones and super swimming. Penguins are awesome!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "🌊",
+            "text": "Flipper wings",
+            "cue": "flipper"
+          },
+          {
+            "icon": "🦴",
+            "text": "Heavy bones",
+            "cue": "heavy"
+          },
+          {
+            "icon": "🏊",
+            "text": "Super swimmers",
+            "cue": "swimming"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "They really are! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... why can't penguins fly?"
+    }
   ]
 }

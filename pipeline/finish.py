@@ -2,7 +2,7 @@
 
 Usage: python finish.py <frames_dir> <fps_of_frames> <out.mp4>
 """
-import json, os, subprocess, sys
+import re, json, os, subprocess, sys
 import numpy as np, soundfile as sf
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -63,6 +63,7 @@ ass = ["[Script Info]", "ScriptType: v4.00+", f"PlayResX: {OUTW}", f"PlayResY: {
        "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding",
        "Style: Cap,Lilita One,82,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,7,3,2,60,60,330,1",
        "Style: Who,Lilita One,40,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,1,0,0,0,100,100,2,0,1,5,0,2,60,60,450,1",
+       "Style: Hook,Lilita One,84,&H0037D6FF,&H0037D6FF,&H00402D1F,&H96000000,1,0,0,0,100,100,0,0,1,9,4,8,70,70,215,1",
        "", "[Events]", "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text"]
 if LONG:  # widescreen: smaller captions, centred under the board on the left
     ass = [l.replace("Style: Cap,Lilita One,82,", "Style: Cap,Lilita One,74,").replace(",1,7,3,2,60,60,330,1", ",1,6,3,2,40,800,24,1") for l in ass]
@@ -94,6 +95,30 @@ for ln in T["lines"]:
                     parts.append(txt)
             pop = "{\\fad(40,0)}" if wi == 0 else ""
             ass.append(f"Dialogue: 0,{ts(a)},{ts(b)},Cap,,0,0,0,,{pop}{' '.join(parts)}")
+# --- opening hook: the episode's question in big bold letters for the first ~2.3 s (stops viewers scrolling past)
+def _hook_text():
+    try:
+        ep_ = json.load(open(_ep, encoding="utf-8")) if _ep and os.path.exists(_ep) else {}
+    except Exception:
+        ep_ = {}
+    h = ep_.get("hook")
+    if not h:
+        first = (T["lines"][0]["text"] if T["lines"] else "").strip()
+        q = [s_ for s_ in re.split(r"(?<=[?!.])\s+", first) if s_.endswith("?")]
+        h = q[-1] if q else (ep_.get("cover_text") or "")
+        h = re.sub(r"^(mia|leo|dad|teen|hey)[, ]+", "", h, flags=re.I).strip()
+    h = h.strip()
+    if not h or len(h) > 60: return None
+    return h[0].upper() + h[1:]
+_hk = _hook_text()
+if _hk:
+    _pos = "{\\an8\\pos(%d,%d)}" % (OUTW // 2, 60 if LONG else 215)
+    _hu = _hk.upper()
+    if len(_hu) > 20:  # two balanced lines, so long questions never run off the screen
+        _w = _hu.split(); _best = min(range(1, len(_w)), key=lambda k: abs(len(" ".join(_w[:k])) - len(" ".join(_w[k:]))))
+        _hu = " ".join(_w[:_best]) + "\\N" + " ".join(_w[_best:])
+    _fs = 84 if len(_hk) <= 34 else 70
+    ass.append(f"Dialogue: 1,{ts(0.0)},{ts(2.3)},Hook,,0,0,0,,{_pos}{{\\fs{_fs}\\fad(0,300)\\t(0,180,\\fscx112\\fscy112)\\t(180,360,\\fscx100\\fscy100)}}{_hu}")
 if os.environ.get("DOODLE") == "1":
     ass = [l.replace("Style: Cap,Lilita One,82,", "Style: Cap,Patrick Hand,96,") for l in ass]
 assf = os.path.join(B, "captions.ass"); open(assf, "w").write("\n".join(ass) + "\n")

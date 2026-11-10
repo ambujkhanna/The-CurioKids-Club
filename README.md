@@ -8,6 +8,16 @@ The CurioKids Club makes short, curious answers to kids' big questions (animals,
 - **Look:** a colourful **playroom** with a **puppet theatre** (wooden frame, velvet curtains that open at the start, spotlight, footlights). Big pictures and phone-readable words slide in from the wings like puppets; poems show one big verse line at a time. Doodle line-art characters stand in front, with Buzz the helper bee.
 - **Cost:** no paid services and no AI API. Everything runs free on GitHub Actions.
 
+## Follow The CurioKids Club
+
+| Platform | Link |
+|---|---|
+| ▶️ YouTube | https://www.youtube.com/@CurioKidsClub |
+| 📘 Facebook | https://www.facebook.com/profile.php?id=61596461063065 |
+| 📸 Instagram | https://www.instagram.com/thecuriokidsclub/ |
+
+Hashtag: **#TheCurioKidsClub**
+
 ## How it works (every day, automatically)
 
 ```text

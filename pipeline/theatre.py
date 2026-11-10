@@ -86,7 +86,8 @@ def _curtain(c, side, t, open_k):
 
 
 def front(c, t):
-    open_k = max(0.0, min(1.0, (t - 0.15) / 0.9)); open_k = open_k * open_k * (3 - 2 * open_k)
+    # starts half open (the very first frame - used as a cover/preview - already shows the board), fully open by ~0.6 s
+    open_k = max(0.0, min(1.0, 0.5 + t / 1.2)); open_k = open_k * open_k * (3 - 2 * open_k)
     c.save(); c.clipRRect(skia.RRect.MakeRectXY(skia.Rect.MakeLTRB(WX0, WY0 - 2, WX1, WY1 + 4), 14, 14), doAntiAlias=True)
     _curtain(c, -1, t, open_k); _curtain(c, 1, t, open_k)
     n = 8; w = (WX1 - WX0) / n

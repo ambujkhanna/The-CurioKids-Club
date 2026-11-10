@@ -88,6 +88,13 @@ def end_card(c, t, t0, K, kids=False, cx=540, cy=880):
     c.drawRRect(panel, _p(K, "#FFFDF5")); c.drawRRect(panel, _p(K, NAVY, 5))
     head = "Ask a grown-up to subscribe & like!" if kids else "Enjoyed it? Subscribe, like & share!"
     _text(c, K, head, cx, cy - 78, 32, NAVY)
+    # "search us" strip under the buttons: the channel name works on every platform (no other platforms' logos)
+    name = "The CurioKids Club" if kids else "AInation Studio"
+    if u > 3.4:
+        a_ = min(1.0, (u - 3.4) / 0.3)
+        sp = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(cx - 360, cy + 70, 720, 64), 32, 32)
+        c.drawRRect(sp, _p(K, NAVY, a=0.92 * a_))
+        _text(c, K, f"Search \"{name}\" on YouTube, Instagram, Facebook", cx, cy + 112, 26, "#FFFFFF")
     btns = [("sub", 290, cx - 255), ("like", 190, cx + 7), ("share", 200, cx + 225)]
     taps = {name: 0.9 + k * 1.0 for k, (name, _, _) in enumerate(btns)}
     for name, w, x in btns:

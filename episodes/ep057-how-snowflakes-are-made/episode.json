@@ -1,25 +1,196 @@
 {
-  "id": "ep057", "slug": "how-snowflakes-are-made", "status": "ready",
+  "id": "ep057",
+  "slug": "how-snowflakes-are-made",
+  "status": "ready",
   "title": "How Are Snowflakes Made? ❄️ Fun Facts for Kids",
   "cover_text": "SNOWFLAKES?",
   "description": "Every snowflake starts with a tiny speck of dust! Leo asks, big sister Mia explains how snowflakes grow their six sides, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
-  "hashtags": ["#KidsLearning", "#FunFacts", "#Snow", "#Shorts"],
-  "tags": ["snowflake facts for kids", "how snowflakes form", "winter science", "weather for kids", "science for kids", "kids learning"],
-  "cast": ["LEO", "MIA"],
-  "loop_card": {"text": "Snowflakes?", "cue": "next", "left": "❄️", "right": "☁️"},
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Snow",
+    "#Shorts"
+  ],
+  "tags": [
+    "snowflake facts for kids",
+    "how snowflakes form",
+    "winter science",
+    "weather for kids",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Snowflakes?",
+    "cue": "next",
+    "left": "❄️",
+    "right": "☁️"
+  },
   "lines": [
-    {"who": "LEO", "text": "Mia, how are snowflakes made?", "board": {"type": "title", "left": {"icon": "❄️", "label": "Snowflake"}, "right": {"icon": "☁️", "label": "Made how?"}, "mid": "?"}},
-    {"who": "MIA", "text": "High up in a freezing cold cloud! It starts with a tiny speck of dust floating in the air.", "board": {"type": "big", "icon": "☁️", "text": "In a freezing cloud", "cue": "cloud", "sub": "Around a speck of dust", "sub_cue": "speck"}},
-    {"who": "MIA", "text": "Water in the cloud freezes onto that speck and makes a teeny ice crystal.", "punch": "crystal", "board": {"type": "big", "icon": "🧊", "text": "A tiny ice crystal", "cue": "crystal"}},
-    {"who": "LEO", "text": "How does it get so big and pretty?"},
-    {"who": "MIA", "text": "As it floats and tumbles, more water freezes onto it, bit by bit. It grows arms, and the arms grow branches!", "board": {"type": "journey", "title": "A flake grows", "traveler": "❄️", "items": [{"icon": "☁️", "label": "In the cloud", "cue": "floats"}, {"icon": "💧", "label": "Water freezes", "cue": "water"}, {"icon": "🧊", "label": "Grows arms", "cue": "arms"}, {"icon": "❄️", "label": "Branches", "cue": "branches"}]}},
-    {"who": "LEO", "text": "Why do snowflakes have six sides?"},
-    {"who": "MIA", "text": "Because of how teeny bits of water fit together when they freeze. They line up in a six-sided pattern, so the snowflake grows that way too.", "punch": "six", "board": {"type": "big", "icon": "❄️", "text": "Six sides!", "cue": "six", "sub": "Water freezes in a pattern", "sub_cue": "pattern"}},
-    {"who": "LEO", "text": "Are all snowflakes the same?"},
-    {"who": "MIA", "text": "Nope! Each one takes its own bumpy trip through the cloud, where it can be colder or wetter. That changes how it grows.", "board": {"type": "big", "icon": "🌬️", "text": "Each has its own trip", "cue": "trip", "sub": "Colder? Wetter? New shape!", "sub_cue": "colder"}},
-    {"who": "MIA", "text": "That's why scientists think it's very, very unlikely that two big snowflakes are ever exactly alike!", "board": {"type": "big", "icon": "🔍", "text": "No two exactly alike?", "cue": "alike"}},
-    {"who": "MIA", "text": "And when they get heavy enough, they drift down to the ground as snow.", "board": {"type": "big", "icon": "🌨️", "text": "Then they drift down!", "cue": "drift", "sub": "Hello, snow!", "sub_cue": "snow"}},
-    {"who": "LEO", "text": "A speck of dust, freezing water, six sides, and every one is different. Wow!", "board": {"type": "summary", "rows": [{"icon": "🟤", "text": "Speck of dust", "cue": "dust"}, {"icon": "🧊", "text": "Water freezes on", "cue": "freezing"}, {"icon": "❄️", "text": "Six sides", "cue": "six"}, {"icon": "🔍", "text": "Each one is different", "cue": "different"}]}},
-    {"who": "MIA", "text": "Snow is amazing! Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... how are snowflakes made?"}
+    {
+      "who": "LEO",
+      "text": "Mia, how are snowflakes made?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "❄️",
+          "label": "Snowflake"
+        },
+        "right": {
+          "icon": "☁️",
+          "label": "Made how?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "High up in a freezing cold cloud! It starts with a tiny speck of dust floating in the air.",
+      "board": {
+        "type": "big",
+        "icon": "☁️",
+        "text": "In a freezing cloud",
+        "cue": "cloud",
+        "sub": "Around a speck of dust",
+        "sub_cue": "speck"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Water in the cloud freezes onto that speck and makes a teeny ice crystal.",
+      "punch": "crystal",
+      "board": {
+        "type": "big",
+        "icon": "🧊",
+        "text": "A tiny ice crystal",
+        "cue": "crystal"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How does it get so big and pretty?"
+    },
+    {
+      "who": "MIA",
+      "text": "As it floats and tumbles, more water freezes onto it, bit by bit. It grows arms, and the arms grow branches!",
+      "board": {
+        "type": "journey",
+        "title": "A flake grows",
+        "traveler": "❄️",
+        "items": [
+          {
+            "icon": "☁️",
+            "label": "In the cloud",
+            "cue": "floats"
+          },
+          {
+            "icon": "💧",
+            "label": "Water freezes",
+            "cue": "water"
+          },
+          {
+            "icon": "🧊",
+            "label": "Grows arms",
+            "cue": "arms"
+          },
+          {
+            "icon": "❄️",
+            "label": "Branches",
+            "cue": "branches"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why do snowflakes have six sides?"
+    },
+    {
+      "who": "MIA",
+      "text": "Because of how teeny bits of water fit together when they freeze. They line up in a six-sided pattern, so the snowflake grows that way too.",
+      "punch": "six",
+      "board": {
+        "type": "big",
+        "icon": "❄️",
+        "text": "Six sides!",
+        "cue": "six",
+        "sub": "Water freezes in a pattern",
+        "sub_cue": "pattern"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Are all snowflakes the same?"
+    },
+    {
+      "who": "MIA",
+      "text": "Nope! Each one takes its own bumpy trip through the cloud, where it can be colder or wetter. That changes how it grows.",
+      "board": {
+        "type": "big",
+        "icon": "🌬️",
+        "text": "Each has its own trip",
+        "cue": "trip",
+        "sub": "Colder? Wetter? New shape!",
+        "sub_cue": "colder"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "That's why scientists think it's very, very unlikely that two big snowflakes are ever exactly alike!",
+      "board": {
+        "type": "big",
+        "icon": "🔍",
+        "text": "No two exactly alike?",
+        "cue": "alike"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "And when they get heavy enough, they drift down to the ground as snow.",
+      "board": {
+        "type": "big",
+        "icon": "🌨️",
+        "text": "Then they drift down!",
+        "cue": "drift",
+        "sub": "Hello, snow!",
+        "sub_cue": "snow"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "A speck of dust, freezing water, six sides, and every one is different. Wow!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "🟤",
+            "text": "Speck of dust",
+            "cue": "dust"
+          },
+          {
+            "icon": "🧊",
+            "text": "Water freezes on",
+            "cue": "freezing"
+          },
+          {
+            "icon": "❄️",
+            "text": "Six sides",
+            "cue": "six"
+          },
+          {
+            "icon": "🔍",
+            "text": "Each one is different",
+            "cue": "different"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Snow is amazing! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... how are snowflakes made?"
+    }
   ]
 }

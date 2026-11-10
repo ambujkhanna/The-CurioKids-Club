@@ -1,25 +1,201 @@
 {
-  "id": "ep061", "slug": "why-dogs-sniff-everything", "status": "ready",
+  "id": "ep061",
+  "slug": "why-dogs-sniff-everything",
+  "status": "ready",
   "title": "Why Do Dogs Sniff Everything? 🐶 Fun Facts for Kids",
   "cover_text": "SNIFF SNIFF!",
   "description": "A dog's nose is a real superpower! Leo asks, big sister Mia explains what dogs learn from all that sniffing, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
-  "hashtags": ["#KidsLearning", "#FunFacts", "#Dogs", "#Shorts"],
-  "tags": ["dog facts for kids", "why do dogs sniff", "dog nose", "animal facts", "science for kids", "kids learning"],
-  "cast": ["LEO", "MIA"],
-  "loop_card": {"text": "Why all the sniffing?", "cue": "next", "left": "img:Animals/Servier/dog_beagle", "right": "👃"},
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Dogs",
+    "#Shorts"
+  ],
+  "tags": [
+    "dog facts for kids",
+    "why do dogs sniff",
+    "dog nose",
+    "animal facts",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why all the sniffing?",
+    "cue": "next",
+    "left": "img:Animals/Servier/dog_beagle",
+    "right": "👃"
+  },
   "lines": [
-    {"who": "LEO", "text": "Mia, why do dogs sniff everything?", "board": {"type": "title", "left": {"icon": "img:Animals/Servier/dog_beagle", "label": "Dog"}, "right": {"icon": "👃", "label": "Sniff?"}, "mid": "?"}},
-    {"who": "MIA", "text": "Because a dog's nose is a superpower! Dogs can smell much, much better than people can.", "punch": "superpower", "board": {"type": "big", "icon": "👃", "text": "A nose superpower!", "cue": "superpower", "sub": "Much better than ours", "sub_cue": "better"}},
-    {"who": "LEO", "text": "How is it better?"},
-    {"who": "MIA", "text": "A dog's nose has many, many more smell cells than yours. And a big part of its brain works on smells.", "board": {"type": "compare", "left": {"label": "You", "items": [{"icon": "👃", "text": "Fewer cells", "cue": "yours"}]}, "right": {"label": "Dog", "items": [{"icon": "🐶", "text": "Lots more cells", "cue": "more"}, {"icon": "🧠", "text": "Big smell brain", "cue": "brain"}]}}},
-    {"who": "LEO", "text": "So what are they smelling on walks?"},
-    {"who": "MIA", "text": "Clues! A sniff can tell a dog who walked by, if it was a friend, and even what they had for lunch.", "board": {"type": "gallery", "title": "Sniff clues", "items": [{"icon": "🐕", "label": "Who walked by", "cue": "walked"}, {"icon": "🤝", "label": "A friend?", "cue": "friend"}, {"icon": "🍖", "label": "Their lunch", "cue": "lunch"}]}},
-    {"who": "LEO", "text": "It's like reading the news with their nose!"},
-    {"who": "MIA", "text": "Exactly! Sniffing is how dogs read the news. People who study dogs think sniffy walks help them feel happy and calm.", "board": {"type": "big", "icon": "img:Animals/Servier/dog", "text": "Sniffing finds clues", "cue": "news", "sub": "Sniffy walks, happy dog", "sub_cue": "happy"}},
-    {"who": "LEO", "text": "Why do dogs sniff each other when they meet?"},
-    {"who": "MIA", "text": "That's a doggy hello! A quick sniff tells them who the other dog is, kind of like reading a name tag.", "punch": "hello", "board": {"type": "big", "icon": "👋", "text": "A doggy hello!", "cue": "hello", "sub": "Like a name tag", "sub_cue": "name"}},
-    {"who": "MIA", "text": "Here's a neat trick. When a dog breathes out, air leaves through little slits on the sides of its nose, so new smells keep coming in.", "board": {"type": "big", "icon": "💨", "text": "Side slits on the nose", "cue": "slits", "sub": "New smells keep coming in", "sub_cue": "smells"}},
-    {"who": "LEO", "text": "Super noses, sniffing clues and doggy hellos. Dogs are amazing sniffers!", "board": {"type": "summary", "rows": [{"icon": "👃", "text": "Super noses", "cue": "super"}, {"icon": "🔍", "text": "Sniffing clues", "cue": "clues"}, {"icon": "👋", "text": "Doggy hellos", "cue": "hellos"}]}},
-    {"who": "MIA", "text": "They sure are! Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... why do dogs sniff everything?"}
+    {
+      "who": "LEO",
+      "text": "Mia, why do dogs sniff everything?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "img:Animals/Servier/dog_beagle",
+          "label": "Dog"
+        },
+        "right": {
+          "icon": "👃",
+          "label": "Sniff?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Because a dog's nose is a superpower! Dogs can smell much, much better than people can.",
+      "punch": "superpower",
+      "board": {
+        "type": "big",
+        "icon": "👃",
+        "text": "A nose superpower!",
+        "cue": "superpower",
+        "sub": "Much better than ours",
+        "sub_cue": "better"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How is it better?"
+    },
+    {
+      "who": "MIA",
+      "text": "A dog's nose has many, many more smell cells than yours. And a big part of its brain works on smells.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "You",
+          "items": [
+            {
+              "icon": "👃",
+              "text": "Fewer cells",
+              "cue": "yours"
+            }
+          ]
+        },
+        "right": {
+          "label": "Dog",
+          "items": [
+            {
+              "icon": "🐶",
+              "text": "Lots more cells",
+              "cue": "more"
+            },
+            {
+              "icon": "🧠",
+              "text": "Big smell brain",
+              "cue": "brain"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So what are they smelling on walks?"
+    },
+    {
+      "who": "MIA",
+      "text": "Clues! A sniff can tell a dog who walked by, if it was a friend, and even what they had for lunch.",
+      "board": {
+        "type": "gallery",
+        "title": "Sniff clues",
+        "items": [
+          {
+            "icon": "🐕",
+            "label": "Who walked by",
+            "cue": "walked"
+          },
+          {
+            "icon": "🤝",
+            "label": "A friend?",
+            "cue": "friend"
+          },
+          {
+            "icon": "🍖",
+            "label": "Their lunch",
+            "cue": "lunch"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "It's like reading the news with their nose!"
+    },
+    {
+      "who": "MIA",
+      "text": "Exactly! Sniffing is how dogs read the news. People who study dogs think sniffy walks help them feel happy and calm.",
+      "board": {
+        "type": "big",
+        "icon": "img:Animals/Servier/dog",
+        "text": "Sniffing finds clues",
+        "cue": "news",
+        "sub": "Sniffy walks, happy dog",
+        "sub_cue": "happy"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why do dogs sniff each other when they meet?"
+    },
+    {
+      "who": "MIA",
+      "text": "That's a doggy hello! A quick sniff tells them who the other dog is, kind of like reading a name tag.",
+      "punch": "hello",
+      "board": {
+        "type": "big",
+        "icon": "👋",
+        "text": "A doggy hello!",
+        "cue": "hello",
+        "sub": "Like a name tag",
+        "sub_cue": "name"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Here's a neat trick. When a dog breathes out, air leaves through little slits on the sides of its nose, so new smells keep coming in.",
+      "board": {
+        "type": "big",
+        "icon": "💨",
+        "text": "Side slits on the nose",
+        "cue": "slits",
+        "sub": "New smells keep coming in",
+        "sub_cue": "smells"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Super noses, sniffing clues and doggy hellos. Dogs are amazing sniffers!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "👃",
+            "text": "Super noses",
+            "cue": "super"
+          },
+          {
+            "icon": "🔍",
+            "text": "Sniffing clues",
+            "cue": "clues"
+          },
+          {
+            "icon": "👋",
+            "text": "Doggy hellos",
+            "cue": "hellos"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "They sure are! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... why do dogs sniff everything?"
+    }
   ]
 }

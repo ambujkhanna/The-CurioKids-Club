@@ -1,25 +1,182 @@
 {
-  "id": "ep048", "slug": "how-your-nose-smells", "status": "ready",
+  "id": "ep048",
+  "slug": "how-your-nose-smells",
+  "status": "ready",
   "title": "How Does Your Nose Smell Things? 👃 Fun Facts for Kids",
   "cover_text": "SNIFF SNIFF!",
   "description": "Smells are made of tiny floating bits! Leo asks, big sister Mia explains how your nose and brain work together to smell, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
-  "hashtags": ["#KidsLearning", "#FunFacts", "#HumanBody", "#Shorts"],
-  "tags": ["nose facts for kids", "how do we smell", "sense of smell", "human body for kids", "science for kids", "kids learning"],
-  "cast": ["LEO", "MIA"],
-  "loop_card": {"text": "How do we smell?", "cue": "next", "left": "img:Human_physiology/Servier/nasal-cavity", "right": "🌸"},
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#HumanBody",
+    "#Shorts"
+  ],
+  "tags": [
+    "nose facts for kids",
+    "how do we smell",
+    "sense of smell",
+    "human body for kids",
+    "science for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "How do we smell?",
+    "cue": "next",
+    "left": "img:Human_physiology/Servier/nasal-cavity",
+    "right": "🌸"
+  },
   "lines": [
-    {"who": "LEO", "text": "Mia, how does my nose smell things?", "board": {"type": "title", "left": {"icon": "img:Human_physiology/Servier/nasal-cavity", "label": "Nose"}, "right": {"icon": "🌸", "label": "Smell?"}, "mid": "?"}},
-    {"who": "MIA", "text": "Everything that smells gives off teeny tiny bits called molecules. They float through the air, way too small to see!", "board": {"type": "big", "icon": "🌸", "text": "Smell molecules float", "cue": "molecules", "sub": "Too small to see!", "sub_cue": "small"}},
-    {"who": "LEO", "text": "So when I smell cookies, little cookie bits are in my nose?", "punch": "cookie"},
-    {"who": "MIA", "text": "Yep! When you breathe in, those bits zoom up your nose to a special patch, high up inside.", "board": {"type": "big", "icon": "img:Human_physiology/Servier/nasal-cavity", "text": "Up to the smell patch", "cue": "patch", "sub": "High up inside your nose", "sub_cue": "high"}},
-    {"who": "MIA", "text": "That patch has lots of smell cells. Different cells catch different smells, a bit like keys fitting into locks.", "board": {"type": "big", "icon": "img:Human_physiology/Servier/olfactory-bulb", "text": "Lots of smell cells", "cue": "keys", "sub": "Smell cells catch smells", "sub_cue": "cells"}},
-    {"who": "LEO", "text": "Then what happens?"},
-    {"who": "MIA", "text": "The smell cells send a message to your brain, and your brain works it out and says, 'Mmm, cookies!'", "board": {"type": "journey", "title": "Smell message", "traveler": "🍪", "items": [{"icon": "👃", "label": "Smell cells", "cue": "smell"}, {"icon": "img:Human_physiology/Servier/brain-1", "label": "Brain", "cue": "brain"}, {"icon": "😋", "label": "Mmm, cookies!", "cue": "cookies"}]}},
-    {"who": "LEO", "text": "Why do I sniff when I want to smell something better?"},
-    {"who": "MIA", "text": "Sniffing pulls in more air, so more smell bits reach the smell patch. Big sniff, big smell!", "punch": "sniff", "board": {"type": "big", "icon": "💨", "text": "Sniff = more smell", "cue": "sniffing", "sub": "Big sniff, big smell!", "sub_cue": "big"}},
-    {"who": "LEO", "text": "Does my nose help me taste, too?"},
-    {"who": "MIA", "text": "It sure does! Smell and taste work as a team. That's why food can taste plain when you have a stuffy nose.", "board": {"type": "big", "icon": "🤝", "text": "Smell + taste = a team", "cue": "team", "sub": "Stuffy nose, plain food", "sub_cue": "stuffy"}},
-    {"who": "LEO", "text": "Tiny smell bits, smell cells and my brain. Noses are awesome!", "board": {"type": "summary", "rows": [{"icon": "🌸", "text": "Tiny smell bits", "cue": "tiny"}, {"icon": "👃", "text": "Smell cells", "cue": "cells"}, {"icon": "🧠", "text": "Your brain", "cue": "brain"}]}},
-    {"who": "MIA", "text": "They sure are! Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks... how does your nose smell things?"}
+    {
+      "who": "LEO",
+      "text": "Mia, how does my nose smell things?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "img:Human_physiology/Servier/nasal-cavity",
+          "label": "Nose"
+        },
+        "right": {
+          "icon": "🌸",
+          "label": "Smell?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Everything that smells gives off teeny tiny bits called molecules. They float through the air, way too small to see!",
+      "board": {
+        "type": "big",
+        "icon": "🌸",
+        "text": "Smell molecules float",
+        "cue": "molecules",
+        "sub": "Too small to see!",
+        "sub_cue": "small"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So when I smell cookies, little cookie bits are in my nose?",
+      "punch": "cookie"
+    },
+    {
+      "who": "MIA",
+      "text": "Yep! When you breathe in, those bits zoom up your nose to a special patch, high up inside.",
+      "board": {
+        "type": "big",
+        "icon": "img:Human_physiology/Servier/nasal-cavity",
+        "text": "Up to the smell patch",
+        "cue": "patch",
+        "sub": "High up inside your nose",
+        "sub_cue": "high"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "That patch has lots of smell cells. Different cells catch different smells, a bit like keys fitting into locks.",
+      "board": {
+        "type": "big",
+        "icon": "img:Human_physiology/Servier/olfactory-bulb",
+        "text": "Lots of smell cells",
+        "cue": "keys",
+        "sub": "Smell cells catch smells",
+        "sub_cue": "cells"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Then what happens?"
+    },
+    {
+      "who": "MIA",
+      "text": "The smell cells send a message to your brain, and your brain works it out and says, 'Mmm, cookies!'",
+      "board": {
+        "type": "journey",
+        "title": "Smell message",
+        "traveler": "🍪",
+        "items": [
+          {
+            "icon": "👃",
+            "label": "Smell cells",
+            "cue": "smell"
+          },
+          {
+            "icon": "img:Human_physiology/Servier/brain-1",
+            "label": "Brain",
+            "cue": "brain"
+          },
+          {
+            "icon": "😋",
+            "label": "Mmm, cookies!",
+            "cue": "cookies"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why do I sniff when I want to smell something better?"
+    },
+    {
+      "who": "MIA",
+      "text": "Sniffing pulls in more air, so more smell bits reach the smell patch. Big sniff, big smell!",
+      "punch": "sniff",
+      "board": {
+        "type": "big",
+        "icon": "💨",
+        "text": "Sniff = more smell",
+        "cue": "sniffing",
+        "sub": "Big sniff, big smell!",
+        "sub_cue": "big"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Does my nose help me taste, too?"
+    },
+    {
+      "who": "MIA",
+      "text": "It sure does! Smell and taste work as a team. That's why food can taste plain when you have a stuffy nose.",
+      "board": {
+        "type": "big",
+        "icon": "🤝",
+        "text": "Smell + taste = a team",
+        "cue": "team",
+        "sub": "Stuffy nose, plain food",
+        "sub_cue": "stuffy"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Tiny smell bits, smell cells and my brain. Noses are awesome!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "icon": "🌸",
+            "text": "Tiny smell bits",
+            "cue": "tiny"
+          },
+          {
+            "icon": "👃",
+            "text": "Smell cells",
+            "cue": "cells"
+          },
+          {
+            "icon": "🧠",
+            "text": "Your brain",
+            "cue": "brain"
+          }
+        ]
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "They sure are! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... how does your nose smell things?"
+    }
   ]
 }

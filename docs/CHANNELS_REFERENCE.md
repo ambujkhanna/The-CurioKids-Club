@@ -1,6 +1,6 @@
 # Channels reference: The CurioKids Club & AInation Studio
 
-**Last updated:** 2026-11-08 13:38 IST (08:08 UTC)
+**Last updated:** 2026-11-10 09:57 IST (04:27 UTC)
 
 This is the quick reference for both channels: links, schedules, workflow options, secrets and variables. It's updated whenever any of these change; see the change log at the bottom. The full history is in `TheCurioKidsClub_handoff.md` and `AInation_Studio_handoff.md`.
 
@@ -24,6 +24,9 @@ This is the quick reference for both channels: links, schedules, workflow option
 | **Short publish time** | Alternate days: **Hindi 09:00–11:00** (from Mon 9 Nov 2026), **English 17:00–20:00** on the days in between | 17:00–20:00 every day |
 | **Weekly long video (16:9)** | *Weekly Curio Kids Long Video*: Saturday 10:00 | *Weekly AInation Long Video*: Sunday 10:00 |
 | **Voice Lab** | *Voice Lab (Chatterbox / Turbo voice samples)*: manual only | – |
+| **Opening hook** | The episode's question in big yellow letters for the first 2.3 s; curtains start half open (optional `"hook"` field in episode.json overrides the text) | Same (no curtains) |
+| **Ending** | Spoken: "…subscribe… and share this with a friend!"; end card with Subscribe / Like / Share + "Search "The CurioKids Club" on YouTube, Instagram, Facebook" | Spoken: "Subscribe to AI Nation Studio, and share this with a friend!"; same end card with "Search "AInation Studio" …" |
+| **Caption / description** | Save & share line (IG: "📌 Save this… share it with a curious kid", FB/YouTube share lines) | Same, AI wording |
 | **Channel hashtag** | **#TheCurioKidsClub** (always included) | **#AInationstudio** (always included) |
 | **Hashtag limits** | YouTube max 15 (channel tag in the first 3, + #Shorts) · Instagram max **5** · Facebook max 10 | same |
 | **Facebook / Instagram** | Posted automatically right after each YouTube upload (Reel, designed cover) | Same |
@@ -88,3 +91,4 @@ Never paste tokens into chat, files or commits; they go only into GitHub Secrets
 | 2026-11-08 12:46 IST (07:16 UTC) | **Script → video** for both channels: workflow option `script` (kids: replaces `fix_existing` in the form to stay within 10 options). New `pipeline/script2episode.py`, guide `scripts/README.md`, `scripts/TEMPLATE.txt`, example scripts; progress kept in `custom/state.json`. |
 | 2026-11-08 13:09 IST (07:39 UTC) | **Channel hashtags**: #TheCurioKidsClub / #AInationstudio always included, in 2nd place; per-platform limits YouTube 15, Instagram 5, Facebook 10 (`pipeline/hashtags.py`). Hindi videos keep #Hindi in the first three. |
 | 2026-11-08 13:38 IST (08:08 UTC) | Kids: **Hindi for categories**: comedy and quiz translated (20 `hi.json`, jokes and riddles rewritten where English puns don't work in Hindi, with replacement boards via `hi.json` `boards`); `category` + `language: hi` now works. Both: clearer messages when a video was deleted ("video not found … (deleted?)"). |
+| 2026-11-10 09:57 IST (04:27 UTC) | **Reach**: opening hook (question in the first 2.3 s, 2 lines if long; kids curtains start half open), spoken share line in all endings (kids EN 102, HI 94; AInation 3 that had 'Follow…'), save/share line in IG/FB captions and YouTube descriptions (`hashtags.ENGAGE`), end card 'Search "<channel>" on YouTube, Instagram, Facebook'. No other platforms' logos (Instagram limits reach for them). |

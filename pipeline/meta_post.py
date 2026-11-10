@@ -53,7 +53,7 @@ def caption(ep, brand_line, platform="instagram"):
     import hashtags
     desc = ep.get("description", "").split("\n\n")[0].strip()
     tags = hashtags.pick(list(ep.get("hashtags", [])) + list(ep.get("social_hashtags", [])), platform)
-    out = f"{ep['title']}\n\n{desc}\n\n{brand_line}\n\n" + " ".join(tags)
+    out = f"{ep['title']}\n\n{desc}\n\n{hashtags.ENGAGE.get(platform, '')}\n{brand_line}\n\n" + " ".join(tags)
     return out[:2100]
 
 

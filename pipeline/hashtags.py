@@ -10,6 +10,16 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 KIDS = os.path.exists(os.path.join(ROOT, "library")) or "curio" in ROOT.lower()
 BRAND = os.environ.get("BRAND_HASHTAG") or ("#TheCurioKidsClub" if KIDS else "#AInationstudio")
 LIMITS = {"youtube": 15, "instagram": 5, "facebook": 10}
+NAME = "The CurioKids Club" if KIDS else "AInation Studio"
+# one line asking for saves + shares (they count more than likes for reach)
+ENGAGE = {
+    "instagram": "📌 Save this for later & share it with a curious kid you know! 💛" if KIDS
+                 else "📌 Save this & share it with a friend who's curious about AI!",
+    "facebook": "💬 Share this with a curious kid (or parent) you know! 💛" if KIDS
+                else "💬 Share this with a friend who's curious about AI!",
+    "youtube": "👍 Share this with a curious kid you know - and ask a grown-up to subscribe!" if KIDS
+               else "👍 Share this with a friend who's curious about AI - and subscribe for more!",
+}
 
 
 def pick(tags, platform):

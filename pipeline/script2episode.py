@@ -12,8 +12,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 KIDS = os.path.exists(os.path.join(ROOT, "library")) or "curio" in ROOT.lower()
 CH = {
     True: dict(cast={"MIA", "LEO", "DAD"}, host="MIA",
-               cta="Ask a grown-up to subscribe to The Curio Kids Club for more fun!",
-               cta_hi="और मज़ेदार बातों के लिए किसी बड़े से द क्यूरियो किड्स क्लब को सब्सक्राइब करने को कहो!",
+               cta="Ask a grown-up to subscribe to The Curio Kids Club for more fun, and share this with a friend!",
+               cta_hi="और मज़ेदार बातों के लिए किसी बड़े से द क्यूरियो किड्स क्लब को सब्सक्राइब करने और दोस्तों के साथ शेयर करने को कहो!",
                tagline="The CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
                hashtags=["#KidsLearning", "#FunFacts", "#Shorts"]),
     False: dict(cast={"DAD", "TEEN"}, host="TEEN",
