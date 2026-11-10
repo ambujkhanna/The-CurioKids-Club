@@ -126,6 +126,11 @@ def check_hi(path):
         if re.search(r"[A-Za-z]{3,}", re.sub(r"\b[Zz]{2,}\b", "", re.sub(r"\[[a-z_ ]+\]", "", t))): errs.append(f"hi.json line {i}: write English words in Devanagari (e.g. साइंस)")
         if len(t) > 260: errs.append(f"hi.json line {i}: too long (> 260 chars)")
     if "सब्सक्राइब" not in hi["lines"][-1]: errs.append("hi.json: last line has no सब्सक्राइब call-to-action")
+    for k, b in (hi.get("boards") or {}).items():  # optional board replacements for the Hindi version
+        if not str(k).isdigit() or int(k) >= len(ep["lines"]): errs.append(f"hi.json boards: line '{k}' does not exist"); continue
+        if b.get("type") not in TYPES: errs.append(f"hi.json boards {k}: unknown type {b.get('type')}")
+        for ic in icons(b):
+            if bad_icon(ic): errs.append(f"hi.json boards {k}: icon '{ic}' is not an emoji or known icon")
     return errs
 
 

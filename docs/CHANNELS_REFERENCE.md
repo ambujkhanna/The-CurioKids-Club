@@ -1,6 +1,6 @@
 # Channels reference: The CurioKids Club & AInation Studio
 
-**Last updated:** 2026-11-08 13:09 IST (07:39 UTC)
+**Last updated:** 2026-11-08 13:38 IST (08:08 UTC)
 
 This is the quick reference for both channels: links, schedules, workflow options, secrets and variables. It's updated whenever any of these change; see the change log at the bottom. The full history is in `TheCurioKidsClub_handoff.md` and `AInation_Studio_handoff.md`.
 
@@ -36,7 +36,7 @@ This is the quick reference for both channels: links, schedules, workflow option
 | **dry_run** ☐ | Render and check only; the MP4 and thumbnail go to Artifacts, nothing is uploaded | ✅ | ✅ |
 | **episode** (text) | Force a specific episode, e.g. `ep007`; empty = next in line | ✅ | ✅ |
 | **publish_now** ☐ | Publish immediately instead of scheduling | ✅ | ✅ |
-| **language** (en / hi) | Hindi voices + English subtitles for a manual run | ✅ | – |
+| **language** (en / hi) | Hindi voices + English subtitles for a manual run; works with daily episodes **and** categories comedy / quiz | ✅ | – |
 | **category** (none / comedy / quiz / knowledge / science / abc / counting / rhymes) | Post the next episode from that category instead of the daily Short | ✅ | – |
 | **social_only** ☐ | Post the chosen `episode` to Facebook + Instagram only, no YouTube | ✅ | ✅ |
 | **social_backfill** (0–4) | Post that many already-uploaded videos to Facebook/Instagram, oldest first (skips what's already posted) | ✅ | ✅ |
@@ -78,7 +78,7 @@ Never paste tokens into chat, files or commits; they go only into GitHub Secrets
 | **Daily Shorts** | `episodes/`: ep002–ep075 (74), each with a Hindi version `hi.json` | `episodes/` (backlog up to EP038) |
 | **Weekly long videos** | `long/`: L01–L08 | `long/`: L01–L08 |
 | **Your scripts** | `scripts/` (guide `README.md`, `TEMPLATE.txt`, example `how-bees-make-honey.txt`) → made into `custom/<id>/` at run time | `scripts/` (guide, template, example `what-is-a-prompt.txt`) |
-| **Category library** | `library/`: comedy COM01–10, quiz QUZ01–10 (knowledge, science, abc, counting, rhymes: empty) | – |
+| **Category library** | `library/`: comedy COM01–10, quiz QUZ01–10, all with Hindi versions (knowledge, science, abc, counting, rhymes: empty) | – |
 
 ## Change log (IST, UTC in brackets; newest last)
 
@@ -87,3 +87,4 @@ Never paste tokens into chat, files or commits; they go only into GitHub Secrets
 | 2026-11-08 12:32 IST (07:02 UTC) | File created. Kids weekly long workflow: default `PUBLISH_WINDOW` corrected from 16:00-19:00 to 17:00-20:00 (also copied to the repos as `docs/CHANNELS_REFERENCE.md`). |
 | 2026-11-08 12:46 IST (07:16 UTC) | **Script → video** for both channels: workflow option `script` (kids: replaces `fix_existing` in the form to stay within 10 options). New `pipeline/script2episode.py`, guide `scripts/README.md`, `scripts/TEMPLATE.txt`, example scripts; progress kept in `custom/state.json`. |
 | 2026-11-08 13:09 IST (07:39 UTC) | **Channel hashtags**: #TheCurioKidsClub / #AInationstudio always included, in 2nd place; per-platform limits YouTube 15, Instagram 5, Facebook 10 (`pipeline/hashtags.py`). Hindi videos keep #Hindi in the first three. |
+| 2026-11-08 13:38 IST (08:08 UTC) | Kids: **Hindi for categories**: comedy and quiz translated (20 `hi.json`, jokes and riddles rewritten where English puns don't work in Hindi, with replacement boards via `hi.json` `boards`); `category` + `language: hi` now works. Both: clearer messages when a video was deleted ("video not found … (deleted?)"). |

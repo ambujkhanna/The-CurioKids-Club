@@ -200,6 +200,8 @@ To post a video from a particular category, go to Actions → **Daily Curio Kids
 - **Voices:** Chatterbox's multilingual model speaks Hindi in Mia's, Leo's and Dad's voices. To use separate Hindi voice clips, put them in `assets/voices/hi/mia.wav` (and `leo.wav`, `dad.wav`).
   - If Chatterbox fails, Kokoro's Hindi voices are used instead (added automatically by `setup_models.py`).
   - Hear samples first: Actions → Voice Lab → which: `hindi`.
+- **Hindi categories (added 2026-11-08):** comedy and quiz have Hindi versions too (`library/<cat>/<id>/hi.json`). Run workflow → category `comedy` (or `quiz`) + language `hi`. Each category keeps separate Hindi progress.
+  - Where a joke had to be rewritten for Hindi (an English pun that doesn't work in Hindi), `hi.json` has a `"boards"` section. It replaces those boards for the Hindi video only, still in English text, so the pictures match the Hindi joke.
 - **Manual runs:** Run workflow → language: `hi`, optionally with an episode id and dry_run. Hindi progress is tracked separately from English: the Hindi track starts from the first episode again, which is a new audience.
 
 ## Videos from your own script (added 2026-11-08)

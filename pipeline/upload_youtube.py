@@ -68,6 +68,8 @@ def set_thumbnail(video_id, path):
         return "set"
     except Exception as e:  # e.g. channel not phone-verified for custom thumbnails
         msg = str(e)
+        if "404" in msg or "cannot be found" in msg.lower() or "trying to insert a thumbnail image for cannot" in msg:
+            print("thumbnail not set: video not found"); return "not set: video not found on YouTube (deleted?)"
         if "forbidden" in msg.lower() or "403" in msg:
             msg = "not allowed yet - verify the channel (youtube.com/verify) to enable custom thumbnails; " + msg[:160]
         print("thumbnail not set:", msg)

@@ -24,6 +24,10 @@ import char_line, bg_line
 
 EP = json.load(open(os.environ["EPISODE"]))
 ELINES = EP["lines"]
+if K.T.get("lang") == "hi":  # Hindi version: hi.json may replace boards where the Hindi joke differs from the English one
+    _hp = os.path.join(os.path.dirname(os.environ["EPISODE"]), "hi.json")
+    for _i, _b in (json.load(open(_hp, encoding="utf-8")).get("boards", {}) if os.path.exists(_hp) else {}).items():
+        ELINES[int(_i)] = dict(ELINES[int(_i)], board=_b)
 assert len(ELINES) == len(LN), "timing.json does not match the episode: run tts.py with the same EPISODE first"
 
 ICONS = {"chat": icon_chat, "robot": icon_robot, "check": icon_check, "sun": icon_sun, "train": icon_train,

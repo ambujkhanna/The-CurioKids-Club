@@ -377,11 +377,15 @@ def main():
             print("Nothing due right now (alternate days: Hindi 09-11 IST, English 17-20 IST)."); return 0
         HI = plan[0] == "hi"; target_day = plan[1]
         print(f"== auto: {'Hindi' if HI else 'English'} video for {target_day}")
-    if HI and (CATEGORY or LONG):
-        print("Hindi versions are made for the daily Shorts (episodes/) only."); return 1
+    if HI and LONG:
+        print("Hindi versions are made for Shorts (daily episodes and categories), not the long videos."); return 1
     ep = pick(state, forced)
     if not ep:
-        print(f"No ready episode left in the backlog. Add {os.path.relpath(EPDIR, ROOT)}/<id>/episode.json files."); return 0
+        if HI:
+            msg = f"No episode with a Hindi version (hi.json) left in {os.path.relpath(EPDIR, ROOT)}/."
+        else:
+            msg = f"No ready episode left in the backlog. Add {os.path.relpath(EPDIR, ROOT)}/<id>/episode.json files."
+        print(msg); summary("### ℹ️ " + msg); return 0
     eid = ep["id"]; epf = ep["_file"]
     print(f"== {eid}: {ep['title']}")
     import images  # download any real illustrations this episode uses (from GitHub), before checking it

@@ -141,7 +141,9 @@ def fb_set_thumbnail(vid, jpg=None):
         _req(f"{GRAPH}/{vid}/thumbnails", raw=body, headers=hd)
         return "cover set"
     except Exception as e:
-        print("note: Facebook cover not set:", str(e)[:150]); return "cover not set: " + str(e)[:120]
+        print("note: Facebook cover not set:", str(e)[:150])
+        if "does not exist" in str(e): return "cover not set: video not found on the Page (deleted?)"
+        return "cover not set: " + str(e)[:120]
 
 
 def _fb_source(vid, tok, wait=600):
