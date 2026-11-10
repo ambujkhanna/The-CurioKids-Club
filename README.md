@@ -21,14 +21,14 @@ Hashtag: **#TheCurioKidsClub**
 ## How it works (every day, automatically)
 
 ```text
-GitHub Actions, 08:40 UTC (14:10 IST), or Actions → "Daily Curio Kids Short" → Run workflow
+GitHub Actions, 08:40 UTC (14:10 IST) and 15:40 UTC (21:10 IST), or Actions → "Daily Curio Kids Short" → Run workflow
   → pick the next ready episode in episodes/   (skips ones already uploaded)
   → voices (Kokoro, free; Leo's voice is pitch-shifted to sound younger)
   → frames (skia) → MP4 with captions + a different original music track per episode (FFmpeg)
   → designed thumbnail (headline + question + pictures + characters)
   → QC (1080×1920, 45–180 s, audio level, captions, title/description)
-  → upload to YouTube as "Made for Kids", category Education, AI-content flag on, then set the thumbnail
-  → scheduled in a random slot 16:00–19:00 IST (change with repo variable PUBLISH_WINDOW)
+  → upload to YouTube with the MADE_FOR_KIDS repository variable applied, synthetic-media disclosure enabled, then set the thumbnail
+  → scheduled in a random slot: English 17:00–20:00 IST or Hindi 09:00–11:00 IST (repository variables PUBLISH_WINDOW / PUBLISH_WINDOW_HI)
   → write episodes/state.json, keep the MP4 as a run artifact for 14 days
 ```
 
@@ -48,9 +48,9 @@ If any step fails, nothing is uploaded. Setup instructions are in **`docs/SETUP.
 | `pipeline/finish.py` | captions, sound mix, MP4 |
 | `pipeline/music.py` | a different original music track per episode (or your own tracks in `music/`) |
 | `pipeline/thumbnail.py` | designed thumbnail for each video |
-| `pipeline/upload_youtube.py` | YouTube upload (Made for Kids) |
+| `pipeline/upload_youtube.py` | YouTube upload (audience declaration follows `MADE_FOR_KIDS`) |\n| `pipeline/analytics.py` | read-only per-video YouTube Analytics collector |\n| `docs/ANALYTICS.md` | analytics setup, OAuth scope and report interpretation |
 | `pipeline/validate_episode.py` | checks episode files before you push |
-| `.github/workflows/curio-kids-short.yml` | the daily schedule |
+| `.github/workflows/curio-kids-short.yml` | the daily Shorts schedule |\n| `.github/workflows/youtube-analytics.yml` | read-only analytics collection (requires a separate OAuth secret) |
 | `fonts/` | caption fonts (OFL) |
 
 ## Adding episodes later
