@@ -1,6 +1,6 @@
 # Make a video from your own script (The CurioKids Club)
 
-Write a script as a plain text file in this `scripts/` folder. Then run **Actions → Daily Curio Kids Short → Run workflow** and type its path in **script** (for example `scripts/how-bees-make-honey.txt`). The pipeline checks the script, turns it into an episode, and renders, uploads and posts it like any other video.
+Write a script as a plain text file in this `scripts/` folder. You can also **paste the whole script** into the Run workflow box (see 1b). Then run **Actions → Daily Curio Kids Short → Run workflow** and type its path in **script** (for example `scripts/how-bees-make-honey.txt`). The pipeline checks the script, turns it into an episode, and renders, uploads and posts it like any other video.
 
 **Safe by design:** if anything in the script is wrong, the run **stops before making a video** and the run summary lists every problem with its line number. A broken or half-made video can't be uploaded.
 
@@ -9,6 +9,13 @@ Write a script as a plain text file in this `scripts/` folder. Then run **Action
 2. Click **Add file → Create new file**.
 3. **File name:** lowercase words joined by `-`, ending in `.txt`, with **no spaces**, e.g. `how-bees-make-honey.txt`. Each file becomes **one** video. To post another video, use a **new** file name (a file that was already uploaded won't be uploaded twice).
 4. Paste your script (start from `TEMPLATE.txt`), then click **Commit changes**.
+
+## 1b. Or paste the whole script (no file)
+
+In **Run workflow**, paste the complete script (header, `---` and all lines) straight into the **script** box. GitHub turns it into one long line; the pipeline splits it back at every `TITLE:`, `---`, `DAD:` … so the result is the same as a file. Good to know:
+- Don't write a character name followed by a colon inside a sentence (e.g. "ask your dad: he knows"), it would start a new line.
+- The video's id comes from the title, so the same title won't be uploaded twice. The cleaned-up script is saved in the run's **Artifacts** (`pasted-<title>.txt`).
+- The repos are public: anyone can read a run's log, including a pasted script. Use a file if the script is private before it goes live.
 
 ## 2. The format
 

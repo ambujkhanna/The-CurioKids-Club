@@ -42,6 +42,21 @@ EMOJI = {  # keyword -> picture, for boards the script didn't specify
 }
 
 
+HEAD_KEYS = ("TITLE_BOARD", "TITLE_HI", "TITLE", "COVER", "DESCRIPTION_HI", "DESCRIPTION", "HASHTAGS", "TAGS", "BOARD")
+
+
+def from_pasted(text):
+    """A script pasted into the Run-workflow 'script' box arrives as ONE line (GitHub drops the line breaks).
+    Put each 'KEY:' / 'NAME:' and the '---' back on its own line."""
+    keys = sorted(set(HEAD_KEYS) | set(CH["cast"]) | {"HI"}, key=len, reverse=True)
+    t = text.replace("\r", "")
+    t = re.sub(r"\s*-{3,}\s*", "\n---\n", t, count=1)
+    alt = "|".join(keys)
+    t = re.sub(r"(" + alt + r")\s*:", lambda m: "\n" + m.group(1) + ":", t)  # CAPITAL names, even glued to the previous word
+    t = re.sub(r"(?i)(?<![A-Za-z0-9_])(" + alt + r")\s*:", lambda m: "\n" + m.group(1).upper() + ":", t)  # 'Teen:' / 'dad:' 
+    return "\n".join(l.strip() for l in t.split("\n") if l.strip()) + "\n"
+
+
 def parse(text):
     """-> (headers dict, lines list of dict(who, text, hint, hi, ln)), problems list"""
     head, lines, probs, body = {}, [], [], False

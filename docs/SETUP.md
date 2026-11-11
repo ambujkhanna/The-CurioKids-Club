@@ -227,3 +227,10 @@ Write a script in `scripts/` (a plain text file), then Run workflow → **script
 - **How to post one:** Run workflow → category `varnamala` + language `hi` (Hindi audio, English subtitles), or language `en` (an English video teaching Hindi letters).
 - **Letter board:** shows one big Hindi letter plus up to 4 picture words (`"type": "letter", "letter": "क"`).
 - **Hindi text** on boards and thumbnails uses **Poppins Bold** (OFL). It's shaped with HarfBuzz (`uharfbuzz`, Apache-2.0, in `pipeline/requirements.txt`), so joined letters (क्ष, ज्ञ, त्र) and vowel signs (ि) display correctly (`pipeline/deva.py`).
+
+## Intro, end card and "Find us online" (added 2026-11-11 12:26 IST)
+
+Every video now starts with a 2-second **intro** ("Welcome to" + the animated channel logo + a short original music sting; Hindi videos say "आपका स्वागत है") and ends with a 3.5-second **"Find us online"** card listing the YouTube, Facebook and Instagram links. The links are in `pipeline/hashtags.py` (`LINKS`); the kids logo is `assets/brand/logo.png` (from your `branding/` folder).
+- Repo variables `INTRO` = `off` / `OUTRO` = `off` switch them off (default `on`). Shorts never go over 180 s: if the extras would push a Short over, they are left out and the log says so.
+- Tip: Shorts lose viewers in the first 2 seconds. If the retention graph in YouTube Studio drops at the start, try `INTRO=off` for a week and compare.
+- End card buttons now size to their text (no more text touching the outline); the old "Search … on YouTube, Instagram, Facebook" strip is replaced by the links card.

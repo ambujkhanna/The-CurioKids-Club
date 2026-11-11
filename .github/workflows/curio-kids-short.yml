@@ -45,7 +45,7 @@ on:
         default: "0"
         options: ["0", "1", "2", "3", "4"]
       script:
-        description: "Make a video from YOUR script: path of the file, e.g. scripts/bees.txt (format: scripts/README.md)"
+        description: "Make a video from YOUR script: a file path (scripts/bees.txt) OR paste the whole script here (format: scripts/README.md)"
         required: false
 
 permissions:
@@ -126,6 +126,9 @@ jobs:
           TTS_ENGINE: ${{ vars.TTS_ENGINE || 'chatterbox' }}
           CB_PYTHON: /home/runner/cbenv/bin/python
           CB_TURBO_LAUGHS: ${{ vars.CB_TURBO_LAUGHS || '1' }}
+          INTRO: ${{ vars.INTRO || 'on' }}
+          OUTRO: ${{ vars.OUTRO || 'on' }}
+          SCRIPT_IN: ${{ inputs.script }}
           HI_TTS_ENGINE: ${{ vars.HI_TTS_ENGINE || 'kokoro' }}
           HI_VOICE_CLIP: ${{ vars.HI_VOICE_CLIP || 'english' }}
           CB_CFG_HI: ${{ vars.CB_CFG_HI || '' }}
@@ -140,7 +143,6 @@ jobs:
           if [ "${{ inputs.social_only }}" = "true" ]; then ARGS="$ARGS --social-only"; fi
           if [ -n "${{ inputs.category }}" ] && [ "${{ inputs.category }}" != "none" ]; then ARGS="$ARGS --category ${{ inputs.category }}"; fi
           if [ "${{ inputs.ig_test }}" = "true" ]; then ARGS="$ARGS --ig-test"; fi
-          if [ -n "${{ inputs.script }}" ]; then ARGS="$ARGS --script ${{ inputs.script }}"; fi
           if [ -n "${{ inputs.social_backfill }}" ] && [ "${{ inputs.social_backfill }}" != "0" ]; then ARGS="$ARGS --social-backfill ${{ inputs.social_backfill }}"; fi
           if [ "${{ github.event_name }}" = "schedule" ]; then ARGS="--auto"; fi
           if [ "${{ inputs.language }}" = "hi" ]; then ARGS="$ARGS --lang hi"; fi
@@ -155,6 +157,7 @@ jobs:
             out/*.mp4
             out/*_thumbnail.jpg
             out/*.jpg
+            out/*.txt
           retention-days: 14
           if-no-files-found: ignore
 

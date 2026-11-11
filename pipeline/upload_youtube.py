@@ -35,7 +35,7 @@ def upload(path, ep, publish_at_utc_iso):
     from googleapiclient.http import MediaFileUpload
     import images  # credits required by CC BY illustrations
     cred = images.credits(ep)
-    desc = ep["description"].rstrip() + ("\n\n" + cred if cred else "") + "\n\n" + hashtags.ENGAGE["youtube"] + "\n\n" + " ".join(hashtags.pick(ep.get("hashtags", []), "youtube"))
+    desc = ep["description"].rstrip() + ("\n\n" + cred if cred else "") + "\n\n" + hashtags.ENGAGE["youtube"] + "\n\n" + hashtags.links_block("youtube") + "\n\n" + " ".join(hashtags.pick(ep.get("hashtags", []), "youtube"))
     body = {
         "snippet": {"title": hashtags.with_brand(ep["title"][:100], 100), "description": desc[:4900], "tags": ep.get("tags", [])[:15],
                     "categoryId": "27", "defaultLanguage": ep.get("lang", "en"), "defaultAudioLanguage": ep.get("lang", "en")},

@@ -56,7 +56,8 @@ def caption(ep, brand_line, platform="instagram"):
     head = hashtags.with_brand(ep["title"], 300)
     if hashtags.BRAND.lower() in head.lower():  # channel tag already in the first line: count it once (Instagram max 5)
         tags = [t for t in tags if t.lower() != hashtags.BRAND.lower()]
-    out = f"{head}\n\n{desc}\n\n{hashtags.ENGAGE.get(platform, '')}\n{brand_line}\n\n" + " ".join(tags)
+    links = hashtags.links_block(platform)
+    out = f"{head}\n\n{desc}\n\n{hashtags.ENGAGE.get(platform, '')}\n{brand_line}\n\n" + (links + "\n\n" if links else "") + " ".join(tags)
     return out[:2100]
 
 

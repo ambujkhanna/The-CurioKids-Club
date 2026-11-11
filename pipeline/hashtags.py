@@ -11,6 +11,22 @@ KIDS = os.path.exists(os.path.join(ROOT, "library")) or "curio" in ROOT.lower()
 BRAND = os.environ.get("BRAND_HASHTAG") or ("#TheCurioKidsClub" if KIDS else "#AInationstudio")
 LIMITS = {"youtube": 15, "instagram": 5, "facebook": 10}
 NAME = "The CurioKids Club" if KIDS else "AInation Studio"
+# the channel's links, shown on the closing "Find us online" card (pipeline/bumpers.py)
+LINKS = ([("YouTube channel", "https://www.youtube.com/@CurioKidsClub"),
+          ("Facebook page", "https://www.facebook.com/TheCurioKidsClub"),
+          ("Instagram", "https://www.instagram.com/thecuriokidsclub/")] if KIDS else
+         [("YouTube channel", "https://www.youtube.com/@AI.nationstudio"),
+          ("Facebook page", "https://www.facebook.com/AI.nationStudio"),
+          ("Instagram", "https://www.instagram.com/ai.nationstudio/")])
+
+
+def links_block(platform="youtube"):
+    """'Find us online' lines for descriptions/captions (Instagram makes links unclickable, so it gets none)."""
+    if platform == "instagram": return ""
+    icons = {"YouTube channel": "▶️", "Facebook page": "📘", "Instagram": "📸"}
+    return "🔗 Find us online:\n" + "\n".join(f"{icons.get(l, '•')} {l}: {u}" for l, u in LINKS)
+
+
 # one line asking for saves + shares (they count more than likes for reach)
 ENGAGE = {
     "instagram": "📌 Save this for later & share it with a curious kid you know! 💛" if KIDS

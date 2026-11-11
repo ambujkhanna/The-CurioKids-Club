@@ -1,6 +1,6 @@
 # Channels reference: The CurioKids Club & AInation Studio
 
-**Last updated:** 2026-11-10 16:24 IST (10:54 UTC)
+**Last updated:** 2026-11-11 12:34 IST (07:04 UTC)
 
 This is the quick reference for both channels: links, schedules, workflow options, secrets and variables. It's updated whenever any of these change; see the change log at the bottom. The full history is in `TheCurioKidsClub_handoff.md` and `AInation_Studio_handoff.md`.
 
@@ -10,7 +10,7 @@ This is the quick reference for both channels: links, schedules, workflow option
 |---|---|---|
 | **GitHub repo** | https://github.com/ambujkhanna/The-CurioKids-Club | https://github.com/ambujkhanna/youtube-studio-automation |
 | **YouTube** | @CurioKidsClub. Audience: **"not made for kids"**, a deliberate owner decision for wider audience and reach (repo variable `MADE_FOR_KIDS`) | @AI.nationstudio (channel ID UCexKyxd_qyUUmFQHKs983nw) |
-| **Facebook Page** | https://www.facebook.com/profile.php?id=61596461063065 | https://www.facebook.com/profile.php?id=61596527993377 (Graph Page id 1419246047936930) |
+| **Facebook Page** | https://www.facebook.com/TheCurioKidsClub | https://www.facebook.com/AI.nationStudio (Graph Page id 1419246047936930) |
 | **Instagram** | https://www.instagram.com/thecuriokidsclub/ | https://www.instagram.com/ai.nationstudio/ |
 | **Characters** | Mia (big sister), Leo (little brother), Dad | Dad, Teen |
 | **Voices** | Chatterbox (cloned Mia/Leo/Dad) + Turbo for laughs/[tags]; **Hindi: Kokoro native Hindi voices** (Leo slowed); Kokoro as backup | Chatterbox (cloned Dad/Teen) + Turbo for laughs/[tags]; Kokoro as backup |
@@ -25,8 +25,9 @@ This is the quick reference for both channels: links, schedules, workflow option
 | **Weekly long video (16:9)** | *Weekly Curio Kids Long Video*: Saturday 10:00 | *Weekly AInation Long Video*: Sunday 10:00 |
 | **Voice Lab** | *Voice Lab (Chatterbox / Turbo voice samples)*: manual only | – |
 | **Opening hook** | The episode's question in big yellow letters for the first 2.3 s; curtains start half open (optional `"hook"` field in episode.json overrides the text) | Same (no curtains) |
-| **Ending** | Spoken: "…subscribe… and share this with a friend!"; end card with Subscribe / Like / Share + "Search "The CurioKids Club" on YouTube, Instagram, Facebook" | Spoken: "Subscribe to AI Nation Studio, and share this with a friend!"; same end card with "Search "AInation Studio" …" |
-| **Caption / description** | Save & share line (IG: "📌 Save this… share it with a curious kid", FB/YouTube share lines) | Same, AI wording |
+| **Intro** | 2 s: "Welcome to" + animated round logo + music sting (Hindi: "आपका स्वागत है"); repo variable `INTRO` | 2 s: "Welcome to" + animated yellow "AI" badge + music sting |
+| **Ending** | Spoken: "…subscribe… and share this with a friend!"; end card Subscribe / Like / Share; then 3.5 s **"Find us online"** card with the YouTube, Facebook, Instagram links (`OUTRO`) | Spoken: "Subscribe to AI Nation Studio, and share this with a friend!"; same end card + links card |
+| **Caption / description** | Save & share line (IG: "📌 Save this… share it with a curious kid", FB/YouTube share lines) + **'🔗 Find us online' block with the YouTube, Facebook, Instagram links** (YouTube description + Facebook caption; Instagram captions can't have clickable links) | Same, AI wording |
 | **Channel hashtag** | **#TheCurioKidsClub**: right after the YouTube title and the first line of FB/IG captions (visible without 'more'), counted once | **#AInationstudio**: same |
 | **Hashtag limits** | YouTube max 15 (channel tag in the first 3, + #Shorts) · Instagram max **5** · Facebook max 10 | same |
 | **Facebook / Instagram** | Posted automatically right after each YouTube upload (Reel, designed cover; Facebook cover set once processing is done, result in the run summary) | Same |
@@ -44,7 +45,7 @@ This is the quick reference for both channels: links, schedules, workflow option
 | **social_only** ☐ | Post the chosen `episode` to Facebook + Instagram only, no YouTube | ✅ | ✅ |
 | **social_backfill** (0–4) | Post that many already-uploaded videos to Facebook/Instagram, oldest first (skips what's already posted) | ✅ | ✅ |
 | **refresh_thumbnails** ☐ | Redesign and re-upload thumbnails for all uploaded videos, and update Facebook Reel covers | ✅ | ✅ |
-| **script** (text) | **Make a video from your own script**: path like `scripts/bees.txt` (format: `scripts/README.md`); problems stop the run before rendering | ✅ | ✅ |
+| **script** (text) | **Make a video from your own script**: path like `scripts/bees.txt` **or the whole script pasted in** (format: `scripts/README.md`); problems stop the run before rendering | ✅ | ✅ |
 | **board_style** (default / hanging / display / whiteboard) | Board look for this run only; `default` = repo variable `BOARD_STYLE`, else hanging | – | ✅ |
 | **ig_test** ☐ | Instagram check: an 8 s test post; with `episode` filled in, tests 4 versions of it without posting | ✅ | – |
 | ~~fix_existing~~ | Removed from the form (GitHub allows 10 options; it needs the full `youtube`-scope token anyway). Still available in code: `daily.py --fix-existing` | – | – |
@@ -77,6 +78,7 @@ Never paste tokens into chat, files or commits; they go only into GitHub Secrets
 | `HI_TTS_ENGINE` | `kokoro` (native Hindi voices; `chatterbox` = cloned voices) | ✅ | – |
 | `HI_VOICE_CLIP` | `english` (`hindi` = clone Hindi lines from the native Hindi clips in `assets/voices/hi/`) | ✅ | – |
 | `CB_CFG_HI` | empty = 0.35 (lower, e.g. `0` or `0.2` = less English accent in Hindi) | ✅ | – |
+| `INTRO` / `OUTRO` | `on` (`off` = no logo intro / no links card) | ✅ | ✅ |
 | `MADE_FOR_KIDS` | `false` | ✅ | – |
 | `YT_PLAYLIST` | empty (off; videos are added to playlists by hand) | ✅ | – |
 
@@ -108,3 +110,7 @@ Never paste tokens into chat, files or commits; they go only into GitHub Secrets
 | 2026-11-10 15:47 IST (10:17 UTC) | Kids: **Hindi accent fix, choose by ear**: native Hindi voice clips `assets/voices/hi/` (Kokoro Hindi voices); repo variables `HI_VOICE_CLIP` (english/hindi) and `CB_CFG_HI`; Voice Lab `hindi` now makes an A/B/C/D comparison on varnamala lines. Default sound unchanged until the owner picks. |
 | 2026-11-10 15:53 IST (10:23 UTC) | Kids: owner approved the Kokoro native Hindi sample → **Hindi videos now use Kokoro's Hindi voices** (repo variable `HI_TTS_ENGINE`, default `kokoro`); English stays on Chatterbox. Leo's Hindi voice slowed (speed 1.05 → 0.92). |
 | 2026-11-10 16:24 IST (10:54 UTC) | Both: owner saw no channel hashtag and no designed cover on a new AInation video (ep011). **Channel tag now right after the title** on YouTube and in the first line of Facebook/Instagram captions (Shorts/Reels hide the description); tag counted once so Instagram stays at 5. **Facebook cover** is set after Facebook finishes processing (it silently failed when set straight after upload); the run summary shows `cover set` / `designed cover`. Old Facebook covers: run `refresh_thumbnails`. Old YouTube titles stay as they are (changing them needs a wider token). |
+| 2026-11-11 12:26 IST (06:56 UTC) | Both: **paste a whole script** into the Run-workflow `script` box (split back into lines; saved to Artifacts as `pasted-<title>.txt`; the input now reaches the pipeline via the `SCRIPT_IN` env, safe for quotes). **End card buttons** sized to their text with padding; 'Search …' strip removed. **Intro** (2 s, logo + music sting) and **'Find us online' links card** (3.5 s) around every video (`pipeline/bumpers.py`, repo variables `INTRO` / `OUTRO`); kids logo `assets/brand/logo.png`. |
+| 2026-11-11 12:31 IST (07:01 UTC) | Both: **Facebook links** are now the Pages' own names everywhere (videos' 'Find us online' card, READMEs, reference, handoffs): https://www.facebook.com/TheCurioKidsClub and https://www.facebook.com/AI.nationStudio (owner: always use these). |
+| 2026-11-11 12:33 IST (07:03 UTC) | AInation: Facebook link corrected to **https://www.facebook.com/AI.nationStudio** (owner) everywhere. |
+| 2026-11-11 12:34 IST (07:04 UTC) | Both: the 3 channel links (YouTube, Facebook, Instagram) are added to every new **YouTube description** and **Facebook caption** ('🔗 Find us online' block, `hashtags.links_block()`); Instagram captions stay without links (not clickable there). Already-posted videos keep their old text. |

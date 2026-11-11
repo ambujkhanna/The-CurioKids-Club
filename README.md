@@ -14,7 +14,7 @@ The CurioKids Club makes short, curious answers to kids' big questions (animals,
 | Platform | Link |
 |---|---|
 | ▶️ YouTube | https://www.youtube.com/@CurioKidsClub |
-| 📘 Facebook | https://www.facebook.com/profile.php?id=61596461063065 |
+| 📘 Facebook | https://www.facebook.com/TheCurioKidsClub |
 | 📸 Instagram | https://www.instagram.com/thecuriokidsclub/ |
 
 Hashtag: **#TheCurioKidsClub**
