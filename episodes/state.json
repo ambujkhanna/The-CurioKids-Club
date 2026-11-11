@@ -137,6 +137,14 @@
       "url": "https://www.youtube.com/shorts/fTbBW1Um2zs",
       "uploaded_at": "2026-11-10T00:53:00+05:30",
       "facebook_cover": "cover set"
+    },
+    "ep007": {
+      "voices": "chatterbox",
+      "title": "How Is a Rainbow Made? \ud83c\udf08 Fun Facts for Kids",
+      "rendered_at": "2026-11-11T12:53:19+05:30",
+      "duration_s": 66.73,
+      "status": "rendered",
+      "note": "dry run"
     }
   }
 }
