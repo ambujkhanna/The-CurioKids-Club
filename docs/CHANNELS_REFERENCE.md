@@ -1,6 +1,6 @@
 # Channels reference: The CurioKids Club & AInation Studio
 
-**Last updated:** 2026-11-11 12:34 IST (07:04 UTC)
+**Last updated:** 2026-11-11 13:27 IST (07:57 UTC)
 
 This is the quick reference for both channels: links, schedules, workflow options, secrets and variables. It's updated whenever any of these change; see the change log at the bottom. The full history is in `TheCurioKidsClub_handoff.md` and `AInation_Studio_handoff.md`.
 
@@ -114,3 +114,4 @@ Never paste tokens into chat, files or commits; they go only into GitHub Secrets
 | 2026-11-11 12:31 IST (07:01 UTC) | Both: **Facebook links** are now the Pages' own names everywhere (videos' 'Find us online' card, READMEs, reference, handoffs): https://www.facebook.com/TheCurioKidsClub and https://www.facebook.com/AI.nationStudio (owner: always use these). |
 | 2026-11-11 12:33 IST (07:03 UTC) | AInation: Facebook link corrected to **https://www.facebook.com/AI.nationStudio** (owner) everywhere. |
 | 2026-11-11 12:34 IST (07:04 UTC) | Both: the 3 channel links (YouTube, Facebook, Instagram) are added to every new **YouTube description** and **Facebook caption** ('🔗 Find us online' block, `hashtags.links_block()`); Instagram captions stay without links (not clickable there). Already-posted videos keep their old text. |
+| 2026-11-11 13:27 IST (07:57 UTC) | Both: **text can no longer run past the board** (every board text shrinks to the board's width; one-line titles keep shrinking instead of overflowing; script title boards keep the full title, cut only between words with '…'). **Speech:** version numbers and web addresses are said naturally: 'llama3.2' → 'llama 3 point 2', 'ollama.com' → 'ollama dot com' (Hindi: दशमलव / डॉट); boards and files keep the original text. |

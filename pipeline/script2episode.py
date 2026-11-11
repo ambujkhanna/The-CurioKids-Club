@@ -82,6 +82,15 @@ def parse(text):
     return head, lines, probs
 
 
+def _short(s, n=60):
+    """Board subtitle: no emoji, cut only between words (never mid-word), '…' when shortened."""
+    import unicodedata  # drop emoji/symbols only (keeps Hindi vowel signs)
+    s = "".join(ch for ch in s if not (unicodedata.category(ch) in ("So", "Sk") or ch in "\u200d\ufe0f→➜➡")).strip()
+    s = re.sub(r"\s{2,}", " ", s)
+    if len(s) <= n: return s
+    return s[:n].rsplit(" ", 1)[0].rstrip(" ,:;-") + "…"
+
+
 def icon_of(s):
     m = re.match(r"^(img:\S+|[^\w\s\"'(),.!?;:-]+)\s*(.*)$", s.strip())
     return (m.group(1), m.group(2).strip()) if m else (None, s.strip())
@@ -150,7 +159,7 @@ def build(path):
             if i == 0 and head.get("TITLE_BOARD") and "->" in head["TITLE_BOARD"]:
                 a, b = [icon_of(x) for x in head["TITLE_BOARD"].split("->", 1)]
                 e["board"] = {"type": "title", "left": {"icon": a[0] or "❓", "label": a[1].upper()[:12]},
-                              "right": {"icon": b[0] or "💡", "label": b[1].upper()[:12]}, "subtitle": q[:40], "mid": "→"}
+                              "right": {"icon": b[0] or "💡", "label": b[1].upper()[:12]}, "subtitle": _short(q), "mid": "→"}
             else:
                 ic = ic or auto_icon(l["text"] + " " + title)[0] or "❓"
                 e["board"] = {"type": "big", "icon": ic, "text": ht or q}

@@ -79,6 +79,19 @@ if EP_FILE:  # data-driven episode (episodes/<id>/episode.json)
         RAW = [(w, h) for (w, _), h in zip(RAW, _hi["lines"])]
         LINES = [(w, strip_tags(t)) for w, t in RAW]
         VOICES = {"MIA": ("hf_alpha", 1.0), "LEO": ("hf_beta", 0.92, 2.5), "DAD": ("hm_omega", 0.95), "TEEN": ("hf_alpha", 1.0)}  # Leo slowed 1.05 -> 0.92 (owner 2026-11-10)
+def speakable(t, lang="en"):
+    """Text as it should be SAID: 'llama3.2' -> 'llama 3 point 2', 'ollama.com' -> 'ollama dot com', 'v2.1.0' -> 'v 2 point 1 point 0'."""
+    pt, dt_ = (" दशमलव ", " डॉट ") if lang == "hi" else (" point ", " dot ")
+    t = re.sub(r"\b([A-Za-z0-9-]+)\.(com|org|net|ai|io|in|dev|app|co)\b", lambda m: m.group(1) + dt_.rstrip() + " " + m.group(2), t)
+    t = re.sub(r"(?<=[A-Za-z])(?=\d)", " ", t)  # llama3 -> llama 3
+    t = re.sub(r"\d+(?:\.\d+)+", lambda m: pt.join(m.group(0).split(".")) if not re.fullmatch(r"\d+\.\d{3,}", m.group(0)) else m.group(0), t)
+    return re.sub(r"\s{2,}", " ", t)
+
+
+if EP_FILE:  # spoken text only: the boards and the episode file keep '3.2', 'ollama.com'
+    _lang = globals().get("LANG", "en")
+    RAW = [(w, speakable(t, _lang)) for w, t in RAW]
+    LINES = [(w, speakable(t, _lang)) for w, t in LINES]
 GAP = 0.28  # seconds between lines
 if EP_FILE:
     GAP = float(_ep.get("gap") or os.environ.get("TTS_GAP") or 0.45)

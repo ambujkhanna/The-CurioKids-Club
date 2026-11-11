@@ -193,8 +193,13 @@ def big_text(c, s, x, y, size, color, maxw, tf=FONT_XB, min_size=46, lines=2, ou
             best = min(range(1, len(words)), key=lambda k: max(f.measureText(" ".join(words[:k])), f.measureText(" ".join(words[k:]))))
             rows = [" ".join(words[:best]), " ".join(words[best:])]
             if max(f.measureText(r) for r in rows) <= maxw: break
-    else:
-        f = _F(min_size); rows = [s]; sz = min_size
+    else:  # still too wide at min_size: keep shrinking until it fits - text must never leave the board
+        sz = min_size; f = _F(sz); rows = [s]
+        if lines >= 2 and len(words) > 1:
+            best = min(range(1, len(words)), key=lambda k: max(f.measureText(" ".join(words[:k])), f.measureText(" ".join(words[k:]))))
+            rows = [" ".join(words[:best]), " ".join(words[best:])]
+        while max(f.measureText(r) for r in rows) > maxw and sz > 18:
+            sz -= 2; f = _F(sz)
     lh = sz * 1.08; y0 = y - lh * (len(rows) - 1) / 2
     for r_ in rows:
         if outline and deva.has(r_):
@@ -605,6 +610,7 @@ def _speaker_x(t):
     return CH[cur["speaker"]].x
 bg_line.SPEAKER_X = _speaker_x
 K.CHARS = ORDER; K.SHOTS = SHOTS; K.CAMS = CAMS; K.PUNCH = PUNCH; K.LOGO_T = T_FOLLOW or DUR + 10
+K.SAFE_W = BW - 24  # board inner width: text never runs past the board edges
 K.draw_board = draw_board; K.CHARMOD = char_line; K.draw_bg = bg_line.draw_bg; K.draw_board_frame = bg_line.draw_board_frame
 
 
