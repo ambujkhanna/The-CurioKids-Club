@@ -1,6 +1,6 @@
 # Channels reference: The CurioKids Club & AInation Studio
 
-**Last updated:** 2026-11-11 13:27 IST (07:57 UTC)
+**Last updated:** 2026-11-12 13:18 IST (07:48 UTC)
 
 This is the quick reference for both channels: links, schedules, workflow options, secrets and variables. It's updated whenever any of these change; see the change log at the bottom. The full history is in `TheCurioKidsClub_handoff.md` and `AInation_Studio_handoff.md`.
 
@@ -44,7 +44,7 @@ This is the quick reference for both channels: links, schedules, workflow option
 | **category** (none / comedy / quiz / knowledge / science / abc / counting / rhymes / varnamala) | Post the next episode from that category instead of the daily Short | ✅ | – |
 | **social_only** ☐ | Post the chosen `episode` to Facebook + Instagram only, no YouTube | ✅ | ✅ |
 | **social_backfill** (0–4) | Post that many already-uploaded videos to Facebook/Instagram, oldest first (skips what's already posted) | ✅ | ✅ |
-| **refresh_thumbnails** ☐ | Redesign and re-upload thumbnails for all uploaded videos, and update Facebook Reel covers | ✅ | ✅ |
+| **refresh_thumbnails** ☐ | Redesign and re-upload thumbnails for all uploaded videos (daily, script and category videos, Hindi too), and update Facebook Reel covers; with **episode** filled in (e.g. `s-ollama`) only that video | ✅ | ✅ |
 | **script** (text) | **Make a video from your own script**: path like `scripts/bees.txt` **or the whole script pasted in** (format: `scripts/README.md`); problems stop the run before rendering | ✅ | ✅ |
 | **board_style** (default / hanging / display / whiteboard) | Board look for this run only; `default` = repo variable `BOARD_STYLE`, else hanging | – | ✅ |
 | **ig_test** ☐ | Instagram check: an 8 s test post; with `episode` filled in, tests 4 versions of it without posting | ✅ | – |
@@ -78,6 +78,8 @@ Never paste tokens into chat, files or commits; they go only into GitHub Secrets
 | `HI_TTS_ENGINE` | `kokoro` (native Hindi voices; `chatterbox` = cloned voices) | ✅ | – |
 | `HI_VOICE_CLIP` | `english` (`hindi` = clone Hindi lines from the native Hindi clips in `assets/voices/hi/`) | ✅ | – |
 | `CB_CFG_HI` | empty = 0.35 (lower, e.g. `0` or `0.2` = less English accent in Hindi) | ✅ | – |
+| `KEEP_THUMBS` | `2` (each upload run re-applies the designed thumbnail of this many recent videos from the last 3 days; `0` = off) | ✅ | ✅ |
+| `YT_TIMEOUT` | `300` seconds per YouTube call | ✅ | ✅ |
 | `INTRO` / `OUTRO` | `on` (`off` = no logo intro / no links card) | ✅ | ✅ |
 | `MADE_FOR_KIDS` | `false` | ✅ | – |
 | `YT_PLAYLIST` | empty (off; videos are added to playlists by hand) | ✅ | – |
@@ -115,3 +117,6 @@ Never paste tokens into chat, files or commits; they go only into GitHub Secrets
 | 2026-11-11 12:33 IST (07:03 UTC) | AInation: Facebook link corrected to **https://www.facebook.com/AI.nationStudio** (owner) everywhere. |
 | 2026-11-11 12:34 IST (07:04 UTC) | Both: the 3 channel links (YouTube, Facebook, Instagram) are added to every new **YouTube description** and **Facebook caption** ('🔗 Find us online' block, `hashtags.links_block()`); Instagram captions stay without links (not clickable there). Already-posted videos keep their old text. |
 | 2026-11-11 13:27 IST (07:57 UTC) | Both: **text can no longer run past the board** (every board text shrinks to the board's width; one-line titles keep shrinking instead of overflowing; script title boards keep the full title, cut only between words with '…'). **Speech:** version numbers and web addresses are said naturally: 'llama3.2' → 'llama 3 point 2', 'ollama.com' → 'ollama dot com' (Hindi: दशमलव / डॉट); boards and files keep the original text. |
+| 2026-11-11 22:24 IST (16:54 UTC) | Both: **no more endless runs**: every YouTube call has a 5-minute limit (repo variable `YT_TIMEOUT`, seconds), Facebook cover updates 2 minutes; `refresh_thumbnails` runs skip the Chatterbox install; Ubuntu package step retries and stops after 15 min; logs print live. (After two thumbnail-refresh runs hung for 30+ min.) |
+| 2026-11-12 13:16 IST (07:46 UTC) | Both: **thumbnails stick**: a fresh thumbnail file per video (an older video's thumbnail can never be uploaded by mistake), the new video's thumbnail is set again after the Facebook/Instagram posting, each upload run re-applies the thumbnails of the last 2 videos (3 days, Hindi included; `KEEP_THUMBS`), `refresh_thumbnails` also covers Hindi videos. Note: the 14 h runs had finished in 43 min (the page shows the finish time); jobs are capped at 2 h (long videos 4 h). |
+| 2026-11-12 13:18 IST (07:48 UTC) | Both: script videos (`custom/`) and kids category videos are now included in `refresh_thumbnails` and in the automatic re-apply of recent thumbnails; `refresh_thumbnails` + `episode` refreshes one video only (e.g. `s-ollama`, whose YouTube thumbnail had been replaced by a video frame). |

@@ -27,7 +27,12 @@ def _service():
     from googleapiclient.discovery import build
     creds = Credentials(None, refresh_token=os.environ["YT_REFRESH_TOKEN"], token_uri="https://oauth2.googleapis.com/token",
                         client_id=os.environ["YT_CLIENT_ID"], client_secret=os.environ["YT_CLIENT_SECRET"], scopes=SCOPES)
-    return build("youtube", "v3", credentials=creds, cache_discovery=False)
+    try:  # a time limit on every YouTube call, so a stalled connection fails (and is reported) instead of hanging the run
+        import httplib2, google_auth_httplib2
+        http = google_auth_httplib2.AuthorizedHttp(creds, http=httplib2.Http(timeout=int(os.environ.get("YT_TIMEOUT", "300"))))
+        return build("youtube", "v3", http=http, cache_discovery=False)
+    except ImportError:
+        return build("youtube", "v3", credentials=creds, cache_discovery=False)
 
 
 def upload(path, ep, publish_at_utc_iso):

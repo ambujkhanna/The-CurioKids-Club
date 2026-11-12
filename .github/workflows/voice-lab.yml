@@ -19,7 +19,7 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install ffmpeg
-        run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg
+        run: sudo apt-get update -q && sudo apt-get -o Acquire::Retries=3 -o Acquire::http::Timeout=30 install -y -q ffmpeg
       - name: Install Chatterbox (CPU)
         run: |
           pip install torch==2.6.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cpu

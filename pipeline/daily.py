@@ -170,33 +170,116 @@ def chapters(ep):
     return "\n".join(f"{int(t // 60)}:{int(t % 60):02d} {name}" for t, name in [(0.0, marks[0][1])] + marks[1:])
 
 
-def refresh_thumbnails():
-    """Re-design and upload the thumbnail of every video already uploaded (e.g. after a thumbnail redesign)."""
+THUMB = os.path.join(PIPE, "build", "thumbnail.jpg")
+
+
+def remake_thumb(eid, epf, hi=False):
+    """Make one video's designed thumbnail on its own (fresh file every time - never reuse an older one).
+    Returns the JPG path, or None if it could not be made."""
+    if os.path.exists(THUMB): os.remove(THUMB)
+    sh([sys.executable, os.path.join(PIPE, "tts.py")], {"EPISODE": epf, "TTS_ENGINE": "kokoro", "TTS_LANG": "hi" if hi else "en"})
+    sh([sys.executable, os.path.join(PIPE, "episode_engine.py"), "x"],
+       {"EPISODE": epf, "BG": "kids", "DOODLE": "chars", "FORMAT": "long" if LONG else "short", "THUMB_ONLY": "1"}, cwd=PIPE)
+    if not os.path.exists(THUMB): return None
+    os.makedirs(OUT, exist_ok=True)
+    import shutil; dst = os.path.join(OUT, f"{eid}{'_hi' if hi else ''}_thumbnail.jpg"); shutil.copy(THUMB, dst)
+    if hi: hindi_badge(dst)
+    return dst
+
+
+def _uploaded(state):
+    """(eid, hi, record) for every uploaded video, incl. Hindi versions (record['hi'])."""
+    for eid, rec in state["episodes"].items():
+        for hi, r in ((False, rec), (True, rec.get("hi") or {})):
+            if r.get("status") == "uploaded" and r.get("video_id"): yield eid, hi, r
+
+
+def _video_dirs():
+    """Folders whose state.json records uploads: the current one first, then daily episodes, your scripts (custom/)
+    and the kids categories (library/*). Long videos only look at long/."""
+    if LONG: return [EPDIR]
+    ds = [EPDIR, os.path.join(ROOT, "episodes"), os.path.join(ROOT, "custom")] + sorted(glob.glob(os.path.join(ROOT, "library", "*")))
+    out = []
+    for d in ds:
+        if os.path.isdir(d) and os.path.abspath(d) not in [os.path.abspath(x) for x in out]: out.append(d)
+    return out
+
+
+def _dir_episodes(d):
+    eps = {}
+    if os.path.basename(os.path.normpath(d)) == "custom":  # script videos: rebuild custom/<id>/ from scripts/*.txt (not kept in git)
+        try:
+            import script2episode
+            for sp in glob.glob(os.path.join(ROOT, "scripts", "*.txt")):
+                if os.path.basename(sp).upper().startswith("TEMPLATE"): continue
+                f, probs = script2episode.convert(sp)
+                if f and not probs: eps[json.load(open(f, encoding="utf-8"))["id"]] = f
+        except Exception as e:
+            print("note: could not rebuild script episodes:", e)
+    for f in glob.glob(os.path.join(d, "*", "episode.json")):
+        try: eps[json.load(open(f, encoding="utf-8"))["id"]] = f
+        except Exception: pass
+    return eps
+
+
+def keep_recent_thumbnails(state, skip=None):
+    """YouTube can swap a custom thumbnail for an auto frame while it is still processing a new upload.
+    Re-apply the designed thumbnail of the last few uploads (KEEP_THUMBS, default 2, from the last 3 days),
+    looking at daily episodes, script videos and categories alike."""
+    from upload_youtube import set_thumbnail
+    n = int(os.environ.get("KEEP_THUMBS", "2") or 0)
+    if n <= 0: return []
+    now = dt.datetime.now(IST); cands = []; states = {}
+    for d in _video_dirs():
+        st = state if os.path.abspath(d) == os.path.abspath(EPDIR) else (json.load(open(os.path.join(d, "state.json"))) if os.path.exists(os.path.join(d, "state.json")) else None)
+        if not st: continue
+        states[d] = st; eps = _dir_episodes(d)
+        for eid, hi, r in _uploaded(st):
+            if (os.path.abspath(d) == os.path.abspath(EPDIR) and (eid, hi) == skip) or eid not in eps or not r.get("uploaded_at"): continue
+            try: age = now - dt.datetime.fromisoformat(r["uploaded_at"])
+            except Exception: continue
+            if age <= dt.timedelta(days=3): cands.append((r["uploaded_at"], eid, hi, r, d, eps[eid]))
+    out = []; touched = set()
+    for _, eid, hi, r, d, epf in sorted(cands, key=lambda c: c[0], reverse=True)[:n]:
+        try:
+            pth = remake_thumb(eid, epf, hi)
+            res = set_thumbnail(r["video_id"], pth) if pth else "not made"
+        except Exception as e:
+            res = f"failed: {e}"[:120]
+        r["thumbnail_checked"] = dt.datetime.now(IST).isoformat(timespec="minutes") + " " + res; touched.add(d)
+        out.append(f"{eid}{' (Hindi)' if hi else ''}: {res}"); print("thumbnail re-applied:", eid, "hi" if hi else "", res, flush=True)
+    for d in touched:  # the current run's state is saved by the caller
+        if os.path.abspath(d) != os.path.abspath(EPDIR): json.dump(states[d], open(os.path.join(d, "state.json"), "w"), indent=2)
+    return out
+
+
+def refresh_thumbnails(only=None):
+    """Re-design and upload the thumbnail of every video already uploaded (daily episodes, your scripts, categories;
+    Hindi versions too), and the cover of its Facebook Reel."""
     from upload_youtube import have_credentials, set_thumbnail
     if not have_credentials():
         print("No YouTube credentials - nothing to do."); return 0
-    state = load_state(); eps = {}
-    for f in glob.glob(os.path.join(EPDIR, "*", "episode.json")):
-        e = json.load(open(f, encoding="utf-8")); eps[e["id"]] = f
+    import meta_post, re as _re
     done = []
-    for eid, rec in sorted(state["episodes"].items()):
-        if rec.get("status") != "uploaded" or not rec.get("video_id") or eid not in eps: continue
-        env = {"EPISODE": eps[eid], "BG": "kids", "DOODLE": "chars", "FORMAT": "long" if LONG else "short", "THUMB_ONLY": "1"}
-        try:
-            sh([sys.executable, os.path.join(PIPE, "tts.py")], {"EPISODE": eps[eid], "TTS_ENGINE": "kokoro"})  # thumbnail only: fast voices
-            sh([sys.executable, os.path.join(PIPE, "episode_engine.py"), "x"], env, cwd=PIPE)
-            os.makedirs(OUT, exist_ok=True)
-            import shutil; dst = os.path.join(OUT, f"{eid}_thumbnail.jpg"); shutil.copy(os.path.join(PIPE, "build", "thumbnail.jpg"), dst)
-            rec["thumbnail"] = set_thumbnail(rec["video_id"], dst)
-            import meta_post, re as _re  # also update the cover of the Facebook Reel/video, if it was posted there
-            m = _re.search(r"(\d{6,})", str(rec.get("facebook", "")))
-            if m and meta_post.have_meta() and str(rec.get("facebook", "")).startswith("posted"):
-                rec["facebook_cover"] = meta_post.fb_set_thumbnail(m.group(1), dst)
-        except Exception as e:
-            rec["thumbnail"] = f"refresh failed: {e}"[:200]
-        done.append(f"- {eid}: YouTube {rec['thumbnail']}" + (f" | Facebook {rec['facebook_cover']}" if rec.get("facebook_cover") else ""))
-        print(eid, rec["thumbnail"])
-    json.dump(state, open(STATE, "w"), indent=2)
+    for d in _video_dirs():
+        sf = os.path.join(d, "state.json")
+        if not os.path.exists(sf): continue
+        state = json.load(open(sf)); eps = _dir_episodes(d)
+        for eid, hi, rec in sorted(_uploaded(state), key=lambda x: (x[0], x[1])):
+            if eid not in eps or (only and eid != only): continue
+            rec.pop("facebook_cover", None)
+            try:
+                dst = remake_thumb(eid, eps[eid], hi)
+                rec["thumbnail"] = set_thumbnail(rec["video_id"], dst) if dst else "refresh failed: thumbnail could not be made"
+                m = _re.search(r"(\d{6,})", str(rec.get("facebook", "")))  # also the cover of the Facebook Reel/video
+                if dst and m and meta_post.have_meta() and str(rec.get("facebook", "")).startswith("posted"):
+                    rec["facebook_cover"] = meta_post.fb_set_thumbnail(m.group(1), dst)
+            except Exception as e:
+                rec["thumbnail"] = f"refresh failed: {e}"[:200]
+            label = eid + (" (Hindi)" if hi else "")
+            done.append(f"- {label}: YouTube {rec['thumbnail']}" + (f" | Facebook {rec['facebook_cover']}" if rec.get("facebook_cover") else ""))
+            print(label, rec["thumbnail"], flush=True)
+        json.dump(state, open(sf, "w"), indent=2)
     summary("### 🖼️ Thumbnails refreshed\n\n" + ("\n".join(done) or "- no uploaded videos found") +
             "\n\nInstagram covers of already-posted Reels can't be changed by the API: in the Instagram app use Edit → Edit cover.")
     return 0
@@ -347,8 +430,8 @@ def main():
         return fix_existing()
     if "--social-backfill" in args:
         return social_backfill(int(args[args.index("--social-backfill") + 1]))
-    if "--refresh-thumbnails" in args:
-        return refresh_thumbnails()
+    if "--refresh-thumbnails" in args:  # with 'episode' filled in: only that video (e.g. s-ollama)
+        return refresh_thumbnails(args[args.index("--episode") + 1] if "--episode" in args else None)
     global HI
     dry = "--dry-run" in args
     forced = args[args.index("--episode") + 1] if "--episode" in args else None
@@ -412,6 +495,7 @@ def main():
     frames = os.path.join(OUT, f"{eid}_frames"); mp4 = os.path.join(OUT, f"CurioKids_{'long_' if LONG else ''}{eid}{'_hi' if HI else ''}.mp4")
     def render(voice_env):
         import shutil; shutil.rmtree(frames, ignore_errors=True)
+        if os.path.exists(THUMB): os.remove(THUMB)  # never upload an older video's thumbnail
         sh([sys.executable, os.path.join(PIPE, "tts.py")], {"EPISODE": epf, **VOICE_ENV, "TTS_LANG": "hi" if HI else "en", **voice_env})
         sh([sys.executable, os.path.join(PIPE, "episode_engine.py"), frames], {"EPISODE": epf, "BG": "kids", "DOODLE": "chars", "FORMAT": "long" if LONG else "short"}, cwd=PIPE)
         sh([sys.executable, os.path.join(PIPE, "finish.py"), frames, "24", mp4], {"EPISODE": epf, "FORMAT": "long" if LONG else "short"})
@@ -472,13 +556,21 @@ def main():
     rec["made_for_kids"] = "yes" if made_for_kids() else "no"
     social = meta_post.post_all(mp4, ep, BRAND_LINE_HI if HI else BRAND_LINE, LONG, rec)  # Facebook Page + Instagram (if META secrets are set)
     rec.update(social)
+    if thumb and str(rec.get("thumbnail", "")).startswith(("set", "not set")):  # again, now that YouTube has processed the upload
+        again = set_thumbnail(vid, thumb); rec["thumbnail"] = rec["thumbnail"] + f" (re-applied after posting: {again})"
     rec.update({"status": "uploaded", "video_id": vid, "url": f"https://www.youtube.com/{'watch?v=' if LONG else 'shorts/'}{vid}",
                 "uploaded_at": dt.datetime.now(IST).isoformat(timespec="seconds")})
+    json.dump(state, open(STATE, "w"), indent=2)  # saved first: the upload is recorded even if the next step fails
+    try:
+        kept = keep_recent_thumbnails(state, skip=(eid, bool(globals().get("HI"))))
+    except Exception as e:
+        kept = [f"skipped: {e}"[:120]]
     json.dump(state, open(STATE, "w"), indent=2)
     print("Uploaded:", rec["url"], "publish:", when)
     summary(f"### ✅ Uploaded {eid}{' (Hindi)' if HI else ''}: {ep['title']}\n\n- Link: {rec['url']}\n- Publish: {when}\n- Length: {rec['duration_s']} s\n- Voices: {rec['voices']}\n- Thumbnail: {rec['thumbnail']}\n- Playlist: {rec['playlist']}\n- Made for kids: {rec['made_for_kids']}\n" + "".join(f"- {k.title()}: {v}\n" for k, v in social.items()) +
             "- Note: until the YouTube API audit is approved, YouTube keeps API uploads **Private** — "
             "set it to Public (or Schedule) in YouTube Studio → Content.")
+    if kept: summary("\n- Thumbnails re-applied on recent videos: " + "; ".join(kept))
     return 0
 
 

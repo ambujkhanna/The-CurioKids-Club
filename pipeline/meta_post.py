@@ -140,7 +140,7 @@ def fb_set_thumbnail(vid, jpg=None):
     try:
         body, hd = _multipart({"is_preferred": "true", "access_token": os.environ["META_PAGE_TOKEN"]}, "source", "thumb.jpg",
                               open(jpg, "rb").read())
-        _req(f"{GRAPH}/{vid}/thumbnails", raw=body, headers=hd)
+        _req(f"{GRAPH}/{vid}/thumbnails", raw=body, headers=hd, timeout=120)
         return "cover set"
     except Exception as e:
         print("note: Facebook cover not set:", str(e)[:150])
