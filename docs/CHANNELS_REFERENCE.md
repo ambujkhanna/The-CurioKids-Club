@@ -1,6 +1,6 @@
 # Channels reference: The CurioKids Club & AInation Studio
 
-**Last updated:** 2026-11-12 13:18 IST (07:48 UTC)
+**Last updated:** 2026-11-14 09:27 IST (03:57 UTC)
 
 This is the quick reference for both channels: links, schedules, workflow options, secrets and variables. It's updated whenever any of these change; see the change log at the bottom. The full history is in `TheCurioKidsClub_handoff.md` and `AInation_Studio_handoff.md`.
 
@@ -120,3 +120,4 @@ Never paste tokens into chat, files or commits; they go only into GitHub Secrets
 | 2026-11-11 22:24 IST (16:54 UTC) | Both: **no more endless runs**: every YouTube call has a 5-minute limit (repo variable `YT_TIMEOUT`, seconds), Facebook cover updates 2 minutes; `refresh_thumbnails` runs skip the Chatterbox install; Ubuntu package step retries and stops after 15 min; logs print live. (After two thumbnail-refresh runs hung for 30+ min.) |
 | 2026-11-12 13:16 IST (07:46 UTC) | Both: **thumbnails stick**: a fresh thumbnail file per video (an older video's thumbnail can never be uploaded by mistake), the new video's thumbnail is set again after the Facebook/Instagram posting, each upload run re-applies the thumbnails of the last 2 videos (3 days, Hindi included; `KEEP_THUMBS`), `refresh_thumbnails` also covers Hindi videos. Note: the 14 h runs had finished in 43 min (the page shows the finish time); jobs are capped at 2 h (long videos 4 h). |
 | 2026-11-12 13:18 IST (07:48 UTC) | Both: script videos (`custom/`) and kids category videos are now included in `refresh_thumbnails` and in the automatic re-apply of recent thumbnails; `refresh_thumbnails` + `episode` refreshes one video only (e.g. `s-ollama`, whose YouTube thumbnail had been replaced by a video frame). |
+| 2026-11-14 09:27 IST (03:57 UTC) | Both: **YouTube uploads fixed**. The 12 Nov time-limit change (custom connection) treated YouTube's '308 Resume Incomplete' as a redirect, so every video upload failed after the first 8 MB chunk ('Redirected but the response is missing a Location header'). Fix (owner's commit 6b67c7d on kids, same change now for AInation): 308 removed from redirect handling, as the YouTube library does by default; 5 retries per chunk. Verified with a 20 MB 3-chunk upload against a fake YouTube server. |
