@@ -157,7 +157,24 @@
       "video_id": "us2cz1F3AI8",
       "url": "https://www.youtube.com/shorts/us2cz1F3AI8",
       "uploaded_at": "2026-11-11T22:53:00+05:30",
-      "facebook_cover": "cover set"
+      "facebook_cover": "cover set",
+      "thumbnail_checked": "2026-11-14T09:35+05:30 set"
+    },
+    "ep008": {
+      "voices": "chatterbox",
+      "title": "Why Do Zebras Have Stripes? \ud83e\udd93 Fun Facts for Kids",
+      "rendered_at": "2026-11-14T09:27:59+05:30",
+      "duration_s": 71.32,
+      "publish_at_ist": "2026-11-14T09:28+05:30",
+      "thumbnail": "set (re-applied after posting: set)",
+      "playlist": "off (added by hand)",
+      "made_for_kids": "no",
+      "facebook": "posted (reel 1732283491600120), cover set",
+      "instagram": "failed: 1) direct: [size-budget] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Reque [3 Mbps] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Reque [2 Mbps] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"R | 2) hidden copy: processing Error: Media upload has failed with error code 2207076 | 3) FB reel copy: processing Error: Media upload has failed with error code 2207076",
+      "status": "uploaded",
+      "video_id": "iBAc2_wsmBY",
+      "url": "https://www.youtube.com/shorts/iBAc2_wsmBY",
+      "uploaded_at": "2026-11-14T09:35:35+05:30"
     }
   }
 }
