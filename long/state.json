@@ -25,7 +25,23 @@
       "status": "uploaded",
       "video_id": "T0DyWjBFGME",
       "url": "https://www.youtube.com/watch?v=T0DyWjBFGME",
-      "uploaded_at": "2026-11-14T11:15:25+05:30"
+      "uploaded_at": "2026-11-14T11:15:25+05:30",
+      "thumbnail_checked": "2026-11-14T17:51+05:30 set"
+    },
+    "L03": {
+      "voices": "chatterbox",
+      "title": "The Water Cycle: Where Rain Comes From | Full Video for Kids",
+      "rendered_at": "2026-11-14T17:48:37+05:30",
+      "duration_s": 249.73,
+      "publish_at_ist": "2026-11-14T19:25+05:30",
+      "thumbnail": "set (re-applied after posting: set)",
+      "playlist": "off (added by hand)",
+      "made_for_kids": "no",
+      "facebook": "posted (video 1610635093599969), cover set",
+      "status": "uploaded",
+      "video_id": "6ptIdqVK-Po",
+      "url": "https://www.youtube.com/watch?v=6ptIdqVK-Po",
+      "uploaded_at": "2026-11-14T17:50:30+05:30"
     }
   }
 }
