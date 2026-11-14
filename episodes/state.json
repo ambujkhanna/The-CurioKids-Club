@@ -166,7 +166,7 @@
       "rendered_at": "2026-11-14T09:27:59+05:30",
       "duration_s": 71.32,
       "publish_at_ist": "2026-11-14T09:28+05:30",
-      "thumbnail": "set (re-applied after posting: set)",
+      "thumbnail": "set",
       "playlist": "off (added by hand)",
       "made_for_kids": "no",
       "facebook": "posted (reel 1732283491600120), cover set",
@@ -175,7 +175,8 @@
       "video_id": "iBAc2_wsmBY",
       "url": "https://www.youtube.com/shorts/iBAc2_wsmBY",
       "uploaded_at": "2026-11-14T09:35:35+05:30",
-      "thumbnail_checked": "2026-11-14T10:18+05:30 set"
+      "thumbnail_checked": "2026-11-14T10:18+05:30 set",
+      "facebook_cover": "cover set"
     },
     "ep009": {
       "voices": "chatterbox",
