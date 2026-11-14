@@ -122,7 +122,23 @@
       "url": "https://www.youtube.com/shorts/uX0INx1C8oo",
       "uploaded_at": "2026-11-07T20:43:29+05:30",
       "voices": "kokoro",
-      "facebook_cover": "cover not set: video not found on the Page (deleted?)"
+      "facebook_cover": "cover not set: video not found on the Page (deleted?)",
+      "hi": {
+        "voices": "kokoro",
+        "title": "\u0906\u0938\u092e\u093e\u0928 \u0928\u0940\u0932\u093e \u0915\u094d\u092f\u094b\u0902 \u0939\u094b\u0924\u093e \u0939\u0948? | Why Is the Sky Blue? \u2600\ufe0f",
+        "rendered_at": "2026-11-14T20:55:42+05:30",
+        "duration_s": 94.14,
+        "publish_at_ist": "2026-11-15T10:10+05:30",
+        "thumbnail": "set (re-applied after posting: set)",
+        "playlist": "off (added by hand)",
+        "made_for_kids": "no",
+        "facebook": "posted (reel 1660426292293674), cover set",
+        "instagram": "failed: 1) direct: [size-budget] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Reque [3 Mbps] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Reque [2 Mbps] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"R | 2) hidden copy: processing Error: Media upload has failed with error code 2207076 | 3) FB reel copy: processing Error: Media upload has failed with error code 2207076",
+        "status": "uploaded",
+        "video_id": "Mc2P550FCVI",
+        "url": "https://www.youtube.com/shorts/Mc2P550FCVI",
+        "uploaded_at": "2026-11-14T21:03:43+05:30"
+      }
     },
     "ep006": {
       "voices": "chatterbox",
@@ -193,7 +209,7 @@
       "video_id": "NM2z0rwRbN8",
       "url": "https://www.youtube.com/shorts/NM2z0rwRbN8",
       "uploaded_at": "2026-11-14T10:18:12+05:30",
-      "thumbnail_checked": "2026-11-14T11:38+05:30 set"
+      "thumbnail_checked": "2026-11-14T21:04+05:30 set"
     }
   }
 }
