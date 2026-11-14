@@ -16,6 +16,7 @@
 - **One handoff file per channel** (this file and its sibling). Every change gets a **timestamp (IST, with UTC)** in the change log, and older entries are never deleted.
 - **Graphics direction:** doodle line-art characters; bright, shaded, vibrant colours; phone-readable big text; real illustrations instead of metaphor emoji; animated diagrams for processes. Agree visuals with stills before rendering videos.
 - **Facts:** correct and general; say "scientists think" where science isn't settled; no invented numbers; kids content kept safe.
+- **Push command:** always give ONE copy-paste line, e.g. `git add -A && git commit -m "…" && git push origin main` (owner, 2026-11-14).
 
 ## How it runs
 - **Daily Short** (`.github/workflows/curio-kids-short.yml`, 08:40 UTC = 14:10 IST, PUBLISH_WINDOW default 16:00–19:00): rendered in the 2.5D **puppet theatre** (`pipeline/theatre.py`: curtains open and sit in front of the content, spotlight, footlights) in a teal and slate-blue playroom (`BG=kids`). Content uses big phone-readable text (Fredoka), pictures slide in from the wings, poems are karaoke-style, there are sparkle and confetti effects (`kids_fx.py`), and the end card is Subscribe / Like / Share. Uploads are Made for Kids, Education category, with the AI-content flag.

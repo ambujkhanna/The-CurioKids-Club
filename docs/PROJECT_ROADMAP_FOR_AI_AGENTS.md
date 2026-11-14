@@ -42,7 +42,7 @@
 - Every change: run `python3 pipeline/validate_episode.py` on all episodes, `python -m py_compile pipeline/*.py`, parse every workflow YAML, and render at least one **dry run** for visual changes.
 - Update `docs/CHANNELS_REFERENCE.md` (timestamped change-log row, IST with UTC) and the channel handoff with every change. Never delete old log entries.
 - GitHub's **Run workflow** form: keep each workflow at **≤ 10 inputs** (kids is at 10).
-- Explain steps to the owner in plain language, with copy-paste `git` commands.
+- Explain steps to the owner in plain language. Push instructions are always **one line**: `git add -A && git commit -m "…" && git push origin main`.
 
 ## 4. Roadmap
 
