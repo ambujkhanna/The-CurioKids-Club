@@ -6,47 +6,56 @@ on:
     - cron: "40 15 * * *"    # 15:40 UTC = 21:10 IST }   posts 17:00-20:00 IST, the Hindi video 09:00-11:00 IST
   workflow_dispatch:
     inputs:
-      dry_run:
-        description: "Render + QC only (no upload)"
-        type: boolean
-        default: false
+      action:
+        description: "What to do"
+        type: choice
+        default: "Next video (scheduled)"
+        options:
+          - "Next video (scheduled)"
+          - "Next video, publish now"
+          - "Dry run (render only, nothing uploaded)"
+          - "Refresh thumbnails"
+          - "Post 1 old video to Facebook + Instagram"
+          - "Post 3 old videos to Facebook + Instagram"
+      post_to:
+        description: "Where to post"
+        type: choice
+        default: "YouTube + Facebook + Instagram"
+        options:
+          - "YouTube + Facebook + Instagram"
+          - "YouTube only"
+          - "Facebook + Instagram only"
+          - "YouTube + Facebook"
+          - "YouTube + Instagram"
+          - "Facebook only"
+          - "Instagram only"
       episode:
-        description: "Force an episode id (e.g. ep003); empty = next in backlog"
+        description: "Episode id, e.g. ep014 or s-ollama (empty = next in line; with Refresh thumbnails = only that video)"
         required: false
-      publish_now:
-        description: "Publish immediately (no schedule)"
-        type: boolean
-        default: false
-      language:
-        description: "Language of the video (manual runs): en = English, hi = Hindi voices + English subtitles"
-        type: choice
-        default: en
-        options: [en, hi]
-      category:
-        description: "Publish the next episode of a CATEGORY instead of the daily Short (leave as none for normal)"
-        type: choice
-        default: none
-        options: [none, comedy, quiz, knowledge, science, abc, counting, rhymes, varnamala]
-      social_only:
-        description: "Only post the chosen episode (fill 'episode') to Facebook + Instagram - no YouTube upload"
-        type: boolean
-        default: false
-      refresh_thumbnails:
-        description: "Only re-make and upload thumbnails for videos already uploaded (no new video)"
-        type: boolean
-        default: false
-      ig_test:
-        description: "Instagram test: posts an 8-s test clip. With an episode id filled in: tests versions of that episode WITHOUT posting"
-        type: boolean
-        default: false
-      social_backfill:
-        description: "Post videos already on YouTube to Facebook + Instagram (how many this run; 0 = off)"
-        type: choice
-        default: "0"
-        options: ["0", "1", "2", "3", "4"]
       script:
-        description: "Make a video from YOUR script: a file path (scripts/bees.txt) OR paste the whole script here (format: scripts/README.md)"
+        description: "Make a video from YOUR script: a file path (scripts/bees.txt) OR paste the whole script (format: scripts/README.md)"
         required: false
+      language:
+        description: "Language (manual runs): en = English, hi = Hindi voices + English subtitles"
+        type: choice
+        default: "en"
+        options:
+          - "en"
+          - "hi"
+      category:
+        description: "Category instead of the daily Short (none = normal)"
+        type: choice
+        default: "none"
+        options:
+          - "none"
+          - "comedy"
+          - "quiz"
+          - "knowledge"
+          - "science"
+          - "abc"
+          - "counting"
+          - "rhymes"
+          - "varnamala"
 
 permissions:
   contents: write
@@ -84,7 +93,7 @@ jobs:
           key: chatterbox-v1-${{ runner.os }}
 
       - name: Install Chatterbox (CPU, first run only)
-        if: ${{ inputs.refresh_thumbnails != true }}
+        if: ${{ inputs.action != 'Refresh thumbnails' }}
         timeout-minutes: 25
         continue-on-error: true
         run: |
@@ -130,6 +139,11 @@ jobs:
           CB_PYTHON: /home/runner/cbenv/bin/python
           CB_TURBO_LAUGHS: ${{ vars.CB_TURBO_LAUGHS || '1' }}
           PYTHONUNBUFFERED: "1"
+          ACTION: ${{ inputs.action }}
+          POST_TO: ${{ inputs.post_to }}
+          EPISODE_IN: ${{ inputs.episode }}
+          LANG_IN: ${{ inputs.language }}
+          CATEGORY_IN: ${{ inputs.category }}
           KEEP_THUMBS: ${{ vars.KEEP_THUMBS || '2' }}
           YT_TIMEOUT: ${{ vars.YT_TIMEOUT || '300' }}
           INTRO: ${{ vars.INTRO || 'on' }}
@@ -142,16 +156,21 @@ jobs:
           YT_PLAYLIST: ${{ vars.YT_PLAYLIST }}
         run: |
           ARGS=""
-          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
-          if [ -n "${{ inputs.episode }}" ]; then ARGS="$ARGS --episode ${{ inputs.episode }}"; fi
-          if [ "${{ inputs.publish_now }}" = "true" ]; then ARGS="$ARGS --now"; fi
-          if [ "${{ inputs.refresh_thumbnails }}" = "true" ]; then ARGS="$ARGS --refresh-thumbnails"; fi
-          if [ "${{ inputs.social_only }}" = "true" ]; then ARGS="$ARGS --social-only"; fi
-          if [ -n "${{ inputs.category }}" ] && [ "${{ inputs.category }}" != "none" ]; then ARGS="$ARGS --category ${{ inputs.category }}"; fi
-          if [ "${{ inputs.ig_test }}" = "true" ]; then ARGS="$ARGS --ig-test"; fi
-          if [ -n "${{ inputs.social_backfill }}" ] && [ "${{ inputs.social_backfill }}" != "0" ]; then ARGS="$ARGS --social-backfill ${{ inputs.social_backfill }}"; fi
+          case "$ACTION" in
+            *"publish now"*) ARGS="--now" ;;
+            "Dry run"*) ARGS="--dry-run" ;;
+            "Refresh thumbnails") ARGS="--refresh-thumbnails" ;;
+            "Post 1 old"*) ARGS="--social-backfill 1" ;;
+            "Post 3 old"*) ARGS="--social-backfill 3" ;;
+          esac
+          if [ -n "$EPISODE_IN" ]; then
+            if ! printf "%s" "$EPISODE_IN" | grep -Eq "^[A-Za-z0-9_-]+$"; then echo "episode must be an id like ep014"; exit 1; fi
+            ARGS="$ARGS --episode $EPISODE_IN"
+          fi
+          case "$POST_TO" in ""|*YouTube*) ;; *) ARGS="$ARGS --social-only" ;; esac  # no YouTube: post to the chosen social platforms only
+          if [ -n "$CATEGORY_IN" ] && [ "$CATEGORY_IN" != "none" ]; then ARGS="$ARGS --category $CATEGORY_IN"; fi
           if [ "${{ github.event_name }}" = "schedule" ]; then ARGS="--auto"; fi
-          if [ "${{ inputs.language }}" = "hi" ]; then ARGS="$ARGS --lang hi"; fi
+          if [ "$LANG_IN" = "hi" ]; then ARGS="$ARGS --lang hi"; fi
           python pipeline/daily.py $ARGS
 
       - name: Keep the video as a downloadable artifact (14 days)

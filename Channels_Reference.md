@@ -1,6 +1,6 @@
 # Channels reference: The CurioKids Club & AInation Studio
 
-**Last updated:** 2026-11-14 09:27 IST (03:57 UTC)
+**Last updated:** 2026-11-14 09:44 IST (04:14 UTC)
 
 This is the quick reference for both channels: links, schedules, workflow options, secrets and variables. It's updated whenever any of these change; see the change log at the bottom. The full history is in `TheCurioKidsClub_handoff.md` and `AInation_Studio_handoff.md`.
 
@@ -33,26 +33,21 @@ This is the quick reference for both channels: links, schedules, workflow option
 | **Facebook / Instagram** | Posted automatically right after each YouTube upload (Reel, designed cover; Facebook cover set once processing is done, result in the run summary) | Same |
 | **Uploads on YouTube** | Private until the API audit; publish or schedule in Studio | Same |
 
-## Run workflow options: Daily Shorts
+## Run workflow options (same form in both channels, since 2026-11-14)
 
-| Option | What it does | Kids | AInation |
-|---|---|---|---|
-| **dry_run** ☐ | Render and check only; the MP4 and thumbnail go to Artifacts, nothing is uploaded | ✅ | ✅ |
-| **episode** (text) | Force a specific episode, e.g. `ep007`; empty = next in line | ✅ | ✅ |
-| **publish_now** ☐ | Publish immediately instead of scheduling | ✅ | ✅ |
-| **language** (en / hi) | Hindi voices + English subtitles for a manual run; works with daily episodes **and** categories comedy / quiz | ✅ | – |
-| **category** (none / comedy / quiz / knowledge / science / abc / counting / rhymes / varnamala) | Post the next episode from that category instead of the daily Short | ✅ | – |
-| **social_only** ☐ | Post the chosen `episode` to Facebook + Instagram only, no YouTube | ✅ | ✅ |
-| **social_backfill** (0–4) | Post that many already-uploaded videos to Facebook/Instagram, oldest first (skips what's already posted) | ✅ | ✅ |
-| **refresh_thumbnails** ☐ | Redesign and re-upload thumbnails for all uploaded videos (daily, script and category videos, Hindi too), and update Facebook Reel covers; with **episode** filled in (e.g. `s-ollama`) only that video | ✅ | ✅ |
-| **script** (text) | **Make a video from your own script**: path like `scripts/bees.txt` **or the whole script pasted in** (format: `scripts/README.md`); problems stop the run before rendering | ✅ | ✅ |
-| **board_style** (default / hanging / display / whiteboard) | Board look for this run only; `default` = repo variable `BOARD_STYLE`, else hanging | – | ✅ |
-| **ig_test** ☐ | Instagram check: an 8 s test post; with `episode` filled in, tests 4 versions of it without posting | ✅ | – |
-| ~~fix_existing~~ | Removed from the form (GitHub allows 10 options; it needs the full `youtube`-scope token anyway). Still available in code: `daily.py --fix-existing` | – | – |
+| # | Option | Choices | Kids | AInation |
+|---|---|---|---|---|
+| 1 | **action** | **Next video (scheduled)** (default) · Next video, publish now · Dry run (render only, nothing uploaded) · Refresh thumbnails · Post 1 / 3 old videos to Facebook + Instagram | ✅ | ✅ |
+| 2 | **post_to** | **YouTube + Facebook + Instagram** (default) · YouTube only · Facebook + Instagram only · YouTube + Facebook · YouTube + Instagram · Facebook only · Instagram only. Without YouTube = posts the chosen episode to the social platforms only | ✅ | ✅ |
+| 3 | **episode** | Episode id, e.g. `ep014`, `s-ollama`; empty = next in line. With *Refresh thumbnails*: only that video | ✅ | ✅ |
+| 4 | **script** | A file path (`scripts/bees.txt`) **or the whole script pasted in** (format: `scripts/README.md`); problems stop the run before rendering | ✅ | ✅ |
+| 5 | **language** | en / hi (Hindi voices + English subtitles; daily episodes and comedy / quiz / varnamala) | ✅ | – |
+| 6 | **category** | none / comedy / quiz / knowledge / science / abc / counting / rhymes / varnamala | ✅ | – |
+| 5 | **board_style** | default / hanging / display / whiteboard (this run only) | – | ✅ |
 
-**Weekly long workflows (both channels):** dry_run, episode, publish_now, social_only, refresh_thumbnails (+ **board_style** on AInation).
-**Board look for one AInation video:** Run-workflow `board_style` > episode `"board_style"` / script `BOARD:` line > repo variable `BOARD_STYLE` > `hanging`.
-**Voice Lab (kids):** `which` = hindi / turbo / chatterbox. `hindi` = Hindi accent test: every line in versions A (today) / B (cfg 0) / C (Hindi clip) / D (Hindi clip, cfg 0.2).
+**Weekly long workflows (both):** action (scheduled / publish now / dry run / refresh thumbnails), post_to (YouTube + Facebook · YouTube only · Facebook only), episode (+ board_style on AInation).
+**Scheduled runs** ignore the form: daily next video, every platform. **Removed:** `ig_test` (Instagram works; `daily.py --ig-test` still exists in code), `fix_existing`.
+**Voice Lab (kids):** `which` = hindi / turbo / chatterbox.
 
 ## GitHub Secrets (required, same names in both repos, different values)
 
@@ -121,3 +116,4 @@ Never paste tokens into chat, files or commits; they go only into GitHub Secrets
 | 2026-11-12 13:16 IST (07:46 UTC) | Both: **thumbnails stick**: a fresh thumbnail file per video (an older video's thumbnail can never be uploaded by mistake), the new video's thumbnail is set again after the Facebook/Instagram posting, each upload run re-applies the thumbnails of the last 2 videos (3 days, Hindi included; `KEEP_THUMBS`), `refresh_thumbnails` also covers Hindi videos. Note: the 14 h runs had finished in 43 min (the page shows the finish time); jobs are capped at 2 h (long videos 4 h). |
 | 2026-11-12 13:18 IST (07:48 UTC) | Both: script videos (`custom/`) and kids category videos are now included in `refresh_thumbnails` and in the automatic re-apply of recent thumbnails; `refresh_thumbnails` + `episode` refreshes one video only (e.g. `s-ollama`, whose YouTube thumbnail had been replaced by a video frame). |
 | 2026-11-14 09:27 IST (03:57 UTC) | Both: **YouTube uploads fixed**. The 12 Nov time-limit change (custom connection) treated YouTube's '308 Resume Incomplete' as a redirect, so every video upload failed after the first 8 MB chunk ('Redirected but the response is missing a Location header'). Fix (owner's commit 6b67c7d on kids, same change now for AInation): 308 removed from redirect handling, as the YouTube library does by default; 5 retries per chunk. Verified with a 20 MB 3-chunk upload against a fake YouTube server. |
+| 2026-11-14 09:44 IST (04:14 UTC) | Both: **simpler, identical Run-workflow forms**: `action` dropdown replaces dry_run / publish_now / refresh_thumbnails / social_backfill; `post_to` dropdown replaces social_only (choose any combination of YouTube, Facebook, Instagram; default all); `ig_test` removed. Daily forms now 5 (AInation) / 6 (kids) options, weekly 4 / 3. Form values reach the pipeline as environment variables; the episode id is checked. |

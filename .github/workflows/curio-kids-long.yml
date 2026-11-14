@@ -5,25 +5,26 @@ on:
     - cron: "30 4 * * 6"    # 04:30 UTC Saturday = 10:00 IST; publishes inside PUBLISH_WINDOW
   workflow_dispatch:
     inputs:
-      dry_run:
-        description: "Render + QC only (no upload)"
-        type: boolean
-        default: false
+      action:
+        description: "What to do"
+        type: choice
+        default: "Next video (scheduled)"
+        options:
+          - "Next video (scheduled)"
+          - "Next video, publish now"
+          - "Dry run (render only, nothing uploaded)"
+          - "Refresh thumbnails"
+      post_to:
+        description: "Where to post"
+        type: choice
+        default: "YouTube + Facebook"
+        options:
+          - "YouTube + Facebook"
+          - "YouTube only"
+          - "Facebook only"
       episode:
-        description: "Force an episode id (e.g. ep003); empty = next in backlog"
+        description: "Episode id, e.g. ep014 or s-ollama (empty = next in line; with Refresh thumbnails = only that video)"
         required: false
-      publish_now:
-        description: "Publish immediately (no schedule)"
-        type: boolean
-        default: false
-      social_only:
-        description: "Only post the chosen episode (fill 'episode') to Facebook + Instagram - no YouTube upload"
-        type: boolean
-        default: false
-      refresh_thumbnails:
-        description: "Only re-make and upload thumbnails for videos already uploaded (no new video)"
-        type: boolean
-        default: false
 
 permissions:
   contents: write
@@ -61,7 +62,7 @@ jobs:
           key: chatterbox-v1-${{ runner.os }}
 
       - name: Install Chatterbox (CPU, first run only)
-        if: ${{ inputs.refresh_thumbnails != true }}
+        if: ${{ inputs.action != 'Refresh thumbnails' }}
         timeout-minutes: 25
         continue-on-error: true
         run: |
@@ -106,6 +107,9 @@ jobs:
           CB_PYTHON: /home/runner/cbenv/bin/python
           CB_TURBO_LAUGHS: ${{ vars.CB_TURBO_LAUGHS || '1' }}
           PYTHONUNBUFFERED: "1"
+          ACTION: ${{ inputs.action }}
+          POST_TO: ${{ inputs.post_to }}
+          EPISODE_IN: ${{ inputs.episode }}
           KEEP_THUMBS: ${{ vars.KEEP_THUMBS || '2' }}
           YT_TIMEOUT: ${{ vars.YT_TIMEOUT || '300' }}
           INTRO: ${{ vars.INTRO || 'on' }}
@@ -114,11 +118,18 @@ jobs:
           YT_PLAYLIST: ${{ vars.YT_PLAYLIST }}
         run: |
           ARGS=""
-          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
-          if [ -n "${{ inputs.episode }}" ]; then ARGS="$ARGS --episode ${{ inputs.episode }}"; fi
-          if [ "${{ inputs.publish_now }}" = "true" ]; then ARGS="$ARGS --now"; fi
-          if [ "${{ inputs.refresh_thumbnails }}" = "true" ]; then ARGS="$ARGS --refresh-thumbnails"; fi
-          if [ "${{ inputs.social_only }}" = "true" ]; then ARGS="$ARGS --social-only"; fi
+          case "$ACTION" in
+            *"publish now"*) ARGS="--now" ;;
+            "Dry run"*) ARGS="--dry-run" ;;
+            "Refresh thumbnails") ARGS="--refresh-thumbnails" ;;
+            "Post 1 old"*) ARGS="--social-backfill 1" ;;
+            "Post 3 old"*) ARGS="--social-backfill 3" ;;
+          esac
+          if [ -n "$EPISODE_IN" ]; then
+            if ! printf "%s" "$EPISODE_IN" | grep -Eq "^[A-Za-z0-9_-]+$"; then echo "episode must be an id like ep014"; exit 1; fi
+            ARGS="$ARGS --episode $EPISODE_IN"
+          fi
+          case "$POST_TO" in ""|*YouTube*) ;; *) ARGS="$ARGS --social-only" ;; esac  # no YouTube: post to the chosen social platforms only
           python pipeline/daily.py --long $ARGS
 
       - name: Keep the video as a downloadable artifact (14 days)

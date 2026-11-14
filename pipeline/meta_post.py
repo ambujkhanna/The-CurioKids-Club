@@ -315,6 +315,12 @@ def post_instagram(path, cap):
         return f"failed: 1) direct: {err} | 2) hidden copy: {err2} | 3) FB reel copy: {e}"[:600]
 
 
+def wanted(platform):
+    """'Where to post' choice from the Run-workflow form (env POST_TO, e.g. 'YouTube + Facebook'); empty = everywhere."""
+    t = os.environ.get("POST_TO", "").strip().lower()
+    return not t or platform in t
+
+
 def post_all(path, ep, brand_line, long=False, done=None, thumb=None):
     """Returns {"facebook": status, "instagram": status} (only for configured platforms).
     done: the episode's saved record - platforms that already say "posted" are skipped (no duplicates on re-runs)."""
@@ -329,11 +335,14 @@ def post_all(path, ep, brand_line, long=False, done=None, thumb=None):
         m = re.search(r"(\d{6,})", fb_prev)
         if m: LAST["fb_video_id"] = m.group(1)
         out["facebook"] = fb_prev + " (kept, not re-posted)"
+    elif not wanted("facebook"):
+        out["facebook"] = "skipped (not chosen in 'Where to post')"
     else:
         out["facebook"] = post_facebook(path, ep, cap_fb, long)
     if have_ig() and not long:  # long 16:9 videos go to Facebook only
         ig_prev = str(done.get("instagram", ""))
-        out["instagram"] = ig_prev + " (kept, not re-posted)" if ig_prev.startswith("posted") else post_instagram(path, cap)
+        out["instagram"] = ig_prev + " (kept, not re-posted)" if ig_prev.startswith("posted") else \
+            (post_instagram(path, cap) if wanted("instagram") else "skipped (not chosen in 'Where to post')")
         if not ig_prev.startswith("posted") and str(out["instagram"]).startswith("posted"):
             out["instagram"] += ", designed cover" if COVER.get("url") else ", cover: video frame (designed cover link failed)"
     return out
