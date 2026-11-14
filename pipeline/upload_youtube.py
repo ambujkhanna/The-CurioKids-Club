@@ -38,6 +38,7 @@ def _service():
 def upload(path, ep, publish_at_utc_iso):
     from googleapiclient.errors import HttpError
     from googleapiclient.http import MediaFileUpload
+    import httplib2
     import images  # credits required by CC BY illustrations
     cred = images.credits(ep)
     desc = ep["description"].rstrip() + ("\n\n" + cred if cred else "") + "\n\n" + hashtags.ENGAGE["youtube"] + "\n\n" + hashtags.links_block("youtube") + "\n\n" + " ".join(hashtags.pick(ep.get("hashtags", []), "youtube"))
@@ -56,7 +57,19 @@ def upload(path, ep, publish_at_utc_iso):
                                      media_body=MediaFileUpload(path, mimetype="video/mp4", chunksize=8 * 1024 * 1024, resumable=True))
             resp = None
             while resp is None:
-                _, resp = req.next_chunk()
+                # Google occasionally returns a redirect response without a Location header
+                # while creating/advancing a resumable upload session. Keep the same request
+                # object so an established resumable session is not restarted unnecessarily.
+                for retry in range(6):
+                    try:
+                        _, resp = req.next_chunk(num_retries=5)
+                        break
+                    except httplib2.error.RedirectMissingLocation:
+                        if retry == 5:
+                            raise
+                        delay = min(2 ** (retry + 1), 30)
+                        print(f"YouTube upload returned a redirect without Location; retrying chunk in {delay}s (attempt {retry + 1}/5)", flush=True)
+                        time.sleep(delay)
             return resp["id"]
         except HttpError as e:
             # older API surfaces may reject the synthetic-media flag: retry once without it
