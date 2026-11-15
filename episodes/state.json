@@ -137,7 +137,8 @@
         "status": "uploaded",
         "video_id": "Mc2P550FCVI",
         "url": "https://www.youtube.com/shorts/Mc2P550FCVI",
-        "uploaded_at": "2026-11-14T21:03:43+05:30"
+        "uploaded_at": "2026-11-14T21:03:43+05:30",
+        "thumbnail_checked": "2026-11-15T21:39+05:30 set"
       }
     },
     "ep006": {
@@ -210,6 +211,22 @@
       "url": "https://www.youtube.com/shorts/NM2z0rwRbN8",
       "uploaded_at": "2026-11-14T10:18:12+05:30",
       "thumbnail_checked": "2026-11-14T21:04+05:30 set"
+    },
+    "ep010": {
+      "voices": "chatterbox",
+      "title": "How Do Magnets Work? \ud83e\uddf2 Fun Science for Kids",
+      "rendered_at": "2026-11-15T21:34:09+05:30",
+      "duration_s": 78.93,
+      "publish_at_ist": "2026-11-16T17:30+05:30",
+      "thumbnail": "set (re-applied after posting: set)",
+      "playlist": "off (added by hand)",
+      "made_for_kids": "no",
+      "facebook": "posted (reel 1679711883669801), cover set",
+      "instagram": "failed: 1) direct: [size-budget] HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, can [3 Mbps] HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, can [2 Mbps] HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, | 2) hidden copy: HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, cannot be loaded due to missing permissions, or does  | 3) FB reel copy: HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, cannot be loade",
+      "status": "uploaded",
+      "video_id": "2EBH9fS2qJo",
+      "url": "https://www.youtube.com/shorts/2EBH9fS2qJo",
+      "uploaded_at": "2026-11-15T21:39:01+05:30"
     }
   }
 }
