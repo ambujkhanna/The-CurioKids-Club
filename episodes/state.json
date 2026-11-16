@@ -138,7 +138,7 @@
         "video_id": "Mc2P550FCVI",
         "url": "https://www.youtube.com/shorts/Mc2P550FCVI",
         "uploaded_at": "2026-11-14T21:03:43+05:30",
-        "thumbnail_checked": "2026-11-15T21:39+05:30 set"
+        "thumbnail_checked": "2026-11-17T00:40+05:30 set"
       }
     },
     "ep006": {
@@ -156,7 +156,23 @@
       "video_id": "fTbBW1Um2zs",
       "url": "https://www.youtube.com/shorts/fTbBW1Um2zs",
       "uploaded_at": "2026-11-10T00:53:00+05:30",
-      "facebook_cover": "cover set"
+      "facebook_cover": "cover set",
+      "hi": {
+        "voices": "kokoro",
+        "title": "\u092c\u0930\u094d\u092b\u093c \u092a\u093e\u0928\u0940 \u092a\u0930 \u0924\u0948\u0930\u0924\u0940 \u0915\u094d\u092f\u094b\u0902 \u0939\u0948? | Why Does Ice Float? \ud83e\uddca Fun Science for Kids",
+        "rendered_at": "2026-11-17T00:32:47+05:30",
+        "duration_s": 112.08,
+        "publish_at_ist": "2026-11-17T10:05+05:30",
+        "thumbnail": "set (re-applied after posting: set)",
+        "playlist": "off (added by hand)",
+        "made_for_kids": "no",
+        "facebook": "posted (reel 2593157881159258), cover set",
+        "instagram": "failed: 1) direct: [size-budget] HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, can [3 Mbps] HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, can [2 Mbps] HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, | 2) hidden copy: HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, cannot be loaded due to missing permissions, or does  | 3) FB reel copy: HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, cannot be loade",
+        "status": "uploaded",
+        "video_id": "cfIxFau83S0",
+        "url": "https://www.youtube.com/shorts/cfIxFau83S0",
+        "uploaded_at": "2026-11-17T00:39:08+05:30"
+      }
     },
     "ep007": {
       "voices": "chatterbox",
@@ -226,7 +242,8 @@
       "status": "uploaded",
       "video_id": "2EBH9fS2qJo",
       "url": "https://www.youtube.com/shorts/2EBH9fS2qJo",
-      "uploaded_at": "2026-11-15T21:39:01+05:30"
+      "uploaded_at": "2026-11-15T21:39:01+05:30",
+      "thumbnail_checked": "2026-11-17T00:39+05:30 set"
     }
   }
 }
