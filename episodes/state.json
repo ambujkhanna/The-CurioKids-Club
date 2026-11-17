@@ -171,7 +171,8 @@
         "status": "uploaded",
         "video_id": "cfIxFau83S0",
         "url": "https://www.youtube.com/shorts/cfIxFau83S0",
-        "uploaded_at": "2026-11-17T00:39:08+05:30"
+        "uploaded_at": "2026-11-17T00:39:08+05:30",
+        "thumbnail_checked": "2026-11-17T23:46+05:30 set"
       }
     },
     "ep007": {
@@ -243,7 +244,23 @@
       "video_id": "2EBH9fS2qJo",
       "url": "https://www.youtube.com/shorts/2EBH9fS2qJo",
       "uploaded_at": "2026-11-15T21:39:01+05:30",
-      "thumbnail_checked": "2026-11-17T00:39+05:30 set"
+      "thumbnail_checked": "2026-11-17T23:46+05:30 set"
+    },
+    "ep011": {
+      "voices": "chatterbox",
+      "title": "Eight Planets Rhyme \ud83e\ude90 Learn the Planets in Order",
+      "rendered_at": "2026-11-17T23:39:09+05:30",
+      "duration_s": 80.3,
+      "publish_at_ist": "2026-11-18T19:30+05:30",
+      "thumbnail": "set (re-applied after posting: set)",
+      "playlist": "off (added by hand)",
+      "made_for_kids": "no",
+      "facebook": "posted (reel 4394853307325933), cover set",
+      "instagram": "failed: 1) direct: [size-budget] HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, can [3 Mbps] HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, can [2 Mbps] HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, | 2) hidden copy: HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, cannot be loaded due to missing permissions, or does  | 3) FB reel copy: HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, cannot be loade",
+      "status": "uploaded",
+      "video_id": "6CnZ3qun0P4",
+      "url": "https://www.youtube.com/shorts/6CnZ3qun0P4",
+      "uploaded_at": "2026-11-17T23:45:26+05:30"
     }
   }
 }
