@@ -32,3 +32,11 @@ Run locally:
 PYTHONPATH=pipeline python -m unittest discover -s tests -v
 python pipeline/growth.py --csv out/analytics/<report>.csv --channel-key CHANNEL_KEY
 ```
+
+
+## Live validation snapshot — 2026-11-18 22:04 IST
+
+- Latest analytics collection on this feature branch completed successfully and uploaded its report artifact.
+- Latest observed episode/video metadata coverage: **43.8%**. The growth brief flags unknown mappings; resolve these before relying on topic-level rankings.
+- The PR to `main` remains open and currently has merge conflicts (`mergeable_state=dirty`). Synchronize with current `main`, resolve conflicts and revalidate before merging. No force merge.
+- Daily-workflow integration has been committed, but it is advisory: it surfaces the brief in the Actions summary and does not alter scripts or publishing.
