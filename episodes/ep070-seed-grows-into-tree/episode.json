@@ -200,5 +200,12 @@
       "who": "MIA",
       "text": "You got it! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... how does a tiny seed grow into a tree?"
     }
-  ]
+  ],
+  "visual": {
+    "style": "garden",
+    "environment": "layered_meadow",
+    "depth": true,
+    "motion": "gentle",
+    "description": "Sunlit garden diorama with rolling hills, shaded trees, soil cross-section and visible roots; preserve the established 2D characters."
+  }
 }
