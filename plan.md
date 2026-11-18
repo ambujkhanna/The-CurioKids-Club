@@ -33,7 +33,8 @@ Use Kenney and 3dicons as initial candidates. Add assets only after recording th
 - Keep the new module isolated; do not change the live renderer or upload workflow yet.
 
 ### Phase 2 — Modern 2D and 2.5D rendering
-- Add reusable backgrounds, foreground layers, depth/parallax and camera motion.
+- Add topic-specific environments with foreground/midground/background layers, depth/parallax and camera motion.
+- Add custom vector scene props (soil cross-sections, roots, leaves and sunlit atmosphere), not just emoji as the primary illustration.
 - Improve scene composition, colour themes, typography and transitions.
 - Preserve current 2D character drawing and lip-sync.
 - Add deterministic, optional visual configuration with legacy defaults.
