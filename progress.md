@@ -14,12 +14,12 @@
 - Added `assets/README.md` with candidate sources, per-asset licence checks, required metadata and rendering guidance.
 - Added `pipeline/asset_manager.py`, a standard-library-only manifest validator; commercial-use approvals require licence evidence and attribution-required assets require a credit line.
 - Added unit tests in `pipeline/tests/test_asset_manager.py` for empty manifests, evidence, attribution and duplicate IDs.
-- Added `pipeline/visual_layers.py`: deterministic pastel depth-field backdrops, subtle perspective floor lines and slow floating accents, with six visual palettes.
+- Replaced the subtle garden backdrop with a topic-specific 2D/2.5D garden diorama: gradient sky, sun glow/rays, drifting clouds, layered hills, shaded edge trees, soil strata, visible roots, grass and stones. Other palettes retain a generic fallback. Existing board graphics and Leo/Mia character art remain intact.
 - Integrated the visual layer behind existing board content in `pipeline/episode_engine.py`. It is opt-in via episode `visual.style` or `CURIO_VISUAL_STYLE`; absent/unknown styles preserve legacy output. Existing 2D characters are unchanged.
 - Added style-resolution unit tests in `pipeline/tests/test_visual_layers.py`.
 - Added `.github/workflows/visual-engine-dry-run.yml`, a branch-only push workflow that runs validation/tests and renders `ep070` with the `garden` palette using `--dry-run`; it uploads review artifacts and never publishes.
 - First dry-run attempt exposed an unavailable `numpy==2.5.4` pin in the existing requirements file. Updated the feature branch pin to `numpy==2.4.6` (available on the runner index); no change to `main`.
-- Current dry-run run: [#44322368922](https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44322368922) is running; awaiting dependency/test/render results.
+- Dry-run [#44322612970](https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44322612970) succeeded technically, but owner review found the initial background too subtle. This follow-up makes the garden environment materially more visible and enables it explicitly in the ep070 pilot. A fresh render is required.
 
 ## Validation
 
@@ -27,3 +27,5 @@
 - No third-party assets have been downloaded or added yet; the manifest is intentionally empty.
 - The first workflow attempt stopped during dependency installation because the NumPy pin was unavailable; it produced no video. The corrected second attempt is in progress.
 - This branch is not ready to merge until the renderer changes are demonstrated with a dry-run video and reviewed by the owner.
+
+- Next: run a new branch-only dry-run, inspect the updated MP4/contact sheet, then continue refining any weak scenes before merge review.
