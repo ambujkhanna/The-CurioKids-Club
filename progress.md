@@ -29,3 +29,5 @@
 - This branch is not ready to merge until the renderer changes are demonstrated with a dry-run video and reviewed by the owner.
 
 - Next: run a new branch-only dry-run, inspect the updated MP4/contact sheet, then continue refining any weak scenes before merge review.
+
+- Follow-up visual polish: introduced radial material shading for tree foliage, multi-lobe leaf clusters, shaded trunk highlights, subtle deterministic soil grain and higher-contrast root edges. Lowered the soil horizon to reduce collisions with the cycle labels. These are still procedural 2D/2.5D materials; a true 3D asset pass using Blender-rendered transparent objects remains planned rather than being misrepresented as complete.
