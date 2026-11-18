@@ -1,0 +1,3 @@
+# Minimal dependencies for the read-only analytics workflow.
+google-api-python-client
+google-auth

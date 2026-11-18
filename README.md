@@ -53,14 +53,16 @@ If any step fails, nothing is uploaded. Setup instructions are in **`docs/SETUP.
 | `pipeline/finish.py` | captions, sound mix, MP4 |
 | `pipeline/music.py` | a different original music track per episode (or your own tracks in `music/`) |
 | `pipeline/thumbnail.py` | designed thumbnail for each video |
-| `pipeline/upload_youtube.py` | YouTube upload (audience setting from `MADE_FOR_KIDS`) |
+| `pipeline/upload_youtube.py` | YouTube upload (audience declaration follows `MADE_FOR_KIDS`) |\n| `pipeline/analytics.py` | read-only per-video YouTube Analytics collector |\n| `docs/ANALYTICS.md` | analytics setup, OAuth scope and report interpretation |
+| `pipeline/validate_episode.py` | checks episode files before you push |
+| `.github/workflows/curio-kids-short.yml` | the daily Shorts schedule |\n| `.github/workflows/youtube-analytics.yml` | read-only analytics collection (requires a separate OAuth secret) |
+| `fonts/` | caption fonts (OFL) |
 | `pipeline/meta_post.py`, `pipeline/hashtags.py` | Facebook + Instagram posting, hashtags per platform |
 | `pipeline/script2episode.py` | turns your own script (`scripts/*.txt`) into an episode |
 | `pipeline/validate_episode.py` | checks episode files before you push |
 | `.github/workflows/curio-kids-short.yml` | the daily Shorts (twice-daily automatic runs + manual options) |
 | `.github/workflows/curio-kids-long.yml` | the weekly long video |
 | `.github/workflows/voice-lab.yml` | voice samples (Chatterbox / Turbo / Hindi) |
-| `fonts/` | caption fonts (OFL) |
 
 ## Adding episodes later
 
