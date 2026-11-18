@@ -23,10 +23,10 @@ import icons_extra as IX
 import char_line, bg_line
 import visual_layers
 
-# Optional scene backdrop: absent/unknown styles preserve the legacy board appearance.
-VISUAL_STYLE = visual_layers.resolve_style(EP.get("visual"), os.environ.get("CURIO_VISUAL_STYLE"))
 
 EP = json.load(open(os.environ["EPISODE"]))
+# Optional scene backdrop: absent/unknown styles preserve the legacy board appearance.
+VISUAL_STYLE = visual_layers.resolve_style(EP.get("visual"), os.environ.get("CURIO_VISUAL_STYLE"))
 ELINES = EP["lines"]
 if K.T.get("lang") == "hi":  # Hindi version: hi.json may replace boards where the Hindi joke differs from the English one
     _hp = os.path.join(os.path.dirname(os.environ["EPISODE"]), "hi.json")
