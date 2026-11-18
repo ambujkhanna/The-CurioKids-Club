@@ -5,7 +5,7 @@ import argparse, csv, datetime as dt, json, os, sqlite3, sys
 from pathlib import Path
 from typing import Any
 
-SCOPE = "https://www.googleapis.com/auth/youtube.readonly"
+SCOPE = "https://www.googleapis.com/auth/yt-analytics.readonly"
 METRICS = "views,engagedViews,estimatedMinutesWatched,averageViewDuration,averageViewPercentage,likes,comments,shares,subscribersGained,subscribersLost"
 PAGE_SIZE = 200
 ROOT = Path(__file__).resolve().parent.parent
