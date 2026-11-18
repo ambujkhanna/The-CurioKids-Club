@@ -2,7 +2,7 @@
 
 **Branch:** `feature/modern-visual-engine`  
 **Base branch:** `main`  
-**Status:** In progress; owner review required before merge.
+**Status:** In progress; technical dry-run passed, visual upgrade still requires further work and owner review before merge.
 
 ## 2026-11-18
 
@@ -25,11 +25,23 @@
 
 - No production workflow or publishing configuration has been changed.
 - No third-party assets have been downloaded or added yet; the manifest is intentionally empty.
-- The first workflow attempt stopped during dependency installation because the NumPy pin was unavailable; it produced no video. The corrected second attempt is in progress.
-- This branch is not ready to merge until the renderer changes are demonstrated with a dry-run video and reviewed by the owner.
+- Dry-run #7 [completed successfully](https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44341007085) at commit `9104c4b51261f7aef74a21d38fcc109f0883e63a`.
+- All workflow stages passed: dependency installation, voice-model preparation, asset-manifest validation, unit tests, pilot rendering/QC and review-artifact upload.
+- The run produced `CurioKids_ep070.mp4` (1080×1920, 74.176 seconds) and a thumbnail. Artifact: [curiokids-modern-visual-engine-review](https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44341007085/artifacts/14443488874).
+- I downloaded and inspected sample frames at approximately 8s, 25s and 45s. The garden backdrop is clearly visible and consistent; the characters remain intact. However, the environment still reads as stylised 2D vector art rather than professional 3D. The seed/root teaching scene also lacks a convincing central underground root cross-section; the current thin decorative roots are mostly near the sides. The classroom below remains the old design.
+- Dry-run #6 [failed](https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44339743954) because the installed `skia-python` did not expose `skia.BlurStyle.kNormal`. The renderer was corrected by replacing that version-specific blur call with layered translucent shadow ellipses. No new dependency was added.
+- Dry-run #5 passed; #4 was cancelled as a duplicate. Earlier failed runs were setup/integration issues and are not evidence of a production upload failure.
+- No production workflow or publishing configuration has been changed. No third-party assets have been downloaded; `assets/manifest.json` remains an intentionally empty registry.
+- This branch is not ready to merge: the technical pipeline passes, but the requested professional 3D visual quality has not yet been achieved and the Blender/pre-rendered asset stage is not implemented.
 
-- Next: run a new branch-only dry-run, inspect the updated MP4/contact sheet, then continue refining any weak scenes before merge review.
+- Next: implement a real reusable 3D asset workflow (Blender offline render to transparent PNG/sequence, material/lighting presets, reusable GLB/Blend source assets), integrate it behind a per-scene feature flag, and build a proper soil cross-section with centrally visible seed/root/sprout stages. Keep the current Skia path as fallback. Then render and inspect a new pilot before considering merge.
 
 - Follow-up visual polish: introduced radial material shading for tree foliage, multi-lobe leaf clusters, shaded trunk highlights, subtle deterministic soil grain and higher-contrast root edges. Lowered the soil horizon to reduce collisions with the cycle labels. These are still procedural 2D/2.5D materials; a true 3D asset pass using Blender-rendered transparent objects remains planned rather than being misrepresented as complete.
 
 - Dry-run #6 failed in frame rendering: installed skia-python does not expose `skia.BlurStyle.kNormal`. Dependency setup, asset validation and all 9 unit tests passed. Replaced the version-specific blur call with layered translucent shadow ellipses (no new dependency); next push triggers a fresh dry-run.
+
+
+## Current review snapshot (2026-11-18 22:03 IST)
+- Latest branch head at this snapshot: `9104c4b51261f7aef74a21d38fcc109f0883e63a`.
+- Latest dry-run #7 passed end-to-end and produced a review MP4; see artifact link above.
+- Visual acceptance remains open. Do not merge based on workflow success alone.
