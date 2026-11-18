@@ -42,6 +42,14 @@ def read_rows(path: Path) -> list[dict]:
     return rows
 
 def build_brief(rows: list[dict], channel_key: str, period: str = "latest available report") -> tuple[dict, str]:
+    # Accept raw CSV strings as well as already-normalised numeric rows (useful for tests and reuse).
+    rows = [dict(r) for r in rows]
+    for r in rows:
+        for key in ("views", "engaged_views", "average_view_percentage", "average_view_duration", "likes", "comments", "shares", "subscribers_gained", "subscribers_lost"):
+            try: r[key] = float(r.get(key) or 0)
+            except (TypeError, ValueError): r[key] = 0.0
+        r["content_type"] = str(r.get("content_type") or "unknown").lower()
+        r["title"] = str(r.get("title") or "").strip()
     profile = PROFILES.get(channel_key, PROFILES["aination-studio"])
     shorts = [r for r in rows if r["content_type"] == "short" and r["views"] > 0]
     identified = [r for r in rows if r["content_type"] != "unknown"]
