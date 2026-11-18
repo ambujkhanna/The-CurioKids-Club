@@ -103,9 +103,9 @@ def _tree(c, skia, x, ground, scale, t):
     c.translate(x, ground)
     c.scale(scale, scale)
     sway = math.sin(t * .8 + x) * 2.2
-    shadow = skia.Paint(AntiAlias=True, Color=_color(skia, "#294B36", 52))
-    shadow.setMaskFilter(skia.MaskFilter.MakeBlur(skia.BlurStyle.kNormal, 7))
-    c.drawOval(skia.Rect.MakeLTRB(-48, -10, 52, 10), shadow)
+    # A soft-edged-looking layered ellipse avoids Skia-version-specific blur APIs.
+    c.drawOval(skia.Rect.MakeLTRB(-52, -8, 56, 12), _paint(skia, "#294B36", 24))
+    c.drawOval(skia.Rect.MakeLTRB(-45, -7, 49, 9), _paint(skia, "#294B36", 22))
     trunk = _path(skia, [(-10, 0), (-6, -76), (-2+sway, -142), (14+sway, -145), (10, -74), (16, 0)], True)
     tp = skia.Paint(AntiAlias=True)
     tp.setShader(skia.GradientShader.MakeLinear(
