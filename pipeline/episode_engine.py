@@ -21,6 +21,10 @@ from kit2d import (P, rr, ell, text, smooth, wob, Track, Char, LN, DUR, NF, B, F
                    icon_train, icon_doc, icon_lock, BX, BY, BW, BH, BCX, BCY)
 import icons_extra as IX
 import char_line, bg_line
+import visual_layers
+
+# Optional scene backdrop: absent/unknown styles preserve the legacy board appearance.
+VISUAL_STYLE = visual_layers.resolve_style(EP.get("visual"), os.environ.get("CURIO_VISUAL_STYLE"))
 
 EP = json.load(open(os.environ["EPISODE"]))
 ELINES = EP["lines"]
@@ -486,6 +490,7 @@ if LOOP:
 
 def draw_board(c, t):
     K.draw_board_frame(c, t)
+    visual_layers.draw_backdrop(c, skia, (BX, BY, BW, BH), t, VISUAL_STYLE, EP.get("id", os.path.basename(os.environ.get("EPISODE", "episode"))))
     for n_, (t_in, t_out, fn, anchor, pivot) in enumerate(ELEMS):
         e = appear(t, t_in, t_out)
         if not e: continue
