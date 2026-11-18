@@ -1,0 +1,178 @@
+{
+  "id": "VAR07",
+  "slug": "ta-tha-da-dha-na",
+  "status": "ready",
+  "title": "Hindi Letters त थ द ध न! 🔤 Learn Hindi Vyanjan for Kids",
+  "cover_text": "त थ द ध न",
+  "description": "Touch your tongue to your teeth for त, थ, द, ध and न! Mia and Leo meet a butterfly, a watermelon and a little boat.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#LearnHindi",
+    "#HindiAlphabet",
+    "#KidsLearning",
+    "#Shorts"
+  ],
+  "tags": [
+    "hindi alphabet for kids",
+    "hindi varnamala",
+    "ta tha da dha na",
+    "learn hindi vyanjan",
+    "hindi consonants for kids"
+  ],
+  "cast": [
+    "MIA",
+    "LEO"
+  ],
+  "lines": [
+    {
+      "who": "MIA",
+      "text": "Leo, these letters sound soft! Touch your tongue to your teeth!",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🔤",
+          "label": "HINDI"
+        },
+        "right": {
+          "icon": "⭐",
+          "label": "LETTERS"
+        },
+        "mid": "+",
+        "subtitle": "त थ द ध न"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Tongue on teeth... ready!"
+    },
+    {
+      "who": "MIA",
+      "text": "This is ta, the soft ta! Ta as in tarbooz, a watermelon, and titli, a butterfly!",
+      "board": {
+        "type": "letter",
+        "letter": "त",
+        "items": [
+          {
+            "icon": "🍉",
+            "label": "तरबूज़",
+            "cue": "tarbooz"
+          },
+          {
+            "icon": "🦋",
+            "label": "तितली",
+            "cue": "titli"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ta, ta, titli! Flutter, flutter!"
+    },
+    {
+      "who": "MIA",
+      "text": "Next is tha! Tha as in thaila, a bag, and thaali, a plate!",
+      "board": {
+        "type": "letter",
+        "letter": "थ",
+        "items": [
+          {
+            "icon": "👜",
+            "label": "थैला",
+            "cue": "thaila"
+          },
+          {
+            "icon": "🍽️",
+            "label": "थाली",
+            "cue": "thaali"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Tha, tha, thaali! I'm hungry!"
+    },
+    {
+      "who": "MIA",
+      "text": "This is da, the soft da! Da as in daant, your teeth, and darwaaza, a door!",
+      "board": {
+        "type": "letter",
+        "letter": "द",
+        "items": [
+          {
+            "icon": "🦷",
+            "label": "दाँत",
+            "cue": "daant"
+          },
+          {
+            "icon": "🚪",
+            "label": "दरवाज़ा",
+            "cue": "darwaaza"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Da, da, daant! Look at my teeth!"
+    },
+    {
+      "who": "MIA",
+      "text": "Now dha! Dha as in dhanush, a bow, and dhoop, warm sunshine!",
+      "board": {
+        "type": "letter",
+        "letter": "ध",
+        "items": [
+          {
+            "icon": "🏹",
+            "label": "धनुष",
+            "cue": "dhanush"
+          },
+          {
+            "icon": "☀️",
+            "label": "धूप",
+            "cue": "dhoop"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Dha, dha, dhoop! So warm!"
+    },
+    {
+      "who": "MIA",
+      "text": "And this is na! Na as in naav, a boat, and naak, your nose!",
+      "board": {
+        "type": "letter",
+        "letter": "न",
+        "items": [
+          {
+            "icon": "🛶",
+            "label": "नाव",
+            "cue": "naav"
+          },
+          {
+            "icon": "👃",
+            "label": "नाक",
+            "cue": "naak"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Let me say them all! Ta, tha, da, dha, na!",
+      "board": {
+        "type": "big",
+        "icon": "⭐",
+        "text": "त थ द ध न",
+        "cue": "ta"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Brilliant, Leo! Ask a grown-up to subscribe to The Curio Kids Club for more fun, and share this with a friend! And next time... let's learn pa, pha, ba, bha and ma!"
+    }
+  ]
+}

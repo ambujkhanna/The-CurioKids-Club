@@ -1,0 +1,173 @@
+{
+  "id": "VAR03",
+  "slug": "swar-ai-o-au-am-ah",
+  "status": "ready",
+  "title": "Hindi Letters ऐ ओ औ अं अः! 🔤 Learn Hindi Swar for Kids",
+  "cover_text": "ऐ ओ औ अं अः",
+  "description": "The last Hindi vowels: ऐ, ओ, औ, अं and अः! Mia shows Leo glasses, grapes and the little dots that change a sound.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#LearnHindi",
+    "#HindiAlphabet",
+    "#KidsLearning",
+    "#Shorts"
+  ],
+  "tags": [
+    "hindi alphabet for kids",
+    "hindi varnamala",
+    "learn hindi swar",
+    "hindi vowels for kids",
+    "anusvar visarg for kids"
+  ],
+  "cast": [
+    "MIA",
+    "LEO"
+  ],
+  "lines": [
+    {
+      "who": "MIA",
+      "text": "Leo, ready for the last Hindi vowels? There are five!",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🔤",
+          "label": "HINDI"
+        },
+        "right": {
+          "icon": "⭐",
+          "label": "VOWELS"
+        },
+        "mid": "+",
+        "subtitle": "ऐ ओ औ अं अः"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Five? I can do five!"
+    },
+    {
+      "who": "MIA",
+      "text": "This is ai! Ai as in ainak, glasses, and airaavat, a big white elephant!",
+      "board": {
+        "type": "letter",
+        "letter": "ऐ",
+        "items": [
+          {
+            "icon": "👓",
+            "label": "ऐनक",
+            "cue": "ainak"
+          },
+          {
+            "icon": "🐘",
+            "label": "ऐरावत",
+            "cue": "airaavat"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ai, ai, ainak! Now I look smart!"
+    },
+    {
+      "who": "MIA",
+      "text": "Next is o! O as in os, tiny dewdrops, and ola, a hailstone!",
+      "board": {
+        "type": "letter",
+        "letter": "ओ",
+        "items": [
+          {
+            "icon": "💧",
+            "label": "ओस",
+            "cue": "os"
+          },
+          {
+            "icon": "🧊",
+            "label": "ओला",
+            "cue": "ola"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "O, o, ola! Brrr, icy!"
+    },
+    {
+      "who": "MIA",
+      "text": "This is au! Au as in aurat, a woman, and auzaar, a tool!",
+      "board": {
+        "type": "letter",
+        "letter": "औ",
+        "items": [
+          {
+            "icon": "👩",
+            "label": "औरत",
+            "cue": "aurat"
+          },
+          {
+            "icon": "🔧",
+            "label": "औज़ार",
+            "cue": "auzaar"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Au, au, auzaar! I can fix things!"
+    },
+    {
+      "who": "MIA",
+      "text": "This is am, with a little dot on top! Am as in angoor, grapes, and anda, an egg!",
+      "board": {
+        "type": "letter",
+        "letter": "अं",
+        "items": [
+          {
+            "icon": "🍇",
+            "label": "अंगूर",
+            "cue": "angoor"
+          },
+          {
+            "icon": "🥚",
+            "label": "अंडा",
+            "cue": "anda"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Am, am, angoor! It hums in my nose!"
+    },
+    {
+      "who": "MIA",
+      "text": "And this is ah, with two dots! No words start with it. It's a little breath at the end, like praatah, early morning!",
+      "board": {
+        "type": "letter",
+        "letter": "अः",
+        "items": [
+          {
+            "icon": "🌅",
+            "label": "प्रातः",
+            "cue": "praatah"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Let me try them all! Ai, o, au, am, ah!",
+      "board": {
+        "type": "big",
+        "icon": "⭐",
+        "text": "ऐ ओ औ अं अः",
+        "cue": "ai"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Wow, Leo, you know all the vowels now! Ask a grown-up to subscribe to The Curio Kids Club for more fun, and share this with a friend! And next time... let's learn ka, kha, ga, gha and nga!"
+    }
+  ]
+}

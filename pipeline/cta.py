@@ -10,6 +10,11 @@ import math
 import skia
 
 RED, NAVY, WHITE, GREY, BLUE = "#FF0033", "#1F2D44", "#FFFFFF", "#9AA4B2", "#0A84FF"
+PAD = 30  # space between a button's text and its outline
+
+
+def _btn_w(K, label, icon):
+    return skia.Font(K.FONT_XB, 34).measureText(label) + (50 if icon else 0) + 2 * PAD
 
 
 def _p(K, col, stroke=None, a=1.0):
@@ -68,10 +73,12 @@ def _button(c, K, cx, cy, w, h, fill, label, tcol, icon=None, pressed=0.0, pop=0
     c.save(); c.translate(0, 5); c.drawRRect(r, sh); c.restore()
     c.drawRRect(r, _p(K, fill))
     if border: c.drawRRect(r, _p(K, border, 4))
-    f = skia.Font(K.FONT_XB, 34); tw = f.measureText(label); iw = 54 if icon else 0
+    fs = 34; f = skia.Font(K.FONT_XB, fs); iw = 50 if icon else 0
+    while f.measureText(label) + iw > w - 2 * PAD and fs > 22: fs -= 1; f = skia.Font(K.FONT_XB, fs)
+    tw = f.measureText(label)
     x0 = -(tw + iw) / 2
     if icon: icon(x0 + 18, 0)
-    c.drawString(label, x0 + iw, 12, f, _p(K, tcol))
+    c.drawString(label, x0 + iw, fs * 0.36, f, _p(K, tcol))
     c.restore()
 
 
@@ -88,14 +95,12 @@ def end_card(c, t, t0, K, kids=False, cx=540, cy=880):
     c.drawRRect(panel, _p(K, "#FFFDF5")); c.drawRRect(panel, _p(K, NAVY, 5))
     head = "Ask a grown-up to subscribe & like!" if kids else "Enjoyed it? Subscribe, like & share!"
     _text(c, K, head, cx, cy - 78, 32, NAVY)
-    # "search us" strip under the buttons: the channel name works on every platform (no other platforms' logos)
-    name = "The CurioKids Club" if kids else "AInation Studio"
-    if u > 3.4:
-        a_ = min(1.0, (u - 3.4) / 0.3)
-        sp = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(cx - 360, cy + 70, 720, 64), 32, 32)
-        c.drawRRect(sp, _p(K, NAVY, a=0.92 * a_))
-        _text(c, K, f"Search \"{name}\" on YouTube, Instagram, Facebook", cx, cy + 112, 26, "#FFFFFF")
-    btns = [("sub", 290, cx - 255), ("like", 190, cx + 7), ("share", 200, cx + 225)]
+    # widths from the widest label each button shows (SUBSCRIBED is longer than SUBSCRIBE), 22 px apart, centred
+    ws = [_btn_w(K, "SUBSCRIBED", not kids), _btn_w(K, "LIKE", True), _btn_w(K, "SHARE", True)]
+    k_ = min(1.0, 790 / (sum(ws) + 44)); ws = [w * k_ for w in ws]
+    x_ = cx - (sum(ws) + 44) / 2; xs = []
+    for w in ws: xs.append(x_ + w / 2); x_ += w + 22
+    btns = [("sub", ws[0], xs[0]), ("like", ws[1], xs[1]), ("share", ws[2], xs[2])]
     taps = {name: 0.9 + k * 1.0 for k, (name, _, _) in enumerate(btns)}
     for name, w, x in btns:
         tp = taps[name]; pressed = max(0.0, 1 - abs(u - tp) / 0.12) if abs(u - tp) < 0.12 else 0.0

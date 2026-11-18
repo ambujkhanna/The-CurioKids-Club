@@ -76,7 +76,7 @@ The camera automatically stays on the stage while a diagram is showing. Use at m
 ## Writing rules
 
 - **Audience:** ages 4–9 (parents watch too). Use short sentences and everyday words, one idea per line.
-- **Length:** 11–14 lines, about 50–65 seconds. Each spoken line is 230 characters at most.
+- **Length:** 11–14 lines, about 45–90 seconds with the expressive voices (Hindi versions run longer). QC accepts 20–180 s. Each spoken line is 230 characters at most.
 - **Hook:** line 0 is the question, said by the asker in under 3 seconds.
 - **Ending:** the last line is always "… Ask a grown-up to subscribe to The Curio Kids Club for more wonders! And next time someone asks… \<the hook again\>?" (the Subscribe / Like / Share end card pops up on "subscribe")
 - **Facts:** only well-established facts.

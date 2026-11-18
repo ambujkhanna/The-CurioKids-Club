@@ -1,0 +1,162 @@
+{
+  "id": "VAR09",
+  "slug": "ya-ra-la-va",
+  "status": "ready",
+  "title": "Hindi Letters य र ल व! 🔤 Learn Hindi Vyanjan for Kids",
+  "cover_text": "य र ल व",
+  "description": "Mia and Leo learn य, र, ल and व! Blast off in a spaceship, ride a train and meet a clever fox.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#LearnHindi",
+    "#HindiAlphabet",
+    "#KidsLearning",
+    "#Shorts"
+  ],
+  "tags": [
+    "hindi alphabet for kids",
+    "hindi varnamala",
+    "ya ra la va",
+    "learn hindi vyanjan",
+    "hindi consonants for kids"
+  ],
+  "cast": [
+    "MIA",
+    "LEO"
+  ],
+  "lines": [
+    {
+      "who": "MIA",
+      "text": "Leo, here come four friendly Hindi letters! Ready?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🔤",
+          "label": "HINDI"
+        },
+        "right": {
+          "icon": "⭐",
+          "label": "LETTERS"
+        },
+        "mid": "+",
+        "subtitle": "य र ल व"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ready, steady, go!"
+    },
+    {
+      "who": "MIA",
+      "text": "This is ya! Ya as in yaan, a spaceship, and yog, yoga!",
+      "board": {
+        "type": "letter",
+        "letter": "य",
+        "items": [
+          {
+            "icon": "🚀",
+            "label": "यान",
+            "cue": "yaan"
+          },
+          {
+            "icon": "🧘",
+            "label": "योग",
+            "cue": "yog"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ya, ya, yaan! Blast off!"
+    },
+    {
+      "who": "MIA",
+      "text": "Next is ra! Ra as in relgaadi, a train, and raja, a king!",
+      "board": {
+        "type": "letter",
+        "letter": "र",
+        "items": [
+          {
+            "icon": "🚂",
+            "label": "रेलगाड़ी",
+            "cue": "relgaadi"
+          },
+          {
+            "icon": "🤴",
+            "label": "राजा",
+            "cue": "raja"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ra, ra, relgaadi! Choo, choo!"
+    },
+    {
+      "who": "MIA",
+      "text": "This is la! La as in lomdi, a fox, and lehar, a wave!",
+      "board": {
+        "type": "letter",
+        "letter": "ल",
+        "items": [
+          {
+            "icon": "🦊",
+            "label": "लोमड़ी",
+            "cue": "lomdi"
+          },
+          {
+            "icon": "🌊",
+            "label": "लहर",
+            "cue": "lehar"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "La, la, lehar! Splash!"
+    },
+    {
+      "who": "MIA",
+      "text": "And this is va! Va as in van, a forest, and varsha, rain!",
+      "board": {
+        "type": "letter",
+        "letter": "व",
+        "items": [
+          {
+            "icon": "🌲",
+            "label": "वन",
+            "cue": "van"
+          },
+          {
+            "icon": "🌧️",
+            "label": "वर्षा",
+            "cue": "varsha"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Va, va, varsha! Pitter, patter!"
+    },
+    {
+      "who": "MIA",
+      "text": "Say them with me: ya, ra, la, va!",
+      "board": {
+        "type": "big",
+        "icon": "⭐",
+        "text": "य र ल व",
+        "cue": "ya"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ya, ra, la, va! I love these!"
+    },
+    {
+      "who": "MIA",
+      "text": "Nice work, Leo! Ask a grown-up to subscribe to The Curio Kids Club for more fun, and share this with a friend! And next time... let's learn sha, ssha, sa and ha!"
+    }
+  ]
+}

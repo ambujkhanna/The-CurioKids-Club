@@ -1,7 +1,7 @@
 """Voice Lab: try expressive open-source voices on GitHub's computer and save samples to listen to.
 
     python voicelab/voice_lab.py chatterbox     # Chatterbox (MIT): expressive, keeps Mia/Leo voices (clones mia_ref.wav / leo_ref.wav)
-    python voicelab/voice_lab.py hindi          # Hindi: Mia, Leo and Dad in Hindi (multilingual Chatterbox, same cloned voices)
+    python voicelab/voice_lab.py hindi          # Hindi accent test: each line as A (today), B (cfg 0), C (Hindi clip), D (Hindi clip, cfg 0.2)
     python voicelab/voice_lab.py turbo          # Chatterbox-Turbo (MIT): real laughs/chuckles with [laugh] [chuckle] tags
 
 Writes MP3s to voicelab/out/. Each model runs separately so one failing does not stop the other.
@@ -63,27 +63,33 @@ def turbo():
 
 
 DAD = os.path.join(os.path.dirname(HERE), "assets", "voices", "dad.wav")
-HINDI_LINES = [
-    ("mia_explains", "MIA", "घुरघुराहट बिल्ली की हल्की-सी गुनगुनाहट है। साइंटिस्ट मानते हैं कि उसके गले की छोटी-छोटी मसल्स थरथराती हैं।"),
+HI_REFS = os.path.join(HERE, "hi_refs")  # native Hindi reference clips (made with Kokoro's Hindi voices, Apache-2.0)
+HINDI_LINES = [  # varnamala-style lines (single letters are the hardest) + everyday dialogue
+    ("var_ka", "MIA", "ये है क! क से कबूतर, क से केला!"),
+    ("var_kha", "MIA", "अब है ख, हवा के साथ! ख से खरगोश, ख से खीरा!"),
+    ("var_all", "LEO", "मैं सब बोलूँ! क, ख, ग, घ, ङ!"),
+    ("var_swar", "MIA", "अ से अनार, आ से आम, इ से इमली, ई से ईख!"),
     ("leo_asks", "LEO", "मिया दीदी, बिल्लियाँ घुरघुराती क्यों हैं?"),
-    ("leo_excited", "LEO", "अरे वाह! ये तो कमाल है! एक और बताओ ना!"),
-    ("mia_joke", "MIA", "सोते हुए डायनासोर को क्या कहते हैं? डायनो-खर्राटा!"),
     ("dad_calm", "DAD", "जब बिजली चमके, तो घर के अंदर आ जाओ। तूफ़ान को खिड़की से देखना सबसे सेफ़ है।"),
-    ("mia_subscribe", "MIA", "और मज़ेदार बातों के लिए किसी बड़े से द क्यूरियो किड्स क्लब को सब्सक्राइब करने को कहो!"),
 ]
+# A = today (English clip, cfg 0.35) · B = English clip, cfg 0 (Chatterbox's tip against accent transfer)
+# C = Hindi clip, cfg 0.35 · D = Hindi clip, cfg 0.2
+HINDI_VARIANTS = [("A_today", "en", 0.35), ("B_en_cfg0", "en", 0.0), ("C_hiclip", "hi", 0.35), ("D_hiclip_cfg02", "hi", 0.2)]
 
 
 def hindi():
-    import torchaudio as ta
+    import torch, torchaudio as ta
     from chatterbox.mtl_tts import ChatterboxMultilingualTTS
     model = ChatterboxMultilingualTTS.from_pretrained(device="cpu")
-    refs = {"MIA": MIA, "LEO": LEO, "DAD": DAD}
-    for ex in (0.5, 0.7):
-        for name, who, text in HINDI_LINES:
-            t0 = time.time()
-            wav = model.generate(text, language_id="hi", audio_prompt_path=refs[who], exaggeration=ex, cfg_weight=0.35)
-            p = os.path.join(OUT, f"hindi_ex{int(ex * 10)}_{name}.wav"); ta.save(p, wav, model.sr)
-            mp3(p, f"hindi_ex{int(ex * 10)}_{name}"); print(f"  {time.time() - t0:.0f}s", flush=True)
+    en = {"MIA": MIA, "LEO": LEO, "DAD": DAD}
+    hi = {n: os.path.join(HI_REFS, n.lower() + ".wav") for n in en}
+    for name, who, text in HINDI_LINES:
+        for tag, src, cfg in HINDI_VARIANTS:
+            t0 = time.time(); torch.manual_seed(7)
+            ref = (hi if src == "hi" else en)[who]
+            wav = model.generate(text, language_id="hi", audio_prompt_path=ref, exaggeration=0.5, cfg_weight=cfg)
+            p = os.path.join(OUT, f"hindi_{name}_{tag}.wav"); ta.save(p, wav, model.sr)
+            mp3(p, f"hindi_{name}_{tag}"); print(f"  {time.time() - t0:.0f}s", flush=True)
 
 
 def bark():

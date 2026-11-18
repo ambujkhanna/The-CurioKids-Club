@@ -53,7 +53,11 @@ def caption(ep, brand_line, platform="instagram"):
     import hashtags
     desc = ep.get("description", "").split("\n\n")[0].strip()
     tags = hashtags.pick(list(ep.get("hashtags", [])) + list(ep.get("social_hashtags", [])), platform)
-    out = f"{ep['title']}\n\n{desc}\n\n{hashtags.ENGAGE.get(platform, '')}\n{brand_line}\n\n" + " ".join(tags)
+    head = hashtags.with_brand(ep["title"], 300)
+    if hashtags.BRAND.lower() in head.lower():  # channel tag already in the first line: count it once (Instagram max 5)
+        tags = [t for t in tags if t.lower() != hashtags.BRAND.lower()]
+    links = hashtags.links_block(platform)
+    out = f"{head}\n\n{desc}\n\n{hashtags.ENGAGE.get(platform, '')}\n{brand_line}\n\n" + (links + "\n\n" if links else "") + " ".join(tags)
     return out[:2100]
 
 
@@ -80,8 +84,7 @@ def post_facebook(path, ep, cap, long=False):
                     off, end = int(r["start_offset"]), int(r["end_offset"])
             _req(f"{GRAPH}/{page}/videos", {"upload_phase": "finish", "upload_session_id": sid, "access_token": tok,
                                              "title": ep["title"][:250], "description": cap})
-            if vid: fb_set_thumbnail(vid)
-            return f"posted (video {vid})"
+            return f"posted (video {vid}), " + (fb_cover_when_ready(vid, tok) if vid else "no cover")
         # Reel: start -> upload bytes -> finish (published now)
         st = _req(f"{GRAPH}/{page}/video_reels", {"upload_phase": "start", "access_token": tok})
         vid = st["video_id"]
@@ -91,8 +94,7 @@ def post_facebook(path, ep, cap, long=False):
         _req(f"{GRAPH}/{page}/video_reels", {"upload_phase": "finish", "video_id": vid, "video_state": "PUBLISHED",
                                               "description": cap, "access_token": tok})
         LAST["fb_video_id"] = vid
-        fb_set_thumbnail(vid)
-        return f"posted (reel {vid})"
+        return f"posted (reel {vid}), " + fb_cover_when_ready(vid, tok)
     except Exception as e:
         return f"failed: {e}"[:300]
 
@@ -138,12 +140,31 @@ def fb_set_thumbnail(vid, jpg=None):
     try:
         body, hd = _multipart({"is_preferred": "true", "access_token": os.environ["META_PAGE_TOKEN"]}, "source", "thumb.jpg",
                               open(jpg, "rb").read())
-        _req(f"{GRAPH}/{vid}/thumbnails", raw=body, headers=hd)
+        _req(f"{GRAPH}/{vid}/thumbnails", raw=body, headers=hd, timeout=120)
         return "cover set"
     except Exception as e:
         print("note: Facebook cover not set:", str(e)[:150])
         if "does not exist" in str(e): return "cover not set: video not found on the Page (deleted?)"
         return "cover not set: " + str(e)[:120]
+
+
+def fb_cover_when_ready(vid, tok, wait=300):
+    """Set the designed cover once Facebook has finished processing the video (setting it earlier silently fails)."""
+    t0 = time.time()
+    while time.time() - t0 < wait:
+        try:
+            s = _req(f"{GRAPH}/{vid}?fields=status&access_token={urllib.parse.quote(tok)}").get("status", {})
+            if s.get("video_status") in ("ready", "published") or s.get("processing_phase", {}).get("status") == "complete": break
+            if s.get("video_status") == "error": return "cover not set: Facebook could not process the video"
+        except Exception:
+            pass
+        time.sleep(15)
+    res = "no thumbnail"
+    for _ in range(3):
+        res = fb_set_thumbnail(vid)
+        if res in ("cover set", "no thumbnail") or "deleted" in res: break
+        time.sleep(20)
+    return res
 
 
 def _fb_source(vid, tok, wait=600):
@@ -294,6 +315,12 @@ def post_instagram(path, cap):
         return f"failed: 1) direct: {err} | 2) hidden copy: {err2} | 3) FB reel copy: {e}"[:600]
 
 
+def wanted(platform):
+    """'Where to post' choice from the Run-workflow form (env POST_TO, e.g. 'YouTube + Facebook'); empty = everywhere."""
+    t = os.environ.get("POST_TO", "").strip().lower()
+    return not t or platform in t
+
+
 def post_all(path, ep, brand_line, long=False, done=None, thumb=None):
     """Returns {"facebook": status, "instagram": status} (only for configured platforms).
     done: the episode's saved record - platforms that already say "posted" are skipped (no duplicates on re-runs)."""
@@ -308,11 +335,16 @@ def post_all(path, ep, brand_line, long=False, done=None, thumb=None):
         m = re.search(r"(\d{6,})", fb_prev)
         if m: LAST["fb_video_id"] = m.group(1)
         out["facebook"] = fb_prev + " (kept, not re-posted)"
+    elif not wanted("facebook"):
+        out["facebook"] = "skipped (not chosen in 'Where to post')"
     else:
         out["facebook"] = post_facebook(path, ep, cap_fb, long)
     if have_ig() and not long:  # long 16:9 videos go to Facebook only
         ig_prev = str(done.get("instagram", ""))
-        out["instagram"] = ig_prev + " (kept, not re-posted)" if ig_prev.startswith("posted") else post_instagram(path, cap)
+        out["instagram"] = ig_prev + " (kept, not re-posted)" if ig_prev.startswith("posted") else \
+            (post_instagram(path, cap) if wanted("instagram") else "skipped (not chosen in 'Where to post')")
+        if not ig_prev.startswith("posted") and str(out["instagram"]).startswith("posted"):
+            out["instagram"] += ", designed cover" if COVER.get("url") else ", cover: video frame (designed cover link failed)"
     return out
 
 

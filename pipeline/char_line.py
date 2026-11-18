@@ -7,6 +7,9 @@ import doodle
 
 INK = "#1D1D1F"
 LW = 8.0  # main line weight (character units)
+import os as _os
+LIMBS = _os.environ.get("LIMBS", "tube")  # "tube" = thick coloured arms/legs with outline (default), "stick" = thin ink lines
+TUBE, OUT = 17.0, 5.0  # limb thickness and its outline
 
 
 def hexc(h, a=1.0):
@@ -71,10 +74,10 @@ def wob(t, f, ph):
 SPEC = {
     "DAD": dict(scale=1.0, skin="#FFE0C8", head=(118, 128), shirt="#FF6B6B", shirt_sh="#E85555", tie="#3A86FF",
                 hair="#6B5544", torso_h=300, torso_w=96, hip_w=84, leg=330, L1=150, L2=140, shoe="#5A3A26"),
-    "TEEN": dict(scale=0.92, skin="#FFE4D2", head=(120, 120), shirt="#FFD23F", shirt_sh="#F2B600", band="#FF4D8D",
+    "TEEN": dict(pants="#4058A8", scale=0.92, skin="#FFE4D2", head=(120, 120), shirt="#FFD23F", shirt_sh="#F2B600", band="#FF4D8D",
                  hair="#7A4428", torso_h=270, torso_w=84, hip_w=78, leg=320, L1=138, L2=128, shoe="#FFFFFF"),
     # The CurioKids Club cast: big sister Mia (girl drawing, own colours) and little brother Leo
-    "MIA": dict(scale=0.92, skin="#FFE4D2", head=(120, 120), shirt="#3DDC97", shirt_sh="#21B57A", band="#FF8C42",
+    "MIA": dict(pants="#3B4A78", scale=0.92, skin="#FFE4D2", head=(120, 120), shirt="#3DDC97", shirt_sh="#21B57A", band="#FF8C42",
                 hair="#4A2C1D", torso_h=270, torso_w=84, hip_w=78, leg=320, L1=138, L2=128, shoe="#FFFFFF"),
     "LEO": dict(scale=0.78, skin="#FFE2CC", head=(124, 118), shirt="#4FC3F7", shirt_sh="#2BA6DE", stripe="#FFD23F",
                 hair="#3B2A20", torso_h=190, torso_w=76, hip_w=68, leg=215, L1=106, L2=98, shoe="#FF6B6B", shorts="#3A5BA0"),
@@ -205,8 +208,14 @@ def stick_arm(c, x0, y0, a1, a2, s, sp, hand, sleeve):
     hx, hy = ex + s * math.sin(r2) * L2, ey + math.cos(r2) * L2
     # sleeve on the upper arm (coloured, outlined), then ink stick to the hand
     sx, sy = x0 + (ex - x0) * 0.55, y0 + (ey - y0) * 0.55
-    c.drawLine(x0, y0, sx, sy, P(INK, 34)); c.drawLine(x0, y0, sx, sy, P(sleeve, 22))
-    c.drawLine(sx, sy, ex, ey, P(INK, LW)); c.drawLine(ex, ey, hx, hy, P(INK, LW))
+    if LIMBS == "tube":  # owner: thicker limbs - coloured tubes with a bold ink outline
+        for a_, b_, col in (((sx, sy), (ex, ey), sp["skin"]), ((ex, ey), (hx, hy), sp["skin"])):
+            c.drawLine(*a_, *b_, P(INK, TUBE + 2 * OUT)); c.drawLine(*a_, *b_, P(col, TUBE))
+        c.drawCircle(ex, ey, TUBE / 2, P(sp["skin"]))  # smooth elbow
+        c.drawLine(x0, y0, sx, sy, P(INK, 38)); c.drawLine(x0, y0, sx, sy, P(sleeve, 26))
+    else:
+        c.drawLine(x0, y0, sx, sy, P(INK, 34)); c.drawLine(x0, y0, sx, sy, P(sleeve, 22))
+        c.drawLine(sx, sy, ex, ey, P(INK, LW)); c.drawLine(ex, ey, hx, hy, P(INK, LW))
     d = math.atan2(hy - ey, hx - ex)
     hx2, hy2 = hx + math.cos(d) * 14, hy + math.sin(d) * 14
     if hand == "point":
@@ -235,7 +244,15 @@ def draw(c, ch, t, get_face, arms, intro_k, x, floor_y):
     # legs: ink sticks + shoes
     for s in (-1, 1):
         fxp = s * 46
-        c.drawLine(s * hw * 0.45, hip_y - 6, fxp, -26, P(INK, LW + 1))
+        if LIMBS == "tube":
+            pants = sp.get("pants") or ("#2F3E5C" if dad else "#3A5BA0")
+            x1, y1, x2, y2 = s * hw * 0.45, hip_y - 6, fxp, -26
+            c.drawLine(x1, y1, x2, y2, P(INK, TUBE + 4 + 2 * OUT)); c.drawLine(x1, y1, x2, y2, P(sp["skin"] if ch.name == "LEO" else pants, TUBE + 4))
+            if ch.name == "LEO":  # Leo: shorts on the upper leg
+                mx, my = x1 + (x2 - x1) * 0.42, y1 + (y2 - y1) * 0.42
+                c.drawLine(x1, y1, mx, my, P(INK, TUBE + 14 + 2 * OUT, cap=False)); c.drawLine(x1, y1, mx, my, P(sp.get("shorts", "#3A5BA0"), TUBE + 14, cap=False))
+        else:
+            c.drawLine(s * hw * 0.45, hip_y - 6, fxp, -26, P(INK, LW + 1))
         shp = skia.Path(); shp.moveTo(fxp - s * 18, -30); shp.cubicTo(fxp + s * 30, -40, fxp + s * 56, -18, fxp + s * 50, 0)
         shp.lineTo(fxp - s * 22, 0); shp.quadTo(fxp - s * 28, -16, fxp - s * 18, -30); shp.close()
         F(c, shp, sp["shoe"], 6)

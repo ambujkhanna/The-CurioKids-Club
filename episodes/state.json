@@ -38,7 +38,8 @@
         "instagram": "posted (reel 18138431464629554) with the 3 Mbps copy",
         "video_id": "MQZWEceejI0",
         "url": "https://www.youtube.com/shorts/MQZWEceejI0",
-        "uploaded_at": "2026-11-08T13:54:13+05:30"
+        "uploaded_at": "2026-11-08T13:54:13+05:30",
+        "facebook_cover": "cover set"
       },
       "facebook_cover": "cover set"
     },
@@ -70,7 +71,8 @@
         "status": "uploaded",
         "video_id": "F9q2n1zZqtM",
         "url": "https://www.youtube.com/shorts/F9q2n1zZqtM",
-        "uploaded_at": "2026-11-08T21:32:17+05:30"
+        "uploaded_at": "2026-11-08T21:32:17+05:30",
+        "facebook_cover": "cover set"
       }
     },
     "ep004": {
@@ -80,13 +82,30 @@
       "facebook": "posted (reel 1728749192110385)",
       "instagram": "posted (reel 18360024679173734)",
       "publish_at_ist": "2026-11-07T17:20+05:30",
-      "thumbnail": "not set: <HttpError 404 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=TkcXGEyIvME&alt=json&uploadType=media returned \"The video that you are trying to insert a thumbnail image for cannot ",
+      "thumbnail": "not set: video not found on YouTube (deleted?)",
       "status": "uploaded",
       "video_id": "TkcXGEyIvME",
       "url": "https://www.youtube.com/shorts/TkcXGEyIvME",
       "uploaded_at": "2026-11-06T21:53:28+05:30",
       "voices": "kokoro",
-      "facebook_cover": "cover set"
+      "facebook_cover": "cover set",
+      "hi": {
+        "voices": "kokoro",
+        "title": "\u092c\u093e\u0930\u093f\u0936 \u0915\u0940 \u092c\u0942\u0901\u0926 \u0915\u0939\u093e\u0901-\u0915\u0939\u093e\u0901 \u091c\u093e\u0924\u0940 \u0939\u0948? | Rainy Day Rhyme \ud83c\udf27\ufe0f The Water Cycle Poem for Kids",
+        "rendered_at": "2026-11-10T22:15:09+05:30",
+        "duration_s": 97.95,
+        "publish_at_ist": "2026-11-11T09:40+05:30",
+        "thumbnail": "set",
+        "playlist": "off (added by hand)",
+        "made_for_kids": "no",
+        "facebook": "posted (reel 1124819340291582), cover set",
+        "instagram": "failed: 1) direct: [size-budget] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Reque [3 Mbps] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Reque [2 Mbps] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"R | 2) hidden copy: processing Error: Media upload has failed with error code 2207076 | 3) FB reel copy: processing Error: Media upload has failed with error code 2207076",
+        "status": "uploaded",
+        "video_id": "njHtAf31Bys",
+        "url": "https://www.youtube.com/shorts/njHtAf31Bys",
+        "uploaded_at": "2026-11-10T22:23:34+05:30",
+        "facebook_cover": "cover set"
+      }
     },
     "ep005": {
       "title": "Why Is the Sky Blue? \u2600\ufe0f Fun Facts for Kids",
@@ -103,7 +122,24 @@
       "url": "https://www.youtube.com/shorts/uX0INx1C8oo",
       "uploaded_at": "2026-11-07T20:43:29+05:30",
       "voices": "kokoro",
-      "facebook_cover": "cover not set: HTTP 400: Unsupported post request. Object with ID '29028579776780651' does not exist, cannot be loaded due to missing p"
+      "facebook_cover": "cover not set: video not found on the Page (deleted?)",
+      "hi": {
+        "voices": "kokoro",
+        "title": "\u0906\u0938\u092e\u093e\u0928 \u0928\u0940\u0932\u093e \u0915\u094d\u092f\u094b\u0902 \u0939\u094b\u0924\u093e \u0939\u0948? | Why Is the Sky Blue? \u2600\ufe0f",
+        "rendered_at": "2026-11-14T20:55:42+05:30",
+        "duration_s": 94.14,
+        "publish_at_ist": "2026-11-15T10:10+05:30",
+        "thumbnail": "set (re-applied after posting: set)",
+        "playlist": "off (added by hand)",
+        "made_for_kids": "no",
+        "facebook": "posted (reel 1660426292293674), cover set",
+        "instagram": "failed: 1) direct: [size-budget] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Reque [3 Mbps] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Reque [2 Mbps] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"R | 2) hidden copy: processing Error: Media upload has failed with error code 2207076 | 3) FB reel copy: processing Error: Media upload has failed with error code 2207076",
+        "status": "uploaded",
+        "video_id": "Mc2P550FCVI",
+        "url": "https://www.youtube.com/shorts/Mc2P550FCVI",
+        "uploaded_at": "2026-11-14T21:03:43+05:30",
+        "thumbnail_checked": "2026-11-17T00:40+05:30 set"
+      }
     },
     "ep006": {
       "voices": "chatterbox",
@@ -119,7 +155,112 @@
       "status": "uploaded",
       "video_id": "fTbBW1Um2zs",
       "url": "https://www.youtube.com/shorts/fTbBW1Um2zs",
-      "uploaded_at": "2026-11-10T00:53:00+05:30"
+      "uploaded_at": "2026-11-10T00:53:00+05:30",
+      "facebook_cover": "cover set",
+      "hi": {
+        "voices": "kokoro",
+        "title": "\u092c\u0930\u094d\u092b\u093c \u092a\u093e\u0928\u0940 \u092a\u0930 \u0924\u0948\u0930\u0924\u0940 \u0915\u094d\u092f\u094b\u0902 \u0939\u0948? | Why Does Ice Float? \ud83e\uddca Fun Science for Kids",
+        "rendered_at": "2026-11-17T00:32:47+05:30",
+        "duration_s": 112.08,
+        "publish_at_ist": "2026-11-17T10:05+05:30",
+        "thumbnail": "set (re-applied after posting: set)",
+        "playlist": "off (added by hand)",
+        "made_for_kids": "no",
+        "facebook": "posted (reel 2593157881159258), cover set",
+        "instagram": "failed: 1) direct: [size-budget] HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, can [3 Mbps] HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, can [2 Mbps] HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, | 2) hidden copy: HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, cannot be loaded due to missing permissions, or does  | 3) FB reel copy: HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, cannot be loade",
+        "status": "uploaded",
+        "video_id": "cfIxFau83S0",
+        "url": "https://www.youtube.com/shorts/cfIxFau83S0",
+        "uploaded_at": "2026-11-17T00:39:08+05:30",
+        "thumbnail_checked": "2026-11-17T23:46+05:30 set"
+      }
+    },
+    "ep007": {
+      "voices": "chatterbox",
+      "title": "How Is a Rainbow Made? \ud83c\udf08 Fun Facts for Kids",
+      "rendered_at": "2026-11-11T22:49:15+05:30",
+      "duration_s": 66.73,
+      "status": "uploaded",
+      "note": "dry run",
+      "publish_at_ist": "2026-11-12T19:25+05:30",
+      "thumbnail": "set",
+      "playlist": "off (added by hand)",
+      "made_for_kids": "no",
+      "facebook": "posted (reel 1078723905182682), cover set",
+      "instagram": "posted (reel 18098189471664552) with the 3 Mbps copy, designed cover",
+      "video_id": "us2cz1F3AI8",
+      "url": "https://www.youtube.com/shorts/us2cz1F3AI8",
+      "uploaded_at": "2026-11-11T22:53:00+05:30",
+      "facebook_cover": "cover set",
+      "thumbnail_checked": "2026-11-14T10:18+05:30 set"
+    },
+    "ep008": {
+      "voices": "chatterbox",
+      "title": "Why Do Zebras Have Stripes? \ud83e\udd93 Fun Facts for Kids",
+      "rendered_at": "2026-11-14T09:27:59+05:30",
+      "duration_s": 71.32,
+      "publish_at_ist": "2026-11-14T09:28+05:30",
+      "thumbnail": "set",
+      "playlist": "off (added by hand)",
+      "made_for_kids": "no",
+      "facebook": "posted (reel 1732283491600120), cover set",
+      "instagram": "failed: 1) direct: [size-budget] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Reque [3 Mbps] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Reque [2 Mbps] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"R | 2) hidden copy: processing Error: Media upload has failed with error code 2207076 | 3) FB reel copy: processing Error: Media upload has failed with error code 2207076",
+      "status": "uploaded",
+      "video_id": "iBAc2_wsmBY",
+      "url": "https://www.youtube.com/shorts/iBAc2_wsmBY",
+      "uploaded_at": "2026-11-14T09:35:35+05:30",
+      "thumbnail_checked": "2026-11-14T11:38+05:30 set",
+      "facebook_cover": "cover set"
+    },
+    "ep009": {
+      "voices": "chatterbox",
+      "title": "Why Do We Need Sleep? \ud83d\ude34 Fun Facts for Kids",
+      "rendered_at": "2026-11-14T10:11:17+05:30",
+      "duration_s": 68.33,
+      "publish_at_ist": "2026-11-14T10:11+05:30",
+      "thumbnail": "set (re-applied after posting: set)",
+      "playlist": "off (added by hand)",
+      "made_for_kids": "no",
+      "facebook": "posted (reel 2614578895654196), cover set",
+      "instagram": "failed: 1) direct: [size-budget] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Reque [3 Mbps] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Reque [2 Mbps] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"R | 2) hidden copy: processing Error: Media upload has failed with error code 2207076 | 3) FB reel copy: processing Error: Media upload has failed with error code 2207076",
+      "status": "uploaded",
+      "video_id": "NM2z0rwRbN8",
+      "url": "https://www.youtube.com/shorts/NM2z0rwRbN8",
+      "uploaded_at": "2026-11-14T10:18:12+05:30",
+      "thumbnail_checked": "2026-11-14T21:04+05:30 set"
+    },
+    "ep010": {
+      "voices": "chatterbox",
+      "title": "How Do Magnets Work? \ud83e\uddf2 Fun Science for Kids",
+      "rendered_at": "2026-11-15T21:34:09+05:30",
+      "duration_s": 78.93,
+      "publish_at_ist": "2026-11-16T17:30+05:30",
+      "thumbnail": "set (re-applied after posting: set)",
+      "playlist": "off (added by hand)",
+      "made_for_kids": "no",
+      "facebook": "posted (reel 1679711883669801), cover set",
+      "instagram": "failed: 1) direct: [size-budget] HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, can [3 Mbps] HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, can [2 Mbps] HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, | 2) hidden copy: HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, cannot be loaded due to missing permissions, or does  | 3) FB reel copy: HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, cannot be loade",
+      "status": "uploaded",
+      "video_id": "2EBH9fS2qJo",
+      "url": "https://www.youtube.com/shorts/2EBH9fS2qJo",
+      "uploaded_at": "2026-11-15T21:39:01+05:30",
+      "thumbnail_checked": "2026-11-17T23:46+05:30 set"
+    },
+    "ep011": {
+      "voices": "chatterbox",
+      "title": "Eight Planets Rhyme \ud83e\ude90 Learn the Planets in Order",
+      "rendered_at": "2026-11-17T23:39:09+05:30",
+      "duration_s": 80.3,
+      "publish_at_ist": "2026-11-18T19:30+05:30",
+      "thumbnail": "set (re-applied after posting: set)",
+      "playlist": "off (added by hand)",
+      "made_for_kids": "no",
+      "facebook": "posted (reel 4394853307325933), cover set",
+      "instagram": "failed: 1) direct: [size-budget] HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, can [3 Mbps] HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, can [2 Mbps] HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, | 2) hidden copy: HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, cannot be loaded due to missing permissions, or does  | 3) FB reel copy: HTTP 400: Unsupported post request. Object with ID '17841472540015702' does not exist, cannot be loade",
+      "status": "uploaded",
+      "video_id": "6CnZ3qun0P4",
+      "url": "https://www.youtube.com/shorts/6CnZ3qun0P4",
+      "uploaded_at": "2026-11-17T23:45:26+05:30"
     }
   }
 }

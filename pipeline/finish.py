@@ -58,15 +58,16 @@ def ts(x):
 
 LONG = os.environ.get("FORMAT") == "long"
 OUTW, OUTH = (1920, 1080) if LONG else (1080, 1920)
+WORD_SEP = " \\h"  # a normal + a hard space: keeps a clear gap between outlined words
 ass = ["[Script Info]", "ScriptType: v4.00+", f"PlayResX: {OUTW}", f"PlayResY: {OUTH}", "WrapStyle: 2", "",
        "[V4+ Styles]",
        "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding",
-       "Style: Cap,Lilita One,82,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,7,3,2,60,60,330,1",
+       "Style: Cap,Lilita One,82,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,5,2,2,60,60,330,1",
        "Style: Who,Lilita One,40,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,1,0,0,0,100,100,2,0,1,5,0,2,60,60,450,1",
        "Style: Hook,Lilita One,84,&H0037D6FF,&H0037D6FF,&H00402D1F,&H96000000,1,0,0,0,100,100,0,0,1,9,4,8,70,70,215,1",
        "", "[Events]", "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text"]
 if LONG:  # widescreen: smaller captions, centred under the board on the left
-    ass = [l.replace("Style: Cap,Lilita One,82,", "Style: Cap,Lilita One,74,").replace(",1,7,3,2,60,60,330,1", ",1,6,3,2,40,800,24,1") for l in ass]
+    ass = [l.replace("Style: Cap,Lilita One,82,", "Style: Cap,Lilita One,74,").replace(",1,5,2,2,60,60,330,1", ",1,4,2,2,40,800,24,1") for l in ass]
 HL = {"DAD": "&H00FFC04F&", "TEEN": "&H0000D6FF&", "MIA": "&H0097DC3D&", "LEO": "&H0000D6FF&"}  # BGR
 for ln in T["lines"]:
     words = []
@@ -94,7 +95,7 @@ for ln in T["lines"]:
                 else:
                     parts.append(txt)
             pop = "{\\fad(40,0)}" if wi == 0 else ""
-            ass.append(f"Dialogue: 0,{ts(a)},{ts(b)},Cap,,0,0,0,,{pop}{' '.join(parts)}")
+            ass.append(f"Dialogue: 0,{ts(a)},{ts(b)},Cap,,0,0,0,,{pop}{WORD_SEP.join(parts)}")
 # --- opening hook: the episode's question in big bold letters for the first ~2.3 s (stops viewers scrolling past)
 def _hook_text():
     try:

@@ -42,6 +42,21 @@ EMOJI = {  # keyword -> picture, for boards the script didn't specify
 }
 
 
+HEAD_KEYS = ("TITLE_BOARD", "TITLE_HI", "TITLE", "COVER", "DESCRIPTION_HI", "DESCRIPTION", "HASHTAGS", "TAGS", "BOARD")
+
+
+def from_pasted(text):
+    """A script pasted into the Run-workflow 'script' box arrives as ONE line (GitHub drops the line breaks).
+    Put each 'KEY:' / 'NAME:' and the '---' back on its own line."""
+    keys = sorted(set(HEAD_KEYS) | set(CH["cast"]) | {"HI"}, key=len, reverse=True)
+    t = text.replace("\r", "")
+    t = re.sub(r"\s*-{3,}\s*", "\n---\n", t, count=1)
+    alt = "|".join(keys)
+    t = re.sub(r"(" + alt + r")\s*:", lambda m: "\n" + m.group(1) + ":", t)  # CAPITAL names, even glued to the previous word
+    t = re.sub(r"(?i)(?<![A-Za-z0-9_])(" + alt + r")\s*:", lambda m: "\n" + m.group(1).upper() + ":", t)  # 'Teen:' / 'dad:' 
+    return "\n".join(l.strip() for l in t.split("\n") if l.strip()) + "\n"
+
+
 def parse(text):
     """-> (headers dict, lines list of dict(who, text, hint, hi, ln)), problems list"""
     head, lines, probs, body = {}, [], [], False
@@ -65,6 +80,15 @@ def parse(text):
         txt, hint = (val.split("|", 1) + [""])[:2]
         lines.append(dict(who=key, text=txt.strip(), hint=hint.strip(), hi="", ln=n))
     return head, lines, probs
+
+
+def _short(s, n=60):
+    """Board subtitle: no emoji, cut only between words (never mid-word), '…' when shortened."""
+    import unicodedata  # drop emoji/symbols only (keeps Hindi vowel signs)
+    s = "".join(ch for ch in s if not (unicodedata.category(ch) in ("So", "Sk") or ch in "\u200d\ufe0f→➜➡")).strip()
+    s = re.sub(r"\s{2,}", " ", s)
+    if len(s) <= n: return s
+    return s[:n].rsplit(" ", 1)[0].rstrip(" ,:;-") + "…"
 
 
 def icon_of(s):
@@ -135,7 +159,7 @@ def build(path):
             if i == 0 and head.get("TITLE_BOARD") and "->" in head["TITLE_BOARD"]:
                 a, b = [icon_of(x) for x in head["TITLE_BOARD"].split("->", 1)]
                 e["board"] = {"type": "title", "left": {"icon": a[0] or "❓", "label": a[1].upper()[:12]},
-                              "right": {"icon": b[0] or "💡", "label": b[1].upper()[:12]}, "subtitle": q[:40], "mid": "→"}
+                              "right": {"icon": b[0] or "💡", "label": b[1].upper()[:12]}, "subtitle": _short(q), "mid": "→"}
             else:
                 ic = ic or auto_icon(l["text"] + " " + title)[0] or "❓"
                 e["board"] = {"type": "big", "icon": ic, "text": ht or q}

@@ -7,3 +7,4 @@ soundfile==0.14.0
 skia-python==144.1
 google-api-python-client
 google-auth
+uharfbuzz==0.57.0

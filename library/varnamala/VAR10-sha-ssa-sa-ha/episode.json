@@ -1,0 +1,162 @@
+{
+  "id": "VAR10",
+  "slug": "sha-ssa-sa-ha",
+  "status": "ready",
+  "title": "Hindi Letters श ष स ह! 🔤 Learn Hindi Vyanjan for Kids",
+  "cover_text": "श ष स ह",
+  "description": "Mia and Leo learn श, ष, स and ह! Roar like a lion, crunch an apple and meet a big elephant.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#LearnHindi",
+    "#HindiAlphabet",
+    "#KidsLearning",
+    "#Shorts"
+  ],
+  "tags": [
+    "hindi alphabet for kids",
+    "hindi varnamala",
+    "sha sa ha hindi",
+    "learn hindi vyanjan",
+    "hindi consonants for kids"
+  ],
+  "cast": [
+    "MIA",
+    "LEO"
+  ],
+  "lines": [
+    {
+      "who": "MIA",
+      "text": "Leo, these Hindi letters sound like a hiss and a breath! Listen!",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🔤",
+          "label": "HINDI"
+        },
+        "right": {
+          "icon": "⭐",
+          "label": "LETTERS"
+        },
+        "mid": "+",
+        "subtitle": "श ष स ह"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Shhh... I'm listening!"
+    },
+    {
+      "who": "MIA",
+      "text": "This is sha! Sha as in sher, a lion, and shahad, honey!",
+      "board": {
+        "type": "letter",
+        "letter": "श",
+        "items": [
+          {
+            "icon": "🦁",
+            "label": "शेर",
+            "cue": "sher"
+          },
+          {
+            "icon": "🍯",
+            "label": "शहद",
+            "cue": "shahad"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Sha, sha, sher! Roar!"
+    },
+    {
+      "who": "MIA",
+      "text": "Next is ssha, it sounds like sha too! It starts shatkon, a six-sided shape, and hides in dhanush, a bow, and rishi, a sage!",
+      "board": {
+        "type": "letter",
+        "letter": "ष",
+        "items": [
+          {
+            "icon": "🏹",
+            "label": "धनुष",
+            "cue": "dhanush"
+          },
+          {
+            "icon": "🧘",
+            "label": "ऋषि",
+            "cue": "rishi"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ssha and sha... they sound like twins!"
+    },
+    {
+      "who": "MIA",
+      "text": "This is sa! Sa as in seb, an apple, and sooraj, the sun!",
+      "board": {
+        "type": "letter",
+        "letter": "स",
+        "items": [
+          {
+            "icon": "🍎",
+            "label": "सेब",
+            "cue": "seb"
+          },
+          {
+            "icon": "☀️",
+            "label": "सूरज",
+            "cue": "sooraj"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Sa, sa, seb! Crunch!"
+    },
+    {
+      "who": "MIA",
+      "text": "And this is ha! Ha as in haathi, an elephant, and hans, a swan!",
+      "board": {
+        "type": "letter",
+        "letter": "ह",
+        "items": [
+          {
+            "icon": "🐘",
+            "label": "हाथी",
+            "cue": "haathi"
+          },
+          {
+            "icon": "🦢",
+            "label": "हंस",
+            "cue": "hans"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Ha, ha, haathi! Ha ha ha!"
+    },
+    {
+      "who": "MIA",
+      "text": "Say them with me: sha, ssha, sa, ha!",
+      "board": {
+        "type": "big",
+        "icon": "⭐",
+        "text": "श ष स ह",
+        "cue": "sha"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Sha, ssha, sa, ha! Done!"
+    },
+    {
+      "who": "MIA",
+      "text": "Great listening, Leo! Ask a grown-up to subscribe to The Curio Kids Club for more fun, and share this with a friend! And next time... let's learn ksha, tra, gya and shra, the super letters!"
+    }
+  ]
+}
