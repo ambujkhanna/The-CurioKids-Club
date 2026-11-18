@@ -50,6 +50,43 @@ def _path(skia, points, close=False):
     return p
 
 
+
+def _sphere(c, skia, x, y, radius, base, light, shade, alpha=255):
+    """Paint a softly modelled 3D-style sphere using a radial material gradient."""
+    p = skia.Paint(AntiAlias=True)
+    p.setShader(skia.GradientShader.MakeRadial(
+        skia.Point(x-radius*.30, y-radius*.36), radius*1.48,
+        [_color(skia, light, alpha), _color(skia, base, alpha),
+         _color(skia, shade, alpha)],
+        [0.0, .58, 1.0], skia.TileMode.kClamp))
+    c.drawCircle(x, y, radius, p)
+    c.drawCircle(x-radius*.34, y-radius*.39, radius*.13,
+                 _paint(skia, "#FFFFFF", int(alpha*.34)))
+
+
+def _leaf_cluster(c, skia, x, y, r, t, variant=0):
+    colors = [("#3B9859","#72C879","#1F6843"),
+              ("#328B50","#6CC36F","#205F3B"),
+              ("#4A9E5B","#8BD17A","#286B43")]
+    base, light, shade = colors[variant % len(colors)]
+    _sphere(c, skia, x, y, r, base, light, shade)
+    # Small overlapping leaf lobes give the crown a fuller, less geometric edge.
+    for dx, dy, rr_ in [(-.56,-.08,.48),(.48,-.10,.50),(-.20,-.55,.44),(.28,-.56,.43)]:
+        _sphere(c, skia, x+dx*r, y+dy*r, rr_*r, base, light, shade, 242)
+
+
+def _grain(c, skia, x, y, w, h, seed, count=90):
+    """Deterministic fine material detail; subtle enough for phone-sized video."""
+    state = zlib.crc32(str(seed).encode("utf-8"))
+    for i in range(count):
+        state = (1664525 * state + 1013904223) & 0xffffffff
+        px = x + (state / 0xffffffff) * w
+        state = (1664525 * state + 1013904223) & 0xffffffff
+        py = y + (state / 0xffffffff) * h
+        rad = 0.8 + (state % 22) / 10
+        col = "#F6D4A2" if i % 3 else "#422C25"
+        c.drawCircle(px, py, rad, _paint(skia, col, 34 if i % 3 else 25))
+
 def _cloud(c, skia, x, y, scale=1.0):
     c.save()
     c.translate(x, y)
@@ -66,13 +103,19 @@ def _tree(c, skia, x, ground, scale, t):
     c.translate(x, ground)
     c.scale(scale, scale)
     sway = math.sin(t * .8 + x) * 2.2
-    c.drawOval(skia.Rect.MakeLTRB(-43, -8, 48, 8), _paint(skia, "#496B53", 45))
-    trunk = _path(skia, [(-8, 0), (-5, -86), (1+sway, -145), (13+sway, -142), (8, -82), (13, 0)], True)
-    c.drawPath(trunk, _paint(skia, "#98603C"))
-    c.drawPath(_path(skia, [(-1, -10), (2, -83), (8, -135)]), _paint(skia, "#C98A55", 180, 5))
-    for ox, oy, r, col in [(-28,-151,39,"#2E8055"),(10,-177,46,"#3D9A60"),(42,-145,35,"#2E8055"),(-4,-125,38,"#64B96B")]:
-        c.drawCircle(ox+sway, oy, r, _paint(skia, col))
-        c.drawCircle(ox-9+sway, oy-11, r*.48, _paint(skia, "#B7E58A", 95))
+    shadow = skia.Paint(AntiAlias=True, Color=_color(skia, "#294B36", 52))
+    shadow.setMaskFilter(skia.MaskFilter.MakeBlur(skia.BlurStyle.kNormal, 7))
+    c.drawOval(skia.Rect.MakeLTRB(-48, -10, 52, 10), shadow)
+    trunk = _path(skia, [(-10, 0), (-6, -76), (-2+sway, -142), (14+sway, -145), (10, -74), (16, 0)], True)
+    tp = skia.Paint(AntiAlias=True)
+    tp.setShader(skia.GradientShader.MakeLinear(
+        [skia.Point(-10,0),skia.Point(14,0)],
+        [_color(skia,"#5D3828"),_color(skia,"#C58A55"),_color(skia,"#70432D")],
+        [0.0,.48,1.0],skia.TileMode.kClamp))
+    c.drawPath(trunk,tp)
+    c.drawPath(_path(skia,[(-3,-15),(1,-75),(7+sway,-135)]),_paint(skia,"#E1B07A",150,3))
+    for ox, oy, r, variant in [(-28,-151,39,0),(10,-177,46,1),(42,-145,35,2),(-4,-125,38,1)]:
+        _leaf_cluster(c,skia,ox+sway,oy,r,t,variant)
     c.restore()
 
 
@@ -113,12 +156,13 @@ def _garden(c, skia, x, y, w, h, t, seed):
     _tree(c,skia,x+w*.075,y+h*.77,.48,t)
     _tree(c,skia,x+w*.93,y+h*.77,.58,t)
 
-    soil_top=y+h*.79
+    soil_top=y+h*.885
     soil_p=skia.Paint(AntiAlias=True)
     soil_p.setShader(skia.GradientShader.MakeLinear(
         [skia.Point(x,soil_top),skia.Point(x,y+h)],
         [_color(skia,"#A96F45"),_color(skia,"#68412F")],[0.,1.],skia.TileMode.kClamp))
     c.drawRect(skia.Rect.MakeLTRB(x,soil_top,x+w,y+h),soil_p)
+    _grain(c,skia,x,soil_top,w,h*.115,seed,110)
     c.drawRect(skia.Rect.MakeLTRB(x,soil_top,x+w,soil_top+h*.055),_paint(skia,"#6EBD62"))
     c.drawLine(x,soil_top,x+w,soil_top,_paint(skia,"#D4F28E",230,5))
     c.drawPath(_path(skia,[(x,soil_top+h*.12),(x+w*.24,soil_top+h*.16),
@@ -130,13 +174,15 @@ def _garden(c, skia, x, y, w, h, t, seed):
     # Fine roots, grass, pebbles and flowers make the foreground read as a diorama.
     for side in (-1,1):
         rx=x+w*(.20 if side<0 else .80)
-        c.drawPath(_path(skia,[(rx,soil_top+2),(rx+side*9,soil_top+h*.08),
-            (rx+side*22,soil_top+h*.17),(rx+side*18,soil_top+h*.28)]),
-            _paint(skia,"#F1C18A",220,4))
+        main=_path(skia,[(rx,soil_top+1),(rx+side*8,soil_top+h*.035),
+            (rx+side*19,soil_top+h*.075),(rx+side*17,soil_top+h*.112)])
+        c.drawPath(main,_paint(skia,"#593B2D",185,7))
+        c.drawPath(main,_paint(skia,"#EBC08C",235,3))
         for branch in (-1,1):
-            c.drawPath(_path(skia,[(rx+side*12,soil_top+h*.15),
-                (rx+side*28,soil_top+h*.20),(rx+side*35+branch*8,soil_top+h*.27)]),
-                _paint(skia,"#E7B47D",185,2.5))
+            branch_path=_path(skia,[(rx+side*9,soil_top+h*.04),
+                (rx+side*25,soil_top+h*.065),(rx+side*34+branch*7,soil_top+h*.105)])
+            c.drawPath(branch_path,_paint(skia,"#593B2D",160,4))
+            c.drawPath(branch_path,_paint(skia,"#E9B982",220,2))
     for n in range(13):
         gx=x+w*((n*17+6)%97)/100
         sway=math.sin(t*1.5+n)*4
