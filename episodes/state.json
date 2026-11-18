@@ -172,7 +172,7 @@
         "video_id": "cfIxFau83S0",
         "url": "https://www.youtube.com/shorts/cfIxFau83S0",
         "uploaded_at": "2026-11-17T00:39:08+05:30",
-        "thumbnail_checked": "2026-11-17T23:46+05:30 set"
+        "thumbnail_checked": "2026-11-19T04:21+05:30 set"
       }
     },
     "ep007": {
@@ -192,7 +192,23 @@
       "url": "https://www.youtube.com/shorts/us2cz1F3AI8",
       "uploaded_at": "2026-11-11T22:53:00+05:30",
       "facebook_cover": "cover set",
-      "thumbnail_checked": "2026-11-14T10:18+05:30 set"
+      "thumbnail_checked": "2026-11-14T10:18+05:30 set",
+      "hi": {
+        "voices": "kokoro",
+        "title": "\u0907\u0902\u0926\u094d\u0930\u0927\u0928\u0941\u0937 \u0915\u0948\u0938\u0947 \u092c\u0928\u0924\u093e \u0939\u0948? | How Is a Rainbow Made? \ud83c\udf08",
+        "rendered_at": "2026-11-19T04:19:09+05:30",
+        "duration_s": 97.77,
+        "publish_at_ist": "2026-11-19T10:20+05:30",
+        "thumbnail": "set (re-applied after posting: set)",
+        "playlist": "off (added by hand)",
+        "made_for_kids": "no",
+        "facebook": "posted (reel 4491484937766772), cover set",
+        "instagram": "posted (reel 18135845986773246), designed cover",
+        "status": "uploaded",
+        "video_id": "vn45kNW1jKo",
+        "url": "https://www.youtube.com/shorts/vn45kNW1jKo",
+        "uploaded_at": "2026-11-19T04:21:11+05:30"
+      }
     },
     "ep008": {
       "voices": "chatterbox",
@@ -260,7 +276,8 @@
       "status": "uploaded",
       "video_id": "6CnZ3qun0P4",
       "url": "https://www.youtube.com/shorts/6CnZ3qun0P4",
-      "uploaded_at": "2026-11-17T23:45:26+05:30"
+      "uploaded_at": "2026-11-17T23:45:26+05:30",
+      "thumbnail_checked": "2026-11-19T04:21+05:30 set"
     }
   }
 }
