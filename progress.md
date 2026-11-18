@@ -31,3 +31,5 @@
 - Next: run a new branch-only dry-run, inspect the updated MP4/contact sheet, then continue refining any weak scenes before merge review.
 
 - Follow-up visual polish: introduced radial material shading for tree foliage, multi-lobe leaf clusters, shaded trunk highlights, subtle deterministic soil grain and higher-contrast root edges. Lowered the soil horizon to reduce collisions with the cycle labels. These are still procedural 2D/2.5D materials; a true 3D asset pass using Blender-rendered transparent objects remains planned rather than being misrepresented as complete.
+
+- Dry-run #6 failed in frame rendering: installed skia-python does not expose `skia.BlurStyle.kNormal`. Dependency setup, asset validation and all 9 unit tests passed. Replaced the version-specific blur call with layered translucent shadow ellipses (no new dependency); next push triggers a fresh dry-run.
