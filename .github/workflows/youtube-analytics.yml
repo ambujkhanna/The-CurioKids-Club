@@ -71,6 +71,12 @@ jobs:
           if [ -n "$END_DATE" ]; then ARGS="$ARGS --end-date $END_DATE"; fi
           python pipeline/analytics.py $ARGS
 
+      - name: Build channel-specific growth brief
+        if: success() && hashFiles('out/analytics/*.csv') != ''
+        run: |
+          CSV="$(ls -t out/analytics/*.csv | head -n 1)"
+          python pipeline/growth.py --csv "$CSV" --channel-key curiokids-club --period "${{ inputs.start_date || 'default 28-day window' }} to ${{ inputs.end_date || 'latest complete day' }}" --output-dir out/analytics
+
       - name: Save analytics database cache
         if: always() && hashFiles('out/analytics/analytics.sqlite3') != ''
         uses: actions/cache/save@v4
