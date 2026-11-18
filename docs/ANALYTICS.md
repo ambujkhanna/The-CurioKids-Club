@@ -11,10 +11,10 @@ Per-video views, engaged views, estimated minutes watched, average view duration
 Add a new GitHub Actions secret named `YT_ANALYTICS_REFRESH_TOKEN`. It must be a refresh token authorized for the correct channel/Brand Account with scope:
 
 ```
-https://www.googleapis.com/auth/youtube.readonly
+https://www.googleapis.com/auth/yt-analytics.readonly
 ```
 
-The current `reports.query` method requires this read-only scope. Enable **YouTube Analytics API** in the Google Cloud project. The workflow uses existing `YT_CLIENT_ID` and `YT_CLIENT_SECRET`; alternatively configure `YT_ANALYTICS_CLIENT_ID` and `YT_ANALYTICS_CLIENT_SECRET`. Do not replace or reuse the upload refresh token. Never put credentials in source files or artifacts.
+The collector requests the least-privilege YouTube Analytics read-only scope (`yt-analytics.readonly`). Enable **YouTube Analytics API** in the Google Cloud project. The workflow uses existing `YT_CLIENT_ID` and `YT_CLIENT_SECRET`; alternatively configure `YT_ANALYTICS_CLIENT_ID` and `YT_ANALYTICS_CLIENT_SECRET`. Do not replace or reuse the upload refresh token. Never put credentials in source files or artifacts.
 
 ## Run locally
 
