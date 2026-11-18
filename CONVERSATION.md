@@ -9,3 +9,10 @@ The daily Short workflow retrieves the latest successful analytics artifact and 
 PR #1: https://github.com/ambujkhanna/The-CurioKids-Club/pull/1. As of 2026-11-18T22:04:00+05:30, GitHub reports the PR as non-mergeable (`dirty`); feature branch is 10 commits ahead and 32 behind main. Merge intentionally deferred to avoid overwriting production changes. Next: synchronize with main, resolve conflicts, run unit tests and daily workflow dry run, inspect results, then merge.
 
 Latest report metadata coverage: 43.8%. Unknown video/episode mappings need repair before drawing strong topic-level conclusions.
+
+
+## 2026-11-18T22:12:00+05:30 — PR merge-readiness and documentation policy
+
+User confirmed the Markdown progress/conversation files are to be maintained by the assistant throughout this project; do not ask the user to create or update them. Verified that `PROGRESS.md`, `CONVERSATION.md`, and `docs/GROWTH_ENGINE.md` are pushed on `feat/youtube-growth-engine`.
+
+Current PR #1 remains open and is not merge-ready: GitHub reports `mergeable=false` / `dirty`; branch is 13 commits ahead and 32 behind main. Latest analytics run #21 failed during Google OAuth refresh with `invalid_grant: Token has been expired or revoked`. The workflow's artifact upload step still ran, but it must not be treated as a fresh valid metrics report. Required: rotate only the CurioKids `YT_ANALYTICS_REFRESH_TOKEN` secret, then sync/rebase with main, resolve conflicts and rerun tests plus daily-workflow validation before merge. Upload token and publishing behavior must remain untouched.
