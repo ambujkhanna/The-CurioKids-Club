@@ -1,0 +1,29 @@
+# CurioKids Club — Visual Engine Conversation Log
+
+## 2026-11-18 — Visual upgrade review
+
+### User direction
+The garden, tree and soil were an improvement, but the result still did not look like realistic or professional 3D graphics. The requested direction is to continue improving the visuals. The user also asked to be informed if an AI model or pipeline upgrade is needed.
+
+### Implementation and validation
+- Work is isolated on `feature/modern-visual-engine`; `main` has not been changed.
+- The renderer uses Python + Skia for the existing 2D pipeline. A topic-aware garden backdrop was added, then polished with shaded foliage, trunk highlights, soil grain and higher-contrast roots.
+- Dry-run #6 failed because the runner's installed `skia-python` did not expose `skia.BlurStyle.kNormal`. The blur dependency was removed and replaced with layered translucent ellipses; no AI model or package upgrade was needed.
+- Dry-run #7 passed: https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44341007085
+- Review artifact: https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44341007085/artifacts/14443488874
+- Artifact contains `CurioKids_ep070.mp4` (1080×1920, 74.176 seconds), thumbnail and shot metadata.
+- Sample frames around 8s, 25s and 45s were inspected. The garden is now clearly visible; existing 2D Leo/Mia characters are preserved. However, the result is still stylised 2D vector artwork, not professional 3D. The underground root illustration is not yet a strong central teaching visual, and the lower classroom has not been redesigned.
+
+### Current decision
+Technical validation is green, visual acceptance is not. Do not merge yet.
+
+### Next implementation phase
+1. Add reusable Blender-created 3D assets with controlled lighting/materials and transparent renders.
+2. Keep Blender rendering offline/pre-rendered; composite assets in the existing Skia/FFmpeg pipeline so GitHub Actions does not perform expensive 3D rendering on every frame.
+3. Build topic-specific seed germination assets: seed, root growth, sprout, mature tree and a clear soil cross-section with visible central roots.
+4. Improve scene composition and classroom integration while preserving Leo/Mia character identity.
+5. Keep a legacy fallback and a per-scene visual feature flag.
+6. Run another dry-run, inspect the actual video/artifact, and only then consider merge.
+
+### Model / pipeline decision
+No AI model upgrade is currently justified. The main limitation is asset quality and scene composition, not script intelligence. Revisit model selection only if later testing identifies a measurable scene-planning limitation. Prefer free/open-source tooling and avoid new paid services without explicit discussion.
