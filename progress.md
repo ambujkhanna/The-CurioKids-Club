@@ -10,11 +10,15 @@
 - Inspected the current renderer, episode format and image/illustration handling.
 - Confirmed the current pipeline uses Skia for frame rendering, with existing board scenes, diagrams, SVG illustrations and a separate finishing stage.
 - Added the implementation plan and asset-source/licensing requirements.
-- Next: add the asset manifest and validator, then implement a small visual-rendering increment without changing production defaults.
+- Added `assets/manifest.json` as an initially empty asset registry.
+- Added `assets/README.md` with candidate sources, per-asset licence checks, required metadata and rendering guidance.
+- Added `pipeline/asset_manager.py`, a standard-library-only manifest validator; commercial-use approvals require licence evidence and attribution-required assets require a credit line.
+- Added unit tests in `pipeline/tests/test_asset_manager.py` for empty manifests, evidence, attribution and duplicate IDs.
+- Next: implement the first opt-in visual composition/rendering increment and verify it with a dry-run episode.
 
 ## Validation
 
 - No production workflow or publishing configuration has been changed.
-- No assets have been downloaded or added yet.
+- No third-party assets have been downloaded or added yet; the manifest is intentionally empty.
 - No video has been rendered or end-to-end tested yet.
 - This branch is not ready to merge until the renderer changes are demonstrated with a dry-run video and reviewed by the owner.
