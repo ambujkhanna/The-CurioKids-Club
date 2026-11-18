@@ -1,0 +1,71 @@
+name: Visual Engine Branch Dry Run
+
+on:
+  push:
+    branches:
+      - feature/modern-visual-engine
+    paths:
+      - "pipeline/**"
+      - "assets/**"
+      - ".github/workflows/visual-engine-dry-run.yml"
+      - "episodes/ep070-seed-grows-into-tree/**"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: visual-engine-dry-run
+  cancel-in-progress: false
+
+jobs:
+  render-review-video:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: pipeline/requirements.txt
+
+      - name: Install system rendering dependencies
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q ffmpeg fonts-inter fonts-noto-color-emoji libegl1 libgl1 libfontconfig1
+
+      - name: Install Python dependencies
+        run: pip install -r pipeline/requirements.txt
+
+      - name: Prepare voice models
+        run: python pipeline/setup_models.py
+
+      - name: Validate asset manifest
+        run: python pipeline/asset_manager.py
+
+      - name: Run visual engine unit tests
+        run: |
+          python -m unittest pipeline.tests.test_asset_manager pipeline.tests.test_visual_layers -v
+
+      - name: Render and QC pilot episode (no publishing)
+        env:
+          ACTION: "Dry run (render only, nothing uploaded)"
+          TTS_ENGINE: kokoro
+          CURIO_VISUAL_STYLE: garden
+          WORKERS: "2"
+          PYTHONUNBUFFERED: "1"
+        run: python pipeline/daily.py --dry-run --episode ep070
+
+      - name: Upload review video and thumbnails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: curiokids-modern-visual-engine-review
+          path: |
+            out/*.mp4
+            out/*.jpg
+            out/*.txt
+            pipeline/build/shots.json
+          retention-days: 14
+          if-no-files-found: warn
