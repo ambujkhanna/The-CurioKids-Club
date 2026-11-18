@@ -50,6 +50,7 @@ on:
 
 permissions:
   contents: write
+  actions: read
 
 concurrency:
   group: daily-short
@@ -112,6 +113,23 @@ jobs:
 
       - name: Prepare voice models
         run: python pipeline/setup_models.py
+
+      - name: Load latest analytics growth brief (read-only)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p out/analytics
+          RUN_ID="$(gh run list --repo "$GITHUB_REPOSITORY" --workflow youtube-analytics.yml --json databaseId,status,conclusion --jq '[.[] | select(.status == "completed" and .conclusion == "success")] | .[0].databaseId // empty')"
+          if [ -n "$RUN_ID" ]; then
+            gh run download "$RUN_ID" --repo "$GITHUB_REPOSITORY" --dir out/analytics || true
+          fi
+          if [ -f out/analytics/growth_brief.md ]; then
+            echo "### Analytics-led content guidance" >> "$GITHUB_STEP_SUMMARY"
+            cat out/analytics/growth_brief.md >> "$GITHUB_STEP_SUMMARY"
+            echo "Growth brief loaded for editorial review; existing episode content and publishing settings are unchanged."
+          else
+            echo "::notice::No growth brief artifact available yet; continuing with the existing episode workflow."
+          fi
 
       - name: Render, QC, upload
         env:
