@@ -6,8 +6,8 @@ import growth
 class GrowthBriefTests(unittest.TestCase):
     def test_curio_profile_and_metadata_quality_are_reported(self):
         rows = [
-            {"video_id":"a","title":"Why Is the Sky Blue?","content_type":"short","views":"1309","engaged_views":"964","average_view_percentage":"56.49","average_view_duration":"35","subscribers_gained":"8"},
-            {"video_id":"b","title":"unknown","content_type":"unknown","views":"480","engaged_views":"57","average_view_percentage":"15.87","subscribers_gained":"1"},
+            {"video_id":"a","title":"Why Is the Sky Blue?","content_type":"short","views":1309,"engaged_views":964,"average_view_percentage":56.49,"average_view_duration":35,"subscribers_gained":8},
+            {"video_id":"b","title":"unknown","content_type":"unknown","views":480,"engaged_views":57,"average_view_percentage":15.87,"subscribers_gained":1},
         ]
         data, md = growth.build_brief(rows, "curiokids-club", "2026-10-19 to 2026-11-15")
         self.assertEqual(data["metadata_coverage_pct"], 50.0)
