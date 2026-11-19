@@ -93,3 +93,10 @@
 - Removed the unnecessary Weighted Normal modifier from beveled box objects to avoid Blender's Auto Smooth warnings. These warnings were not the fatal cause.
 - Fix commits: workflow `91423760c0cf6a9ced2422de37cd56de778ab2ec`; scene script `50e806f9438458e79a54cd0138c9587c04608b62`.
 - The push-triggered Blender workflow must now validate the fix. Do not assume it works until the job completes and the actual PNG/BLEND artifacts are checked.
+
+
+## 2026-11-19 — Blender proof PNG validation dependency fix
+- Blender proof run [#6](https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44548393593) successfully installed Blender and generated both the PNG and editable .blend scene. The render completed in 29.46 seconds and produced a 1080×1920 8-bit RGBA PNG.
+- The workflow then failed only in its verification step because it imported Pillow (PIL), which is not installed in the runner's system Python. This was a validation-script dependency mistake; Blender rendering itself succeeded.
+- Updated .github/workflows/blender-3d-proof.yml at commit b668fa393f6e282ff9e7de3c33189074333ed7b6 to validate the PNG signature, IHDR dimensions, bit depth, RGBA color type and nontrivial file size using Python's standard library. No Pillow dependency or additional install step is required.
+- A fresh push-triggered run is required to confirm the workflow passes and uploads the PNG/.blend artifacts. Visual review is still pending; technical PNG metadata checks do not establish that the composition meets the requested quality.
