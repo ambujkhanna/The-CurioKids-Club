@@ -45,3 +45,36 @@
 - Latest branch head at this snapshot: `9104c4b51261f7aef74a21d38fcc109f0883e63a`.
 - Latest dry-run #7 passed end-to-end and produced a review MP4; see artifact link above.
 - Visual acceptance remains open. Do not merge based on workflow success alone.
+
+## 2026-11-19 — Handoff and remaining work
+
+### User confirmation and target
+- User confirmed the current graphics still do not meet the requested professional 3D quality and asked whether the limitation is the AI model or the pipeline. Decision: the primary gap is the content-production/rendering pipeline and its lack of actual 3D assets; no AI model upgrade is justified yet.
+- Target direction: professional stylised 3D environments and educational objects, with established 2D Leo/Mia/Buzz characters preserved unless a later explicit design decision changes them. The target is not photorealism; it is polished, dimensional, child-friendly 3D with coherent lighting, materials, shadows, camera composition and animation.
+- User asked that this conversation be recorded for continuity and authorised proceeding with remaining tasks.
+
+### Confirmed repository state
+- Branch: feature/modern-visual-engine; base: main. Main remains untouched; no PR/merge.
+- Latest validated renderer run: [Dry Run #7](https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44341007085), success at 9104c4b51261f7aef74a21d38fcc109f0883e63a.
+- Review artifact: [CurioKids review artifact](https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44341007085/artifacts/14443488874); MP4 is 1080x1920, 74.176 seconds.
+- #6 failed due to unsupported skia.BlurStyle.kNormal in runner's skia-python; fixed with layered shadow ellipses. #7 passed.
+- Current visual_layers.py garden output is still procedural 2D/2.5D. It is not a real 3D scene. assets/manifest.json is empty. Blender production/integration is not implemented.
+- Current dry-run workflow is branch-only, renders ep070 with --dry-run, uploads review artifacts, and does not publish.
+
+### Remaining work — ordered backlog
+1. 3D proof of capability (next task): add an isolated Blender scene-generation script that creates a polished stylised 3D seed-germination cutaway (terrain/soil slab, seed, branching roots, sprout, tree, lighting, camera, shadows). Render transparent PNG layers/stills and save the .blend source. Run it in a dedicated branch-only GitHub Actions workflow; do not yet wire it into every video render.
+2. Review and iterate the 3D prototype: inspect actual rendered output at 1080x1920 composition; tune materials, geometry, lighting, shadows, camera and typography safe areas until it is visibly better than current 2D scene.
+3. Reusable asset pipeline: define deterministic asset IDs, output paths, resolution/scale conventions, alpha handling, metadata and licence/source records. Keep original .blend source and transparent render outputs where useful.
+4. Compositing integration: add optional per-scene 3D asset references to episode configuration and composite the pre-rendered PNGs in Skia/FFmpeg. Preserve existing renderer as fallback; missing assets must warn and fall back, never silently break.
+5. Pilot episode redesign: build seed → roots → shoot → mature tree scenes with meaningful visual progression; fix overlapping labels and duplicate suns; preserve character identity. Redesign classroom only after the central 3D teaching scene is proven.
+6. Motion and performance: add gentle camera moves/parallax or rendered animation sequences; measure artifact size, render time and memory on GitHub Actions.
+7. Regression and acceptance: test old episodes with no visual config, test new ep070 path, generate contact sheet and review MP4. Validate output on mobile-size frames and ensure captions/labels remain legible.
+8. Merge gate: no merge until all technical checks pass, the actual MP4 meets visual acceptance, asset licences are recorded, legacy compatibility is proven, and user has a clear review opportunity/approval. Do not merge merely because CI is green.
+
+### AI/model and tooling decision
+- Do not upgrade the AI model yet. Model may assist with scene descriptions or Blender Python generation, but geometry/material quality is a production asset and pipeline responsibility.
+- Use Blender as the free/open-source 3D authoring/rendering tool; render reusable assets offline/on-demand and composite them in the existing Python/Skia/FFmpeg workflow. Avoid full Blender rendering on every frame or every scheduled episode initially.
+- No paid model, subscription, API or infrastructure change without explicit discussion.
+
+### Continuity note
+- conversation.md is the concise project decision/history log; plan.md is the architecture/acceptance plan; this file is the implementation and validation log. Update all three as material decisions, commits, runs and reviews occur.
