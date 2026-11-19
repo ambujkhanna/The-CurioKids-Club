@@ -135,12 +135,21 @@ jobs:
           if [ -n "$RUN_ID" ]; then
             gh run download "$RUN_ID" --repo "$GITHUB_REPOSITORY" --dir out/analytics || true
           fi
-          if [ -f out/analytics/growth_brief.md ]; then
+
+          # gh run download creates an artifact-named subdirectory. Find the
+          # generated brief there, then copy its companion JSON into a stable path.
+          BRIEF_PATH="$(find out/analytics -type f -name growth_brief.md -print -quit)"
+          if [ -n "$BRIEF_PATH" ]; then
+            BRIEF_DIR="$(dirname "$BRIEF_PATH")"
+            cp "$BRIEF_PATH" out/analytics/growth_brief.md
+            if [ -f "$BRIEF_DIR/growth_brief.json" ]; then
+              cp "$BRIEF_DIR/growth_brief.json" out/analytics/growth_brief.json
+            fi
             echo "### Analytics-led content guidance" >> "$GITHUB_STEP_SUMMARY"
             cat out/analytics/growth_brief.md >> "$GITHUB_STEP_SUMMARY"
             echo "Growth brief loaded for editorial review; existing episode content and publishing settings are unchanged."
           else
-            echo "::notice::No growth brief artifact available yet; continuing with the existing episode workflow."
+            echo "::notice::No growth brief found in the latest successful analytics artifact; continuing with the existing episode workflow."
           fi
 
       - name: Render, QC, upload
