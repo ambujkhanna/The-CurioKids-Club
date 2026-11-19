@@ -78,3 +78,15 @@ Use Kenney and 3dicons as initial candidates. Add assets only after recording th
 ## Review / merge policy
 
 All work stays on `feature/modern-visual-engine`. Do not merge to `main` or change the production default until the owner reviews the generated output and explicitly approves merging.
+
+### Phase 3A — Story-first 3D assets (active)
+- Do not use a single wide landscape as the primary teaching visual. Create separate close-up story compositions for each learning beat: seed waking, underground roots, shoot emerging, and growth-stage comparison.
+- Keep the background restrained/transparent; allocate most of the portrait frame to the educational object and its action.
+- Generate reusable transparent 1080×1920 PNG assets from Blender, with editable `.blend` sources and deterministic filenames.
+- Add readable stage labels only where they support the narration; reserve safe areas for captions and 2D characters.
+- Review all four assets as a contact sheet and then composite them into the ep070 dry-run before deciding on integration.
+
+### Phase 3B — Existing proof review outcome
+- The first Blender proof is genuine 3D geometry, but its single portrait diorama is compositionally weak: the tree canopy and seed are clipped, the key objects are too small, roots are visually disconnected, and the empty backdrop dominates. It is not accepted as the episode visual.
+- The next proof is story-led, not background-led. The original wide diorama remains a technical reference only; do not promote it into the episode by default.
+
