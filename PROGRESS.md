@@ -81,3 +81,10 @@
 - [ ] Fresh analytics collection is blocked again: main push run `44561529784` failed with Google OAuth `invalid_grant`. Analytics tests passed; collection failed before growth brief generation. Upload token was not changed.
 - [ ] Daily workflow's latest observed run `44413916460` completed, but its analytics loader reported no growth brief available at that time. A new post-analytics-success run is needed to confirm summary display.
 - [ ] AInation and CurioKids daily dry-run validation remains pending; no production workflow was dispatched as part of this work.
+
+
+## 2026-11-19 — Analytics trigger noise reduction
+
+- [x] Merged PR #3: https://github.com/ambujkhanna/The-CurioKids-Club/pull/3 (merge commit `b067f31668b2217f01a304900a8b4122e0bc42fa`).
+- Analytics push collection now runs only for analytics code/dependencies/tests, episode metadata state and the analytics workflow itself; documentation-only commits no longer trigger an OAuth refresh.
+- Scheduled and manual analytics triggers remain enabled. Daily publishing workflows are unchanged.
