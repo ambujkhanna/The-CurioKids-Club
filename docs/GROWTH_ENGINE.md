@@ -83,3 +83,8 @@ The latest inspected analytics artifact contains 18 rows, 16 mapped (88.9%). Unk
 PR #2 is merged to main (`ce8ec46dfe2b56328aa9ce0a72b4b3808b2f274a`). Growth briefs now list unknown video IDs and views in JSON and Markdown, linking to the video for manual verification. Latest artifact: 18 rows, 16 mapped (88.9%); unresolved: `r_GUBf5Flho` (68 views), `5iwnr-Y9hqc` (32 views).
 
 PR unit tests passed. A subsequent main analytics collection failed with `invalid_grant` (run `44561529784`), so no fresh growth brief was generated. The latest observed daily run's loader had no brief available; end-to-end summary validation is still pending. Do not infer mappings or modify upload credentials.
+
+
+## 2026-11-19 — Trigger scope
+
+PR #3 merged (`b067f31668b2217f01a304900a8b4122e0bc42fa`). Push-triggered analytics collection is limited to analytics source/dependencies/tests, episode metadata state and the analytics workflow. Documentation-only commits no longer consume refresh-token attempts. Scheduled and manual analytics runs remain enabled.
