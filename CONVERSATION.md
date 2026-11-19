@@ -56,3 +56,14 @@ Inspected the actual analytics artifact from the successful collector run. It co
 Added the unknown rows to `growth_brief.json` and a dedicated review table in `growth_brief.md`, with direct video links. The output explicitly states that unknown IDs must be verified before adding them to episode state. Added a regression test and a PR-only unittest workflow with no publishing secrets or production side effects.
 
 PR #2: https://github.com/ambujkhanna/The-CurioKids-Club/pull/2. Merge is gated on passing PR checks. The workflow-dispatch integration is not exposed by the current GitHub connector, so no daily workflow was triggered and no upload/publish occurred.
+
+
+## 2026-11-19 — Unmapped-video review shipped; analytics OAuth regressed
+
+PR #2 was merged to main (merge commit `ce8ec46dfe2b56328aa9ce0a72b4b3808b2f274a`). It adds unknown video IDs and view counts to the growth brief JSON plus a linked Markdown review table. Unknown videos are deliberately not assigned to episodes without verification. The PR-only unit-test workflow passed in three runs.
+
+The latest inspected analytics artifact had 18 rows, 16 mapped (88.9%); remaining IDs are `r_GUBf5Flho` (68 views) and `5iwnr-Y9hqc` (32 views). These were not found in repository code, so no guessed mappings were committed.
+
+After merge, the main-branch analytics collection failed again in run `44561529784` with Google OAuth `invalid_grant`; unit tests passed but the collection and growth-brief generation did not run. AInation main-branch analytics run `44561570026` failed the same way. This is a renewed credential blocker; do not change upload token `YT_REFRESH_TOKEN`.
+
+The latest CurioKids daily run `44413916460` succeeded in rendering/upload, but its growth-loader step reported that no growth brief was available at that time. The post-success analytics artifact must be followed by another daily run to verify the brief is actually included in the Actions summary. No dry-run dispatch was performed because the available GitHub connector does not expose workflow dispatch; no extra video was uploaded by this work.
