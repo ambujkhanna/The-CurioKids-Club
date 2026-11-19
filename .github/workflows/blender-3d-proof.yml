@@ -45,7 +45,7 @@ jobs:
           # Validate PNG IHDR using Python's standard library; do not add Pillow
           # just for this lightweight CI check.
           import struct
-n          from pathlib import Path
+          from pathlib import Path
           path = Path("out/blender/seed_germination_3d.png")
           with path.open("rb") as stream:
               header = stream.read(29)
