@@ -47,7 +47,6 @@ def bevel(obj, width=0.08, segments=3):
     mod = obj.modifiers.new("Soft crafted edges", "BEVEL")
     mod.width = width
     mod.segments = segments
-    obj.modifiers.new("Weighted corner normals", "WEIGHTED_NORMAL")
     return obj
 
 
