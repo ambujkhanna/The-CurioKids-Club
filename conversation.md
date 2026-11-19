@@ -59,3 +59,10 @@ Create an isolated Blender proof-of-capability for ep070: generate a real 3D see
 
 ### Tool/model decision
 Blender is the next tool upgrade, not a paid AI model. Keep model choice unchanged unless scene-planning evaluation later demonstrates a specific model limitation.
+
+## 2026-11-19 — Blender proof run #1 failure and fix
+- User reported [Blender proof run #1](https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44546473537/job/135638262911) failed. Inspected job steps/log excerpt: Blender install succeeded; render process aborted with `Couldn't open libEGL.so.1` and exit code 134.
+- Diagnosis: missing EGL/Mesa runtime libraries in Ubuntu headless runner. Auto Smooth / Weighted Corner Normals messages were warnings, not the crash cause.
+- Workflow now installs EGL/Mesa/OpenGL and X11 runtime libraries, sets `LIBGL_ALWAYS_SOFTWARE=1` and `EGL_PLATFORM=surfaceless`, and runs Blender with two threads. Removed unnecessary Weighted Normal modifier to suppress compatibility warnings.
+- Fix commits: `91423760c0cf6a9ced2422de37cd56de778ab2ec` (workflow), `50e806f9438458e79a54cd0138c9587c04608b62` (scene script).
+- Await a new branch workflow run and inspect the rendered PNG/BLEND; no claim of success until artifact verification.
