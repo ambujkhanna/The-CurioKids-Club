@@ -63,3 +63,12 @@ Daily workflow artifact loader now recursively locates the growth brief in the d
 - Verified 7 analytics/growth unit tests passed in the workflow.
 - Successful run: https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44546121847 (artifact youtube-analytics-29).
 - Remaining validation: confirm the next scheduled daily video workflow downloads the analytics artifact and displays the growth brief in its Actions summary. No daily video workflow was manually dispatched and no video was published as part of this recovery.
+
+
+## Current-main audit — 2026-11-19 21:30 IST
+
+- Rechecked the current `main` workflow and collector files. The Daily Short workflow includes recursive discovery of `growth_brief.md` inside downloaded artifact subfolders and places it in the Actions summary.
+- The manual `Dry run (render only, nothing uploaded)` action is available for safe end-to-end validation; that post-fix run has not yet been executed.
+- The Weekly Long Video workflow is separate and does not currently load the growth brief. Its package-install timeout was increased from 15 to 30 minutes (commit `cc245c9307c7d2719103c8e67420c353ae6786ca`).
+- Latest known metadata coverage remains 43.8%. The current Short state file contains 17 distinct video IDs; do not infer mappings for analytics rows absent from the state.
+- No production workflow was dispatched and no upload/publishing behavior changed.
