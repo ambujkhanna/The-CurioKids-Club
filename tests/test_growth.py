@@ -21,6 +21,17 @@ class GrowthBriefTests(unittest.TestCase):
         self.assertIn("AI safety", md)
         self.assertNotIn("kids", data["voice"].lower())
 
+    def test_unmapped_videos_are_listed_for_manual_review(self):
+        rows = [
+            {"video_id": "known", "title": "Known episode", "content_type": "short", "views": 20},
+            {"video_id": "unmapped123", "title": "unmapped123", "content_type": "unknown", "views": 55},
+        ]
+        data, md = growth.build_brief(rows, "aination-studio")
+        self.assertEqual(data["unmapped_videos"][0]["video_id"], "unmapped123")
+        self.assertEqual(data["unmapped_videos"][0]["views"], 55)
+        self.assertIn("unmapped123", md)
+        self.assertIn("not assigned to episodes automatically", md)
+
     def test_empty_rows_are_safe(self):
         data, md = growth.build_brief([], "aination-studio")
         self.assertEqual(data["video_rows"], 0)

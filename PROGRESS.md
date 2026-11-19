@@ -63,3 +63,11 @@
 - Current state file contains 17 distinct Short video IDs plus separate long-video state. Historical analytics metadata coverage remains 43.8%; do not guess mappings for videos absent from state.
 - No workflow was dispatched in this change; no video was rendered, uploaded, published, or rescheduled. Upload credentials and episode state were untouched.
 - Next: run the Short workflow with its explicit dry-run action and confirm the Actions summary includes the growth brief; separately decide whether the Long workflow should also surface the brief.
+
+## 2026-11-19 — Growth report unmapped-video review
+
+- Downloaded and inspected the latest successful analytics artifacts. CurioKids report: 18 rows, 16 mapped (88.9%); two unknown IDs remain: `r_GUBf5Flho` (68 views) and `5iwnr-Y9hqc` (32 views).
+- Added an explicit unmapped-video review list to the growth brief JSON and Markdown. Unknown IDs are linked for manual inspection and are never assigned to episodes automatically.
+- Added regression test coverage and a lightweight pull-request unit-test workflow.
+- PR #2: https://github.com/ambujkhanna/The-CurioKids-Club/pull/2
+- Validation/merge: waiting for GitHub Actions PR checks. Daily render-only dry-run remains unverified; no video was uploaded or published.

@@ -59,10 +59,18 @@ def build_brief(rows: list[dict], channel_key: str, period: str = "latest availa
     high_retention = sorted([r for r in shorts if r["average_view_percentage"] > 0],
                             key=lambda r: r["average_view_percentage"], reverse=True)
     mapping_pct = round(100 * len(identified) / len(rows), 1) if rows else 0.0
+    unmapped = sorted((r for r in rows if r["content_type"] == "unknown"),
+                      key=lambda r: (r["views"], r.get("video_id", "")), reverse=True)
+    unmapped_videos = [{
+        "video_id": str(r.get("video_id") or ""), "views": int(r["views"]),
+        "observed_title": str(r.get("title") or ""),
+        "video_url": str(r.get("video_url") or ("https://www.youtube.com/watch?v=" + str(r.get("video_id") or ""))),
+    } for r in unmapped]
     brief = {
         "channel_key": channel_key, "channel_name": profile["name"], "period": period,
         "video_rows": len(rows), "short_rows": len(shorts), "identified_rows": len(identified),
-        "metadata_coverage_pct": mapping_pct, "views": int(total_views), "engaged_views": int(total_engaged),
+        "metadata_coverage_pct": mapping_pct, "unmapped_videos": unmapped_videos,
+        "views": int(total_views), "engaged_views": int(total_engaged),
         "top_shorts": [{"title": r["title"] or r.get("video_id", "unknown video"),
                         "video_id": r.get("video_id", ""), "views": int(r["views"]),
                         "engaged_views": int(r["engaged_views"]),
@@ -83,6 +91,18 @@ def build_brief(rows: list[dict], channel_key: str, period: str = "latest availa
         for r in top[:5]:
             lines.append(f"| {(r['title'] or r.get('video_id','unknown')).replace('|','/')} | {int(r['views']):,} | {int(r['engaged_views']):,} | {r['average_view_percentage']:.1f}% | {int(r['subscribers_gained'])} |")
     else: lines.append("No identified Shorts are available; collect more data before ranking content.")
+    lines += ["", "## Unmapped videos — review before topic analysis", ""]
+    if unmapped_videos:
+        lines += ["| Video ID | Views |", "|---|---:|"]
+        for item in unmapped_videos:
+            video_id = item["video_id"]
+            url = item["video_url"]
+            label = "[" + video_id + "](" + url + ")" if url else (video_id or "unknown ID")
+            lines.append("| " + label + " | " + format(item["views"], ",") + " |")
+        lines.append("")
+        lines.append("These rows are deliberately not assigned to episodes automatically. Add a verified video ID to the relevant episode state only after checking the video.")
+    else:
+        lines.append("All report rows are mapped to known episode metadata.")
     lines += ["", "## Content guidance for the next scripts", ""] + [f"- {x}" for x in profile["content"]]
     lines += ["", "## Data-quality and interpretation checks", "",
               f"- Metadata coverage is **{mapping_pct:.1f}%**. Repair missing episode/video mappings before drawing topic-level conclusions." if rows and mapping_pct < 90 else "- Metadata mapping coverage is adequate for this report; continue checking unknown rows.",

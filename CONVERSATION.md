@@ -48,3 +48,11 @@ The user asked to continue implementation and explicitly requested that all edit
 Updated only `.github/workflows/curio-kids-long.yml`: increased the apt/system-package installation timeout from 15 to 30 minutes to align with the Short workflow and address the previously observed package-install timeout. Commit `cc245c9307c7d2719103c8e67420c353ae6786ca`. The long workflow does not currently load the growth brief; this was left unchanged pending an explicit scope decision.
 
 The current Short state file contains 17 distinct video IDs. The prior analytics report's 43.8% metadata coverage is still the last known measured figure; videos absent from state were not guessed or manually mapped. No workflow was dispatched, and no video render/upload/publish was triggered. Upload tokens, episode state and publishing settings were not changed.
+
+## 2026-11-19 — Growth report audit and unmapped review improvement
+
+Inspected the actual analytics artifact from the successful collector run. It contains 18 video rows; 16 are mapped (88.9%). Two unknown video IDs remain: `r_GUBf5Flho` (68 views) and `5iwnr-Y9hqc` (32 views). Searches of repository code did not find these IDs, so no episode mapping was invented.
+
+Added the unknown rows to `growth_brief.json` and a dedicated review table in `growth_brief.md`, with direct video links. The output explicitly states that unknown IDs must be verified before adding them to episode state. Added a regression test and a PR-only unittest workflow with no publishing secrets or production side effects.
+
+PR #2: https://github.com/ambujkhanna/The-CurioKids-Club/pull/2. Merge is gated on passing PR checks. The workflow-dispatch integration is not exposed by the current GitHub connector, so no daily workflow was triggered and no upload/publish occurred.
