@@ -72,3 +72,12 @@ The latest CurioKids daily run `44413916460` succeeded in rendering/upload, but 
 ## 2026-11-19 — Analytics push trigger narrowed
 
 Merged PR #3 (`b067f31668b2217f01a304900a8b4122e0bc42fa`). The analytics workflow's push trigger now has a paths filter for collector/growth code, analytics dependencies, tests, episode state and the analytics workflow. Documentation-only changes will not trigger a collector run. Scheduled and manual analytics triggers remain enabled; daily video workflows are unchanged.
+
+
+## 2026-11-19 — Follow-up status check after PR #3
+
+Re-fetched the latest main versions of PROGRESS.md, CONVERSATION.md, docs/GROWTH_ENGINE.md, and the analytics/daily workflow definitions before updating documentation. The latest analytics push runs after PR #3 merged failed again: CurioKids 44562221268; AInation 44562248765. The previous invalid_grant credential issue therefore remains open; update only YT_ANALYTICS_REFRESH_TOKEN in each repository after reauthorizing. Never change YT_REFRESH_TOKEN.
+
+AInation Daily Short workflow run 44562499073 appeared as a user-triggered workflow_dispatch and is still in progress. At inspection it was at the system-package installation step; the analytics brief loader and render/upload step had not yet executed. The GitHub run API does not expose the selected dispatch inputs, and the workflow default is Next video (scheduled), so this run cannot be assumed to be a dry-run. The assistant did not initiate or cancel it. Please verify in its Actions run page that the selected action is Dry run (render only, nothing uploaded) if you intended a safe validation. CurioKids has no new daily dispatch among the latest 10 runs; its post-fix dry-run remains pending.
+
+No new upload/publishing action was initiated by the assistant. Growth recommendations remain advisory; no episode state, publishing schedule, upload token or workflow publishing logic was changed.
