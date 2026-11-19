@@ -47,3 +47,10 @@ python pipeline/growth.py --csv out/analytics/<report>.csv --channel-key CHANNEL
 PR #1 is merged to `main`. A post-merge daily workflow run #70 completed successfully, but its log shows the growth brief loader did not find the report because artifact download contents are nested beneath an artifact directory while the script checks only the output root. Correct the loader to locate `growth_brief.md` recursively and copy the matching JSON/MD pair into the expected path.
 
 The latest observed analytics run #24 failed with Google OAuth `invalid_grant`; refresh the analytics-only token. After that, manually validate fresh analytics collection and run a daily dry-run to verify the brief is present in the summary. Previous valid report metadata coverage: 43.8%. Recommendations remain advisory; no automated script rewriting or publishing changes.
+
+
+## Retry fixes — 2026-11-19 19:35 IST
+
+The analytics token worked in earlier successful runs, but later retries including main run #26 fail with OAuth `invalid_grant`. Root cause is not conclusively identifiable from logs. A new analytics-only refresh token is required to restore collection; upload token is separate and must remain untouched.
+
+Daily workflow artifact loader now recursively locates the growth brief in the downloaded artifact directory tree and copies the MD/JSON pair into `out/analytics`. Analytics workflow push trigger includes main. Daily system package installation timeout increased to 30 minutes. End-to-end loader validation remains pending until a fresh successful analytics artifact is produced.
