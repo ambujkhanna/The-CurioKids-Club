@@ -76,3 +76,10 @@ Daily workflow artifact loader now recursively locates the growth brief in the d
 ## 2026-11-19 — Unmapped-video audit
 
 The latest inspected analytics artifact contains 18 rows, 16 mapped (88.9%). Unknown IDs: `r_GUBf5Flho` (68 views) and `5iwnr-Y9hqc` (32 views). These are surfaced in the growth brief for manual review; the system deliberately does not guess episode IDs. PR #2 adds this output and regression coverage: https://github.com/ambujkhanna/The-CurioKids-Club/pull/2.
+
+
+## 2026-11-19 — Unmapped review and validation status
+
+PR #2 is merged to main (`ce8ec46dfe2b56328aa9ce0a72b4b3808b2f274a`). Growth briefs now list unknown video IDs and views in JSON and Markdown, linking to the video for manual verification. Latest artifact: 18 rows, 16 mapped (88.9%); unresolved: `r_GUBf5Flho` (68 views), `5iwnr-Y9hqc` (32 views).
+
+PR unit tests passed. A subsequent main analytics collection failed with `invalid_grant` (run `44561529784`), so no fresh growth brief was generated. The latest observed daily run's loader had no brief available; end-to-end summary validation is still pending. Do not infer mappings or modify upload credentials.
