@@ -1,0 +1,59 @@
+name: Blender 3D Proof of Capability
+
+on:
+  push:
+    branches:
+      - feature/modern-visual-engine
+    paths:
+      - "pipeline/blender/**"
+      - ".github/workflows/blender-3d-proof.yml"
+      - "progress.md"
+      - "plan.md"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: blender-3d-proof
+  cancel-in-progress: false
+
+jobs:
+  render-3d-proof:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Blender
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q blender
+
+      - name: Generate real 3D seed-growth scene
+        run: |
+          mkdir -p out/blender
+          blender --background --python pipeline/blender/create_seed_scene.py -- --output-dir out/blender --resolution 1080
+
+      - name: Verify rendered outputs
+        run: |
+          test -s out/blender/seed_germination_3d.png
+          test -s out/blender/seed_germination_3d.blend
+          file out/blender/seed_germination_3d.png
+          python - <<'PY'
+          from PIL import Image
+          image = Image.open("out/blender/seed_germination_3d.png")
+          assert image.mode == "RGBA", image.mode
+          assert image.width == 1080 and image.height == 1920, image.size
+          alpha = image.getchannel("A")
+          assert alpha.getbbox() is not None, "Render is fully transparent"
+          print("3D render verified:", image.size, image.mode)
+          PY
+
+      - name: Upload Blender source and render
+        uses: actions/upload-artifact@v4
+        with:
+          name: curiokids-blender-3d-proof
+          path: |
+            out/blender/seed_germination_3d.png
+            out/blender/seed_germination_3d.blend
+          retention-days: 14
