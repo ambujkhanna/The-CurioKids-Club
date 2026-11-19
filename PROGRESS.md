@@ -71,3 +71,13 @@
 - Added regression test coverage and a lightweight pull-request unit-test workflow.
 - PR #2: https://github.com/ambujkhanna/The-CurioKids-Club/pull/2
 - Validation/merge: waiting for GitHub Actions PR checks. Daily render-only dry-run remains unverified; no video was uploaded or published.
+
+
+## 2026-11-19 — Growth review PR #2 merged
+
+- [x] Inspected the latest analytics artifact: 18 rows, 16 mapped (88.9%); unknown IDs `r_GUBf5Flho` (68 views) and `5iwnr-Y9hqc` (32 views).
+- [x] Growth brief now exports unmapped video IDs/views in JSON and a linked Markdown review table; no speculative episode mapping is performed.
+- [x] Added regression test and PR-only unit-test workflow. PR #2 merged: https://github.com/ambujkhanna/The-CurioKids-Club/pull/2 (merge commit `ce8ec46dfe2b56328aa9ce0a72b4b3808b2f274a`); three PR test runs succeeded.
+- [ ] Fresh analytics collection is blocked again: main push run `44561529784` failed with Google OAuth `invalid_grant`. Analytics tests passed; collection failed before growth brief generation. Upload token was not changed.
+- [ ] Daily workflow's latest observed run `44413916460` completed, but its analytics loader reported no growth brief available at that time. A new post-analytics-success run is needed to confirm summary display.
+- [ ] AInation and CurioKids daily dry-run validation remains pending; no production workflow was dispatched as part of this work.
