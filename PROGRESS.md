@@ -53,3 +53,13 @@
 - Verified 7 analytics/growth unit tests passed in the workflow.
 - Successful run: https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44546121847 (artifact youtube-analytics-29).
 - Remaining validation: confirm the next scheduled daily video workflow downloads the analytics artifact and displays the growth brief in its Actions summary. No daily video workflow was manually dispatched and no video was published as part of this recovery.
+
+
+## 2026-11-19 21:30 IST — Current-main audit and CI resilience
+
+- Re-fetched current files from `main` before changes; did not use feature-branch copies.
+- Confirmed the Daily Short workflow already has the recursive analytics-artifact loader and a safe manual action, `Dry run (render only, nothing uploaded)`. It is not yet verified end-to-end in a post-fix run.
+- Extended the Weekly Long Video workflow's system-package installation timeout from 15 to 30 minutes, matching the already-updated Short workflow. Commit: `cc245c9307c7d2719103c8e67420c353ae6786ca`.
+- Current state file contains 17 distinct Short video IDs plus separate long-video state. Historical analytics metadata coverage remains 43.8%; do not guess mappings for videos absent from state.
+- No workflow was dispatched in this change; no video was rendered, uploaded, published, or rescheduled. Upload credentials and episode state were untouched.
+- Next: run the Short workflow with its explicit dry-run action and confirm the Actions summary includes the growth brief; separately decide whether the Long workflow should also surface the brief.
