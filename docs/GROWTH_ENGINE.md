@@ -88,3 +88,12 @@ PR unit tests passed. A subsequent main analytics collection failed with `invali
 ## 2026-11-19 — Trigger scope
 
 PR #3 merged (`b067f31668b2217f01a304900a8b4122e0bc42fa`). Push-triggered analytics collection is limited to analytics source/dependencies/tests, episode metadata state and the analytics workflow. Documentation-only commits no longer consume refresh-token attempts. Scheduled and manual analytics runs remain enabled.
+
+
+## Follow-up operational validation — 2026-11-19
+
+- PR #3's analytics push path filter is merged in both repositories, preventing documentation-only edits from triggering token refreshes.
+- Fresh analytics collection is still blocked: the latest post-merge push runs failed in CurioKids (44562221268) and AInation (44562248765). The known OAuth invalid_grant issue remains unresolved. Restore the analytics-only refresh token before treating any report as current; do not modify upload token YT_REFRESH_TOKEN.
+- AInation daily run 44562499073 is in progress, but its selected workflow-dispatch inputs are not exposed in the run summary. At the latest check, the run had not reached the read-only growth-brief loader or render/upload step. Because the workflow's default action is Next video (scheduled), do not count this as a safe dry-run without confirming the selected action in GitHub Actions.
+- CurioKids post-fix daily dry-run and both channels' post-fix growth-brief summary checks remain outstanding.
+- No automatic script rewriting or publishing was introduced. No assistant-initiated video upload or publishing occurred during this audit.
