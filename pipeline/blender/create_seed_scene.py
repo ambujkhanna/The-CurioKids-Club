@@ -237,7 +237,8 @@ def build_scene(output_dir, resolution):
 
     scene = bpy.context.scene
     scene.render.engine = "BLENDER_EEVEE_NEXT" if bpy.app.version >= (4, 2, 0) else "BLENDER_EEVEE"
-    scene.eevee.taa_render_samples = 64 if hasattr(scene, "eevee") else 64
+    if hasattr(scene, "eevee"):
+        scene.eevee.taa_render_samples = 64
     scene.render.resolution_x = resolution
     scene.render.resolution_y = int(resolution * 16 / 9)
     scene.render.resolution_percentage = 100
