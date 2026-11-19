@@ -78,3 +78,10 @@
 
 ### Continuity note
 - conversation.md is the concise project decision/history log; plan.md is the architecture/acceptance plan; this file is the implementation and validation log. Update all three as material decisions, commits, runs and reviews occur.
+
+## 2026-11-19 — Blender 3D proof implementation started
+- Added `pipeline/blender/create_seed_scene.py`: a procedural Blender scene builder with a rounded soil cutaway, soil strata and pebbles, sculpted foliage clusters, shaded trunk/branches, a visible germinating seed, branching root network, young shoot, studio backdrop, orthographic camera and three-point area lighting. It saves an editable `.blend` file and a transparent 1080×1920 RGBA PNG.
+- Added `.github/workflows/blender-3d-proof.yml`: branch-only Ubuntu workflow installs Blender, generates the scene, verifies PNG dimensions/alpha and uploads both source and render. It does not publish or change production workflows.
+- These are generated 3D meshes and curves, not imported/licensed third-party assets. The scene is an initial proof, not yet visually accepted; inspect and refine the actual render before integration.
+- Made Eevee sample configuration version-safe after initial code review.
+- Next: inspect the Blender workflow result and actual PNG; refine framing/materials/geometry; then build the reusable asset manifest/export and integrate the 3D render as an optional scene layer with legacy fallback.
