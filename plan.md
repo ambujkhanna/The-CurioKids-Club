@@ -39,13 +39,21 @@ Use Kenney and 3dicons as initial candidates. Add assets only after recording th
 - Preserve current 2D character drawing and lip-sync.
 - Add deterministic, optional visual configuration with legacy defaults.
 
-### Phase 3 — Reusable 3D assets
+### Phase 3 — Reusable 3D assets (next priority)
+- First build an isolated Blender proof-of-capability for the ep070 seed-growth cutaway: actual 3D soil slab, seed, branching roots, sprout, mature tree, camera, materials and lighting.
+- Save the Blender .blend source and render high-resolution transparent PNG stills/layers; validate alpha and vertical-video framing.
+- Review and refine the render before adding any assets to the episode pipeline.
 - Create/select reusable Blender assets and export transparent PNG sequences/stills.
 - Support glTF/GLB as source interchange where useful.
 - Composite pre-rendered assets through the existing Skia/FFmpeg flow.
 - Record source/licence/attribution metadata for every imported asset.
 
-### Phase 4 — Scene planning and quality gates
+### Phase 4 — Compositing integration
+- Add optional scene asset references and deterministic asset IDs to episode configuration.
+- Composite pre-rendered transparent assets through Skia/FFmpeg; retain legacy renderer fallback and emit clear warnings when assets are missing.
+- Keep Blender rendering out of routine frame rendering until measured performance justifies a different design.
+
+### Phase 5 — Scene planning and quality gates
 - Add optional per-scene visual hints (style, background, objects, layout, motion).
 - Keep existing board types valid; missing optional assets should warn and fall back safely.
 - Produce contact sheets and visual QC artifacts for review.
@@ -64,6 +72,8 @@ Use Kenney and 3dicons as initial candidates. Add assets only after recording th
 - Missing assets never silently break a render.
 - Render time and memory remain suitable for GitHub Actions.
 - A human can inspect a dry-run MP4/contact sheet before any merge to `main`.
+- The 3D pilot uses actual 3D geometry/materials/lighting/shadows and is visibly distinct from the current procedural 2D/2.5D artwork.
+- Alpha compositing, vertical framing, label-safe areas, deterministic rendering and legacy episode fallback are validated.
 
 ## Review / merge policy
 
