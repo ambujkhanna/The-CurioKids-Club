@@ -85,3 +85,11 @@
 - These are generated 3D meshes and curves, not imported/licensed third-party assets. The scene is an initial proof, not yet visually accepted; inspect and refine the actual render before integration.
 - Made Eevee sample configuration version-safe after initial code review.
 - Next: inspect the Blender workflow result and actual PNG; refine framing/materials/geometry; then build the reusable asset manifest/export and integrate the 3D render as an optional scene layer with legacy fallback.
+
+
+## 2026-11-19 — Blender CI headless graphics failure fix
+- Investigated failed Blender proof run [#1](https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44546473537), job `135638262911`. Blender installed successfully; the scene-generation process aborted before render because the runner could not load `libEGL.so.1` (exit 134). This is a Linux headless graphics runtime dependency, not an AI-model issue or a scene-script logic failure.
+- Updated `.github/workflows/blender-3d-proof.yml` to install `libegl1`, `libegl-mesa0`, `libgl1`, `libgl1-mesa-dri`, `libgbm1` and X11 support libraries; set `LIBGL_ALWAYS_SOFTWARE=1` and `EGL_PLATFORM=surfaceless`; limit Blender to two threads.
+- Removed the unnecessary Weighted Normal modifier from beveled box objects to avoid Blender's Auto Smooth warnings. These warnings were not the fatal cause.
+- Fix commits: workflow `91423760c0cf6a9ced2422de37cd56de778ab2ec`; scene script `50e806f9438458e79a54cd0138c9587c04608b62`.
+- The push-triggered Blender workflow must now validate the fix. Do not assume it works until the job completes and the actual PNG/BLEND artifacts are checked.
