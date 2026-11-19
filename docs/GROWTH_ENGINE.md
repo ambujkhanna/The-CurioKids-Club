@@ -72,3 +72,7 @@ Daily workflow artifact loader now recursively locates the growth brief in the d
 - The Weekly Long Video workflow is separate and does not currently load the growth brief. Its package-install timeout was increased from 15 to 30 minutes (commit `cc245c9307c7d2719103c8e67420c353ae6786ca`).
 - Latest known metadata coverage remains 43.8%. The current Short state file contains 17 distinct video IDs; do not infer mappings for analytics rows absent from the state.
 - No production workflow was dispatched and no upload/publishing behavior changed.
+
+## 2026-11-19 — Unmapped-video audit
+
+The latest inspected analytics artifact contains 18 rows, 16 mapped (88.9%). Unknown IDs: `r_GUBf5Flho` (68 views) and `5iwnr-Y9hqc` (32 views). These are surfaced in the growth brief for manual review; the system deliberately does not guess episode IDs. PR #2 adds this output and regression coverage: https://github.com/ambujkhanna/The-CurioKids-Club/pull/2.
