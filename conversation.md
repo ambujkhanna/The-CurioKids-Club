@@ -27,3 +27,35 @@ Technical validation is green, visual acceptance is not. Do not merge yet.
 
 ### Model / pipeline decision
 No AI model upgrade is currently justified. The main limitation is asset quality and scene composition, not script intelligence. Revisit model selection only if later testing identifies a measurable scene-planning limitation. Prefer free/open-source tooling and avoid new paid services without explicit discussion.
+
+## 2026-11-19 — 3D direction and handoff
+
+The user reviewed the latest artifact and confirmed it still does not look like professional 3D. The agreed diagnosis is primarily a pipeline/asset-production limitation: the current garden is procedural 2D/2.5D Skia artwork, not actual 3D geometry. No AI model upgrade is justified yet.
+
+### Target visual standard
+- Polished stylised 3D (not photorealistic), child-friendly, with dimensional geometry, believable materials, coherent lighting, shadows, perspective and deliberate camera composition.
+- Preserve existing 2D Leo/Mia/Buzz character identity; build richer 3D scenes and props around them.
+- For the seed-growth pilot, clearly show seed, underground branching roots, shoot and mature tree in a legible soil cutaway. Avoid duplicate focal suns, label collisions and decorative-only scenery.
+
+### User authorisation
+The user asked that this discussion be recorded for use in a fresh conversation and authorised proceeding with the remaining tasks. Continue on feature/modern-visual-engine; keep main untouched until visual and technical acceptance gates pass.
+
+### Current verified baseline
+- Dry-run #7 passed: https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44341007085
+- Artifact: https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44341007085/artifacts/14443488874
+- The artifact is technically valid but visually not accepted as professional 3D.
+- Blender scene authoring, 3D asset library and 3D compositing integration remain unimplemented.
+
+### Next task selected
+Create an isolated Blender proof-of-capability for ep070: generate a real 3D seed-germination soil cutaway with a tree, seed, branching roots and sprout; render a transparent/high-resolution output and retain the .blend source. Validate it in a dedicated branch-only workflow before integrating it into the existing Skia/FFmpeg pipeline. Keep old renderer fallback and avoid full Blender rendering in every routine run.
+
+### Remaining validation gates
+1. Inspect the actual Blender render at 1080x1920; refine geometry, materials, lighting, shadows and framing.
+2. Validate alpha/compositing and typography/label safe areas.
+3. Integrate as optional scene assets with deterministic IDs, manifest/licence metadata and safe fallback.
+4. Render ep070 and compare actual video/contact sheet against target references.
+5. Run legacy episode regression, tests, QC, and GitHub Actions performance checks.
+6. Only merge after visual acceptance and explicit review; green CI alone is insufficient.
+
+### Tool/model decision
+Blender is the next tool upgrade, not a paid AI model. Keep model choice unchanged unless scene-planning evaluation later demonstrates a specific model limitation.
