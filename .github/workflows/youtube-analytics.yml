@@ -3,6 +3,7 @@ name: YouTube Analytics — collect report
 on:
   push:
     branches:
+      - main
       - feat/youtube-growth-engine
   schedule:
     - cron: "0 12 * * *" # 17:30 IST; default report ends three days ago
