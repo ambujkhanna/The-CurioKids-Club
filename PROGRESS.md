@@ -88,3 +88,13 @@
 - [x] Merged PR #3: https://github.com/ambujkhanna/The-CurioKids-Club/pull/3 (merge commit `b067f31668b2217f01a304900a8b4122e0bc42fa`).
 - Analytics push collection now runs only for analytics code/dependencies/tests, episode metadata state and the analytics workflow itself; documentation-only commits no longer trigger an OAuth refresh.
 - Scheduled and manual analytics triggers remain enabled. Daily publishing workflows are unchanged.
+
+
+## 2026-11-19 — Follow-up audit: current workflow status
+
+- [x] Re-fetched current main versions of all three tracking documents and the Daily Short / analytics workflows before this update.
+- [x] Confirmed PR #3's path filter is active; documentation-only commits will not trigger analytics collection. The latest analytics push runs after the merge still failed (CurioKids run 44562221268; AInation run 44562248765) and the earlier OAuth failure pattern remains unresolved. Do not change YT_REFRESH_TOKEN.
+- [ ] AInation Daily Short workflow dispatch 44562499073 is currently in progress. GitHub's run summary does not expose the selected action input, so this audit cannot safely classify it as dry-run versus publish. Its job is still at the bounded system-package installation step; analytics brief loading and render/upload have not yet run. Do not infer that it is a safe dry-run.
+- [ ] CurioKids daily post-fix dry-run remains unverified; no new CurioKids daily workflow dispatch was found in the latest 10 runs.
+- [ ] Need a fresh valid YT_ANALYTICS_REFRESH_TOKEN in each repository, then a successful analytics collection followed by safe daily dry-run(s) to prove the growth brief appears in the Actions summary.
+- Guardrails unchanged: no assistant-initiated video upload, publish, schedule change, episode-state edit or upload-token change.
