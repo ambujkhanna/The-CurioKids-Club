@@ -66,3 +66,22 @@ Blender is the next tool upgrade, not a paid AI model. Keep model choice unchang
 - Workflow now installs EGL/Mesa/OpenGL and X11 runtime libraries, sets `LIBGL_ALWAYS_SOFTWARE=1` and `EGL_PLATFORM=surfaceless`, and runs Blender with two threads. Removed unnecessary Weighted Normal modifier to suppress compatibility warnings.
 - Fix commits: `91423760c0cf6a9ced2422de37cd56de778ab2ec` (workflow), `50e806f9438458e79a54cd0138c9587c04608b62` (scene script).
 - Await a new branch workflow run and inspect the rendered PNG/BLEND; no claim of success until artifact verification.
+
+## 2026-11-19 — User feedback: story graphics over background
+
+The user asked to focus on other elements and story graphics rather than concentrating on a green-field background. We inspected the actual PNG from Blender proof artifact `14547556076` (run `44559566901`), not merely its CI metadata.
+
+### Review findings
+- The first Blender output is real 3D but uses one wide diorama in a portrait canvas.
+- The tree canopy is clipped at the right and the seed is partly clipped at the left; the sapling/tree are undersized; the root network reads as disconnected; empty background occupies too much of the composition.
+- It does not tell the seed → root → shoot → mature tree story clearly enough. It is not accepted for episode integration.
+
+### Updated direction
+Prioritise separate close-up 3D teaching visuals and meaningful story graphics: (1) seed coat splitting/first root, (2) branching underground roots, (3) shoot emerging with leaves and sunlight, (4) seed-to-tree growth comparison. Use restrained or transparent backgrounds. Preserve the established 2D Leo/Mia/Buzz characters.
+
+### Implementation started
+- Added `pipeline/blender/create_story_assets.py` for four separate transparent portrait PNGs.
+- Updated `.github/workflows/blender-3d-proof.yml` to render and upload these assets and to avoid running on documentation-only changes.
+- Commits: `be6d8503cf30292d55bb0c18c1a82b35f40cadeb`, `aaf1aafff18b5c9ef63b46f98c46e00a5f751065`.
+- Awaiting workflow execution and visual review. No merge or production workflow change.
+
