@@ -30,3 +30,12 @@ Latest observed analytics run #24 failed at OAuth refresh with `invalid_grant: T
 Explained that analytics token setup had previously succeeded (runs #18 and earlier); later runs failed repeatedly with OAuth `invalid_grant`. This is a later failure, not a contradiction. Logs alone cannot distinguish revoked refresh token, Google's refresh-token issuance limit, or client/consent mismatch. Re-ran via main-branch push: analytics run #26 still failed with `invalid_grant`.
 
 Fixed artifact loader to recursively find `growth_brief.md` inside artifact-named subdirectories and copy MD/JSON to stable output path (main commit 739c3143...). Updated analytics workflow push filter to include main (48b83bca...) and increased daily system package timeout to 30 min (ff5230d6...). No daily video workflow was manually dispatched; no upload/publish action taken. Next: user must replace only CurioKids `YT_ANALYTICS_REFRESH_TOKEN` with a newly authorized refresh token; then verify analytics collection and loader summary. Do not alter upload token.
+
+
+## 2026-11-19 Analytics token recovery
+
+- The user replaced the `YT_ANALYTICS_REFRESH_TOKEN` GitHub Actions secret in this repository. The upload secret `YT_REFRESH_TOKEN` was not changed.
+- Retried the failed YouTube Analytics workflow (run attempt 2). Google OAuth refresh succeeded; analytics collection, channel-specific growth brief generation, and artifact upload all succeeded.
+- Verified 7 analytics/growth unit tests passed in the workflow.
+- Successful run: https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44546121847 (artifact youtube-analytics-29).
+- Remaining validation: confirm the next scheduled daily video workflow downloads the analytics artifact and displays the growth brief in its Actions summary. No daily video workflow was manually dispatched and no video was published as part of this recovery.
