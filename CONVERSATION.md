@@ -39,3 +39,12 @@ Fixed artifact loader to recursively find `growth_brief.md` inside artifact-name
 - Verified 7 analytics/growth unit tests passed in the workflow.
 - Successful run: https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44546121847 (artifact youtube-analytics-29).
 - Remaining validation: confirm the next scheduled daily video workflow downloads the analytics artifact and displays the growth brief in its Actions summary. No daily video workflow was manually dispatched and no video was published as part of this recovery.
+
+
+## 2026-11-19 21:30 IST — Current-main audit and long-workflow timeout
+
+The user asked to continue implementation and explicitly requested that all edits use the latest file versions to avoid conflicts. Re-fetched current `main` versions of workflows, analytics/growth code, state files and documentation before acting. Confirmed `.github/workflows/curio-kids-short.yml` contains the recursive analytics artifact loader and manual `Dry run (render only, nothing uploaded)` option. Its post-fix end-to-end result is still unverified.
+
+Updated only `.github/workflows/curio-kids-long.yml`: increased the apt/system-package installation timeout from 15 to 30 minutes to align with the Short workflow and address the previously observed package-install timeout. Commit `cc245c9307c7d2719103c8e67420c353ae6786ca`. The long workflow does not currently load the growth brief; this was left unchanged pending an explicit scope decision.
+
+The current Short state file contains 17 distinct video IDs. The prior analytics report's 43.8% metadata coverage is still the last known measured figure; videos absent from state were not guessed or manually mapped. No workflow was dispatched, and no video render/upload/publish was triggered. Upload tokens, episode state and publishing settings were not changed.
