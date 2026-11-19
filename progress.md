@@ -100,3 +100,6 @@
 - The workflow then failed only in its verification step because it imported Pillow (PIL), which is not installed in the runner's system Python. This was a validation-script dependency mistake; Blender rendering itself succeeded.
 - Updated .github/workflows/blender-3d-proof.yml at commit b668fa393f6e282ff9e7de3c33189074333ed7b6 to validate the PNG signature, IHDR dimensions, bit depth, RGBA color type and nontrivial file size using Python's standard library. No Pillow dependency or additional install step is required.
 - A fresh push-triggered run is required to confirm the workflow passes and uploads the PNG/.blend artifacts. Visual review is still pending; technical PNG metadata checks do not establish that the composition meets the requested quality.
+
+
+- Follow-up correction: the first Pillow-free verifier commit contained a stray character before its pathlib import, so GitHub could not load the workflow. Corrected in commit 4319bb326937a2d16ccf6134133ec958def290ad. The next push-triggered run is the authoritative validation; prior failures were workflow syntax/verification issues after the successful Blender render.
