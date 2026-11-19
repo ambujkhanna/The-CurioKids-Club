@@ -7,8 +7,6 @@ on:
     paths:
       - "pipeline/blender/**"
       - ".github/workflows/blender-3d-proof.yml"
-      - "progress.md"
-      - "plan.md"
 
 permissions:
   contents: read
@@ -36,10 +34,21 @@ jobs:
           export EGL_PLATFORM=surfaceless
           blender --background --threads 2 --python pipeline/blender/create_seed_scene.py -- --output-dir out/blender --resolution 1080
 
+      - name: Generate focused story graphics
+        run: |
+          mkdir -p out/blender/story
+          export LIBGL_ALWAYS_SOFTWARE=1
+          export EGL_PLATFORM=surfaceless
+          blender --background --threads 2 --python pipeline/blender/create_story_assets.py -- --output-dir out/blender/story --resolution 1080
+
       - name: Verify rendered outputs
         run: |
           test -s out/blender/seed_germination_3d.png
           test -s out/blender/seed_germination_3d.blend
+          test -s out/blender/story/01_seed_wakes.png
+          test -s out/blender/story/02_roots_grow.png
+          test -s out/blender/story/03_shoot_reaches.png
+          test -s out/blender/story/04_growth_stages.png
           file out/blender/seed_germination_3d.png
           python - <<'PY'
           # Validate PNG IHDR using Python's standard library; do not add Pillow
@@ -67,4 +76,5 @@ jobs:
           path: |
             out/blender/seed_germination_3d.png
             out/blender/seed_germination_3d.blend
+            out/blender/story/*.png
           retention-days: 14
