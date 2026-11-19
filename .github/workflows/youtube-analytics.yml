@@ -5,6 +5,15 @@ on:
     branches:
       - main
       - feat/youtube-growth-engine
+    paths:
+      - "pipeline/analytics.py"
+      - "pipeline/growth.py"
+      - "pipeline/analytics-requirements.txt"
+      - "tests/**"
+      - "episodes/state.json"
+      - "long/state.json"
+      - "library/**/state.json"
+      - ".github/workflows/youtube-analytics.yml"
   schedule:
     - cron: "0 12 * * *" # 17:30 IST; default report ends three days ago
   workflow_dispatch:
