@@ -27,12 +27,14 @@ jobs:
       - name: Install Blender
         run: |
           sudo apt-get update -q
-          sudo apt-get install -y -q blender
+          sudo apt-get install -y -q blender libegl1 libegl-mesa0 libgl1 libgl1-mesa-dri libgbm1 libx11-6 libxext6 libxrender1 libxi6 libxfixes3 libxkbcommon0 libsm6
 
       - name: Generate real 3D seed-growth scene
         run: |
           mkdir -p out/blender
-          blender --background --python pipeline/blender/create_seed_scene.py -- --output-dir out/blender --resolution 1080
+          export LIBGL_ALWAYS_SOFTWARE=1
+          export EGL_PLATFORM=surfaceless
+          blender --background --threads 2 --python pipeline/blender/create_seed_scene.py -- --output-dir out/blender --resolution 1080
 
       - name: Verify rendered outputs
         run: |
