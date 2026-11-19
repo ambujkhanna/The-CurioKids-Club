@@ -42,13 +42,22 @@ jobs:
           test -s out/blender/seed_germination_3d.blend
           file out/blender/seed_germination_3d.png
           python - <<'PY'
-          from PIL import Image
-          image = Image.open("out/blender/seed_germination_3d.png")
-          assert image.mode == "RGBA", image.mode
-          assert image.width == 1080 and image.height == 1920, image.size
-          alpha = image.getchannel("A")
-          assert alpha.getbbox() is not None, "Render is fully transparent"
-          print("3D render verified:", image.size, image.mode)
+          # Validate PNG IHDR using Python's standard library; do not add Pillow
+          # just for this lightweight CI check.
+          import struct
+n          from pathlib import Path
+          path = Path("out/blender/seed_germination_3d.png")
+          with path.open("rb") as stream:
+              header = stream.read(29)
+          assert header[:8] == b"\x89PNG\r\n\x1a\n", "Invalid PNG signature"
+          length, chunk_type = struct.unpack(">I4s", header[8:16])
+          assert length == 13 and chunk_type == b"IHDR", "Missing PNG IHDR"
+          width, height, bit_depth, color_type, compression, filtering, interlace = struct.unpack(">IIBBBBB", header[16:29])
+          assert (width, height) == (1080, 1920), (width, height)
+          assert bit_depth == 8, bit_depth
+          assert color_type == 6, f"Expected RGBA PNG (color type 6), got {color_type}"
+          assert path.stat().st_size > 100_000, f"Unexpectedly small render: {path.stat().st_size} bytes"
+          print(f"3D render verified: {width}x{height}, 8-bit RGBA, {path.stat().st_size} bytes")
           PY
 
       - name: Upload Blender source and render
