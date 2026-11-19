@@ -103,3 +103,14 @@
 
 
 - Follow-up correction: the first Pillow-free verifier commit contained a stray character before its pathlib import, so GitHub could not load the workflow. Corrected in commit 4319bb326937a2d16ccf6134133ec958def290ad. The next push-triggered run is the authoritative validation; prior failures were workflow syntax/verification issues after the successful Blender render.
+
+## 2026-11-19 — First Blender render reviewed; story-first redesign
+- Downloaded and inspected the actual `curiokids-blender-3d-proof` artifact from successful run [44559566901](https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44559566901), artifact ID `14547556076` (PNG + editable `.blend`). The PNG is 1080×1920 RGBA and the Blender render itself is technically valid.
+- Visual review: the render is a single wide diorama squeezed into portrait framing. The mature tree canopy is clipped at the right edge and the seed is partly clipped at the left; the sapling/tree are small; root branches appear disconnected; large unused backdrop space dominates. It does not communicate the seed → roots → shoot → mature plant progression clearly. **Not visually accepted; do not integrate this render into ep070.**
+- User direction: focus on educational story objects/graphics and story beats, not a green-field background. Keep the established 2D characters and use close-up 3D story assets around them.
+- Added `pipeline/blender/create_story_assets.py` to render four separate transparent portrait assets: `01_seed_wakes.png`, `02_roots_grow.png`, `03_shoot_reaches.png`, and `04_growth_stages.png`. These are procedural Blender geometry/materials authored in-repo; no third-party assets or external services are used.
+- Updated `.github/workflows/blender-3d-proof.yml` to generate and upload the four story assets alongside the original proof. Narrowed path filters to Blender source and the workflow itself; edits to `progress.md`/`plan.md` no longer trigger expensive Blender setup/rendering.
+- Commit `be6d8503cf30292d55bb0c18c1a82b35f40cadeb`: add story asset generator. Commit `aaf1aafff18b5c9ef63b46f98c46e00a5f751065`: workflow update.
+- Validation status: generator and workflow have been committed, but the new workflow run and actual four PNGs have **not yet been validated or visually reviewed**. Do not claim success until Actions completes and the artifact is inspected.
+- Next: check the push-triggered workflow, fix any Blender/runtime issues, inspect all four renders at mobile scale, refine composition/labels/geometry, then composite the approved assets into an ep070 dry-run. Keep `main` untouched and update this log after each result.
+
