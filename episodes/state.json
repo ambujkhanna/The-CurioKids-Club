@@ -207,7 +207,8 @@
         "status": "uploaded",
         "video_id": "vn45kNW1jKo",
         "url": "https://www.youtube.com/shorts/vn45kNW1jKo",
-        "uploaded_at": "2026-11-19T04:21:11+05:30"
+        "uploaded_at": "2026-11-19T04:21:11+05:30",
+        "thumbnail_checked": "2026-11-19T23:30+05:30 set"
       }
     },
     "ep008": {
@@ -277,7 +278,23 @@
       "video_id": "6CnZ3qun0P4",
       "url": "https://www.youtube.com/shorts/6CnZ3qun0P4",
       "uploaded_at": "2026-11-17T23:45:26+05:30",
-      "thumbnail_checked": "2026-11-19T04:21+05:30 set"
+      "thumbnail_checked": "2026-11-19T23:30+05:30 set"
+    },
+    "ep012": {
+      "voices": "chatterbox",
+      "title": "Where Does Rain Come From? \ud83c\udf27\ufe0f Fun Facts for Kids",
+      "rendered_at": "2026-11-19T23:25:57+05:30",
+      "duration_s": 74.56,
+      "publish_at_ist": "2026-11-20T17:55+05:30",
+      "thumbnail": "set (re-applied after posting: set)",
+      "playlist": "off (added by hand)",
+      "made_for_kids": "no",
+      "facebook": "posted (reel 4110538915743866), cover set",
+      "instagram": "posted (reel 17980178154178619) with the 3 Mbps copy, designed cover",
+      "status": "uploaded",
+      "video_id": "dcNLkD2l3p8",
+      "url": "https://www.youtube.com/shorts/dcNLkD2l3p8",
+      "uploaded_at": "2026-11-19T23:29:29+05:30"
     }
   }
 }
