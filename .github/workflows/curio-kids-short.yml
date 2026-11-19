@@ -106,7 +106,7 @@ jobs:
           ~/cbenv/bin/python -c "import chatterbox; print('chatterbox ready')"
 
       - name: System packages (ffmpeg with libass + rubberband, Inter font, colour emoji)
-        timeout-minutes: 15
+        timeout-minutes: 30
         run: |
           sudo apt-get -o Acquire::Retries=3 -o Acquire::http::Timeout=30 update -q
           sudo apt-get -o Acquire::Retries=3 -o Acquire::http::Timeout=30 install -y -q ffmpeg fonts-inter fonts-noto-color-emoji libegl1 libgl1 libfontconfig1
