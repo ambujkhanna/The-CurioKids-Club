@@ -159,3 +159,10 @@
 - Reviewed the actual ep070 MP4 from successful Visual Engine run [44743354267](https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44743354267) plus the four Blender story PNGs. The new 3D assets were integrated, but the first pass looked visually sparse at phone size: small/simple plant forms, large empty soil blocks, and weak separation against the garden board.
 - Reworked `pipeline/blender/create_story_assets.py` on `feature/modern-visual-engine` to add richer seed split/cotyledons, visible branching roots and water droplets, broader veined leaves, a clearer upright shoot/sun, and more distinct seed→sprout→sapling→tree silhouettes. Removed redundant embedded scene headings so the episode board remains the single source of titles. Changes are in commits `83f4ed885a99aa7273de5cfd0b154da64c4ad047` and `7974daabab02391a9c20b18d173e5562333b68b4`.
 - The new push-triggered branch dry-run must validate Blender execution, render the episode, and produce fresh artifacts. Visual acceptance is still pending; no merge or production publishing change.
+
+
+## 2026-11-20 — CI dependency caching
+- Audited `.github/workflows/visual-engine-dry-run.yml`: Python dependency caching was already enabled via `actions/setup-python@v5` with `cache: pip` and `pipeline/requirements.txt` as its dependency key.
+- Added an Actions cache for Kokoro model outputs (`kokoro-q8.onnx`, `voices.bin`, `kokoro-dur.onnx`), keyed by the model setup script hash. On a cache hit, `setup_models.py` detects the files and avoids re-downloading model shards; it still ensures Hindi voices are present.
+- Added an Actions cache for Ubuntu 24.04 apt `.deb` archives and configured apt to retain downloaded packages after installation. This can reduce repeated system package downloads on cache hits; `apt-get update` and package installation still run to ensure runner correctness.
+- Change committed on `feature/modern-visual-engine`: `166ed77a3489bfac5539ddb111148bc74957fc3d`. Cache warm-up/restore effectiveness and size will be verified from the next workflow logs. No production workflow changed.
