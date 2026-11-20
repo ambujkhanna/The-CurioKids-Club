@@ -141,3 +141,11 @@ The user confirmed they do not want to manually inspect routine technical output
 - User is not satisfied with the completed ep070 pipeline's graphics: they feel poor and do not read as 3D. The current implementation uses static rendered PNG story cards; this is not the quality target.
 - New direction: make the germination process itself the hero, animated continuously in 3D — seed splits, root emerges and grows down/branches, shoot pushes up through the soil, leaves unfold. Keep the established 2D Leo/Mia characters, but move away from static picture swaps and decorative green-field backgrounds.
 - Next work is a short bounded Blender animation proof plus Skia/episode timeline integration and actual mobile-size MP4 review. Technical pipeline success is not visual approval. Keep main and publishing unchanged.
+
+
+## 2026-11-20 — User clarified core visual failure; Claude handoff prepared
+- User explicitly clarified that the current output is effectively changing one image to another image to explain the seed-to-plant journey. This is a slideshow of stages, not an animation showing plant growth.
+- Decision: replace/rework the static PNG cue-switching approach. Desired result is a single continuous 3D germination shot: seed coat splits, primary root grows downward and branches, shoot grows upward and breaks through soil, leaves unfold toward light. The action itself must be animated; no swapping between finished stills as the main explanation.
+- Preserve 2D Leo/Mia characters. Use a phone-readable soil cutaway, true geometry/depth/materials/lighting/shadows, smooth continuous motion and coherent camera framing.
+- Added Claude handoff details to plan.md: current implementation locations, desired sequence, technical proposal, constraints and explicit acceptance criteria. User will provide repo context to Claude for implementation.
+- This update documents the decision only. No new animation implementation, merge or publication has occurred.
