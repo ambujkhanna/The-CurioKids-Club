@@ -4,7 +4,7 @@
 """
 import json, sys
 
-TYPES = {"letter", "count", "guess", "title", "big", "steps", "compare", "checklist", "summary", "poem", "gallery", "body", "cycle", "journey", "orbit"}
+TYPES = {"letter", "count", "guess", "title", "big", "steps", "compare", "checklist", "summary", "poem", "gallery", "body", "cycle", "journey", "orbit", "blender"}
 CAST = {"MIA", "LEO", "DAD"}
 LEGACY_ICONS = {"chat", "robot", "check", "sun", "train", "doc", "lock", "target", "search", "calendar", "mail", "suitcase",
                 "warn", "x", "user", "bulb", "shield", "coin", "eye", "book", "globe", "brain", "phone"}
@@ -13,7 +13,7 @@ LIMITS = {"steps": 5, "compare": 4, "checklist": 4, "summary": 4, "poem": 4, "ga
 
 def cues(sc):
     out = [sc.get("cue"), sc.get("sub_cue")]
-    for key in ("items", "rows", "lines", "labels", "clues"):
+    for key in ("items", "rows", "lines", "labels", "clues", "assets"):
         out += [it.get("cue") for it in sc.get(key, []) if isinstance(it, dict)]
     # (the guess answer's cue may be spoken in a later line; checked separately in check())
     for side in ("left", "right"):
