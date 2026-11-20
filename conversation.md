@@ -92,3 +92,15 @@ Blender run `44561243631` succeeded and uploaded artifact `14551633108`. All fou
 
 Committed a camera/framing correction in `5bae616dee24154a1adca80c8d6ce96ad02cf53c`: front-on camera, wider framing, adjusted titles and growth-stage spacing. Next action is to validate and inspect this rerender, then integrate approved story graphics into ep070 and render a fresh full-video dry-run. Keep `main` untouched.
 
+
+
+## 2026-11-20 — User delegated validation and completion
+The user confirmed they do not want to manually inspect routine technical outputs; I should independently validate CI, actual images/video, story clarity, regression and documentation, and ask for creative approval only when needed.
+
+### Latest visual review and integration work
+- Both workflows for commit `5bae616` passed, but the downloaded PNGs were visually inspected and still rejected: portrait cards had excessive unused vertical space, the shoot title collided with the sun, and the four-stage comparison clipped at the sides. The 74-second MP4 from run `44724430136` was also inspected via a contact sheet and still showed the legacy 2D board graphics; this confirmed the new 3D images were not integrated yet.
+- Changed the Blender story outputs to the theatre-board aspect ratio (870:640) and added an optional `blender` board type to the episode renderer. It composites transparent PNGs within the board and can switch visuals at narration cue words.
+- ep070 now maps seed waking to the first 3D asset, root then shoot to cue-timed assets, and the year-after-year explanation to the growth-stage comparison.
+- The branch-only dry-run workflow now installs Blender and generates the story assets before rendering ep070. It remains render-only, with no upload/publishing.
+- Commits: `322d297d38a595c174df7524495ef3402836ee2d`, `7fd4e3129aaed2e3a7940e1b85577a769b62f664`, `58d37e1a3e42898e5ac30ea2076915c460d17aa4`, `5628e42837086cb1b050265e8030fa92dc7b41dc`.
+- Final integration run [44731557242](https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44731557242) was pending when this entry was written. Its output must be inspected before claiming completion. Keep main and production publishing untouched.
