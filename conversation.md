@@ -112,3 +112,8 @@ The user confirmed they do not want to manually inspect routine technical output
 - The Blender asset workflow passed on `16b1858`, producing all four story PNGs. The integrated dry-run reached the episode validation stage but failed before rendering because `pipeline/validate_episode.py` did not yet whitelist the new `blender` board type. The error was explicit: lines 3, 5 and 9 had unknown board type `blender`.
 - Fixed the episode validator to recognize `blender` and include per-asset cue words in its cue validation. Commit `9a244aae0a7305f2543dd2ff3ebdde12037245b1`.
 - The renderer and Blender generator are technically passing their separate checks; integrated MP4 rendering and visual inspection are still pending. A new branch dry run should run automatically from the validator change. No publish or merge has occurred.
+
+
+## 2026-11-20 — CurioKids Visual Engine Skia loader failure
+- User shared the integrated CurioKids render traceback. Run [44739867903](https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44739867903) passed Blender story asset generation, manifest validation and 9 unit tests, then failed in `build_blender` because `skia.Data.MakeFromFile` is absent in the runner's skia-python API. The supported method is `MakeFromFileName`; Fontconfig output was warning-only.
+- Fixed `pipeline/episode_engine.py` on `feature/modern-visual-engine` in commit `2a970167d4169d29cc3e0bf9228376373935247b`. Awaiting push-triggered end-to-end dry-run and visual review of the resulting ep070 video. No production publish or merge.
