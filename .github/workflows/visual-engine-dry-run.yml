@@ -33,10 +33,17 @@ jobs:
       - name: Install system rendering dependencies
         run: |
           sudo apt-get update -q
-          sudo apt-get install -y -q ffmpeg fonts-inter fonts-noto-color-emoji libegl1 libgl1 libfontconfig1
+          sudo apt-get install -y -q ffmpeg fonts-inter fonts-noto-color-emoji libegl1 libegl-mesa0 libgl1 libgl1-mesa-dri libgbm1 libfontconfig1 blender libx11-6 libxext6 libxrender1 libxi6 libxfixes3 libxkbcommon0 libsm6
 
       - name: Install Python dependencies
         run: pip install -r pipeline/requirements.txt
+
+      - name: Render episode-specific 3D story assets
+        run: |
+          mkdir -p out/blender/story
+          export LIBGL_ALWAYS_SOFTWARE=1
+          export EGL_PLATFORM=surfaceless
+          blender --background --threads 2 --python pipeline/blender/create_story_assets.py -- --output-dir out/blender/story --resolution 1080
 
       - name: Prepare voice models
         run: python pipeline/setup_models.py
