@@ -174,3 +174,10 @@
 - Strengthened pipeline/setup_models.py: cached Kokoro ONNX weights are SHA-prefix checked; voice archive must open and contain entries; duration ONNX must load. Invalid cached files are removed and rebuilt from source. Cache key hashes this script, so the integrity change naturally creates a fresh model cache key.
 - Existing pip cache retained. Apt archive cache is a single fixed-key entry; apt update/install still executes and fetches anything missing. Render/video outputs remain separate 14-day workflow artifacts and are not part of the dependency cache.
 - Cache usage cannot be inspected through the available GitHub connector in this session, so no claim is made about current exact cache consumption. Check repository Settings → Actions → Caches and maintain substantial headroom under 10 GB. No publishing workflow changed.
+
+
+## 2026-11-20 — Visual review: static 3D cards rejected; animation redesign
+- User reports that the completed pipeline's graphics are poor and do not convincingly look 3D. Agreed: the latest successful dry-run establishes technical integration only; it does not meet the visual quality bar.
+- Reset visual acceptance. The four static Blender PNGs are a prototype, not the finished result. New direction is a continuous 3D germination sequence: seed coat splits; root grows down and branches; shoot pushes up through soil; leaves unfold toward light. Real dimensional geometry, smooth motion, coherent materials/lighting/shadows and tight composition are required.
+- Preserve the existing 2D Leo/Mia characters; use the 3D animation as the educational hero visual. Avoid green-field/background-first scenes and static illustration swaps.
+- Implementation approach to validate: render a bounded transparent RGBA frame sequence in Blender and composite it into the existing board timeline. First profile a short representative animation before expanding the whole sequence. The actual MP4 must be inspected at phone size; CI success alone is not acceptance. No merge/publish.
