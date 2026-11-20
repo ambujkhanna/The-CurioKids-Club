@@ -105,3 +105,5 @@ All work stays on `feature/modern-visual-engine`. Do not merge to `main` or chan
 - Updated the branch-only dry-run workflow to install Blender and render the required assets before the normal episode render. Nothing is published; main and production workflows remain untouched.
 - Integration commits: story framing `322d297d38a595c174df7524495ef3402836ee2d`; episode engine `7fd4e3129aaed2e3a7940e1b85577a769b62f664`; episode mapping `58d37e1a3e42898e5ac30ea2076915c460d17aa4`; dry-run workflow `5628e42837086cb1b050265e8030fa92dc7b41dc`.
 - Validation is pending on the final workflow run. Do not mark visually accepted until the actual rerendered PNGs and ep070 MP4 are inspected. If the scene-card composition or alpha blending is poor, refine it before merge.
+
+- Follow-up camera-routing fix: Blender board scenes are now explicitly included in the renderer's board-shot routing, preventing narration lines from cutting to a character close-up while the 3D story card is meant to be read. Commit `d249f9454d01069faf5575941193cf1d50370c35`. The next integrated dry run must validate this alongside asset loading/compositing.
