@@ -104,3 +104,5 @@ The user confirmed they do not want to manually inspect routine technical output
 - The branch-only dry-run workflow now installs Blender and generates the story assets before rendering ep070. It remains render-only, with no upload/publishing.
 - Commits: `322d297d38a595c174df7524495ef3402836ee2d`, `7fd4e3129aaed2e3a7940e1b85577a769b62f664`, `58d37e1a3e42898e5ac30ea2076915c460d17aa4`, `5628e42837086cb1b050265e8030fa92dc7b41dc`.
 - Final integration run [44731557242](https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44731557242) was pending when this entry was written. Its output must be inspected before claiming completion. Keep main and production publishing untouched.
+
+- Follow-up camera-routing fix: Blender board scenes are now explicitly included in the renderer's board-shot routing, preventing narration lines from cutting to a character close-up while the 3D story card is meant to be read. Commit `d249f9454d01069faf5575941193cf1d50370c35`. The next integrated dry run must validate this alongside asset loading/compositing.
