@@ -107,3 +107,9 @@ All work stays on `feature/modern-visual-engine`. Do not merge to `main` or chan
 - Validation is pending on the final workflow run. Do not mark visually accepted until the actual rerendered PNGs and ep070 MP4 are inspected. If the scene-card composition or alpha blending is poor, refine it before merge.
 
 - Follow-up camera-routing fix: Blender board scenes are now explicitly included in the renderer's board-shot routing, preventing narration lines from cutting to a character close-up while the 3D story card is meant to be read. Commit `d249f9454d01069faf5575941193cf1d50370c35`. The next integrated dry run must validate this alongside asset loading/compositing.
+
+
+## 2026-11-20 — Integration validation finding and fix
+- The Blender asset workflow passed on `16b1858`, producing all four story PNGs. The integrated dry-run reached the episode validation stage but failed before rendering because `pipeline/validate_episode.py` did not yet whitelist the new `blender` board type. The error was explicit: lines 3, 5 and 9 had unknown board type `blender`.
+- Fixed the episode validator to recognize `blender` and include per-asset cue words in its cue validation. Commit `9a244aae0a7305f2543dd2ff3ebdde12037245b1`.
+- The renderer and Blender generator are technically passing their separate checks; integrated MP4 rendering and visual inspection are still pending. A new branch dry run should run automatically from the validator change. No publish or merge has occurred.
