@@ -97,3 +97,12 @@ PR #3 merged (`b067f31668b2217f01a304900a8b4122e0bc42fa`). Push-triggered analyt
 - AInation daily run 44562499073 is in progress, but its selected workflow-dispatch inputs are not exposed in the run summary. At the latest check, the run had not reached the read-only growth-brief loader or render/upload step. Because the workflow's default action is Next video (scheduled), do not count this as a safe dry-run without confirming the selected action in GitHub Actions.
 - CurioKids post-fix daily dry-run and both channels' post-fix growth-brief summary checks remain outstanding.
 - No automatic script rewriting or publishing was introduced. No assistant-initiated video upload or publishing occurred during this audit.
+
+
+## 2026-11-20 — Current operational status
+
+- [x] Rechecked current workflow runs and logs. Daily scheduled run 44578898591 completed successfully and uploaded Short https://www.youtube.com/shorts/dcNLkD2l3p8 for scheduled publication on 20 Nov 2026 at 17:55 IST. The next scheduled run 44631536769 also completed successfully; its log correctly reported “Nothing due right now” because the alternate-day/time-window logic did not select a video. No duplicate upload occurred in that run.
+- [x] The daily workflow's read-only growth-brief loader step completed successfully in run 44631536769. The brief is from the last successful analytics artifact, however, and is stale until fresh collection succeeds.
+- [ ] Latest scheduled analytics run 44606697918 failed with Google OAuth `invalid_grant` (“Token has been expired or revoked”). Reauthorize and replace only `YT_ANALYTICS_REFRESH_TOKEN`; leave `YT_REFRESH_TOKEN` unchanged.
+- [ ] A manual dry-run validation is still pending. The available GitHub integration does not expose workflow dispatch; use Actions → Daily Curio Kids Short → Run workflow → action `Dry run (render only, nothing uploaded)` to validate without publishing.
+- Guardrails unchanged: no automatic script rewriting; no upload token, publishing logic, schedule or episode state changed by this audit.
