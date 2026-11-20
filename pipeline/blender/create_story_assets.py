@@ -42,14 +42,14 @@ def text_obj(body,loc,size,m):
     c=bpy.data.curves.new("Label "+body,"FONT"); c.body=body; c.size=size; c.extrude=.006; c.align_x="CENTER"
     o=bpy.data.objects.new("Label "+body,c); bpy.context.collection.objects.link(o); o.location=loc; o.rotation_euler=(math.radians(90),0,0); o.data.materials.append(m); return o
 
-def setup(out,res,name,target=(0,0,0),scale=6.8):
+def setup(out,res,name,target=(0,0,0),scale=9.0):
     scene=bpy.context.scene
     scene.render.engine="BLENDER_EEVEE_NEXT" if bpy.app.version >= (4,2,0) else "BLENDER_EEVEE"
     if hasattr(scene,"eevee"): scene.eevee.taa_render_samples=64
     scene.render.resolution_x=res; scene.render.resolution_y=int(res*16/9); scene.render.resolution_percentage=100
     scene.render.image_settings.file_format="PNG"; scene.render.image_settings.color_mode="RGBA"; scene.render.image_settings.color_depth="8"; scene.render.film_transparent=True
     scene.view_settings.view_transform="AgX"; scene.world.color=(.18,.18,.18)
-    bpy.ops.object.camera_add(location=(7,-15,7))
+    bpy.ops.object.camera_add(location=(0,-18,0))
     cam=bpy.context.object; cam.data.type="ORTHO"; cam.data.ortho_scale=scale
     cam.rotation_euler=(Vector(target)-cam.location).to_track_quat("-Z","Y").to_euler(); scene.camera=cam
     def light(loc,power,size,color):
@@ -72,7 +72,7 @@ def build_seed(out,res):
     curve("Tiny shoot",[(0,-.2,-.5),(0,-.2,.15),(.08,-.2,.58)],.07,leaf)
     sphere("First leaf",(-.25,-.2,.45),(.38,.12,.2),leaf).rotation_euler[1]=-.4
     text_obj("A SEED WAKES UP",(0,-1.15,2.0),.34,leaf)
-    setup(out,res,"01_seed_wakes",target=(0,0,-.2),scale=6.7)
+    setup(out,res,"01_seed_wakes",target=(0,0,-.2),scale=9.0)
 
 def build_roots(out,res):
     clear(); soil=mat("Earth",(.30,.14,.075),.92); band=mat("Soil layer",(.48,.27,.14)); root=mat("Root ivory",(.96,.78,.51)); seed=mat("Seed",(.42,.12,.04))
@@ -86,7 +86,7 @@ def build_roots(out,res):
       [(.02,-1.03,-1.0),(-.55,-1.03,-1.28),(-.8,-1.03,-1.72)],
       [(.12,-1.03,-1.2),(.72,-1.03,-1.48),(.95,-1.03,-1.9)]]
     for i,p in enumerate(branches): curve("Branching root %d"%i,p,.055,root)
-    text_obj("ROOTS DRINK WATER",(0,-1.22,1.85),.32,root)
+    text_obj("ROOTS DRINK WATER",(0,-1.22,1.55),.28,root)
     setup(out,res,"02_roots_grow",target=(0,0,-.05),scale=6.8)
 
 def build_shoot(out,res):
@@ -98,13 +98,13 @@ def build_shoot(out,res):
     sphere("Sun",(1.75,.15,2.35),(.42,.16,.42),sun)
     for i in range(7):
         a=i*math.tau/7; curve("Sun ray %d"%i,[(1.75+math.cos(a)*.58,.15,2.35+math.sin(a)*.58),(1.75+math.cos(a)*.78,.15,2.35+math.sin(a)*.78)],.035,sun)
-    text_obj("THE SHOOT REACHES UP",(0,-1.2,2.25),.30,stem)
+    text_obj("THE SHOOT REACHES UP",(0,-1.2,2.05),.27,stem)
     setup(out,res,"03_shoot_reaches",target=(0,0,.2),scale=6.8)
 
 def build_stages(out,res):
     clear(); soil=mat("Soil",(.30,.13,.065),.9); bark=mat("Trunk",(.35,.14,.055)); greens=[mat("Leaf green",(.12,.45,.14)),mat("Leaf light",(.3,.65,.18))]
     cube("Ground",(0,0,-1.6),(6.3,1.8,.28),soil,.1)
-    xs=[-2.1,-.7,.8,2.25]; heights=[.42,1.05,1.8,2.7]
+    xs=[-2.7,-.9,.9,2.7]; heights=[.42,1.0,1.65,2.25]
     for i,(x,h) in enumerate(zip(xs,heights)):
         if i==0:
             sphere("Seed stage",(x,-.25,-1.12),(.32,.2,.23),mat("Seed brown",(.4,.12,.035)))
@@ -113,10 +113,10 @@ def build_stages(out,res):
             count=2 if i<3 else 5
             for j in range(count):
                 a=j*math.tau/count
-                sphere("Stage canopy %d %d"%(i,j),(x+math.cos(a)*h*.25,-.2,-1.45+h+math.sin(a)*h*.14),(h*.22,.18,h*.18),greens[j%2])
+                sphere("Stage canopy %d %d"%(i,j),(x+math.cos(a)*h*.25,-.2,-1.45+h+math.sin(a)*h*.14),(h*.19,.18,h*.16),greens[j%2])
         text_obj(["SEED","SPROUT","SAPLING","TREE"][i],(x,-.9,-2.05),.22,greens[0])
-    text_obj("FROM SEED TO TREE",(0,-1.0,2.15),.34,greens[1])
-    setup(out,res,"04_growth_stages",target=(0,0,.05),scale=7.2)
+    text_obj("FROM SEED TO TREE",(0,-1.0,2.55),.30,greens[1])
+    setup(out,res,"04_growth_stages",target=(0,0,.05),scale=9.4)
 
 def main():
     o=args(); out=os.path.abspath(o.output_dir); os.makedirs(out,exist_ok=True)
