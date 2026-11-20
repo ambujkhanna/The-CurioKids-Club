@@ -471,7 +471,7 @@ def build_blender(i, t0, t1, sc):
         if not name:
             continue
         path = os.path.join(root, "out", "blender", "story", os.path.basename(name))
-        data = skia.Data.MakeFromFile(path)
+        data = skia.Data.MakeFromFileName(path)
         image = skia.Image.MakeFromEncoded(data) if data else None
         if image is None:
             raise RuntimeError("Blender story asset missing or unreadable: " + path)
