@@ -30,8 +30,16 @@ jobs:
           cache: pip
           cache-dependency-path: pipeline/requirements.txt
 
+      # Cache downloaded .deb archives across fresh hosted runners.
+      - name: Cache apt package archives
+        uses: actions/cache@v4
+        with:
+          path: /var/cache/apt/archives/*.deb
+          key: ubuntu-24.04-apt-rendering-v1
+
       - name: Install system rendering dependencies
         run: |
+          echo 'Binary::apt::APT::Keep-Downloaded-Packages "true";' | sudo tee /etc/apt/apt.conf.d/keep-cache
           sudo apt-get update -q
           sudo apt-get install -y -q ffmpeg fonts-inter fonts-noto-color-emoji libegl1 libegl-mesa0 libgl1 libgl1-mesa-dri libgbm1 libfontconfig1 blender libx11-6 libxext6 libxrender1 libxi6 libxfixes3 libxkbcommon0 libsm6
 
@@ -44,6 +52,16 @@ jobs:
           export LIBGL_ALWAYS_SOFTWARE=1
           export EGL_PLATFORM=surfaceless
           blender --background --threads 2 --python pipeline/blender/create_story_assets.py -- --output-dir out/blender/story --resolution 1080
+
+      # Cache the large Kokoro weights; setup_models.py rebuilds on a cache miss.
+      - name: Cache Kokoro voice models
+        uses: actions/cache@v4
+        with:
+          path: |
+            kokoro-q8.onnx
+            voices.bin
+            kokoro-dur.onnx
+          key: kokoro-models-v1-${{ hashFiles('pipeline/setup_models.py') }}
 
       - name: Prepare voice models
         run: python pipeline/setup_models.py
