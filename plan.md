@@ -128,3 +128,51 @@ The user reviewed the completed technical pipeline and is not satisfied with the
 
 ### New acceptance gate
 A technically successful workflow is not visual acceptance. Inspect the exact generated video at phone size and verify the seed split, root extension/branching, shoot emergence and leaf unfolding are visibly animated, coherent, readable, and continuous. No merge or publish until this gate is passed and the user accepts the visual direction.
+
+
+## Handoff brief for Claude — ep070 plant-growth visual redesign (2026-11-20)
+
+### Core problem
+The current ep070 visual treatment is not an animation of plant growth. It is a slideshow: the renderer displays one static image, then replaces it with another static image to represent the stages of the seed-to-plant journey. Even though the stills were rendered with Blender, the result does not convincingly read as 3D motion. The user explicitly says this is merely changing one image to another image to explain plant generation.
+
+### Decision
+Do not continue polishing the static-card sequence as the final solution. Redesign the central educational visual as one continuous, coherent animated scene that demonstrates the biological transformation itself. The sequence must show visible movement and causality, not just stage-to-stage image replacement.
+
+### Desired story/action
+1. A seed sits in a cutaway of soil. Establish scale and show the seed in context.
+2. The seed coat visibly cracks and opens; the embryo begins to emerge.
+3. The primary root grows out of the seed and extends downward over time; smaller lateral roots branch from it.
+4. The shoot grows upward from the seed, curves, and pushes through the soil surface.
+5. The first leaves/cotyledons unfold visibly and orient toward the light.
+6. Hold on the resulting young plant with the seed/root/soil relationship still understandable.
+
+### Visual direction
+- Convincing stylized 3D, not flat vector art, not pseudo-3D gradients, and not static 3D renders.
+- Real geometry, volume, depth, perspective, physically coherent contact with soil, attractive materials, soft shadows, controlled lighting and smooth organic motion.
+- Tight educational composition: the viewer must clearly see both underground root development and above-ground shoot/leaf development. Avoid oversized empty space, clipped objects, detached roots, a huge flat soil slab, or a decorative green-field background.
+- No title or labels baked into the Blender render; overlay editable episode typography separately if needed.
+- Keep the existing Leo/Mia 2D character identities and visual language. Characters may introduce/react to the 3D sequence; do not redesign them as 3D.
+- Use camera framing and lighting that make the seed split, root growth, shoot emergence and leaf unfolding legible on a phone screen.
+
+### Technical direction (proposal, not yet implemented/approved)
+- Build a single Blender scene with the seed, soil cutaway, root system, shoot and leaves as separate controllable objects/curves.
+- Animate geometry/material visibility or procedural growth over time: seed-coat halves separate; root curve length increases and branches appear/grow; shoot curve length increases and bends toward/through soil surface; leaf meshes unfold/rotate.
+- Render a short bounded RGBA image sequence or video with transparent background, then composite it as a continuous timed shot in the existing episode engine. Do not implement this as a list of still PNGs selected by narration cues.
+- Profile a short representative clip first (e.g. a few seconds) for render time, output size and compositing compatibility before generating the full sequence.
+- Keep Blender generation reproducible and headless-CI compatible; no paid assets or APIs. Reuse procedural geometry/materials where practical.
+- Include validation of frame dimensions, alpha channel, frame count, timing and missing-frame detection.
+
+### Acceptance criteria
+- A viewer can watch the seed coat split, root extend/branch, shoot emerge and leaves unfold as actual continuous motion.
+- The transitions are not just crossfades or swaps between completed stage images.
+- The same scene/camera/light/material setup persists through the action, so the growth feels like one coherent event.
+- Clearly dimensional 3D appearance at phone size, with legible underground/above-ground relationship and no clipping.
+- Rendered sequence composites correctly into ep070 and survives actual MP4 inspection.
+- Technical CI success alone is not visual acceptance. Do not merge to main or publish until the user reviews and accepts the visual result.
+
+### Existing implementation to replace/rework
+- pipeline/blender/create_story_assets.py currently generates four static story images: 01_seed_wakes.png, 02_roots_grow.png, 03_shoot_reaches.png, 04_growth_stages.png.
+- pipeline/episode_engine.py currently handles board type blender by loading those stills and switching images at cue times.
+- episodes/ep070-seed-grows-into-tree/episode.json references those still images through asset/assets entries.
+- .github/workflows/visual-engine-dry-run.yml renders those still assets before the episode render.
+- This implementation is the slideshow behavior the user is rejecting. Do not mistake its successful workflow run for visual approval.
