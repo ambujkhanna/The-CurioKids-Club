@@ -117,3 +117,9 @@ The user confirmed they do not want to manually inspect routine technical output
 ## 2026-11-20 — CurioKids Visual Engine Skia loader failure
 - User shared the integrated CurioKids render traceback. Run [44739867903](https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44739867903) passed Blender story asset generation, manifest validation and 9 unit tests, then failed in `build_blender` because `skia.Data.MakeFromFile` is absent in the runner's skia-python API. The supported method is `MakeFromFileName`; Fontconfig output was warning-only.
 - Fixed `pipeline/episode_engine.py` on `feature/modern-visual-engine` in commit `2a970167d4169d29cc3e0bf9228376373935247b`. Awaiting push-triggered end-to-end dry-run and visual review of the resulting ep070 video. No production publish or merge.
+
+
+## 2026-11-20 — Review of run #20 and 3D artwork refinement
+- Reviewed the user-provided final recap screenshot and the actual run #20 MP4. The screenshot is the existing 2D recap board; the new Blender story visuals appear earlier in the episode. The integrated render succeeded after the Skia API fix.
+- Found that the first Blender pass was too sparse/plain for mobile viewing. Refined `pipeline/blender/create_story_assets.py` on the feature branch with larger, more legible plant forms, visible branching roots, leaf veins, water drops, richer soil layers and clearer growth-stage silhouettes. Removed 3D text labels to avoid competing with episode board typography.
+- Commits: `83f4ed885a99aa7273de5cfd0b154da64c4ad047`, `7974daabab02391a9c20b18d173e5562333b68b4`. Awaiting the new automated Blender + MP4 dry-run and visual QA. No production merge/publish.
