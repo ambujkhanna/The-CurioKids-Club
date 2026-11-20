@@ -147,3 +147,9 @@
 - Re-ran the failed workflow (attempt 2); it was queued/pending at the latest check.
 - The validator whitelist/cue fix also triggered a fresh integrated dry-run, run [44739867903](https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44739867903), which was still in progress at the latest check.
 - Next: inspect the completed job logs and uploaded MP4/contact sheet; if EGL fails again, compare the Blender launch environment in the proof and integrated workflows and fix the runtime setup. Then inspect the rendered story cards at mobile scale and validate ep070 timing/cue changes. Do not merge to `main` until visual acceptance is explicitly approved. No publishing workflow is involved.
+
+
+## 2026-11-20 — Skia image-loader API correction
+- Integrated Visual Engine dry-run [44739867903](https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44739867903) completed with Blender asset generation, asset validation and all 9 unit tests passing, but the episode render failed when loading a transparent PNG: this installed skia-python exposes `skia.Data.MakeFromFileName()`, not `MakeFromFile()`.
+- Corrected the loader call in `pipeline/episode_engine.py` on `feature/modern-visual-engine` (commit `2a970167d4169d29cc3e0bf9228376373935247b`). The Fontconfig messages in the log were non-fatal warnings and were not changed.
+- A new push-triggered Visual Engine dry-run is required to validate the corrected API, generate the ep070 MP4 and inspect the actual story-card transitions. This remains a branch-only render; no publishing configuration or production workflow was changed. Do not merge until the rendered output is reviewed and accepted.
