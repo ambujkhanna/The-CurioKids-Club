@@ -66,13 +66,13 @@ def build_seed(out,res):
     cube("Soil pedestal",(0,0,-1.45),(5.4,2.3,1.2),soil,.2)
     sphere("Seed coat",(0,-.35,-.55),(.95,.52,.62),seed); sphere("Split cotyledon",(.63,-.42,-.72),(.48,.38,.36),gold)
     curve("Seed seam",[(-.78,-.82,-.52),(-.2,-.88,-.23),(.42,-.82,-.48)],.045,gold)
-    curve("First root",[(.08,-.55,-.9),(.02,-.55,-1.3),(.16,-.55,-1.85),(.35,-.55,-2.2)],.09,root)
-    curve("Root branch A",[(.1,-.55,-1.35),(-.45,-.55,-1.58),(-.8,-.55,-1.95)],.045,root)
-    curve("Root branch B",[(.18,-.55,-1.65),(.72,-.55,-1.8),(1.02,-.55,-2.12)],.04,root)
+    curve("First root",[(.08,-1.3,-.9),(.02,-1.3,-1.3),(.16,-1.3,-1.85),(.35,-1.3,-2.2)],.09,root)
+    curve("Root branch A",[(.1,-1.3,-1.35),(-.45,-1.3,-1.58),(-.8,-1.3,-1.95)],.045,root)
+    curve("Root branch B",[(.18,-1.3,-1.65),(.72,-1.3,-1.8),(1.02,-1.3,-2.12)],.04,root)
     curve("Tiny shoot",[(0,-.2,-.5),(0,-.2,.15),(.08,-.2,.58)],.07,leaf)
     sphere("First leaf",(-.25,-.2,.45),(.38,.12,.2),leaf).rotation_euler[1]=-.4
     text_obj("A SEED WAKES UP",(0,-1.15,2.0),.34,leaf)
-    setup(out,res,"01_seed_wakes",target=(0,0,-.2),scale=9.0)
+    setup(out,res,"01_seed_wakes",target=(0,0,-.2),scale=7.8)
 
 def build_roots(out,res):
     clear(); soil=mat("Earth",(.30,.14,.075),.92); band=mat("Soil layer",(.48,.27,.14)); root=mat("Root ivory",(.96,.78,.51)); seed=mat("Seed",(.42,.12,.04))
@@ -95,11 +95,11 @@ def build_shoot(out,res):
     curve("Curved shoot",[(0,-.2,-.62),(-.06,-.2,-.05),(.12,-.2,.58),(.18,-.2,1.18)],.105,stem)
     sphere("Left leaf",(-.48,-.2,.85),(.65,.16,.3),leaf).rotation_euler[1]=-.35
     sphere("Right leaf",(.72,-.2,1.12),(.68,.16,.32),leaf).rotation_euler[1]=.38
-    sphere("Sun",(1.75,.15,2.35),(.42,.16,.42),sun)
+    sphere("Sun",(2.45,.15,2.05),(.42,.16,.42),sun)
     for i in range(7):
-        a=i*math.tau/7; curve("Sun ray %d"%i,[(1.75+math.cos(a)*.58,.15,2.35+math.sin(a)*.58),(1.75+math.cos(a)*.78,.15,2.35+math.sin(a)*.78)],.035,sun)
-    text_obj("THE SHOOT REACHES UP",(0,-1.2,2.05),.27,stem)
-    setup(out,res,"03_shoot_reaches",target=(0,0,.2),scale=6.8)
+        a=i*math.tau/7; curve("Sun ray %d"%i,[(2.45+math.cos(a)*.58,.15,2.05+math.sin(a)*.58),(2.45+math.cos(a)*.78,.15,2.05+math.sin(a)*.78)],.035,sun)
+    text_obj("THE SHOOT REACHES UP",(-.65,-1.2,2.55),.25,stem)
+    setup(out,res,"03_shoot_reaches",target=(0,0,.35),scale=7.2)
 
 def build_stages(out,res):
     clear(); soil=mat("Soil",(.30,.13,.065),.9); bark=mat("Trunk",(.35,.14,.055)); greens=[mat("Leaf green",(.12,.45,.14)),mat("Leaf light",(.3,.65,.18))]
@@ -116,7 +116,7 @@ def build_stages(out,res):
                 sphere("Stage canopy %d %d"%(i,j),(x+math.cos(a)*h*.25,-.2,-1.45+h+math.sin(a)*h*.14),(h*.19,.18,h*.16),greens[j%2])
         text_obj(["SEED","SPROUT","SAPLING","TREE"][i],(x,-.9,-2.05),.22,greens[0])
     text_obj("FROM SEED TO TREE",(0,-1.0,2.55),.30,greens[1])
-    setup(out,res,"04_growth_stages",target=(0,0,.05),scale=9.4)
+    setup(out,res,"04_growth_stages",target=(0,0,.05),scale=7.8)
 
 def main():
     o=args(); out=os.path.abspath(o.output_dir); os.makedirs(out,exist_ok=True)
