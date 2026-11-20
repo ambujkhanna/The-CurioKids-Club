@@ -122,3 +122,13 @@
 - Visual Engine Dry Run [44561215383](https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44561215383) succeeded, but it ran from commit `be6d850` before story assets were integrated into the episode renderer. It validates the existing dry-run pipeline, not the new 3D graphics in ep070.
 - Remaining: inspect latest Blender rerender; improve any object scale / root visibility issues; wire selected story PNGs into ep070 scene timing and narration; render a new full ep070 dry-run; inspect video; run regression tests. `main` remains untouched.
 
+
+
+## 2026-11-20 — Blender story assets wired into ep070 (validation pending)
+- Re-inspected the second Blender artifact from run `44724430008`. The front-on camera fixed diagonal text, but the images still do not fit the actual theatre board: the portrait format creates large empty areas and the growth stages are clipped. Not accepted in that format.
+- Changed story renders to board aspect ratio 870:640 (1080×793 output) so the transparent 3D object renders can occupy the existing theatre board without cropping.
+- Added `build_blender` to `pipeline/episode_engine.py`, with transparent image loading, board-sized compositing and per-asset narration cue support.
+- Mapped ep070: `01_seed_wakes.png` to seed waking; `02_roots_grow.png` then `03_shoot_reaches.png` on the spoken root/shoot cues; `04_growth_stages.png` to year-after-year growth.
+- Updated `.github/workflows/visual-engine-dry-run.yml` to install Blender and render assets before the full dry-run. No publish step was added.
+- Commits: `322d297d38a595c174df7524495ef3402836ee2d`, `7fd4e3129aaed2e3a7940e1b85577a769b62f664`, `58d37e1a3e42898e5ac30ea2076915c460d17aa4`, `5628e42837086cb1b050265e8030fa92dc7b41dc`.
+- Latest final integration workflow: [run 44731557242](https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44731557242) (pending at time of this note). Earlier per-commit runs are not the final integration validation. Await completion, inspect generated PNGs and the actual MP4/contact sheet, then fix any defects. Do not merge until acceptance gates pass.
