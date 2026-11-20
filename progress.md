@@ -181,3 +181,11 @@
 - Reset visual acceptance. The four static Blender PNGs are a prototype, not the finished result. New direction is a continuous 3D germination sequence: seed coat splits; root grows down and branches; shoot pushes up through soil; leaves unfold toward light. Real dimensional geometry, smooth motion, coherent materials/lighting/shadows and tight composition are required.
 - Preserve the existing 2D Leo/Mia characters; use the 3D animation as the educational hero visual. Avoid green-field/background-first scenes and static illustration swaps.
 - Implementation approach to validate: render a bounded transparent RGBA frame sequence in Blender and composite it into the existing board timeline. First profile a short representative animation before expanding the whole sequence. The actual MP4 must be inspected at phone size; CI success alone is not acceptance. No merge/publish.
+
+
+## 2026-11-20 — Claude handoff brief added: replace slideshow with continuous germination animation
+- Clarified the precise user objection: current implementation only changes one static image to another to explain the seed-to-plant journey. It is not showing the plant growing.
+- Decision: reject static-card swapping as the final visual. Build one continuous, coherent 3D scene with actual animated action: seed coat cracks/splits; primary root extends and lateral roots branch; shoot grows, curves and pushes through soil; leaves unfold toward light.
+- Preserve Leo/Mia as 2D characters. The 3D plant/soil action is the educational hero. Use a tight, dimensional, phone-readable composition with real geometry, depth, materials, lighting and contact shadows; no decorative green-field focus, clipped parts, huge empty space, or text baked into render.
+- Added a detailed Claude handoff in plan.md, including current files/architecture, proposed Blender object/curve animation, RGBA sequence compositing, CI constraints and acceptance criteria.
+- No animation implementation, merge or publication is claimed by this documentation update.
