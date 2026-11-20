@@ -152,7 +152,7 @@ def build_shoot(out,res):
     sphere("Golden sun",(2.15,.1,2.15),(.46,.18,.46),sun)
     for i in range(10):
         a=i*math.tau/10
-        curve("Sun ray %02d"%i,[(2.15,.1,2.15)+(Vector((math.cos(a),0,math.sin(a)))*.62),(2.15,.1,2.15)+(Vector((math.cos(a),0,math.sin(a)))*.88)],.04,sun)
+        curve("Sun ray %02d"%i,[Vector((2.15,.1,2.15))+(Vector((math.cos(a),0,math.sin(a)))*.62),Vector((2.15,.1,2.15))+(Vector((math.cos(a),0,math.sin(a)))*.88)],.04,sun)
     water_drop("Water drop left",(-1.75,-.6,.45),(.12,.1,.2),blue)
     water_drop("Water drop right",(1.75,-.6,.12),(.11,.1,.19),blue)
     setup(out,res,"03_shoot_reaches",target=(0,0,.48),scale=7.4)
