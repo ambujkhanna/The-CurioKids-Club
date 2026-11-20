@@ -461,8 +461,32 @@ def build_count(i, t0, t1, sc):
     el(t0, t1, num, None, (BX + BW * 0.83, BCY))
 
 
+def build_blender(i, t0, t1, sc):
+    """Show pre-rendered transparent Blender story art inside the board, timed to narration cues."""
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    assets = sc.get("assets") or [{"file": sc.get("asset"), "cue": sc.get("cue")}]
+    loaded = []
+    for item in assets:
+        name = item.get("file")
+        if not name:
+            continue
+        path = os.path.join(root, "out", "blender", "story", os.path.basename(name))
+        data = skia.Data.MakeFromFile(path)
+        image = skia.Image.MakeFromEncoded(data) if data else None
+        if image is None:
+            raise RuntimeError("Blender story asset missing or unreadable: " + path)
+        start = cue_t(i, item, t0 + 0.15)
+        loaded.append((start, image))
+    for k, (start, image) in enumerate(loaded):
+        end = loaded[k + 1][0] - 0.05 if k + 1 < len(loaded) else t1
+        def draw(c, t, e, image=image):
+            dst = skia.Rect.MakeLTRB(BX + 8, BY + 8, BX + BW - 8, BY + BH - 8)
+            c.drawImageRect(image, dst, skia.SamplingOptions())
+        el(start, end, draw, (BCX, BCY), (BCX, BCY))
+
+
 BUILD = {"letter": build_letter, "count": build_count, "guess": build_guess, "gallery": build_gallery, "poem": build_poem, "title": build_title, "steps": build_steps, "compare": build_compare,
-         "checklist": build_checklist, "big": build_big, "summary": build_summary}
+         "checklist": build_checklist, "big": build_big, "summary": build_summary, "blender": build_blender}
 import types, diagrams
 _E = types.SimpleNamespace(el=el, cue_t=cue_t, ico=ico, big_text=big_text, pill=pill, BX=BX, BY=BY, BW=BW, BH=BH,
                            BCX=BCX, BCY=BCY, LN=LN, K=K)
