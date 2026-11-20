@@ -2,7 +2,7 @@
 
 Run with:
   blender --background --threads 2 --python pipeline/blender/create_story_assets.py -- --output-dir out/blender/story
-Each output is a transparent 1080x1920 RGBA PNG. No third-party assets.
+Each output is a transparent 1080x793 RGBA PNG, composed for the 870x640 episode board. No third-party assets.
 """
 import argparse, math, os, sys
 import bpy
@@ -46,7 +46,7 @@ def setup(out,res,name,target=(0,0,0),scale=9.0):
     scene=bpy.context.scene
     scene.render.engine="BLENDER_EEVEE_NEXT" if bpy.app.version >= (4,2,0) else "BLENDER_EEVEE"
     if hasattr(scene,"eevee"): scene.eevee.taa_render_samples=64
-    scene.render.resolution_x=res; scene.render.resolution_y=int(res*16/9); scene.render.resolution_percentage=100
+    scene.render.resolution_x=res; scene.render.resolution_y=int(res*640/870); scene.render.resolution_percentage=100
     scene.render.image_settings.file_format="PNG"; scene.render.image_settings.color_mode="RGBA"; scene.render.image_settings.color_depth="8"; scene.render.film_transparent=True
     scene.view_settings.view_transform="AgX"; scene.world.color=(.18,.18,.18)
     bpy.ops.object.camera_add(location=(0,-18,0))
