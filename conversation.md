@@ -123,3 +123,9 @@ The user confirmed they do not want to manually inspect routine technical output
 - Reviewed the user-provided final recap screenshot and the actual run #20 MP4. The screenshot is the existing 2D recap board; the new Blender story visuals appear earlier in the episode. The integrated render succeeded after the Skia API fix.
 - Found that the first Blender pass was too sparse/plain for mobile viewing. Refined `pipeline/blender/create_story_assets.py` on the feature branch with larger, more legible plant forms, visible branching roots, leaf veins, water drops, richer soil layers and clearer growth-stage silhouettes. Removed 3D text labels to avoid competing with episode board typography.
 - Commits: `83f4ed885a99aa7273de5cfd0b154da64c4ad047`, `7974daabab02391a9c20b18d173e5562333b68b4`. Awaiting the new automated Blender + MP4 dry-run and visual QA. No production merge/publish.
+
+
+## 2026-11-20 — CurioKids CI caching improvement
+- User asked why the branch dry-run repeatedly downloads dependencies. Confirmed the workflow already uses `setup-python` pip caching; the larger repeat downloads were the Kokoro ONNX/voice model files and apt-installed Blender/rendering packages on fresh GitHub-hosted runners.
+- Added cache for the three Kokoro model files, keyed by `pipeline/setup_models.py` hash, and apt archive cache for Ubuntu 24.04 with apt configured to keep downloaded `.deb` files after install. Existing pip cache retained.
+- Workflow change: commit `166ed77a3489bfac5539ddb111148bc74957fc3d` on `feature/modern-visual-engine`. Validate cache hit/miss in next run before claiming savings. No publish/production changes.
