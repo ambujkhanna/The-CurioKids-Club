@@ -81,3 +81,12 @@ Re-fetched the latest main versions of PROGRESS.md, CONVERSATION.md, docs/GROWTH
 AInation Daily Short workflow run 44562499073 appeared as a user-triggered workflow_dispatch and is still in progress. At inspection it was at the system-package installation step; the analytics brief loader and render/upload step had not yet executed. The GitHub run API does not expose the selected dispatch inputs, and the workflow default is Next video (scheduled), so this run cannot be assumed to be a dry-run. The assistant did not initiate or cancel it. Please verify in its Actions run page that the selected action is Dry run (render only, nothing uploaded) if you intended a safe validation. CurioKids has no new daily dispatch among the latest 10 runs; its post-fix dry-run remains pending.
 
 No new upload/publishing action was initiated by the assistant. Growth recommendations remain advisory; no episode state, publishing schedule, upload token or workflow publishing logic was changed.
+
+
+## 2026-11-20 — Current operational status
+
+- [x] Rechecked current workflow runs and logs. Daily scheduled run 44578898591 completed successfully and uploaded Short https://www.youtube.com/shorts/dcNLkD2l3p8 for scheduled publication on 20 Nov 2026 at 17:55 IST. The next scheduled run 44631536769 also completed successfully; its log correctly reported “Nothing due right now” because the alternate-day/time-window logic did not select a video. No duplicate upload occurred in that run.
+- [x] The daily workflow's read-only growth-brief loader step completed successfully in run 44631536769. The brief is from the last successful analytics artifact, however, and is stale until fresh collection succeeds.
+- [ ] Latest scheduled analytics run 44606697918 failed with Google OAuth `invalid_grant` (“Token has been expired or revoked”). Reauthorize and replace only `YT_ANALYTICS_REFRESH_TOKEN`; leave `YT_REFRESH_TOKEN` unchanged.
+- [ ] A manual dry-run validation is still pending. The available GitHub integration does not expose workflow dispatch; use Actions → Daily Curio Kids Short → Run workflow → action `Dry run (render only, nothing uploaded)` to validate without publishing.
+- Guardrails unchanged: no automatic script rewriting; no upload token, publishing logic, schedule or episode state changed by this audit.
