@@ -116,3 +116,13 @@
 - [x] In both runs, OAuth collection, channel-specific growth brief generation, and report/database artifact upload succeeded. Analytics unit tests also passed. This validates the current analytics refresh tokens in both repositories.
 - [ ] Safe Daily Short dry-run remains a separate pending validation; do not use the default scheduled/publish action.
 - Upload credential `YT_REFRESH_TOKEN` was not changed. No video was uploaded or published by these analytics retries.
+
+
+## 2026-11-20 — Follow-up audit and Visual Engine validation
+
+- [x] Confirmed latest CurioKids analytics run 44739181837 completed successfully after the refresh-token update.
+- [x] Re-ran AInation's newer push-triggered analytics failure 44724594920 (attempt 2); it completed successfully with the current `YT_ANALYTICS_REFRESH_TOKEN`. Both channels' latest analytics refresh-token configurations are therefore validated.
+- [x] Investigated Visual Engine dry-run 44732204753. Blender proof-of-capability succeeded, while the integrated episode dry-run failed during headless EGL initialization (`EGL_BAD_MATCH`), not episode validation. Re-ran it; attempt 2 is queued/pending.
+- [ ] New Visual Engine integrated dry-run 44739867903, triggered by the episode-validator fix on `feature/modern-visual-engine`, is still in progress. Inspect its final MP4/contact-sheet artifact and visually review before accepting.
+- [ ] Safe Daily Short dry-run remains pending in both repositories; the GitHub integration used here does not expose workflow dispatch. Do not use the scheduled/publish default.
+- [ ] Visual Engine remains feature-branch-only; no merge to `main` or production default change without owner visual approval.
