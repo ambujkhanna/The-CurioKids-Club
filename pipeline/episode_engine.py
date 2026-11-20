@@ -591,7 +591,7 @@ for i, ln in enumerate(LN):
         continue
     who = ln["speaker"] if len(CAST) > 1 else ("wide" if i % 3 else ln["speaker"])
     _sc_i = max([j for j in scene_starts if j <= i] or [0])
-    if ELINES[_sc_i].get("board", {}).get("type") in list(diagrams.BUILDERS) + ["guess", "letter", "count"]:  # keep diagrams / guessing games on screen
+    if ELINES[_sc_i].get("board", {}).get("type") in list(diagrams.BUILDERS) + ["guess", "letter", "count", "blender"]:  # keep diagrams / guessing games on screen
         who = "board"
     SHOTS.append((ln["start"] - 0.05, "wide" if i % 4 == 0 or i == last else who))
     cl = cues_by_line.get(i, [])
