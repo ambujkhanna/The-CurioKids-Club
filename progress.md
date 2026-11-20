@@ -114,3 +114,11 @@
 - Validation status: generator and workflow have been committed, but the new workflow run and actual four PNGs have **not yet been validated or visually reviewed**. Do not claim success until Actions completes and the artifact is inspected.
 - Next: check the push-triggered workflow, fix any Blender/runtime issues, inspect all four renders at mobile scale, refine composition/labels/geometry, then composite the approved assets into an ep070 dry-run. Keep `main` untouched and update this log after each result.
 
+
+## 2026-11-20 — Story asset CI passed; visual inspection found framing defects
+- Blender proof run [44561243631](https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44561243631) completed successfully. Job `render-3d-proof`: all steps passed, including Blender install, original scene render, four story-asset renders, verification and artifact upload.
+- Artifact ID `14551633108` (`curiokids-blender-3d-proof`, 9.0 MB; expires 2026-12-03) downloaded and all four story PNGs inspected. The geometry is present, but the camera is still oblique: titles run diagonally and clip at the edges; growth-stage tree is clipped; roots and shoot have excessive framing/background. These outputs are **not yet visually accepted**.
+- Follow-up commit `5bae616dee24154a1adca80c8d6ce96ad02cf53c` changes the story camera to a front-on view, increases portrait framing margin and tightens label positions / growth-stage spacing. The resulting workflow run must be checked and PNGs re-inspected before integration.
+- Visual Engine Dry Run [44561215383](https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44561215383) succeeded, but it ran from commit `be6d850` before story assets were integrated into the episode renderer. It validates the existing dry-run pipeline, not the new 3D graphics in ep070.
+- Remaining: inspect latest Blender rerender; improve any object scale / root visibility issues; wire selected story PNGs into ep070 scene timing and narration; render a new full ep070 dry-run; inspect video; run regression tests. `main` remains untouched.
+
