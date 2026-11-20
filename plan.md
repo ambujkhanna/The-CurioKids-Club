@@ -113,3 +113,18 @@ All work stays on `feature/modern-visual-engine`. Do not merge to `main` or chan
 - The Blender asset workflow passed on `16b1858`, producing all four story PNGs. The integrated dry-run reached the episode validation stage but failed before rendering because `pipeline/validate_episode.py` did not yet whitelist the new `blender` board type. The error was explicit: lines 3, 5 and 9 had unknown board type `blender`.
 - Fixed the episode validator to recognize `blender` and include per-asset cue words in its cue validation. Commit `9a244aae0a7305f2543dd2ff3ebdde12037245b1`.
 - The renderer and Blender generator are technically passing their separate checks; integrated MP4 rendering and visual inspection are still pending. A new branch dry run should run automatically from the validator change. No publish or merge has occurred.
+
+
+## Visual acceptance reset — 2026-11-20
+
+The user reviewed the completed technical pipeline and is not satisfied with the graphic quality. The current outputs do not read as convincing polished 3D; the latest successful dry-run only proves that the renderer can load and composite Blender PNGs. It does not pass visual acceptance.
+
+### Revised creative direction
+- Stop treating four static Blender PNG cards as the finished visual solution. Keep them only as a technical prototype/reference.
+- Rebuild the central seed-germination teaching moment as a continuous, clearly staged 3D animation: seed rests in a visible soil cutaway; the seed coat splits; the first root emerges and grows downward with branching; the shoot curves upward and pushes through the soil; cotyledons/leaves unfold and turn toward light.
+- Use real 3D geometry, smooth organic motion, convincing scale/material response, soft contact shadows, controlled studio/garden lighting, and a close camera composition. Avoid a giant flat soil block, floating disconnected parts, oversized empty space, decorative background-first layouts, and text baked into the render.
+- Preserve Leo/Mia's established 2D character identities. Their dialogue can introduce/react to the 3D animation; the scientific action should carry the scene.
+- Use transparent rendered animation frames or a short pre-rendered RGBA sequence and composite it into the existing episode board. Do not attempt to fake motion by swapping static stills. Keep render resolution, frame count, disk size and GitHub Actions runtime bounded; profile a short representative clip first.
+
+### New acceptance gate
+A technically successful workflow is not visual acceptance. Inspect the exact generated video at phone size and verify the seed split, root extension/branching, shoot emergence and leaf unfolding are visibly animated, coherent, readable, and continuous. No merge or publish until this gate is passed and the user accepts the visual direction.
