@@ -67,29 +67,8 @@
       "who": "MIA",
       "text": "Water, warmth and air! In damp, warm soil, the seed soaks up water and splits open.",
       "board": {
-        "type": "checklist",
-        "title": "A seed needs",
-        "icon": "🌰",
-        "items": [
-          {
-            "icon": "💧",
-            "text": "Water",
-            "cue": "water",
-            "ok": true
-          },
-          {
-            "icon": "☀️",
-            "text": "Warmth",
-            "cue": "warmth",
-            "ok": true
-          },
-          {
-            "icon": "💨",
-            "text": "Air",
-            "cue": "air",
-            "ok": true
-          }
-        ]
+        "type": "blender",
+        "asset": "01_seed_wakes.png"
       }
     },
     {
@@ -100,17 +79,14 @@
       "who": "MIA",
       "text": "First a root grows down to drink water. Then a little shoot pushes up toward the light.",
       "board": {
-        "type": "steps",
-        "title": "Sprouting",
-        "items": [
+        "type": "blender",
+        "assets": [
           {
-            "icon": "⬇️",
-            "label": "A root grows down",
+            "file": "02_roots_grow.png",
             "cue": "root"
           },
           {
-            "icon": "🌱",
-            "label": "A shoot pushes up",
+            "file": "03_shoot_reaches.png",
             "cue": "shoot"
           }
         ]
@@ -140,12 +116,8 @@
       "who": "MIA",
       "text": "Bit by bit, year after year! The stem gets thick and woody and becomes a trunk.",
       "board": {
-        "type": "big",
-        "icon": "🌳",
-        "text": "Year after year",
-        "cue": "year",
-        "sub": "The stem becomes a trunk",
-        "sub_cue": "trunk"
+        "type": "blender",
+        "asset": "04_growth_stages.png"
       }
     },
     {
