@@ -85,3 +85,10 @@ Prioritise separate close-up 3D teaching visuals and meaningful story graphics: 
 - Commits: `be6d8503cf30292d55bb0c18c1a82b35f40cadeb`, `aaf1aafff18b5c9ef63b46f98c46e00a5f751065`.
 - Awaiting workflow execution and visual review. No merge or production workflow change.
 
+
+## 2026-11-20 — Story asset run and visual inspection
+
+Blender run `44561243631` succeeded and uploaded artifact `14551633108`. All four PNGs were downloaded and visually inspected. Despite successful rendering, the first story asset versions are not accepted: the oblique camera makes title text diagonal and clipped, the mature-tree stage is clipped, and composition leaves too much negative space. The existing visual-engine dry run `44561215383` also passed, but predates integration of these new assets and therefore does not validate the new story visuals in the episode.
+
+Committed a camera/framing correction in `5bae616dee24154a1adca80c8d6ce96ad02cf53c`: front-on camera, wider framing, adjusted titles and growth-stage spacing. Next action is to validate and inspect this rerender, then integrate approved story graphics into ep070 and render a fresh full-video dry-run. Keep `main` untouched.
+
