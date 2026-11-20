@@ -149,3 +149,35 @@ The user confirmed they do not want to manually inspect routine technical output
 - Preserve 2D Leo/Mia characters. Use a phone-readable soil cutaway, true geometry/depth/materials/lighting/shadows, smooth continuous motion and coherent camera framing.
 - Added Claude handoff details to plan.md: current implementation locations, desired sequence, technical proposal, constraints and explicit acceptance criteria. User will provide repo context to Claude for implementation.
 - This update documents the decision only. No new animation implementation, merge or publication has occurred.
+
+
+## 2026-11-20 — GitHub Actions cache limit clarified (IST)
+
+### User-provided quota and observed cache entries
+The user checked the repository's GitHub Actions cache management page and confirmed that the **maximum cache storage available to this repository is 120 MB**. This is the operative limit for this project; do not use GitHub's commonly documented default allowance as an assumption for this repository.
+
+Previously reported observations from the cache list:
+- Total cache entries shown: 30.
+- Oldest entry shown: approximately 2 days old.
+- `setup-python-Linux-x64-24.04-Ubuntu-python-3.11.18-pip-...`: approximately **100 MB**, created about 2 days earlier, on `feature/modern-visual-engine`, last used about 6 minutes before the user reported it.
+- `youtube-analytics-44337405668`: approximately **2 KB**, cached about 2 days earlier.
+- The 100 MB pip entry alone consumes about 83.3% of the reported 120 MB cap, leaving roughly 20 MB for all other entries at that observation point. The 30-entry count is not itself a measure of storage consumption.
+
+### Correction to earlier cache recommendation
+An earlier note in this conversation stated the standard GitHub default cache allowance (10 GB) and proposed caching Kokoro models and apt archives. That generic allowance is **not applicable to the user's reported 120 MB repository limit**. Treat the 120 MB limit as authoritative for this project and do not recommend adding large model or apt caches without checking their actual size and the remaining headroom.
+
+### Updated cache policy / implementation decision
+1. Retain the existing `setup-python` pip cache for now; it is the only measured large cache entry and is approximately 100 MB. Do not assume it is always exactly 100 MB; re-check actual usage.
+2. Disable/remove the newly introduced apt archive cache. It is low priority and competes for the small remaining allowance.
+3. Do not retain a separate Kokoro ONNX/voice-model cache under the current 120 MB cap unless measured total size proves it fits with safe headroom. Prefer normal downloads over cache thrashing or eviction of the pip cache.
+4. Keep the integrity checks in `pipeline/setup_models.py` even if model caching is disabled; downloaded model files must still be validated before use.
+5. Keep rendering resilient to cache misses: caches are an optimization only and must never be a correctness dependency.
+6. Continue storing generated videos as workflow artifacts with their existing 14-day retention; these are separate from Actions dependency caches.
+7. Before changing cache configuration, inspect the cache list's total size and per-entry sizes. Aim to stay comfortably below 120 MB rather than targeting 119–120 MB.
+8. Validate the next workflow run for successful dependency installation and rendering after cache changes. Record cache hit/miss and observed storage where available; do not claim performance or quota savings without measurements.
+
+### Required follow-up
+The feature-branch workflow commit `166ed77a3489bfac5539ddb111148bc74957fc3d` introduced Kokoro-model and apt-archive caching. Review that workflow on `feature/modern-visual-engine` and remove/disable those two cache steps to align with the 120 MB limit, while retaining the pip cache. Keep the change isolated to the feature branch until validation. Do not merge to `main` or trigger any publishing workflow.
+
+### Handoff note for a fresh conversation
+Start by reading this conversation log and inspecting the current workflow on `feature/modern-visual-engine`. The user expects continuity without having to repeat the cache limit or prior decisions. **Hard constraint: 120 MB maximum Actions cache storage.** The approximately 100 MB pip cache should be preserved unless fresh measurements show it has grown materially; avoid large model/apt caches. Timestamp for this record: **2026-11-20, India Standard Time (IST)**.
