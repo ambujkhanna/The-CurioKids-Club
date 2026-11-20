@@ -90,3 +90,9 @@ All work stays on `feature/modern-visual-engine`. Do not merge to `main` or chan
 - The first Blender proof is genuine 3D geometry, but its single portrait diorama is compositionally weak: the tree canopy and seed are clipped, the key objects are too small, roots are visually disconnected, and the empty backdrop dominates. It is not accepted as the episode visual.
 - The next proof is story-led, not background-led. The original wide diorama remains a technical reference only; do not promote it into the episode by default.
 
+
+### Review gate — story assets (2026-11-20)
+- CI generation passed on run `44561243631`, but visual review rejected the first four outputs due to diagonal/cropped typography and clipped growth-stage composition.
+- A front-on camera and wider portrait safe framing were committed in `5bae616`. Re-run and inspect before wiring assets into episode scenes.
+- Do not treat a successful asset-generation job or the earlier Visual Engine Dry Run as proof that ep070 uses these graphics. Integration and a fresh full-video visual review are still required.
+
