@@ -140,3 +140,10 @@
 - The Blender asset workflow passed on `16b1858`, producing all four story PNGs. The integrated dry-run reached the episode validation stage but failed before rendering because `pipeline/validate_episode.py` did not yet whitelist the new `blender` board type. The error was explicit: lines 3, 5 and 9 had unknown board type `blender`.
 - Fixed the episode validator to recognize `blender` and include per-asset cue words in its cue validation. Commit `9a244aae0a7305f2543dd2ff3ebdde12037245b1`.
 - The renderer and Blender generator are technically passing their separate checks; integrated MP4 rendering and visual inspection are still pending. A new branch dry run should run automatically from the validator change. No publish or merge has occurred.
+
+
+## 2026-11-20 — Integrated render rerun after validator fix
+- The follow-up audit found the integrated Visual Engine dry-run 44732204753 failed after the episode validator work with a headless EGL initialization error (`EGL_BAD_MATCH`). The independent Blender proof workflow had passed, so the issue is isolated to the integrated render environment/launch path rather than proof-scene generation.
+- Re-ran the failed workflow (attempt 2); it was queued/pending at the latest check.
+- The validator whitelist/cue fix also triggered a fresh integrated dry-run, run [44739867903](https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/44739867903), which was still in progress at the latest check.
+- Next: inspect the completed job logs and uploaded MP4/contact sheet; if EGL fails again, compare the Blender launch environment in the proof and integrated workflows and fix the runtime setup. Then inspect the rendered story cards at mobile scale and validate ep070 timing/cue changes. Do not merge to `main` until visual acceptance is explicitly approved. No publishing workflow is involved.
