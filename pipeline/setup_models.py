@@ -33,10 +33,26 @@ def add_hindi_voices():
 
 def main():
     if all(os.path.exists(p) for p in (ONNX, VOICES, DUR)):
-        print("models already present")
-        try: add_hindi_voices()
-        except Exception as e: print("note: could not add Hindi voices:", e)
-        return
+        # A cache is an optimisation, never a trusted source. Validate the
+        # model checksum and both companion files before reusing cached data.
+        try:
+            sha = hashlib.sha256(open(ONNX, "rb").read()).hexdigest()
+            if not sha.startswith(SHA_PREFIX):
+                raise ValueError(f"unexpected model checksum {sha}")
+            with np.load(VOICES) as voice_data:
+                if not voice_data.files:
+                    raise ValueError("voice archive is empty")
+            import onnx
+            onnx.load(DUR)
+            print("cached voice models passed integrity checks")
+            try: add_hindi_voices()
+            except Exception as e: print("note: could not add Hindi voices:", e)
+            return
+        except Exception as e:
+            print(f"cached voice models are invalid ({e}); rebuilding from source")
+            for path in (ONNX, VOICES, DUR):
+                try: os.remove(path)
+                except FileNotFoundError: pass
     tmp = tempfile.mkdtemp()
     subprocess.run(["npm", "pack", "kokoro-q8-shards@1.0.0", "kokoro-local-runtime@0.1.0"], cwd=tmp, check=True,
                    stdout=subprocess.DEVNULL)
