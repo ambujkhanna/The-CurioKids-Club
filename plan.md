@@ -96,3 +96,12 @@ All work stays on `feature/modern-visual-engine`. Do not merge to `main` or chan
 - A front-on camera and wider portrait safe framing were committed in `5bae616`. Re-run and inspect before wiring assets into episode scenes.
 - Do not treat a successful asset-generation job or the earlier Visual Engine Dry Run as proof that ep070 uses these graphics. Integration and a fresh full-video visual review are still required.
 
+
+
+## 2026-11-20 — Integrating Blender story cards into the episode renderer
+- The latest front-on portrait renders were inspected. They are still not acceptable as portrait cards: the growth-stage row clips at both sides, while the other assets waste too much vertical space. Reframed the assets for the actual 870×640 theatre board instead of a full 1080×1920 canvas.
+- Added an optional `blender` board type to `pipeline/episode_engine.py`. It loads transparent PNGs from `out/blender/story/`, places them inside the existing board frame, and supports narration cue changes between multiple assets. Existing board types remain unchanged.
+- Updated ep070 to use the seed visual for the seed-waking explanation, switch from root to shoot visuals on their spoken cues, and use the growth-stage comparison for the years-of-growth explanation.
+- Updated the branch-only dry-run workflow to install Blender and render the required assets before the normal episode render. Nothing is published; main and production workflows remain untouched.
+- Integration commits: story framing `322d297d38a595c174df7524495ef3402836ee2d`; episode engine `7fd4e3129aaed2e3a7940e1b85577a769b62f664`; episode mapping `58d37e1a3e42898e5ac30ea2076915c460d17aa4`; dry-run workflow `5628e42837086cb1b050265e8030fa92dc7b41dc`.
+- Validation is pending on the final workflow run. Do not mark visually accepted until the actual rerendered PNGs and ep070 MP4 are inspected. If the scene-card composition or alpha blending is poor, refine it before merge.
