@@ -115,3 +115,10 @@ PR #3 merged (`b067f31668b2217f01a304900a8b4122e0bc42fa`). Push-triggered analyt
 - Both runs passed analytics unit tests, Google OAuth refresh, read-only collection, channel-specific growth brief generation, and report/database artifact upload. This validates the current analytics refresh-token configuration in both repositories.
 - The upload secret `YT_REFRESH_TOKEN` was not changed. Analytics collection is read-only with respect to YouTube publishing; no video was uploaded or published by these retries.
 - Remaining separate validation: run each Daily Short workflow with the explicit `Dry run (render only, nothing uploaded)` action and confirm the latest growth brief appears in the Actions summary. Do not select the scheduled/publish default for this check.
+
+
+## Follow-up validation — 2026-11-20
+
+- CurioKids analytics run 44739181837 completed successfully after the refresh-token update.
+- The newer AInation push-triggered analytics run 44724594920 was initially a failure from before the token correction; retry attempt 2 completed successfully. Current analytics refresh-token configuration is validated in both channels.
+- Separate end-to-end integration validation is still required: run each Daily Short workflow using its explicit `Dry run (render only, nothing uploaded)` action and verify that the current growth brief appears in the Actions summary. Do not use the scheduled/publish default.
