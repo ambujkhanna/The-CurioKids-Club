@@ -208,7 +208,7 @@
         "video_id": "vn45kNW1jKo",
         "url": "https://www.youtube.com/shorts/vn45kNW1jKo",
         "uploaded_at": "2026-11-19T04:21:11+05:30",
-        "thumbnail_checked": "2026-11-19T23:30+05:30 set"
+        "thumbnail_checked": "2026-11-20T22:58+05:30 set"
       }
     },
     "ep008": {
@@ -227,7 +227,23 @@
       "url": "https://www.youtube.com/shorts/iBAc2_wsmBY",
       "uploaded_at": "2026-11-14T09:35:35+05:30",
       "thumbnail_checked": "2026-11-14T11:38+05:30 set",
-      "facebook_cover": "cover set"
+      "facebook_cover": "cover set",
+      "hi": {
+        "voices": "kokoro",
+        "title": "\u091c\u093c\u0947\u092c\u0930\u093e \u092a\u0930 \u0927\u093e\u0930\u093f\u092f\u093e\u0901 \u0915\u094d\u092f\u094b\u0902 \u0939\u094b\u0924\u0940 \u0939\u0948\u0902? | Why Do Zebras Have Stripes? \ud83e\udd93",
+        "rendered_at": "2026-11-20T22:52:20+05:30",
+        "duration_s": 103.68,
+        "publish_at_ist": "2026-11-21T11:00+05:30",
+        "thumbnail": "set (re-applied after posting: set)",
+        "playlist": "off (added by hand)",
+        "made_for_kids": "no",
+        "facebook": "posted (reel 29171635042446230), cover set",
+        "instagram": "posted (reel 17973827241194387) with the 2 Mbps copy, designed cover",
+        "status": "uploaded",
+        "video_id": "nlcRPRgamdg",
+        "url": "https://www.youtube.com/shorts/nlcRPRgamdg",
+        "uploaded_at": "2026-11-20T22:57:45+05:30"
+      }
     },
     "ep009": {
       "voices": "chatterbox",
@@ -294,7 +310,8 @@
       "status": "uploaded",
       "video_id": "dcNLkD2l3p8",
       "url": "https://www.youtube.com/shorts/dcNLkD2l3p8",
-      "uploaded_at": "2026-11-19T23:29:29+05:30"
+      "uploaded_at": "2026-11-19T23:29:29+05:30",
+      "thumbnail_checked": "2026-11-20T22:58+05:30 set"
     }
   }
 }
