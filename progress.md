@@ -166,3 +166,11 @@
 - Added an Actions cache for Kokoro model outputs (`kokoro-q8.onnx`, `voices.bin`, `kokoro-dur.onnx`), keyed by the model setup script hash. On a cache hit, `setup_models.py` detects the files and avoids re-downloading model shards; it still ensures Hindi voices are present.
 - Added an Actions cache for Ubuntu 24.04 apt `.deb` archives and configured apt to retain downloaded packages after installation. This can reduce repeated system package downloads on cache hits; `apt-get update` and package installation still run to ensure runner correctness.
 - Change committed on `feature/modern-visual-engine`: `166ed77a3489bfac5539ddb111148bc74957fc3d`. Cache warm-up/restore effectiveness and size will be verified from the next workflow logs. No production workflow changed.
+
+
+## 2026-11-20 — Cache safety and GitHub quota guardrails
+- User asked to ensure dependency caching does not threaten GitHub storage limits or video generation.
+- GitHub documents a default 10 GB Actions cache limit per repository; entries unused for over 7 days are eligible for eviction. Cache storage is distinct from runner execution minutes. Cache eviction/cache misses must be treated as normal fallback conditions, not render failures.
+- Strengthened pipeline/setup_models.py: cached Kokoro ONNX weights are SHA-prefix checked; voice archive must open and contain entries; duration ONNX must load. Invalid cached files are removed and rebuilt from source. Cache key hashes this script, so the integrity change naturally creates a fresh model cache key.
+- Existing pip cache retained. Apt archive cache is a single fixed-key entry; apt update/install still executes and fetches anything missing. Render/video outputs remain separate 14-day workflow artifacts and are not part of the dependency cache.
+- Cache usage cannot be inspected through the available GitHub connector in this session, so no claim is made about current exact cache consumption. Check repository Settings → Actions → Caches and maintain substantial headroom under 10 GB. No publishing workflow changed.
