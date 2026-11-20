@@ -129,3 +129,9 @@ The user confirmed they do not want to manually inspect routine technical output
 - User asked why the branch dry-run repeatedly downloads dependencies. Confirmed the workflow already uses `setup-python` pip caching; the larger repeat downloads were the Kokoro ONNX/voice model files and apt-installed Blender/rendering packages on fresh GitHub-hosted runners.
 - Added cache for the three Kokoro model files, keyed by `pipeline/setup_models.py` hash, and apt archive cache for Ubuntu 24.04 with apt configured to keep downloaded `.deb` files after install. Existing pip cache retained.
 - Workflow change: commit `166ed77a3489bfac5539ddb111148bc74957fc3d` on `feature/modern-visual-engine`. Validate cache hit/miss in next run before claiming savings. No publish/production changes.
+
+
+## 2026-11-20 — Cache safety guardrails
+- Confirmed GitHub's documented default cache allowance is 10 GB per repository, with entries unused for more than 7 days eligible for eviction. Cache quota is not runner-minutes quota. Cache misses/eviction must fall back to normal downloads and must not stop rendering.
+- Updated Kokoro setup to validate cached model checksum, load the voices archive and load the duration ONNX before reuse; invalid cached files are deleted and rebuilt. Model cache key hashes the setup script, invalidating old model cache after validation logic changes.
+- Pip cache remains enabled; apt .deb cache is one fixed-key entry while apt update/install remains active. Video outputs remain in separate 14-day artifacts. Exact cache usage was not accessible via connector; inspect repository Settings → Actions → Caches for actual bytes.
