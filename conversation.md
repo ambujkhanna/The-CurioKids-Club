@@ -135,3 +135,9 @@ The user confirmed they do not want to manually inspect routine technical output
 - Confirmed GitHub's documented default cache allowance is 10 GB per repository, with entries unused for more than 7 days eligible for eviction. Cache quota is not runner-minutes quota. Cache misses/eviction must fall back to normal downloads and must not stop rendering.
 - Updated Kokoro setup to validate cached model checksum, load the voices archive and load the duration ONNX before reuse; invalid cached files are deleted and rebuilt. Model cache key hashes the setup script, invalidating old model cache after validation logic changes.
 - Pip cache remains enabled; apt .deb cache is one fixed-key entry while apt update/install remains active. Video outputs remain in separate 14-day artifacts. Exact cache usage was not accessible via connector; inspect repository Settings → Actions → Caches for actual bytes.
+
+
+## 2026-11-20 — User feedback changes visual direction
+- User is not satisfied with the completed ep070 pipeline's graphics: they feel poor and do not read as 3D. The current implementation uses static rendered PNG story cards; this is not the quality target.
+- New direction: make the germination process itself the hero, animated continuously in 3D — seed splits, root emerges and grows down/branches, shoot pushes up through the soil, leaves unfold. Keep the established 2D Leo/Mia characters, but move away from static picture swaps and decorative green-field backgrounds.
+- Next work is a short bounded Blender animation proof plus Skia/episode timeline integration and actual mobile-size MP4 review. Technical pipeline success is not visual approval. Keep main and publishing unchanged.
