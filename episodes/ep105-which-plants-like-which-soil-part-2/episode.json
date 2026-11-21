@@ -1,0 +1,240 @@
+{
+  "id": "ep105",
+  "slug": "which-plants-like-which-soil-part-2",
+  "status": "ready",
+  "order": 5,
+  "title": "Which Plants Like Which Soil? 🌵 Fun Facts (Part 2)",
+  "cover_text": "PLANT MATCH!",
+  "description": "Why does a cactus love sand and rice love wet fields? Leo asks, big sister Mia explains which plants and trees grow best in which soil, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Plants",
+    "#NatureForKids",
+    "#Shorts"
+  ],
+  "tags": [
+    "which plants grow in which soil",
+    "soil for kids",
+    "cactus rice soil",
+    "plants for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Which soil for which plant?",
+    "cue": "next",
+    "left": "🌵",
+    "right": "🌾"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why do different plants grow in different soil?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🌵",
+          "label": "Cactus"
+        },
+        "right": {
+          "icon": "🌾",
+          "label": "Rice"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Quick recap! Sandy soil drains fast, clay soil holds water, and loam is a good mix.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Sandy: drains fast",
+            "icon": "🏖️",
+            "cue": "sandy"
+          },
+          {
+            "text": "Clay: holds water",
+            "icon": "💧",
+            "cue": "clay"
+          },
+          {
+            "text": "Loam: a mix",
+            "icon": "🌻",
+            "cue": "loam"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So who likes sandy soil?"
+    },
+    {
+      "who": "MIA",
+      "text": "Cactus plants! They come from dry places. In sandy soil, rain runs away fast, so their roots stay dry.",
+      "punch": "cactus",
+      "board": {
+        "type": "flow",
+        "title": "Rain in sand",
+        "packet": "💧",
+        "items": [
+          {
+            "icon": "🌧️",
+            "label": "Rain",
+            "cue": "rain"
+          },
+          {
+            "icon": "🏖️",
+            "label": "Sandy soil",
+            "cue": "sandy"
+          },
+          {
+            "icon": "⬇️",
+            "label": "Runs away",
+            "cue": "runs"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And who likes clay soil?"
+    },
+    {
+      "who": "MIA",
+      "text": "Rice loves lots of water! Farmers grow rice in flooded fields, and clay-like soil helps keep the water in.",
+      "board": {
+        "type": "big",
+        "icon": "🌾",
+        "text": "Rice likes wet fields",
+        "cue": "rice",
+        "sub": "Clay holds water",
+        "sub_cue": "clay"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What about vegetables?"
+    },
+    {
+      "who": "MIA",
+      "text": "Lots of vegetables grow best in loam. It holds some water, drains the extra, and has plenty of humus.",
+      "board": {
+        "type": "checklist",
+        "title": "Loam has",
+        "icon": "🥕",
+        "items": [
+          {
+            "text": "Some water",
+            "icon": "💧",
+            "cue": "holds",
+            "ok": true
+          },
+          {
+            "text": "Drains extra",
+            "icon": "⬇️",
+            "cue": "drains",
+            "ok": true
+          },
+          {
+            "text": "Lots of humus",
+            "icon": "🍂",
+            "cue": "humus",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Do trees pick soil too?"
+    },
+    {
+      "who": "MIA",
+      "text": "Sort of! Pine trees can grow in sandy soil. Mangrove trees grow in wet, salty mud by the sea.",
+      "punch": "mangrove",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Sandy",
+          "items": [
+            {
+              "text": "Pine trees",
+              "icon": "🌲",
+              "cue": "pine"
+            }
+          ]
+        },
+        "right": {
+          "label": "Salty mud",
+          "items": [
+            {
+              "text": "Mangroves",
+              "icon": "🌊",
+              "cue": "mangrove"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How do worms help plants?"
+    },
+    {
+      "who": "MIA",
+      "text": "Earthworms munch old leaves and turn them into rich soil. Plants love it!",
+      "board": {
+        "type": "transform",
+        "title": "Worm magic",
+        "from": {
+          "icon": "🍂",
+          "label": "Old leaves",
+          "cue": "leaves"
+        },
+        "to": {
+          "icon": "🌱",
+          "label": "Rich soil",
+          "cue": "rich"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Cactus in sand, rice in wet clay, and veggies in loam!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Cactus: sand",
+            "icon": "🌵",
+            "cue": "cactus"
+          },
+          {
+            "text": "Rice: wet clay",
+            "icon": "🌾",
+            "cue": "rice"
+          },
+          {
+            "text": "Veggies: loam",
+            "icon": "🥕",
+            "cue": "veggies"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What should we find out next? Ask a grown-up to drop a topic in the comment section!"
+    },
+    {
+      "who": "MIA",
+      "text": "Perfect match! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... why do different plants grow in different soil?"
+    }
+  ]
+}

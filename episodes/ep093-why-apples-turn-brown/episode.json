@@ -1,0 +1,217 @@
+{
+  "id": "ep093",
+  "slug": "why-apples-turn-brown",
+  "status": "ready",
+  "order": 16,
+  "title": "Why Do Apples Turn Brown? 🍎 Fun Facts for Kids",
+  "cover_text": "BROWN APPLE?",
+  "description": "Why does a cut apple turn brown? Air gets inside and makes a natural change, and a little lemon juice slows it down! Leo asks, big sister Mia explains, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#KitchenScience",
+    "#Shorts"
+  ],
+  "tags": [
+    "why apples turn brown",
+    "kitchen science for kids",
+    "apple science",
+    "science for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why do apples go brown?",
+    "cue": "next",
+    "left": "🍎",
+    "right": "🟤"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why does my apple turn brown after you cut it?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🍎",
+          "label": "Apple"
+        },
+        "right": {
+          "icon": "🟤",
+          "label": "Brown?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "It's the air! Cutting the apple lets air reach the inside.",
+      "punch": "air",
+      "board": {
+        "type": "big",
+        "icon": "💨",
+        "text": "Air gets inside",
+        "cue": "air",
+        "sub": "After cutting",
+        "sub_cue": "cutting"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What does the air do?"
+    },
+    {
+      "who": "MIA",
+      "text": "Air has a gas called oxygen. Oxygen mixes with tiny things inside the apple, and the white part turns brown.",
+      "board": {
+        "type": "transform",
+        "title": "A natural change",
+        "from": {
+          "icon": "🍏",
+          "label": "White inside",
+          "cue": "white"
+        },
+        "to": {
+          "icon": "🟤",
+          "label": "Brown",
+          "cue": "brown"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Is my apple rotten now?"
+    },
+    {
+      "who": "MIA",
+      "text": "Nope! A brown apple slice is still safe to eat. It's just a natural change.",
+      "punch": "safe",
+      "board": {
+        "type": "big",
+        "icon": "✅",
+        "text": "Still safe to eat",
+        "cue": "safe",
+        "sub": "A natural change",
+        "sub_cue": "natural"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Do other fruits turn brown too?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Bananas, pears and avocados turn brown too.",
+      "board": {
+        "type": "gallery",
+        "title": "Browning fruits",
+        "items": [
+          {
+            "icon": "🍌",
+            "label": "Bananas",
+            "cue": "bananas"
+          },
+          {
+            "icon": "🍐",
+            "label": "Pears",
+            "cue": "pears"
+          },
+          {
+            "icon": "🥑",
+            "label": "Avocados",
+            "cue": "avocados"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can we stop it?"
+    },
+    {
+      "who": "MIA",
+      "text": "We can slow it down! A little lemon juice on the slices helps them stay white for longer.",
+      "board": {
+        "type": "big",
+        "icon": "🍋",
+        "text": "Lemon juice helps",
+        "cue": "lemon",
+        "sub": "Slows the browning",
+        "sub_cue": "slow"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can I try it?"
+    },
+    {
+      "who": "MIA",
+      "text": "Ask a grown-up first! Have them cut two slices. Put lemon juice on one, then wait and compare.",
+      "board": {
+        "type": "checklist",
+        "title": "Apple test",
+        "icon": "🍎",
+        "items": [
+          {
+            "text": "Ask a grown-up",
+            "icon": "🧑",
+            "cue": "ask",
+            "ok": true
+          },
+          {
+            "text": "Two slices",
+            "icon": "🍎",
+            "cue": "two",
+            "ok": true
+          },
+          {
+            "text": "Lemon on one",
+            "icon": "🍋",
+            "cue": "lemon",
+            "ok": true
+          },
+          {
+            "text": "Wait and compare",
+            "icon": "⏰",
+            "cue": "wait",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Air gets in, the apple turns brown, but lemon slows it down!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Air gets in",
+            "icon": "💨",
+            "cue": "air"
+          },
+          {
+            "text": "Turns brown",
+            "icon": "🟤",
+            "cue": "brown"
+          },
+          {
+            "text": "Lemon slows it",
+            "icon": "🍋",
+            "cue": "lemon"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What should Mia explain next? Ask a grown-up to drop a topic in the comment section!"
+    },
+    {
+      "who": "MIA",
+      "text": "Ap-peeling! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... why does my apple turn brown after you cut it?"
+    }
+  ]
+}

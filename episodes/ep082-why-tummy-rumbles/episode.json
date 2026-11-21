@@ -1,0 +1,210 @@
+{
+  "id": "ep082",
+  "slug": "why-tummy-rumbles",
+  "status": "ready",
+  "order": 13,
+  "title": "Why Does My Tummy Rumble? 🍽️ Fun Facts for Kids",
+  "cover_text": "RUMBLE!",
+  "description": "Gurgle, gurgle, rumble! Your tummy squeezes food, air and liquid along. Leo asks, big sister Mia explains, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#HumanBody",
+    "#Shorts"
+  ],
+  "tags": [
+    "why does my tummy rumble",
+    "stomach growling for kids",
+    "human body for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Tummy rumble?",
+    "cue": "next",
+    "left": "🍽️",
+    "right": "🔊"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why does my tummy rumble?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🍽️",
+          "label": "Tummy"
+        },
+        "right": {
+          "icon": "🔊",
+          "label": "Rumble?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Your stomach and intestines squeeze a lot! The squeezing moves food, air and liquid along.",
+      "punch": "squeezing",
+      "board": {
+        "type": "big",
+        "icon": "💪",
+        "text": "Squeeze, squeeze!",
+        "cue": "squeezing",
+        "sub": "Stomach and intestines",
+        "sub_cue": "stomach"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What are intestines?"
+    },
+    {
+      "who": "MIA",
+      "text": "They're long, curly tubes after your stomach. Food goes from your mouth, to your stomach, then through your intestines.",
+      "board": {
+        "type": "flow",
+        "title": "Food trip",
+        "packet": "🍎",
+        "items": [
+          {
+            "icon": "👄",
+            "label": "Mouth",
+            "cue": "mouth"
+          },
+          {
+            "icon": "🎒",
+            "label": "Stomach",
+            "cue": "stomach"
+          },
+          {
+            "icon": "🌀",
+            "label": "Intestines",
+            "cue": "intestines"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So where does the rumble come from?"
+    },
+    {
+      "who": "MIA",
+      "text": "When the muscles squeeze, the air and liquid inside get pushed around. Gurgle, gurgle, rumble!",
+      "punch": "rumble",
+      "board": {
+        "type": "big",
+        "icon": "🫧",
+        "text": "Air + liquid = rumble",
+        "cue": "air",
+        "sub": "Gurgle, gurgle!",
+        "sub_cue": "gurgle"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why is it so loud when I'm hungry?"
+    },
+    {
+      "who": "MIA",
+      "text": "When your stomach is empty, there's no food to muffle the sound. So the rumble sounds louder!",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Full",
+          "items": [
+            {
+              "icon": "🔉",
+              "text": "Muffled",
+              "cue": "muffle"
+            }
+          ]
+        },
+        "right": {
+          "label": "Empty",
+          "items": [
+            {
+              "icon": "🔊",
+              "text": "Louder!",
+              "cue": "louder"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Does my tummy talk to my brain?"
+    },
+    {
+      "who": "MIA",
+      "text": "Kind of! When your tummy is empty for a while, it sends signals to your brain, and you feel hungry.",
+      "board": {
+        "type": "transform",
+        "title": "Snack time?",
+        "from": {
+          "icon": "🍽️",
+          "label": "Empty tummy",
+          "cue": "empty"
+        },
+        "to": {
+          "icon": "🧠",
+          "label": "Feel hungry",
+          "cue": "hungry"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So a rumble means I need a snack?"
+    },
+    {
+      "who": "MIA",
+      "text": "Sometimes! But tummies can rumble after eating too, because they're always busy moving food along.",
+      "board": {
+        "type": "big",
+        "icon": "🍎",
+        "text": "Rumbles anytime",
+        "cue": "rumble",
+        "sub": "Even after eating",
+        "sub_cue": "after"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Squeezing muscles, air and liquid, and an empty tummy is loudest!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Muscles squeeze",
+            "icon": "💪",
+            "cue": "squeezing"
+          },
+          {
+            "text": "Air and liquid move",
+            "icon": "🫧",
+            "cue": "air"
+          },
+          {
+            "text": "Empty is loudest",
+            "icon": "🔊",
+            "cue": "empty"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What should we explore next? Ask a grown-up to drop a topic in the comment section!"
+    },
+    {
+      "who": "MIA",
+      "text": "Rumble-tastic! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... why does my tummy rumble?"
+    }
+  ]
+}

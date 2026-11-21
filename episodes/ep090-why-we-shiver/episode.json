@@ -1,0 +1,235 @@
+{
+  "id": "ep090",
+  "slug": "why-we-shiver",
+  "status": "ready",
+  "order": 18,
+  "title": "Why Do We Shiver When We're Cold? 🥶 Fun Facts for Kids",
+  "cover_text": "BRRR!",
+  "description": "Why do we shiver when we're cold? Your muscles shake super fast to make heat, and your brain does it all by itself! Leo asks, big sister Mia explains, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#HumanBody",
+    "#Shorts"
+  ],
+  "tags": [
+    "why do we shiver for kids",
+    "shivering explained",
+    "human body for kids",
+    "science for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why do we shiver?",
+    "cue": "next",
+    "left": "🥶",
+    "right": "💪"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why do I shiver when I'm cold?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🥶",
+          "label": "Cold"
+        },
+        "right": {
+          "icon": "💪",
+          "label": "Shiver?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Shivering is your body's way of making heat! Your muscles shake very, very fast.",
+      "punch": "heat",
+      "board": {
+        "type": "big",
+        "icon": "🔥",
+        "text": "Shivers make heat",
+        "cue": "heat",
+        "sub": "Muscles shake fast",
+        "sub_cue": "muscles"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How does shaking make heat?"
+    },
+    {
+      "who": "MIA",
+      "text": "When muscles work, they get warm. It's like when you run around and feel toasty!",
+      "board": {
+        "type": "big",
+        "icon": "🏃",
+        "text": "Working muscles warm up",
+        "cue": "work",
+        "sub": "Like running around",
+        "sub_cue": "run"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Do I tell my muscles to shiver?"
+    },
+    {
+      "who": "MIA",
+      "text": "No! When you get cold, your brain notices all by itself. It sends a message to your muscles: shake!",
+      "board": {
+        "type": "flow",
+        "title": "Shiver message",
+        "packet": "⚡",
+        "items": [
+          {
+            "icon": "🥶",
+            "label": "Feel cold",
+            "cue": "cold"
+          },
+          {
+            "icon": "🧠",
+            "label": "Brain",
+            "cue": "brain"
+          },
+          {
+            "icon": "💪",
+            "label": "Muscles shake",
+            "cue": "shake"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And then what happens?"
+    },
+    {
+      "who": "MIA",
+      "text": "The shaking makes heat until you feel warm again. Then the shivers stop!",
+      "board": {
+        "type": "transform",
+        "title": "Warming up",
+        "from": {
+          "icon": "🥶",
+          "label": "Shaking",
+          "cue": "shaking"
+        },
+        "to": {
+          "icon": "😊",
+          "label": "Warm again",
+          "cue": "warm"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can I help my body warm up faster?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Put on a coat, a hat and warm socks, or snuggle under a cozy blanket.",
+      "board": {
+        "type": "checklist",
+        "title": "Warm-up tips",
+        "icon": "🧣",
+        "items": [
+          {
+            "text": "Coat",
+            "icon": "🧥",
+            "cue": "coat",
+            "ok": true
+          },
+          {
+            "text": "Hat",
+            "icon": "🧢",
+            "cue": "hat",
+            "ok": true
+          },
+          {
+            "text": "Warm socks",
+            "icon": "🧦",
+            "cue": "socks",
+            "ok": true
+          },
+          {
+            "text": "Blanket",
+            "icon": "🛏️",
+            "cue": "blanket",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Do animals shiver too?"
+    },
+    {
+      "who": "MIA",
+      "text": "Lots of them do! Dogs, cats and even birds can shiver to stay warm.",
+      "board": {
+        "type": "gallery",
+        "title": "Shiver buddies",
+        "items": [
+          {
+            "icon": "🐶",
+            "label": "Dogs",
+            "cue": "dogs"
+          },
+          {
+            "icon": "🐱",
+            "label": "Cats",
+            "cue": "cats"
+          },
+          {
+            "icon": "🐦",
+            "label": "Birds",
+            "cue": "birds"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So when I'm cold, my brain tells my muscles to shake, and that makes heat!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Feel cold",
+            "icon": "🥶",
+            "cue": "cold"
+          },
+          {
+            "text": "Brain sends a message",
+            "icon": "🧠",
+            "cue": "brain"
+          },
+          {
+            "text": "Muscles shake",
+            "icon": "💪",
+            "cue": "muscles"
+          },
+          {
+            "text": "Makes heat",
+            "icon": "🔥",
+            "cue": "heat"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What should we explore next? Ask a grown-up to drop a topic in the comment section!"
+    },
+    {
+      "who": "MIA",
+      "text": "Brrr-illiant! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... why do we shiver when we're cold?"
+    }
+  ]
+}

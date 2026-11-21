@@ -1,0 +1,235 @@
+{
+  "id": "ep077",
+  "slug": "a-apple-or-an-apple",
+  "status": "ready",
+  "order": 8,
+  "title": "Why Do We Say \"An Apple\" but \"A Ball\"? 🍎 Fun Facts for Kids",
+  "cover_text": "A OR AN?",
+  "description": "Why is it \"an apple\" but \"a ball\"? Just listen to the next sound! Leo asks, big sister Mia explains, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#LearnEnglish",
+    "#Shorts"
+  ],
+  "tags": [
+    "a or an for kids",
+    "when to use an",
+    "english grammar for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "A or an?",
+    "cue": "next",
+    "left": "🍎",
+    "right": "⚽"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why do we say \"an apple\" but \"a ball\"?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🍎",
+          "label": "An apple"
+        },
+        "right": {
+          "icon": "⚽",
+          "label": "A ball"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "It's all about the next sound! We use \"an\" before a vowel sound, and \"a\" before a consonant sound.",
+      "board": {
+        "type": "big",
+        "icon": "👂",
+        "text": "Listen to the next sound",
+        "cue": "next",
+        "sub": "an + vowel sound",
+        "sub_cue": "vowel"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why does it matter?"
+    },
+    {
+      "who": "MIA",
+      "text": "Try saying \"a apple\". Your words bump together! \"An apple\" is much smoother.",
+      "punch": "smoother",
+      "board": {
+        "type": "transform",
+        "title": "Smooth it out",
+        "from": {
+          "icon": "😖",
+          "label": "a apple",
+          "cue": "try"
+        },
+        "to": {
+          "icon": "🍎",
+          "label": "an apple",
+          "cue": "smoother"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So how do I pick?"
+    },
+    {
+      "who": "MIA",
+      "text": "First, look at the next word. Then listen to its first sound. Finally, pick \"a\" or \"an\".",
+      "board": {
+        "type": "flow",
+        "title": "Pick a or an",
+        "packet": "🔤",
+        "items": [
+          {
+            "icon": "👀",
+            "label": "Look at word",
+            "cue": "look"
+          },
+          {
+            "icon": "👂",
+            "label": "Hear first sound",
+            "cue": "listen"
+          },
+          {
+            "icon": "✅",
+            "label": "Pick a or an",
+            "cue": "pick"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Like \"an egg\" and \"a dog\"?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! \"An egg\", \"an owl\", \"an umbrella\". But \"a dog\", \"a cat\", \"a tree\".",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "An",
+          "items": [
+            {
+              "icon": "🥚",
+              "text": "egg",
+              "cue": "egg"
+            },
+            {
+              "icon": "🦉",
+              "text": "owl",
+              "cue": "owl"
+            },
+            {
+              "icon": "☂️",
+              "text": "umbrella",
+              "cue": "umbrella"
+            }
+          ]
+        },
+        "right": {
+          "label": "A",
+          "items": [
+            {
+              "icon": "🐶",
+              "text": "dog",
+              "cue": "dog"
+            },
+            {
+              "icon": "🐱",
+              "text": "cat",
+              "cue": "cat"
+            },
+            {
+              "icon": "🌳",
+              "text": "tree",
+              "cue": "tree"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What about \"hour\"? It starts with H!"
+    },
+    {
+      "who": "MIA",
+      "text": "The H in \"hour\" is silent, so it starts with a vowel sound. We say \"an hour\"!",
+      "punch": "silent",
+      "board": {
+        "type": "big",
+        "icon": "⏰",
+        "text": "An hour",
+        "cue": "hour",
+        "sub": "Silent H!",
+        "sub_cue": "silent"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "\"Unicorn\" starts with U. That's a vowel!"
+    },
+    {
+      "who": "MIA",
+      "text": "Tricky! \"Unicorn\" starts with a \"you\" sound. That's a consonant sound, so it's \"a unicorn\".",
+      "board": {
+        "type": "big",
+        "icon": "🦄",
+        "text": "A unicorn",
+        "cue": "unicorn",
+        "sub": "Starts with \"you\"",
+        "sub_cue": "starts"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "An apple, an hour, a ball, a unicorn!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "an apple",
+            "icon": "🍎",
+            "cue": "apple"
+          },
+          {
+            "text": "an hour",
+            "icon": "⏰",
+            "cue": "hour"
+          },
+          {
+            "text": "a ball",
+            "icon": "⚽",
+            "cue": "ball"
+          },
+          {
+            "text": "a unicorn",
+            "icon": "🦄",
+            "cue": "unicorn"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What should we find out next? Ask a grown-up to drop a topic in the comment section!"
+    },
+    {
+      "who": "MIA",
+      "text": "Exactly! Follow the sound, not the letter. Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... why do we say \"an apple\" but \"a ball\"?"
+    }
+  ]
+}

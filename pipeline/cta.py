@@ -95,6 +95,14 @@ def end_card(c, t, t0, K, kids=False, cx=540, cy=880):
     c.drawRRect(panel, _p(K, "#FFFDF5")); c.drawRRect(panel, _p(K, NAVY, 5))
     head = "Ask a grown-up to subscribe & like!" if kids else "Enjoyed it? Subscribe, like & share!"
     _text(c, K, head, cx, cy - 78, 32, NAVY)
+    if u > 1.2:  # "drop a topic" bubble pops in under the card (owner, 2026-11-21)
+        a_ = _ease((u - 1.2) / 0.35); bw, bh = 640, 70; by = cy + 92
+        c.save(); c.translate(cx, by); c.scale(0.85 + 0.15 * a_, 0.85 + 0.15 * a_)
+        bub = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(-bw / 2, -bh / 2, bw, bh), bh / 2, bh / 2)
+        tail = skia.Path(); tail.moveTo(-bw / 2 + 70, bh / 2 - 4); tail.lineTo(-bw / 2 + 60, bh / 2 + 22); tail.lineTo(-bw / 2 + 100, bh / 2 - 4); tail.close()
+        c.drawRRect(bub, _p(K, BLUE, a=a_)); c.drawPath(tail, _p(K, BLUE, a=a_))
+        _text(c, K, "Drop a topic in the comments!", 0, 0, 32, WHITE)
+        c.restore()
     # widths from the widest label each button shows (SUBSCRIBED is longer than SUBSCRIBE), 22 px apart, centred
     ws = [_btn_w(K, "SUBSCRIBED", not kids), _btn_w(K, "LIKE", True), _btn_w(K, "SHARE", True)]
     k_ = min(1.0, 790 / (sum(ws) + 44)); ws = [w * k_ for w in ws]
@@ -133,6 +141,120 @@ def end_card(c, t, t0, K, kids=False, cx=540, cy=880):
         _cursor(c, K, px, py, press)
     c.restore()
 
+
+
+# ------------------------------------------------------------------ newer end-card designs (CTA_STYLE = card | bar | pop)
+def _ico3(name):
+    try:
+        import icons3d
+        return icons3d.drawer(name)
+    except Exception:
+        return None
+
+
+def _icon_or(c, K, name, x, y, k, fallback, a=1.0):
+    d = _ico3(name)
+    if a < 0.999: c.saveLayerAlpha(None, int(255 * a))
+    else: c.save()
+    if d: d(c, x, y, k)
+    else: fallback(x, y)
+    c.restore()
+
+
+def _topic_bubble(c, K, cx, y, u):
+    if u <= 0: return
+    a_ = _ease(u / 0.35); bw, bh = 640, 70
+    c.save(); c.translate(cx, y); c.scale(0.85 + 0.15 * a_, 0.85 + 0.15 * a_)
+    bub = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(-bw / 2, -bh / 2, bw, bh), bh / 2, bh / 2)
+    tail = skia.Path(); tail.moveTo(-bw / 2 + 70, bh / 2 - 4); tail.lineTo(-bw / 2 + 60, bh / 2 + 22); tail.lineTo(-bw / 2 + 100, bh / 2 - 4); tail.close()
+    c.drawRRect(bub, _p(K, BLUE, a=a_)); c.drawPath(tail, _p(K, BLUE, a=a_))
+    _text(c, K, "Drop a topic in the comments!", 0, 0, 32, WHITE)
+    c.restore()
+
+
+def end_bar(c, t, t0, K, kids=False, cx=540, cy=880):
+    """A: one slim floating action bar, three big round 3D buttons; a finger taps each in turn."""
+    u = t - t0
+    if u < -0.05: return
+    pop = K.appear(t, t0 - 0.05)
+    c.save(); c.translate(cx, cy); c.scale(pop, pop); c.translate(-cx, -cy)
+    bw, bh = 780, 190
+    bar = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(cx - bw / 2, cy - bh / 2, bw, bh), 60, 60)
+    sh = _p(K, "#000000", a=0.16); sh.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 18))
+    c.save(); c.translate(0, 10); c.drawRRect(bar, sh); c.restore()
+    c.drawRRect(bar, _p(K, "#FFFFFF"))
+    if kids:  # kids channel: a grown-up does the subscribing
+        _text(c, K, "Ask a grown-up to subscribe & like!", cx, cy - bh / 2 - 34, 32, NAVY)
+    names = [("SUBSCRIBE", "SUBSCRIBED", "🔔", RED), ("LIKE", "LIKED", "👍", BLUE), ("SHARE", "SHARED", "📤", "#2ECC71")]
+    taps = [0.6 + k * 0.9 for k in range(3)]
+    xs = [cx - 250, cx, cx + 250]
+    for k, (lab, done_lab, ico, col) in enumerate(names):
+        x = xs[k]; y = cy - 22; tp = taps[k]; done = u > tp
+        press = max(0.0, 1 - abs(u - tp) / 0.12) if abs(u - tp) < 0.12 else 0.0
+        bounce = 1 + 0.18 * max(0.0, 1 - abs(u - tp - 0.18) / 0.18) if done else 1.0
+        r = 62 * (1 - 0.08 * press) * bounce
+        c.drawCircle(x, y, r, _p(K, col if not (done and k == 0) else GREY))
+        if done:  # ripple
+            ru = (u - tp) / 0.6
+            if ru < 1: c.drawCircle(x, y, r + 40 * ru, _p(K, col, 6, a=1 - ru))
+        shake = math.sin(u * 30) * 14 * max(0.0, 1 - (u - tp - 0.1) / 0.7) if (done and k == 0) else 0.0
+        c.save(); c.translate(x, y); c.rotate(shake)
+        _icon_or(c, K, ico, 0, 0, 1.25, lambda x_, y_, k=k: (_bell if k == 0 else _thumb if k == 1 else _share)(c, K, x_, y_, 1.4, WHITE))
+        c.restore()
+        if done and k == 1 and u - tp < 1.0:  # +1 floats up
+            fu = (u - tp) / 1.0; _text(c, K, "+1", x + 50, y - 60 - 60 * fu, 36, BLUE)
+        _text(c, K, done_lab if done else lab, x, cy + 68, 30, NAVY)
+    # finger that taps each button
+    if 0.2 < u < taps[-1] + 0.5:
+        k = min(2, max(0, int((u - 0.2) / 0.9)))
+        tx, ty = xs[k] + 52, cy + 2
+        e = _ease((u - 0.2 - k * 0.9) / 0.35)
+        px = (xs[k - 1] + 52 if k else cx + 330) + (tx - (xs[k - 1] + 52 if k else cx + 330)) * e
+        press = max(0.0, 1 - abs(u - taps[k]) / 0.12)
+        _icon_or(c, K, "👆", px, ty + 40 + 8 * press, 1.25, lambda x_, y_: _cursor(c, K, x_, y_, press))
+    c.restore()
+    _topic_bubble(c, K, cx, cy + bh / 2 + 55, u - 3.0)
+
+
+def end_pop(c, t, t0, K, kids=False, cx=540, cy=880):
+    """B: one big button at a time in the centre (Subscribe -> Like -> Share), confetti on each tap."""
+    u = t - t0
+    if u < -0.05: return
+    steps = [("SUBSCRIBE", "🔔", RED), ("LIKE", "👍", BLUE), ("SHARE", "📤", "#2ECC71")]
+    k = min(2, max(0, int(u / 1.0))); lu = u - k * 1.0
+    lab, ico, col = steps[k]
+    a = _ease(lu / 0.25) if k < 2 or lu < 10 else 1.0
+    s_ = 0.7 + 0.3 * _ease(lu / 0.3)
+    press = max(0.0, 1 - abs(lu - 0.55) / 0.1) if abs(lu - 0.55) < 0.1 else 0.0
+    w, h = 560, 150
+    c.save(); c.translate(cx, cy); c.scale(s_ * (1 - 0.06 * press), s_ * (1 - 0.06 * press))
+    sh = _p(K, "#000000", a=0.2); sh.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 16))
+    r = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(-w / 2, -h / 2, w, h), h / 2, h / 2)
+    c.save(); c.translate(0, 10); c.drawRRect(r, sh); c.restore()
+    c.drawRRect(r, _p(K, col))
+    _icon_or(c, K, ico, -w / 2 + 90, 0, 1.4, lambda x_, y_: None)
+    f = skia.Font(K.FONT_XB, 62); c.drawString(lab, -w / 2 + 160, 22, f, _p(K, WHITE))
+    c.restore()
+    if lu > 0.55:  # confetti burst on the tap
+        cu = (lu - 0.55) / 0.5
+        if cu < 1:
+            for j in range(14):
+                ang = j * 2 * math.pi / 14
+                c.drawCircle(cx + math.cos(ang) * 320 * cu, cy + math.sin(ang) * 150 * cu, 9 * (1 - cu) + 2, _p(K, ["#FFD23F", RED, BLUE, "#2ECC71"][j % 4], a=1 - cu))
+    _icon_or(c, K, "👆", cx + 170, cy + 70 + 10 * press, 1.3, lambda x_, y_: _cursor(c, K, x_, y_, press), a=1.0 if lu < 0.9 else 0.0)
+    _topic_bubble(c, K, cx, cy + 140, u - 3.0)
+
+
+_card_end = end_card
+
+
+def end_card(c, t, t0, K, kids=False, cx=540, cy=880):  # noqa: F811  (dispatch on CTA_STYLE)
+    import os
+    # owner, 2026-11-21: kids = action bar, AInation = big pop; CTA_STYLE=card brings back the old card
+    style = (os.environ.get("CTA_STYLE", "") or ("bar" if kids else "pop")).strip().lower()
+    if style == "bar": return end_bar(c, t, t0, K, kids, cx, cy)
+    if style == "pop": return end_pop(c, t, t0, K, kids, cx, cy)
+    return _card_end(c, t, t0, K, kids, cx, cy)
 
 def reminder(c, t, t_show, K, dur=3.2):
     """Small 'SUBSCRIBE' pill that slides in at the top right, rings its bell, and slides out."""

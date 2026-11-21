@@ -1,6 +1,6 @@
 # Channels reference: The CurioKids Club & AInation Studio
 
-**Last updated:** 2026-11-21 15:16 IST (09:46 UTC)
+**Last updated:** 2026-11-21 15:50 IST (10:20 UTC)
 
 This is the quick reference for both channels: links, schedules, workflow options, secrets and variables. It's updated whenever any of these change; see the change log at the bottom. The full history is in `TheCurioKidsClub_handoff.md` and `AInation_Studio_handoff.md`.
 
@@ -75,6 +75,7 @@ Never paste tokens into chat, files or commits; they go only into GitHub Secrets
 | `HI_TTS_ENGINE` | `kokoro` (native Hindi voices; `chatterbox` = cloned voices) | ✅ | – |
 | `HI_VOICE_CLIP` | `english` (`hindi` = clone Hindi lines from the native Hindi clips in `assets/voices/hi/`) | ✅ | – |
 | `CB_CFG_HI` | empty = 0.35 (lower, e.g. `0` or `0.2` = less English accent in Hindi) | ✅ | – |
+| `CTA_STYLE` | kids `bar` · AInation `pop` (`card` = the old card with small buttons) | ✅ | ✅ |
 | `THEME` | `studio_open` (clean light studio, no board frame, one blue accent, calmer outfits) · `studio_light` (same with a white board card) · `studio_dark` (deep navy + white card) · `classic` (the old living room) | – | ✅ |
 | `LIST_STYLE` | `tiles` (steps/checklist/summary as airy tiles; 5 steps = timeline; `classic` = old full-width rows) | ✅ | ✅ |
 | `ICON_STYLE` | `3d` (Fluent 3D icons on every board; `flat` = the old flat icons) | ✅ | ✅ |
@@ -127,3 +128,4 @@ Never paste tokens into chat, files or commits; they go only into GitHub Secrets
 | 2026-11-21 13:38 IST (08:08 UTC) | Both: **lighter list boards**: steps / checklists / recaps are airy tiles (big 3D icon + short label, pop in on cue; checklists with 3D ✅/❌), 5-step lists a slim highlighted timeline; `LIST_STYLE=classic` for the old rows. Chosen from 3 rendered designs (tiles, hub, timeline); hub dropped (too cramped on a phone board). |
 | 2026-11-21 13:55 IST (08:25 UTC) | AInation: **new look, Studio Open** (owner's choice from 4 rendered looks): no living room, props, rug, floating robot or string lights; soft grey-white wall with two quiet blurred accent shapes and dot grids; no board frame (content sits on the wall like an infographic); one blue accent (#2F6BFF) for pills, title card and flow rings; white tiles with hairline borders; captions highlight in blue (hook white with a blue outline); calmer outfits (Dad slate-blue shirt, Teen teal hoodie). Thumbnails keep their bold design on purpose (click-through). Repo variable `THEME` switches looks (`classic` = old). Kids unchanged. |
 | 2026-11-21 15:16 IST (09:46 UTC) | AInation (Studio Open): speaker close-ups are off, because without a board frame they pushed the content half out of the picture (cut text at the top). Both: script title-card labels keep whole words (up to 28 characters, wrapping to 2 lines) instead of being cut at 12 letters ("SMALL LANGUA"). |
+| 2026-11-21 15:50 IST (10:20 UTC) | Kids: **fun-facts series** ep076–ep083, ep090–ep097, ep104–ep112 (25 episodes incl. soil Part 1/2, English + Hindi) posted **first** from the next day (episode field `order` 1–25; the old queue resumes after it: English ep013, Hindi ep009). Every new episode ends with a spoken 'drop a topic in the comment section' line; the end card shows a 'Drop a topic in the comments!' bubble (both channels). **End cards:** kids = action bar (3 round 3D buttons, finger taps), AInation = big pop (one big button at a time + confetti); repo variable `CTA_STYLE` (`card` = old). |

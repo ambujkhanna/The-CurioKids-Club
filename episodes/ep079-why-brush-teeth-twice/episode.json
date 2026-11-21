@@ -1,0 +1,225 @@
+{
+  "id": "ep079",
+  "slug": "why-brush-teeth-twice",
+  "status": "ready",
+  "order": 6,
+  "title": "Why Do We Brush Our Teeth Twice a Day? 🪥 Fun Facts for Kids",
+  "cover_text": "BRUSH TWICE!",
+  "description": "Sticky plaque, sugar-loving germs and tiny cavities! Leo asks, big sister Mia explains why we brush morning and night, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#HealthyHabits",
+    "#Shorts"
+  ],
+  "tags": [
+    "why brush teeth for kids",
+    "brushing teeth twice a day",
+    "plaque and cavities for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Brush twice?",
+    "cue": "next",
+    "left": "🦷",
+    "right": "🪥"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why do we brush our teeth twice a day?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🦷",
+          "label": "Teeth"
+        },
+        "right": {
+          "icon": "🪥",
+          "label": "Twice?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Because of plaque! Plaque is a sticky layer of germs that builds up on your teeth.",
+      "punch": "plaque",
+      "board": {
+        "type": "big",
+        "icon": "🦠",
+        "text": "Plaque = sticky germs",
+        "cue": "plaque",
+        "sub": "Builds up on teeth",
+        "sub_cue": "builds"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Germs? What do they do?"
+    },
+    {
+      "who": "MIA",
+      "text": "The germs eat sugar from your food. Then they make acid, and acid can make tiny holes called cavities.",
+      "board": {
+        "type": "flow",
+        "title": "How cavities start",
+        "packet": "🍬",
+        "items": [
+          {
+            "icon": "🍬",
+            "label": "Sugar",
+            "cue": "sugar"
+          },
+          {
+            "icon": "🧪",
+            "label": "Acid",
+            "cue": "acid"
+          },
+          {
+            "icon": "🕳️",
+            "label": "Cavity",
+            "cue": "cavities"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Yikes! So brushing sweeps the germs away?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Brushing cleans off the sticky plaque, so your teeth stay strong and shiny.",
+      "board": {
+        "type": "transform",
+        "title": "Brush, brush!",
+        "from": {
+          "icon": "🦠",
+          "label": "Sticky plaque",
+          "cue": "brushing"
+        },
+        "to": {
+          "icon": "😁",
+          "label": "Clean teeth",
+          "cue": "cleans"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "But why twice?"
+    },
+    {
+      "who": "MIA",
+      "text": "Plaque keeps coming back. So we brush in the morning, and at night before bed.",
+      "board": {
+        "type": "steps",
+        "title": "Brush twice",
+        "items": [
+          {
+            "icon": "☀️",
+            "label": "Morning",
+            "cue": "morning"
+          },
+          {
+            "icon": "🌙",
+            "label": "Night",
+            "cue": "night"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How long should I brush?"
+    },
+    {
+      "who": "MIA",
+      "text": "About two minutes each time. Humming a song in your head can help the time go by!",
+      "board": {
+        "type": "big",
+        "icon": "⏱️",
+        "text": "About 2 minutes",
+        "cue": "two",
+        "sub": "Each time",
+        "sub_cue": "each"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How much toothpaste do I use?"
+    },
+    {
+      "who": "MIA",
+      "text": "Ask a grown-up first! Kids need just a pea-sized blob of fluoride toothpaste. Spit it out after. Don't swallow it!",
+      "board": {
+        "type": "checklist",
+        "title": "Toothpaste tips",
+        "icon": "🪥",
+        "items": [
+          {
+            "text": "Ask a grown-up",
+            "icon": "🧑",
+            "cue": "ask",
+            "ok": true
+          },
+          {
+            "text": "Pea-sized blob",
+            "icon": "🫛",
+            "cue": "pea-sized",
+            "ok": true
+          },
+          {
+            "text": "Spit it out",
+            "icon": "💦",
+            "cue": "spit",
+            "ok": true
+          },
+          {
+            "text": "Swallow it",
+            "icon": "🚫",
+            "cue": "swallow",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Plaque, sugar, acid... I'm brushing morning and night!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Plaque is sticky germs",
+            "icon": "🦠",
+            "cue": "plaque"
+          },
+          {
+            "text": "Sugar makes acid",
+            "icon": "🍬",
+            "cue": "sugar"
+          },
+          {
+            "text": "Brush morning and night",
+            "icon": "🪥",
+            "cue": "morning"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What should we explore next? Ask a grown-up to drop a topic in the comment section!"
+    },
+    {
+      "who": "MIA",
+      "text": "Sparkly smile! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... why do we brush our teeth twice a day?"
+    }
+  ]
+}

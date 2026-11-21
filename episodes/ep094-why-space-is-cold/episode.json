@@ -1,0 +1,224 @@
+{
+  "id": "ep094",
+  "slug": "why-space-is-cold",
+  "status": "ready",
+  "order": 2,
+  "title": "Why Is Space So Cold? 🌌 Fun Facts for Kids",
+  "cover_text": "SO COLD!",
+  "description": "Why is space so cold? Space is almost empty, so there's hardly anything to warm up, but in bright sunlight things can get really hot! Leo asks, big sister Mia explains, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#SpaceForKids",
+    "#Shorts"
+  ],
+  "tags": [
+    "why is space cold",
+    "space facts for kids",
+    "astronaut suits for kids",
+    "science for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why is space cold?",
+    "cue": "next",
+    "left": "🌌",
+    "right": "🥶"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why is space so cold?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🌌",
+          "label": "Space"
+        },
+        "right": {
+          "icon": "🥶",
+          "label": "Cold?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Because space is almost empty! There's hardly any air or stuff out there.",
+      "punch": "empty",
+      "board": {
+        "type": "big",
+        "icon": "🌌",
+        "text": "Space is almost empty",
+        "cue": "empty",
+        "sub": "Hardly any air",
+        "sub_cue": "air"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why does empty make it cold?"
+    },
+    {
+      "who": "MIA",
+      "text": "On Earth, the Sun warms up the air, the water and the land. In space, there's almost nothing to warm!",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Earth",
+          "items": [
+            {
+              "text": "Air",
+              "icon": "💨",
+              "cue": "air"
+            },
+            {
+              "text": "Water",
+              "icon": "🌊",
+              "cue": "water"
+            },
+            {
+              "text": "Land",
+              "icon": "⛰️",
+              "cue": "land"
+            }
+          ]
+        },
+        "right": {
+          "label": "Space",
+          "items": [
+            {
+              "text": "Almost nothing",
+              "icon": "🌑",
+              "cue": "nothing"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How cold is it?"
+    },
+    {
+      "who": "MIA",
+      "text": "Far away from any star, space is about minus 270 degrees Celsius. Much colder than any freezer!",
+      "punch": "minus",
+      "board": {
+        "type": "big",
+        "icon": "🧊",
+        "text": "About minus 270 °C",
+        "cue": "minus",
+        "sub": "Colder than a freezer",
+        "sub_cue": "freezer"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So is everything in space frozen?"
+    },
+    {
+      "who": "MIA",
+      "text": "Not always! A space rock in shadow is freezing. But when it moves into bright sunlight, it gets really hot!",
+      "board": {
+        "type": "transform",
+        "title": "Shade to sun",
+        "from": {
+          "icon": "🥶",
+          "label": "In shadow",
+          "cue": "shadow"
+        },
+        "to": {
+          "icon": "🥵",
+          "label": "In sunlight",
+          "cue": "sunlight"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Then how do astronauts stay safe?"
+    },
+    {
+      "who": "MIA",
+      "text": "Their space suits keep out the cold and the heat, and give them air to breathe. Like a tiny spaceship!",
+      "punch": "spaceship",
+      "board": {
+        "type": "checklist",
+        "title": "Space suit",
+        "icon": "🚀",
+        "items": [
+          {
+            "text": "Blocks the cold",
+            "icon": "🥶",
+            "cue": "cold",
+            "ok": true
+          },
+          {
+            "text": "Blocks the heat",
+            "icon": "🥵",
+            "cue": "heat",
+            "ok": true
+          },
+          {
+            "text": "Gives air",
+            "icon": "💨",
+            "cue": "air",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why isn't Earth that cold?"
+    },
+    {
+      "who": "MIA",
+      "text": "We're close to the Sun, and our air works like a cozy blanket that holds in the warmth.",
+      "board": {
+        "type": "big",
+        "icon": "🌍",
+        "text": "Air is our blanket",
+        "cue": "blanket",
+        "sub": "Close to the Sun",
+        "sub_cue": "close"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Space is almost empty, so it's super cold, but sunlight can make it hot!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Almost empty",
+            "icon": "🌌",
+            "cue": "empty"
+          },
+          {
+            "text": "Super cold",
+            "icon": "🥶",
+            "cue": "cold"
+          },
+          {
+            "text": "Hot in sunlight",
+            "icon": "☀️",
+            "cue": "sunlight"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What should we explore next? Ask a grown-up to drop a topic in the comment section!"
+    },
+    {
+      "who": "MIA",
+      "text": "Out of this world! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... why is space so cold?"
+    }
+  ]
+}

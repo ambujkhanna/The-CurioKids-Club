@@ -1,0 +1,207 @@
+{
+  "id": "ep097",
+  "slug": "why-we-dont-feel-earth-spin",
+  "status": "ready",
+  "order": 17,
+  "title": "Why Don't We Feel the Earth Spinning? 🌍 Fun Facts for Kids",
+  "cover_text": "SPINNING?",
+  "description": "Why don't we feel the Earth spinning? It spins smoothly at a steady speed, and we move right along with it, like a smooth car ride! Leo asks, big sister Mia explains, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#SpaceForKids",
+    "#Shorts"
+  ],
+  "tags": [
+    "why don't we feel the earth spin",
+    "earth spinning for kids",
+    "earth facts for kids",
+    "space for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Can you feel it spin?",
+    "cue": "next",
+    "left": "🌍",
+    "right": "🤔"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, the Earth spins. So why don't I feel it?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🌍",
+          "label": "Spinning"
+        },
+        "right": {
+          "icon": "🤔",
+          "label": "Can't feel?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Because the Earth spins very smoothly, at a steady speed. No bumps, no jerks!",
+      "punch": "smoothly",
+      "board": {
+        "type": "big",
+        "icon": "🌍",
+        "text": "Smooth and steady",
+        "cue": "smoothly",
+        "sub": "No bumps!",
+        "sub_cue": "bumps"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "But I'm not spinning!"
+    },
+    {
+      "who": "MIA",
+      "text": "You are! You, the air, the houses and the trees all move together with the Earth.",
+      "board": {
+        "type": "gallery",
+        "title": "Moving together",
+        "items": [
+          {
+            "icon": "🧒",
+            "label": "You",
+            "cue": "you"
+          },
+          {
+            "icon": "💨",
+            "label": "Air",
+            "cue": "air"
+          },
+          {
+            "icon": "🏠",
+            "label": "Houses",
+            "cue": "houses"
+          },
+          {
+            "icon": "🌳",
+            "label": "Trees",
+            "cue": "trees"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Then why doesn't it feel like moving?"
+    },
+    {
+      "who": "MIA",
+      "text": "Think of a smooth car ride. You can't feel the speed, only the bumps and stops.",
+      "board": {
+        "type": "big",
+        "icon": "🚗",
+        "text": "Smooth ride",
+        "cue": "smooth",
+        "sub": "You can't feel speed",
+        "sub_cue": "speed"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So the Earth never speeds up or slows down?"
+    },
+    {
+      "who": "MIA",
+      "text": "Right! It keeps the same steady speed, every day. So your body can't tell it's moving.",
+      "punch": "steady",
+      "board": {
+        "type": "big",
+        "icon": "⏱️",
+        "text": "Same steady speed",
+        "cue": "steady",
+        "sub": "Every single day",
+        "sub_cue": "every"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Then how do we know it spins?"
+    },
+    {
+      "who": "MIA",
+      "text": "We can see it! As Earth turns, the Sun seems to rise, cross the sky, and set.",
+      "board": {
+        "type": "lifecycle",
+        "title": "A spinning day",
+        "items": [
+          {
+            "icon": "🌅",
+            "label": "Sunrise",
+            "cue": "rise"
+          },
+          {
+            "icon": "☀️",
+            "label": "Across the sky",
+            "cue": "cross"
+          },
+          {
+            "icon": "🌇",
+            "label": "Sunset",
+            "cue": "set"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Is that why we have day and night?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! When your side of Earth faces the Sun, it's day. When it turns away, it's night.",
+      "board": {
+        "type": "transform",
+        "title": "Earth turns",
+        "from": {
+          "icon": "☀️",
+          "label": "Day",
+          "cue": "day"
+        },
+        "to": {
+          "icon": "🌙",
+          "label": "Night",
+          "cue": "night"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "The Earth spins smooth and steady, and we all spin with it!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Smooth and steady",
+            "icon": "🌍",
+            "cue": "smooth"
+          },
+          {
+            "text": "We spin with it",
+            "icon": "🧒",
+            "cue": "with"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What should Mia explain next? Ask a grown-up to drop a topic in the comment section!"
+    },
+    {
+      "who": "MIA",
+      "text": "And you're spinning right now! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... why don't I feel the Earth spinning?"
+    }
+  ]
+}

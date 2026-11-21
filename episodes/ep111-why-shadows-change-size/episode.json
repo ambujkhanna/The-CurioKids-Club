@@ -1,0 +1,240 @@
+{
+  "id": "ep111",
+  "slug": "why-shadows-change-size",
+  "status": "ready",
+  "order": 23,
+  "title": "Why Do Shadows Change Size? 👤 Fun Facts for Kids",
+  "cover_text": "SHADOWS!",
+  "description": "Why is your shadow long in the morning and short at lunchtime? Leo asks, big sister Mia explains how shadows grow and shrink, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#ScienceForKids",
+    "#Shorts"
+  ],
+  "tags": [
+    "why shadows change size",
+    "shadows for kids",
+    "light and shadow",
+    "science for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why do shadows change size?",
+    "cue": "next",
+    "left": "☀️",
+    "right": "👤"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why do shadows change size?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "👤",
+          "label": "Shadow"
+        },
+        "right": {
+          "icon": "📏",
+          "label": "Big? Small?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Light comes from the Sun. When your body blocks it, you make a dark shape. That's your shadow!",
+      "punch": "shadow",
+      "board": {
+        "type": "flow",
+        "title": "Making a shadow",
+        "packet": "☀️",
+        "items": [
+          {
+            "icon": "☀️",
+            "label": "Sunlight",
+            "cue": "light"
+          },
+          {
+            "icon": "🧍",
+            "label": "You block it",
+            "cue": "blocks"
+          },
+          {
+            "icon": "👤",
+            "label": "Your shadow",
+            "cue": "shadow"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why is my shadow so long in the morning?"
+    },
+    {
+      "who": "MIA",
+      "text": "In the morning, the Sun is low. Its light comes from the side, so your shadow stretches long!",
+      "punch": "stretches",
+      "board": {
+        "type": "big",
+        "icon": "🌅",
+        "text": "Low Sun = long shadow",
+        "cue": "low",
+        "sub": "Morning and evening",
+        "sub_cue": "morning"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And at lunchtime?"
+    },
+    {
+      "who": "MIA",
+      "text": "Around midday, the Sun is high in the sky. Its light shines down from above, so your shadow is short.",
+      "board": {
+        "type": "big",
+        "icon": "☀️",
+        "text": "High Sun = short shadow",
+        "cue": "high",
+        "sub": "Around midday",
+        "sub_cue": "midday"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So my shadow changes all day!"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Long in the morning, short at midday, and long again in the evening.",
+      "board": {
+        "type": "lifecycle",
+        "title": "A shadow's day",
+        "items": [
+          {
+            "icon": "🌅",
+            "label": "Morning: long",
+            "cue": "morning"
+          },
+          {
+            "icon": "☀️",
+            "label": "Midday: short",
+            "cue": "midday"
+          },
+          {
+            "icon": "🌇",
+            "label": "Evening: long",
+            "cue": "evening"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can a lamp change shadows too?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! The closer something is to the light, the bigger its shadow. Farther away, the shadow gets smaller.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Close",
+          "items": [
+            {
+              "text": "Big shadow",
+              "icon": "✋",
+              "cue": "closer"
+            }
+          ]
+        },
+        "right": {
+          "label": "Far",
+          "items": [
+            {
+              "text": "Small shadow",
+              "icon": "✋",
+              "cue": "farther"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can I make shadow animals?"
+    },
+    {
+      "who": "MIA",
+      "text": "Ask a grown-up first! Shine a flashlight on a wall and make a hand bird. Move it closer to make it bigger!",
+      "board": {
+        "type": "checklist",
+        "title": "Shadow show",
+        "icon": "🔦",
+        "items": [
+          {
+            "text": "Ask a grown-up",
+            "icon": "🧑",
+            "cue": "ask",
+            "ok": true
+          },
+          {
+            "text": "Flashlight on wall",
+            "icon": "🔦",
+            "cue": "flashlight",
+            "ok": true
+          },
+          {
+            "text": "Hand bird",
+            "icon": "🐦",
+            "cue": "bird",
+            "ok": true
+          },
+          {
+            "text": "Move closer",
+            "icon": "🔍",
+            "cue": "closer",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Low Sun, long shadow. High Sun, short shadow. Closer means bigger!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Low Sun: long",
+            "icon": "🌅",
+            "cue": "low"
+          },
+          {
+            "text": "High Sun: short",
+            "icon": "☀️",
+            "cue": "high"
+          },
+          {
+            "text": "Closer = bigger",
+            "icon": "🔦",
+            "cue": "closer"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What should we find out next? Ask a grown-up to drop a topic in the comment section!"
+    },
+    {
+      "who": "MIA",
+      "text": "Shadow-tastic! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... why do shadows change size?"
+    }
+  ]
+}

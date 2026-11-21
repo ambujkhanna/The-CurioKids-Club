@@ -1,0 +1,246 @@
+{
+  "id": "ep083",
+  "slug": "dizzy-after-spinning",
+  "status": "ready",
+  "order": 22,
+  "title": "Why Do We Feel Dizzy After Spinning? 😵 Fun Facts for Kids",
+  "cover_text": "SO DIZZY!",
+  "description": "Spin, stop... and the room keeps turning! Tiny tubes in your ears are the reason. Leo asks, big sister Mia explains, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#HumanBody",
+    "#Shorts"
+  ],
+  "tags": [
+    "why do we get dizzy",
+    "dizzy after spinning for kids",
+    "inner ear balance for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why so dizzy?",
+    "cue": "next",
+    "left": "🌀",
+    "right": "😵"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why do I feel dizzy after spinning?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🌀",
+          "label": "Spin"
+        },
+        "right": {
+          "icon": "😵",
+          "label": "Dizzy?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "It's because of your ears! Deep inside each ear are tiny, curly tubes filled with fluid.",
+      "punch": "ears",
+      "board": {
+        "type": "big",
+        "icon": "👂",
+        "text": "Tiny tubes of fluid",
+        "cue": "tubes",
+        "sub": "Deep inside your ears",
+        "sub_cue": "deep"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Fluid? Like water?"
+    },
+    {
+      "who": "MIA",
+      "text": "A bit like water! When you move, the fluid sloshes, and your brain feels which way you're turning.",
+      "board": {
+        "type": "flow",
+        "title": "Balance message",
+        "packet": "💧",
+        "items": [
+          {
+            "icon": "🔄",
+            "label": "You move",
+            "cue": "move"
+          },
+          {
+            "icon": "💧",
+            "label": "Fluid sloshes",
+            "cue": "sloshes"
+          },
+          {
+            "icon": "🧠",
+            "label": "Brain knows",
+            "cue": "brain"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So what happens when I stop?"
+    },
+    {
+      "who": "MIA",
+      "text": "You spin, then you stop. But the fluid in your ears keeps swirling for a little while!",
+      "board": {
+        "type": "lifecycle",
+        "title": "Why you're dizzy",
+        "items": [
+          {
+            "icon": "🌀",
+            "label": "Spin",
+            "cue": "spin"
+          },
+          {
+            "icon": "✋",
+            "label": "Stop",
+            "cue": "stop"
+          },
+          {
+            "icon": "💧",
+            "label": "Fluid swirls",
+            "cue": "swirling"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Then my brain gets confused?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Your ears say \"still spinning!\" but your eyes say \"stopped!\" Those mixed messages make you dizzy.",
+      "punch": "mixed",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Ears",
+          "items": [
+            {
+              "icon": "🌀",
+              "text": "Spinning!",
+              "cue": "spinning"
+            }
+          ]
+        },
+        "right": {
+          "label": "Eyes",
+          "items": [
+            {
+              "icon": "🛑",
+              "text": "Stopped!",
+              "cue": "stopped"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How do I stop feeling dizzy?"
+    },
+    {
+      "who": "MIA",
+      "text": "Just sit down and wait. Soon the fluid settles, and the dizzy feeling goes away.",
+      "board": {
+        "type": "transform",
+        "title": "Settle down",
+        "from": {
+          "icon": "😵",
+          "label": "Dizzy",
+          "cue": "dizzy"
+        },
+        "to": {
+          "icon": "😊",
+          "label": "All better",
+          "cue": "goes"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can I spin again?"
+    },
+    {
+      "who": "MIA",
+      "text": "Ask a grown-up first! Spin slowly on soft grass, away from hard things, and stop if you feel wobbly.",
+      "board": {
+        "type": "checklist",
+        "title": "Safe spinning",
+        "icon": "🌀",
+        "items": [
+          {
+            "text": "Ask a grown-up",
+            "icon": "🧑",
+            "cue": "ask",
+            "ok": true
+          },
+          {
+            "text": "Soft grass",
+            "icon": "🌱",
+            "cue": "soft",
+            "ok": true
+          },
+          {
+            "text": "Hard things nearby",
+            "icon": "🪨",
+            "cue": "hard",
+            "ok": false
+          },
+          {
+            "text": "Stop if wobbly",
+            "icon": "🛑",
+            "cue": "stop",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "The fluid keeps moving, my brain gets mixed messages, and I feel dizzy!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Fluid keeps moving",
+            "icon": "💧",
+            "cue": "fluid"
+          },
+          {
+            "text": "Mixed messages",
+            "icon": "🧠",
+            "cue": "mixed"
+          },
+          {
+            "text": "Dizzy!",
+            "icon": "😵",
+            "cue": "dizzy"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What should we find out next? Ask a grown-up to drop a topic in the comment section!"
+    },
+    {
+      "who": "MIA",
+      "text": "Whee! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... why do I feel dizzy after spinning?"
+    }
+  ]
+}

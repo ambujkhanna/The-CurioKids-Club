@@ -1,0 +1,212 @@
+{
+  "id": "ep091",
+  "slug": "how-skin-feels-things",
+  "status": "ready",
+  "order": 20,
+  "title": "How Does Your Skin Feel Things? 🖐️ Fun Facts for Kids",
+  "cover_text": "TOUCH!",
+  "description": "How does your skin feel things? Tiny nerve endings feel touch, hot, cold and pain, and send messages to your brain! Leo asks, big sister Mia explains, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#HumanBody",
+    "#Shorts"
+  ],
+  "tags": [
+    "sense of touch for kids",
+    "how skin feels",
+    "five senses for kids",
+    "human body for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "How does skin feel?",
+    "cue": "next",
+    "left": "🖐️",
+    "right": "🪶"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, how does my skin feel things?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🖐️",
+          "label": "Skin"
+        },
+        "right": {
+          "icon": "🪶",
+          "label": "Feel?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Your skin is full of tiny nerve endings. They are like little messengers that feel what touches you!",
+      "punch": "messengers",
+      "board": {
+        "type": "big",
+        "icon": "🖐️",
+        "text": "Tiny nerve endings",
+        "cue": "nerve",
+        "sub": "Little messengers",
+        "sub_cue": "messengers"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What can they feel?"
+    },
+    {
+      "who": "MIA",
+      "text": "So many things! A soft touch, a hard press, hot, cold, and pain.",
+      "board": {
+        "type": "gallery",
+        "title": "Skin can feel",
+        "items": [
+          {
+            "icon": "🪶",
+            "label": "Touch",
+            "cue": "touch"
+          },
+          {
+            "icon": "👇",
+            "label": "Pressure",
+            "cue": "press"
+          },
+          {
+            "icon": "🔥",
+            "label": "Hot",
+            "cue": "hot"
+          },
+          {
+            "icon": "🧊",
+            "label": "Cold",
+            "cue": "cold"
+          },
+          {
+            "icon": "🤕",
+            "label": "Pain",
+            "cue": "pain"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "How does my brain find out?"
+    },
+    {
+      "who": "MIA",
+      "text": "Your skin sends a message along your nerves, all the way up to your brain. Super fast!",
+      "board": {
+        "type": "flow",
+        "title": "Touch message",
+        "packet": "⚡",
+        "items": [
+          {
+            "icon": "🖐️",
+            "label": "Skin",
+            "cue": "skin"
+          },
+          {
+            "icon": "〰️",
+            "label": "Nerves",
+            "cue": "nerves"
+          },
+          {
+            "icon": "🧠",
+            "label": "Brain",
+            "cue": "brain"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Then what does my brain do?"
+    },
+    {
+      "who": "MIA",
+      "text": "It works out what you touched. Soft, fluffy fur? Or a cold, wet ice cube?",
+      "board": {
+        "type": "big",
+        "icon": "🧠",
+        "text": "Brain works it out",
+        "cue": "works",
+        "sub": "Soft or cold?",
+        "sub_cue": "soft"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Which parts of me feel the most?"
+    },
+    {
+      "who": "MIA",
+      "text": "Your fingertips and your lips! They have lots of nerve endings packed close together.",
+      "punch": "fingertips",
+      "board": {
+        "type": "big",
+        "icon": "👆",
+        "text": "Fingertips and lips",
+        "cue": "fingertips",
+        "sub": "Packed with nerves",
+        "sub_cue": "packed"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why does it hurt when I touch something too hot?"
+    },
+    {
+      "who": "MIA",
+      "text": "Pain is a warning! It tells you to pull your hand away fast, to keep you safe.",
+      "board": {
+        "type": "big",
+        "icon": "⚠️",
+        "text": "Pain is a warning",
+        "cue": "pain",
+        "sub": "It keeps you safe",
+        "sub_cue": "safe"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Nerve endings feel it, nerves carry it, and my brain knows it!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Nerve endings feel",
+            "icon": "🖐️",
+            "cue": "nerve"
+          },
+          {
+            "text": "Nerves carry it",
+            "icon": "⚡",
+            "cue": "carry"
+          },
+          {
+            "text": "Brain knows",
+            "icon": "🧠",
+            "cue": "brain"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What do you want to find out next? Ask a grown-up to drop a topic in the comment section!"
+    },
+    {
+      "who": "MIA",
+      "text": "You got it! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... how does my skin feel things?"
+    }
+  ]
+}

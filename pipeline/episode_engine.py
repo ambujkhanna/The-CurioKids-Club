@@ -256,7 +256,7 @@ def build_big(i, t0, t1, sc):
     el(tin, t1, lambda c, t, e: (ic(c, BCX, BCY - (140 if has_sub else 110) + math.sin(t * 3) * 6, 4.6),
                                  big_text(c, sc.get("text", ""), BCX, BCY + (80 if has_sub else 150), 90, NAVY, BW - 60)), (BCX + 200, BCY - 200), (BCX, BCY))
     if has_sub:
-        ts = cue_t(i, {"cue": sc.get("sub_cue")}, tin + 0.8) if sc.get("sub_cue") else tin + 0.8
+        ts = max(cue_t(i, {"cue": sc.get("sub_cue")}, tin + 0.8), tin + 0.5) if sc.get("sub_cue") else tin + 0.8  # never before its headline
         el(ts, t1, lambda c, t, e: pill(c, BCX, BY + BH - 55, sc["sub"], sc.get("sub_color", "#0A84FF"), 48), pivot=(BCX, BY + BH - 55))
 
 

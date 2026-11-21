@@ -1,0 +1,211 @@
+{
+  "id": "ep081",
+  "slug": "why-we-blink",
+  "status": "ready",
+  "order": 1,
+  "title": "Why Do We Blink? 👀 Fun Facts for Kids",
+  "cover_text": "BLINK!",
+  "description": "Every blink keeps your eyes wet, clean and safe! Leo asks, big sister Mia explains, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#HumanBody",
+    "#Shorts"
+  ],
+  "tags": [
+    "why do we blink for kids",
+    "blinking facts",
+    "eyes for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why do we blink?",
+    "cue": "next",
+    "left": "👀",
+    "right": "😉"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why do we blink?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "👀",
+          "label": "Eyes"
+        },
+        "right": {
+          "icon": "😉",
+          "label": "Blink?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Blinking keeps your eyes wet and clean! Each blink spreads a thin layer of tears over your eyes.",
+      "punch": "tears",
+      "board": {
+        "type": "big",
+        "icon": "💧",
+        "text": "Blinks spread tears",
+        "cue": "tears",
+        "sub": "Wet, clean eyes",
+        "sub_cue": "wet"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Tears? But I'm not crying!"
+    },
+    {
+      "who": "MIA",
+      "text": "Your eyes make a little bit of tears all the time. When you blink, your eyelids wipe them across, like a window wiper!",
+      "punch": "wiper",
+      "board": {
+        "type": "flow",
+        "title": "Blink wash",
+        "packet": "💧",
+        "items": [
+          {
+            "icon": "💧",
+            "label": "Tears",
+            "cue": "tears"
+          },
+          {
+            "icon": "😌",
+            "label": "Blink",
+            "cue": "blink"
+          },
+          {
+            "icon": "🧽",
+            "label": "Wipe clean",
+            "cue": "wipe"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What else does blinking do?"
+    },
+    {
+      "who": "MIA",
+      "text": "It protects your eyes too! Your eyelids snap shut to block dust, and you blink and squint in very bright light.",
+      "board": {
+        "type": "checklist",
+        "title": "Blinking helps",
+        "icon": "👀",
+        "items": [
+          {
+            "text": "Protects eyes",
+            "icon": "🛡️",
+            "cue": "protects",
+            "ok": true
+          },
+          {
+            "text": "Blocks dust",
+            "icon": "💨",
+            "cue": "dust",
+            "ok": true
+          },
+          {
+            "text": "Bright light",
+            "icon": "☀️",
+            "cue": "bright",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Do I have to remember to blink?"
+    },
+    {
+      "who": "MIA",
+      "text": "Nope! Your brain does it for you, without you even thinking. You blink every few seconds!",
+      "punch": "thinking",
+      "board": {
+        "type": "big",
+        "icon": "🧠",
+        "text": "Automatic blinks",
+        "cue": "brain",
+        "sub": "Every few seconds",
+        "sub_cue": "every"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can I stop blinking?"
+    },
+    {
+      "who": "MIA",
+      "text": "You can hold it for a little while. But soon your eyes feel dry, and you blink again.",
+      "board": {
+        "type": "transform",
+        "title": "Blink time",
+        "from": {
+          "icon": "😳",
+          "label": "Dry eyes",
+          "cue": "dry"
+        },
+        "to": {
+          "icon": "😌",
+          "label": "Blink!",
+          "cue": "blink"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What about when I sleep?"
+    },
+    {
+      "who": "MIA",
+      "text": "When you sleep, your eyelids stay closed. That keeps your eyes covered and comfy all night.",
+      "board": {
+        "type": "big",
+        "icon": "😴",
+        "text": "Closed all night",
+        "cue": "sleep"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So blinking keeps my eyes wet, clean and safe!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Wet",
+            "icon": "💧",
+            "cue": "wet"
+          },
+          {
+            "text": "Clean",
+            "icon": "🧽",
+            "cue": "clean"
+          },
+          {
+            "text": "Safe",
+            "icon": "🛡️",
+            "cue": "safe"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What should we learn about next? Ask a grown-up to drop a topic in the comment section!"
+    },
+    {
+      "who": "MIA",
+      "text": "Blink, blink, hooray! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... why do we blink?"
+    }
+  ]
+}

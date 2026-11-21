@@ -1,0 +1,212 @@
+{
+  "id": "ep110",
+  "slug": "why-straw-looks-bent-in-water",
+  "status": "ready",
+  "order": 12,
+  "title": "Why Does a Straw Look Bent in Water? 🥤 Fun Facts for Kids",
+  "cover_text": "BENT?",
+  "description": "Why does a straw look broken in a glass of water? Leo asks, big sister Mia explains how light bends, called refraction, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#ScienceForKids",
+    "#Shorts"
+  ],
+  "tags": [
+    "why straw looks bent in water",
+    "refraction for kids",
+    "light for kids",
+    "science for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why does a straw look bent?",
+    "cue": "next",
+    "left": "🥤",
+    "right": "💡"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why does my straw look bent in the water?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🥤",
+          "label": "Straw"
+        },
+        "right": {
+          "icon": "💧",
+          "label": "Bent?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "The straw isn't really bent. It's a trick of light!",
+      "punch": "trick",
+      "board": {
+        "type": "big",
+        "icon": "💡",
+        "text": "A light trick",
+        "cue": "trick",
+        "sub": "The straw is straight",
+        "sub_cue": "straw"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "A trick? How?"
+    },
+    {
+      "who": "MIA",
+      "text": "We see things when light bounces off them and travels into our eyes.",
+      "board": {
+        "type": "flow",
+        "title": "How we see",
+        "packet": "💡",
+        "items": [
+          {
+            "icon": "💡",
+            "label": "Light",
+            "cue": "light"
+          },
+          {
+            "icon": "🥤",
+            "label": "Bounces off",
+            "cue": "bounces"
+          },
+          {
+            "icon": "👀",
+            "label": "Into our eyes",
+            "cue": "eyes"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So what does water do?"
+    },
+    {
+      "who": "MIA",
+      "text": "Light moves slower in water than in air. So when it leaves the water, it changes direction a little.",
+      "board": {
+        "type": "transform",
+        "title": "Light turns",
+        "from": {
+          "icon": "💧",
+          "label": "In water",
+          "cue": "water"
+        },
+        "to": {
+          "icon": "🔀",
+          "label": "New direction",
+          "cue": "direction"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Does that have a name?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! That bending of light is called refraction. Say it with me: re-frac-tion!",
+      "punch": "refraction",
+      "board": {
+        "type": "big",
+        "icon": "🔀",
+        "text": "Refraction",
+        "cue": "refraction",
+        "sub": "Light bends",
+        "sub_cue": "bending"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "But why does the straw look broken?"
+    },
+    {
+      "who": "MIA",
+      "text": "Your eyes think light travels in straight lines. So they see the straw where the light seems to come from. A little out of place!",
+      "board": {
+        "type": "big",
+        "icon": "👀",
+        "text": "Eyes get fooled",
+        "cue": "eyes",
+        "sub": "Straw looks moved",
+        "sub_cue": "straw"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can I try it?"
+    },
+    {
+      "who": "MIA",
+      "text": "Ask a grown-up first! Put a straw in a clear glass of water. Look from the side and see it bend!",
+      "board": {
+        "type": "checklist",
+        "title": "Try it",
+        "icon": "🥛",
+        "items": [
+          {
+            "text": "Ask a grown-up",
+            "icon": "🧑",
+            "cue": "ask",
+            "ok": true
+          },
+          {
+            "text": "Straw in water",
+            "icon": "🥤",
+            "cue": "straw",
+            "ok": true
+          },
+          {
+            "text": "Look from the side",
+            "icon": "👀",
+            "cue": "look",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Light bends from water to air, so the straw looks bent!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Light bends",
+            "icon": "💡",
+            "cue": "bends"
+          },
+          {
+            "text": "Water to air",
+            "icon": "💧",
+            "cue": "water"
+          },
+          {
+            "text": "Straw looks bent",
+            "icon": "🥤",
+            "cue": "straw"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What should we explore next? Ask a grown-up to drop a topic in the comment section!"
+    },
+    {
+      "who": "MIA",
+      "text": "Sharp eyes! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... why does my straw look bent in the water?"
+    }
+  ]
+}

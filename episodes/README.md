@@ -88,7 +88,7 @@ The camera automatically stays on the stage while a diagram is showing. Use at m
   - No medical advice beyond general healthy habits.
 - **No:**
   - brands, real people, or copyrighted songs or characters
-  - "comment below" (comments are off on kids' videos)
+  - "comment below" on its own (use the topic-ask line instead: the channel is "not made for kids", so comments are on; see "Ask for the next topic")
   - begging for likes
   - more than one Subscribe ask
 - **Pronunciation:** in spoken `text`, write the channel name as "The Curio Kids Club" (two words, so it is said clearly). Captions show it as "CurioKids".
@@ -97,3 +97,15 @@ The camera automatically stays on the stage while a diagram is showing. Use at m
 ## Animated scenes (since 2026-11-21)
 
 **Whenever a line explains change, a process, a journey or a cycle, use an animated scene** (`lifecycle`, `transform`, `flow`, `water_cycle`, `plant_growth`) instead of a static list. Static boards are for facts, tips and rules. Aim for 1–3 scenes per Short, with short labels and plenty of space. Examples and rules: `docs/ANIMATED_SCENES.md`. Every icon is drawn as a 3D icon automatically.
+
+## Posting order: series first (since 2026-11-21)
+
+Episodes are normally posted in folder order (ep002, ep003, …). An episode with an `"order"` number jumps the queue: all numbered episodes go first, lowest number first, and the rest follow in folder order. This holds separately for English and Hindi days. Use it for a series that should start now, e.g. the fun-facts series ep076+ (`"order": 1`, `2`, … ; a Part 2 can use `1.5`). Remove the field, or give it a larger number, to move an episode back.
+
+## Ask for the next topic (since 2026-11-21)
+
+Every new episode has one line just **before** the final subscribe line asking viewers to drop a topic in the comment section, e.g.
+
+    LEO: What should we explore next? Ask a grown-up to drop a topic in the comment section!
+
+No board on that line. The end card also shows a "Drop a topic in the comments!" bubble automatically.

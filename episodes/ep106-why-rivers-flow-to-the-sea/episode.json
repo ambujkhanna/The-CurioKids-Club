@@ -1,0 +1,219 @@
+{
+  "id": "ep106",
+  "slug": "why-rivers-flow-to-the-sea",
+  "status": "ready",
+  "order": 9,
+  "title": "Why Do Rivers Flow to the Sea? 🏞️ Fun Facts for Kids",
+  "cover_text": "DOWNHILL!",
+  "description": "Why do rivers always end up at the sea? Leo asks, big sister Mia explains how gravity pulls water downhill from the mountains, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#NatureForKids",
+    "#Shorts"
+  ],
+  "tags": [
+    "why rivers flow to the sea",
+    "rivers for kids",
+    "where rivers start",
+    "science for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why do rivers flow to the sea?",
+    "cue": "next",
+    "left": "🏞️",
+    "right": "🌊"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why do rivers flow to the sea?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🏞️",
+          "label": "River"
+        },
+        "right": {
+          "icon": "🌊",
+          "label": "Sea"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Because water always flows downhill! Gravity pulls it down, lower and lower.",
+      "punch": "downhill",
+      "board": {
+        "type": "big",
+        "icon": "💧",
+        "text": "Water flows downhill",
+        "cue": "downhill",
+        "sub": "Gravity pulls it",
+        "sub_cue": "gravity"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Where does a river start?"
+    },
+    {
+      "who": "MIA",
+      "text": "High up in the hills and mountains. Rain falls there, and snow melts in the warm sunshine.",
+      "board": {
+        "type": "checklist",
+        "title": "A river starts",
+        "icon": "⛰️",
+        "items": [
+          {
+            "text": "High hills",
+            "icon": "⛰️",
+            "cue": "hills",
+            "ok": true
+          },
+          {
+            "text": "Rain",
+            "icon": "🌧️",
+            "cue": "rain",
+            "ok": true
+          },
+          {
+            "text": "Melting snow",
+            "icon": "❄️",
+            "cue": "snow",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Is it a big river right away?"
+    },
+    {
+      "who": "MIA",
+      "text": "No! First it's a tiny stream. Little streams join together and grow into a big river.",
+      "board": {
+        "type": "lifecycle",
+        "title": "A river grows",
+        "items": [
+          {
+            "icon": "💧",
+            "label": "Tiny stream",
+            "cue": "stream"
+          },
+          {
+            "icon": "🤝",
+            "label": "Streams join",
+            "cue": "join"
+          },
+          {
+            "icon": "🏞️",
+            "label": "Big river",
+            "cue": "river"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Where does it go then?"
+    },
+    {
+      "who": "MIA",
+      "text": "It flows down from the mountains, past fields and towns, all the way to the sea.",
+      "board": {
+        "type": "flow",
+        "title": "River trip",
+        "packet": "💧",
+        "items": [
+          {
+            "icon": "⛰️",
+            "label": "Mountains",
+            "cue": "mountains"
+          },
+          {
+            "icon": "🏘️",
+            "label": "Towns",
+            "cue": "towns"
+          },
+          {
+            "icon": "🌊",
+            "label": "Sea",
+            "cue": "sea"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why does it stop at the sea?"
+    },
+    {
+      "who": "MIA",
+      "text": "The sea is the lowest place the water can reach. There's no more downhill left!",
+      "punch": "lowest",
+      "board": {
+        "type": "big",
+        "icon": "🌊",
+        "text": "The sea is lowest",
+        "cue": "lowest",
+        "sub": "No more downhill",
+        "sub_cue": "downhill"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Does the water stay there forever?"
+    },
+    {
+      "who": "MIA",
+      "text": "No! The Sun warms it, it rises into clouds, and rains on the hills again. That's the water cycle!",
+      "board": {
+        "type": "big",
+        "icon": "🔁",
+        "text": "The water cycle",
+        "cue": "cycle",
+        "sub": "Back to the hills",
+        "sub_cue": "hills"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Rain on the mountains, downhill, and into the sea!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Rain and snow",
+            "icon": "🌧️",
+            "cue": "rain"
+          },
+          {
+            "text": "Flows downhill",
+            "icon": "⬇️",
+            "cue": "downhill"
+          },
+          {
+            "text": "Ends at the sea",
+            "icon": "🌊",
+            "cue": "sea"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What should we explore next? Ask a grown-up to drop a topic in the comment section!"
+    },
+    {
+      "who": "MIA",
+      "text": "Splash-tastic! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... why do rivers flow to the sea?"
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "id": "ep109",
+  "slug": "how-do-clouds-float",
+  "status": "ready",
+  "order": 21,
+  "title": "How Do Clouds Float? ☁️ Fun Facts for Kids",
+  "cover_text": "FLOAT!",
+  "description": "How can a cloud full of water float in the sky? Leo asks, big sister Mia explains tiny drops, rising air and why rain falls, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Weather",
+    "#Shorts"
+  ],
+  "tags": [
+    "how do clouds float",
+    "clouds for kids",
+    "what are clouds made of",
+    "weather for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "How do clouds float?",
+    "cue": "next",
+    "left": "☁️",
+    "right": "💧"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, how do clouds float in the sky?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "☁️",
+          "label": "Cloud"
+        },
+        "right": {
+          "icon": "🤔",
+          "label": "Floating?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "A cloud is made of lots and lots of tiny drops of water, or tiny bits of ice!",
+      "board": {
+        "type": "big",
+        "icon": "💧",
+        "text": "Tiny water drops",
+        "cue": "drops",
+        "sub": "Or tiny bits of ice",
+        "sub_cue": "ice"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "But water is heavy!"
+    },
+    {
+      "who": "MIA",
+      "text": "A big bucket is! But each cloud drop is super tiny, much smaller than a raindrop, and very light.",
+      "punch": "tiny",
+      "board": {
+        "type": "big",
+        "icon": "🤏",
+        "text": "Super tiny and light",
+        "cue": "tiny",
+        "sub": "Smaller than a raindrop",
+        "sub_cue": "smaller"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So what holds them up?"
+    },
+    {
+      "who": "MIA",
+      "text": "Rising air! Warm air goes up and gently lifts the tiny drops, so they fall super slowly.",
+      "punch": "lifts",
+      "board": {
+        "type": "flow",
+        "title": "Rising air",
+        "packet": "💧",
+        "items": [
+          {
+            "icon": "☀️",
+            "label": "Warm air",
+            "cue": "warm"
+          },
+          {
+            "icon": "⬆️",
+            "label": "Goes up",
+            "cue": "goes"
+          },
+          {
+            "icon": "☁️",
+            "label": "Lifts drops",
+            "cue": "lifts"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Like a feather floating on a breeze?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! A feather drifts down slowly, and cloud drops are even lighter.",
+      "board": {
+        "type": "big",
+        "icon": "🪶",
+        "text": "Light like a feather",
+        "cue": "feather",
+        "sub": "Even lighter!",
+        "sub_cue": "lighter"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Then why does rain fall out?"
+    },
+    {
+      "who": "MIA",
+      "text": "Tiny drops bump and join together. They grow bigger and heavier, until the air can't hold them. Then, rain!",
+      "board": {
+        "type": "lifecycle",
+        "title": "Drop to rain",
+        "items": [
+          {
+            "icon": "💧",
+            "label": "Tiny drops",
+            "cue": "tiny"
+          },
+          {
+            "icon": "🤝",
+            "label": "Join together",
+            "cue": "join"
+          },
+          {
+            "icon": "⚖️",
+            "label": "Grow heavier",
+            "cue": "heavier"
+          },
+          {
+            "icon": "🌧️",
+            "label": "Rain falls",
+            "cue": "rain"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why are some clouds dark grey?"
+    },
+    {
+      "who": "MIA",
+      "text": "Thick clouds block more sunlight, so they look darker. That often means rain is coming!",
+      "board": {
+        "type": "big",
+        "icon": "🌧️",
+        "text": "Thick clouds look dark",
+        "cue": "thick",
+        "sub": "Rain may come",
+        "sub_cue": "rain"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Tiny drops, rising air, and when they get heavy, rain!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Tiny drops",
+            "icon": "💧",
+            "cue": "tiny"
+          },
+          {
+            "text": "Rising air",
+            "icon": "⬆️",
+            "cue": "rising"
+          },
+          {
+            "text": "Heavy drops fall",
+            "icon": "🌧️",
+            "cue": "heavy"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What should we find out next? Ask a grown-up to drop a topic in the comment section!"
+    },
+    {
+      "who": "MIA",
+      "text": "Cloud-tastic! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... how do clouds float in the sky?"
+    }
+  ]
+}

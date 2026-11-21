@@ -102,3 +102,5 @@ Then run again with action *Next video (scheduled)* to upload it to YouTube and 
 - [ ] a picture hint (`| emoji words`) every 2–3 lines
 - [ ] facts double-checked (it's for kids: keep it accurate, gentle and safe)
 - [ ] new file name for a new video, no spaces
+
+**Ending:** just before the subscribe line, add one line asking viewers to drop a topic in the comment section, e.g. `LEO: What should we explore next? Ask a grown-up to drop a topic in the comment section!`

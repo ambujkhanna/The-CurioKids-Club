@@ -1,0 +1,223 @@
+{
+  "id": "ep107",
+  "slug": "what-makes-waves-in-the-sea",
+  "status": "ready",
+  "order": 14,
+  "title": "What Makes Waves in the Sea? 🌊 Fun Facts for Kids",
+  "cover_text": "WHOOSH!",
+  "description": "Where do sea waves come from? Leo asks, big sister Mia explains how the wind makes waves and why they crash at the beach, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Ocean",
+    "#Shorts"
+  ],
+  "tags": [
+    "what makes waves for kids",
+    "ocean waves",
+    "why waves crash",
+    "science for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "What makes waves?",
+    "cue": "next",
+    "left": "🌬️",
+    "right": "🌊"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, what makes waves in the sea?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🌊",
+          "label": "Waves"
+        },
+        "right": {
+          "icon": "🤔",
+          "label": "Why?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Mostly the wind! When wind blows over the water, it pushes the top of the sea into little bumps.",
+      "punch": "wind",
+      "board": {
+        "type": "transform",
+        "title": "Wind at work",
+        "from": {
+          "icon": "🌬️",
+          "label": "Wind blows",
+          "cue": "wind"
+        },
+        "to": {
+          "icon": "🌊",
+          "label": "Little bumps",
+          "cue": "bumps"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why are some waves huge?"
+    },
+    {
+      "who": "MIA",
+      "text": "Stronger wind makes bigger waves. Wind that blows longer, over more sea, makes them bigger too!",
+      "board": {
+        "type": "checklist",
+        "title": "Big waves need",
+        "icon": "🌊",
+        "items": [
+          {
+            "text": "Strong wind",
+            "icon": "💪",
+            "cue": "stronger",
+            "ok": true
+          },
+          {
+            "text": "Blowing longer",
+            "icon": "⏳",
+            "cue": "longer",
+            "ok": true
+          },
+          {
+            "text": "Lots of sea",
+            "icon": "🗺️",
+            "cue": "more",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Does the water travel all the way to the beach?"
+    },
+    {
+      "who": "MIA",
+      "text": "Not really! The water mostly bobs up and down. It's the wave that moves along.",
+      "board": {
+        "type": "big",
+        "icon": "🔄",
+        "text": "Water bobs up and down",
+        "cue": "bobs",
+        "sub": "The wave moves on",
+        "sub_cue": "moves"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Then why do waves crash on the beach?"
+    },
+    {
+      "who": "MIA",
+      "text": "Near the beach, the water gets shallow. The bottom of the wave slows down, the top tips over, and splash!",
+      "punch": "splash",
+      "board": {
+        "type": "lifecycle",
+        "title": "A wave breaks",
+        "items": [
+          {
+            "icon": "🏖️",
+            "label": "Shallow water",
+            "cue": "shallow"
+          },
+          {
+            "icon": "🐢",
+            "label": "Bottom slows",
+            "cue": "slows"
+          },
+          {
+            "icon": "💥",
+            "label": "Top tips over",
+            "cue": "tips"
+          },
+          {
+            "icon": "💦",
+            "label": "Splash!",
+            "cue": "splash"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can I make my own waves?"
+    },
+    {
+      "who": "MIA",
+      "text": "Ask a grown-up first! Fill a big bowl with water, then blow gently across the top. Tiny waves!",
+      "board": {
+        "type": "checklist",
+        "title": "Wave test",
+        "icon": "🥣",
+        "items": [
+          {
+            "text": "Ask a grown-up",
+            "icon": "🧑",
+            "cue": "ask",
+            "ok": true
+          },
+          {
+            "text": "Bowl of water",
+            "icon": "🥣",
+            "cue": "bowl",
+            "ok": true
+          },
+          {
+            "text": "Blow gently",
+            "icon": "🌬️",
+            "cue": "blow",
+            "ok": true
+          },
+          {
+            "text": "Tiny waves!",
+            "icon": "🌊",
+            "cue": "tiny",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Wind makes waves, strong wind makes big ones, and shallow water makes them crash!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Wind makes waves",
+            "icon": "🌬️",
+            "cue": "wind"
+          },
+          {
+            "text": "Strong wind = big",
+            "icon": "💪",
+            "cue": "strong"
+          },
+          {
+            "text": "Crash in shallows",
+            "icon": "💥",
+            "cue": "shallow"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What should we find out next? Ask a grown-up to drop a topic in the comment section!"
+    },
+    {
+      "who": "MIA",
+      "text": "Wave-tastic! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... what makes waves in the sea?"
+    }
+  ]
+}

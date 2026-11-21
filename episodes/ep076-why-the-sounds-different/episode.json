@@ -1,0 +1,188 @@
+{
+  "id": "ep076",
+  "slug": "why-the-sounds-different",
+  "status": "ready",
+  "order": 3,
+  "title": "Why Does \"The\" Sound Different? 🔤 Fun Facts for Kids",
+  "cover_text": "THUH OR THEE?",
+  "description": "Why do we say \"thuh dog\" but \"thee apple\"? It all depends on the next sound! Leo asks, big sister Mia explains, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#LearnEnglish",
+    "#Shorts"
+  ],
+  "tags": [
+    "the pronunciation for kids",
+    "thuh or thee",
+    "english sounds for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Thuh or thee?",
+    "cue": "next",
+    "left": "🔤",
+    "right": "🍎"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why does \"the\" sound different sometimes?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🐶",
+          "label": "Thuh dog"
+        },
+        "right": {
+          "icon": "🍎",
+          "label": "Thee apple"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Great ears, Leo! We say \"thuh\" before a consonant sound, like \"thuh dog\" or \"thuh ball\".",
+      "board": {
+        "type": "big",
+        "icon": "🐶",
+        "text": "\"Thuh\" + consonant",
+        "cue": "thuh",
+        "sub": "thuh dog, thuh ball",
+        "sub_cue": "dog"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So when do we say \"thee\"?"
+    },
+    {
+      "who": "MIA",
+      "text": "Before a vowel sound, \"thuh\" turns into \"thee\". Like \"thee apple\" and \"thee egg\". It's easier to say!",
+      "punch": "easier",
+      "board": {
+        "type": "transform",
+        "title": "Sound switch",
+        "from": {
+          "icon": "🐶",
+          "label": "thuh dog",
+          "cue": "thuh"
+        },
+        "to": {
+          "icon": "🍎",
+          "label": "thee apple",
+          "cue": "thee"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What are vowels again?"
+    },
+    {
+      "who": "MIA",
+      "text": "The vowels are A, E, I, O and U. The other letters are called consonants.",
+      "board": {
+        "type": "big",
+        "icon": "🔤",
+        "text": "A E I O U",
+        "cue": "vowels",
+        "sub": "Others are consonants",
+        "sub_cue": "consonants"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So I just look at the first letter?"
+    },
+    {
+      "who": "MIA",
+      "text": "Almost! Listen to the first sound, not the letter. \"Hour\" starts with H, but the H is silent. So we say \"thee hour\"!",
+      "punch": "silent",
+      "board": {
+        "type": "big",
+        "icon": "⏰",
+        "text": "thee hour",
+        "cue": "hour",
+        "sub": "Silent H!",
+        "sub_cue": "silent"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "That's sneaky!"
+    },
+    {
+      "who": "MIA",
+      "text": "\"Unicorn\" starts with U, but it sounds like \"you\". That's a consonant sound, so we say \"thuh unicorn\".",
+      "board": {
+        "type": "big",
+        "icon": "🦄",
+        "text": "thuh unicorn",
+        "cue": "unicorn",
+        "sub": "Sounds like \"you\"",
+        "sub_cue": "sounds"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Let me try! Thuh moon, thuh unicorn, thee orange, thee owl!",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Thuh",
+          "items": [
+            {
+              "icon": "🌙",
+              "text": "moon",
+              "cue": "moon"
+            },
+            {
+              "icon": "🦄",
+              "text": "unicorn",
+              "cue": "unicorn"
+            }
+          ]
+        },
+        "right": {
+          "label": "Thee",
+          "items": [
+            {
+              "icon": "🍊",
+              "text": "orange",
+              "cue": "orange"
+            },
+            {
+              "icon": "🦉",
+              "text": "owl",
+              "cue": "owl"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Perfect! Remember, it's the sound that matters, not the letter.",
+      "board": {
+        "type": "big",
+        "icon": "👂",
+        "text": "Listen to the sound!",
+        "cue": "sound"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What should we explore next? Ask a grown-up to drop a topic in the comment section!"
+    },
+    {
+      "who": "MIA",
+      "text": "You've got it! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... why does \"the\" sound different?"
+    }
+  ]
+}

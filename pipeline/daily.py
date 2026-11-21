@@ -71,6 +71,9 @@ def pick(state, forced=None):
     for f in sorted(glob.glob(os.path.join(EPDIR, "*", "episode.json"))):
         ep = json.load(open(f)); ep["_file"] = f
         eps.append(ep)
+    # a series can jump the queue: episodes with an "order" number come first (in that order), then the rest
+    # in folder order as before (owner, 2026-11-21: new fun-facts series first, current queue after it)
+    eps.sort(key=lambda e: (0, float(e["order"])) if isinstance(e.get("order"), (int, float)) else (1, 0.0))
     if forced:
         return next(e for e in eps if e["id"] == forced)
     for ep in eps:

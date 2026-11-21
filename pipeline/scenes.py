@@ -179,7 +179,8 @@ def build_flow(E, i, t0, t1, sc):
 def build_transform(E, i, t0, t1, sc):
     A, B = sc.get("from", {}), sc.get("to", {})
     top = _title(E, i, t0, t1, sc)
-    tA = E.cue_t(i, A, t0 + 0.3); tB = E.cue_t(i, B, tA + 1.6)
+    E.cue_t(i, A, t0 + 0.3)  # (registers the cue for the camera)
+    tA = t0 + 0.3; tB = max(E.cue_t(i, B, t0 + 1.9), tA + 0.9)  # 'before' is on screen at once; the change happens on B's cue
     cx, cy = E.BCX, top + (E.BY + E.BH - top) * 0.45
     rnd = random.Random(7)
     bits = [(rnd.uniform(0, 2 * math.pi), rnd.uniform(80, 240), rnd.choice(["#FFD54F", "#FF6F61", "#4FC3F7", "#2ECC71"])) for _ in range(22)]

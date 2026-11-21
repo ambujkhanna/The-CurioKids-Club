@@ -1,0 +1,216 @@
+{
+  "id": "ep096",
+  "slug": "moon-in-the-daytime",
+  "status": "ready",
+  "order": 11,
+  "title": "Why Can We See the Moon in the Daytime? 🌙 Fun Facts for Kids",
+  "cover_text": "DAY MOON?",
+  "description": "Why can we sometimes see the Moon in the daytime? The Moon travels around Earth, and it shines so brightly with reflected sunlight that we can spot it in the blue sky! Leo asks, big sister Mia explains, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#SpaceForKids",
+    "#Shorts"
+  ],
+  "tags": [
+    "moon in the daytime",
+    "moon facts for kids",
+    "why the moon shines",
+    "space for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Moon in the day?",
+    "cue": "next",
+    "left": "🌙",
+    "right": "☀️"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why can I see the Moon in the daytime?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🌙",
+          "label": "Moon"
+        },
+        "right": {
+          "icon": "☀️",
+          "label": "Daytime?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Because the Moon isn't only out at night! It's often up in the day too.",
+      "punch": "night",
+      "board": {
+        "type": "big",
+        "icon": "🌙",
+        "text": "Not just at night!",
+        "cue": "night",
+        "sub": "Often up in the day",
+        "sub_cue": "often"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "But why?"
+    },
+    {
+      "who": "MIA",
+      "text": "The Moon travels around the Earth about once a month. So it rises at a different time each day.",
+      "board": {
+        "type": "orbit",
+        "title": "Moon trip",
+        "center": "🌍",
+        "items": [
+          {
+            "icon": "🌙",
+            "label": "Moon",
+            "cue": "moon"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So sometimes it's up when the Sun is up?"
+    },
+    {
+      "who": "MIA",
+      "text": "Exactly! On lots of days, the Moon and the Sun are in the sky at the same time.",
+      "board": {
+        "type": "big",
+        "icon": "☀️",
+        "text": "Sun and Moon together",
+        "cue": "same",
+        "sub": "On lots of days",
+        "sub_cue": "lots"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Does the Moon make its own light?"
+    },
+    {
+      "who": "MIA",
+      "text": "No! Sunlight shines on the Moon and bounces off it, all the way to our eyes.",
+      "punch": "bounces",
+      "board": {
+        "type": "flow",
+        "title": "Moonlight trip",
+        "packet": "✨",
+        "items": [
+          {
+            "icon": "☀️",
+            "label": "Sunlight",
+            "cue": "sunlight"
+          },
+          {
+            "icon": "🌕",
+            "label": "Bounces off",
+            "cue": "bounces"
+          },
+          {
+            "icon": "👀",
+            "label": "Our eyes",
+            "cue": "eyes"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "But the daytime sky is so bright!"
+    },
+    {
+      "who": "MIA",
+      "text": "The Moon is bright enough to shine through the blue sky. That's why it looks pale in the day.",
+      "board": {
+        "type": "big",
+        "icon": "🌕",
+        "text": "Bright enough to see",
+        "cue": "bright",
+        "sub": "Even in a blue sky",
+        "sub_cue": "blue"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can I look for it?"
+    },
+    {
+      "who": "MIA",
+      "text": "Ask a grown-up first! Go outside on a clear day and look for a pale Moon. But never look at the Sun!",
+      "board": {
+        "type": "checklist",
+        "title": "Moon hunt",
+        "icon": "🔭",
+        "items": [
+          {
+            "text": "Ask a grown-up",
+            "icon": "🧑",
+            "cue": "ask",
+            "ok": true
+          },
+          {
+            "text": "Pick a clear day",
+            "icon": "🌤️",
+            "cue": "clear",
+            "ok": true
+          },
+          {
+            "text": "Look for the Moon",
+            "icon": "👀",
+            "cue": "look",
+            "ok": true
+          },
+          {
+            "text": "Never look at the Sun",
+            "icon": "☀️",
+            "cue": "never",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "The Moon goes around Earth, and sunlight makes it bright, day or night!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Moon circles Earth",
+            "icon": "🌍",
+            "cue": "around"
+          },
+          {
+            "text": "Sunlight makes it bright",
+            "icon": "☀️",
+            "cue": "sunlight"
+          },
+          {
+            "text": "Day or night!",
+            "icon": "🌙",
+            "cue": "day"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Got a question for us? Ask a grown-up to drop a topic in the comment section!"
+    },
+    {
+      "who": "MIA",
+      "text": "Moon-tastic! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... why can I see the Moon in the daytime?"
+    }
+  ]
+}

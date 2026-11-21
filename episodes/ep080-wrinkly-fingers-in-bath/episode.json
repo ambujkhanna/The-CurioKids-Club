@@ -1,0 +1,193 @@
+{
+  "id": "ep080",
+  "slug": "wrinkly-fingers-in-bath",
+  "status": "ready",
+  "order": 10,
+  "title": "Why Do Fingers Get Wrinkly in the Bath? 🛁 Fun Facts for Kids",
+  "cover_text": "WRINKLY!",
+  "description": "Why do fingers go wrinkly after a long bath? Your nerves help, and scientists think it may help you grip! Leo asks, big sister Mia explains, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#HumanBody",
+    "#Shorts"
+  ],
+  "tags": [
+    "why fingers get wrinkly",
+    "wrinkly fingers in water",
+    "human body for kids",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Wrinkly fingers?",
+    "cue": "next",
+    "left": "🛁",
+    "right": "🖐️"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why do my fingers get wrinkly in the bath?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🛁",
+          "label": "Bath"
+        },
+        "right": {
+          "icon": "🖐️",
+          "label": "Wrinkly?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "After a long time in water, the skin on your fingers and toes gets wrinkly. It's totally normal!",
+      "board": {
+        "type": "big",
+        "icon": "🖐️",
+        "text": "Fingers and toes",
+        "cue": "fingers",
+        "sub": "Wrinkly after a long soak",
+        "sub_cue": "wrinkly"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Is my skin soaking up water like a sponge?"
+    },
+    {
+      "who": "MIA",
+      "text": "Scientists found it's not just soaking! Your nerves help make the wrinkles.",
+      "punch": "nerves",
+      "board": {
+        "type": "big",
+        "icon": "⚡",
+        "text": "Nerves help!",
+        "cue": "nerves",
+        "sub": "Not just soaking",
+        "sub_cue": "soaking"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "My nerves? How?"
+    },
+    {
+      "who": "MIA",
+      "text": "Your nerves tell tiny blood vessels under the skin to shrink. Then the skin on top folds into wrinkles.",
+      "board": {
+        "type": "flow",
+        "title": "Wrinkle time",
+        "packet": "💧",
+        "items": [
+          {
+            "icon": "⚡",
+            "label": "Nerves",
+            "cue": "nerves"
+          },
+          {
+            "icon": "🩸",
+            "label": "Vessels shrink",
+            "cue": "shrink"
+          },
+          {
+            "icon": "🖐️",
+            "label": "Skin folds",
+            "cue": "folds"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "But why would my body do that?"
+    },
+    {
+      "who": "MIA",
+      "text": "Scientists think wrinkly fingers may help you grip wet things, like the treads on a tyre help on a wet road!",
+      "punch": "grip",
+      "board": {
+        "type": "big",
+        "icon": "🛞",
+        "text": "Better grip?",
+        "cue": "grip",
+        "sub": "Like tyre treads",
+        "sub_cue": "treads"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So I can hold my wet toys better?"
+    },
+    {
+      "who": "MIA",
+      "text": "Maybe! Scientists are still testing that idea.",
+      "board": {
+        "type": "big",
+        "icon": "🔬",
+        "text": "Still testing!",
+        "cue": "testing"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Will my fingers stay wrinkly forever?"
+    },
+    {
+      "who": "MIA",
+      "text": "No way! After you get out and dry off, your wrinkly fingers soon go smooth again.",
+      "board": {
+        "type": "transform",
+        "title": "Back to normal",
+        "from": {
+          "icon": "🛁",
+          "label": "Wrinkly",
+          "cue": "wrinkly"
+        },
+        "to": {
+          "icon": "✋",
+          "label": "Smooth again",
+          "cue": "smooth"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "A long soak, then nerves make wrinkles, and maybe a better grip!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Long soak",
+            "icon": "🛁",
+            "cue": "long"
+          },
+          {
+            "text": "Nerves make wrinkles",
+            "icon": "⚡",
+            "cue": "nerves"
+          },
+          {
+            "text": "Maybe better grip",
+            "icon": "🖐️",
+            "cue": "grip"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What should we wonder about next? Ask a grown-up to drop a topic in the comment section!"
+    },
+    {
+      "who": "MIA",
+      "text": "Wrinkle-tastic! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... why do my fingers get wrinkly in the bath?"
+    }
+  ]
+}

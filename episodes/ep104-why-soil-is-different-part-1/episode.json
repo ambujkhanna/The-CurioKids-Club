@@ -1,0 +1,219 @@
+{
+  "id": "ep104",
+  "slug": "why-soil-is-different-part-1",
+  "status": "ready",
+  "order": 4,
+  "title": "Why Is Soil Different? 🪨 Fun Facts for Kids (Part 1)",
+  "cover_text": "SOIL SECRETS!",
+  "description": "Soil starts as rock! Leo asks, big sister Mia explains what soil is made of and why sandy, clay and loamy soil are different, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#NatureForKids",
+    "#Shorts"
+  ],
+  "tags": [
+    "what is soil for kids",
+    "types of soil",
+    "sand clay loam",
+    "science for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why is soil different?",
+    "cue": "next",
+    "left": "🪨",
+    "right": "🌱"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why is soil different in different places?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🟫",
+          "label": "Soil here"
+        },
+        "right": {
+          "icon": "🏜️",
+          "label": "Soil there"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Soil starts as rock! Rain, wind and ice break rocks into tiny bits, over a very long time.",
+      "punch": "tiny",
+      "board": {
+        "type": "lifecycle",
+        "title": "Rock to soil",
+        "items": [
+          {
+            "icon": "🪨",
+            "label": "Rock",
+            "cue": "rock"
+          },
+          {
+            "icon": "🧊",
+            "label": "Breaks up",
+            "cue": "break"
+          },
+          {
+            "icon": "🟤",
+            "label": "Tiny bits",
+            "cue": "tiny"
+          },
+          {
+            "icon": "⏳",
+            "label": "Long time",
+            "cue": "long"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So soil is just crushed rock?"
+    },
+    {
+      "who": "MIA",
+      "text": "Not just rock! It also has humus: old leaves and plants, all broken down.",
+      "punch": "humus",
+      "board": {
+        "type": "big",
+        "icon": "🍂",
+        "text": "Plus humus",
+        "cue": "humus",
+        "sub": "Old leaves and plants",
+        "sub_cue": "leaves"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Who mixes it all together?"
+    },
+    {
+      "who": "MIA",
+      "text": "Earthworms help! They mix the soil and dig tunnels, so air and water can get in.",
+      "board": {
+        "type": "big",
+        "icon": "🪱",
+        "text": "Worms mix soil",
+        "cue": "earthworms",
+        "sub": "Tunnels for air",
+        "sub_cue": "tunnels"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Then why isn't all soil the same?"
+    },
+    {
+      "who": "MIA",
+      "text": "Different rocks make different bits! Bigger bits make sand. Super tiny bits make clay.",
+      "board": {
+        "type": "big",
+        "icon": "🪨",
+        "text": "Different rocks",
+        "cue": "different",
+        "sub": "Sand or clay",
+        "sub_cue": "sand"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What's the difference?"
+    },
+    {
+      "who": "MIA",
+      "text": "Sandy soil is gritty, and water runs through fast. Clay soil is sticky and holds water.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Sandy",
+          "items": [
+            {
+              "text": "Gritty",
+              "icon": "🏖️",
+              "cue": "gritty"
+            },
+            {
+              "text": "Drains fast",
+              "icon": "💨",
+              "cue": "fast"
+            }
+          ]
+        },
+        "right": {
+          "label": "Clay",
+          "items": [
+            {
+              "text": "Sticky",
+              "icon": "🤏",
+              "cue": "sticky"
+            },
+            {
+              "text": "Holds water",
+              "icon": "💧",
+              "cue": "holds"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Is there soil in the middle?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Loam is a good mix of sand, clay and humus. Lots of plants love it!",
+      "punch": "loam",
+      "board": {
+        "type": "big",
+        "icon": "🌻",
+        "text": "Loam = a good mix",
+        "cue": "loam",
+        "sub": "Sand + clay + humus",
+        "sub_cue": "mix"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Rock bits, humus and worms make soil!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Tiny rock bits",
+            "icon": "🪨",
+            "cue": "rock"
+          },
+          {
+            "text": "Humus",
+            "icon": "🍂",
+            "cue": "humus"
+          },
+          {
+            "text": "Worms mix it",
+            "icon": "🪱",
+            "cue": "worms"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What should we explore next? Ask a grown-up to drop a topic in the comment section!"
+    },
+    {
+      "who": "MIA",
+      "text": "Great digging! Next time: which plants love which soil! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... why is soil different in different places?"
+    }
+  ]
+}

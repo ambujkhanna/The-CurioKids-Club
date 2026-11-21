@@ -1,0 +1,220 @@
+{
+  "id": "ep108",
+  "slug": "why-does-the-wind-blow",
+  "status": "ready",
+  "order": 19,
+  "title": "Why Does the Wind Blow? 🌬️ Fun Facts for Kids",
+  "cover_text": "WHOOSH!",
+  "description": "Where does wind come from? Leo asks, big sister Mia explains how the Sun, warm air and cool air make the wind, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#Weather",
+    "#Shorts"
+  ],
+  "tags": [
+    "why does the wind blow",
+    "wind for kids",
+    "sea breeze for kids",
+    "weather for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why does the wind blow?",
+    "cue": "next",
+    "left": "☀️",
+    "right": "🌬️"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why does the wind blow?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🌬️",
+          "label": "Wind"
+        },
+        "right": {
+          "icon": "🤔",
+          "label": "Why?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "It starts with the Sun! The Sun warms the land, the sea and the air, but not all the same.",
+      "punch": "sun",
+      "board": {
+        "type": "big",
+        "icon": "☀️",
+        "text": "The Sun warms things",
+        "cue": "sun",
+        "sub": "But not evenly",
+        "sub_cue": "not"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why not the same?"
+    },
+    {
+      "who": "MIA",
+      "text": "On a sunny day, land warms up faster than water. So some air gets warmer than other air.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Land",
+          "items": [
+            {
+              "text": "Warms fast",
+              "icon": "🏜️",
+              "cue": "faster"
+            }
+          ]
+        },
+        "right": {
+          "label": "Water",
+          "items": [
+            {
+              "text": "Warms slowly",
+              "icon": "🌊",
+              "cue": "water"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What does warm air do?"
+    },
+    {
+      "who": "MIA",
+      "text": "Warm air is lighter, so it rises up. Then cooler air rushes in to take its place. That moving air is wind!",
+      "punch": "wind",
+      "board": {
+        "type": "lifecycle",
+        "title": "Making wind",
+        "items": [
+          {
+            "icon": "☀️",
+            "label": "Air warms",
+            "cue": "warm"
+          },
+          {
+            "icon": "⬆️",
+            "label": "Warm air rises",
+            "cue": "rises"
+          },
+          {
+            "icon": "➡️",
+            "label": "Cool air rushes in",
+            "cue": "rushes"
+          },
+          {
+            "icon": "🌬️",
+            "label": "Wind!",
+            "cue": "wind"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can I feel that at the beach?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! On a sunny day, warm air over the beach rises. Cool air from the sea blows in. That's a sea breeze!",
+      "punch": "breeze",
+      "board": {
+        "type": "flow",
+        "title": "Sea breeze",
+        "packet": "💨",
+        "items": [
+          {
+            "icon": "🌊",
+            "label": "Cool sea air",
+            "cue": "cool"
+          },
+          {
+            "icon": "🏖️",
+            "label": "Blows to land",
+            "cue": "blows"
+          },
+          {
+            "icon": "😎",
+            "label": "Sea breeze!",
+            "cue": "breeze"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can we see wind?"
+    },
+    {
+      "who": "MIA",
+      "text": "No, air is invisible! But we see what it does: kites fly, leaves dance, and trees sway.",
+      "board": {
+        "type": "gallery",
+        "title": "Wind at work",
+        "items": [
+          {
+            "icon": "🪁",
+            "label": "Kites fly",
+            "cue": "kites"
+          },
+          {
+            "icon": "🍃",
+            "label": "Leaves dance",
+            "cue": "leaves"
+          },
+          {
+            "icon": "🌳",
+            "label": "Trees sway",
+            "cue": "trees"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "The Sun warms air, warm air rises, and cool air rushes in. Whoosh!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Sun warms air",
+            "icon": "☀️",
+            "cue": "sun"
+          },
+          {
+            "text": "Warm air rises",
+            "icon": "⬆️",
+            "cue": "rises"
+          },
+          {
+            "text": "Cool air rushes in",
+            "icon": "🌬️",
+            "cue": "rushes"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What should we explore next? Ask a grown-up to drop a topic in the comment section!"
+    },
+    {
+      "who": "MIA",
+      "text": "Breezy and easy! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... why does the wind blow?"
+    }
+  ]
+}

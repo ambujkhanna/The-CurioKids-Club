@@ -1,0 +1,213 @@
+{
+  "id": "ep095",
+  "slug": "why-stars-shine",
+  "status": "ready",
+  "order": 7,
+  "title": "Why Do Stars Shine? ⭐ Fun Facts for Kids",
+  "cover_text": "SHINE!",
+  "description": "Why do stars shine? Stars are giant balls of hot gas that make huge amounts of energy, and our Sun is one of them! Leo asks, big sister Mia explains, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#SpaceForKids",
+    "#Shorts"
+  ],
+  "tags": [
+    "why do stars shine",
+    "star facts for kids",
+    "the sun is a star",
+    "space for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why do stars shine?",
+    "cue": "next",
+    "left": "⭐",
+    "right": "☀️"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why do stars shine?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "⭐",
+          "label": "Stars"
+        },
+        "right": {
+          "icon": "✨",
+          "label": "Shine?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Stars are giant balls of super hot gas. They are so hot that they glow!",
+      "punch": "glow",
+      "board": {
+        "type": "big",
+        "icon": "⭐",
+        "text": "Giant balls of hot gas",
+        "cue": "giant",
+        "sub": "So hot they glow",
+        "sub_cue": "glow"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What makes them so hot?"
+    },
+    {
+      "who": "MIA",
+      "text": "Deep inside, a star makes a huge amount of energy. That energy pours out as light and heat.",
+      "board": {
+        "type": "flow",
+        "title": "Star power",
+        "packet": "✨",
+        "items": [
+          {
+            "icon": "💥",
+            "label": "Deep inside",
+            "cue": "deep"
+          },
+          {
+            "icon": "⚡",
+            "label": "Energy",
+            "cue": "energy"
+          },
+          {
+            "icon": "☀️",
+            "label": "Light and heat",
+            "cue": "light"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Is our Sun a star?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! The Sun is a star, and it's the closest star to Earth.",
+      "punch": "closest",
+      "board": {
+        "type": "big",
+        "icon": "☀️",
+        "text": "The Sun is a star!",
+        "cue": "sun",
+        "sub": "Our nearest star",
+        "sub_cue": "closest"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "But the Sun is big, and stars are tiny dots!"
+    },
+    {
+      "who": "MIA",
+      "text": "Stars only look tiny because they are very, very far away. Many are as big as the Sun, or even bigger!",
+      "board": {
+        "type": "big",
+        "icon": "🔭",
+        "text": "Very, very far away",
+        "cue": "far",
+        "sub": "Many are huge!",
+        "sub_cue": "bigger"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why can't I see them in the daytime?"
+    },
+    {
+      "who": "MIA",
+      "text": "They are still there! But the Sun is so bright, it hides their light. At night, they pop out.",
+      "board": {
+        "type": "transform",
+        "title": "Where are they?",
+        "from": {
+          "icon": "☀️",
+          "label": "Day: hidden",
+          "cue": "bright"
+        },
+        "to": {
+          "icon": "🌃",
+          "label": "Night: stars!",
+          "cue": "night"
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Are all stars the same color?"
+    },
+    {
+      "who": "MIA",
+      "text": "No! Some stars shine red or orange, some are yellow like our Sun, and the hottest ones look blue-white.",
+      "board": {
+        "type": "gallery",
+        "title": "Star colors",
+        "items": [
+          {
+            "icon": "🔴",
+            "label": "Red",
+            "cue": "red"
+          },
+          {
+            "icon": "🟠",
+            "label": "Orange",
+            "cue": "orange"
+          },
+          {
+            "icon": "🟡",
+            "label": "Yellow",
+            "cue": "yellow"
+          },
+          {
+            "icon": "🔵",
+            "label": "Blue-white",
+            "cue": "blue"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Stars are hot gas balls that make light, and the Sun is our star!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Hot gas balls",
+            "icon": "🔥",
+            "cue": "hot"
+          },
+          {
+            "text": "Make light",
+            "icon": "✨",
+            "cue": "light"
+          },
+          {
+            "text": "The Sun is a star",
+            "icon": "☀️",
+            "cue": "sun"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What do you want to find out next? Ask a grown-up to drop a topic in the comment section!"
+    },
+    {
+      "who": "MIA",
+      "text": "Shine on! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... why do stars shine?"
+    }
+  ]
+}

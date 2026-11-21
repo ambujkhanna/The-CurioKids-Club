@@ -1,0 +1,212 @@
+{
+  "id": "ep092",
+  "slug": "why-we-have-eyebrows",
+  "status": "ready",
+  "order": 24,
+  "title": "Why Do We Have Eyebrows? 🤨 Fun Facts for Kids",
+  "cover_text": "EYEBROWS?",
+  "description": "Why do we have eyebrows? They keep sweat and rain out of your eyes, and they help you show your feelings! Leo asks, big sister Mia explains, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#HumanBody",
+    "#Shorts"
+  ],
+  "tags": [
+    "why do we have eyebrows",
+    "eyebrows for kids",
+    "human body for kids",
+    "science for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why eyebrows?",
+    "cue": "next",
+    "left": "🤨",
+    "right": "💦"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why do we have eyebrows?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🤨",
+          "label": "Eyebrows"
+        },
+        "right": {
+          "icon": "❓",
+          "label": "Why?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Eyebrows are like little umbrellas for your eyes!",
+      "punch": "umbrellas",
+      "board": {
+        "type": "big",
+        "icon": "☂️",
+        "text": "Umbrellas for eyes",
+        "cue": "umbrellas"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Umbrellas? How?"
+    },
+    {
+      "who": "MIA",
+      "text": "When sweat or rain runs down your forehead, your eyebrows send it off to the sides.",
+      "board": {
+        "type": "flow",
+        "title": "Drip, drip, away!",
+        "packet": "💧",
+        "items": [
+          {
+            "icon": "💦",
+            "label": "Sweat or rain",
+            "cue": "sweat"
+          },
+          {
+            "icon": "🤨",
+            "label": "Eyebrows",
+            "cue": "eyebrows"
+          },
+          {
+            "icon": "↔️",
+            "label": "To the sides",
+            "cue": "sides"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why does that matter?"
+    },
+    {
+      "who": "MIA",
+      "text": "Sweat can sting your eyes and make it hard to see. Eyebrows help keep your eyes clear.",
+      "board": {
+        "type": "big",
+        "icon": "👀",
+        "text": "Clear eyes",
+        "cue": "clear",
+        "sub": "No stingy sweat",
+        "sub_cue": "sting"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Do eyebrows do anything else?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Eyebrows help us show our feelings, without saying a word.",
+      "punch": "feelings",
+      "board": {
+        "type": "big",
+        "icon": "🙂",
+        "text": "They show feelings",
+        "cue": "feelings",
+        "sub": "No words needed",
+        "sub_cue": "word"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Show me!"
+    },
+    {
+      "who": "MIA",
+      "text": "Eyebrows up high? Surprised! Soft and relaxed? Happy. Pulled down low? Cross!",
+      "board": {
+        "type": "gallery",
+        "title": "Eyebrow faces",
+        "items": [
+          {
+            "icon": "😲",
+            "label": "Surprised",
+            "cue": "surprised"
+          },
+          {
+            "icon": "😊",
+            "label": "Happy",
+            "cue": "happy"
+          },
+          {
+            "icon": "😠",
+            "label": "Cross",
+            "cue": "cross"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Can I practise my eyebrow faces?"
+    },
+    {
+      "who": "MIA",
+      "text": "Ask a grown-up first! Then stand at a mirror and make a surprised face, a happy face and a cross face.",
+      "board": {
+        "type": "checklist",
+        "title": "Mirror game",
+        "icon": "🪞",
+        "items": [
+          {
+            "text": "Ask a grown-up",
+            "icon": "🧑",
+            "cue": "ask",
+            "ok": true
+          },
+          {
+            "text": "Find a mirror",
+            "icon": "🪞",
+            "cue": "mirror",
+            "ok": true
+          },
+          {
+            "text": "Make faces",
+            "icon": "😲",
+            "cue": "make",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Eyebrows keep sweat out of my eyes, and they show my feelings!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Keep sweat out",
+            "icon": "💦",
+            "cue": "sweat"
+          },
+          {
+            "text": "Show feelings",
+            "icon": "😲",
+            "cue": "feelings"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Got a question for us? Ask a grown-up to drop a topic in the comment section!"
+    },
+    {
+      "who": "MIA",
+      "text": "Eyebrow-tastic! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... why do we have eyebrows?"
+    }
+  ]
+}

@@ -9,3 +9,5 @@ TITLE_BOARD: 🌸 Flowers -> 🍯 Honey
 LEO: Mia, how do bees make honey?
 MIA: It starts with flowers! Bees sip a sweet juice called nectar.   | 🌸 Sweet nectar
 LEO: Like drinking juice with a straw?
+# ... more lines ... then, just before the subscribe line:
+LEO: What should we explore next? Ask a grown-up to drop a topic in the comment section!

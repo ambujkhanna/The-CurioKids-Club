@@ -1,0 +1,213 @@
+{
+  "id": "ep112",
+  "slug": "why-metal-feels-colder-than-wood",
+  "status": "ready",
+  "order": 25,
+  "title": "Why Does Metal Feel Colder Than Wood? 🥄 Fun Facts for Kids",
+  "cover_text": "COLD?",
+  "description": "Metal and wood in the same room are the same temperature, so why does metal feel colder? Leo asks, big sister Mia explains how heat moves, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#ScienceForKids",
+    "#Shorts"
+  ],
+  "tags": [
+    "why metal feels cold",
+    "heat for kids",
+    "conductors for kids",
+    "science for kids"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Why does metal feel colder?",
+    "cue": "next",
+    "left": "🥄",
+    "right": "🪵"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why does metal feel colder than wood?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🥄",
+          "label": "Metal"
+        },
+        "right": {
+          "icon": "🪵",
+          "label": "Wood"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Here's a surprise: in the same room, they're the same temperature!",
+      "punch": "surprise",
+      "board": {
+        "type": "big",
+        "icon": "🌡️",
+        "text": "Same temperature!",
+        "cue": "same",
+        "sub": "Both in one room",
+        "sub_cue": "room"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "No way! The metal feels way colder!"
+    },
+    {
+      "who": "MIA",
+      "text": "Your hand is warm. When you touch something cooler, heat moves from your hand into it.",
+      "board": {
+        "type": "flow",
+        "title": "Heat on the move",
+        "packet": "🌡️",
+        "items": [
+          {
+            "icon": "✋",
+            "label": "Warm hand",
+            "cue": "warm"
+          },
+          {
+            "icon": "➡️",
+            "label": "Heat moves",
+            "cue": "heat"
+          },
+          {
+            "icon": "🥄",
+            "label": "Into it",
+            "cue": "into"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So what's different about metal?"
+    },
+    {
+      "who": "MIA",
+      "text": "Metal carries heat away from your skin super fast. Your skin loses warmth quickly, so it feels cold!",
+      "punch": "fast",
+      "board": {
+        "type": "big",
+        "icon": "🥄",
+        "text": "Metal moves heat fast",
+        "cue": "metal",
+        "sub": "Your skin feels cold",
+        "sub_cue": "cold"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "And wood?"
+    },
+    {
+      "who": "MIA",
+      "text": "Wood carries heat very slowly. Your hand stays warm, so wood feels cozy.",
+      "board": {
+        "type": "big",
+        "icon": "🪵",
+        "text": "Wood is slow",
+        "cue": "wood",
+        "sub": "Hand stays warm",
+        "sub_cue": "warm"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Is there a word for that?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Metal is a good conductor. That means it carries heat well. Wood is a poor conductor.",
+      "punch": "conductor",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "Metal",
+          "items": [
+            {
+              "text": "Good conductor",
+              "icon": "🥄",
+              "cue": "good"
+            }
+          ]
+        },
+        "right": {
+          "label": "Wood",
+          "items": [
+            {
+              "text": "Poor conductor",
+              "icon": "🪵",
+              "cue": "poor"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Where else can I feel this?"
+    },
+    {
+      "who": "MIA",
+      "text": "On a cool morning, a metal slide feels chilly, but a wooden bench feels warmer. Same air, different feel!",
+      "board": {
+        "type": "gallery",
+        "title": "Feel the difference",
+        "items": [
+          {
+            "icon": "🛝",
+            "label": "Metal slide",
+            "cue": "slide"
+          },
+          {
+            "icon": "🪑",
+            "label": "Wooden bench",
+            "cue": "bench"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Metal steals my warmth fast, and wood is slow!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "Metal: fast",
+            "icon": "🥄",
+            "cue": "metal"
+          },
+          {
+            "text": "Wood: slow",
+            "icon": "🪵",
+            "cue": "wood"
+          },
+          {
+            "text": "Warmth moves",
+            "icon": "✋",
+            "cue": "warmth"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What should we explore next? Ask a grown-up to drop a topic in the comment section!"
+    },
+    {
+      "who": "MIA",
+      "text": "Cool fact! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... why does metal feel colder than wood?"
+    }
+  ]
+}

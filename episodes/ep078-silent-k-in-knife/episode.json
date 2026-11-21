@@ -1,0 +1,201 @@
+{
+  "id": "ep078",
+  "slug": "silent-k-in-knife",
+  "status": "ready",
+  "order": 15,
+  "title": "Why Is the K in \"Knife\" Silent? 🤫 Fun Facts for Kids",
+  "cover_text": "SILENT K!",
+  "description": "Long ago, people really said the K in \"knife\"! Leo asks, big sister Mia explains where silent letters come from, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
+  "hashtags": [
+    "#KidsLearning",
+    "#FunFacts",
+    "#LearnEnglish",
+    "#Shorts"
+  ],
+  "tags": [
+    "silent k for kids",
+    "silent letters",
+    "why is k silent in knife",
+    "kids learning"
+  ],
+  "cast": [
+    "LEO",
+    "MIA"
+  ],
+  "loop_card": {
+    "text": "Silent K?",
+    "cue": "next",
+    "left": "🤫",
+    "right": "🔤"
+  },
+  "lines": [
+    {
+      "who": "LEO",
+      "text": "Mia, why is the K in \"knife\" silent?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "🔤",
+          "label": "Knife"
+        },
+        "right": {
+          "icon": "🤫",
+          "label": "Silent K?"
+        },
+        "mid": "?"
+      }
+    },
+    {
+      "who": "MIA",
+      "text": "Here's a secret! Long, long ago, people really did say the K. It sounded like \"k-nife\".",
+      "punch": "secret",
+      "board": {
+        "type": "big",
+        "icon": "📜",
+        "text": "Once, K was spoken!",
+        "cue": "long",
+        "sub": "It sounded like \"k-nife\"",
+        "sub_cue": "sounded"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Really? So what happened?"
+    },
+    {
+      "who": "MIA",
+      "text": "Over a long time, people stopped saying the K. The sound faded away, but the spelling stayed the same.",
+      "board": {
+        "type": "lifecycle",
+        "title": "Silent K story",
+        "items": [
+          {
+            "icon": "🗣️",
+            "label": "K was said",
+            "cue": "over"
+          },
+          {
+            "icon": "🌫️",
+            "label": "Sound faded",
+            "cue": "faded"
+          },
+          {
+            "icon": "✍️",
+            "label": "Spelling stayed",
+            "cue": "spelling"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Why didn't the spelling change too?"
+    },
+    {
+      "who": "MIA",
+      "text": "Spelling often changes more slowly than talking. So the old K stayed in the word, like a little fossil!",
+      "punch": "fossil",
+      "board": {
+        "type": "big",
+        "icon": "🦴",
+        "text": "A spelling fossil",
+        "cue": "fossil",
+        "sub": "Old letter, no sound",
+        "sub_cue": "old"
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "Are there more silent K words?"
+    },
+    {
+      "who": "MIA",
+      "text": "Lots! Knee, knock, know and knot all start with a silent K.",
+      "board": {
+        "type": "gallery",
+        "title": "Silent K words",
+        "items": [
+          {
+            "icon": "🦵",
+            "label": "Knee",
+            "cue": "knee"
+          },
+          {
+            "icon": "🚪",
+            "label": "Knock",
+            "cue": "knock"
+          },
+          {
+            "icon": "💡",
+            "label": "Know",
+            "cue": "know"
+          },
+          {
+            "icon": "🪢",
+            "label": "Knot",
+            "cue": "knot"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So I say \"nee\" and \"nock\"?"
+    },
+    {
+      "who": "MIA",
+      "text": "Yes! Write the K, but don't say the K. \"Knee\" sounds just like \"nee\".",
+      "board": {
+        "type": "checklist",
+        "title": "Silent K rule",
+        "icon": "🔤",
+        "items": [
+          {
+            "text": "Write the K",
+            "icon": "✍️",
+            "cue": "write",
+            "ok": true
+          },
+          {
+            "text": "Say the K",
+            "icon": "🗣️",
+            "cue": "don't",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "So the K was said long ago, then went quiet, but the spelling stayed!",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "K was said long ago",
+            "icon": "📜",
+            "cue": "said"
+          },
+          {
+            "text": "Then it went quiet",
+            "icon": "🤫",
+            "cue": "quiet"
+          },
+          {
+            "text": "The spelling stayed",
+            "icon": "✍️",
+            "cue": "spelling"
+          }
+        ]
+      }
+    },
+    {
+      "who": "LEO",
+      "text": "What word puzzle should we solve next? Ask a grown-up to drop a topic in the comment section!"
+    },
+    {
+      "who": "MIA",
+      "text": "That's it! Ask a grown-up to subscribe to The Curio Kids Club for more wonders, and share this with a friend! And next time someone asks... why is the K in \"knife\" silent?"
+    }
+  ]
+}
