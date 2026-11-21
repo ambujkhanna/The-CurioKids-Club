@@ -36,6 +36,14 @@ def oval_p(cx, cy, rx, ry):
 
 
 SHADE = 1.0  # strength of the light/shadow gradient on every filled shape (0 = flat colours)
+import os as _os2
+# CHAR_STYLE=polished (pilot 2026-11-21): same shapes and rig, cleaner paint - single smooth outline in a softer ink,
+# no marker offset / line boil, a soft rim light on the lit edge, a soft core shadow, and a second eye sparkle.
+POLISH = _os2.environ.get("CHAR_STYLE", "doodle").strip().lower() == "polished"
+if POLISH:
+    doodle.CHARS = False
+    INK = "#2A2638"
+    LW = 7.0
 
 
 def shade_paint(path, k=1.0, fx=True):
@@ -63,6 +71,11 @@ def F(c, path, col, lw=LW, a=1.0):
         return
     c.drawPath(path, P(col, a=a))
     if SHADE: c.drawPath(path, shade_paint(path, SHADE))
+    if POLISH:  # rim light (top-left inner edge) + soft core shadow (bottom-right inner edge), clipped to the shape
+        c.save(); c.clipPath(path, skia.ClipOp.kIntersect, True)
+        c.save(); c.translate(5, 6); c.drawPath(path, P("#FFFFFF", 9, a=0.30 * a)); c.restore()
+        c.save(); c.translate(-6, -7); c.drawPath(path, P("#1B1035", 12, a=0.10 * a)); c.restore()
+        c.restore()
     if lw:
         c.drawPath(path, P(INK, lw))
 
@@ -180,6 +193,7 @@ def head(c, ch, t, sp, vals):
             k = 1 - bl; big = 1.2 if kid else 1.0
             c.drawOval(ell(ex + gx, ey + gy, 10 * big, 14 * k * big), P(INK))
             c.drawCircle(ex + gx + 3.5, ey + gy - 5 * k, 3.5 * big, P("#FFFFFF"))
+            if POLISH: c.drawCircle(ex + gx - 3.0, ey + gy + 4 * k, 1.8 * big, P("#FFFFFF", a=0.85))  # second sparkle
             if not dad and not kid:  # lashes
                 c.drawLine(ex + s * 9, ey - 10 * k, ex + s * 17, ey - 16 * k, P(INK, 4))
         by = hc - 30 + fy - bu * 12

@@ -3,6 +3,7 @@
   "slug": "moon-in-the-daytime",
   "status": "ready",
   "order": 11,
+  "backdrop": "garden",
   "title": "Why Can We See the Moon in the Daytime? 🌙 Fun Facts for Kids",
   "cover_text": "DAY MOON?",
   "description": "Why can we sometimes see the Moon in the daytime? The Moon travels around Earth, and it shines so brightly with reflected sunlight that we can spot it in the blue sky! Leo asks, big sister Mia explains, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
@@ -133,12 +134,11 @@
       "who": "MIA",
       "text": "The Moon is bright enough to shine through the blue sky. That's why it looks pale in the day.",
       "board": {
-        "type": "big",
-        "icon": "🌕",
-        "text": "Bright enough to see",
+        "type": "picture",
+        "art": "moon_day",
+        "caption": "Bright enough to see",
         "cue": "bright",
-        "sub": "Even in a blue sky",
-        "sub_cue": "blue"
+        "icon": "🌕"
       }
     },
     {

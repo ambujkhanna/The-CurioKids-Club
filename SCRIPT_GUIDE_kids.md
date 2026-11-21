@@ -41,6 +41,7 @@ LEO: Like drinking juice with a straw?
 | `DESCRIPTION:` | no | 1–2 sentences for YouTube/Facebook/Instagram | default: the first answer line |
 | `TAGS:` | no | YouTube search tags, comma-separated | |
 | `TITLE_BOARD:` | no | the opening board: `emoji Word -> emoji Word` | default: a big board with the title question |
+| `BACKDROP:` | no | the HD background picture: garden, playroom, space, night sky, earth, bathroom, kitchen, ocean, river valley, reading nook, windy hills (or `none` for the drawn playroom) | default: picked automatically from the title |
 | `TITLE_HI:` | only for Hindi | the Hindi title (the video title becomes `Hindi \| English`) | |
 | `DESCRIPTION_HI:` | no | Hindi description | |
 

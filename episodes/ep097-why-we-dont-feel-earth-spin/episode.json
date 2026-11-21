@@ -3,6 +3,7 @@
   "slug": "why-we-dont-feel-earth-spin",
   "status": "ready",
   "order": 17,
+  "backdrop": "space",
   "title": "Why Don't We Feel the Earth Spinning? 🌍 Fun Facts for Kids",
   "cover_text": "SPINNING?",
   "description": "Why don't we feel the Earth spinning? It spins smoothly at a steady speed, and we move right along with it, like a smooth car ride! Leo asks, big sister Mia explains, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
@@ -50,12 +51,11 @@
       "text": "Because the Earth spins very smoothly, at a steady speed. No bumps, no jerks!",
       "punch": "smoothly",
       "board": {
-        "type": "big",
-        "icon": "🌍",
-        "text": "Smooth and steady",
+        "type": "picture",
+        "art": "earth",
+        "caption": "Smooth and steady",
         "cue": "smoothly",
-        "sub": "No bumps!",
-        "sub_cue": "bumps"
+        "icon": "🌍"
       }
     },
     {

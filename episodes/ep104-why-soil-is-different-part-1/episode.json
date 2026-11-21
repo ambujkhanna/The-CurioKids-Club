@@ -3,6 +3,7 @@
   "slug": "why-soil-is-different-part-1",
   "status": "ready",
   "order": 4,
+  "backdrop": "garden",
   "title": "Why Is Soil Different? 🪨 Fun Facts for Kids (Part 1)",
   "cover_text": "SOIL SECRETS!",
   "description": "Soil starts as rock! Leo asks, big sister Mia explains what soil is made of and why sandy, clay and loamy soil are different, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
@@ -117,12 +118,11 @@
       "who": "MIA",
       "text": "Different rocks make different bits! Bigger bits make sand. Super tiny bits make clay.",
       "board": {
-        "type": "big",
-        "icon": "🪨",
-        "text": "Different rocks",
+        "type": "picture",
+        "art": "soil_layers",
+        "caption": "Different rocks",
         "cue": "different",
-        "sub": "Sand or clay",
-        "sub_cue": "sand"
+        "icon": "🪨"
       }
     },
     {

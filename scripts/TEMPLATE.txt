@@ -4,6 +4,7 @@ TITLE: How Do Bees Make Honey? 🐝 Fun Facts for Kids
 COVER: BEE MAGIC
 HASHTAGS: #Bees #Honey #ScienceForKids
 TITLE_BOARD: 🌸 Flowers -> 🍯 Honey
+# BACKDROP: garden    (optional HD background: garden, playroom, space, night sky, bathroom, kitchen, ocean, river valley, reading nook, windy hills; default = picked from the title)
 ---
 # 9-16 lines (best 11-14), about 110-180 words. Add "| emoji Short text" every 2-3 lines for a board picture.
 LEO: Mia, how do bees make honey?

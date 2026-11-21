@@ -100,3 +100,32 @@ The user clarified that yesterday's update may have replaced the short-lived acc
 ## 2026-11-20 — Follow-up after analytics recovery and Visual Engine rerun
 
 A fresh audit found CurioKids analytics run 44739181837 successful. A newer AInation analytics push run 44724594920 had failed before the user's refresh-token correction; rerunning it as attempt 2 succeeded, so the current analytics token configuration is validated in both repositories. The CurioKids Visual Engine branch has separate progress: Blender proof-of-capability succeeded, but integrated dry-run 44732204753 failed at headless EGL initialization with `EGL_BAD_MATCH`. I reran it (attempt 2 is pending), and the validator fix also triggered integrated dry-run 44739867903, which was still running at the latest check. Next: inspect the completed render/video artifact and perform visual acceptance. Keep all Visual Engine changes on the feature branch until the owner approves the actual output. Both repositories' safe Daily Short dry-run checks also remain pending; no production publish workflow was triggered by this audit.
+
+
+## 2026-11-21 18:50 IST (13:20 UTC) — HD graphics pilot, kids backgrounds, decisions (written for continuing in ChatGPT or any assistant)
+
+**Read with:** `TheCurioKidsClub_handoff.md` / `AInation_Studio_handoff.md` (change log), `Channels_Reference.md` (variables), `docs/HD_ART.md`.
+
+### What the owner asked (21 Nov 2026, in order)
+1. A fun-facts kids series, as many episodes as possible, posted before the old queue; big topics split into parts; a spoken line asking viewers to drop a topic in the comments. **Done:** ep076–ep083, ep090–ep097 and ep104–ep112 (25 episodes, `order` 1–25), plus an on-screen "Drop a topic in the comments!" bubble. Descriptions and captions do **not** carry the topic ask (owner reverted that).
+2. Better Subscribe/Like/Share: **AInation = big pop** (`CTA_STYLE=pop`), **kids = action bar** (`bar`).
+3. "Why can't we use HD 3D graphics like my references?" The answer: our renderer is 2D code, and we have no free image model in the daily run. **Owner chose option 1:** make pictures once on a free Kaggle GPU with FLUX.1-schnell (Apache 2.0), commit them, and keep the characters **2D**. Also asked to improve the 2D characters without distortion → `CHAR_STYLE=polished`.
+4. Kaggle: account created and phone-verified (needed for internet and GPU). HF token stored as the Kaggle secret `HF_TOKEN`, never in chat. Learned: stopping a Kaggle session deletes `/kaggle/working`, so download first. The CLIP 77-token warnings are harmless.
+5. **AInation: no background** ("looking fine with plain", the Studio Open look stays).
+6. Kids: backgrounds approved ("background looks great"). Owner questioned the puppet stage → **glass card** on pictures. Owner was unsure whether a white box is needed but is "fine not to change everything" (white card kept; frosted glass tried and dropped).
+7. Speaker close-ups cut the card → owner is "fine with zooming if it makes the video better/interactive" → gentle push-ins + smooth glides.
+8. "Text should not merge with backgrounds; use nice animation for cycle diagrams and transitions" → all text sits on the card, the logo has a pill, captions have an outline, items rise and fade in, and scenes animate inside the card.
+9. Update existing episodes and scripts to the latest pattern → every episode has `backdrop`; scripts have an optional `BACKDROP:` line plus automatic choice.
+10. Wants house-made icons later (own style first, Fluent 3D as fallback) → icon usage list made (`ICON_REFERENCE_LIST.md`, sent in chat): kids 421 icons (top 80 = 60% of uses), AInation 137 (top 80 = 95%). The owner will collect style references; the icon pilot is planned for the next Kaggle run (FLUX + rembg cut-out).
+11. Big concern: **views are still low**. Answered in chat (below) and still open.
+
+### Decisions in force
+- Kids: HD backgrounds on (`ART=on`), the glass card on pictures, polished characters available but **default `doodle`** until the owner sets `CHAR_STYLE=polished`.
+- AInation: Studio Open, no backgrounds, `CTA_STYLE=pop`, `THEME=studio_open`.
+- Pictures are made only by the owner on Kaggle (free). No paid APIs, and no image model in the daily run.
+- Bundles: one zip per repo with only changed files, a one-line push command, handoffs updated inside the repos, never `state.json`.
+
+### Views: diagnosis given (21 Nov) and suggested next steps
+- Every Short starts with a 2 s "Welcome to" logo intro and ends with a 3.5 s links card. On Shorts, the first second decides swipe-away, and the end card hurts loops. **Suggestion:** set `SHORT_INTRO=off` and `SHORT_OUTRO=off` (long videos keep them), then compare "Viewed vs swiped away" in YouTube Studio.
+- Shorts run 60–80 s. 30–45 s retains better for kids topics. Hook: the question in the first second (already a big yellow hook).
+- No tool can buy views. View bots and "view increase" tools break YouTube rules and get channels removed. Honest levers: hook and retention, titles people search for (YouTube search suggestions), consistent posting, playlists/series, Community posts, and cross-posting (FB/IG already automatic).

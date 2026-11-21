@@ -144,6 +144,8 @@ def make_wide(path, K, chars, ep, ico, t_pose=None):
     W, H = 1280, 720
     surf = skia.Surface(W, H); c = surf.getCanvas(); c.clear(K.hexc("#4FAEA3"))
     t = t_pose if t_pose is not None else (K.LN[0]["start"] + K.LN[0]["end"]) / 2
+    import art
+    if art.active(): art.backdrop(c, t, W, H, "landscape")  # HD picture behind the room
     c.save(); c.translate(560, -560); c.scale(0.68, 0.68); K.draw_bg(c, t)
     for ch in chars: K.draw_char(c, ch, t)
     c.restore()
@@ -183,6 +185,8 @@ def make(path, K, chars, ep, ico, t_pose=None):
     W, H = 1080, 1920
     surf = skia.Surface(W, H); c = surf.getCanvas()
     t = t_pose if t_pose is not None else (K.LN[0]["start"] + K.LN[0]["end"]) / 2
+    import art
+    if art.active(): art.backdrop(c, t, W, H, "portrait")  # HD picture behind everything
     K.draw_bg(c, t)
     # characters, a bit bigger, anchored at the bottom
     c.save(); c.translate(540, 1920); c.scale(1.04, 1.04); c.translate(-540, -1775)

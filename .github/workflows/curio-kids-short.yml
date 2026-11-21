@@ -171,6 +171,10 @@ jobs:
           ICON_STYLE: ${{ vars.ICON_STYLE || '3d' }}
           LIST_STYLE: ${{ vars.LIST_STYLE || 'tiles' }}
           CTA_STYLE: ${{ vars.CTA_STYLE || 'bar' }}
+          CHAR_STYLE: ${{ vars.CHAR_STYLE || 'doodle' }}
+          ART: ${{ vars.ART || 'on' }}
+          ART_AUTO: ${{ vars.ART_AUTO || 'on' }}
+          PANEL: ${{ vars.PANEL || '' }}
           ACTION: ${{ inputs.action }}
           POST_TO: ${{ inputs.post_to }}
           EPISODE_IN: ${{ inputs.episode }}
@@ -178,8 +182,8 @@ jobs:
           CATEGORY_IN: ${{ inputs.category }}
           KEEP_THUMBS: ${{ vars.KEEP_THUMBS || '2' }}
           YT_TIMEOUT: ${{ vars.YT_TIMEOUT || '300' }}
-          INTRO: ${{ vars.INTRO || 'on' }}
-          OUTRO: ${{ vars.OUTRO || 'on' }}
+          INTRO: ${{ vars.SHORT_INTRO || vars.INTRO || 'on' }}
+          OUTRO: ${{ vars.SHORT_OUTRO || vars.OUTRO || 'on' }}
           SCRIPT_IN: ${{ inputs.script }}
           HI_TTS_ENGINE: ${{ vars.HI_TTS_ENGINE || 'kokoro' }}
           HI_VOICE_CLIP: ${{ vars.HI_VOICE_CLIP || 'english' }}

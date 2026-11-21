@@ -110,6 +110,10 @@ jobs:
           ICON_STYLE: ${{ vars.ICON_STYLE || '3d' }}
           LIST_STYLE: ${{ vars.LIST_STYLE || 'tiles' }}
           CTA_STYLE: ${{ vars.CTA_STYLE || 'bar' }}
+          CHAR_STYLE: ${{ vars.CHAR_STYLE || 'doodle' }}
+          ART: ${{ vars.ART || 'on' }}
+          ART_AUTO: ${{ vars.ART_AUTO || 'on' }}
+          PANEL: ${{ vars.PANEL || '' }}
           ACTION: ${{ inputs.action }}
           POST_TO: ${{ inputs.post_to }}
           EPISODE_IN: ${{ inputs.episode }}

@@ -73,6 +73,14 @@ def draw_bg_doodle(c, t):
 
 
 def draw_bg(c, t):
+    import art
+    if art.active():  # HD backdrop is already drawn behind the camera: only ground the characters and add the logo
+        art.ground(c, [ch.x for ch in K.CHARS], FLOOR)
+        sh = P("#1B2A4A", a=0.18); sh.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 12))
+        c.drawRoundRect(skia.Rect.MakeXYWH(540 - 235, 84 - 40, 470, 80), 40, 40, sh)
+        c.drawRoundRect(skia.Rect.MakeXYWH(540 - 235, 84 - 42, 470, 80), 40, 40, P("#FFFFFF", a=0.88))  # logo stays readable on dark or busy pictures
+        K.logo(c, 540, 84, 0.95 * (1.0 + (0.18 * math.sin(min(1.0, max(0.0, (t - K.LOGO_T) / 0.5)) * math.pi) if t > K.LOGO_T else 0.0)), tcol="#1D1D1F")
+        return
     if KIDS:
         _kids_room(c, t)
         light_pass(c, t, (870, 930, 190, 250, -1))
@@ -332,14 +340,25 @@ def _props(c, t):
     K.logo(c, 540, 84, 0.95 * (1.0 + (0.18 * math.sin(min(1.0, max(0.0, (t - K.LOGO_T) / 0.5)) * math.pi) if t > K.LOGO_T else 0.0)), tcol="#1D1D1F")
 
 
-PANEL = os.environ.get("PANEL", "stage")  # kids look: stage (default) | cloud | book
+PANEL_VAR = os.environ.get("PANEL", "").strip().lower()  # kids look: stage | card | cloud | book (empty = automatic)
+
+
+def panel():
+    """Board look for this video: the PANEL variable if set, else the glass card on an HD background, else the stage."""
+    if PANEL_VAR: return PANEL_VAR
+    import art
+    return "card" if art.active() else "stage"
+
+
+PANEL = PANEL_VAR or "stage"  # (kept for older code; use panel())
 
 
 def draw_board_frame(c, t=0.0):
     if KIDS:
-        if PANEL == "stage":
+        pn = panel()
+        if pn == "stage":
             import theatre; return theatre.back(c, t)
-        return {"cloud": _kids_cloud, "book": _kids_book}.get(PANEL, _kids_cloud)(c, t)
+        return {"cloud": _kids_cloud, "book": _kids_book, "card": _kids_card}.get(pn, _kids_card)(c, t)
     r = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(BX, BY, BW, BH), 34, 34)
     sh = P("#000000", a=0.10); sh.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 14))
     c.save(); c.translate(8, 12); c.drawRRect(r, sh); c.restore()
@@ -369,6 +388,19 @@ def _kids_panel(c):
 def _clip_inner(c, inset=10, r=40):
     inner = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(BX + inset, BY + inset, BW - 2 * inset, BH - 2 * inset), r, r)
     c.save(); c.clipRRect(inner, doAntiAlias=True)
+
+
+def _kids_card(c, t):
+    """Light floating glass card (made for HD backgrounds): white, slightly see-through, soft shadow, thin rainbow edge."""
+    x, y, w, h = BX - 30, BY - 30, BW + 60, BH + 60
+    r = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(x, y, w, h), 48, 48)
+    sh = P("#1B2A4A", a=0.22); sh.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 26))
+    c.save(); c.translate(0, 20); c.drawRRect(r, sh); c.restore()
+    c.drawRRect(r, P("#FFFFFF", a=0.93))
+    rb = skia.Paint(AntiAlias=True); rb.setStyle(skia.Paint.kStroke_Style); rb.setStrokeWidth(7); rb.setAlphaf(0.9)
+    rb.setShader(skia.GradientShader.MakeSweep(BX + BW / 2, BY + BH / 2, [hexc(x_) for x_ in ("#FF8FA3", "#FFC36B", "#FFE27A", "#9BE3A8", "#86D3FF", "#B9A2FF", "#FF8FA3")]))
+    c.drawRRect(r, rb)
+    _clip_inner(c, -24, 44)
 
 
 def _kids_cloud(c, t):
@@ -424,5 +456,5 @@ def _kids_book(c, t):
 
 def draw_board_front(c, t):
     """Layer drawn after the board content (puppet-theatre curtains, valance, footlights)."""
-    if KIDS and PANEL == "stage":
+    if KIDS and panel() == "stage":
         import theatre; theatre.front(c, t)

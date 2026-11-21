@@ -3,6 +3,7 @@
   "slug": "what-makes-waves-in-the-sea",
   "status": "ready",
   "order": 14,
+  "backdrop": "ocean",
   "title": "What Makes Waves in the Sea? 🌊 Fun Facts for Kids",
   "cover_text": "WHOOSH!",
   "description": "Where do sea waves come from? Leo asks, big sister Mia explains how the wind makes waves and why they crash at the beach, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
@@ -105,12 +106,11 @@
       "who": "MIA",
       "text": "Not really! The water mostly bobs up and down. It's the wave that moves along.",
       "board": {
-        "type": "big",
-        "icon": "🔄",
-        "text": "Water bobs up and down",
+        "type": "picture",
+        "art": "waves",
+        "caption": "Water bobs up and down",
         "cue": "bobs",
-        "sub": "The wave moves on",
-        "sub_cue": "moves"
+        "icon": "🔄"
       }
     },
     {

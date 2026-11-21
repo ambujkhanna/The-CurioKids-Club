@@ -1,0 +1,654 @@
+[
+ {
+  "file": "garden_portrait.jpg",
+  "name": "garden",
+  "orientation": "portrait",
+  "seed": 42,
+  "size": [
+   1080,
+   1920
+  ],
+  "made_at": [
+   864,
+   1536
+  ],
+  "prompt": "a sunny garden with soft grass, round bushes, a few big flowers at the sides, blue sky with fluffy clouds, open empty lawn in the middle, soft 3D clay-like children's picture-book illustration, rounded friendly shapes, warm pastel colours, gentle global illumination, soft shadows, shallow depth of field, cheerful and calm, high detail, no people, no characters, no animals unless named, no text, no letters, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "garden_portrait_s42.png",
+  "use": "background"
+ },
+ {
+  "file": "playroom_portrait.jpg",
+  "name": "playroom",
+  "orientation": "portrait",
+  "seed": 42,
+  "size": [
+   1080,
+   1920
+  ],
+  "made_at": [
+   864,
+   1536
+  ],
+  "prompt": "a bright cosy children's playroom, toy shelves and building blocks at the sides, a big round window with daylight, empty soft rug in the middle, soft 3D clay-like children's picture-book illustration, rounded friendly shapes, warm pastel colours, gentle global illumination, soft shadows, shallow depth of field, cheerful and calm, high detail, no people, no characters, no animals unless named, no text, no letters, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "playroom_portrait_s42.png",
+  "use": "background"
+ },
+ {
+  "file": "space_portrait.jpg",
+  "name": "space",
+  "orientation": "portrait",
+  "seed": 11,
+  "size": [
+   1080,
+   1920
+  ],
+  "made_at": [
+   864,
+   1536
+  ],
+  "prompt": "a friendly outer-space scene, deep blue and purple sky full of twinkling stars, a ringed planet and a small moon at the edges, open space in the middle, soft 3D clay-like children's picture-book illustration, rounded friendly shapes, warm pastel colours, gentle global illumination, soft shadows, shallow depth of field, cheerful and calm, high detail, no people, no characters, no animals unless named, no text, no letters, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "space_portrait_s11.png",
+  "use": "background"
+ },
+ {
+  "file": "earth_portrait.jpg",
+  "name": "earth",
+  "orientation": "portrait",
+  "seed": 42,
+  "size": [
+   1080,
+   1920
+  ],
+  "made_at": [
+   864,
+   1536
+  ],
+  "prompt": "planet Earth seen from space, bright blue oceans, green land and white clouds, glowing atmosphere, soft starry background, Earth at the lower half, soft 3D clay-like children's picture-book illustration, rounded friendly shapes, warm pastel colours, gentle global illumination, soft shadows, shallow depth of field, cheerful and calm, high detail, no people, no characters, no animals unless named, no text, no letters, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "earth_portrait_s42.png",
+  "use": "background or board"
+ },
+ {
+  "file": "night_sky_portrait.jpg",
+  "name": "night_sky",
+  "orientation": "portrait",
+  "seed": 11,
+  "size": [
+   1080,
+   1920
+  ],
+  "made_at": [
+   864,
+   1536
+  ],
+  "prompt": "a magical night sky over soft rolling clay hills, thousands of twinkling stars, a glowing crescent moon at the top corner, wide open calm ground in the lower part of the picture, interesting details only at the sides and the top, 3D clay render in the style of a modern animated family film, matte clay and plasticine textures, soft rounded shapes, bright cheerful pastel colours, soft warm global illumination, gentle shadows, slight depth of field, high detail, no people, no characters, no faces, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "night_sky_portrait_s11.png",
+  "use": "background"
+ },
+ {
+  "file": "bathroom_portrait.jpg",
+  "name": "bathroom",
+  "orientation": "portrait",
+  "seed": 42,
+  "size": [
+   1080,
+   1920
+  ],
+  "made_at": [
+   864,
+   1536
+  ],
+  "prompt": "a bright clean friendly bathroom, white tiles, a sink with a cup of toothbrushes, a bathtub with bubbles at the side, fluffy towels, wide open calm ground in the lower part of the picture, interesting details only at the sides and the top, 3D clay render in the style of a modern animated family film, matte clay and plasticine textures, soft rounded shapes, bright cheerful pastel colours, soft warm global illumination, gentle shadows, slight depth of field, high detail, no people, no characters, no faces, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "bathroom_portrait_s42.png",
+  "use": "background"
+ },
+ {
+  "file": "kitchen_portrait.jpg",
+  "name": "kitchen",
+  "orientation": "portrait",
+  "seed": 42,
+  "size": [
+   1080,
+   1920
+  ],
+  "made_at": [
+   864,
+   1536
+  ],
+  "prompt": "a cosy sunny family kitchen, wooden table, bowl of fruit, glass of water, shelves with jars, a window with daylight, wide open calm ground in the lower part of the picture, interesting details only at the sides and the top, 3D clay render in the style of a modern animated family film, matte clay and plasticine textures, soft rounded shapes, bright cheerful pastel colours, soft warm global illumination, gentle shadows, slight depth of field, high detail, no people, no characters, no faces, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "kitchen_portrait_s42.png",
+  "use": "background"
+ },
+ {
+  "file": "ocean_portrait.jpg",
+  "name": "ocean",
+  "orientation": "portrait",
+  "seed": 42,
+  "size": [
+   1080,
+   1920
+  ],
+  "made_at": [
+   864,
+   1536
+  ],
+  "prompt": "a sunny beach by a calm turquoise sea, gentle waves, soft sand, a few shells, fluffy clouds, wide open calm ground in the lower part of the picture, interesting details only at the sides and the top, 3D clay render in the style of a modern animated family film, matte clay and plasticine textures, soft rounded shapes, bright cheerful pastel colours, soft warm global illumination, gentle shadows, slight depth of field, high detail, no people, no characters, no faces, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "ocean_portrait_s42.png",
+  "use": "background"
+ },
+ {
+  "file": "river_valley_portrait.jpg",
+  "name": "river_valley",
+  "orientation": "portrait",
+  "seed": 42,
+  "size": [
+   1080,
+   1920
+  ],
+  "made_at": [
+   864,
+   1536
+  ],
+  "prompt": "a green valley with a winding blue river flowing from far mountains toward the sea, small trees on the banks, wide open calm ground in the lower part of the picture, interesting details only at the sides and the top, 3D clay render in the style of a modern animated family film, matte clay and plasticine textures, soft rounded shapes, bright cheerful pastel colours, soft warm global illumination, gentle shadows, slight depth of field, high detail, no people, no characters, no faces, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "river_valley_portrait_s42.png",
+  "use": "background"
+ },
+ {
+  "file": "reading_nook_portrait.jpg",
+  "name": "reading_nook",
+  "orientation": "portrait",
+  "seed": 11,
+  "size": [
+   1080,
+   1920
+  ],
+  "made_at": [
+   864,
+   1536
+  ],
+  "prompt": "a cosy reading corner with big colourful bookshelves, floor cushions, a warm lamp and alphabet blocks, wide open calm ground in the lower part of the picture, interesting details only at the sides and the top, 3D clay render in the style of a modern animated family film, matte clay and plasticine textures, soft rounded shapes, bright cheerful pastel colours, soft warm global illumination, gentle shadows, slight depth of field, high detail, no people, no characters, no faces, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "reading_nook_portrait_s11.png",
+  "use": "background"
+ },
+ {
+  "file": "windy_hills_portrait.jpg",
+  "name": "windy_hills",
+  "orientation": "portrait",
+  "seed": 42,
+  "size": [
+   1080,
+   1920
+  ],
+  "made_at": [
+   864,
+   1536
+  ],
+  "prompt": "green hills on a breezy day, leaves and dandelion seeds blowing in the wind, a kite in the sky, big fluffy clouds, wide open calm ground in the lower part of the picture, interesting details only at the sides and the top, 3D clay render in the style of a modern animated family film, matte clay and plasticine textures, soft rounded shapes, bright cheerful pastel colours, soft warm global illumination, gentle shadows, slight depth of field, high detail, no people, no characters, no faces, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "windy_hills_portrait_s42.png",
+  "use": "background"
+ },
+ {
+  "file": "sprout_portrait.jpg",
+  "name": "sprout",
+  "orientation": "portrait",
+  "seed": 11,
+  "size": [
+   1080,
+   1920
+  ],
+  "made_at": [
+   864,
+   1536
+  ],
+  "prompt": "close-up of a tiny green sprout with two leaves pushing out of dark rich soil, morning sunlight, dew drops, blurred garden behind, soft 3D clay-like children's picture-book illustration, rounded friendly shapes, warm pastel colours, gentle global illumination, soft shadows, shallow depth of field, cheerful and calm, high detail, no people, no characters, no animals unless named, no text, no letters, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "sprout_portrait_s11.png",
+  "use": "background or board"
+ },
+ {
+  "file": "waterdrop_portrait.jpg",
+  "name": "waterdrop",
+  "orientation": "portrait",
+  "seed": 42,
+  "size": [
+   1080,
+   1920
+  ],
+  "made_at": [
+   864,
+   1536
+  ],
+  "prompt": "a big shiny water droplet about to fall from a green leaf, sparkling reflections, soft rain and a faint rainbow in a blurred background, soft 3D clay-like children's picture-book illustration, rounded friendly shapes, warm pastel colours, gentle global illumination, soft shadows, shallow depth of field, cheerful and calm, high detail, no people, no characters, no animals unless named, no text, no letters, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "waterdrop_portrait_s42.png",
+  "use": "background or board"
+ },
+ {
+  "file": "garden_landscape.jpg",
+  "name": "garden",
+  "orientation": "landscape",
+  "seed": 42,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a sunny garden with soft grass, round bushes, a few big flowers at the sides, blue sky with fluffy clouds, open empty lawn in the middle, soft 3D clay-like children's picture-book illustration, rounded friendly shapes, warm pastel colours, gentle global illumination, soft shadows, shallow depth of field, cheerful and calm, high detail, no people, no characters, no animals unless named, no text, no letters, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "garden_landscape_s42.png",
+  "use": "background"
+ },
+ {
+  "file": "playroom_landscape.jpg",
+  "name": "playroom",
+  "orientation": "landscape",
+  "seed": 42,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a bright cosy children's playroom, toy shelves and building blocks at the sides, a big round window with daylight, empty soft rug in the middle, soft 3D clay-like children's picture-book illustration, rounded friendly shapes, warm pastel colours, gentle global illumination, soft shadows, shallow depth of field, cheerful and calm, high detail, no people, no characters, no animals unless named, no text, no letters, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "playroom_landscape_s42.png",
+  "use": "background"
+ },
+ {
+  "file": "space_landscape.jpg",
+  "name": "space",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a friendly outer-space scene, deep blue and purple sky full of twinkling stars, a ringed planet and a small moon at the edges, open space in the middle, soft 3D clay-like children's picture-book illustration, rounded friendly shapes, warm pastel colours, gentle global illumination, soft shadows, shallow depth of field, cheerful and calm, high detail, no people, no characters, no animals unless named, no text, no letters, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "space_landscape_s11.png",
+  "use": "background"
+ },
+ {
+  "file": "earth_landscape.jpg",
+  "name": "earth",
+  "orientation": "landscape",
+  "seed": 42,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "planet Earth seen from space, bright blue oceans, green land and white clouds, glowing atmosphere, soft starry background, Earth at the lower half, soft 3D clay-like children's picture-book illustration, rounded friendly shapes, warm pastel colours, gentle global illumination, soft shadows, shallow depth of field, cheerful and calm, high detail, no people, no characters, no animals unless named, no text, no letters, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "earth_landscape_s42.png",
+  "use": "background or board"
+ },
+ {
+  "file": "night_sky_landscape.jpg",
+  "name": "night_sky",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a magical night sky over soft rolling clay hills, thousands of twinkling stars, a glowing crescent moon at the top corner, wide open calm ground in the lower part of the picture, interesting details only at the sides and the top, 3D clay render in the style of a modern animated family film, matte clay and plasticine textures, soft rounded shapes, bright cheerful pastel colours, soft warm global illumination, gentle shadows, slight depth of field, high detail, no people, no characters, no faces, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "night_sky_landscape_s11.png",
+  "use": "background"
+ },
+ {
+  "file": "bathroom_landscape.jpg",
+  "name": "bathroom",
+  "orientation": "landscape",
+  "seed": 42,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a bright clean friendly bathroom, white tiles, a sink with a cup of toothbrushes, a bathtub with bubbles at the side, fluffy towels, wide open calm ground in the lower part of the picture, interesting details only at the sides and the top, 3D clay render in the style of a modern animated family film, matte clay and plasticine textures, soft rounded shapes, bright cheerful pastel colours, soft warm global illumination, gentle shadows, slight depth of field, high detail, no people, no characters, no faces, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "bathroom_landscape_s42.png",
+  "use": "background"
+ },
+ {
+  "file": "kitchen_landscape.jpg",
+  "name": "kitchen",
+  "orientation": "landscape",
+  "seed": 42,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a cosy sunny family kitchen, wooden table, bowl of fruit, glass of water, shelves with jars, a window with daylight, wide open calm ground in the lower part of the picture, interesting details only at the sides and the top, 3D clay render in the style of a modern animated family film, matte clay and plasticine textures, soft rounded shapes, bright cheerful pastel colours, soft warm global illumination, gentle shadows, slight depth of field, high detail, no people, no characters, no faces, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "kitchen_landscape_s42.png",
+  "use": "background"
+ },
+ {
+  "file": "ocean_landscape.jpg",
+  "name": "ocean",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a sunny beach by a calm turquoise sea, gentle waves, soft sand, a few shells, fluffy clouds, wide open calm ground in the lower part of the picture, interesting details only at the sides and the top, 3D clay render in the style of a modern animated family film, matte clay and plasticine textures, soft rounded shapes, bright cheerful pastel colours, soft warm global illumination, gentle shadows, slight depth of field, high detail, no people, no characters, no faces, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "ocean_landscape_s11.png",
+  "use": "background"
+ },
+ {
+  "file": "river_valley_landscape.jpg",
+  "name": "river_valley",
+  "orientation": "landscape",
+  "seed": 42,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a green valley with a winding blue river flowing from far mountains toward the sea, small trees on the banks, wide open calm ground in the lower part of the picture, interesting details only at the sides and the top, 3D clay render in the style of a modern animated family film, matte clay and plasticine textures, soft rounded shapes, bright cheerful pastel colours, soft warm global illumination, gentle shadows, slight depth of field, high detail, no people, no characters, no faces, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "river_valley_landscape_s42.png",
+  "use": "background"
+ },
+ {
+  "file": "reading_nook_landscape.jpg",
+  "name": "reading_nook",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a cosy reading corner with big colourful bookshelves, floor cushions, a warm lamp and alphabet blocks, wide open calm ground in the lower part of the picture, interesting details only at the sides and the top, 3D clay render in the style of a modern animated family film, matte clay and plasticine textures, soft rounded shapes, bright cheerful pastel colours, soft warm global illumination, gentle shadows, slight depth of field, high detail, no people, no characters, no faces, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "reading_nook_landscape_s11.png",
+  "use": "background"
+ },
+ {
+  "file": "windy_hills_landscape.jpg",
+  "name": "windy_hills",
+  "orientation": "landscape",
+  "seed": 42,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "green hills on a breezy day, leaves and dandelion seeds blowing in the wind, a kite in the sky, big fluffy clouds, wide open calm ground in the lower part of the picture, interesting details only at the sides and the top, 3D clay render in the style of a modern animated family film, matte clay and plasticine textures, soft rounded shapes, bright cheerful pastel colours, soft warm global illumination, gentle shadows, slight depth of field, high detail, no people, no characters, no faces, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "windy_hills_landscape_s42.png",
+  "use": "background"
+ },
+ {
+  "file": "sprout_landscape.jpg",
+  "name": "sprout",
+  "orientation": "landscape",
+  "seed": 42,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "close-up of a tiny green sprout with two leaves pushing out of dark rich soil, morning sunlight, dew drops, blurred garden behind, soft 3D clay-like children's picture-book illustration, rounded friendly shapes, warm pastel colours, gentle global illumination, soft shadows, shallow depth of field, cheerful and calm, high detail, no people, no characters, no animals unless named, no text, no letters, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "sprout_landscape_s42.png",
+  "use": "background or board"
+ },
+ {
+  "file": "waterdrop_landscape.jpg",
+  "name": "waterdrop",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a big shiny water droplet about to fall from a green leaf, sparkling reflections, soft rain and a faint rainbow in a blurred background, soft 3D clay-like children's picture-book illustration, rounded friendly shapes, warm pastel colours, gentle global illumination, soft shadows, shallow depth of field, cheerful and calm, high detail, no people, no characters, no animals unless named, no text, no letters, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "waterdrop_landscape_s11.png",
+  "use": "background or board"
+ },
+ {
+  "file": "soil_layers_landscape.jpg",
+  "name": "soil_layers",
+  "orientation": "landscape",
+  "seed": 42,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a cut-away cross-section of the ground showing layers: grass on top, dark soil with roots, brown clay, sand and small stones at the bottom, 3D clay render in the style of a modern animated family film, matte clay and plasticine textures, soft rounded shapes, bright cheerful pastel colours, soft warm global illumination, gentle shadows, slight depth of field, high detail, no people, no characters, no faces, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "soil_layers_landscape_s42.png",
+  "use": "board"
+ },
+ {
+  "file": "desert_landscape.jpg",
+  "name": "desert",
+  "orientation": "landscape",
+  "seed": 42,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a sunny desert with tall green cactus plants, smooth sand dunes and a clear blue sky, 3D clay render in the style of a modern animated family film, matte clay and plasticine textures, soft rounded shapes, bright cheerful pastel colours, soft warm global illumination, gentle shadows, slight depth of field, high detail, no people, no characters, no faces, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "desert_landscape_s42.png",
+  "use": "board"
+ },
+ {
+  "file": "teeth_landscape.jpg",
+  "name": "teeth",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1480,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a shiny clean white tooth next to a toothbrush with fresh foam and a tube of toothpaste, sparkling, 3D clay render in the style of a modern animated family film, matte clay and plasticine textures, soft rounded shapes, bright cheerful pastel colours, soft warm global illumination, gentle shadows, slight depth of field, high detail, no people, no characters, no faces, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "teeth_landscape_s11.png",
+  "use": "board",
+  "note": "right edge cropped (x>1480) to remove made-up letters on the tube"
+ },
+ {
+  "file": "moon_day_landscape.jpg",
+  "name": "moon_day",
+  "orientation": "landscape",
+  "seed": 42,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a pale half moon in a bright blue daytime sky above green treetops, soft white clouds, 3D clay render in the style of a modern animated family film, matte clay and plasticine textures, soft rounded shapes, bright cheerful pastel colours, soft warm global illumination, gentle shadows, slight depth of field, high detail, no people, no characters, no faces, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "moon_day_landscape_s42.png",
+  "use": "board"
+ },
+ {
+  "file": "waves_landscape.jpg",
+  "name": "waves",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "big friendly ocean waves rolling toward the shore, white foam, sunlight sparkling on the water, 3D clay render in the style of a modern animated family film, matte clay and plasticine textures, soft rounded shapes, bright cheerful pastel colours, soft warm global illumination, gentle shadows, slight depth of field, high detail, no people, no characters, no faces, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "waves_landscape_s11.png",
+  "use": "board"
+ }
+]

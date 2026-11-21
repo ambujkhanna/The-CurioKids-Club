@@ -471,6 +471,11 @@ for _name, _fn in diagrams.BUILDERS.items():
 import scenes  # animated explanation scenes (lifecycle, flow, transform, water_cycle, plant_growth)
 for _name, _fn in scenes.BUILDERS.items():
     BUILD[_name] = (lambda f: (lambda i, t0, t1, sc: f(_E, i, t0, t1, sc)))(_fn)
+import art  # HD pictures (pilot): "backdrop" field + "picture" board; missing pictures fall back to today's look
+art.use(EP.get("backdrop"), DUR, EP.get("title", ""), " ".join(l.get("text", "") for l in ELINES))
+print("backdrop:", art.NAME or "drawn room")
+_E.BUILD_BIG = build_big
+BUILD["picture"] = lambda i, t0, t1, sc: art.build_picture(_E, i, t0, t1, sc)
 scenes.use_for_lists(BUILD, _E)  # lighter list boards: tiles (LIST_STYLE=classic = old rows)
 for k in range(len(scene_starts)):
     i, t0, t1 = scene_window(k)
@@ -492,6 +497,9 @@ if LOOP:
     el(tl, DUR + 1, loopcard, (BCX + 300, BY + 150), (BCX, BY + 260))
 
 
+CARD_LOOK = bg_line.panel() != "stage"
+
+
 def draw_board(c, t):
     K.draw_board_frame(c, t)
     for n_, (t_in, t_out, fn, anchor, pivot) in enumerate(ELEMS):
@@ -499,8 +507,14 @@ def draw_board(c, t):
         if not e: continue
         px, py = pivot or anchor or (BCX, BCY)
         # puppet entrance: slide in from the nearest wing (behind the curtains), then settle with a little bounce
+        k_ = min(1.0, e)
+        if CARD_LOOK:  # glass card: soft rise + fade + gentle pop
+            c.save(); c.saveLayerAlpha(None, int(255 * k_))
+            c.translate(px, py + (1 - k_) * 60); c.scale(0.85 + 0.15 * e, 0.85 + 0.15 * e); c.translate(-px, -py)
+            fn(c, t, e); c.restore(); c.restore()
+            continue
         side = -1 if px < BCX - 40 else 1 if px > BCX + 40 else (-1 if n_ % 2 else 1)
-        k_ = min(1.0, e); dx = (1 - k_) * 560 * side
+        dx = (1 - k_) * 560 * side
         c.save(); c.translate(px + dx, py); c.scale(0.7 + 0.3 * e, 0.7 + 0.3 * e); c.translate(-px, -py)
         fn(c, t, e); c.restore()
     c.restore()
@@ -570,7 +584,7 @@ for i, ln in enumerate(LN):
         continue
     who = ln["speaker"] if len(CAST) > 1 else ("wide" if i % 3 else ln["speaker"])
     _sc_i = max([j for j in scene_starts if j <= i] or [0])
-    if ELINES[_sc_i].get("board", {}).get("type") in list(diagrams.BUILDERS) + list(scenes.BUILDERS) + ["guess", "letter", "count"]:  # keep diagrams / guessing games on screen
+    if ELINES[_sc_i].get("board", {}).get("type") in list(diagrams.BUILDERS) + list(scenes.BUILDERS) + ["guess", "letter", "count", "picture"]:  # keep diagrams / guessing games on screen
         who = "board"
     SHOTS.append((ln["start"] - 0.05, "wide" if i % 4 == 0 or i == last else who))
     cl = cues_by_line.get(i, [])
@@ -596,6 +610,10 @@ CAMS = {"wide": (540, 960, 1.0, 1.05), "board": (540, 930, 1.03, 1.05)}
 for n, c in CH.items():
     hy, z = HEADY[n]
     CAMS[n] = (c.x + (10 if c.x < 540 else -10 if c.x > 540 else 0), hy, z, z + 0.1)
+if bg_line.panel() != "stage":  # glass-card look: speaker shots are a gentle push-in toward the speaker that keeps
+    for n, c in CH.items():         # the whole card and the logo on screen (a deep close-up would cut the card in half)
+        CAMS[n] = (540 + max(-24.0, min(24.0, (c.x - 540) * 0.12)), 925, 1.04, 1.08)
+    K.SMOOTH_CAM = True             # glide between shots instead of cutting
 PUNCH = [wt(i, l["punch"]) for i, l in enumerate(ELINES) if l.get("punch")]
 
 import kids_fx

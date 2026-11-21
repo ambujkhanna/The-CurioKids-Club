@@ -42,7 +42,7 @@ EMOJI = {  # keyword -> picture, for boards the script didn't specify
 }
 
 
-HEAD_KEYS = ("TITLE_BOARD", "TITLE_HI", "TITLE", "COVER", "DESCRIPTION_HI", "DESCRIPTION", "HASHTAGS", "TAGS", "BOARD")
+HEAD_KEYS = ("TITLE_BOARD", "TITLE_HI", "TITLE", "COVER", "DESCRIPTION_HI", "DESCRIPTION", "HASHTAGS", "TAGS", "BOARD", "BACKDROP")
 
 
 def from_pasted(text):
@@ -68,7 +68,7 @@ def parse(text):
         if not m:
             probs.append(f"line {n}: not understood - expected 'NAME: text' (e.g. 'MIA: Hello!'): {s[:60]}"); continue
         key, val = m.group(1).strip().upper().replace(" ", "_"), m.group(2).strip()
-        if not body and key in ("TITLE", "COVER", "DESCRIPTION", "HASHTAGS", "TAGS", "TITLE_BOARD", "TITLE_HI", "DESCRIPTION_HI"):
+        if not body and key in ("TITLE", "COVER", "DESCRIPTION", "HASHTAGS", "TAGS", "TITLE_BOARD", "TITLE_HI", "DESCRIPTION_HI", "BACKDROP"):
             head[key] = val; continue
         body = True
         if key == "HI":
@@ -183,6 +183,13 @@ def build(path):
           "hashtags": list(dict.fromkeys([h if h.startswith("#") else "#" + h for h in tags] + CH["hashtags"]))[:8],
           "tags": [t.strip() for t in head.get("TAGS", "").split(",") if t.strip()] or [q.lower()],
           "cast": cast, "lines": eps}
+    if head.get("BACKDROP"):  # HD background picture (assets/art); without this line it is picked from the title
+        bd = head["BACKDROP"].strip().lower().replace(" ", "_")
+        names = sorted({f.rsplit("_", 1)[0] for f in os.listdir(os.path.join(ROOT, "assets", "art")) if f.endswith((".jpg", ".png"))}) \
+            if os.path.isdir(os.path.join(ROOT, "assets", "art")) else []
+        if bd != "none" and bd not in names:
+            return None, None, [f"BACKDROP: '{head['BACKDROP']}' is not a picture (use one of: {', '.join(names)}, or none)"]
+        ep["backdrop"] = bd
     hi = None
     if use_hi:
         hi = {"title_hi": head["TITLE_HI"], "description_hi": head.get("DESCRIPTION_HI") or lines[1]["hi"],

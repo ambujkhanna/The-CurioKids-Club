@@ -469,13 +469,21 @@ def draw_bg(c, t):
     logo(c, 540, 84, 0.95 * k)
 
 
+SMOOTH_CAM = False  # set by the engine for the glass-card look
+
+
 def camera(t):
     i = max(k for k in range(len(SHOTS)) if SHOTS[k][0] <= t + 1e-6)
     t0, kind = SHOTS[i]; t1 = SHOTS[i + 1][0] if i + 1 < len(SHOTS) else DUR
     cx, cy, z0, z1 = CAMS[kind]
     u = (t - t0) / max(0.1, t1 - t0)
     z = z0 + (z1 - z0) * u
-    if i > 0:
+    if i > 0 and SMOOTH_CAM:  # glide from where the previous shot ended (0.7 s, eased)
+        g = min(1.0, (t - t0) / 0.7); g = g * g * (3 - 2 * g)
+        if g < 1.0:
+            pcx, pcy, pz0, pz1 = CAMS[SHOTS[i - 1][1]]
+            cx, cy, z = pcx + (cx - pcx) * g, pcy + (cy - pcy) * g, pz1 + (z - pz1) * g
+    elif i > 0:
         z *= 1 + 0.035 * max(0.0, 1 - (t - t0) / 0.3) ** 2  # settle after cut
     for tw in PUNCH:
         if tw <= t < tw + 0.45:
@@ -542,13 +550,15 @@ def _landscape(c, t):
         if tw <= t < tw + 0.45:
             z *= 1 + 0.03 * math.exp(-(t - tw) * 7) * min(1.0, (t - tw) / 0.05)
     c.save(); c.translate(OW / 2, OH / 2); c.scale(z, z); c.translate(-OW / 2, -OH / 2)
+    import art
+    pic = art.active() and art.backdrop(c, t, OW, OH, "landscape")
     rs, rx, ry = _fit(ROOM_SRC, ROOM_DST); ry = ROOM_DST[3] - ROOM_SRC[3] * rs  # room stands on the bottom edge
     c.save(); c.translate(rx, ry); c.scale(rs, rs)
     draw_bg(c, t)
     for ch_ in CHARS:
         draw_char(c, ch_, t)
     c.restore()
-    _wide_decor(c, t)
+    if not pic: _wide_decor(c, t)
     bs, bx, by = _fit(_board_rect(), BOARD_DST)
     b0 = _board_rect(); bottom = by + b0[3] * bs; left = bx + b0[0] * bs; right = bx + b0[2] * bs
     sh = P("#000000", a=0.22); sh.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 22))
@@ -573,6 +583,8 @@ def render_frame(f):
     doodle.SEED = f // 3
     surf = skia.Surface(W, H); c = surf.getCanvas(); c.clear(hexc("#4FAEA3"))
     cx, cy, z = camera(t)
+    import art
+    if art.active(): art.backdrop(c, t, W, H, "portrait", (cx, cy, z))  # HD picture behind everything (draw_bg then skips the room)
     c.save(); c.translate(W / 2, H / 2); c.scale(z, z); c.translate(-cx, -cy)
     draw_bg(c, t); draw_board(c, t); draw_bit(c, t)
     for ch_ in CHARS:

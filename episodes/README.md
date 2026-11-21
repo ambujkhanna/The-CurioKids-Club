@@ -109,3 +109,7 @@ Every new episode has one line just **before** the final subscribe line asking v
     LEO: What should we explore next? Ask a grown-up to drop a topic in the comment section!
 
 No board on that line. The end card also shows a "Drop a topic in the comments!" bubble automatically.
+
+## Background picture and picture boards (since 2026-11-21)
+
+Every episode has a `"backdrop"` field naming its HD background (garden, playroom, space, night_sky, earth, bathroom, kitchen, ocean, river_valley, reading_nook, windy_hills; `"none"` = the drawn playroom). New episodes: pick the one that fits the topic, or leave it out and it is chosen from the title. A `"picture"` board shows an HD close-up (sprout, waterdrop, earth, soil_layers, desert, teeth, moon_day, waves) with a caption: `{"type": "picture", "art": "teeth", "caption": "About 2 minutes", "cue": "two", "icon": "⏱️"}`. Details: `docs/HD_ART.md`.

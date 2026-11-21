@@ -5,7 +5,7 @@
 import json, sys
 
 TYPES = {"letter", "count", "guess", "title", "big", "steps", "compare", "checklist", "summary", "poem", "gallery", "body", "cycle", "journey", "orbit",
-         "lifecycle", "flow", "transform", "water_cycle", "plant_growth", "tiles", "timeline"}  # animated scenes (pipeline/scenes.py)
+         "lifecycle", "flow", "transform", "water_cycle", "plant_growth", "tiles", "timeline", "picture"}  # picture = HD art board (pipeline/art.py)  # animated scenes (pipeline/scenes.py)
 CAST = {"MIA", "LEO", "DAD"}
 LEGACY_ICONS = {"chat", "robot", "check", "sun", "train", "doc", "lock", "target", "search", "calendar", "mail", "suitcase",
                 "warn", "x", "user", "bulb", "shield", "coin", "eye", "book", "globe", "brain", "phone"}
@@ -13,7 +13,7 @@ LIMITS = {"steps": 5, "compare": 4, "checklist": 4, "summary": 4, "poem": 4, "ga
 
 
 def cues(sc):
-    out = [sc.get("cue"), sc.get("sub_cue")]
+    out = [sc.get("cue"), sc.get("sub_cue"), sc.get("caption_cue")]
     for key in ("items", "rows", "lines", "labels", "clues"):
         out += [it.get("cue") for it in sc.get(key, []) if isinstance(it, dict)]
     # (the guess answer's cue may be spoken in a later line; checked separately in check())
@@ -86,6 +86,7 @@ def check(path):
         sc = l.get("board")
         if sc:
             if sc.get("type") not in TYPES: errs.append(f"line {i}: unknown board type {sc.get('type')}")
+            if sc.get("type") == "picture" and not sc.get("art"): errs.append(f"line {i}: picture board needs \"art\" (a name in assets/art)")
             for key, n in LIMITS.items():
                 if sc.get("type") == key:
                     for fld in ("items", "rows", "lines"):

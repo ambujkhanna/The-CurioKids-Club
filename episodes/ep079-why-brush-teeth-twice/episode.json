@@ -3,6 +3,7 @@
   "slug": "why-brush-teeth-twice",
   "status": "ready",
   "order": 6,
+  "backdrop": "bathroom",
   "title": "Why Do We Brush Our Teeth Twice a Day? 🪥 Fun Facts for Kids",
   "cover_text": "BRUSH TWICE!",
   "description": "Sticky plaque, sugar-loving germs and tiny cavities! Leo asks, big sister Mia explains why we brush morning and night, in under a minute.\n\nThe CurioKids Club: short, curious answers to kids' big questions. Subscribe: https://www.youtube.com/@CurioKidsClub",
@@ -142,12 +143,11 @@
       "who": "MIA",
       "text": "About two minutes each time. Humming a song in your head can help the time go by!",
       "board": {
-        "type": "big",
-        "icon": "⏱️",
-        "text": "About 2 minutes",
+        "type": "picture",
+        "art": "teeth",
+        "caption": "About 2 minutes",
         "cue": "two",
-        "sub": "Each time",
-        "sub_cue": "each"
+        "icon": "⏱️"
       }
     },
     {
