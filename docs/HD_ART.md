@@ -14,7 +14,7 @@ The characters stay 2D. Backgrounds and some boards are HD pictures in a soft 3D
 - `assets/art/manifest.json` records the prompt, seed, model, licence and date for every file.
 - The tooth picture's right edge was cropped to remove made-up letters on the toothpaste tube.
 - Left out: the straw-in-a-glass picture (the straw wasn't bent) and the cut apple (it didn't show browning, and one version had a signature).
-- The notebook that made them is the Kaggle notebook `art_v2.ipynb` (v2: kids only).
+- The notebook that made them, with run steps, is `tools/kaggle/art_v2.ipynb` (see `tools/kaggle/README.md`).
 
 ## How a video gets its background
 

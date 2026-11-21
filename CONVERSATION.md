@@ -142,3 +142,26 @@ A fresh audit found CurioKids analytics run 44739181837 successful. A newer AIna
 
 - 2026-11-21 20:25 IST (14:55 UTC): the sticker is centred under the answer picture, and its pointer always aims straight up at the picture (owner).
 - 2026-11-21 20:40 IST (15:10 UTC): the sticker no longer overlaps the round picture: it sits fully below it, and only the pointer touches the ring (owner).
+
+
+## 2026-11-21 20:55 IST (15:25 UTC) — Open items (start here in a new thread)
+
+Read first: the channel handoff (`TheCurioKidsClub_handoff.md` / `AInation_Studio_handoff.md`), `Channels_Reference.md` (variables), this log. The kids repo also has `docs/HD_ART.md`, `tools/kaggle/` (the picture notebooks + how to run) and `docs/ICON_REFERENCE_LIST.md` / `docs/icons_all.csv`.
+
+1. **Polished characters**: built, but the owner has not switched them on. Set repo variable `CHAR_STYLE=polished` per repo when wanted.
+2. **Views (owner's big concern)**: suggested `SHORT_INTRO=off` and `SHORT_OUTRO=off` (kids; the 2 s logo intro and the end links card hurt Shorts retention and loops), then compare "Viewed vs swiped away" in YouTube Studio after a week. Shorter Shorts (30–45 s) are worth trying. No view-boosting tools: they break YouTube rules.
+3. **Opening hook on the glass card**: the big yellow question text (first 2 s, `finish.py` Hook style) overlaps the top edge of the kids glass card. Small fix pending: move the hook text up when a picture background is on.
+4. **Picture library run**: about 30–50 more kids backgrounds + topic close-ups on Kaggle (same notebook, new `PICTURES`), then add their topic words to `TOPICS` in `pipeline/art.py`.
+5. **House icons pilot**: the owner is collecting style references for the icons in `docs/ICON_REFERENCE_LIST.md`. Plan: FLUX + rembg cut-out on Kaggle, the top 40 kids icons first, compared side by side with Fluent; lookup order house → Fluent 3D → flat.
+6. Thumbnail ideas not done yet: one headline word in a second colour; YouTube "Test & compare" with 3 versions on long videos.
+7. AInation stays on the plain Studio Open look (no backgrounds), by owner decision.
+
+## 2026-11-21 21:30 IST (16:00 UTC) — Realistic icons running, weekly Kaggle automation planned
+
+- The owner wants a **realistic** look (references: glossy water drops, a soft 3D weather icon, a dreamy moon scene, a realistic Earth, glossy confetti), a longer icon list including general future topics, and realistic icons for AInation too (AInation still has no backgrounds). Notebook `tools/kaggle/icons_v1.ipynb` (165 icons, 276 pictures) is **running on Kaggle**. Next: check the zip, pick, add `assets/icons_house/` with the lookup order house → Fluent → flat, then show side-by-side boards to the owner.
+- Plan written: `docs/AUTOMATION_KAGGLE.md`, a weekly GitHub → Kaggle API picture run. Ollama is for text only (prompts and choices), Wan 2.1 for a later video pilot. To build after the icons are in.
+
+## 2026-11-21 21:50 IST (16:20 UTC) — Roadmap of free tools, keyword research
+
+- Wrote `docs/ROADMAP_FREE_TOOLS.md`: R1–R9 with goal, how, files, secrets, variables, effort, risks and "done when" for each. Suggested order: real stock clips → topic radar → comments → topics → subtitles → Spanish dub → self-check + alerts → weekly Kaggle run → more platforms.
+- Keyword research answer: YouTube search suggestions (free), competition checks with the YouTube Data API, our own search terms from YouTube Analytics, Google Trends (manual), and the **YouTube Studio Research tab** (manual, best signal). Built as R2 "topic radar" + R3 "comments → topics".

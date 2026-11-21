@@ -1,0 +1,559 @@
+﻿channel,rank,priority,icon,name,uses,episodes
+CurioKids,1,A,☀️,Sun,100,37
+CurioKids,2,A,💧,Droplet,76,35
+CurioKids,3,A,💨,Dashing away,50,33
+CurioKids,4,A,🌙,Crescent moon,46,17
+CurioKids,5,A,👀,Eyes,37,21
+CurioKids,6,A,✨,Sparkles,36,18
+CurioKids,7,A,🌊,Water wave,34,13
+CurioKids,8,A,☁️,Cloud,34,11
+CurioKids,9,A,🌍,Globe showing europe-africa,33,16
+CurioKids,10,A,🌧️,Cloud with rain,31,10
+CurioKids,11,A,🌈,Rainbow,27,10
+CurioKids,12,A,⚡,High voltage,26,11
+CurioKids,13,A,❓,Red question mark,25,16
+CurioKids,14,A,⬆️,Up arrow,25,17
+CurioKids,15,A,🔵,Blue circle,24,10
+CurioKids,16,A,❄️,Snowflake,24,11
+CurioKids,17,A,img:Human_physiology/Servier/brain-1,—,24,14
+CurioKids,18,A,🤔,Thinking face,22,16
+CurioKids,19,A,🌱,Seedling,22,14
+CurioKids,20,A,💡,Light bulb,22,7
+CurioKids,21,A,💪,Flexed biceps,21,11
+CurioKids,22,A,😴,Sleeping face,21,12
+CurioKids,23,A,🍎,Red apple,20,10
+CurioKids,24,A,🌸,Cherry blossom,20,8
+CurioKids,25,A,⭐,Star,20,9
+CurioKids,26,A,🧠,Brain,19,12
+CurioKids,27,A,👂,Ear,19,12
+CurioKids,28,A,🔄,Counterclockwise arrows button,19,13
+CurioKids,29,A,💥,Collision,19,9
+CurioKids,30,A,🖐️,Hand with fingers splayed,18,4
+CurioKids,31,A,🔴,Red circle,17,10
+CurioKids,32,A,👃,Nose,17,7
+CurioKids,33,A,🐝,Honeybee,17,5
+CurioKids,34,A,🦴,Bone,17,8
+CurioKids,35,A,🌰,Chestnut,16,5
+CurioKids,36,A,🍃,Leaf fluttering in wind,16,6
+CurioKids,37,A,🌬️,Wind face,16,9
+CurioKids,38,A,🧊,Ice,16,9
+CurioKids,39,A,🏃,Person running,15,8
+CurioKids,40,A,🍂,Fallen leaf,15,5
+CurioKids,41,B,🌅,Sunrise,14,8
+CurioKids,42,B,🌀,Cyclone,14,8
+CurioKids,43,B,🧑,Person,14,14
+CurioKids,44,B,🪐,Ringed planet,14,4
+CurioKids,45,B,🌑,New moon,14,9
+CurioKids,46,B,✋,Raised hand,13,8
+CurioKids,47,B,💦,Sweat droplets,13,10
+CurioKids,48,B,👅,Tongue,13,6
+CurioKids,49,B,🦋,Butterfly,13,1
+CurioKids,50,B,🟠,Orange circle,12,9
+CurioKids,51,B,🔊,Speaker high volume,12,4
+CurioKids,52,B,🥶,Cold face,12,4
+CurioKids,53,B,🔥,Fire,12,7
+CurioKids,54,B,img:Human_physiology/Servier/muscle-1,—,12,9
+CurioKids,55,B,🧒,Child,11,9
+CurioKids,56,B,🌳,Deciduous tree,11,8
+CurioKids,57,B,⬇️,Down arrow,11,8
+CurioKids,58,B,🪨,Rock,11,7
+CurioKids,59,B,🩸,Drop of blood,11,4
+CurioKids,60,B,🪥,Toothbrush,11,3
+CurioKids,61,B,img:Human_physiology/Servier/eye,—,11,5
+CurioKids,62,B,🧼,Soap,11,4
+CurioKids,63,B,🥤,Cup with straw,11,6
+CurioKids,64,B,🌋,Volcano,11,2
+CurioKids,65,B,🌿,Herb,10,9
+CurioKids,66,B,🫧,Bubbles,10,4
+CurioKids,67,B,📏,Straight ruler,10,6
+CurioKids,68,B,🐶,Dog face,10,7
+CurioKids,69,B,🍯,Honey pot,10,5
+CurioKids,70,B,img:Human_physiology/Servier/healthy-lung,—,10,6
+CurioKids,71,B,🪶,Feather,10,6
+CurioKids,72,B,🌕,Full moon,10,4
+CurioKids,73,B,🔍,Magnifying glass tilted left,9,7
+CurioKids,74,B,😊,Smiling face with smiling eyes,9,9
+CurioKids,75,B,🚀,Rocket,9,5
+CurioKids,76,B,🚪,Door,9,4
+CurioKids,77,B,🧲,Magnet,9,2
+CurioKids,78,B,🏠,House,8,5
+CurioKids,79,B,🏞️,National park,8,4
+CurioKids,80,B,🟡,Yellow circle,8,7
+CurioKids,81,C,🍽️,Fork and knife with plate,8,6
+CurioKids,82,C,🐦,Bird,8,6
+CurioKids,83,C,🔁,Repeat button,8,6
+CurioKids,84,C,🌻,Sunflower,8,4
+CurioKids,85,C,🎵,Musical note,8,5
+CurioKids,86,C,🌡️,Thermometer,8,7
+CurioKids,87,C,🐟,Fish,8,4
+CurioKids,88,C,🍋,Lemon,8,5
+CurioKids,89,C,⏰,Alarm clock,8,7
+CurioKids,90,C,🦉,Owl,8,4
+CurioKids,91,C,❤️,Red heart,8,4
+CurioKids,92,C,🥦,Broccoli,8,4
+CurioKids,93,C,🐛,Bug,8,1
+CurioKids,94,C,🥚,Egg,8,2
+CurioKids,95,C,🪞,Mirror,8,3
+CurioKids,96,C,⏱️,Stopwatch,7,6
+CurioKids,97,C,🪵,Wood,7,3
+CurioKids,98,C,🧂,Salt,7,4
+CurioKids,99,C,🟢,Green circle,7,5
+CurioKids,100,C,🤝,Handshake,7,5
+CurioKids,101,C,👋,Waving hand,7,5
+CurioKids,102,C,⛰️,Mountain,7,5
+CurioKids,103,C,🟤,Brown circle,7,4
+CurioKids,104,C,🐱,Cat face,7,6
+CurioKids,105,C,🤲,Palms up together,7,2
+CurioKids,106,C,🦷,Tooth,7,3
+CurioKids,107,C,img:Microbiology/Servier/bacterium,—,7,5
+CurioKids,108,C,🤗,Hugging face,7,6
+CurioKids,109,C,🐋,Whale,7,2
+CurioKids,110,C,🌌,Milky way,7,4
+CurioKids,111,C,🔢,Input numbers,7,3
+CurioKids,112,C,🐘,Elephant,7,2
+CurioKids,113,C,🚫,Prohibited,7,6
+CurioKids,114,C,img:Human_physiology/Servier/heart-front,—,7,4
+CurioKids,115,C,🦒,Giraffe,7,2
+CurioKids,116,C,🦓,Zebra,7,2
+CurioKids,117,C,img:Human_physiology/Servier/eye-crosssection,—,7,2
+CurioKids,118,C,💗,Growing heart,6,3
+CurioKids,119,C,🥕,Carrot,6,3
+CurioKids,120,C,img:Human_physiology/Servier/ear,—,6,4
+CurioKids,121,C,🧱,Brick,6,5
+CurioKids,122,C,🏖️,Beach with umbrella,6,5
+CurioKids,123,C,😉,Winking face,6,4
+CurioKids,124,C,😌,Relieved face,6,5
+CurioKids,125,C,➡️,Right arrow,6,5
+CurioKids,126,C,img:Human_physiology/Servier/nasal-cavity,—,6,4
+CurioKids,127,C,🔭,Telescope,6,6
+CurioKids,128,C,🔤,Input latin letters,6,3
+CurioKids,129,C,🐍,Snake,6,1
+CurioKids,130,C,🛁,Bathtub,6,3
+CurioKids,131,C,🥄,Spoon,6,1
+CurioKids,132,C,🤏,Pinching hand,5,5
+CurioKids,133,C,🕳️,Hole,5,5
+CurioKids,134,C,🙃,Upside-down face,5,4
+CurioKids,135,C,🗣️,Speaking head,5,3
+CurioKids,136,C,〰️,Wavy dash,5,3
+CurioKids,137,C,🔀,Shuffle tracks button,5,4
+CurioKids,138,C,🛏️,Bed,5,5
+CurioKids,139,C,🪟,Window,5,5
+CurioKids,140,C,🐬,Dolphin,5,4
+CurioKids,141,C,🛡️,Shield,5,4
+CurioKids,142,C,✅,Check mark button,5,5
+CurioKids,143,C,💛,Yellow heart,5,2
+CurioKids,144,C,💬,Speech balloon,5,3
+CurioKids,145,C,🧅,Onion,5,1
+CurioKids,146,C,📅,Calendar,5,2
+CurioKids,147,C,⚽,Soccer ball,5,3
+CurioKids,148,C,🎈,Balloon,5,3
+CurioKids,149,C,⚪,White circle,5,3
+CurioKids,150,C,🚿,Shower,5,3
+CurioKids,151,C,👆,Backhand index pointing up,5,2
+CurioKids,152,C,🍓,Strawberry,5,2
+CurioKids,153,C,🌾,Sheaf of rice,5,2
+CurioKids,154,C,🦵,Leg,5,4
+CurioKids,155,C,💭,Thought balloon,5,3
+CurioKids,156,C,👶,Baby,5,4
+CurioKids,157,C,😲,Astonished face,5,2
+CurioKids,158,C,✈️,Airplane,5,1
+CurioKids,159,C,🔺,Red triangle,5,1
+CurioKids,160,C,🏝️,Desert island,5,2
+CurioKids,161,C,🎁,Wrapped gift,5,1
+CurioKids,162,C,🌇,Sunset,4,4
+CurioKids,163,C,😎,Smiling face with sunglasses,4,3
+CurioKids,164,C,🦩,Flamingo,4,1
+CurioKids,165,C,👄,Mouth,4,4
+CurioKids,166,C,⏳,Hourglass not done,4,4
+CurioKids,167,C,🧸,Teddy bear,4,4
+CurioKids,168,C,🌼,Blossom,4,3
+CurioKids,169,C,🍁,Maple leaf,4,3
+CurioKids,170,C,👦,Boy,4,2
+CurioKids,171,C,🍌,Banana,4,2
+CurioKids,172,C,img:Human_physiology/Servier/teeth-gum-child,—,4,2
+CurioKids,173,C,🎨,Artist palette,4,2
+CurioKids,174,C,🌤️,Sun behind small cloud,4,3
+CurioKids,175,C,🎉,Party popper,4,3
+CurioKids,176,C,👍,Thumbs up,4,3
+CurioKids,177,C,🦆,Duck,4,2
+CurioKids,178,C,🤫,Shushing face,4,2
+CurioKids,179,C,😵,Knocked-out face,4,1
+CurioKids,180,C,🫁,Lungs,4,2
+CurioKids,181,C,🌽,Ear of corn,4,3
+CurioKids,182,C,🫛,Pea pod,4,3
+CurioKids,183,C,🦄,Unicorn,4,2
+CurioKids,184,C,🤧,Sneezing face,4,1
+CurioKids,185,C,img:Human_physiology/Servier/retina,—,4,2
+CurioKids,186,C,img:Cell_types/almaCELL/Neurons,—,4,1
+CurioKids,187,C,↔️,Left-right arrow,4,3
+CurioKids,188,C,🛣️,Motorway,4,2
+CurioKids,189,C,🐣,Hatching chick,3,3
+CurioKids,190,C,👤,Bust in silhouette,3,1
+CurioKids,191,C,🔦,Flashlight,3,1
+CurioKids,192,C,🏔️,Snow-capped mountain,3,2
+CurioKids,193,C,🌷,Tulip,3,3
+CurioKids,194,C,🥱,Yawning face,3,1
+CurioKids,195,C,🍪,Cookie,3,1
+CurioKids,196,C,😄,Grinning face with smiling eyes,3,3
+CurioKids,197,C,🧪,Test tube,3,3
+CurioKids,198,C,😁,Beaming face with smiling eyes,3,3
+CurioKids,199,C,📖,Open book,3,3
+CurioKids,200,C,🐳,Spouting whale,3,1
+CurioKids,201,C,img:Human_physiology/Servier/skin,—,3,1
+CurioKids,202,C,🕰️,Mantelpiece clock,3,2
+CurioKids,203,C,🍊,Tangerine,3,3
+CurioKids,204,C,🍇,Grapes,3,2
+CurioKids,205,C,🥣,Bowl with spoon,3,2
+CurioKids,206,C,😺,Grinning cat,3,2
+CurioKids,207,C,😋,Face savoring food,3,3
+CurioKids,208,C,🐒,Monkey,3,2
+CurioKids,209,C,🐧,Penguin,3,1
+CurioKids,210,C,img:Animals/DBCLS/Koganegumo_spider,—,3,1
+CurioKids,211,C,🕸️,Spider web,3,1
+CurioKids,212,C,🪰,Fly,3,2
+CurioKids,213,C,img:General_items/Servier/glass-cold-drink,—,3,2
+CurioKids,214,C,img:Human_physiology/Servier/heart-valves,—,3,2
+CurioKids,215,C,💓,Beating heart,3,2
+CurioKids,216,C,img:General_items/Servier/sun,—,3,3
+CurioKids,217,C,🫐,Blueberries,3,1
+CurioKids,218,C,🌵,Cactus,3,1
+CurioKids,219,C,img:Human_physiology/Servier/skin-normal,—,3,3
+CurioKids,220,C,🌟,Glowing star,3,3
+CurioKids,221,C,👕,T-shirt,3,3
+CurioKids,222,C,🦠,Microbe,3,1
+CurioKids,223,C,🍬,Candy,3,1
+CurioKids,224,C,🍿,Popcorn,3,1
+CurioKids,225,C,img:General_items/Servier/hand-washing,—,3,2
+CurioKids,226,C,🙂,Slightly smiling face,3,3
+CurioKids,227,C,🟥,Red square,3,1
+CurioKids,228,C,img:General_items/Servier/pot-water-hot,—,3,2
+CurioKids,229,C,☔,Umbrella with rain drops,3,2
+CurioKids,230,C,✍️,Writing hand,3,1
+CurioKids,231,C,🤨,Face with raised eyebrow,3,1
+CurioKids,232,C,🏆,Trophy,3,3
+CurioKids,233,C,img:Chemistry/OpenClipart/particles-salt-solution,—,2,1
+CurioKids,234,C,🟣,Purple circle,2,2
+CurioKids,235,C,🎒,Backpack,2,2
+CurioKids,236,C,🔉,Speaker medium volume,2,2
+CurioKids,237,C,🧍,Person standing,2,2
+CurioKids,238,C,img:Animals/Servier/dog_beagle,—,2,1
+CurioKids,239,C,💃,Woman dancing,2,1
+CurioKids,240,C,🧣,Scarf,2,2
+CurioKids,241,C,🛌,Person in bed,2,2
+CurioKids,242,C,💫,Dizzy,2,2
+CurioKids,243,C,🎢,Roller coaster,2,2
+CurioKids,244,C,😅,Grinning face with sweat,2,1
+CurioKids,245,C,🚽,Toilet,2,2
+CurioKids,246,C,🧽,Sponge,2,1
+CurioKids,247,C,😮,Face with open mouth,2,2
+CurioKids,248,C,🦁,Lion,2,2
+CurioKids,249,C,🏜️,Desert,2,2
+CurioKids,250,C,👫,—,2,1
+CurioKids,251,C,📚,Books,2,2
+CurioKids,252,C,😢,Crying face,2,1
+CurioKids,253,C,🚰,Potable water,2,2
+CurioKids,254,C,🔩,Nut and bolt,2,2
+CurioKids,255,C,🗓️,Spiral calendar,2,1
+CurioKids,256,C,🐸,Frog,2,2
+CurioKids,257,C,🐾,Paw prints,2,1
+CurioKids,258,C,🐑,Ewe,2,1
+CurioKids,259,C,🌒,Waxing crescent moon,2,2
+CurioKids,260,C,🌓,First quarter moon,2,2
+CurioKids,261,C,🌘,Waning crescent moon,2,2
+CurioKids,262,C,🏊,Person swimming,2,1
+CurioKids,263,C,🛑,Stop sign,2,1
+CurioKids,264,C,🧵,Thread,2,2
+CurioKids,265,C,🚲,Bicycle,2,2
+CurioKids,266,C,🕷️,Spider,2,1
+CurioKids,267,C,🐌,Snail,2,1
+CurioKids,268,C,🧦,Socks,2,2
+CurioKids,269,C,🌗,Last quarter moon,2,2
+CurioKids,270,C,🌃,Night with stars,2,2
+CurioKids,271,C,🥵,Hot face,2,1
+CurioKids,272,C,✊,Raised fist,2,2
+CurioKids,273,C,🛤️,Railway track,2,2
+CurioKids,274,C,😫,Tired face,2,2
+CurioKids,275,C,📱,Mobile phone,2,2
+CurioKids,276,C,🥛,Glass of milk,2,2
+CurioKids,277,C,🤸,Person cartwheeling,2,1
+CurioKids,278,C,⚫,Black circle,2,2
+CurioKids,279,C,☂️,Umbrella,2,2
+CurioKids,280,C,img:Human_physiology/Servier/taste-buds,—,2,1
+CurioKids,281,C,🗺️,World map,2,2
+CurioKids,282,C,♨️,Hot springs,2,1
+CurioKids,283,C,🟫,Brown square,2,2
+CurioKids,284,C,🪱,Worm,2,1
+CurioKids,285,C,💇,Person getting haircut,2,1
+CurioKids,286,C,🦶,Foot,2,2
+CurioKids,287,C,🌞,Sun with face,2,2
+CurioKids,288,C,🐨,Koala,2,2
+CurioKids,289,C,🙌,Raising hands,2,1
+CurioKids,290,C,🦎,Lizard,2,1
+CurioKids,291,C,💎,Gem stone,2,1
+CurioKids,292,C,⚖️,Balance scale,2,2
+CurioKids,293,C,🏡,House with garden,2,2
+CurioKids,294,C,📜,Scroll,2,1
+CurioKids,295,C,🌫️,Fog,2,2
+CurioKids,296,C,img:Animals/Servier/fish-1,—,2,1
+CurioKids,297,C,🪖,Military helmet,2,1
+CurioKids,298,C,img:General_items/Servier/earth,—,2,2
+CurioKids,299,C,🧩,Puzzle piece,2,2
+CurioKids,300,C,🔋,Battery,2,1
+CurioKids,301,C,👁️,Eye,2,1
+CurioKids,302,C,🚗,Automobile,1,1
+CurioKids,303,C,img:Animals/DBCLS/Japanese_tiger_prawn,—,1,1
+CurioKids,304,C,🦐,Shrimp,1,1
+CurioKids,305,C,🐕,Dog,1,1
+CurioKids,306,C,🍖,Meat on bone,1,1
+CurioKids,307,C,img:Animals/Servier/dog,—,1,1
+CurioKids,308,C,🦇,Bat,1,1
+CurioKids,309,C,🍼,Baby bottle,1,1
+CurioKids,310,C,img:Animals/DBCLS/honey_bee_waggle_dance,—,1,1
+CurioKids,311,C,🐿️,Chipmunk,1,1
+CurioKids,312,C,⛄,Snowman without snow,1,1
+CurioKids,313,C,🌨️,Cloud with snow,1,1
+CurioKids,314,C,🕐,One oclock,1,1
+CurioKids,315,C,img:Human_physiology/Servier/bloodstream,—,1,1
+CurioKids,316,C,😳,Flushed face,1,1
+CurioKids,317,C,😐,Neutral face,1,1
+CurioKids,318,C,🙆,Person gesturing ok,1,1
+CurioKids,319,C,🍏,Green apple,1,1
+CurioKids,320,C,🍐,Pear,1,1
+CurioKids,321,C,🥑,Avocado,1,1
+CurioKids,322,C,🪁,Kite,1,1
+CurioKids,323,C,🪴,Potted plant,1,1
+CurioKids,324,C,🙏,Folded hands,1,1
+CurioKids,325,C,img:Human_physiology/Servier/tear-duct,—,1,1
+CurioKids,326,C,😬,Grimacing face,1,1
+CurioKids,327,C,🤖,Robot,1,1
+CurioKids,328,C,🤩,Star-struck,1,1
+CurioKids,329,C,img:Animals/Servier/cat,—,1,1
+CurioKids,330,C,img:Human_physiology/Servier/larynx,—,1,1
+CurioKids,331,C,🛋️,Couch and lamp,1,1
+CurioKids,332,C,🐈,Cat,1,1
+CurioKids,333,C,🥧,Pie,1,1
+CurioKids,334,C,🍑,Peach,1,1
+CurioKids,335,C,img:Human_physiology/Servier/hand,—,1,1
+CurioKids,336,C,🐥,Front-facing baby chick,1,1
+CurioKids,337,C,🐭,Mouse face,1,1
+CurioKids,338,C,🌏,Globe showing asia-australia,1,1
+CurioKids,339,C,🕛,Twelve oclock,1,1
+CurioKids,340,C,🛷,Sled,1,1
+CurioKids,341,C,🟦,Blue square,1,1
+CurioKids,342,C,🎺,Trumpet,1,1
+CurioKids,343,C,🏘️,Houses,1,1
+CurioKids,344,C,👇,Backhand index pointing down,1,1
+CurioKids,345,C,🤕,Face with head-bandage,1,1
+CurioKids,346,C,⚠️,Warning,1,1
+CurioKids,347,C,🖼️,Framed picture,1,1
+CurioKids,348,C,♻️,Recycling symbol,1,1
+CurioKids,349,C,🛰️,Satellite,1,1
+CurioKids,350,C,🥪,Sandwich,1,1
+CurioKids,351,C,⛈️,Cloud with lightning and rain,1,1
+CurioKids,352,C,🧥,Coat,1,1
+CurioKids,353,C,🧢,Billed cap,1,1
+CurioKids,354,C,💙,Blue heart,1,1
+CurioKids,355,C,↩️,Right arrow curving left,1,1
+CurioKids,356,C,🦗,Cricket,1,1
+CurioKids,357,C,img:Human_physiology/Servier/teeth-gum-adult,—,1,1
+CurioKids,358,C,🎂,Birthday cake,1,1
+CurioKids,359,C,🦅,Eagle,1,1
+CurioKids,360,C,🔆,Bright button,1,1
+CurioKids,361,C,🐄,Cow,1,1
+CurioKids,362,C,🙈,See-no-evil monkey,1,1
+CurioKids,363,C,🌶️,Hot pepper,1,1
+CurioKids,364,C,🌲,Evergreen tree,1,1
+CurioKids,365,C,img:Animals/DBCLS/pupa_icon,—,1,1
+CurioKids,366,C,img:Human_physiology/Servier/muscle-3,—,1,1
+CurioKids,367,C,img:Blood_Immunology/Servier/erythrocyte,—,1,1
+CurioKids,368,C,🥬,Leafy green,1,1
+CurioKids,369,C,😖,Confounded face,1,1
+CurioKids,370,C,img:Human_physiology/Servier/papillae,—,1,1
+CurioKids,371,C,🍄,Mushroom,1,1
+CurioKids,372,C,🐢,Turtle,1,1
+CurioKids,373,C,😶,Face without mouth,1,1
+CurioKids,374,C,🧻,Roll of paper,1,1
+CurioKids,375,C,🛞,Wheel,1,1
+CurioKids,376,C,🔬,Microscope,1,1
+CurioKids,377,C,🔒,Locked,1,1
+CurioKids,378,C,🫒,Olive,1,1
+CurioKids,379,C,⏩,Fast-forward button,1,1
+CurioKids,380,C,😂,Face with tears of joy,1,1
+CurioKids,381,C,img:Human_physiology/Servier/vocal-chord-phonation,—,1,1
+CurioKids,382,C,👯,Person with bunny ears,1,1
+CurioKids,383,C,➰,Curly loop,1,1
+CurioKids,384,C,img:Animals/Servier/horse,—,1,1
+CurioKids,385,C,📎,Paperclip,1,1
+CurioKids,386,C,🧭,Compass,1,1
+CurioKids,387,C,💅,Nail polish,1,1
+CurioKids,388,C,img:Human_physiology/Servier/olfactory-bulb,—,1,1
+CurioKids,389,C,img:General_items/Servier/sugar,—,1,1
+CurioKids,390,C,📄,Page facing up,1,1
+CurioKids,391,C,🛬,Airplane arrival,1,1
+CurioKids,392,C,🎲,Game die,1,1
+CurioKids,393,C,🔘,Radio button,1,1
+CurioKids,394,C,⛺,Tent,1,1
+CurioKids,395,C,✏️,Pencil,1,1
+CurioKids,396,C,🥾,Hiking boot,1,1
+CurioKids,397,C,🪢,Knot,1,1
+CurioKids,398,C,img:Human_physiology/Servier/capillaries,—,1,1
+CurioKids,399,C,🛝,Playground slide,1,1
+CurioKids,400,C,🪑,Chair,1,1
+CurioKids,401,C,🐠,Tropical fish,1,1
+CurioKids,402,C,😠,Angry face,1,1
+CurioKids,403,C,🍭,Lollipop,1,1
+CurioKids,404,C,🥨,Pretzel,1,1
+CurioKids,405,C,⛏️,Pick,1,1
+CurioKids,406,C,🏁,Chequered flag,1,1
+CurioKids,407,C,🛠️,Hammer and wrench,1,1
+CurioKids,408,C,🧹,Broom,1,1
+CurioKids,409,C,🎠,Carousel horse,1,1
+CurioKids,410,C,🌆,Cityscape at dusk,1,1
+CurioKids,411,C,👣,Footprints,1,1
+CurioKids,412,C,🦕,Sauropod,1,1
+CurioKids,413,C,🍞,Bread,1,1
+CurioKids,414,C,img:Human_physiology/Servier/heart-chambers-visible,—,1,1
+CurioKids,415,C,⬅️,Left arrow,1,1
+CurioKids,416,C,🩺,Stethoscope,1,1
+CurioKids,417,C,📌,Pushpin,1,1
+CurioKids,418,C,🧶,Yarn,1,1
+CurioKids,419,C,⚾,Baseball,1,1
+CurioKids,420,C,🦘,Kangaroo,1,1
+CurioKids,421,C,👓,Glasses,1,1
+AInation,1,A,chat,Speech balloon,86,41
+AInation,2,A,check,Check mark button,84,39
+AInation,3,A,warn,Warning,82,38
+AInation,4,A,doc,Page facing up,78,35
+AInation,5,A,brain,Brain,73,27
+AInation,6,A,user,Person,61,32
+AInation,7,A,shield,Shield,48,25
+AInation,8,A,bulb,Light bulb,48,23
+AInation,9,A,target,Bullseye,47,21
+AInation,10,A,book,Open book,46,22
+AInation,11,A,search,Magnifying glass tilted left,42,24
+AInation,12,A,eye,Eye,41,22
+AInation,13,A,robot,Robot,37,17
+AInation,14,A,x,Cross mark,36,16
+AInation,15,A,lock,Locked,35,14
+AInation,16,A,phone,Mobile phone,33,11
+AInation,17,A,globe,Globe showing europe-africa,25,16
+AInation,18,A,calendar,Calendar,20,15
+AInation,19,A,mail,Envelope,17,11
+AInation,20,A,sun,Sun,16,6
+AInation,21,A,🔁,Repeat button,15,9
+AInation,22,A,❓,Red question mark,14,9
+AInation,23,A,🧩,Puzzle piece,11,4
+AInation,24,A,🤔,Thinking face,10,7
+AInation,25,A,✅,Check mark button,10,8
+AInation,26,A,🔍,Magnifying glass tilted left,8,6
+AInation,27,A,coin,Coin,8,8
+AInation,28,A,suitcase,Briefcase,7,5
+AInation,29,A,💬,Speech balloon,7,7
+AInation,30,A,🖼️,Framed picture,7,2
+AInation,31,A,👀,Eyes,6,5
+AInation,32,A,🔗,Link,6,3
+AInation,33,A,📺,Television,6,1
+AInation,34,A,🎛️,Control knobs,5,2
+AInation,35,A,📱,Mobile phone,5,5
+AInation,36,A,🚫,Prohibited,5,5
+AInation,37,A,🔢,Input numbers,5,5
+AInation,38,A,🎯,Bullseye,5,4
+AInation,39,A,🎲,Game die,5,3
+AInation,40,A,⏸️,Pause button,4,3
+AInation,41,B,✏️,Pencil,4,4
+AInation,42,B,📞,Telephone receiver,4,3
+AInation,43,B,✂️,Scissors,4,4
+AInation,44,B,🧠,Brain,4,4
+AInation,45,B,📚,Books,3,3
+AInation,46,B,🛑,Stop sign,3,2
+AInation,47,B,❤️,Red heart,3,3
+AInation,48,B,📝,Memo,3,3
+AInation,49,B,🔤,Input latin letters,3,3
+AInation,50,B,🧹,Broom,3,2
+AInation,51,B,🤖,Robot,3,3
+AInation,52,B,📰,Newspaper,3,3
+AInation,53,B,🐱,Cat face,3,2
+AInation,54,B,🔮,Crystal ball,3,1
+AInation,55,B,🗺️,World map,2,2
+AInation,56,B,📵,No mobile phones,2,2
+AInation,57,B,🎙️,Studio microphone,2,2
+AInation,58,B,🌫️,Fog,2,2
+AInation,59,B,📷,Camera,2,2
+AInation,60,B,⚖️,Balance scale,2,2
+AInation,61,B,🔊,Speaker high volume,2,2
+AInation,62,B,🩺,Stethoscope,2,2
+AInation,63,B,🌍,Globe showing europe-africa,2,2
+AInation,64,B,📤,Outbox tray,2,2
+AInation,65,B,🎣,Fishing pole,2,2
+AInation,66,B,🎭,Performing arts,2,2
+AInation,67,B,🆘,Sos button,2,1
+AInation,68,B,🔐,Locked with key,2,1
+AInation,69,B,🏷️,Label,2,2
+AInation,70,B,➕,Plus,2,2
+AInation,71,B,🕵️,Detective,2,1
+AInation,72,B,📅,Calendar,2,1
+AInation,73,B,✍️,Writing hand,2,1
+AInation,74,B,🏗️,Building construction,1,1
+AInation,75,B,🧭,Compass,1,1
+AInation,76,B,⚡,High voltage,1,1
+AInation,77,B,👥,Busts in silhouette,1,1
+AInation,78,B,📋,Clipboard,1,1
+AInation,79,B,🆕,New button,1,1
+AInation,80,B,▶️,Play button,1,1
+AInation,81,C,🧪,Test tube,1,1
+AInation,82,C,➡️,Right arrow,1,1
+AInation,83,C,⬅️,Left arrow,1,1
+AInation,84,C,🚩,Triangular flag,1,1
+AInation,85,C,🧲,Magnet,1,1
+AInation,86,C,🎫,Ticket,1,1
+AInation,87,C,🚆,Train,1,1
+AInation,88,C,🔓,Unlocked,1,1
+AInation,89,C,train,Train,1,1
+AInation,90,C,🗣️,Speaking head,1,1
+AInation,91,C,🧑,Person,1,1
+AInation,92,C,👂,Ear,1,1
+AInation,93,C,💻,Laptop,1,1
+AInation,94,C,☁️,Cloud,1,1
+AInation,95,C,🗄️,File cabinet,1,1
+AInation,96,C,🏠,House,1,1
+AInation,97,C,✈️,Airplane,1,1
+AInation,98,C,🔕,Bell with slash,1,1
+AInation,99,C,⏳,Hourglass not done,1,1
+AInation,100,C,🗑️,Wastebasket,1,1
+AInation,101,C,🔑,Key,1,1
+AInation,102,C,🐶,Dog face,1,1
+AInation,103,C,⏱️,Stopwatch,1,1
+AInation,104,C,🍽️,Fork and knife with plate,1,1
+AInation,105,C,💙,Blue heart,1,1
+AInation,106,C,😂,Face with tears of joy,1,1
+AInation,107,C,💡,Light bulb,1,1
+AInation,108,C,👁️,Eye,1,1
+AInation,109,C,👄,Mouth,1,1
+AInation,110,C,😡,Pouting face,1,1
+AInation,111,C,🙂,Slightly smiling face,1,1
+AInation,112,C,🥕,Carrot,1,1
+AInation,113,C,🛒,Shopping cart,1,1
+AInation,114,C,✨,Sparkles,1,1
+AInation,115,C,➖,Minus,1,1
+AInation,116,C,🧐,Face with monocle,1,1
+AInation,117,C,📍,Round pushpin,1,1
+AInation,118,C,🤥,Lying face,1,1
+AInation,119,C,📖,Open book,1,1
+AInation,120,C,👤,Bust in silhouette,1,1
+AInation,121,C,🙋,Person raising hand,1,1
+AInation,122,C,😐,Neutral face,1,1
+AInation,123,C,⚠️,Warning,1,1
+AInation,124,C,👆,Backhand index pointing up,1,1
+AInation,125,C,🧮,Abacus,1,1
+AInation,126,C,🙈,See-no-evil monkey,1,1
+AInation,127,C,❌,Cross mark,1,1
+AInation,128,C,🔧,Wrench,1,1
+AInation,129,C,👍,Thumbs up,1,1
+AInation,130,C,📥,Inbox tray,1,1
+AInation,131,C,🏋️,Person lifting weights,1,1
+AInation,132,C,🥞,Pancakes,1,1
+AInation,133,C,✋,Raised hand,1,1
+AInation,134,C,💪,Flexed biceps,1,1
+AInation,135,C,🟠,Orange circle,1,1
+AInation,136,C,⚫,Black circle,1,1
+AInation,137,C,🐈,Cat,1,1
