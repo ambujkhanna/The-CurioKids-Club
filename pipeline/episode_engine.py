@@ -477,8 +477,14 @@ print("backdrop:", art.NAME or "drawn room")
 _E.BUILD_BIG = build_big
 BUILD["picture"] = lambda i, t0, t1, sc: art.build_picture(_E, i, t0, t1, sc)
 scenes.use_for_lists(BUILD, _E)  # lighter list boards: tiles (LIST_STYLE=classic = old rows)
+import stock  # real photos / NASA clips (roadmap R1); falls back to a big icon board
+_E.BUILD_BIG = build_big
+for _n, _fn in stock.BUILDERS.items():
+    BUILD[_n] = (lambda f: (lambda i, t0, t1, sc: f(_E, i, t0, t1, sc)))(_fn)
+HOOK_CARD = bg_line.panel() != "stage" and os.environ.get("FORMAT") != "long"  # glass card: the hook text sits inside it
 for k in range(len(scene_starts)):
     i, t0, t1 = scene_window(k)
+    if k == 0 and HOOK_CARD: t0 = max(t0, 2.35)  # first board waits until the opening hook (0-2.3 s) has faded
     sc = ELINES[i]["board"]
     BUILD.get(sc["type"], build_big)(i, t0, t1, sc)
 
@@ -584,7 +590,7 @@ for i, ln in enumerate(LN):
         continue
     who = ln["speaker"] if len(CAST) > 1 else ("wide" if i % 3 else ln["speaker"])
     _sc_i = max([j for j in scene_starts if j <= i] or [0])
-    if ELINES[_sc_i].get("board", {}).get("type") in list(diagrams.BUILDERS) + list(scenes.BUILDERS) + ["guess", "letter", "count", "picture"]:  # keep diagrams / guessing games on screen
+    if ELINES[_sc_i].get("board", {}).get("type") in list(diagrams.BUILDERS) + list(scenes.BUILDERS) + ["guess", "letter", "count", "picture", "photo", "clip"]:  # keep diagrams / guessing games on screen
         who = "board"
     SHOTS.append((ln["start"] - 0.05, "wide" if i % 4 == 0 or i == last else who))
     cl = cues_by_line.get(i, [])
@@ -666,4 +672,4 @@ if __name__ == "__main__":
         make_thumbnail()
     except Exception as e:  # a thumbnail problem must never block the video
         print("thumbnail failed:", e)
-    json.dump({"frames": NF, "pops": pops, "shots": [(t_, k) for t_, k in SHOTS]}, open(os.path.join(B, "shots.json"), "w"))
+    json.dump({"frames": NF, "pops": pops, "shots": [(t_, k) for t_, k in SHOTS], "hook_in_card": HOOK_CARD}, open(os.path.join(B, "shots.json"), "w"))

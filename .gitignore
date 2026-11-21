@@ -4,3 +4,5 @@ __pycache__/
 *.onnx
 voices.bin
 assets/icons3d/
+assets/stock/
+radar/

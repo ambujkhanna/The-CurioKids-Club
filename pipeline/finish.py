@@ -113,7 +113,11 @@ def _hook_text():
     return h[0].upper() + h[1:]
 _hk = _hook_text()
 if _hk:
-    _pos = "{\\an8\\pos(%d,%d)}" % (OUTW // 2, 60 if LONG else 215)
+    try:  # kids glass card: the card is empty for the first 2.3 s, so the hook sits in its middle (not over the board)
+        _in_card = json.load(open(os.path.join(B, "shots.json"))).get("hook_in_card")
+    except Exception:
+        _in_card = False
+    _pos = "{\\an8\\pos(%d,%d)}" % (OUTW // 2, 60 if LONG else (440 if _in_card else 215))
     _hu = _hk.upper()
     if len(_hu) > 20:  # two balanced lines, so long questions never run off the screen
         _w = _hu.split(); _best = min(range(1, len(_w)), key=lambda k: abs(len(" ".join(_w[:k])) - len(" ".join(_w[k:]))))

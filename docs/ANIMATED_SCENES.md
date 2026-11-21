@@ -71,6 +71,28 @@ Every `cue` must be the start of a word that is spoken in that line, and that's 
 - 14 generated icons were rejected (made-up letters or logos, failed cut-outs of see-through things, wrong objects): 💧 💨 🌧️ 🧊 🦷 🧲 🪙 📰 📷 ⚽ 🔋 🎁, prism, password. They stay on Fluent; remake them in a later Kaggle run if wanted (put see-through objects on a darker background).
 - `img:` pictures keep working as before.
 
+## Real photos and video clips (since 2026-11-21, roadmap R1)
+
+Two board types put **real** pictures in the card. They use no API key and are credited automatically.
+
+```json
+{"type": "photo", "query": "oak tree", "caption": "A giant oak", "cue": "oak", "icon": "🌳"}
+{"type": "clip",  "query": "earth from space station", "caption": "Our planet", "cue": "planet", "icon": "🌍"}
+```
+
+- **Channels (owner, 2026-11-22):** **AInation uses real photos** (style `plain`; `STOCK_STYLE=polaroid` gives a tilted snapshot with a REAL! sticker). **The CurioKids Club does not**: next to the cartoon world they looked pasted-in, even as polaroids, and a simple paint filter looked muddy. Kids workflows default `STOCK=off`, so a photo/clip board there becomes an icon board. Kids realism comes from our clay-style pictures and the house icons; a later Kaggle option could restyle a photo into the clay style with the image model.
+- **Sources:** NASA (space topics; photos and videos) and Openverse (everything else; openly licensed photos, only CC0, Public Domain Mark or CC BY: commercial use and changes allowed, no share-alike).
+  - Space words in the query (planet, moon, mars, astronaut, galaxy…) → NASA first. Otherwise Openverse only.
+  - `"source": "nasa"` or `"openverse"` forces one.
+  - Pixabay (and Pexels, if it reopens keys) can be added later.
+- **On screen:** the photo fills the card with a slow push-in. A clip plays 14 s of the NASA video, muted and looping. The caption pops on the cue word, and a small "Photo: …" / "Video: NASA" credit sits in the corner.
+- **Credits** (title, creator, licence, link) go into the YouTube description automatically, together with the Bioicons credits.
+- **3D art first (owner, 2026-11-22):** add `"art": "<name>"` to a photo board. When `assets/art/<name>_landscape.jpg` exists (made on Kaggle: AInation `tools/kaggle/art_ain_v1.ipynb`), our realistic 3D picture is shown and the raw photo is only the fallback. No credit is needed for our own art.
+- **Pinned photos:** after a photo has been reviewed, its details are stored in the board as `"pin": {url, title, source, creator, licence, landing, credit}`. The daily run then uses exactly that photo (no new search, so it can't change or hit Openverse's rate limit). Used in AInation ep031 (office worker) and ep036 (doctor looking at an X-ray).
+- **Wrong picture?** Add `"pick": 1` (2, 3…) to use the next search result, or change the `query` wording. Search results are cached per board in `assets/stock/` (not committed); a changed query or pick fetches again.
+- **Safety:** if a search finds nothing, a download fails, or repo variable `STOCK=off` is set, the board becomes a big icon board with the `icon` and `caption`. Check kids photos for people or anything unsuitable before posting: Openverse photos aren't filtered for people.
+- The validator requires `query` for both types. `python pipeline/stock.py episodes/epNNN-*/episode.json` fetches and prints the credits (good for a preview).
+
 ## Safety
 
 - The validator knows the new types and checks every cue, including `from` and `to`.

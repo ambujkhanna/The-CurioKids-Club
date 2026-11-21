@@ -1,6 +1,6 @@
 # Channels reference: The CurioKids Club & AInation Studio
 
-**Last updated:** 2026-11-21 23:20 IST (17:50 UTC)
+**Last updated:** 2026-11-22 03:10 IST (21:40 UTC)
 
 This is the quick reference for both channels: links, schedules, workflow options, secrets and variables. It's updated whenever any of these change; see the change log at the bottom. The full history is in `TheCurioKidsClub_handoff.md` and `AInation_Studio_handoff.md`.
 
@@ -24,6 +24,7 @@ This is the quick reference for both channels: links, schedules, workflow option
 | **Short publish time** | Alternate days: **Hindi 09:00–11:00** (from Mon 9 Nov 2026), **English 17:00–20:00** on the days in between | 17:00–20:00 every day |
 | **Weekly long video (16:9)** | *Weekly Curio Kids Long Video*: Saturday 10:00 | *Weekly AInation Long Video*: Sunday 10:00 |
 | **Voice Lab** | *Voice Lab (Chatterbox / Turbo voice samples)*: manual only | – |
+| **Topic radar** | *Weekly topic radar*: Mondays 08:47 → GitHub issue with topics + viewers' requests | same |
 | **Opening hook** | The episode's question in big yellow letters for the first 2.3 s; curtains start half open (optional `"hook"` field in episode.json overrides the text) | Same (no curtains) |
 | **Intro** | 2 s: "Welcome to" + animated round logo + music sting (Hindi: "आपका स्वागत है"); repo variable `INTRO` | 2 s: "Welcome to" + animated yellow "AI" badge + music sting |
 | **Ending** | Spoken: "…subscribe… and share this with a friend!"; end card Subscribe / Like / Share; then 3.5 s **"Find us online"** card with the YouTube, Facebook, Instagram links (`OUTRO`) | Spoken: "Subscribe to AI Nation Studio, and share this with a friend!"; same end card + links card |
@@ -61,6 +62,10 @@ This is the quick reference for both channels: links, schedules, workflow option
 | `META_IG_USER_ID` | Instagram Business account id (`instagram_business_account.id`) |
 | `YT_ANALYTICS_REFRESH_TOKEN` | Per channel, **read-only** analytics token (scope `yt-analytics.readonly`), separate from the upload token; if missing, the analytics job skips quietly |
 
+| `YT_API_KEY` | Optional: free Data API key for the topic radar's competition check and comments (needed on AInation, whose upload token is upload-only) |
+| `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` | Optional: phone alerts via a Telegram bot (uploaded / QC failed / self-check warning / run failed) |
+| `DISCORD_WEBHOOK_URL` | Optional: the same alerts to a Discord channel |
+
 Never paste tokens into chat, files or commits; they go only into GitHub Secrets.
 
 ## Repo Variables (optional; defaults apply if not set)
@@ -81,6 +86,10 @@ Never paste tokens into chat, files or commits; they go only into GitHub Secrets
 | `ICON_STYLE` | `house` (our realistic icons, curated mix: weather/symbols/white things stay emoji) · `house_all` (every house icon) · `3d` (Fluent only) · `flat` (old flat icons) | ✅ | ✅ |
 | `THUMB_STYLE` | `punch` (big wow faces, 1–3 huge words, "A → B" pictures with a red arrow; `classic` = the old design) | ✅ | ✅ |
 | `THUMB_MARK` | `sticker` ("WHY?/HOW?/WHAT?" speech bubble on the answer picture) · `glow` · `mystery` (dark outline + ?) · `circle` (red circle) | ✅ | ✅ |
+| `STOCK` | AInation `on`, kids `off` (owner: real photos look pasted-in on the kids channel). On = real photos (Openverse/NASA) and NASA clips for `photo` / `clip` boards; off = those boards become icon boards | ✅ | ✅ |
+| `STOCK_STYLE` | `plain` (photo fills the card) · `polaroid` (tilted snapshot, tape, REAL! sticker) | – | ✅ |
+| `RADAR` | `on` (weekly topic radar issue; `off` = no radar) | ✅ | ✅ |
+| `SELFCHECK` | `on` (faster-whisper listens to English Shorts and compares with the script; warns below 85 %, never blocks) | ✅ | ✅ |
 | `CHAR_STYLE` | `doodle` (`polished` = clean single outline, soft light edge and shadow, second eye sparkle; same shapes and rig) | ✅ | ✅ |
 | `ART` | `on` (HD background pictures from `assets/art/`; `off` = the drawn playroom and stage everywhere) | ✅ | – |
 | `ART_AUTO` | `on` (episodes/scripts without a `backdrop` get one picked from the title; `off` = drawn playroom for those) | ✅ | – |
@@ -141,3 +150,7 @@ Never paste tokens into chat, files or commits; they go only into GitHub Secrets
 | 2026-11-21 18:50 IST (13:20 UTC) | Kids: **HD backgrounds** (11 clay-style pictures made on a free Kaggle GPU with FLUX.1-schnell, Apache 2.0) on every video: each episode has a reviewed `backdrop`, scripts pick one from the title or set `BACKDROP:`; **glass card** instead of the puppet stage on pictures; gentle camera push-ins and glides (no half-cut board); items rise and fade in; logo pill; **picture boards** (ep079, ep096, ep097, ep104, ep107); thumbnails and 16:9 long videos use the picture. New variables `ART`, `ART_AUTO`, `PANEL`, `BACKDROP`, `SHORT_INTRO`/`SHORT_OUTRO`. Both: `CHAR_STYLE` (`doodle` default, `polished` option). AInation keeps its plain Studio Open look. |
 | 2026-11-21 20:05 IST (14:35 UTC) | Both: **punchy thumbnails** (owner's pick of 4 highlight styles: the speech-bubble sticker): characters big with a wow face, the explainer pointing at the answer, 1–3 huge words, "A → B" pictures with a red arrow and a WHY?/HOW?/WHAT? sticker, PART N ribbon for series; Shorts and 16:9. Variables `THUMB_STYLE` (punch/classic), `THUMB_MARK` (sticker/glow/mystery/circle). Kids: the HINDI tag moved to a corner. AInation: the "AI EXPLAINED" tag is removed from every board look (owner). |
 | 2026-11-21 23:20 IST (17:50 UTC) | Both: **realistic house icons** (151, `assets/icons_house/*.webp`, FLUX.1-schnell + rembg, `tools/kaggle/icons_v1.ipynb`): curated mix by owner's choice (weather, symbols, mostly-white objects and the robot stay emoji: `PREFER_EMOJI`); nothing deleted: `"house:<emoji>"` forces ours, `ICON_STYLE=house_all` uses all; house-only science pictures by name (`w_heart_model`, `w_soil_block`, `w_ai_chip`…). `ICON_STYLE` default now `house`. |
+| 2026-11-22 00:15 IST (18:45 UTC) | Both: **real photos and NASA clips** (roadmap R1): new board types `photo` and `clip` (`pipeline/stock.py`), sources NASA (space) + Openverse (CC0/PDM/CC BY only), no keys; credits added to the YouTube description; cache `assets/stock/` (gitignored); fallback to an icon board; variable `STOCK`. Not used in any episode yet (owner to choose where). |
+| 2026-11-22 00:50 IST (19:20 UTC) | Owner reviewed real photos: fine for AInation, not for kids (pasted-in look, also as polaroids; a paint filter looked muddy). Kids workflows default `STOCK=off`; AInation `STOCK=on`, `STOCK_STYLE=plain` (polaroid style available). |
+| 2026-11-22 02:10 IST (20:40 UTC) | Both: **topic radar** (R2+R3: weekly issue with search-suggestion topics, competition, our own search terms, viewers' comment requests; `pipeline/radar.py`, workflow *Weekly topic radar*, variable `RADAR`, optional secret `YT_API_KEY`), **self-check** (R6: faster-whisper vs script, warns below 85 %; `SELFCHECK`), **phone alerts** (Telegram/Discord secrets; uploaded / QC failed / self-check warning / run failed). AInation: real photos pinned in ep031 and ep036 (ep033 back to an icon board: its photo was unclear) (`pin` = reviewed photo, no new search). R4 subtitles wait for a login with the caption scope. |
+| 2026-11-22 03:10 IST (21:40 UTC) | Kids: the opening hook no longer overlaps the glass card (it sits in the middle of the still-empty card for 0–2.3 s and the first board pops in after it; engine writes `hook_in_card` to build/shots.json, finish.py reads it). Both: photo boards use our realistic 3D art first (`"art"` → assets/art), raw photos only as the fallback (owner's preference); AInation Kaggle notebook `tools/kaggle/art_ain_v1.ipynb` (21 key visuals for ep023–ep043); ep031/ep036 linked to `ain_jobs_ai` / `ain_health_scan`. |

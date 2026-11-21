@@ -170,3 +170,17 @@ Read first: the channel handoff (`TheCurioKidsClub_handoff.md` / `AInation_Studi
 
 - 151 realistic icons were installed in both repos and 14 were rejected. The owner chose the **curated mix**: our icons for objects, animals, nature, science and tech; emoji for weather, symbols and white things. **Every icon is kept** for later use (`"house:<emoji>"`, `w_*` names, `ICON_STYLE=house_all`). Details: `docs/ANIMATED_SCENES.md` → Icons.
 - Open item 5 (house icons pilot) is **done**. Possible later run: remake the 14 rejects (see-through objects on a darker background), more `w_*` science pictures, and AInation tech icons on a darker backdrop.
+
+## 2026-11-22 00:15 IST (18:45 UTC) — R1 real photos and NASA clips built
+
+- `photo` / `clip` boards work in both channels (NASA + Openverse, credited, with a safe fallback). They are **not used in any episode yet**: the next step is the owner choosing where (proposal: NASA photos and clips in the space series ep094–ep097; Openverse photos for animals, nature and machines).
+- The owner will keep pushing bundles by hand. Pushing from a session needs their GitHub (ambujkhanna) connected at claude.ai/connect-github and the Claude GitHub App on both repos; never tokens in chat.
+
+- 2026-11-22 00:50 IST (19:20 UTC): **Real photos: AInation yes (plain), kids no** (the owner felt they looked pasted-in next to the cartoon world, even as polaroids). Kids workflows have `STOCK=off`. Next for AInation: choose episodes for real photos.
+
+## 2026-11-22 02:10 IST (20:40 UTC) — Radar, self-check, alerts (one bundle)
+
+- Built R2 + R3 (weekly topic radar issue with viewers' requests), R6 (self-check + phone alerts). AInation: pinned real photos in ep031 and ep036 (the owner found the ep033 server close-up and the first ep036 MRI scan unclear: ep036 now shows a doctor with an X-ray, ep033 is an icon board again). Guide: `docs/RADAR_AND_ALERTS.md`.
+- **Open items now:** (1) the owner may add `TELEGRAM_BOT_TOKEN` + `TELEGRAM_CHAT_ID` (or `DISCORD_WEBHOOK_URL`) for alerts, and `YT_API_KEY` for the AInation radar competition check and comments; (2) R4 subtitles need a new YouTube login with the caption scope (owner's decision); (3) R5 Spanish dub (same channel or new?); (4) R7 weekly Kaggle run (needs a Kaggle API key); (5) R8 more platforms (accounts/apps); (6) the polished characters and `SHORT_INTRO`/`SHORT_OUTRO` are still the owner's switches; (7) the hook text vs kids glass card fix is still pending.
+
+- 2026-11-22 03:10 IST (21:40 UTC): kids hook overlap fixed. **Picture rule (owner): realistic 3D art first; raw photos only when no better 3D art exists.** AInation art notebook `tools/kaggle/art_ain_v1.ipynb` is waiting for the owner to run it on Kaggle; after that: check, pick, add `assets/art/` and link the boards.

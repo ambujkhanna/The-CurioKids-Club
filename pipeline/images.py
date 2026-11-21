@@ -86,7 +86,13 @@ def credits(ep):
         parts = _rel(n).split("/"); author = parts[-2] if len(parts) >= 2 else "unknown"; icon = parts[-1]
         url = AUTHOR_URL.get(author, "")
         lines.append(f"{icon} icon by {author.replace('_', ' ')}{' ' + url if url else ''} ({LIC_TEXT[lic]}) via bioicons.com")
-    return ("Illustrations: " + "; ".join(lines)) if lines else ""
+    out = ("Illustrations: " + "; ".join(lines)) if lines else ""
+    try:  # real photos / NASA footage (stock.py): title, creator, licence, link
+        import stock; more = stock.credits(ep)
+        if more: out = (out + "\n" if out else "") + more
+    except Exception:
+        pass
+    return out
 
 
 if __name__ == "__main__":

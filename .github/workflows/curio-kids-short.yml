@@ -114,6 +114,10 @@ jobs:
       - name: Python packages
         run: pip install -r pipeline/requirements.txt
 
+      - name: Install self-check (optional; never blocks a run)
+        continue-on-error: true
+        run: pip install -q faster-whisper
+
       - name: Cache voice model files
         uses: actions/cache@v4
         with:
@@ -169,6 +173,11 @@ jobs:
           CB_TURBO_LAUGHS: ${{ vars.CB_TURBO_LAUGHS || '1' }}
           PYTHONUNBUFFERED: "1"
           ICON_STYLE: ${{ vars.ICON_STYLE || 'house' }}
+          STOCK: ${{ vars.STOCK || 'off' }}  # kids: no real photos (owner, 2026-11-22)
+          SELFCHECK: ${{ vars.SELFCHECK || 'on' }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           LIST_STYLE: ${{ vars.LIST_STYLE || 'tiles' }}
           CTA_STYLE: ${{ vars.CTA_STYLE || 'bar' }}
           CHAR_STYLE: ${{ vars.CHAR_STYLE || 'doodle' }}
@@ -228,3 +237,13 @@ jobs:
         if: always()
         run: |
           python pipeline/save_state.py "Daily run: update episode state"
+
+      - name: Alert on failure (only if alert secrets are set)
+        if: failure()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          python pipeline/notify.py "❌ ${{ github.workflow }} failed in ${{ github.repository }} - $RUN_URL"

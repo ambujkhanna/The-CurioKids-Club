@@ -1,0 +1,46 @@
+name: Weekly topic radar
+
+# Roadmap R2 + R3 (2026-11-22): what people search for + what viewers ask for in comments.
+# Opens a GitHub issue "Topic radar YYYY-WNN" with tick boxes. Read-only towards YouTube. Repo variable RADAR=off stops it.
+on:
+  schedule:
+    - cron: "17 3 * * 1"   # Mondays 03:17 UTC (08:47 IST)
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: topic-radar
+  cancel-in-progress: true
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: pip install -q google-api-python-client google-auth
+      - name: Topic radar
+        env:
+          RADAR: ${{ vars.RADAR || 'on' }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          YT_API_KEY: ${{ secrets.YT_API_KEY }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          YT_ANALYTICS_REFRESH_TOKEN: ${{ secrets.YT_ANALYTICS_REFRESH_TOKEN }}
+          YT_ANALYTICS_CLIENT_ID: ${{ secrets.YT_ANALYTICS_CLIENT_ID }}
+          YT_ANALYTICS_CLIENT_SECRET: ${{ secrets.YT_ANALYTICS_CLIENT_SECRET }}
+        run: python pipeline/radar.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: topic-radar
+          path: radar/latest.md
+          if-no-files-found: ignore

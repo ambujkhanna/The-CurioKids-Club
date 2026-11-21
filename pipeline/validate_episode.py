@@ -5,7 +5,7 @@
 import json, os, sys
 
 TYPES = {"letter", "count", "guess", "title", "big", "steps", "compare", "checklist", "summary", "poem", "gallery", "body", "cycle", "journey", "orbit",
-         "lifecycle", "flow", "transform", "water_cycle", "plant_growth", "tiles", "timeline", "picture"}  # picture = HD art board (pipeline/art.py)  # animated scenes (pipeline/scenes.py)
+         "lifecycle", "flow", "transform", "water_cycle", "plant_growth", "tiles", "timeline", "picture", "photo", "clip"}  # picture = HD art board (pipeline/art.py)  # animated scenes (pipeline/scenes.py)
 CAST = {"MIA", "LEO", "DAD"}
 LEGACY_ICONS = {"chat", "robot", "check", "sun", "train", "doc", "lock", "target", "search", "calendar", "mail", "suitcase",
                 "warn", "x", "user", "bulb", "shield", "coin", "eye", "book", "globe", "brain", "phone"}
@@ -90,6 +90,7 @@ def check(path):
         sc = l.get("board")
         if sc:
             if sc.get("type") not in TYPES: errs.append(f"line {i}: unknown board type {sc.get('type')}")
+            if sc.get("type") in ("photo", "clip") and not sc.get("query"): errs.append(f"line {i}: {sc['type']} board needs \"query\" (what to search for)")
             if sc.get("type") == "picture" and not sc.get("art"): errs.append(f"line {i}: picture board needs \"art\" (a name in assets/art)")
             for key, n in LIMITS.items():
                 if sc.get("type") == key:

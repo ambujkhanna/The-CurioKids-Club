@@ -7,7 +7,7 @@ Rules: free first; no paid AI APIs inside the pipeline; secrets only in GitHub S
 
 ---
 
-## R1. Real stock clips and photos (Pixabay, NASA, Openverse, Wikimedia; Pexels optional): realism without a GPU
+## R1. ✅ BUILT 2026-11-22 (NASA + Openverse; Pixabay/Pexels later): real stock clips and photos (Pixabay, NASA, Openverse, Wikimedia; Pexels optional): realism without a GPU
 
 > **2026-11-21:** Pexels has paused issuing new API keys (the owner tried). Build with **Pixabay** (photos + videos, free key) as the main source, **NASA** for space (no key), **Openverse** (`api.openverse.org`, no key needed; filter `license_type=commercial`) and **Wikimedia Commons** (no key; only CC0 / public domain / CC-BY with the credit in the description) as photo backups. Pexels is optional, used only if `PEXELS_API_KEY` exists.
 
@@ -24,7 +24,7 @@ Rules: free first; no paid AI APIs inside the pipeline; secrets only in GitHub S
 - **Effort:** about 1 day. **Risks:** search results can be off-topic → a fixed query per board plus an owner preview of the first week.
 - **Done when:** 5 episodes render with real clips, the owner approves, and the fallbacks work offline.
 
-## R2. Topic and keyword radar: what people actually search for
+## R2. ✅ BUILT 2026-11-22 (see docs/RADAR_AND_ALERTS.md): topic and keyword radar: what people actually search for
 
 - **Goal:** each week, a ranked list of topics and title words with real demand and beatable competition, for both channels.
 - **Free signals, combined:**
@@ -44,14 +44,14 @@ Rules: free first; no paid AI APIs inside the pipeline; secrets only in GitHub S
 - **Safety:** kids filter (block-list words, no scary or adult topics); never copy other channels' titles or content.
 - **Effort:** about 1 day. **Done when:** a weekly issue appears with sensible topics for both channels.
 
-## R3. Comments → topic list (closes the loop with "drop a topic in the comments")
+## R3. ✅ BUILT 2026-11-22 (part of the radar issue): comments → topic list (closes the loop with "drop a topic in the comments")
 
 - **Goal:** every topic a viewer asks for lands in a list the owner can pick from.
 - **How:** a weekly workflow reads new comments on our last 30 videos (`commentThreads.list`, 1 unit per call), finds topic requests ("make a video on…", "why do…", "?"), removes spam and personal data, merges duplicates, and adds them to the radar issue (R2) as "Viewers asked". It never replies automatically.
 - **Kids channel:** comments are on (the channel is "not made for kids"). Show only the topic text, never names.
 - **Effort:** half a day, built together with R2.
 
-## R4. Subtitles in more languages (reach + search)
+## R4. ⏸ NEEDS A NEW LOGIN (captions.insert needs the youtube.force-ssl scope; both upload logins lack it; owner's decision): subtitles in more languages (reach + search)
 
 - **Goal:** Spanish, Portuguese, Indonesian, Arabic, French and German subtitle tracks on every video, for both channels.
 - **How:**
@@ -71,7 +71,7 @@ Rules: free first; no paid AI APIs inside the pipeline; secrets only in GitHub S
 - **Choice to make:** the same channel (simple; YouTube shows the right language) or a second channel later.
 - **Effort:** 1–2 days (the Hindi code path already exists). **Risks:** translation quality on jokes and rhymes → skip poem episodes at first.
 
-## R6. Self-check and alerts
+## R6. ✅ BUILT 2026-11-22 (see docs/RADAR_AND_ALERTS.md; alerts wait for Telegram/Discord secrets): self-check and alerts
 
 - **Self-check:** after rendering, **faster-whisper** (small model, CPU, about 1 minute) transcribes the video's audio and compares it with the script. Missing or garbled words (> 8% word error) → re-render that line or flag it. Also checks the video isn't silent and that the music isn't too loud (ffmpeg `ebur128`).
 - **Alerts:** a Telegram bot (free; `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` secrets) or a Discord webhook sends "✅ posted: <title> <link>" or "❌ run failed: <step>" to the owner's phone.

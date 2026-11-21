@@ -490,6 +490,10 @@ def main():
         images.fetch(images.used(json.load(open(ep["_file"], encoding="utf-8"))))
     except Exception as e:
         print("note: could not fetch pictures:", e)
+    try:  # real photos / NASA clips for "photo" and "clip" boards (R1); a failure only means the icon-board fallback
+        import stock; stock.prefetch(json.load(open(ep["_file"], encoding="utf-8")))
+    except Exception as e:
+        print("note: could not fetch stock photos/clips:", e)
     from validate_episode import check, check_hi
     errs = check(epf) + (check_hi(epf) if HI else [])
     if errs:
@@ -518,16 +522,34 @@ def main():
     else:
         thumb = None
     problems = qc(mp4, ep)
+    sc_report = None
+    if not problems and not LONG and not HI:  # R6 self-check: listen to the video, compare with the script (warns only)
+        try:
+            import selfcheck; sc_report = selfcheck.check(mp4, ep)
+        except Exception as e:
+            print("note: self-check skipped:", str(e)[:120])
     rec = state["episodes"].setdefault(eid, {})
     if HI:  # the Hindi version keeps its own record inside the episode's record
         rec = rec.setdefault("hi", {}); ep = hindi_ep(ep)
     rec["voices"] = json.load(open(os.path.join(PIPE, "build", "timing.json"))).get("engine", "kokoro")
+    if sc_report:
+        rec["selfcheck"] = {"heard": sc_report["heard"], "ok": sc_report["ok"]}
+        summary(selfcheck.markdown(sc_report))
+        if not sc_report["ok"]:
+            try:
+                import notify; notify.send(f"⚠️ Self-check: only {sc_report['heard']:.0%} of the script was heard in {ep.get('title', eid)}. Listen before it goes public.")
+            except Exception:
+                pass
     rec.update({"title": ep["title"], "rendered_at": dt.datetime.now(IST).isoformat(timespec="seconds"),
                 "duration_s": round(float(probe(mp4)["format"]["duration"]), 2)})
     if problems:
         rec.update({"status": "qc_failed", "problems": problems})
         json.dump(state, open(STATE, "w"), indent=2)
         print("QC FAILED - not uploading:", problems)
+        try:
+            import notify; notify.send(f"❌ QC failed, nothing uploaded: {ep.get('title', eid)}\n" + "\n".join(problems)[:500])
+        except Exception:
+            pass
         summary(f"### ❌ QC failed for {eid} — nothing uploaded\n\n" + "\n".join(f"- {p}" for p in problems)); return 1
     if LONG:  # chapters from the "chapter" markers + no #Shorts tag
         ch = chapters(ep)
@@ -572,6 +594,10 @@ def main():
         kept = [f"skipped: {e}"[:120]]
     json.dump(state, open(STATE, "w"), indent=2)
     print("Uploaded:", rec["url"], "publish:", when)
+    try:
+        import notify; notify.send(f"✅ Uploaded: {ep['title']}\n{rec['url']}\nPublish: {when}")
+    except Exception:
+        pass
     summary(f"### ✅ Uploaded {eid}{' (Hindi)' if HI else ''}: {ep['title']}\n\n- Link: {rec['url']}\n- Publish: {when}\n- Length: {rec['duration_s']} s\n- Voices: {rec['voices']}\n- Thumbnail: {rec['thumbnail']}\n- Playlist: {rec['playlist']}\n- Made for kids: {rec['made_for_kids']}\n" + "".join(f"- {k.title()}: {v}\n" for k, v in social.items()) +
             "- Note: until the YouTube API audit is approved, YouTube keeps API uploads **Private** — "
             "set it to Public (or Schedule) in YouTube Studio → Content.")

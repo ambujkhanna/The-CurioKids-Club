@@ -117,3 +117,7 @@ Every episode has a `"backdrop"` field naming its HD background (garden, playroo
 ## Realistic house icons (since 2026-11-21)
 
 Many emoji now draw as our own realistic 3D icon automatically (curated: weather and symbols stay emoji). Science pictures with no emoji can be used by name, e.g. `"icon": "w_heart_model"`, `"w_soil_block"`, `"w_ai_chip"`; force our version of an emoji with `"house:🦷"`-style names. Full list and rules: `docs/ANIMATED_SCENES.md` → Icons.
+
+## Real photos and NASA clips: not on this channel
+
+The owner decided (2026-11-22) that real photos look pasted-in next to our cartoon world, so this channel doesn't use `photo` / `clip` boards (the workflows have `STOCK=off`; such a board would show as an icon board). Use `picture` boards (our clay-style art) and house icons for realism instead.
