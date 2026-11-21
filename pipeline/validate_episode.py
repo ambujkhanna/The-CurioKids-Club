@@ -2,7 +2,7 @@
 
     python pipeline/validate_episode.py episodes/*/episode.json
 """
-import json, sys
+import json, os, sys
 
 TYPES = {"letter", "count", "guess", "title", "big", "steps", "compare", "checklist", "summary", "poem", "gallery", "body", "cycle", "journey", "orbit",
          "lifecycle", "flow", "transform", "water_cycle", "plant_growth", "tiles", "timeline", "picture"}  # picture = HD art board (pipeline/art.py)  # animated scenes (pipeline/scenes.py)
@@ -41,6 +41,10 @@ def bad_icon(i):
     if "+" in i and len(i) > 2:  # combined picture "🦕+💤"
         return any(bad_icon(p.strip()) for p in i.split("+", 1))
     if i in LEGACY_ICONS: return False
+    if i.startswith("house:"):  # force our house icon for an emoji (falls back to the emoji if the file is missing)
+        return bad_icon(i[6:])
+    if i.startswith("w_"):  # house-only icon (no emoji): assets/icons_house/<name>.webp
+        return not os.path.exists(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "assets", "icons_house", i + ".webp"))
     if i.startswith("img:"):  # real illustration: must be in assets/IMAGE_INDEX.txt
         return i not in _INDEX()
     return i.isascii() or "\u200d" in i or len(i.replace("\ufe0f", "")) > 2  # one plain emoji; no joined (ZWJ) sequences

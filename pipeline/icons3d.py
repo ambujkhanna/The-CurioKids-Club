@@ -1,4 +1,7 @@
-"""3D icons for the boards: Microsoft Fluent Emoji 3D (MIT licence, https://github.com/microsoft/fluentui-emoji).
+"""Icons for the boards: our own realistic house icons first (assets/icons_house/, made with FLUX.1-schnell + rembg on
+Kaggle, see assets/icons_house/manifest.json), then Microsoft Fluent Emoji 3D (MIT licence, https://github.com/microsoft/fluentui-emoji).
+Repo variable ICON_STYLE: house (default: curated mix, see PREFER_EMOJI) | house_all | 3d (Fluent only) | flat (old flat icons). A board icon can also name a
+house-only picture with no emoji, e.g. "w_soil_block", "w_ai_chip" (list: assets/icons_house/*.webp).
 
     import icons3d
     draw = icons3d.drawer("🌱")      # or a board icon name: icons3d.drawer("robot")
@@ -15,7 +18,15 @@ import skia
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(HERE)
 CACHE = os.path.join(ROOT, "assets", "icons3d")
 BASE = "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/"
-ON = os.environ.get("ICON_STYLE", "3d").strip().lower() != "flat"
+STYLE = os.environ.get("ICON_STYLE", "house").strip().lower()
+ON = STYLE != "flat"
+HOUSE = STYLE not in ("3d", "flat")      # our own realistic icons first (assets/icons_house/), then Fluent 3D
+HOUSE_ALL = STYLE == "house_all"         # use every house icon (no curated list)
+HOUSE_DIR = os.path.join(ROOT, "assets", "icons_house")
+# Curated mix (owner, 2026-11-21): for these the emoji (Fluent 3D) reads better on a white card or at small size -
+# weather and symbols, mostly-white objects, the small robot. Their house icons stay in the repo: force one with
+# "house:<emoji>" on a board (e.g. "house:☀️"), or use ICON_STYLE=house_all.
+PREFER_EMOJI = set("""☀️ ☁️ ❄️ 🌀 ✅ ❌ ⚠️ 🚫 🛑 💬 📄 ✉️ 📅 📝 📖 🤖 🧼 🦴 🪶 🥛 🥚 🎲 🥤 🧴 🩹""".split())
 
 # the boards' named icons -> the emoji whose 3D picture replaces them
 NAMED = {"book": "📖", "brain": "🧠", "bulb": "💡", "calendar": "📅", "chat": "💬", "check": "✅", "coin": "🪙",
@@ -40,8 +51,26 @@ def key(s):
     return "-".join(f"{ord(ch):x}" for ch in s if ord(ch) not in (0xFE0F, 0xFE0E))
 
 
+def house(s):
+    """Our own icon for an emoji / board name / 'w_...' / 'house:<emoji>' name, or None (curated: see PREFER_EMOJI)."""
+    if not HOUSE or not isinstance(s, str): return None
+    forced = s.startswith("house:")
+    if forced: s = s[6:]
+    e = NAMED.get(s, s)
+    if not (forced or HOUSE_ALL or s.startswith("w_")) and (e in PREFER_EMOJI or e.replace("\ufe0f", "") in {x.replace("\ufe0f", "") for x in PREFER_EMOJI}):
+        return None
+    k = s if s.startswith("w_") else key(e)
+    p = os.path.join(HOUSE_DIR, k + ".webp")
+    return p if os.path.exists(p) else None
+
+
 def path(s):
-    """Local PNG for an emoji (downloads it the first time). None if unknown or offline."""
+    """Local picture for an emoji: our house icon if there is one, else the Fluent 3D PNG (downloaded the first time).
+    None if unknown or offline."""
+    h = house(s)
+    if h: return h
+    if isinstance(s, str) and s.startswith("w_"): return None
+    if isinstance(s, str) and s.startswith("house:"): s = s[6:]  # forced house icon missing: fall back to the emoji
     s = NAMED.get(s, s)
     k = key(s); rel = _index().get(k)
     if not rel: return None
@@ -70,8 +99,9 @@ def drawer(s, scale=1.18, shadow=True):
     if not ON or not isinstance(s, str) or not s: return None
     img = image(s)
     if img is None: return None
+    tight = house(s) is not None
     def draw(c, x, y, k=1.0, a=1.0, img=img):
-        box = 66 * k * scale
+        box = 66 * k * scale * (0.9 if tight else 1.0)
         r = skia.Rect.MakeXYWH(x - box / 2, y - box / 2, box, box)
         if shadow:  # soft contact shadow under the icon
             p = skia.Paint(AntiAlias=True, Color=skia.Color(0, 0, 0, int(60 * a)))

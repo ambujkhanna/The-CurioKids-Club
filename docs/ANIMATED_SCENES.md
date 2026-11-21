@@ -62,9 +62,13 @@ Every `cue` must be the start of a word that is spoken in that line, and that's 
 
 ## Icons
 
-- Any emoji (`"🦋"`) or board icon name (`"robot"`, `"lock"`, …) is drawn as its 3D Fluent icon. There are 1,594 of them, listed in `pipeline/fluent3d_index.json`.
-- Icons are downloaded once per run from GitHub into `assets/icons3d/` (not committed). If one can't be fetched, the old flat icon is used, so nothing breaks.
-- Repo variable `ICON_STYLE=flat` switches every board back to the old flat icons.
+- **Our own realistic icons come first** (since 2026-11-21): 151 house icons in `assets/icons_house/<emoji code>.webp` (512 px, transparent), made on Kaggle with FLUX.1-schnell plus the rembg cut-out (`tools/kaggle/icons_v1.ipynb` in the kids repo, `assets/icons_house/manifest.json`). They cover objects, animals, food, nature, science kit, anatomy models and tech hardware.
+- **Curated mix:** for weather and symbols, mostly-white objects and the small robot, the emoji reads better on a white card, so these stay emoji: ☀️ ☁️ ❄️ 🌀 ✅ ❌ ⚠️ 🚫 🛑 💬 📄 ✉️ 📅 📝 📖 🤖 🧼 🦴 🪶 🥛 🥚 🎲 🥤 🧴 🩹 (`PREFER_EMOJI` in `pipeline/icons3d.py`; edit the list to change it).
+- **Nothing was thrown away.** Force our version on a board with `"house:<emoji>"`, e.g. `"icon": "house:☀️"`, or use every house icon with repo variable `ICON_STYLE=house_all`.
+- **House-only pictures** (no emoji exists): use the name as the icon, e.g. `"icon": "w_soil_block"`. Available: `w_ai_chip`, `w_cloud_data`, `w_deepfake_mask`, `w_eye_model`, `w_heart_model`, `w_inner_ear`, `w_neural_net`, `w_plant_cell`, `w_seed_cut`, `w_server`, `w_skin_layers`, `w_soil_block`, `w_sound_wave`, `w_stomach_model`, `w_tongue_model`, `w_tooth_cavity`.
+- Otherwise every emoji (`"🦋"`) or board icon name (`"robot"`, `"lock"`, …) is drawn as its 3D Fluent icon (1,594 of them, listed in `pipeline/fluent3d_index.json`; downloaded once per run into `assets/icons3d/`, not committed). If one can't be fetched, the old flat icon is used, so nothing breaks.
+- Repo variable `ICON_STYLE`: `house` (default, curated mix) · `house_all` · `3d` (Fluent only) · `flat` (the old flat icons).
+- 14 generated icons were rejected (made-up letters or logos, failed cut-outs of see-through things, wrong objects): 💧 💨 🌧️ 🧊 🦷 🧲 🪙 📰 📷 ⚽ 🔋 🎁, prism, password. They stay on Fluent; remake them in a later Kaggle run if wanted (put see-through objects on a darker background).
 - `img:` pictures keep working as before.
 
 ## Safety

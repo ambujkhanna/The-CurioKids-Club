@@ -1,6 +1,6 @@
 # Channels reference: The CurioKids Club & AInation Studio
 
-**Last updated:** 2026-11-21 20:05 IST (14:35 UTC)
+**Last updated:** 2026-11-21 23:20 IST (17:50 UTC)
 
 This is the quick reference for both channels: links, schedules, workflow options, secrets and variables. It's updated whenever any of these change; see the change log at the bottom. The full history is in `TheCurioKidsClub_handoff.md` and `AInation_Studio_handoff.md`.
 
@@ -78,7 +78,7 @@ Never paste tokens into chat, files or commits; they go only into GitHub Secrets
 | `CTA_STYLE` | kids `bar` · AInation `pop` (`card` = the old card with small buttons) | ✅ | ✅ |
 | `THEME` | `studio_open` (clean light studio, no board frame, one blue accent, calmer outfits) · `studio_light` (same with a white board card) · `studio_dark` (deep navy + white card) · `classic` (the old living room) | – | ✅ |
 | `LIST_STYLE` | `tiles` (steps/checklist/summary as airy tiles; 5 steps = timeline; `classic` = old full-width rows) | ✅ | ✅ |
-| `ICON_STYLE` | `3d` (Fluent 3D icons on every board; `flat` = the old flat icons) | ✅ | ✅ |
+| `ICON_STYLE` | `house` (our realistic icons, curated mix: weather/symbols/white things stay emoji) · `house_all` (every house icon) · `3d` (Fluent only) · `flat` (old flat icons) | ✅ | ✅ |
 | `THUMB_STYLE` | `punch` (big wow faces, 1–3 huge words, "A → B" pictures with a red arrow; `classic` = the old design) | ✅ | ✅ |
 | `THUMB_MARK` | `sticker` ("WHY?/HOW?/WHAT?" speech bubble on the answer picture) · `glow` · `mystery` (dark outline + ?) · `circle` (red circle) | ✅ | ✅ |
 | `CHAR_STYLE` | `doodle` (`polished` = clean single outline, soft light edge and shadow, second eye sparkle; same shapes and rig) | ✅ | ✅ |
@@ -140,3 +140,4 @@ Never paste tokens into chat, files or commits; they go only into GitHub Secrets
 | 2026-11-21 15:50 IST (10:20 UTC) | Kids: **fun-facts series** ep076–ep083, ep090–ep097, ep104–ep112 (25 episodes incl. soil Part 1/2, English + Hindi) posted **first** from the next day (episode field `order` 1–25; the old queue resumes after it: English ep013, Hindi ep009). Every new episode ends with a spoken 'drop a topic in the comment section' line; the end card shows a 'Drop a topic in the comments!' bubble (both channels). **End cards:** kids = action bar (3 round 3D buttons, finger taps), AInation = big pop (one big button at a time + confetti); repo variable `CTA_STYLE` (`card` = old). |
 | 2026-11-21 18:50 IST (13:20 UTC) | Kids: **HD backgrounds** (11 clay-style pictures made on a free Kaggle GPU with FLUX.1-schnell, Apache 2.0) on every video: each episode has a reviewed `backdrop`, scripts pick one from the title or set `BACKDROP:`; **glass card** instead of the puppet stage on pictures; gentle camera push-ins and glides (no half-cut board); items rise and fade in; logo pill; **picture boards** (ep079, ep096, ep097, ep104, ep107); thumbnails and 16:9 long videos use the picture. New variables `ART`, `ART_AUTO`, `PANEL`, `BACKDROP`, `SHORT_INTRO`/`SHORT_OUTRO`. Both: `CHAR_STYLE` (`doodle` default, `polished` option). AInation keeps its plain Studio Open look. |
 | 2026-11-21 20:05 IST (14:35 UTC) | Both: **punchy thumbnails** (owner's pick of 4 highlight styles: the speech-bubble sticker): characters big with a wow face, the explainer pointing at the answer, 1–3 huge words, "A → B" pictures with a red arrow and a WHY?/HOW?/WHAT? sticker, PART N ribbon for series; Shorts and 16:9. Variables `THUMB_STYLE` (punch/classic), `THUMB_MARK` (sticker/glow/mystery/circle). Kids: the HINDI tag moved to a corner. AInation: the "AI EXPLAINED" tag is removed from every board look (owner). |
+| 2026-11-21 23:20 IST (17:50 UTC) | Both: **realistic house icons** (151, `assets/icons_house/*.webp`, FLUX.1-schnell + rembg, `tools/kaggle/icons_v1.ipynb`): curated mix by owner's choice (weather, symbols, mostly-white objects and the robot stay emoji: `PREFER_EMOJI`); nothing deleted: `"house:<emoji>"` forces ours, `ICON_STYLE=house_all` uses all; house-only science pictures by name (`w_heart_model`, `w_soil_block`, `w_ai_chip`…). `ICON_STYLE` default now `house`. |

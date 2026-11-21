@@ -165,3 +165,8 @@ Read first: the channel handoff (`TheCurioKidsClub_handoff.md` / `AInation_Studi
 
 - Wrote `docs/ROADMAP_FREE_TOOLS.md`: R1–R9 with goal, how, files, secrets, variables, effort, risks and "done when" for each. Suggested order: real stock clips → topic radar → comments → topics → subtitles → Spanish dub → self-check + alerts → weekly Kaggle run → more platforms.
 - Keyword research answer: YouTube search suggestions (free), competition checks with the YouTube Data API, our own search terms from YouTube Analytics, Google Trends (manual), and the **YouTube Studio Research tab** (manual, best signal). Built as R2 "topic radar" + R3 "comments → topics".
+
+## 2026-11-21 23:20 IST (17:50 UTC) — House icons are in (curated mix)
+
+- 151 realistic icons were installed in both repos and 14 were rejected. The owner chose the **curated mix**: our icons for objects, animals, nature, science and tech; emoji for weather, symbols and white things. **Every icon is kept** for later use (`"house:<emoji>"`, `w_*` names, `ICON_STYLE=house_all`). Details: `docs/ANIMATED_SCENES.md` → Icons.
+- Open item 5 (house icons pilot) is **done**. Possible later run: remake the 14 rejects (see-through objects on a darker background), more `w_*` science pictures, and AInation tech icons on a darker backdrop.
