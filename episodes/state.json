@@ -242,7 +242,8 @@
         "status": "uploaded",
         "video_id": "nlcRPRgamdg",
         "url": "https://www.youtube.com/shorts/nlcRPRgamdg",
-        "uploaded_at": "2026-11-20T22:57:45+05:30"
+        "uploaded_at": "2026-11-20T22:57:45+05:30",
+        "thumbnail_checked": "2026-11-21T13:21+05:30 set"
       }
     },
     "ep009": {
@@ -311,7 +312,7 @@
       "video_id": "dcNLkD2l3p8",
       "url": "https://www.youtube.com/shorts/dcNLkD2l3p8",
       "uploaded_at": "2026-11-19T23:29:29+05:30",
-      "thumbnail_checked": "2026-11-20T22:58+05:30 set"
+      "thumbnail_checked": "2026-11-21T13:21+05:30 set"
     }
   }
 }
