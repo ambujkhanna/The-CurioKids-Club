@@ -152,34 +152,26 @@
       "who": "MIA",
       "text": "The chrysalis splits open, and out comes a butterfly! Its wings dry, then off it flies.",
       "board": {
-        "type": "steps",
+        "type": "transform",
         "title": "Hello, butterfly!",
-        "items": [
-          {
-            "icon": "🐣",
-            "label": "The case splits open",
-            "cue": "splits"
-          },
-          {
-            "icon": "🌬️",
-            "label": "Wings dry",
-            "cue": "dry"
-          },
-          {
-            "icon": "🦋",
-            "label": "Off it flies!",
-            "cue": "flies"
-          }
-        ]
+        "from": {
+          "icon": "🫛",
+          "label": "Chrysalis",
+          "cue": "chrysalis"
+        },
+        "to": {
+          "icon": "🦋",
+          "label": "Butterfly!",
+          "cue": "butterfly"
+        }
       }
     },
     {
       "who": "LEO",
       "text": "So it goes egg, caterpillar, chrysalis, butterfly. What a change!",
       "board": {
-        "type": "cycle",
+        "type": "lifecycle",
         "title": "Butterfly cycle",
-        "center": "🌿",
         "items": [
           {
             "icon": "🥚",
@@ -192,7 +184,7 @@
             "cue": "caterpillar"
           },
           {
-            "icon": "img:Animals/DBCLS/pupa_icon",
+            "icon": "🫛",
             "label": "Chrysalis",
             "cue": "chrysalis"
           },

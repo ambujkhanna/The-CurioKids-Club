@@ -4,7 +4,8 @@
 """
 import json, sys
 
-TYPES = {"letter", "count", "guess", "title", "big", "steps", "compare", "checklist", "summary", "poem", "gallery", "body", "cycle", "journey", "orbit"}
+TYPES = {"letter", "count", "guess", "title", "big", "steps", "compare", "checklist", "summary", "poem", "gallery", "body", "cycle", "journey", "orbit",
+         "lifecycle", "flow", "transform", "water_cycle", "plant_growth", "tiles", "timeline"}  # animated scenes (pipeline/scenes.py)
 CAST = {"MIA", "LEO", "DAD"}
 LEGACY_ICONS = {"chat", "robot", "check", "sun", "train", "doc", "lock", "target", "search", "calendar", "mail", "suitcase",
                 "warn", "x", "user", "bulb", "shield", "coin", "eye", "book", "globe", "brain", "phone"}
@@ -19,6 +20,8 @@ def cues(sc):
     for side in ("left", "right"):
         if isinstance(sc.get(side), dict):
             out += [it.get("cue") for it in sc[side].get("items", [])]
+    for side in ("from", "to"):  # transform scene
+        if isinstance(sc.get(side), dict): out.append(sc[side].get("cue"))
     return [c for c in out if c]
 
 

@@ -107,6 +107,8 @@ jobs:
           CB_PYTHON: /home/runner/cbenv/bin/python
           CB_TURBO_LAUGHS: ${{ vars.CB_TURBO_LAUGHS || '1' }}
           PYTHONUNBUFFERED: "1"
+          ICON_STYLE: ${{ vars.ICON_STYLE || '3d' }}
+          LIST_STYLE: ${{ vars.LIST_STYLE || 'tiles' }}
           ACTION: ${{ inputs.action }}
           POST_TO: ${{ inputs.post_to }}
           EPISODE_IN: ${{ inputs.episode }}

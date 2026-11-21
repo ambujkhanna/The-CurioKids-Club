@@ -1,6 +1,6 @@
 # Channels reference: The CurioKids Club & AInation Studio
 
-**Last updated:** 2026-11-14 09:44 IST (04:14 UTC)
+**Last updated:** 2026-11-21 13:55 IST (08:25 UTC)
 
 This is the quick reference for both channels: links, schedules, workflow options, secrets and variables. It's updated whenever any of these change; see the change log at the bottom. The full history is in `TheCurioKidsClub_handoff.md` and `AInation_Studio_handoff.md`.
 
@@ -47,6 +47,7 @@ This is the quick reference for both channels: links, schedules, workflow option
 
 **Weekly long workflows (both):** action (scheduled / publish now / dry run / refresh thumbnails), post_to (YouTube + Facebook · YouTube only · Facebook only), episode (+ board_style on AInation).
 **Scheduled runs** ignore the form: daily next video, every platform. **Removed:** `ig_test` (Instagram works; `daily.py --ig-test` still exists in code), `fix_existing`.
+**Other workflows (both):** *YouTube Analytics — collect report* (daily 17:30 IST, manual with optional dates; read-only; 90-day report artifact + growth brief) · *Growth tests* (unit tests for analytics/growth). The daily Short run shows the latest growth brief in its summary (advisory, never blocks the run).
 **Voice Lab (kids):** `which` = hindi / turbo / chatterbox.
 
 ## GitHub Secrets (required, same names in both repos, different values)
@@ -58,6 +59,7 @@ This is the quick reference for both channels: links, schedules, workflow option
 | `META_PAGE_ID` | Facebook Page id |
 | `META_PAGE_TOKEN` | Never-expiring Page token (from `me/accounts` with an extended user token) |
 | `META_IG_USER_ID` | Instagram Business account id (`instagram_business_account.id`) |
+| `YT_ANALYTICS_REFRESH_TOKEN` | Per channel, **read-only** analytics token (scope `yt-analytics.readonly`), separate from the upload token; if missing, the analytics job skips quietly |
 
 Never paste tokens into chat, files or commits; they go only into GitHub Secrets.
 
@@ -73,6 +75,9 @@ Never paste tokens into chat, files or commits; they go only into GitHub Secrets
 | `HI_TTS_ENGINE` | `kokoro` (native Hindi voices; `chatterbox` = cloned voices) | ✅ | – |
 | `HI_VOICE_CLIP` | `english` (`hindi` = clone Hindi lines from the native Hindi clips in `assets/voices/hi/`) | ✅ | – |
 | `CB_CFG_HI` | empty = 0.35 (lower, e.g. `0` or `0.2` = less English accent in Hindi) | ✅ | – |
+| `THEME` | `studio_open` (clean light studio, no board frame, one blue accent, calmer outfits) · `studio_light` (same with a white board card) · `studio_dark` (deep navy + white card) · `classic` (the old living room) | – | ✅ |
+| `LIST_STYLE` | `tiles` (steps/checklist/summary as airy tiles; 5 steps = timeline; `classic` = old full-width rows) | ✅ | ✅ |
+| `ICON_STYLE` | `3d` (Fluent 3D icons on every board; `flat` = the old flat icons) | ✅ | ✅ |
 | `KEEP_THUMBS` | `2` (each upload run re-applies the designed thumbnail of this many recent videos from the last 3 days; `0` = off) | ✅ | ✅ |
 | `YT_TIMEOUT` | `300` seconds per YouTube call | ✅ | ✅ |
 | `INTRO` / `OUTRO` | `on` (`off` = no logo intro / no links card) | ✅ | ✅ |
@@ -117,3 +122,7 @@ Never paste tokens into chat, files or commits; they go only into GitHub Secrets
 | 2026-11-12 13:18 IST (07:48 UTC) | Both: script videos (`custom/`) and kids category videos are now included in `refresh_thumbnails` and in the automatic re-apply of recent thumbnails; `refresh_thumbnails` + `episode` refreshes one video only (e.g. `s-ollama`, whose YouTube thumbnail had been replaced by a video frame). |
 | 2026-11-14 09:27 IST (03:57 UTC) | Both: **YouTube uploads fixed**. The 12 Nov time-limit change (custom connection) treated YouTube's '308 Resume Incomplete' as a redirect, so every video upload failed after the first 8 MB chunk ('Redirected but the response is missing a Location header'). Fix (owner's commit 6b67c7d on kids, same change now for AInation): 308 removed from redirect handling, as the YouTube library does by default; 5 retries per chunk. Verified with a 20 MB 3-chunk upload against a fake YouTube server. |
 | 2026-11-14 09:44 IST (04:14 UTC) | Both: **simpler, identical Run-workflow forms**: `action` dropdown replaces dry_run / publish_now / refresh_thumbnails / social_backfill; `post_to` dropdown replaces social_only (choose any combination of YouTube, Facebook, Instagram; default all); `ig_test` removed. Daily forms now 5 (AInation) / 6 (kids) options, weekly 4 / 3. Form values reach the pipeline as environment variables; the episode id is checked. |
+| 2026-11-21 13:04 IST (07:34 UTC) | AInation: **ep022–ep029 rewritten** (they came from a generic template: board text cut mid-word, the same ending in every video, Dad doing the explaining); ep026 has a new angle (*How to Keep AI on Track in a Long Project*, not a repeat of ep019), ep022 is now *Can AI Work Without Internet?* (not a repeat of the Ollama video). 20 `ai-concepts` scripts now pass the script check (9 lines), six carry an overlap note. Both: growth-brief step can't block a run; analytics secret + workflows added here; roadmap decision 5 notes the analytics SQLite exception; growth-engine logs moved to `docs/GROWTH_ENGINE_LOG.md`. |
+| 2026-11-21 13:17 IST (07:47 UTC) | Both: **animated scenes + 3D icons** (first version). Every board icon is now a glossy 3D icon (Microsoft Fluent Emoji 3D, MIT; downloaded once per run, old flat icon if unavailable; `ICON_STYLE=flat` to switch back). New animated board types `lifecycle`, `transform`, `flow`, `water_cycle`, `plant_growth` (`pipeline/scenes.py`, guide `docs/ANIMATED_SCENES.md`); writing rule: use a scene whenever a line explains change, a process or a cycle. First uses: kids ep070 (seed → tree: 3 scenes), ep066 (butterfly: 2), ep012 (water cycle, for its Hindi version); AInation ep029 (flow), ep027 (transform). Scenes have more breathing room (smaller, lighter labels). |
+| 2026-11-21 13:38 IST (08:08 UTC) | Both: **lighter list boards**: steps / checklists / recaps are airy tiles (big 3D icon + short label, pop in on cue; checklists with 3D ✅/❌), 5-step lists a slim highlighted timeline; `LIST_STYLE=classic` for the old rows. Chosen from 3 rendered designs (tiles, hub, timeline); hub dropped (too cramped on a phone board). |
+| 2026-11-21 13:55 IST (08:25 UTC) | AInation: **new look, Studio Open** (owner's choice from 4 rendered looks): no living room, props, rug, floating robot or string lights; soft grey-white wall with two quiet blurred accent shapes and dot grids; no board frame (content sits on the wall like an infographic); one blue accent (#2F6BFF) for pills, title card and flow rings; white tiles with hairline borders; captions highlight in blue (hook white with a blue outline); calmer outfits (Dad slate-blue shirt, Teen teal hoodie). Thumbnails keep their bold design on purpose (click-through). Repo variable `THEME` switches looks (`classic` = old). Kids unchanged. |

@@ -30,7 +30,7 @@
 2. **`containsSyntheticMedia: true`** on every upload (conservative default). A per-episode override may be added later; don't remove the default.
 3. **No new OAuth tokens** without explicit owner approval (the current token is `youtube.upload` only). Playlists are added by hand.
 4. **Free tools only; no paid APIs; no Claude/OpenAI API calls inside the pipeline.**
-5. **Markdown/JSON files in the repo instead of databases or dashboards** (no SQLite/Metabase/Superset).
+5. **Markdown/JSON files in the repo instead of databases or dashboards** (no Metabase/Superset). Exception (owner, 2026-11-18): the analytics job keeps an SQLite file **only** in Actions cache/artifacts as a working store; it is never committed and the readable outputs stay CSV + Markdown.
 6. Uploads stay **Private** until the YouTube API audit; the owner publishes/schedules in Studio (this is the human approval gate).
 7. Social: Facebook + Instagram only (Threads later). Instagram like counts may be hidden by hand.
 8. Character redesign is on hold (owner rejected Chibi/Puppet/Flat stills; may supply a layered Figma SVG).
@@ -58,6 +58,7 @@
 | # | Task | Acceptance |
 |---|---|---|
 | B1 | Kids "pause and guess" card (3-2-1 countdown before a reveal) using the `guess` board | Dry run shows countdown; no dead air > 1.5 s |
+| B6 | **Animated scenes + 3D icons** (started 2026-11-21: `pipeline/scenes.py`, `icons3d.py`, `docs/ANIMATED_SCENES.md`). Next: more scene types (zoom_in, build_up, day_night, tokens), lighter static boards, use scenes in every new episode where something changes | Each new Short has 1–3 scenes; no cut text; preview approved by owner |
 | B2 | Hook variants (`"hook"` field) for A/B testing curiosity questions | Hook shows in the first frame; documented |
 | B3 | AInation: insert owner-recorded screen recordings (`clip` board, MP4 from `assets/clips/`) with privacy checklist | Clip plays inside the board; audio ducked; no secrets visible |
 | B4 | Fill empty categories: knowledge, science, abc, counting, rhymes (30+ each, English + Hindi), and new AInation Shorts beyond EP038 | All pass the validator; facts sourced |
@@ -66,7 +67,7 @@
 ### Phase C: when the channels mature (owner's call)
 | # | Task | Notes |
 |---|---|---|
-| C1 | Read-only analytics: **one** new `yt-analytics.readonly` token (owner approval) → JSON snapshots per video at 2/7/28 days → weekly Markdown report per channel (facts vs hypotheses, sample sizes, matched age windows) | No dashboard, no DB |
+| C1 | Read-only analytics: **one** new `yt-analytics.readonly` token (owner approval) → JSON snapshots per video at 2/7/28 days → weekly Markdown report per channel (facts vs hypotheses, sample sizes, matched age windows) | **Done 2026-11-18/20:** `pipeline/analytics.py` + `growth.py`, separate `YT_ANALYTICS_REFRESH_TOKEN`, daily workflow, brief shown in the daily run summary (advisory only). |
 | C2 | Publish-time tuning from 48-hour views (80% best hour / 20% test hours) | Needs C1 or a `YT_API_KEY` for public view counts |
 | C3 | Content mix review (topics, duration bands, Hindi vs English) from C1 data | Recommendations only; owner approves |
 

@@ -93,3 +93,7 @@ The camera automatically stays on the stage while a diagram is showing. Use at m
   - more than one Subscribe ask
 - **Pronunciation:** in spoken `text`, write the channel name as "The Curio Kids Club" (two words, so it is said clearly). Captions show it as "CurioKids".
 - **Poems:** must be **original**, with simple rhyming couplets and a steady beat. Don't use well-known nursery rhymes.
+
+## Animated scenes (since 2026-11-21)
+
+**Whenever a line explains change, a process, a journey or a cycle, use an animated scene** (`lifecycle`, `transform`, `flow`, `water_cycle`, `plant_growth`) instead of a static list. Static boards are for facts, tips and rules. Aim for 1–3 scenes per Short, with short labels and plenty of space. Examples and rules: `docs/ANIMATED_SCENES.md`. Every icon is drawn as a 3D icon automatically.

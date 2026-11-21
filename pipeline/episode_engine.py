@@ -16,6 +16,7 @@ import json, math, os, random, sys
 from multiprocessing import Pool
 import skia
 import kit2d as K
+import icons3d
 from kit2d import (P, rr, ell, text, smooth, wob, Track, Char, LN, DUR, NF, B, FONT_XB, FONT_B, FONT_SB,
                    appear, fade, scaled, shadow_rrect, bubble, card, icon_chat, icon_robot, icon_check, icon_sun,
                    icon_train, icon_doc, icon_lock, BX, BY, BW, BH, BCX, BCY)
@@ -76,6 +77,9 @@ def _svg_drawer(name):
 
 def ico(name):
     if not name: return None
+    if isinstance(name, str) and not name.startswith("img:") and not ("+" in name and len(name) > 2):
+        d3 = icons3d.drawer(name)  # 3D Fluent icon when available (ICON_STYLE=flat = old icons)
+        if d3: return d3
     if name in ICONS: return ICONS[name]
     if isinstance(name, str) and "+" in name and len(name) > 2:  # "🦕+💤": main picture with a small badge floating above
         main, badge = (ico(p_.strip()) for p_ in name.split("+", 1))
@@ -464,6 +468,10 @@ _E = types.SimpleNamespace(el=el, cue_t=cue_t, ico=ico, big_text=big_text, pill=
                            BCX=BCX, BCY=BCY, LN=LN, K=K)
 for _name, _fn in diagrams.BUILDERS.items():
     BUILD[_name] = (lambda f: (lambda i, t0, t1, sc: f(_E, i, t0, t1, sc)))(_fn)
+import scenes  # animated explanation scenes (lifecycle, flow, transform, water_cycle, plant_growth)
+for _name, _fn in scenes.BUILDERS.items():
+    BUILD[_name] = (lambda f: (lambda i, t0, t1, sc: f(_E, i, t0, t1, sc)))(_fn)
+scenes.use_for_lists(BUILD, _E)  # lighter list boards: tiles (LIST_STYLE=classic = old rows)
 for k in range(len(scene_starts)):
     i, t0, t1 = scene_window(k)
     sc = ELINES[i]["board"]
@@ -562,7 +570,7 @@ for i, ln in enumerate(LN):
         continue
     who = ln["speaker"] if len(CAST) > 1 else ("wide" if i % 3 else ln["speaker"])
     _sc_i = max([j for j in scene_starts if j <= i] or [0])
-    if ELINES[_sc_i].get("board", {}).get("type") in list(diagrams.BUILDERS) + ["guess", "letter", "count"]:  # keep diagrams / guessing games on screen
+    if ELINES[_sc_i].get("board", {}).get("type") in list(diagrams.BUILDERS) + list(scenes.BUILDERS) + ["guess", "letter", "count"]:  # keep diagrams / guessing games on screen
         who = "board"
     SHOTS.append((ln["start"] - 0.05, "wide" if i % 4 == 0 or i == last else who))
     cl = cues_by_line.get(i, [])

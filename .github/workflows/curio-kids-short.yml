@@ -127,6 +127,8 @@ jobs:
         run: python pipeline/setup_models.py
 
       - name: Load latest analytics growth brief (read-only)
+        continue-on-error: true  # optional: a GitHub API hiccup here must never stop the video run
+        timeout-minutes: 5
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -166,6 +168,8 @@ jobs:
           CB_PYTHON: /home/runner/cbenv/bin/python
           CB_TURBO_LAUGHS: ${{ vars.CB_TURBO_LAUGHS || '1' }}
           PYTHONUNBUFFERED: "1"
+          ICON_STYLE: ${{ vars.ICON_STYLE || '3d' }}
+          LIST_STYLE: ${{ vars.LIST_STYLE || 'tiles' }}
           ACTION: ${{ inputs.action }}
           POST_TO: ${{ inputs.post_to }}
           EPISODE_IN: ${{ inputs.episode }}

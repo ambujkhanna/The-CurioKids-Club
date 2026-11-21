@@ -3,3 +3,4 @@ pipeline/build/
 __pycache__/
 *.onnx
 voices.bin
+assets/icons3d/

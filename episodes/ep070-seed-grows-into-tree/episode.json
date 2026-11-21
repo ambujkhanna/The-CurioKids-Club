@@ -100,18 +100,24 @@
       "who": "MIA",
       "text": "First a root grows down to drink water. Then a little shoot pushes up toward the light.",
       "board": {
-        "type": "steps",
+        "type": "plant_growth",
         "title": "Sprouting",
         "items": [
           {
-            "icon": "⬇️",
-            "label": "A root grows down",
+            "label": "Seed",
+            "cue": "first"
+          },
+          {
+            "label": "Root grows down",
             "cue": "root"
           },
           {
-            "icon": "🌱",
-            "label": "A shoot pushes up",
+            "label": "Shoot pushes up",
             "cue": "shoot"
+          },
+          {
+            "label": "Toward the light",
+            "cue": "light"
           }
         ]
       }
@@ -140,12 +146,18 @@
       "who": "MIA",
       "text": "Bit by bit, year after year! The stem gets thick and woody and becomes a trunk.",
       "board": {
-        "type": "big",
-        "icon": "🌳",
-        "text": "Year after year",
-        "cue": "year",
-        "sub": "The stem becomes a trunk",
-        "sub_cue": "trunk"
+        "type": "transform",
+        "title": "Year after year",
+        "from": {
+          "icon": "🌱",
+          "label": "A little stem",
+          "cue": "stem"
+        },
+        "to": {
+          "icon": "🪵",
+          "label": "A woody trunk",
+          "cue": "trunk"
+        }
       }
     },
     {
@@ -169,9 +181,8 @@
       "who": "LEO",
       "text": "So it goes seed, root, shoot, and then a tree!",
       "board": {
-        "type": "cycle",
+        "type": "lifecycle",
         "title": "Seed to tree",
-        "center": "☀️",
         "items": [
           {
             "icon": "🌰",
@@ -179,18 +190,18 @@
             "cue": "seed"
           },
           {
-            "icon": "⬇️",
+            "icon": "🌱",
             "label": "Root",
             "cue": "root"
           },
           {
-            "icon": "🌱",
+            "icon": "🌿",
             "label": "Shoot",
             "cue": "shoot"
           },
           {
             "icon": "🌳",
-            "label": "Tree",
+            "label": "Tree!",
             "cue": "tree"
           }
         ]
