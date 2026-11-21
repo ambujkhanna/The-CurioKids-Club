@@ -158,8 +158,8 @@ def build(path):
                 ic, ht, sub = None, q, ""
             if i == 0 and head.get("TITLE_BOARD") and "->" in head["TITLE_BOARD"]:
                 a, b = [icon_of(x) for x in head["TITLE_BOARD"].split("->", 1)]
-                e["board"] = {"type": "title", "left": {"icon": a[0] or "❓", "label": a[1].upper()[:12]},
-                              "right": {"icon": b[0] or "💡", "label": b[1].upper()[:12]}, "subtitle": _short(q), "mid": "→"}
+                e["board"] = {"type": "title", "left": {"icon": a[0] or "❓", "label": _short(a[1].upper(), 28)},
+                              "right": {"icon": b[0] or "💡", "label": _short(b[1].upper(), 28)}, "subtitle": _short(q), "mid": "→"}
             else:
                 ic = ic or auto_icon(l["text"] + " " + title)[0] or "❓"
                 e["board"] = {"type": "big", "icon": ic, "text": ht or q}
