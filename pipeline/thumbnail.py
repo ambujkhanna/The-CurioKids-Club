@@ -4,7 +4,7 @@ Called by episode_engine.py after the frames are rendered:
     thumbnail.make(out_path, K, chars, ep, ico)
 Uses "cover_text" (2-4 big words) and "title" from episode.json, and the icons of the first board scene.
 """
-import re
+import os, re
 import skia
 
 NAVY, YELLOW, WHITE = "#1F2D44", "#FFD23F", "#FFFFFF"
@@ -141,6 +141,11 @@ def _icons(ep, ico):
 
 def make_wide(path, K, chars, ep, ico, t_pose=None):
     """16:9 thumbnail (1280x720) for long videos: big headline + pictures on the left, characters in their room on the right."""
+    if os.environ.get("THUMB_STYLE", "punch").strip().lower() != "classic":  # punchy design (thumb_punch.py)
+        try:
+            import thumb_punch; return thumb_punch.make_wide(path, K, chars, ep, ico, t_pose)
+        except Exception as e:
+            print("note: punch thumbnail failed, using the classic one:", e)
     W, H = 1280, 720
     surf = skia.Surface(W, H); c = surf.getCanvas(); c.clear(K.hexc("#4FAEA3"))
     t = t_pose if t_pose is not None else (K.LN[0]["start"] + K.LN[0]["end"]) / 2
@@ -182,6 +187,11 @@ def make_wide(path, K, chars, ep, ico, t_pose=None):
 def make(path, K, chars, ep, ico, t_pose=None):
     if getattr(K, "LANDSCAPE", False):
         return make_wide(path, K, chars, ep, ico, t_pose)
+    if os.environ.get("THUMB_STYLE", "punch").strip().lower() != "classic":  # punchy design (thumb_punch.py)
+        try:
+            import thumb_punch; return thumb_punch.make(path, K, chars, ep, ico, t_pose)
+        except Exception as e:
+            print("note: punch thumbnail failed, using the classic one:", e)
     W, H = 1080, 1920
     surf = skia.Surface(W, H); c = surf.getCanvas()
     t = t_pose if t_pose is not None else (K.LN[0]["start"] + K.LN[0]["end"]) / 2

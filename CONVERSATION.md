@@ -129,3 +129,16 @@ A fresh audit found CurioKids analytics run 44739181837 successful. A newer AIna
 - Every Short starts with a 2 s "Welcome to" logo intro and ends with a 3.5 s links card. On Shorts, the first second decides swipe-away, and the end card hurts loops. **Suggestion:** set `SHORT_INTRO=off` and `SHORT_OUTRO=off` (long videos keep them), then compare "Viewed vs swiped away" in YouTube Studio.
 - Shorts run 60–80 s. 30–45 s retains better for kids topics. Hook: the question in the first second (already a big yellow hook).
 - No tool can buy views. View bots and "view increase" tools break YouTube rules and get channels removed. Honest levers: hook and retention, titles people search for (YouTube search suggestions), consistent posting, playlists/series, Community posts, and cross-posting (FB/IG already automatic).
+
+
+## 2026-11-21 20:05 IST (14:35 UTC) — Thumbnails and the AInation board tag
+
+- The owner asked for punchier thumbnails that make viewers curious, on both channels. The new design: big characters with a wow face, the explainer pointing at the answer, 1–3 huge words, "A → B" pictures with a red arrow, and a highlight on the answer.
+- The red circle felt like too much, so the owner compared 4 highlights (red circle, mystery silhouette, glow, sticker) and **picked the sticker**: a pink "WHY?/HOW?/WHAT?" speech bubble.
+- Added: a PART N ribbon for series episodes. The HINDI tag moved to a corner.
+- Switches: `THUMB_STYLE=classic` brings back the old design, and `THUMB_MARK` picks another highlight.
+- Ideas for later: one headline word in a second colour; A/B test 3 versions with YouTube Studio's free "Test & compare" on long videos.
+- AInation: the "AI EXPLAINED" text at the board's top right is removed (owner).
+
+- 2026-11-21 20:25 IST (14:55 UTC): the sticker is centred under the answer picture, and its pointer always aims straight up at the picture (owner).
+- 2026-11-21 20:40 IST (15:10 UTC): the sticker no longer overlaps the round picture: it sits fully below it, and only the pointer touches the ring (owner).

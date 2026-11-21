@@ -337,7 +337,9 @@ def hindi_badge(jpg):
         img = skia.Image.open(jpg); W, H = img.width(), img.height()
         surf = skia.Surface(W, H); c = surf.getCanvas(); c.drawImage(img, 0, 0)
         tf = skia.Typeface.MakeFromFile(os.path.join(ROOT, "fonts", "LilitaOne-Regular.ttf"))
-        f = skia.Font(tf, H * 0.05); tw = f.measureText("HINDI"); h = H * 0.075; x, y = (W - tw - h * 0.9) / 2, H * 0.408  # centred, between the icons and the bunting
+        k = min(W, H)  # corner tag: top-left on Shorts (the logo is centred), top-right on 16:9 (the logo is top-left)
+        f = skia.Font(tf, k * 0.055); tw = f.measureText("HINDI"); h = k * 0.082
+        x, y = (k * 0.03, H * 0.022) if H > W else (W - tw - h * 0.9 - k * 0.04, H * 0.035)
         c.drawRRect(skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(x, y, tw + h * 0.9, h), h / 2, h / 2), skia.Paint(AntiAlias=True, Color=skia.Color(255, 122, 0)))
         c.drawString("HINDI", x + h * 0.45, y + h * 0.72, f, skia.Paint(AntiAlias=True, Color=skia.ColorWHITE))
         surf.makeImageSnapshot().save(jpg, skia.kJPEG, 90)

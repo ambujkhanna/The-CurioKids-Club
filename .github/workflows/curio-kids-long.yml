@@ -111,6 +111,8 @@ jobs:
           LIST_STYLE: ${{ vars.LIST_STYLE || 'tiles' }}
           CTA_STYLE: ${{ vars.CTA_STYLE || 'bar' }}
           CHAR_STYLE: ${{ vars.CHAR_STYLE || 'doodle' }}
+          THUMB_STYLE: ${{ vars.THUMB_STYLE || 'punch' }}
+          THUMB_MARK: ${{ vars.THUMB_MARK || 'sticker' }}
           ART: ${{ vars.ART || 'on' }}
           ART_AUTO: ${{ vars.ART_AUTO || 'on' }}
           PANEL: ${{ vars.PANEL || '' }}
