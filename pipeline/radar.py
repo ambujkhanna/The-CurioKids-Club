@@ -260,22 +260,30 @@ TREND_CATS = {"27": "Education", "28": "Science & Technology", "15": "Pets & Ani
 def youtube_trending(yt, geos=None):
     """YouTube's 'most popular' videos per country in our categories (Data API, 1 quota unit per call).
     Returns [(geo, category, title, views, is_short, fits)] - for ideas only; never copy titles or content."""
-    out = []
+    global YT_CHART_ERR
+    out, errs, calls = [], [], 0
     if not yt: return out
     for g in geos or TREND_GEOS:
         for cid, cname in TREND_CATS.items():
+            calls += 1
             try:
                 r = yt.videos().list(part="snippet,statistics,contentDetails", chart="mostPopular", regionCode=g,
                                      videoCategoryId=cid, maxResults=25).execute()
             except Exception as e:  # some countries have no chart for some categories
-                print(f"note: YouTube trending {g}/{cname}:", str(e)[:80]); continue
+                errs.append(str(e)); print(f"note: YouTube trending {g}/{cname}:", str(e)[:80]); continue
             for v in r.get("items", []):
                 t = v["snippet"]["title"]; views = int(v.get("statistics", {}).get("viewCount", 0) or 0)
                 d = v.get("contentDetails", {}).get("duration", "")
                 m_ = re.fullmatch(r"PT(?:(\d+)M)?(?:(\d+)S)?", d)
                 short = bool(m_) and int(m_.group(1) or 0) * 60 + int(m_.group(2) or 0) <= 180
                 out.append((g, cname, t, views, short, _fits(t, loose=True)))
+    if calls and len(errs) == calls:  # every chart failed: usually the upload-only login (no read access) or a bad key
+        YT_CHART_ERR = ("the YouTube login can only upload, it can't read the charts" if any("insufficient" in e.lower() or "403" in e for e in errs)
+                        else "YouTube refused every chart request: " + errs[0][:120])
     return out
+
+
+YT_CHART_ERR = None
 
 
 def report():
@@ -359,6 +367,8 @@ def trends_md(yt, titles):
             if t in seen: continue
             seen.add(t)
             md.append(f"| {g} | {cat} | {t[:80].replace('|', '/')} | {f(views)} | {'yes' if short else ''} | {'yes' if _covered(_clean(t), titles) else ''} |")
+    elif YT_CHART_ERR:
+        md.append(f"_Skipped: {YT_CHART_ERR}. Add the free `YT_API_KEY` secret (Google Cloud → Credentials → API key, YouTube Data API v3)._")
     else:
         md.append(f"_Nothing in today's charts fits the channel ({len(yv)} videos checked)._")
     return md
@@ -388,6 +398,7 @@ def trend_alert():
         if x[5] and x[2] not in seen_t and x[2].lower() not in old and not _covered(_clean(x[2]), titles):
             seen_t.add(x[2]); yv.append(x)
     yv.sort(key=lambda x: (not x[4], -x[3]))
+    if YT_CHART_ERR: print("note: YouTube trending skipped -", YT_CHART_ERR, "- add the YT_API_KEY secret")
     if not gt and not yv:
         print("no new trend fits the channel today"); return None
     terms = []
