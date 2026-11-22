@@ -1,6 +1,17 @@
 # Plan: automatic weekly picture run (GitHub → Kaggle GPU → GitHub)
 
-**Status:** PLANNED (owner approved planning on 2026-11-21). Nothing in this file is built yet. Same file in both repos.
+**Status:** ✅ BUILT 2026-11-23 06:30 IST (01:00 UTC) (weekly-art.yml, pipeline/art_queue.py, tools/kaggle/auto/art_auto.py, pipeline/art_install.py). Waiting for the owner's Kaggle token (secrets `KAGGLE_USERNAME`, `KAGGLE_KEY`) and a first manual run. Same file in both repos.
+
+## 0. How to use it (built version)
+
+1. **Secrets** (each repo): `KAGGLE_USERNAME`, `KAGGLE_KEY` from kaggle.com → Settings → API → Create New Token (`kaggle.json`).
+2. **First run by hand:** Actions → **Weekly art run (Kaggle GPU)** → Run workflow → install **Review first (Artifacts only)**.
+   - The first time, the Kaggle job stops with *"HF_TOKEN secret not attached"*: open kaggle.com → Code → **`<repo>-art-auto`** → Edit → Add-ons → Secrets → tick **HF_TOKEN** → Save. Run the workflow again. Kaggle keeps the attachment for later runs.
+3. **Check** the run summary (installed / rejected) and the Artifact (`weekly-art-N`: the new pictures).
+4. **Switch on:** repo variables `ART_WEEKLY=on` (every Friday 22:13 UTC) and, once you trust it, `ART_AUTO_COMMIT=on` (good pictures are committed automatically; otherwise they stay in the Artifact for review, or use "Install and commit" on a manual run).
+
+What it makes: board icons that have neither our house icon nor a Fluent 3D emoji, house-only icons on the wanted list (kids: `w_grass`), and picture-board pictures (`"art"` names) that have no file yet, for the next `ART_DAYS` (7) days of every queue. Two versions each; the installer keeps the better one (size, not blank, icon cut-out 8–90 % of the square) and never overwrites an existing file. Kaggle dataset `<user>/<repo>-art-requests` and kernel `<user>/<repo>-art-auto` are created automatically (private).
+
 **Why:** HD pictures (backgrounds, picture boards, house icons, later short video clips) need a GPU. GitHub's free runners have none. Kaggle gives the owner 30 free GPU hours a week and has an official API, so GitHub can drive it with no clicking.
 
 ## 1. What is decided, and why

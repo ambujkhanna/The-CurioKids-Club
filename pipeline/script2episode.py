@@ -93,6 +93,11 @@ def _short(s, n=60):
     return s[:n].rsplit(" ", 1)[0].rstrip(" ,:;-") + "…"
 
 
+for _w, _key in (("grass", "w_grass"), ("lawn", "w_grass")):  # our own 3D icon wins once the weekly art run has made it
+    if os.path.exists(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "assets", "icons_house", _key + ".webp")):
+        EMOJI[_w] = "house:" + _key
+
+
 def plain_emoji(e):
     """Combined emoji can't be drawn (🦸‍♂️ = 🦸 + invisible joiner + ♂️, 👨‍👩‍👧, 👍🏽 skin tones): keep the first, plain part.
     Added 2026-11-22 after a trend Short failed on '🦸\u200d♂️'."""

@@ -1,0 +1,126 @@
+name: Weekly art run (Kaggle GPU)
+
+# Roadmap R7 (built 2026-11-23). GitHub has no GPU, so this asks Kaggle (free GPU, 30 h/week) to make the missing
+# pictures and 3D icons for the next days' episodes, then checks and installs them. Same file in both repos.
+#   1. pipeline/art_queue.py     -> what is missing (art_requests.json)
+#   2. Kaggle dataset + kernel   -> tools/kaggle/auto/art_auto.py runs on a Kaggle GPU (FLUX.1-schnell, rembg)
+#   3. pipeline/art_install.py   -> checks + installs into assets/ ; commits only if ART_AUTO_COMMIT=on (else: Artifacts to review)
+# Needs secrets KAGGLE_USERNAME + KAGGLE_KEY. Weekly schedule only when the repo variable ART_WEEKLY=on.
+# One-time: after the first run, open the kernel on kaggle.com -> Add-ons -> Secrets -> tick HF_TOKEN, then run again.
+on:
+  schedule:
+    - cron: "13 22 * * 5"   # Fridays 22:13 UTC (Sat 03:43 IST): pictures ready before the weekend's runs
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "How many days of upcoming episodes to prepare"
+        default: "7"
+      install:
+        description: "What to do with good pictures"
+        type: choice
+        default: "Review first (Artifacts only)"
+        options:
+          - "Review first (Artifacts only)"
+          - "Install and commit"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly-art
+  cancel-in-progress: false
+
+jobs:
+  art:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    env:
+      KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+      KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+      ART_DAYS: ${{ inputs.days || vars.ART_DAYS || '7' }}
+    steps:
+      - name: Should this run?
+        id: gate
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "${{ vars.ART_WEEKLY }}" != "on" ]; then
+            echo "Weekly art run is off (repo variable ART_WEEKLY=on switches it on)." >> "$GITHUB_STEP_SUMMARY"; echo "go=no" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          if [ -z "$KAGGLE_USERNAME" ] || [ -z "$KAGGLE_KEY" ]; then
+            echo "### ⚠️ Add the secrets KAGGLE_USERNAME and KAGGLE_KEY (kaggle.com → Settings → API → Create New Token)." >> "$GITHUB_STEP_SUMMARY"; echo "go=no" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          echo "go=yes" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.go == 'yes'
+
+      - uses: actions/setup-python@v5
+        if: steps.gate.outputs.go == 'yes'
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        if: steps.gate.outputs.go == 'yes'
+        run: pip install -q "kaggle==1.6.17" pillow numpy skia-python
+
+      - name: 1. What is missing?
+        id: queue
+        if: steps.gate.outputs.go == 'yes'
+        run: |
+          python pipeline/art_queue.py --days "$ART_DAYS" --out out/art_requests
+          cat out/art_requests/art_requests.json | head -40
+
+      - name: 2. Send the requests to Kaggle and start the GPU job
+        id: kaggle
+        if: steps.gate.outputs.go == 'yes' && steps.queue.outputs.count != '0'
+        run: |
+          SLUG="$(echo "${GITHUB_REPOSITORY#*/}" | tr 'A-Z' 'a-z' | tr -c 'a-z0-9\n' '-' | cut -c1-30 | sed 's/-*$//')"
+          DS="$KAGGLE_USERNAME/$SLUG-art-requests"; KN="$KAGGLE_USERNAME/$SLUG-art-auto"
+          echo "ds=$DS" >> "$GITHUB_OUTPUT"; echo "kn=$KN" >> "$GITHUB_OUTPUT"
+          printf '{"title": "%s art requests", "id": "%s", "licenses": [{"name": "CC0-1.0"}]}\n' "$SLUG" "$DS" > out/art_requests/dataset-metadata.json
+          kaggle datasets version -p out/art_requests -m "requests $(date -u +%F)" --dir-mode zip \
+            || kaggle datasets create -p out/art_requests --dir-mode zip
+          sleep 60   # let Kaggle process the new dataset version before the kernel reads it
+          mkdir -p out/kernel && cp tools/kaggle/auto/art_auto.py out/kernel/
+          printf '{"id": "%s", "title": "%s art auto", "code_file": "art_auto.py", "language": "python", "kernel_type": "script", "is_private": true, "enable_gpu": true, "enable_internet": true, "dataset_sources": ["%s"], "competition_sources": [], "kernel_sources": []}\n' "$KN" "$SLUG" "$DS" > out/kernel/kernel-metadata.json
+          kaggle kernels push -p out/kernel
+
+      - name: 3. Wait for Kaggle (checks every 2 minutes, up to 5 hours)
+        if: steps.kaggle.outcome == 'success'
+        run: |
+          for i in $(seq 1 150); do
+            S="$(kaggle kernels status "${{ steps.kaggle.outputs.kn }}" 2>&1 || true)"; echo "$(date -u +%H:%M) $S"
+            case "$S" in *complete*|*COMPLETE*) exit 0 ;; *error*|*ERROR*|*cancel*|*CANCEL*) echo "Kaggle job ended: $S"; exit 0 ;; esac
+            sleep 120
+          done
+          echo "Kaggle did not finish within 5 hours (queue or quota)." >> "$GITHUB_STEP_SUMMARY"
+
+      - name: 4. Download, check and install
+        id: install
+        if: steps.kaggle.outcome == 'success'
+        run: |
+          mkdir -p out/kaggle_out
+          kaggle kernels output "${{ steps.kaggle.outputs.kn }}" -p out/kaggle_out || true
+          ls -R out/kaggle_out | head -40
+          python pipeline/art_install.py out/kaggle_out
+
+      - name: Keep everything as an Artifact (30 days)
+        if: always() && steps.gate.outputs.go == 'yes'
+        uses: actions/upload-artifact@v4
+        with:
+          name: weekly-art-${{ github.run_number }}
+          path: |
+            out/art_requests/art_requests.json
+            out/kaggle_out
+            out/art_install.json
+            assets/icons_house/*.webp
+            assets/art/*.jpg
+          retention-days: 30
+          if-no-files-found: ignore
+
+      - name: Commit the new pictures (ART_AUTO_COMMIT=on or "Install and commit")
+        if: steps.install.outputs.installed != '' && steps.install.outputs.installed != '0' && (vars.ART_AUTO_COMMIT == 'on' || inputs.install == 'Install and commit')
+        run: |
+          git config user.name "art-bot"; git config user.email "actions@users.noreply.github.com"
+          git add assets/icons_house assets/art
+          git commit -m "Weekly art run: new pictures/icons from Kaggle" || exit 0
+          for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 10; done

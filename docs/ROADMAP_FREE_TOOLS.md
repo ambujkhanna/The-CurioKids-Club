@@ -77,11 +77,11 @@ Rules: free first; no paid AI APIs inside the pipeline; secrets only in GitHub S
 - **Alerts:** a Telegram bot (free; `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` secrets) or a Discord webhook sends "✅ posted: <title> <link>" or "❌ run failed: <step>" to the owner's phone.
 - **Effort:** half a day each.
 
-## R7. Weekly Kaggle GPU run
+## R7. ✅ BUILT 2026-11-23 (waiting for the first manual run): Weekly Kaggle GPU run
 
 See `docs/AUTOMATION_KAGGLE.md`: backgrounds, picture boards and house icons made automatically each week; later, Wan 2.1 video clips.
 
-## R8. Post the same videos to more places (free APIs)
+## R8. Post the same videos to more places (free APIs): options and advice in docs/PLATFORMS.md (2026-11-23)
 
 | Platform | Fit | API |
 |---|---|---|

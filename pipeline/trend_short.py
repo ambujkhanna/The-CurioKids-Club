@@ -22,7 +22,8 @@ sys.path.insert(0, HERE)
 import radar, script2episode
 
 KIDS = radar.KIDS
-MODEL = os.environ.get("TREND_MODEL", "qwen2.5:7b")
+MODEL = os.environ.get("TREND_MODEL", "qwen2.5:7b")               # writes the script
+CHECK_MODEL = os.environ.get("TREND_CHECK_MODEL", "").strip() or MODEL  # fact checks (a small fast model is fine: yes/no answers)
 OLLAMA = os.environ.get("OLLAMA_HOST", "127.0.0.1:11434")
 UA = {"User-Agent": "studio-video-pipeline/1.0 (educational shorts; facts lookup)"}
 OUT = os.path.join(ROOT, "out")
@@ -126,8 +127,8 @@ def facts(subject):
 
 
 # ------------------------------------------------------------------ 3. script
-def chat(messages, temperature=0.4):
-    body = json.dumps({"model": MODEL, "messages": messages, "stream": False,
+def chat(messages, temperature=0.4, model=None):
+    body = json.dumps({"model": model or MODEL, "messages": messages, "stream": False,
                        "options": {"temperature": temperature, "num_ctx": 8192}}).encode()
     req = urllib.request.Request(f"http://{OLLAMA}/api/chat", data=body, headers={"Content-Type": "application/json"})
     with urllib.request.urlopen(req, timeout=900) as r:
@@ -246,7 +247,7 @@ def fact_check(text, fact_text):
                     {"role": "user", "content": f"SOURCE:\n{fact_text}\n\nSENTENCE: {c}\n\n"
                      "Does a sentence in the SOURCE clearly contradict the SENTENCE? Simple explanations, comparisons, jokes and "
                      "feelings are fine. If yes, answer: YES: \"<copy the contradicting SOURCE sentence word for word>\" - <why>. "
-                     "If not, answer: NO."}], temperature=0.0).strip()
+                     "If not, answer: NO."}], temperature=0.0, model=CHECK_MODEL).strip()
         if ans.upper().startswith("YES"):
             m = re.search(r'"([^"]{15,})"', ans)
             quote = set(re.findall(r"[a-z0-9]+", (m.group(1) if m else "").lower()))
@@ -308,8 +309,9 @@ def main(argv=None):
                                                          "", "```text", text.strip(), "```"]))
         if "--script-only" in argv: return 0
         try:  # free the model's memory before the render (the voices and video need it)
-            urllib.request.urlopen(urllib.request.Request(f"http://{OLLAMA}/api/generate", data=json.dumps({"model": MODEL, "keep_alive": 0}).encode(),
-                                                          headers={"Content-Type": "application/json"}), timeout=30).read()
+            for m_ in {MODEL, CHECK_MODEL}:
+                urllib.request.urlopen(urllib.request.Request(f"http://{OLLAMA}/api/generate", data=json.dumps({"model": m_, "keep_alive": 0}).encode(),
+                                                              headers={"Content-Type": "application/json"}), timeout=30).read()
         except Exception:
             pass
         args = [sys.executable, os.path.join(HERE, "daily.py"), "--script", path] + (["--dry-run"] if "--dry-run" in argv else [])

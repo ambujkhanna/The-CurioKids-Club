@@ -206,3 +206,4 @@ Read first: the channel handoff (`TheCurioKidsClub_handoff.md` / `AInation_Studi
 - 2026-11-23 02:15 IST (2026-11-22 20:45 UTC): **docs/HOW_IT_WORKS.md**: plain-language diagrams of the whole system (for non-technical readers) + a presentation page.
 - 2026-11-23 03:15 IST (2026-11-22 21:45 UTC): Trend Short dry run passed on GitHub. **Topics now also ranked by what works on our channel** (analytics → ★/▼ in the weekly report, trend Short order).
 - 2026-11-23 05:00 IST (2026-11-22 23:30 UTC): AInation: steady camera + golden speaker spotlight (like kids). Each channel has its own Google project → AInation trend Shorts switched on.
+- 2026-11-23 07:15 IST (01:45 UTC): Owner: decide more languages on data → **audience by country** added to analytics. **Weekly Kaggle art run** built (secrets added; first manual run next). Hybrid trend model option. AInation board bridge. **docs/PLATFORMS.md** for more platforms (advice: Threads → Pinterest → LinkedIn → Bluesky).

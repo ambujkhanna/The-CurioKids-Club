@@ -47,7 +47,7 @@ def safe_rate(numerator: float, denominator: float) -> float:
     return round(numerator / denominator * 100, 2) if denominator else 0.0
 
 def metadata_from_state(root: Path = ROOT) -> dict[str, dict[str, str]]:
-    paths = [root / "episodes" / "state.json", root / "long" / "state.json"]
+    paths = [root / "episodes" / "state.json", root / "long" / "state.json", root / "custom" / "state.json"]
     paths.extend(sorted((root / "library").glob("*/state.json")))
     metadata: dict[str, dict[str, str]] = {}
     for path in paths:
@@ -57,8 +57,11 @@ def metadata_from_state(root: Path = ROOT) -> dict[str, dict[str, str]]:
         kind = "long" if path.parent.name == "long" else "short"
         for eid, record in state.get("episodes", {}).items():
             if not isinstance(record, dict): continue
-            for language, item in (("default", record), ("hi", record.get("hi", {}))):
+            # 2026-11-23: Spanish versions ("es") and script/trend Shorts (custom/) were missing -> showed as "unknown"
+            for language, item in (("default", record), ("hi", record.get("hi", {})), ("es", record.get("es", {}))):
                 if not isinstance(item, dict) or not item.get("video_id"): continue
+                if path.parent.name == "custom" and language == "default":
+                    language = "trend" if record.get("trend_topic") else "script"
                 metadata[str(item["video_id"])] = {
                     "episode_id": str(eid), "title": str(item.get("title") or record.get("title") or eid),
                     "content_type": kind, "language": language, "video_url": str(item.get("url") or ""),
@@ -90,6 +93,63 @@ def fetch_video_report(service, start_date: str, end_date: str) -> list[dict[str
         if len(page) < PAGE_SIZE: break
         start_index += len(page)
     return rows
+
+COUNTRY_METRICS = "views,estimatedMinutesWatched,averageViewPercentage"
+
+
+def fetch_countries(service, start_date: str, end_date: str, video_ids=None, top=15) -> list[dict[str, Any]]:
+    """Views by viewer country for the whole channel, or for a group of videos (chunks of 150 ids, merged)."""
+    groups = [None] if not video_ids else [list(video_ids)[i:i + 150] for i in range(0, len(video_ids), 150)]
+    acc: dict[str, dict[str, float]] = {}
+    for ids in groups:
+        kw = {"filters": "video==" + ",".join(ids)} if ids else {}
+        resp = service.reports().query(ids="channel==MINE", startDate=start_date, endDate=end_date, dimensions="country",
+                                       metrics=COUNTRY_METRICS, sort="-views", maxResults=50, **kw).execute()
+        heads = [h["name"] for h in resp.get("columnHeaders", [])]
+        for vals in resp.get("rows", []) or []:
+            r = dict(zip(heads, vals)); c = str(r.get("country") or "??")
+            a = acc.setdefault(c, {"views": 0.0, "minutes": 0.0, "pct_x_views": 0.0})
+            v = number(r.get("views")); a["views"] += v; a["minutes"] += number(r.get("estimatedMinutesWatched"))
+            a["pct_x_views"] += number(r.get("averageViewPercentage")) * v
+    tot = sum(a["views"] for a in acc.values()) or 1.0
+    out = [{"country": c, "views": int(a["views"]), "share_pct": round(100 * a["views"] / tot, 1),
+            "minutes": round(a["minutes"], 1), "avg_viewed_pct": round(a["pct_x_views"] / a["views"], 1) if a["views"] else 0.0}
+           for c, a in acc.items()]
+    return sorted(out, key=lambda x: -x["views"])[:top]
+
+
+COUNTRY_NAMES = {"IN": "India", "US": "USA", "MX": "Mexico", "GB": "UK", "CA": "Canada", "AU": "Australia", "PK": "Pakistan",
+                 "BD": "Bangladesh", "PH": "Philippines", "ID": "Indonesia", "NG": "Nigeria", "BR": "Brazil", "ES": "Spain",
+                 "AR": "Argentina", "CO": "Colombia", "PE": "Peru", "CL": "Chile", "DE": "Germany", "FR": "France", "AE": "UAE",
+                 "SA": "Saudi Arabia", "NP": "Nepal", "LK": "Sri Lanka", "KE": "Kenya", "ZA": "South Africa", "MY": "Malaysia",
+                 "SG": "Singapore", "EG": "Egypt", "VN": "Vietnam", "TR": "Turkey", "IT": "Italy", "NL": "Netherlands"}
+
+
+def audience_report(service, start: str, end: str, metadata: dict, out: Path) -> Path:
+    """audience_countries.md/.json: where viewers are, for the channel and per language version (owner, 2026-11-23:
+    'is the audience really coming from these locations?' -> decide extra languages on data, not guesses)."""
+    groups = {"All videos": None}
+    labels = {"default": "English (main) videos", "hi": "Hindi versions", "es": "Spanish versions", "trend": "Trend Shorts"}
+    for lang, label in labels.items():
+        ids = [vid for vid, m in metadata.items() if m.get("language") == lang]
+        if ids: groups[label] = ids
+    data, lines = {}, [f"## Audience by country ({start} to {end})", "",
+                       "Where the views come from, by language version. Use it before adding or keeping a language.", ""]
+    for label, ids in groups.items():
+        try:
+            rows = fetch_countries(service, start, end, ids)
+        except Exception as exc:
+            lines += [f"**{label}:** not available ({str(exc)[:80]})", ""]; continue
+        data[label] = rows
+        n = len(ids) if ids else len(metadata) or "all"
+        lines += [f"**{label}** ({n} videos)", "", "| Country | Views | Share | Avg % viewed |", "|---|---:|---:|---:|"]
+        lines += [f"| {COUNTRY_NAMES.get(r['country'], r['country'])} | {r['views']:,} | {r['share_pct']}% | {r['avg_viewed_pct']}% |" for r in rows[:8]]
+        lines += [""] if rows else ["| (no views yet) | | | |", ""]
+    out.mkdir(parents=True, exist_ok=True)
+    (out / "audience_countries.json").write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
+    p = out / "audience_countries.md"; p.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return p
+
 
 def initialise_db(db: sqlite3.Connection) -> None:
     db.execute("""CREATE TABLE IF NOT EXISTS video_snapshots (
@@ -170,15 +230,21 @@ def main(argv=None) -> int:
     start, end = args.start_date or ds.isoformat(), args.end_date or de.isoformat()
     try:
         validate_period(start, end)
-        rows = fetch_video_report(analytics_service(), start, end)
+        service = analytics_service()
+        rows = fetch_video_report(service, start, end)
         out = Path(args.output_dir)
         db_path = Path(os.environ.get("ANALYTICS_DB_PATH") or out / "analytics.sqlite3")
         db_path.parent.mkdir(parents=True, exist_ok=True)
         db = sqlite3.connect(db_path)
         try:
-            initialise_db(db); stamp = store_snapshot(db, args.channel_key, start, end, rows, metadata_from_state())
+            meta = metadata_from_state()
+            initialise_db(db); stamp = store_snapshot(db, args.channel_key, start, end, rows, meta)
             csv_path, md_path = export_outputs(db, out, args.channel_key, start, end)
         finally: db.close()
+        try:  # optional extra: views by country (never fails the collection)
+            print("Audience by country:", audience_report(service, start, end, meta, out))
+        except Exception as exc:
+            print(f"note: audience by country skipped: {exc}", file=sys.stderr)
     except Exception as exc:
         print(f"Analytics collection failed: {exc}", file=sys.stderr); return 1
     print(f"Collected {len(rows)} video rows for {args.channel_key} ({start} to {end}) at {stamp}.")

@@ -121,6 +121,8 @@ def main(argv=None) -> int:
     rows = read_rows(Path(a.csv)); data, md = build_brief(rows, a.channel_key, a.period)
     out = Path(a.output_dir); out.mkdir(parents=True, exist_ok=True)
     (out / "growth_brief.json").write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    aud = out / "audience_countries.md"  # analytics.py's country section (2026-11-23): shown with the brief in every daily run
+    if aud.exists(): md = md.rstrip("\n") + "\n\n" + aud.read_text(encoding="utf-8")
     (out / "growth_brief.md").write_text(md, encoding="utf-8")
     print(f"Built growth brief from {len(rows)} video rows ({data['metadata_coverage_pct']}% metadata coverage).")
     return 0

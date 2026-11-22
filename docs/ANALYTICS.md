@@ -53,3 +53,9 @@ This workflow is read-only: it does not upload, edit, schedule or publish videos
 - [YouTube Analytics API — reports.query](https://developers.google.com/youtube/analytics/reference/reports/query)
 - [YouTube Analytics API — metrics](https://developers.google.com/youtube/analytics/metrics)
 - [YouTube Analytics API — sample requests](https://developers.google.com/youtube/analytics/sample-requests)
+
+
+## Audience by country (added 2026-11-23 06:30 IST (01:00 UTC))
+
+Every analytics run also asks YouTube where the views come from (`dimensions=country`), for the whole channel and for each language version (English/main, Hindi, Spanish, trend Shorts). The result (`audience_countries.md/.json`) is added to the growth brief, so it shows in every daily run's summary. Use it to decide whether a language version is worth keeping or adding (owner, 2026-11-23: "is the audience really coming from these locations?").
+Also fixed the same day: Spanish versions (`es`) and script/trend Shorts (`custom/`) are now matched to their episodes (they were "unknown" before).

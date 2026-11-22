@@ -169,7 +169,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.ollama/models
-          key: ollama-${{ vars.TREND_MODEL || 'qwen2.5:7b' }}-v1
+          key: ollama-${{ vars.TREND_MODEL || 'qwen2.5:7b' }}-${{ vars.TREND_CHECK_MODEL || 'same' }}-v1
 
       - name: Free AI script writer (Ollama, Apache 2.0 model; trend Shorts only)
         if: ${{ (github.event.schedule == '11 6 * * *' && vars.TREND_SHORTS != 'off') || startsWith(inputs.action, 'Trend Short') }}
@@ -177,6 +177,7 @@ jobs:
         continue-on-error: true   # no model = no trend Short today; the run summary says so
         env:
           TREND_MODEL: ${{ vars.TREND_MODEL || 'qwen2.5:7b' }}
+          TREND_CHECK_MODEL: ${{ vars.TREND_CHECK_MODEL || '' }}
         run: |
           sudo apt-get install -y -q zstd > /dev/null
           curl -fsSL https://ollama.com/install.sh | sh
@@ -186,6 +187,7 @@ jobs:
           OLLAMA_MODELS=$HOME/.ollama/models nohup ollama serve > /tmp/ollama.log 2>&1 &
           for i in $(seq 1 30); do curl -s http://127.0.0.1:11434 > /dev/null && break; sleep 1; done
           ollama pull "$TREND_MODEL"
+          if [ -n "$TREND_CHECK_MODEL" ] && [ "$TREND_CHECK_MODEL" != "$TREND_MODEL" ]; then ollama pull "$TREND_CHECK_MODEL"; fi
 
       - name: Render, QC, upload
         env:
@@ -226,6 +228,7 @@ jobs:
           YT_TIMEOUT: ${{ vars.YT_TIMEOUT || '300' }}
           TREND_SHORTS: ${{ vars.TREND_SHORTS || 'on' }}
           TREND_MODEL: ${{ vars.TREND_MODEL || 'qwen2.5:7b' }}
+          TREND_CHECK_MODEL: ${{ vars.TREND_CHECK_MODEL || '' }}
           PUBLISH_WINDOW_TREND: ${{ vars.PUBLISH_WINDOW_TREND || '12:00-14:00' }}
           SUBS: ${{ vars.SUBS || 'on' }}
           CAM_STYLE: ${{ vars.CAM_STYLE || 'steady' }}
