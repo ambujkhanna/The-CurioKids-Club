@@ -59,3 +59,12 @@ AInation then has its own 10,000 units and the kids channel gets more room too.
 
 - The 7B model writes simple, correct, slightly plain scripts. For livelier writing try `TREND_MODEL=qwen2.5:14b` (fits the free runner; the job takes ~10 min longer).
 - If a trend Short looks wrong: delete it in YouTube Studio; to stop the feature set `TREND_SHORTS=off`.
+
+## Troubleshooting (log)
+
+| When | Problem | Fix |
+|---|---|---|
+| 2026-11-23 01:30 IST (2026-11-22 20:00 UTC) | First dry run failed: `episode check: line 11: icon '🦸\u200d♂️' is not an emoji or known icon`. The model used a **combined emoji** (🦸 + invisible joiner + ♂️), which the video engine can't draw, and the writer's retry loop only ran the format check, so it never saw the problem. | (1) `script2episode.plain_emoji()` turns combined emoji into the first plain picture (🦸‍♂️ → 🦸, 👍🏽 → 👍) for every script; (2) the writer now runs the **full** check (`script2episode.convert` + episode check) inside its retry loop, so any check failure is fed back to the model or the topic is skipped, never a failed run; (3) the prompt forbids combined emoji. All 99 + 47 queued episodes, 8 + 8 long videos, 31 category episodes and all script files re-validated: OK. |
+
+**Rule for the future:** anything the pipeline makes by itself must pass the same full check the real run uses *before* it is handed to `daily.py`; a failed check means "try again / next topic", never a failed workflow.
+

@@ -168,3 +168,5 @@ Never paste tokens into chat, files or commits; they go only into GitHub Secrets
 | 2026-11-22 20:30 IST (15:00 UTC) | Both: owner renewed `YT_REFRESH_TOKEN` with `youtube.force-ssl`. **Subtitles (R4)**: exact caption tracks from our script + timing after each upload (English; Spanish video es+en; Hindi video hi+en) + translated titles/descriptions (kids: from es.json/hi.json). `SUBS`, `SUBS_TRACKS` (quota: 400 units per track). |
 | 2026-11-22 22:30 IST (17:00 UTC) | Both: **automatic trend Shorts** (one extra a day, 12:00-14:00 IST, own queue; kids on, AInation after its own Google Cloud project). docs/TREND_SHORTS.md. |
 | 2026-11-23 00:30 IST (2026-11-22 19:00 UTC) | Kids: **steady camera + golden speaker spotlight** (`CAM_STYLE`), **no empty card** (`BOARD_BRIDGE`), keyword pictures (grass 🌾, nest 🪺…). |
+| 2026-11-23 01:30 IST (2026-11-22 20:00 UTC) | Both: combined emoji (🦸‍♂️, 👍🏽) are turned into plain ones automatically; trend writer runs the full check before rendering. All episodes and scripts re-validated. |
+| 2026-11-23 02:15 IST (2026-11-22 20:45 UTC) | Both: **docs/HOW_IT_WORKS.md** (plain-language architecture + step-by-step diagrams). |

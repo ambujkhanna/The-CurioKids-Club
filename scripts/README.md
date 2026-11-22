@@ -64,7 +64,7 @@ MIA: Their tongue works like a tiny straw.   | 👅 A tongue straw!
 - **When it appears:** the board changes on that line, and the picture pops in when the matching word is spoken.
 - **Second line of text:** add `;` then up to 32 characters: `| 🐝 Fan, fan, fan! ; until it's thick`.
 - **How often:** add a picture every **2–3 lines** (about 4–6 per video). If you skip some, the pipeline adds a picture by itself when it recognises a word (cat, heart, robot, chat…).
-- **What works:** use **one simple emoji**. Combined emoji like 👨‍👩‍👧 don't work.
+- **What works:** use **one simple emoji** (🦸, 👨, 👍). **Combined emoji can't be drawn**: anything built from several pictures joined by an invisible character (🦸‍♂️ man superhero, 👨‍👩‍👧 family, 🏳️‍🌈) or with a skin tone (👍🏽). Since 2026-11-22 the converter turns them into the first plain picture automatically (🦸‍♂️ → 🦸, 👍🏽 → 👍); in a hand-written `episode.json` they still fail the check ("icon ... is not an emoji or known icon"), so pick a plain one.
 
 ## 4. Sounds and expressions
 | Write | Result |

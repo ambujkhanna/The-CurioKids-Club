@@ -93,9 +93,18 @@ def _short(s, n=60):
     return s[:n].rsplit(" ", 1)[0].rstrip(" ,:;-") + "…"
 
 
+def plain_emoji(e):
+    """Combined emoji can't be drawn (🦸‍♂️ = 🦸 + invisible joiner + ♂️, 👨‍👩‍👧, 👍🏽 skin tones): keep the first, plain part.
+    Added 2026-11-22 after a trend Short failed on '🦸\u200d♂️'."""
+    if not e or e.startswith(("img:", "house:", "w_")): return e
+    e = e.split("\u200d")[0]                                   # zero-width joiner: keep the first picture
+    e = "".join(ch for ch in e if not 0x1F3FB <= ord(ch) <= 0x1F3FF)  # skin-tone modifiers
+    return e or "💡"
+
+
 def icon_of(s):
     m = re.match(r"^(img:\S+|[^\w\s\"'(),.!?;:-]+)\s*(.*)$", s.strip())
-    return (m.group(1), m.group(2).strip()) if m else (None, s.strip())
+    return (plain_emoji(m.group(1)), m.group(2).strip()) if m else (None, s.strip())
 
 
 def auto_icon(text):

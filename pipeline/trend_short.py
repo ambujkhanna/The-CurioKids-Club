@@ -96,26 +96,30 @@ def facts(subject):
     if not keys: return None, ""
     stems = {_stem(k) for k in keys}
     query = " ".join(keys)
+    hits = lambda t: sum(1 for st in stems if st in t.lower())
+    best = None  # (title score, prefer simple, source, text): the article whose TITLE names most of the topic wins
     for wiki in (["simple", "en"] if KIDS else ["en"]):
         try:
             s_ = _get(f"https://{wiki}.wikipedia.org/w/api.php?" + urllib.parse.urlencode(
                 {"action": "query", "list": "search", "srsearch": query, "srlimit": 5, "format": "json"}))
             for hit in s_.get("query", {}).get("search", []):
+                score = hits(hit["title"]) / len(stems)
+                if score == 0 or (best and score < best[0]): continue
                 q = _get(f"https://{wiki}.wikipedia.org/w/api.php?" + urllib.parse.urlencode(
                     {"action": "query", "prop": "extracts", "explaintext": 1, "titles": hit["title"], "format": "json", "redirects": 1}))
                 for pg in q.get("query", {}).get("pages", {}).values():
                     full = (pg.get("extract") or "").strip()
                     if len(full) < 300 or "may refer to" in full[:300]: continue
+                    if hits(pg["title"] + " " + full) < len(stems): continue  # every key word must appear in the article
                     paras = [x.strip() for x in full.split("\n") if len(x.strip()) > 60 and not x.startswith("==")]
-                    hits = lambda t: sum(1 for st in stems if st in t.lower())
-                    if hits(pg["title"] + " " + full) < len(stems) or not hits(pg["title"]):  # all key words in the article,
-                        continue                                                               # and the title names the subject
-                    pick = paras[:2] + [x for x in paras[2:] if hits(x)]
-                    text = "\n".join(pick)[:3500]
+                    text = "\n".join(paras[:2] + [x for x in paras[2:] if hits(x)])[:3500]
                     if hits(text) < len(stems): continue
-                    return f"{pg['title']} ({wiki}.wikipedia.org)", text
+                    if wiki == "simple" and len(text) < 700: continue  # too thin to write from
+                    cand = (score, wiki == "simple", f"{pg['title']} ({wiki}.wikipedia.org)", text)
+                    if best is None or cand[:2] > best[:2]: best = cand
         except Exception as e:
             print("note: Wikipedia lookup failed:", str(e)[:80])
+    if best: return best[2], best[3]
     return None, ""
 
 
@@ -145,7 +149,7 @@ TITLE_BOARD: <emoji Word -> emoji Word>
 Rules:
 - 10 to 12 dialogue lines in total (count them!), about 110-160 words. Only the speakers {ASK} and {EXPLAIN}, taking turns.
 - Line 1: {ASK} asks the question. Every line max 200 characters, short sentences.
-- On about every second {EXPLAIN} line, add "| emoji Short text" at the end (one simple, everyday emoji that shows the thing itself, max 5 words, max 30 characters; never 🌿 unless the line is about leaves or herbs).
+- On about every second {EXPLAIN} line, add "| emoji Short text" at the end (one simple, everyday emoji that shows the thing itself, max 5 words, max 30 characters; never 🌿 unless the line is about leaves or herbs; ONE single emoji character, never combined ones like 🦸‍♂️ 👨‍👩‍👧 or skin tones).
 - The FIRST answer gives the MAIN reason from the FACTS (the most interesting real fact), not a vague feeling.
 - Then 2-3 more real facts from the FACTS, one per answer, each explained with one simple comparison {"a child knows" if KIDS else "from everyday life"}.
 - No technical terms unless you explain them in plain words. Every answer must teach something new.
@@ -186,7 +190,8 @@ def fix_pictures(text):
         m = re.match(r"^(.*\|\s*)(\S+)(\s+)(.+)$", l)
         if m and ":" in l.split("|")[0]:
             pic, _ = script2episode.auto_icon(m.group(4))
-            if pic and pic != m.group(2): l = m.group(1) + pic + m.group(3) + m.group(4)
+            pic = pic or script2episode.plain_emoji(m.group(2))  # never a combined emoji (🦸‍♂️ -> 🦸)
+            if pic != m.group(2): l = m.group(1) + pic + m.group(3) + m.group(4)
         out.append(l)
     return "\n".join(out)
 
@@ -194,8 +199,8 @@ def fix_pictures(text):
 def problems_of(text):
     """script2episode's own checks (the same as for the owner's scripts) + kid-safety words."""
     d = tempfile.mkdtemp(); p = os.path.join(d, "trend.txt"); open(p, "w", encoding="utf-8").write(text)
-    try:
-        _, _, probs = script2episode.build(p)
+    try:  # the FULL check, exactly as daily.py --script runs it (format + episode check: icons, lengths, boards)
+        _, probs = script2episode.convert(p, out_root=os.path.join(d, "check"))
     except Exception as e:
         probs = [f"could not read the script: {e}"]
     bad = set(re.findall(r"[a-z']+", text.lower())) & radar.BLOCK
