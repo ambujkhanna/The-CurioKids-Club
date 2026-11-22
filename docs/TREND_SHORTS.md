@@ -6,7 +6,7 @@
 |---|---|---|
 | Schedule | 06:11 UTC (11:41 IST) | 06:23 UTC (11:53 IST) |
 | Publishes | 12:00–14:00 IST (`PUBLISH_WINDOW_TREND`) | 12:00–14:00 IST |
-| Switch | `TREND_SHORTS` default **on** | `TREND_SHORTS` default **off** until AInation has its own Google Cloud project (see below) |
+| Switch | `TREND_SHORTS` default **on** | `TREND_SHORTS` repo variable **on** since 2026-11-23 (default in code: off) |
 | Facts from | Simple English Wikipedia, then English Wikipedia | English Wikipedia |
 | Characters | Leo asks, Mia explains | Dad asks, Teen explains |
 
@@ -41,6 +41,8 @@ Actions → daily Short workflow → Run workflow → action:
 | `PUBLISH_WINDOW_TREND` | `12:00-14:00` | IST window for trend Shorts |
 
 ## YouTube API allowance (important)
+
+> **Update 2026-11-23 05:00 IST (2026-11-22 23:30 UTC):** the owner confirmed each channel has its **own** Google Cloud project and OAuth client, so each has its own 10,000 units/day (kids ≈ 7,250 used, AInation ≈ 4,300 + the weekly long video). AInation trend Shorts are on. The text below only applies if both channels ever share one project.
 
 Both channels share ONE Google Cloud project = 10,000 units/day. Each upload ≈ 1,600, each subtitle track 400, thumbnail/playlist/titles 50 each.
 Kids: English/Hindi ≈ 2,550 + Spanish ≈ 2,550 + trend ≈ 2,150. AInation: daily ≈ 2,100 (+ weekly long). Total ≈ 9,350 → **no room for an AInation trend Short** on the shared project.
