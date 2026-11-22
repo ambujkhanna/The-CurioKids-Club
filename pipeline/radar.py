@@ -101,6 +101,12 @@ def covered_titles():
             if os.path.exists(f):
                 try: out.append(_clean(json.load(open(f, encoding="utf-8")).get("title", "")))
                 except Exception: pass
+    try:  # videos made from scripts (incl. the automatic trend Shorts): only their state is kept in the repo
+        for r in json.load(open(os.path.join(ROOT, "custom", "state.json"), encoding="utf-8")).get("episodes", {}).values():
+            if isinstance(r, dict) and r.get("title"): out.append(_clean(r["title"]))
+            if isinstance(r, dict) and r.get("trend_topic"): out.append(_clean(r["trend_topic"]))
+    except Exception:
+        pass
     return out
 
 

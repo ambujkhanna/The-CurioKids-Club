@@ -593,6 +593,7 @@ def main():
                 import notify; notify.send(f"⚠️ Self-check: only {sc_report['heard']:.0%} of the script was heard in {ep.get('title', eid)}. Listen before it goes public.")
             except Exception:
                 pass
+    if os.environ.get("TREND_TOPIC"): rec["trend_topic"] = os.environ["TREND_TOPIC"]  # automatic trend Short: never the same topic twice
     rec.update({"title": ep["title"], "rendered_at": dt.datetime.now(IST).isoformat(timespec="seconds"),
                 "duration_s": round(float(probe(mp4)["format"]["duration"]), 2)})
     if problems:

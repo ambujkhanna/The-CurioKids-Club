@@ -187,3 +187,7 @@ These have no good emoji today, so episodes use a close-enough one. A house icon
 **Kids — everyday science and language:** sound wave, echo, shadow and light source, ice melting, boiling water bubbles, mouth shapes for 'thee' vs 'thuh' (the vowel rule), letter blocks with vowels highlighted, clock face for time topics
 
 **AInation:** a sentence splitting into tokens, neural network (nodes and lines), AI chip, a dataset (stack of cards), prompt box with cursor, a model 'brain' in a box, cloud server, deepfake face with a mask, chatbot bubble with sparkle, AI agent with a to-do list, robot hand, padlock on data, a phishing hook on an email, fact-check magnifier on a document
+
+## Wanted for the next Kaggle icon run (2026-11-23 00:30 IST (2026-11-22 19:00 UTC))
+
+- `w_grass`: a tuft of fresh green grass (no emoji exists; 🌿 herb read as a branch in the cats video). Then map "grass" → `house:w_grass` in `script2episode.EMOJI`.

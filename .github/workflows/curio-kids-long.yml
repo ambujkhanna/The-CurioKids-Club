@@ -133,6 +133,8 @@ jobs:
           KEEP_THUMBS: ${{ vars.KEEP_THUMBS || '2' }}
           YT_TIMEOUT: ${{ vars.YT_TIMEOUT || '300' }}
           SUBS: ${{ vars.SUBS || 'on' }}
+          CAM_STYLE: ${{ vars.CAM_STYLE || 'steady' }}
+          BOARD_BRIDGE: ${{ vars.BOARD_BRIDGE || 'on' }}
           SUBS_TRACKS: ${{ vars.SUBS_TRACKS || '2' }}
           INTRO: ${{ vars.INTRO || 'on' }}
           OUTRO: ${{ vars.OUTRO || 'on' }}

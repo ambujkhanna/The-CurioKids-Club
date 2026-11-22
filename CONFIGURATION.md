@@ -27,6 +27,8 @@ When you add or change a variable, update this file in both repos and add a line
 | `ART` | `on` | – | Kids HD clay backgrounds and picture boards (`assets/art/`). `off` = old drawn playroom, picture boards fall back to icon boards |
 | `ART_AUTO` | `on` | – | Kids: pick a background by topic automatically. `off` = only episodes that name a `"backdrop"` get one |
 | `BACKDROP` | empty | – | Tests only: force one background by file name for every video (`none` = drawn room) |
+| `CAM_STYLE` | `steady` | – | Kids camera: `steady` = the set never slides; the speaker gets a golden floor spotlight + small step forward (owner 2026-11-22) · `shots` = old camera that glides toward the speaker |
+| `BOARD_BRIDGE` | `on` | – | Kids: a board stays until the next board's first picture appears (no empty card while waiting for a cue word). `off` = old behaviour |
 | `ICON_STYLE` | `house` | `house` | `house` = curated mix (our 151 house icons where they look best, Fluent 3D for the rest) · `house_all` = house icon whenever one exists · `3d` = Fluent 3D only · `flat` = old flat icons |
 | `CHAR_STYLE` | `doodle` | `doodle` | Presenter drawing: `doodle` (hand-drawn) · `polished` (cleaner lines) |
 | `STOCK` | `off` | `on` | Real photos/clips (NASA + Openverse, free licences, credited in the description). Kids `off` because photos looked "pasted"; 3D art is always tried first |
@@ -71,6 +73,9 @@ When you add or change a variable, update this file in both repos and add a line
 | `SUBS` | `on` | `on` | After each upload: exact subtitle tracks from our script (English; Spanish video es+en; Hindi video hi+en) + translated titles (kids: Spanish, Hindi). Needs the `youtube.force-ssl` login |
 | `SUBS_TRACKS` | `2` | `2` | Max subtitle tracks per video (each costs 400 of the 10,000 daily API units shared by both channels) |
 | `RADAR` | `on` | `on` | Weekly topic radar issue (Mondays 03:17 UTC): what people search for + what viewers asked. See `docs/RADAR_AND_ALERTS.md` |
+| `TREND_SHORTS` | `on` | `off` (needs its own Google Cloud project, docs/TREND_SHORTS.md) | One EXTRA automatic Short a day from the first relevant top search (Google Trends → YouTube trending → top YouTube searches); script by a free model (Ollama) from Wikipedia facts, two fact checks, own queue |
+| `TREND_MODEL` | `qwen2.5:7b` | `qwen2.5:7b` | Ollama model for trend scripts (`qwen2.5:14b` = better, slower) |
+| `PUBLISH_WINDOW_TREND` | `12:00-14:00` | `12:00-14:00` | IST window for trend Shorts |
 | `RADAR_TRENDS` | `on` | `on` | Daily trend check (07:17 IST): a "Trend alert" issue when a new Google/YouTube trend fits the channel |
 | `RADAR_GEOS` | `IN,US,MX` | `IN,US,MX` | Countries for Google Trends and YouTube trending |
 | `SELFCHECK` | `on` | `on` | After rendering, faster-whisper listens to the video and compares it with the script; flags garbled or silent audio |
@@ -98,7 +103,7 @@ Variables planned but **not built yet** (`docs/AUTOMATION_KAGGLE.md`, `docs/ROAD
 
 | Workflow | Kids file | AInation file | Schedule (UTC → IST) |
 |---|---|---|---|
-| Daily Short | `curio-kids-short.yml` | `daily-short.yml` | Kids 08:40 + 15:40 (14:10 + 21:10 IST, English/Hindi alternate days) + **21:41 (03:11 IST) Spanish** · AInation 09:23 (14:53 IST) |
+| Daily Short | `curio-kids-short.yml` | `daily-short.yml` | Kids 08:40 + 15:40 (14:10 + 21:10 IST, English/Hindi alternate days) + **21:41 (03:11 IST) Spanish** · AInation 09:23 (14:53 IST) · **trend Short** kids 06:11 (11:41 IST), AInation 06:23 (11:53 IST) |
 | Weekly long video | `curio-kids-long.yml` | `weekly-long.yml` | Kids Sat 04:30 (10:00 IST) · AInation Sun 04:37 (10:07 IST) |
 | Topic radar | `topic-radar.yml` | `topic-radar.yml` | Mon 03:17 (08:47 IST) full report · daily 01:47 (07:17 IST) trend check |
 | YouTube analytics | `youtube-analytics.yml` | `youtube-analytics.yml` | daily 12:00 (17:30 IST) |
@@ -109,7 +114,7 @@ Boxes in the Run workflow form (Short and long workflows):
 
 | Box | Values |
 |---|---|
-| **action** | `Next video (scheduled)` · `Next video, publish now` · `Dry run (render only, nothing uploaded)` · `Refresh thumbnails` · `Post 1 old video to Facebook + Instagram` · `Post 3 old videos to Facebook + Instagram` · `Send a test alert (WhatsApp)` (daily Shorts only; long workflows have fewer) |
+| **action** | `Next video (scheduled)` · `Next video, publish now` · `Dry run (render only, nothing uploaded)` · `Refresh thumbnails` · `Post 1 old video to Facebook + Instagram` · `Post 3 old videos to Facebook + Instagram` · `Send a test alert (WhatsApp)` · `Trend Short (auto topic)` · `Trend Short dry run (auto topic)` (daily Shorts only; long workflows have fewer) |
 | **post_to** | `YouTube + Facebook + Instagram` · `YouTube only` · `Facebook + Instagram only` · `YouTube + Facebook` · `YouTube + Instagram` · `Facebook only` · `Instagram only` |
 | **episode** | an episode id (`ep094`, `s-ollama`); empty = next in line. With *Refresh thumbnails* = only that video |
 | **script** | (Shorts) a file path like `scripts/bees.txt` or the whole script pasted (format: `scripts/README.md`) → becomes `custom/<id>/` |
@@ -173,3 +178,5 @@ Fixed in code (not variables): Shorts render at 24 fps; intro 2.0 s, outro 3.5 s
 | 2026-11-22 17:00 IST (11:30 UTC) | Run option **Send a test alert (WhatsApp)** in both daily Short workflows. |
 | 2026-11-22 18:30 IST (13:00 UTC) | Radar: Google Trends + YouTube trending (`RADAR_TRENDS`, `RADAR_GEOS`), daily trend-alert issue. |
 | 2026-11-22 20:30 IST (15:00 UTC) | `SUBS`, `SUBS_TRACKS` (R4 subtitles). Login scope now `youtube.force-ssl`. |
+| 2026-11-22 22:30 IST (17:00 UTC) | Trend Shorts: `TREND_SHORTS`, `TREND_MODEL`, `PUBLISH_WINDOW_TREND`, run options 'Trend Short (auto topic)' / dry run, new cron per channel. |
+| 2026-11-23 00:30 IST (2026-11-22 19:00 UTC) | Kids: `CAM_STYLE` (steady default), `BOARD_BRIDGE` (on). |

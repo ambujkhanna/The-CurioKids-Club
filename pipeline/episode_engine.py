@@ -489,11 +489,26 @@ _E.BUILD_BIG = build_big
 for _n, _fn in stock.BUILDERS.items():
     BUILD[_n] = (lambda f: (lambda i, t0, t1, sc: f(_E, i, t0, t1, sc)))(_fn)
 HOOK_CARD = bg_line.panel() != "stage" and os.environ.get("FORMAT") != "long"  # glass card: the hook text sits inside it
+_SCENE_EL = []  # (first element index, end index, scene end) per scene
 for k in range(len(scene_starts)):
     i, t0, t1 = scene_window(k)
     if k == 0 and HOOK_CARD: t0 = max(t0, 2.35)  # first board waits until the opening hook (0-2.3 s) has faded
     sc = ELINES[i]["board"]
+    _a = len(ELEMS)
     BUILD.get(sc["type"], build_big)(i, t0, t1, sc)
+    _SCENE_EL.append((_a, len(ELEMS), t1))
+# No empty card while the next picture waits for its cue word (owner, 2026-11-22): a board stays until the next board's
+# first element appears, then they cross-fade. BOARD_BRIDGE=off = old behaviour.
+if os.environ.get("BOARD_BRIDGE", "on").strip().lower() not in ("off", "0", "no", "false"):
+    for k in range(len(_SCENE_EL) - 1):
+        a, b, t1 = _SCENE_EL[k]; na, nb, _ = _SCENE_EL[k + 1]
+        if nb <= na: continue
+        first_in = min(ELEMS[j][0] for j in range(na, nb))
+        if first_in <= t1 + 0.1: continue
+        for j in range(a, b):
+            ti, to, fn, an, pv = ELEMS[j]
+            if to is not None and abs(to - t1) < 0.01:  # only elements that end with the scene
+                ELEMS[j] = (ti, first_in + 0.12, fn, an, pv)
 
 import cta
 KIDS_CTA = True
@@ -627,6 +642,11 @@ if bg_line.panel() != "stage":  # glass-card look: speaker shots are a gentle pu
     for n, c in CH.items():         # the whole card and the logo on screen (a deep close-up would cut the card in half)
         CAMS[n] = (540 + max(-24.0, min(24.0, (c.x - 540) * 0.12)), 925, 1.04, 1.08)
     K.SMOOTH_CAM = True             # glide between shots instead of cutting
+if os.environ.get("CAM_STYLE", "steady").strip().lower() == "steady" and os.environ.get("FORMAT") != "long":
+    # owner, 2026-11-22: the set and the board must not slide toward the speaker. One fixed frame (a gentle 3 % zoom keeps the
+    # card edges tidy); the speaker gets a floor spotlight + small step forward (kit2d.speaker_glow / speaking).
+    for k_ in list(CAMS): CAMS[k_] = (540, 930, 1.03, 1.03)
+    K.STEADY = True
 PUNCH = [wt(i, l["punch"]) for i, l in enumerate(ELINES) if l.get("punch")]
 
 import kids_fx
