@@ -1,0 +1,34 @@
+{
+  "title_es": "¿Por qué nos da hipo? 😲",
+  "description_es": "¡El hipo empieza con un músculo debajo de tus pulmones! Leo pregunta y su hermana mayor Mía le explica qué hace el sonido ¡hip!, en menos de un minuto.",
+  "cover_text_es": "¡HIP! ¿POR QUÉ?",
+  "hook": "¿Por qué nos da hipo?",
+  "tags_es": ["por qué nos da hipo", "el cuerpo humano para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Por qué nos da hipo?", "cue": "próxima", "left": "😲", "right": "img:Human_physiology/Servier/healthy-lung"},
+  "lines": [
+    "Mía, ¿por qué nos da hipo? ¡Hip!",
+    "Empieza con un músculo debajo de tus pulmones que se llama diafragma. Te ayuda a respirar.",
+    "Normalmente se mueve suavecito, abajo y arriba. ¡Pero a veces da un saltito de repente!",
+    "¿Y eso hace el sonido del hip?",
+    "¡Sí! El saltito te hace tragar aire rápido. Luego tus cuerdas vocales, en la garganta, se cierran de golpe. ¡Hip!",
+    "¿Y qué hace saltar al diafragma?",
+    "Muchas veces es comer muy rápido, tomar refrescos con burbujas, o reírse mucho. Una pancita muy llena también lo molesta.",
+    "¿Pero por qué existe el hipo?",
+    "¡Es un misterio! Los científicos todavía no están seguros. ¡Hasta los bebés tienen hipo antes de nacer!",
+    "¿Cómo hago que se me quite?",
+    "Buenas noticias: el hipo casi siempre se quita solo en unos minutos. A algunas personas les ayuda respirar lento y tranquilo.",
+    "¡Un diafragma saltarín, un trago de aire, y las cuerdas vocales hacen hip!",
+    "¡Hip! ¡Ja! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué nos da hipo?"
+  ],
+  "punch": {"1": "diafragma", "8": "misterio"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "😲", "label": "¡Hip!"}, "right": {"icon": "🤔", "label": "¿Por qué?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "img:Human_physiology/Servier/healthy-lung", "text": "Te presento al diafragma", "cue": "diafragma", "sub": "Debajo de los pulmones", "sub_cue": "pulmones"},
+    "2": {"type": "big", "icon": "⚡", "text": "Un saltito de repente", "cue": "repente"},
+    "4": {"type": "body", "title": "¡Hip!", "show": ["lungs"], "flow": "air", "cue": "tragar", "labels": [{"text": "Aire rápido", "at": "lungs", "cue": "tragar"}, {"text": "¡Hip!", "at": "mouth", "cue": "hip"}]},
+    "6": {"type": "gallery", "title": "Qué causa el hipo", "items": [{"icon": "⏩", "label": "Comer rápido", "cue": "comer"}, {"icon": "🥤", "label": "Refrescos", "cue": "refrescos"}, {"icon": "😂", "label": "Reírse", "cue": "reírse"}, {"icon": "🍽️", "label": "Pancita llena", "cue": "llena"}]},
+    "8": {"type": "big", "icon": "👶", "text": "¡Hasta los bebés!", "cue": "bebés", "sub": "Un misterio científico", "sub_cue": "científicos"},
+    "10": {"type": "big", "icon": "⏱️", "text": "Se quita solito", "cue": "quita", "sub": "Respira lento", "sub_cue": "lento"},
+    "11": {"type": "summary", "rows": [{"icon": "img:Human_physiology/Servier/healthy-lung", "text": "Diafragma saltarín", "cue": "saltarín"}, {"icon": "💨", "text": "Trago de aire", "cue": "trago"}, {"icon": "img:Human_physiology/Servier/vocal-chord-phonation", "text": "¡Zas! ¡Hip!", "cue": "hip"}]}
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "title_es": "¿Qué causa los rayos y los truenos? ⚡",
+  "description_es": "¿Qué causa los rayos y los truenos? ¡Una chispa gigante y un gran estruendo! Leo pregunta y su hermana mayor Mía le explica las tormentas y cómo estar seguro, en menos de un minuto.",
+  "cover_text_es": "¡ZAS! ¡BUM!",
+  "hook": "¿Qué causa los rayos y los truenos?",
+  "tags_es": [
+    "qué son los rayos y truenos",
+    "tormentas para niños",
+    "ciencia para niños"
+  ],
+  "loop_card_es": {
+    "text": "¿Rayos y truenos?",
+    "cue": "próxima",
+    "left": "⚡",
+    "right": "🔊"
+  },
+  "lines": [
+    "Mía, ¿qué causa los rayos y los truenos?",
+    "Todo empieza dentro de las grandes nubes de tormenta. Pedacitos de hielo chocan y se frotan mientras el viento los sacude.",
+    "¿Y por qué importa que choquen?",
+    "Los científicos creen que tanto choque junta carga eléctrica, como el toquecito que sientes al frotarte con una alfombra peluda.",
+    "¿Y luego qué?",
+    "Cuando hay demasiada carga, salta en una chispa gigante. ¡Esa chispa gigante es el rayo!",
+    "¿Y qué es el trueno?",
+    "El rayo calienta el aire tan rápido que el aire se expande de golpe con un ¡BUM! ¡Ese bum es el trueno!",
+    "¿Por qué veo el destello antes de oír el bum?",
+    "La luz viaja mucho más rápido que el sonido. Por eso el destello llega primero a tus ojos, y el retumbo llega después.",
+    "¿Es seguro mirar?",
+    "Aquí hay una regla para recordar: si el trueno ruge, ¡ve adentro! Puedes mirar la tormenta sin peligro desde la casa.",
+    "Hielo que choca, una chispa gigante y un gran bum. ¡Las tormentas son increíbles!",
+    "¡Claro que sí! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿qué causa los rayos y los truenos?"
+  ],
+  "punch": {
+    "5": "rayo",
+    "11": "adentro"
+  },
+  "boards": {
+    "0": {
+      "type": "title",
+      "left": {
+        "icon": "⚡",
+        "label": "Rayo"
+      },
+      "right": {
+        "icon": "🔊",
+        "label": "Trueno"
+      },
+      "mid": "?"
+    },
+    "1": {
+      "type": "big",
+      "icon": "⛈️",
+      "text": "Hielo que choca",
+      "cue": "hielo",
+      "sub": "Dentro de la tormenta",
+      "sub_cue": "tormenta"
+    },
+    "3": {
+      "type": "big",
+      "icon": "⚡",
+      "text": "Se junta carga",
+      "cue": "carga",
+      "sub": "Como un toquecito",
+      "sub_cue": "toquecito"
+    },
+    "5": {
+      "type": "big",
+      "icon": "⚡",
+      "text": "¡Una chispa gigante!",
+      "cue": "chispa"
+    },
+    "7": {
+      "type": "journey",
+      "title": "Así nace el trueno",
+      "traveler": "💨",
+      "items": [
+        {
+          "icon": "⚡",
+          "label": "Rayo",
+          "cue": "rayo"
+        },
+        {
+          "icon": "🌡️",
+          "label": "Aire caliente",
+          "cue": "calienta"
+        },
+        {
+          "icon": "💥",
+          "label": "¡BUM!",
+          "cue": "bum"
+        },
+        {
+          "icon": "🔊",
+          "label": "Trueno",
+          "cue": "trueno"
+        }
+      ]
+    },
+    "9": {
+      "type": "compare",
+      "left": {
+        "label": "Luz",
+        "items": [
+          {
+            "text": "Destello rápido",
+            "icon": "👀",
+            "cue": "destello"
+          }
+        ]
+      },
+      "right": {
+        "label": "Sonido",
+        "items": [
+          {
+            "text": "Retumbo lento",
+            "icon": "👂",
+            "cue": "retumbo"
+          }
+        ]
+      }
+    },
+    "11": {
+      "type": "checklist",
+      "title": "Seguridad en tormentas",
+      "icon": "🏠",
+      "items": [
+        {
+          "text": "Ve adentro",
+          "icon": "🏠",
+          "cue": "adentro",
+          "ok": true
+        },
+        {
+          "text": "Mira desde la casa",
+          "icon": "🪟",
+          "cue": "casa",
+          "ok": true
+        }
+      ]
+    },
+    "12": {
+      "type": "summary",
+      "rows": [
+        {
+          "text": "Hielo que choca",
+          "icon": "🧊",
+          "cue": "hielo"
+        },
+        {
+          "text": "Chispa gigante",
+          "icon": "⚡",
+          "cue": "chispa"
+        },
+        {
+          "text": "Gran bum",
+          "icon": "🔊",
+          "cue": "bum"
+        }
+      ]
+    }
+  }
+}

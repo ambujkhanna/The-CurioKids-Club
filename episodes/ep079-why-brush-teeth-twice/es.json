@@ -1,0 +1,169 @@
+{
+  "title_es": "¿Por qué cepillarse los dientes dos veces al día? 🪥",
+  "description_es": "¡Placa pegajosa, gérmenes que aman el azúcar y caries chiquitas! Leo pregunta y su hermana mayor Mía le explica por qué nos cepillamos en la mañana y en la noche, en menos de un minuto.",
+  "cover_text_es": "¡DOS VECES!",
+  "hook": "¿Por qué nos cepillamos dos veces al día?",
+  "tags_es": [
+    "por qué cepillarse los dientes",
+    "higiene dental para niños",
+    "ciencia para niños"
+  ],
+  "loop_card_es": {
+    "text": "¿Por qué dos veces?",
+    "cue": "próxima",
+    "left": "🦷",
+    "right": "🪥"
+  },
+  "lines": [
+    "Mía, ¿por qué nos cepillamos los dientes dos veces al día?",
+    "¡Por la placa! La placa es una capa pegajosa de gérmenes que se forma en tus dientes.",
+    "¿Gérmenes? ¿Y qué hacen?",
+    "Los gérmenes comen el azúcar de tu comida. Luego hacen ácido, y el ácido puede hacer hoyitos llamados caries.",
+    "¡Qué asco! ¿Entonces cepillarse barre los gérmenes?",
+    "¡Sí! Al cepillarte quitas la placa pegajosa, y tus dientes se quedan fuertes y brillantes.",
+    "¿Pero por qué dos veces?",
+    "La placa siempre vuelve. Por eso nos cepillamos en la mañana, y en la noche antes de dormir.",
+    "¿Cuánto tiempo me tengo que cepillar?",
+    "Unos dos minutos cada vez. ¡Tararear una canción en tu cabeza ayuda a que el tiempo pase!",
+    "¿Y cuánta pasta de dientes uso?",
+    "¡Primero pídele ayuda a un adulto! Los niños solo necesitan una bolita de pasta con flúor, del tamaño de un frijolito. Escúpela al final. ¡No te la tragues!",
+    "Placa, azúcar, ácido... ¡Me voy a cepillar en la mañana y en la noche!",
+    "¿Qué exploramos ahora? ¡Pídele a un adulto que deje un tema en los comentarios!",
+    "¡Sonrisa brillante! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué nos cepillamos los dientes dos veces al día?"
+  ],
+  "punch": {
+    "1": "placa"
+  },
+  "boards": {
+    "0": {
+      "type": "title",
+      "left": {
+        "icon": "🦷",
+        "label": "Dientes"
+      },
+      "right": {
+        "icon": "🪥",
+        "label": "¿Dos veces?"
+      },
+      "mid": "?"
+    },
+    "1": {
+      "type": "big",
+      "icon": "🦠",
+      "text": "Placa = gérmenes pegajosos",
+      "cue": "placa",
+      "sub": "Se forma en los dientes",
+      "sub_cue": "forma"
+    },
+    "3": {
+      "type": "flow",
+      "title": "Así empiezan las caries",
+      "packet": "🍬",
+      "items": [
+        {
+          "icon": "🍬",
+          "label": "Azúcar",
+          "cue": "azúcar"
+        },
+        {
+          "icon": "🧪",
+          "label": "Ácido",
+          "cue": "ácido"
+        },
+        {
+          "icon": "🕳️",
+          "label": "Caries",
+          "cue": "caries"
+        }
+      ]
+    },
+    "5": {
+      "type": "transform",
+      "title": "¡A cepillar!",
+      "from": {
+        "icon": "🦠",
+        "label": "Placa pegajosa",
+        "cue": "cepillarte"
+      },
+      "to": {
+        "icon": "😁",
+        "label": "Dientes limpios",
+        "cue": "quitas"
+      }
+    },
+    "7": {
+      "type": "steps",
+      "title": "Dos veces",
+      "items": [
+        {
+          "icon": "☀️",
+          "label": "Mañana",
+          "cue": "mañana"
+        },
+        {
+          "icon": "🌙",
+          "label": "Noche",
+          "cue": "noche"
+        }
+      ]
+    },
+    "9": {
+      "type": "picture",
+      "art": "teeth",
+      "caption": "Unos 2 minutos",
+      "cue": "dos",
+      "icon": "⏱️"
+    },
+    "11": {
+      "type": "checklist",
+      "title": "Pasta de dientes",
+      "icon": "🪥",
+      "items": [
+        {
+          "text": "Pide ayuda",
+          "icon": "🧑",
+          "cue": "pídele",
+          "ok": true
+        },
+        {
+          "text": "Una bolita",
+          "icon": "🫛",
+          "cue": "bolita",
+          "ok": true
+        },
+        {
+          "text": "Escúpela",
+          "icon": "💦",
+          "cue": "escúpela",
+          "ok": true
+        },
+        {
+          "text": "Tragarla",
+          "icon": "🚫",
+          "cue": "tragues",
+          "ok": false
+        }
+      ]
+    },
+    "12": {
+      "type": "summary",
+      "rows": [
+        {
+          "text": "Placa: gérmenes",
+          "icon": "🦠",
+          "cue": "placa"
+        },
+        {
+          "text": "Azúcar da ácido",
+          "icon": "🍬",
+          "cue": "azúcar"
+        },
+        {
+          "text": "Mañana y noche",
+          "icon": "🪥",
+          "cue": "mañana"
+        }
+      ]
+    }
+  }
+}

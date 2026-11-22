@@ -1,0 +1,151 @@
+{
+  "title_es": "¿Cómo flotan las nubes? ☁️",
+  "description_es": "¿Cómo puede flotar en el cielo una nube llena de agua? Leo pregunta y su hermana mayor Mía le explica las gotitas, el aire que sube y por qué cae la lluvia, en menos de un minuto.",
+  "cover_text_es": "¡FLOTAN!",
+  "hook": "¿Cómo flotan las nubes en el cielo?",
+  "tags_es": [
+    "cómo flotan las nubes",
+    "las nubes para niños",
+    "ciencia para niños"
+  ],
+  "loop_card_es": {
+    "text": "¿Cómo flotan las nubes?",
+    "cue": "próxima",
+    "left": "☁️",
+    "right": "💧"
+  },
+  "lines": [
+    "Mía, ¿cómo flotan las nubes en el cielo?",
+    "¡Una nube está hecha de muchísimas gotitas de agua, o de pedacitos de hielo chiquititos!",
+    "¡Pero el agua pesa mucho!",
+    "¡Una cubeta grande sí! Pero cada gotita de nube es superchiquita, mucho más pequeña que una gota de lluvia, y muy ligera.",
+    "¿Y qué las sostiene?",
+    "¡El aire que sube! El aire tibio va hacia arriba y levanta suavemente las gotitas, así que caen superdespacio.",
+    "¿Como una pluma flotando con la brisa?",
+    "¡Sí! Una pluma baja despacito, y las gotitas de nube son todavía más ligeras.",
+    "¿Entonces por qué cae la lluvia?",
+    "Las gotitas chocan y se juntan. Crecen y se ponen más pesadas, hasta que el aire ya no las aguanta. ¡Y entonces, llueve!",
+    "¿Por qué algunas nubes son grises y oscuras?",
+    "Las nubes gruesas tapan más luz del sol, así que se ven más oscuras. ¡Muchas veces eso quiere decir que va a llover!",
+    "¡Gotitas, aire que sube, y cuando pesan mucho, lluvia!",
+    "¿Qué descubrimos ahora? ¡Pídele a un adulto que deje un tema en los comentarios!",
+    "¡Nubetástico! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿cómo flotan las nubes en el cielo?"
+  ],
+  "punch": {
+    "3": "superchiquita",
+    "5": "levanta"
+  },
+  "boards": {
+    "0": {
+      "type": "title",
+      "left": {
+        "icon": "☁️",
+        "label": "Nube"
+      },
+      "right": {
+        "icon": "🤔",
+        "label": "¿Flota?"
+      },
+      "mid": "?"
+    },
+    "1": {
+      "type": "picture",
+      "art": "kf_cloud_drops",
+      "caption": "Gotitas de agua",
+      "cue": "gotitas",
+      "icon": "💧"
+    },
+    "3": {
+      "type": "big",
+      "icon": "🤏",
+      "text": "Chiquitas y ligeras",
+      "cue": "superchiquita",
+      "sub": "Menor que una gota de lluvia",
+      "sub_cue": "pequeña"
+    },
+    "5": {
+      "type": "flow",
+      "title": "El aire sube",
+      "packet": "💧",
+      "items": [
+        {
+          "icon": "☀️",
+          "label": "Aire tibio",
+          "cue": "tibio"
+        },
+        {
+          "icon": "⬆️",
+          "label": "Sube",
+          "cue": "arriba"
+        },
+        {
+          "icon": "☁️",
+          "label": "Levanta gotitas",
+          "cue": "levanta"
+        }
+      ]
+    },
+    "7": {
+      "type": "big",
+      "icon": "🪶",
+      "text": "Ligeras como pluma",
+      "cue": "pluma",
+      "sub": "¡Aún más ligeras!",
+      "sub_cue": "ligeras"
+    },
+    "9": {
+      "type": "lifecycle",
+      "title": "De gotita a lluvia",
+      "items": [
+        {
+          "icon": "💧",
+          "label": "Gotitas",
+          "cue": "gotitas"
+        },
+        {
+          "icon": "🤝",
+          "label": "Se juntan",
+          "cue": "juntan"
+        },
+        {
+          "icon": "⚖️",
+          "label": "Más pesadas",
+          "cue": "pesadas"
+        },
+        {
+          "icon": "🌧️",
+          "label": "¡Llueve!",
+          "cue": "llueve"
+        }
+      ]
+    },
+    "11": {
+      "type": "big",
+      "icon": "🌧️",
+      "text": "Nubes gruesas: oscuras",
+      "cue": "gruesas",
+      "sub": "Puede llover",
+      "sub_cue": "llover"
+    },
+    "12": {
+      "type": "summary",
+      "rows": [
+        {
+          "text": "Gotitas",
+          "icon": "💧",
+          "cue": "gotitas"
+        },
+        {
+          "text": "Aire que sube",
+          "icon": "⬆️",
+          "cue": "sube"
+        },
+        {
+          "text": "Pesadas, caen",
+          "icon": "🌧️",
+          "cue": "pesan"
+        }
+      ]
+    }
+  }
+}

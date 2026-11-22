@@ -1,0 +1,141 @@
+{
+  "title_es": "¿Por qué ronronean los gatos? 🐱",
+  "description_es": "Los gatos ronronean cuando están contentos, ¡pero esa no es toda la historia! Leo pregunta y su hermana mayor Mía le explica el misterio del ronroneo, en menos de un minuto.",
+  "cover_text_es": "¿RON-RON?",
+  "hook": "¿Por qué ronronean los gatos?",
+  "tags_es": [
+    "por qué ronronean los gatos",
+    "datos de gatos para niños",
+    "ciencia para niños"
+  ],
+  "loop_card_es": {
+    "text": "¿Por qué ronronean?",
+    "cue": "próxima",
+    "left": "🐱",
+    "right": "❓"
+  },
+  "lines": [
+    "Mía, ¿por qué ronronean los gatos?",
+    "Un ronroneo es un rumor suavecito del gato. Los científicos creen que unos músculos chiquitos en su garganta vibran cuando respira.",
+    "¿Entonces ronronea cuando toma aire Y cuando lo suelta?",
+    "¡Sí! Por eso un ronroneo puede seguir y seguir, como un motorcito.",
+    "¿Los gatos ronronean porque están contentos?",
+    "¡Muchas veces, sí! Un gato puede ronronear cuando está cómodo, cuando lo abrazan o cuando tiene sueño.",
+    "¿Y ronronean por otras razones?",
+    "¡Sí! A veces los gatos ronronean cuando están nerviosos o no se sienten bien. Los científicos creen que ronronear los ayuda a sentirse tranquilos.",
+    "¿Los gatitos bebés también ronronean?",
+    "¡Sí, desde que tienen pocos días! Los gatitos ronronean para decirle a su mamá que están bien, y la mamá les responde ronroneando.",
+    "Entonces un ronroneo puede querer decir contento, tranquilo o estoy bien. ¡Los gatos son geniales!",
+    "¡Son ron-ron-geniales! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué ronronean los gatos?"
+  ],
+  "punch": {
+    "3": "motorcito",
+    "7": "tranquilos"
+  },
+  "boards": {
+    "0": {
+      "type": "title",
+      "left": {
+        "icon": "img:Animals/Servier/cat",
+        "label": "Gato"
+      },
+      "right": {
+        "icon": "🔊",
+        "label": "¿Rrrrr?"
+      },
+      "mid": "?"
+    },
+    "1": {
+      "type": "big",
+      "icon": "img:Human_physiology/Servier/larynx",
+      "text": "Un rumor en la garganta",
+      "cue": "garganta",
+      "sub": "Vibra al respirar",
+      "sub_cue": "respira"
+    },
+    "3": {
+      "type": "big",
+      "icon": "🔁",
+      "text": "¡Ronroneo sin parar!",
+      "cue": "seguir",
+      "sub": "Como un motorcito",
+      "sub_cue": "motorcito"
+    },
+    "4": {
+      "type": "big",
+      "icon": "😺",
+      "text": "¿Gato contento?",
+      "cue": "contentos"
+    },
+    "5": {
+      "type": "gallery",
+      "title": "Ronroneos felices",
+      "items": [
+        {
+          "icon": "🛋️",
+          "label": "Cómodo",
+          "cue": "cómodo"
+        },
+        {
+          "icon": "🤗",
+          "label": "Abrazado",
+          "cue": "abrazan"
+        },
+        {
+          "icon": "😴",
+          "label": "Con sueño",
+          "cue": "sueño"
+        }
+      ]
+    },
+    "7": {
+      "type": "big",
+      "icon": "💗",
+      "text": "Ronronear para calmarse",
+      "cue": "tranquilos",
+      "sub": "Aun con nervios",
+      "sub_cue": "nerviosos"
+    },
+    "9": {
+      "type": "gallery",
+      "title": "Charla de gatitos",
+      "items": [
+        {
+          "icon": "🐱",
+          "label": "Gatito",
+          "cue": "gatitos"
+        },
+        {
+          "icon": "💬",
+          "label": "¡Estoy bien!",
+          "cue": "bien"
+        },
+        {
+          "icon": "🐈",
+          "label": "Mamá responde",
+          "cue": "responde"
+        }
+      ]
+    },
+    "10": {
+      "type": "summary",
+      "rows": [
+        {
+          "text": "Contento",
+          "icon": "😺",
+          "cue": "contento"
+        },
+        {
+          "text": "Tranquilo",
+          "icon": "💗",
+          "cue": "tranquilo"
+        },
+        {
+          "text": "Estoy bien",
+          "icon": "👍",
+          "cue": "bien"
+        }
+      ]
+    }
+  }
+}

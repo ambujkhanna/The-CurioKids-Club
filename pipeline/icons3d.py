@@ -34,6 +34,10 @@ NAMED = {"book": "📖", "brain": "🧠", "bulb": "💡", "calendar": "📅", "c
          "search": "🔍", "shield": "🛡️", "suitcase": "💼", "sun": "☀️", "target": "🎯", "train": "🚆", "user": "🧑",
          "warn": "⚠️", "x": "❌", "star": "⭐", "heart": "❤️", "clock": "⏰", "camera": "📷", "music": "🎵"}
 
+# icons the code draws itself (end cards in cta.py: subscribe / like / share buttons and the tapping hand). Prefetched with
+# every episode so the end card never flickers between the 3D and the flat icon (owner, 2026-11-22: the SHARE icon blinked).
+UI_ICONS = ["🔔", "👍", "📤", "👆"]
+
 _IDX = None
 _IMG = {}
 
@@ -76,15 +80,37 @@ def path(s):
     if not rel: return None
     local = os.path.join(CACHE, k + ".png")
     if os.path.exists(local) and os.path.getsize(local) > 500: return local
-    try:
-        os.makedirs(CACHE, exist_ok=True)
-        with urllib.request.urlopen(BASE + urllib.parse.quote(rel), timeout=20) as r: data = r.read()
-        if data[:8] != b"\x89PNG\r\n\x1a\n": return None
-        tmp = local + ".part"; open(tmp, "wb").write(data); os.replace(tmp, local)
-        return local
-    except Exception as e:
-        print("note: 3D icon not available for", repr(s), "-", str(e)[:80])
+    if os.environ.get("ICONS3D_NO_DOWNLOAD"):  # render workers: only what the main process prefetched (same icon in every frame)
         return None
+    import time
+    for attempt in range(3):  # GitHub sometimes throttles (429/5xx): retry before giving up
+        try:
+            os.makedirs(CACHE, exist_ok=True)
+            with urllib.request.urlopen(BASE + urllib.parse.quote(rel), timeout=20) as r: data = r.read()
+            if data[:8] != b"\x89PNG\r\n\x1a\n": return None
+            tmp = f"{local}.{os.getpid()}.part"; open(tmp, "wb").write(data); os.replace(tmp, local)
+            return local
+        except Exception as e:
+            if attempt == 2:
+                print("note: 3D icon not available for", repr(s), "-", str(e)[:80]); return None
+            time.sleep(2 + 3 * attempt)
+
+
+def prefetch(obj):
+    """Download every icon an episode uses, ONCE, in the main process (before the parallel render starts).
+    Fixes the 2026-11-22 flicker: each worker downloaded on its own, a throttled worker fell back to the flat icon,
+    and frames alternated between the two pictures. Returns how many icons are ready."""
+    names = set()
+    def walk(o, k=None):
+        if isinstance(o, dict):
+            for k2, v in o.items(): walk(v, k2)
+        elif isinstance(o, list):
+            for v in o: walk(v, k)
+        elif isinstance(o, str) and k in ("icon", "left", "right", "icons", "from_icon", "to_icon", "mid") and 0 < len(o) <= 40:
+            names.add(o)
+    walk(obj)
+    names |= set(UI_ICONS)
+    return sum(1 for n in names if (ON and path(n)))
 
 
 def image(s):

@@ -1,0 +1,35 @@
+{
+  "title_es": "¿Por qué se nos pone la piel de gallina? 🥶",
+  "description_es": "¿Por qué se nos pone la piel de gallina? ¡Unos músculos chiquititos hacen que tus pelitos se paren! Leo pregunta y su hermana mayor Mía se lo explica en menos de un minuto.",
+  "cover_text_es": "¿PIEL DE GALLINA?",
+  "hook": "¿Por qué se nos pone la piel de gallina?",
+  "tags_es": ["por qué se pone la piel de gallina", "el cuerpo humano para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Por qué la piel de gallina?", "cue": "próxima", "left": "img:Human_physiology/Servier/skin", "right": "❓"},
+  "lines": [
+    "Mía, ¿por qué se nos pone la piel de gallina?",
+    "La piel de gallina son bolitas chiquitas en tu piel. Cada bolita está alrededor de un pelito.",
+    "¿Y por qué se llama piel de gallina?",
+    "Porque se parece a la piel llena de bolitas de una gallina, ¡debajo de todas sus plumas!",
+    "¿Y qué hace que salgan?",
+    "Cada pelito tiene un músculo chiquitito en su raíz. Cuando sientes frío, esos músculos se aprietan, y los pelitos se paran.",
+    "¿Y eso para qué sirve?",
+    "¡A los animales peludos les sirve mucho! El pelaje esponjado atrapa aire calentito, como un abrigo acolchado.",
+    "¡Pero yo no soy muy peludo!",
+    "¡Es verdad! Nuestro vello es muy delgadito para ayudar. Los científicos creen que la piel de gallina nos quedó de hace mucho tiempo, cuando nuestros parientes eran más peludos.",
+    "¿Solo me pasa cuando tengo frío?",
+    "¡No solo con frío! Cuando estás emocionado, sorprendido, o escuchas música que te encanta, también puede pasar.",
+    "¡Músculos chiquititos, pelitos parados, y un abrigo acolchado de hace mucho tiempo!",
+    "¡Lo entendiste! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué se nos pone la piel de gallina?"
+  ],
+  "punch": {"3": "gallina", "8": "peludo"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "img:Human_physiology/Servier/skin", "label": "Piel de gallina"}, "right": {"icon": "❓", "label": "¿Por qué?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "img:Human_physiology/Servier/skin", "text": "Bolitas en la piel", "cue": "bolitas", "sub": "Una en cada pelito", "sub_cue": "pelito"},
+    "3": {"type": "big", "icon": "🪶", "text": "¡Como piel de gallina!", "cue": "gallina", "sub": "Bajo las plumas", "sub_cue": "plumas"},
+    "5": {"type": "journey", "title": "¡Piel de gallina!", "traveler": "🥶", "items": [{"icon": "🌬️", "label": "Sientes frío", "cue": "frío"}, {"icon": "img:Human_physiology/Servier/muscle-1", "label": "Músculos aprietan", "cue": "aprietan"}, {"icon": "⬆️", "label": "El pelito se para", "cue": "paran"}]},
+    "7": {"type": "big", "icon": "🐱", "text": "El pelo esponjado abriga", "cue": "esponjado", "sub": "Como un abrigo acolchado", "sub_cue": "acolchado"},
+    "9": {"type": "big", "icon": "🕰️", "text": "Nos quedó de antes", "cue": "quedó", "sub": "Los científicos creen...", "sub_cue": "científicos"},
+    "11": {"type": "gallery", "title": "¿Cuándo pasa?", "items": [{"icon": "🥶", "label": "Con frío", "cue": "frío"}, {"icon": "🤩", "label": "Emoción", "cue": "emocionado"}, {"icon": "😮", "label": "Sorpresa", "cue": "sorprendido"}, {"icon": "🎵", "label": "Música", "cue": "música"}]},
+    "12": {"type": "summary", "rows": [{"text": "Los músculos aprietan", "icon": "img:Human_physiology/Servier/muscle-1", "cue": "músculos"}, {"text": "Los pelitos se paran", "icon": "⬆️", "cue": "pelitos"}, {"text": "De hace mucho", "icon": "🕰️", "cue": "mucho"}]}
+  }
+}

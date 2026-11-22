@@ -1,0 +1,36 @@
+{
+  "title_es": "¿Cómo respiran los peces bajo el agua? 🐟",
+  "description_es": "¡Los peces respiran con branquias que atrapan el oxígeno directamente del agua! Leo pregunta y su hermana mayor Mía le explica cómo funcionan las branquias, en menos de un minuto.",
+  "cover_text_es": "¡BRANQUIAS!",
+  "hook": "¿Cómo respiran los peces bajo el agua?",
+  "tags_es": ["cómo respiran los peces", "peces para niños", "animales del mar para niños"],
+  "loop_card_es": {"text": "¿Cómo respiran los peces?", "cue": "próxima", "left": "🐟", "right": "🌊"},
+  "lines": [
+    "Mía, ¿cómo respiran los peces bajo el agua?",
+    "¡Los peces necesitan oxígeno, igual que nosotros! Pero lo sacan del agua, no del aire.",
+    "¿Hay oxígeno en el agua?",
+    "Sí, hay un poquito de oxígeno mezclado en el agua, tan pequeño que no se ve. ¡Los peces tienen partes especiales para atraparlo, llamadas branquias!",
+    "¿Dónde están las branquias?",
+    "A cada lado de la cabeza del pez, debajo de unas tapitas. Parecen plumas rojas y suaves.",
+    "¿Y cómo funcionan?",
+    "El pez traga agua por la boca y la empuja sobre sus branquias. Las branquias atrapan el oxígeno, y el agua sale por los lados.",
+    "¿Un pez puede respirar aire, como yo?",
+    "La mayoría no. Las branquias están hechas para funcionar en el agua, ¡por eso los peces son más felices nadando!",
+    "¿Y las ballenas y los delfines? ¡También nadan en el agua!",
+    "¡Sorpresa! Las ballenas y los delfines no son peces. Tienen pulmones como nosotros, así que suben a la superficie a respirar aire.",
+    "¡O sea que los peces usan branquias para sacar oxígeno del agua, y las ballenas suben por aire! ¡Genial!",
+    "¡Así es! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿cómo respiran los peces bajo el agua?"
+  ],
+  "punch": {"3": "branquias", "11": "sorpresa"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "img:Animals/Servier/fish-1", "label": "Pez"}, "right": {"icon": "🌊", "label": "¿Respira?"}, "mid": "?"},
+    "1": {"type": "compare", "left": {"label": "Tú", "items": [{"text": "Del aire", "icon": "💨", "cue": "aire"}]}, "right": {"label": "Pez", "items": [{"text": "Del agua", "icon": "💧", "cue": "agua"}]}},
+    "3": {"type": "big", "icon": "🐟", "text": "¡Los peces tienen branquias!", "cue": "branquias", "sub": "Hay oxígeno en el agua", "sub_cue": "oxígeno"},
+    "5": {"type": "big", "icon": "img:Animals/Servier/fish-1", "text": "Rojas y como plumas", "cue": "plumas", "sub": "Debajo de unas tapitas", "sub_cue": "tapitas"},
+    "7": {"type": "journey", "title": "El viaje del agua", "traveler": "💧", "items": [{"icon": "👄", "label": "A la boca", "cue": "boca"}, {"icon": "🐟", "label": "Por las branquias", "cue": "empuja"}, {"icon": "✅", "label": "Atrapa el oxígeno", "cue": "atrapan"}, {"icon": "🌊", "label": "Sale por los lados", "cue": "sale"}]},
+    "9": {"type": "big", "icon": "🐠", "text": "Branquias para el agua", "cue": "branquias", "sub": "¡Felices nadando!", "sub_cue": "nadando"},
+    "10": {"type": "big", "icon": "🐋", "text": "¿Ballenas y delfines?", "cue": "ballenas"},
+    "11": {"type": "gallery", "title": "¡No son peces!", "items": [{"icon": "🐋", "label": "Ballena", "cue": "ballenas"}, {"icon": "🐬", "label": "Delfín", "cue": "delfines"}, {"icon": "img:Human_physiology/Servier/healthy-lung", "label": "Pulmones como tú", "cue": "pulmones"}, {"icon": "⬆️", "label": "Suben por aire", "cue": "aire"}]},
+    "12": {"type": "summary", "rows": [{"text": "Los peces usan branquias", "icon": "🐟", "cue": "peces"}, {"text": "Oxígeno del agua", "icon": "💧", "cue": "oxígeno"}, {"text": "Las ballenas suben por aire", "icon": "🐋", "cue": "ballenas"}]}
+  }
+}

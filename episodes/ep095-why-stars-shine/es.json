@@ -1,0 +1,36 @@
+{
+  "title_es": "¿Por qué brillan las estrellas? ⭐",
+  "description_es": "¿Por qué brillan las estrellas? Las estrellas son bolas gigantes de gas caliente que producen muchísima energía, ¡y nuestro Sol es una de ellas! Leo pregunta y su hermana mayor Mía se lo explica en menos de un minuto.",
+  "cover_text_es": "¡BRILLAN!",
+  "hook": "¿Por qué brillan las estrellas?",
+  "tags_es": ["por qué brillan las estrellas", "las estrellas para niños", "el espacio para niños"],
+  "loop_card_es": {"text": "¿Por qué brillan las estrellas?", "cue": "próxima", "left": "⭐", "right": "☀️"},
+  "lines": [
+    "Mía, ¿por qué brillan las estrellas?",
+    "Las estrellas son bolas gigantes de gas supercaliente. ¡Están tan calientes que brillan!",
+    "¿Y qué las pone tan calientes?",
+    "En lo más profundo, una estrella produce muchísima energía. Esa energía sale como luz y calor.",
+    "¿Nuestro Sol es una estrella?",
+    "¡Sí! El Sol es una estrella, y es la estrella más cercana a la Tierra.",
+    "¡Pero el Sol es grande, y las estrellas son puntitos!",
+    "Las estrellas solo se ven chiquitas porque están muy, muy lejos. ¡Muchas son tan grandes como el Sol, o hasta más grandes!",
+    "¿Y por qué no las veo de día?",
+    "¡Siguen ahí! Pero el Sol brilla tanto que esconde su luz. De noche, aparecen.",
+    "¿Todas las estrellas son del mismo color?",
+    "¡No! Algunas brillan rojas o anaranjadas, otras son amarillas como nuestro Sol, y las más calientes se ven blanco azuladas.",
+    "¡Las estrellas son bolas de gas caliente que dan luz, y el Sol es nuestra estrella!",
+    "¿Qué quieres descubrir ahora? ¡Pídele a un adulto que deje un tema en los comentarios!",
+    "¡Sigue brillando! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué brillan las estrellas?"
+  ],
+  "punch": {"1": "brillan", "5": "cercana"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "⭐", "label": "Estrellas"}, "right": {"icon": "✨", "label": "¿Brillan?"}, "mid": "?"},
+    "1": {"type": "picture", "art": "kf_star_glow", "caption": "Bolas gigantes de gas caliente", "cue": "gigantes", "icon": "⭐"},
+    "3": {"type": "flow", "title": "Poder estelar", "packet": "✨", "items": [{"icon": "💥", "label": "Muy adentro", "cue": "profundo"}, {"icon": "⚡", "label": "Energía", "cue": "energía"}, {"icon": "☀️", "label": "Luz y calor", "cue": "luz"}]},
+    "5": {"type": "big", "icon": "☀️", "text": "¡El Sol es una estrella!", "cue": "sol", "sub": "La más cercana", "sub_cue": "cercana"},
+    "7": {"type": "big", "icon": "🔭", "text": "Muy, muy lejos", "cue": "lejos", "sub": "¡Muchas son enormes!", "sub_cue": "grandes"},
+    "9": {"type": "transform", "title": "¿Dónde están?", "from": {"icon": "☀️", "label": "De día: escondidas", "cue": "brilla"}, "to": {"icon": "🌃", "label": "De noche: ¡estrellas!", "cue": "noche"}},
+    "11": {"type": "gallery", "title": "Colores de estrellas", "items": [{"icon": "🔴", "label": "Roja", "cue": "rojas"}, {"icon": "🟠", "label": "Naranja", "cue": "anaranjadas"}, {"icon": "🟡", "label": "Amarilla", "cue": "amarillas"}, {"icon": "🔵", "label": "Blanco azulada", "cue": "azuladas"}]},
+    "12": {"type": "summary", "rows": [{"text": "Bolas de gas caliente", "icon": "🔥", "cue": "caliente"}, {"text": "Dan luz", "icon": "✨", "cue": "luz"}, {"text": "El Sol es una estrella", "icon": "☀️", "cue": "sol"}]}
+  }
+}

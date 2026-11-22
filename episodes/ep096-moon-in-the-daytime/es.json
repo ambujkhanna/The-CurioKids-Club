@@ -1,0 +1,160 @@
+{
+  "title_es": "¿Por qué vemos la Luna de día? 🌙",
+  "description_es": "¿Por qué a veces vemos la Luna de día? La Luna da vueltas alrededor de la Tierra, y brilla tanto con la luz del Sol que podemos verla en el cielo azul. Leo pregunta y su hermana mayor Mía se lo explica en menos de un minuto.",
+  "cover_text_es": "¿LUNA DE DÍA?",
+  "hook": "¿Por qué puedo ver la Luna de día?",
+  "tags_es": [
+    "por qué se ve la luna de día",
+    "la luna para niños",
+    "ciencia para niños"
+  ],
+  "loop_card_es": {
+    "text": "¿La Luna de día?",
+    "cue": "próxima",
+    "left": "🌙",
+    "right": "☀️"
+  },
+  "lines": [
+    "Mía, ¿por qué puedo ver la Luna de día?",
+    "¡Porque la Luna no sale solo de noche! Muchas veces también está en el cielo de día.",
+    "¿Pero por qué?",
+    "La Luna da una vuelta alrededor de la Tierra más o menos una vez al mes. Por eso sale a una hora distinta cada día.",
+    "¿Entonces a veces está arriba cuando el Sol también está?",
+    "¡Exacto! Muchos días, la Luna y el Sol están en el cielo al mismo tiempo.",
+    "¿La Luna tiene su propia luz?",
+    "¡No! La luz del Sol llega a la Luna y rebota, hasta llegar a nuestros ojos.",
+    "¡Pero el cielo de día es muy brillante!",
+    "La Luna brilla lo suficiente para verse a través del cielo azul. Por eso de día se ve pálida.",
+    "¿Puedo buscarla?",
+    "¡Primero pídele permiso a un adulto! Sal en un día despejado y busca una Luna pálida. ¡Pero nunca mires al Sol!",
+    "La Luna da vueltas alrededor de la Tierra, y la luz del Sol la hace brillar, ¡de día o de noche!",
+    "¿Tienes una pregunta? ¡Pídele a un adulto que deje un tema en los comentarios!",
+    "¡Lunástico! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué puedo ver la Luna de día?"
+  ],
+  "punch": {
+    "1": "noche",
+    "7": "rebota"
+  },
+  "boards": {
+    "0": {
+      "type": "title",
+      "left": {
+        "icon": "🌙",
+        "label": "Luna"
+      },
+      "right": {
+        "icon": "☀️",
+        "label": "¿De día?"
+      },
+      "mid": "?"
+    },
+    "1": {
+      "type": "big",
+      "icon": "🌙",
+      "text": "¡No solo de noche!",
+      "cue": "noche",
+      "sub": "También de día",
+      "sub_cue": "también"
+    },
+    "3": {
+      "type": "orbit",
+      "title": "El viaje de la Luna",
+      "center": "🌍",
+      "items": [
+        {
+          "icon": "🌙",
+          "label": "Luna",
+          "cue": "luna"
+        }
+      ]
+    },
+    "5": {
+      "type": "big",
+      "icon": "☀️",
+      "text": "Sol y Luna juntos",
+      "cue": "mismo",
+      "sub": "Muchos días",
+      "sub_cue": "muchos"
+    },
+    "7": {
+      "type": "flow",
+      "title": "El viaje de la luz",
+      "packet": "✨",
+      "items": [
+        {
+          "icon": "☀️",
+          "label": "Luz del Sol",
+          "cue": "luz"
+        },
+        {
+          "icon": "🌕",
+          "label": "Rebota",
+          "cue": "rebota"
+        },
+        {
+          "icon": "👀",
+          "label": "Nuestros ojos",
+          "cue": "ojos"
+        }
+      ]
+    },
+    "9": {
+      "type": "picture",
+      "art": "moon_day",
+      "caption": "Brilla lo suficiente",
+      "cue": "brilla",
+      "icon": "🌕"
+    },
+    "11": {
+      "type": "checklist",
+      "title": "A buscar la Luna",
+      "icon": "🔭",
+      "items": [
+        {
+          "text": "Pide permiso",
+          "icon": "🧑",
+          "cue": "pídele",
+          "ok": true
+        },
+        {
+          "text": "Un día despejado",
+          "icon": "🌤️",
+          "cue": "despejado",
+          "ok": true
+        },
+        {
+          "text": "Busca la Luna",
+          "icon": "👀",
+          "cue": "busca",
+          "ok": true
+        },
+        {
+          "text": "Nunca mires al Sol",
+          "icon": "☀️",
+          "cue": "nunca",
+          "ok": false
+        }
+      ]
+    },
+    "12": {
+      "type": "summary",
+      "rows": [
+        {
+          "text": "Gira alrededor",
+          "icon": "🌍",
+          "cue": "alrededor"
+        },
+        {
+          "text": "El Sol la ilumina",
+          "icon": "☀️",
+          "cue": "luz"
+        },
+        {
+          "text": "¡De día o de noche!",
+          "icon": "🌙",
+          "cue": "día"
+        }
+      ]
+    }
+  }
+}

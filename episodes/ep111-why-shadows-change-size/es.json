@@ -1,0 +1,36 @@
+{
+  "title_es": "¿Por qué las sombras cambian de tamaño? 👤",
+  "description_es": "¿Por qué tu sombra es larga en la mañana y cortita al mediodía? Leo pregunta y su hermana mayor Mía le explica cómo crecen y se encogen las sombras, en menos de un minuto.",
+  "cover_text_es": "¡SOMBRAS!",
+  "hook": "¿Por qué las sombras cambian de tamaño?",
+  "tags_es": ["por qué cambian las sombras", "la luz y la sombra para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Por qué cambian las sombras?", "cue": "próxima", "left": "☀️", "right": "👤"},
+  "lines": [
+    "Mía, ¿por qué las sombras cambian de tamaño?",
+    "La luz viene del Sol. Cuando tu cuerpo la tapa, se forma una figura oscura. ¡Esa es tu sombra!",
+    "¿Por qué mi sombra es tan larga en la mañana?",
+    "En la mañana, el Sol está bajito. Su luz llega de lado, ¡así que tu sombra se estira muchísimo!",
+    "¿Y a la hora del almuerzo?",
+    "Al mediodía, el Sol está alto en el cielo. Su luz baja desde arriba, así que tu sombra es cortita.",
+    "¡Entonces mi sombra cambia todo el día!",
+    "¡Sí! Larga en la mañana, corta al mediodía, y larga otra vez en la tarde.",
+    "¿Una lámpara también puede cambiar las sombras?",
+    "¡Sí! Mientras más cerca está algo de la luz, más grande es su sombra. Más lejos, la sombra se hace más chiquita.",
+    "¿Puedo hacer animales de sombra?",
+    "¡Primero pídele permiso a un adulto! Alumbra una pared con una linterna y haz un pajarito con la mano. ¡Acércalo para hacerlo más grande!",
+    "Sol bajo, sombra larga. Sol alto, sombra corta. ¡Más cerca, más grande!",
+    "¿Qué descubrimos ahora? ¡Pídele a un adulto que deje un tema en los comentarios!",
+    "¡Sombra-tástico! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué las sombras cambian de tamaño?"
+  ],
+  "punch": {"1": "sombra", "3": "estira"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "👤", "label": "Sombra"}, "right": {"icon": "📏", "label": "¿Grande o chica?"}, "mid": "?"},
+    "1": {"type": "flow", "title": "Hacer una sombra", "packet": "☀️", "items": [{"icon": "☀️", "label": "Luz del Sol", "cue": "luz"}, {"icon": "🧍", "label": "Tú la tapas", "cue": "tapa"}, {"icon": "👤", "label": "Tu sombra", "cue": "sombra"}]},
+    "3": {"type": "picture", "art": "kf_shadows", "caption": "Sol bajo = sombra larga", "cue": "bajito", "icon": "🌅"},
+    "5": {"type": "big", "icon": "☀️", "text": "Sol alto = sombra corta", "cue": "alto", "sub": "Al mediodía", "sub_cue": "mediodía"},
+    "7": {"type": "lifecycle", "title": "El día de una sombra", "items": [{"icon": "🌅", "label": "Mañana: larga", "cue": "mañana"}, {"icon": "☀️", "label": "Mediodía: corta", "cue": "mediodía"}, {"icon": "🌇", "label": "Tarde: larga", "cue": "tarde"}]},
+    "9": {"type": "compare", "left": {"label": "Cerca", "items": [{"text": "Sombra grande", "icon": "✋", "cue": "cerca"}]}, "right": {"label": "Lejos", "items": [{"text": "Sombra chica", "icon": "✋", "cue": "lejos"}]}},
+    "11": {"type": "checklist", "title": "Teatro de sombras", "icon": "🔦", "items": [{"text": "Pide permiso", "icon": "🧑", "cue": "pídele", "ok": true}, {"text": "Linterna en la pared", "icon": "🔦", "cue": "linterna", "ok": true}, {"text": "Pajarito con la mano", "icon": "🐦", "cue": "pajarito", "ok": true}, {"text": "Acércalo", "icon": "🔍", "cue": "acércalo", "ok": true}]},
+    "12": {"type": "summary", "rows": [{"text": "Sol bajo: larga", "icon": "🌅", "cue": "bajo"}, {"text": "Sol alto: corta", "icon": "☀️", "cue": "alto"}, {"text": "Cerca = grande", "icon": "🔦", "cue": "cerca"}]}
+  }
+}

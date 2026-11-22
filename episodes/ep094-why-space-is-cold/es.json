@@ -1,0 +1,168 @@
+{
+  "title_es": "¿Por qué hace tanto frío en el espacio? 🌌",
+  "description_es": "¿Por qué hace tanto frío en el espacio? El espacio está casi vacío, así que casi no hay nada que calentar... ¡pero bajo la luz del Sol las cosas se pueden poner muy calientes! Leo pregunta y su hermana mayor Mía se lo explica en menos de un minuto.",
+  "cover_text_es": "¡QUÉ FRÍO!",
+  "hook": "¿Por qué hace tanto frío en el espacio?",
+  "tags_es": [
+    "por qué hace frío en el espacio",
+    "el espacio para niños",
+    "ciencia para niños"
+  ],
+  "loop_card_es": {
+    "text": "¿Por qué hace frío en el espacio?",
+    "cue": "próxima",
+    "left": "🌌",
+    "right": "🥶"
+  },
+  "lines": [
+    "Mía, ¿por qué hace tanto frío en el espacio?",
+    "¡Porque el espacio está casi vacío! Allí casi no hay aire ni nada.",
+    "¿Y por qué vacío significa frío?",
+    "En la Tierra, el Sol calienta el aire, el agua y el suelo. ¡En el espacio casi no hay nada que calentar!",
+    "¿Y qué tan frío es?",
+    "Lejos de las estrellas, el espacio está a unos doscientos setenta grados bajo cero. ¡Mucho más frío que un congelador!",
+    "¿Entonces todo en el espacio está congelado?",
+    "¡No siempre! Una roca espacial en la sombra está helada. ¡Pero cuando pasa a la luz del sol, se calienta muchísimo!",
+    "¿Y cómo se protegen los astronautas?",
+    "Sus trajes espaciales los protegen del frío y del calor, y les dan aire para respirar. ¡Como una nave espacial chiquita!",
+    "¿Y por qué la Tierra no es tan fría?",
+    "Estamos cerca del Sol, y nuestro aire funciona como una manta calentita que guarda el calor.",
+    "El espacio está casi vacío, por eso es superfrío... ¡pero la luz del sol lo puede calentar!",
+    "¿Qué exploramos ahora? ¡Pídele a un adulto que deje un tema en los comentarios!",
+    "¡De otro mundo! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué hace tanto frío en el espacio?"
+  ],
+  "punch": {
+    "1": "vacío",
+    "5": "doscientos",
+    "9": "nave"
+  },
+  "boards": {
+    "0": {
+      "type": "title",
+      "left": {
+        "icon": "🌌",
+        "label": "Espacio"
+      },
+      "right": {
+        "icon": "🥶",
+        "label": "¿Frío?"
+      },
+      "mid": "?"
+    },
+    "1": {
+      "type": "picture",
+      "art": "kf_space_cold",
+      "caption": "El espacio está casi vacío",
+      "cue": "vacío",
+      "icon": "🌌"
+    },
+    "3": {
+      "type": "compare",
+      "left": {
+        "label": "Tierra",
+        "items": [
+          {
+            "text": "Aire",
+            "icon": "💨",
+            "cue": "aire"
+          },
+          {
+            "text": "Agua",
+            "icon": "🌊",
+            "cue": "agua"
+          },
+          {
+            "text": "Suelo",
+            "icon": "⛰️",
+            "cue": "suelo"
+          }
+        ]
+      },
+      "right": {
+        "label": "Espacio",
+        "items": [
+          {
+            "text": "Casi nada",
+            "icon": "🌑",
+            "cue": "nada"
+          }
+        ]
+      }
+    },
+    "5": {
+      "type": "big",
+      "icon": "🧊",
+      "text": "Unos -270 °C",
+      "cue": "doscientos",
+      "sub": "Más frío que un congelador",
+      "sub_cue": "congelador"
+    },
+    "7": {
+      "type": "transform",
+      "title": "De la sombra al sol",
+      "from": {
+        "icon": "🥶",
+        "label": "En la sombra",
+        "cue": "sombra"
+      },
+      "to": {
+        "icon": "🥵",
+        "label": "Al sol",
+        "cue": "luz"
+      }
+    },
+    "9": {
+      "type": "checklist",
+      "title": "Traje espacial",
+      "icon": "🚀",
+      "items": [
+        {
+          "text": "Frena el frío",
+          "icon": "🥶",
+          "cue": "frío",
+          "ok": true
+        },
+        {
+          "text": "Frena el calor",
+          "icon": "🥵",
+          "cue": "calor",
+          "ok": true
+        },
+        {
+          "text": "Da aire",
+          "icon": "💨",
+          "cue": "aire",
+          "ok": true
+        }
+      ]
+    },
+    "11": {
+      "type": "big",
+      "icon": "🌍",
+      "text": "El aire es nuestra manta",
+      "cue": "manta",
+      "sub": "Cerca del Sol",
+      "sub_cue": "cerca"
+    },
+    "12": {
+      "type": "summary",
+      "rows": [
+        {
+          "text": "Casi vacío",
+          "icon": "🌌",
+          "cue": "vacío"
+        },
+        {
+          "text": "Superfrío",
+          "icon": "🥶",
+          "cue": "superfrío"
+        },
+        {
+          "text": "Caliente al sol",
+          "icon": "☀️",
+          "cue": "sol"
+        }
+      ]
+    }
+  }
+}

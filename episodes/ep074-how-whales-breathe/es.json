@@ -1,0 +1,35 @@
+{
+  "title_es": "¿Cómo respiran las ballenas? 🐋",
+  "description_es": "¡Las ballenas respiran aire, igual que tú, por una nariz arriba de la cabeza! Leo pregunta y su hermana mayor Mía le explica qué es el espiráculo, en menos de un minuto.",
+  "cover_text_es": "¡A TOMAR AIRE!",
+  "hook": "¿Cómo respiran las ballenas?",
+  "tags_es": ["cómo respiran las ballenas", "animales del mar para niños", "datos de animales para niños"],
+  "loop_card_es": {"text": "¿Cómo respiran las ballenas?", "cue": "próxima", "left": "🐋", "right": "img:Human_physiology/Servier/healthy-lung"},
+  "lines": [
+    "Mía, ¿cómo respiran las ballenas?",
+    "¡Las ballenas respiran aire, igual que nosotros! Son mamíferos, no peces.",
+    "¿Y cómo consiguen aire en el océano?",
+    "Suben nadando y respiran por un espiráculo. ¡Es como una nariz arriba de la cabeza!",
+    "¿Y por qué está arriba?",
+    "Así no tienen que sacar toda la cabeza. Solo se asoman, toman aire, y vuelven a sumergirse.",
+    "¿Y qué es ese chorro grande que veo en las fotos?",
+    "¡Se llama soplo! Casi todo es aliento calentito que se convierte en una nube de neblina.",
+    "¿Cuánto tiempo puede aguantar la respiración una ballena?",
+    "¡Algunas ballenas grandes pueden quedarse bajo el agua más de una hora! Otras suben más seguido.",
+    "¡Guau! ¿Las ballenas bebés saben respirar?",
+    "Cuando nace una ballena bebé, muchas veces su mamá la ayuda a subir para su primera respiración.",
+    "¡Entonces las ballenas respiran aire por un espiráculo arriba de la cabeza!",
+    "¡Así es! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿cómo respiran las ballenas?"
+  ],
+  "punch": {"1": "aire", "9": "hora"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🐋", "label": "Ballena"}, "right": {"icon": "img:Human_physiology/Servier/healthy-lung", "label": "¿Respira?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "🐋", "text": "¡Respiran aire!", "cue": "aire", "sub": "Mamíferos, no peces", "sub_cue": "mamíferos"},
+    "3": {"type": "big", "icon": "🐳", "text": "El espiráculo", "cue": "espiráculo", "sub": "¡Una nariz arriba!", "sub_cue": "nariz"},
+    "5": {"type": "cycle", "title": "Arriba y abajo", "center": "🐋", "items": [{"icon": "⬆️", "label": "Se asoman", "cue": "asoman"}, {"icon": "💨", "label": "Toman aire", "cue": "toman"}, {"icon": "⬇️", "label": "Se sumergen", "cue": "sumergirse"}]},
+    "7": {"type": "big", "icon": "☁️", "text": "El soplo", "cue": "soplo", "sub": "Aliento hecho neblina", "sub_cue": "neblina"},
+    "9": {"type": "big", "icon": "⏱️", "text": "¡Más de una hora!", "cue": "hora", "sub": "Otras suben seguido", "sub_cue": "otras"},
+    "11": {"type": "big", "icon": "🐳", "text": "¡Primer respiro!", "cue": "primera", "sub": "Mamá la ayuda", "sub_cue": "mamá"},
+    "12": {"type": "summary", "rows": [{"icon": "💨", "text": "Respiran aire", "cue": "aire"}, {"icon": "🐳", "text": "Por un espiráculo", "cue": "espiráculo"}, {"icon": "🐋", "text": "Arriba de la cabeza", "cue": "arriba"}]}
+  }
+}

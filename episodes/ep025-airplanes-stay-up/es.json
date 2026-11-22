@@ -1,0 +1,33 @@
+{
+  "title_es": "¿Cómo se sostienen los aviones? ✈️",
+  "description_es": "¡Los motores empujan, las alas levantan, y el avión sube! Leo pregunta y Papá le explica cómo un avión gigante se mantiene en el cielo, en menos de un minuto.",
+  "cover_text_es": "¿CÓMO VUELAN?",
+  "hook": "¿Cómo se quedan arriba los aviones?",
+  "tags_es": ["cómo vuelan los aviones", "aviones para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Cómo vuelan los aviones?", "cue": "próxima", "left": "✈️", "right": "☁️"},
+  "lines": [
+    "Papá, ¿cómo se quedan arriba los aviones en el cielo?",
+    "¡Todo está en las alas! Los aviones tienen alas grandes con la forma y la inclinación justas.",
+    "Pero las alas ni siquiera aletean como las de un pájaro.",
+    "¡No lo necesitan! Primero, unos motores grandes empujan el avión hacia adelante, muy rápido.",
+    "Mientras el avión va zumbando, el aire pasa corriendo por las alas. Las alas inclinadas empujan ese aire hacia abajo...",
+    "...¡y el aire empuja las alas hacia arriba! Ese empujón hacia arriba se llama sustentación.",
+    "¿Un avión de papel también tiene sustentación?",
+    "¡Sí! Sus alas de papel hacen un poquito de sustentación. ¡Y tu lanzamiento es su motor!",
+    "¿Y cómo baja un avión grande?",
+    "El piloto frena los motores y baja un poquito la nariz, así el avión planea suavecito hasta la pista.",
+    "¡Entonces los motores lo empujan hacia adelante, y las alas lo levantan!",
+    "¡Listos para despegar! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿cómo se quedan arriba los aviones en el cielo?"
+  ],
+  "punch": {"5": "sustentación"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "✈️", "label": "Avión"}, "right": {"icon": "☁️", "label": "¿Arriba?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "✈️", "text": "¡Son las alas!", "cue": "alas", "sub": "Forma e inclinación", "sub_cue": "inclinación"},
+    "3": {"type": "big", "icon": "💨", "text": "Los motores empujan", "cue": "motores", "sub": "¡Muy rápido!", "sub_cue": "rápido"},
+    "4": {"type": "steps", "title": "¡Zum!", "items": [{"icon": "✈️", "label": "El avión zumba", "cue": "zumbando"}, {"icon": "💨", "label": "Pasa el aire", "cue": "corriendo"}, {"icon": "⬇️", "label": "Alas empujan abajo", "cue": "abajo"}]},
+    "5": {"type": "big", "icon": "⬆️", "text": "¡SUSTENTACIÓN!", "cue": "sustentación", "sub": "El aire sube las alas", "sub_cue": "arriba"},
+    "7": {"type": "big", "icon": "📄", "text": "Tu lanzamiento = el motor", "cue": "lanzamiento", "sub": "Alas de papel", "sub_cue": "alas"},
+    "9": {"type": "big", "icon": "🛬", "text": "Frena y planea", "cue": "planea", "sub": "¡Hola, pista!", "sub_cue": "pista"},
+    "10": {"type": "summary", "rows": [{"icon": "💨", "text": "Motores empujan", "cue": "motores"}, {"icon": "✈️", "text": "Alas levantan", "cue": "alas"}, {"icon": "⬆️", "text": "¡Arriba!", "cue": "levantan"}]}
+  }
+}

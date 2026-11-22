@@ -1,0 +1,123 @@
+{
+  "title_es": "¿Cómo vuelan los pájaros? 🐦",
+  "description_es": "¿Cómo vuelan los pájaros? ¡Con alas fuertes, plumas ligeras y huesos huecos! Leo pregunta y su hermana mayor Mía se lo explica en menos de un minuto.",
+  "cover_text_es": "¡¿CÓMO?!",
+  "hook": "¿Cómo vuelan los pájaros?",
+  "tags_es": [
+    "cómo vuelan los pájaros",
+    "las aves para niños",
+    "ciencia para niños"
+  ],
+  "loop_card_es": {
+    "text": "¿Cómo vuelan los pájaros?",
+    "cue": "próxima",
+    "left": "🐦",
+    "right": "☁️"
+  },
+  "lines": [
+    "Mía, ¿cómo vuelan los pájaros?",
+    "Los pájaros aletean, moviendo sus alas hacia abajo y hacia atrás para empujar el aire. ¡Ese empujón los lleva hacia arriba y hacia adelante!",
+    "¡Pero cuando yo muevo los brazos, no pasa nada!",
+    "Los pájaros tienen músculos del pecho superfuertes. Y sus alas son curvas, así que el aire que pasa rápido los levanta.",
+    "¿Qué más los ayuda?",
+    "¡Las plumas! Son ligeras pero fuertes, y le dan al ala una forma lisa que atrapa el aire.",
+    "¿Los pájaros pesan mucho como yo?",
+    "Los pájaros son muy ligeros para su tamaño. Muchos de sus huesos son huecos, con palitos chiquitos por dentro, como puentecitos.",
+    "¿Tienen que aletear todo el tiempo?",
+    "¡No siempre! Los pájaros grandes, como las águilas, pueden planear y subir con el aire tibio que sube, casi sin aletear.",
+    "Alas fuertes, plumas y huesos ligeros. ¡Los pájaros están hechos para volar!",
+    "¡Claro que sí! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿cómo vuelan los pájaros?"
+  ],
+  "punch": {
+    "0": "vuelan",
+    "2": "nada",
+    "7": "huecos"
+  },
+  "boards": {
+    "0": {
+      "type": "title",
+      "left": {
+        "icon": "🐦",
+        "label": "Pájaro"
+      },
+      "right": {
+        "icon": "☁️",
+        "label": "¿Volar?"
+      },
+      "mid": "?"
+    },
+    "1": {
+      "type": "big",
+      "icon": "🐦",
+      "text": "Aletear empuja el aire",
+      "cue": "aletean",
+      "sub": "¡Arriba y adelante!",
+      "sub_cue": "adelante"
+    },
+    "3": {
+      "type": "gallery",
+      "title": "Hechos para volar",
+      "items": [
+        {
+          "icon": "img:Human_physiology/Servier/muscle-1",
+          "label": "Músculos fuertes",
+          "cue": "superfuertes"
+        },
+        {
+          "icon": "🪶",
+          "label": "Alas curvas",
+          "cue": "curvas"
+        },
+        {
+          "icon": "⬆️",
+          "label": "¡Arriba!",
+          "cue": "levanta"
+        }
+      ]
+    },
+    "5": {
+      "type": "big",
+      "icon": "🪶",
+      "text": "Plumas ligeras y fuertes",
+      "cue": "plumas",
+      "sub": "Un ala lisa",
+      "sub_cue": "lisa"
+    },
+    "7": {
+      "type": "big",
+      "icon": "🦴",
+      "text": "Huesos huecos",
+      "cue": "huecos",
+      "sub": "Ligeros pero fuertes",
+      "sub_cue": "palitos"
+    },
+    "9": {
+      "type": "big",
+      "icon": "🦅",
+      "text": "Planear y subir",
+      "cue": "planear",
+      "sub": "Con el aire tibio",
+      "sub_cue": "tibio"
+    },
+    "10": {
+      "type": "summary",
+      "rows": [
+        {
+          "text": "Alas fuertes",
+          "icon": "💪",
+          "cue": "fuertes"
+        },
+        {
+          "text": "Plumas ligeras",
+          "icon": "🪶",
+          "cue": "plumas"
+        },
+        {
+          "text": "Huesos huecos y ligeros",
+          "icon": "🦴",
+          "cue": "ligeros"
+        }
+      ]
+    }
+  }
+}

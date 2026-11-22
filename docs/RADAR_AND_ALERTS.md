@@ -17,6 +17,15 @@
 - **Switch:** repo variable `RADAR=off`. Test locally with `python pipeline/radar.py --no-issue`.
 - **Honest limits:** suggestions show what people type, not exact search volumes. Treat the list as a shortlist and choose with your judgement (and the YouTube Studio → Research tab).
 
+## 1b. Trending now: Google Trends + YouTube trending (added 2026-11-22, owner)
+
+- **Google Trends:** today's fastest-rising Google searches for India, USA and Mexico (`RADAR_GEOS`, default `IN,US,MX`), from Google's public RSS feed (free, no key).
+- **YouTube trending:** YouTube's "most popular" charts per country in Education, Science & Technology (+ Pets & Animals for kids). Needs the free `YT_API_KEY` secret; 1 quota unit per chart.
+- **Only what fits the channel:** a trend is kept only if the search itself names a real subject (kids: space, weather, animals, body, festivals…, never the block list; AInation: AI, chips, phones, apps). Sport, celebrities and news are left out. For each kept trend the radar adds the questions people actually search on YouTube ("why does solar eclipse happen").
+- **Weekly report (Mondays):** two new sections, "Trending on Google right now" and "Trending on YouTube".
+- **Daily check (07:17 IST):** opens a **"Trend alert"** issue (label `trend-alert`) only when something NEW fits, so GitHub emails you; the same trend is never alerted twice in 7 days. Make the Short within 1-3 days: Run workflow → script (paste) → `Next video, publish now`. `RADAR_TRENDS=off` stops the daily check.
+- Ideas only: never copy other channels' titles or content.
+
 ## 2. Self-check (R6)
 
 - After the normal quality check, English Shorts are "listened to" with **faster-whisper** (MIT, CPU, ~10–60 s) and compared with the script.
@@ -29,6 +38,13 @@
 
 - Sends: ✅ uploaded (title, link, publish time) · ❌ QC failed · ⚠️ self-check warning · ❌ workflow failed (with the run link).
 - **Off until you add secrets** (both repos):
+  - **WhatsApp (owner's choice, 2026-11-22):** free CallMeBot service (callmebot.com → "Free API WhatsApp").
+    1. Save CallMeBot's number shown on their page in your phone contacts.
+    2. From your WhatsApp, send it the activation message shown on that page (e.g. "I allow callmebot to send me messages").
+    3. You get an API key back on WhatsApp.
+    4. GitHub → each repo → Settings → Secrets → Actions: `WHATSAPP_PHONE` = your number with country code (`+91…`), `WHATSAPP_APIKEY` = the key.
+    Personal use only (messages go to your own number); a slow or busy CallMeBot never breaks a run.
+    5. Test: Actions → the daily Short workflow → Run workflow → action **Send a test alert (WhatsApp)**. You get a WhatsApp text in a minute; the run summary says `alert sent via: ['whatsapp']`.
   - **Telegram:** create a bot with **@BotFather** → `TELEGRAM_BOT_TOKEN`. Send your bot a message, then open `https://api.telegram.org/bot<token>/getUpdates` and copy `chat.id` → `TELEGRAM_CHAT_ID`.
   - **or Discord:** a channel → Edit → Integrations → Webhooks → copy URL → `DISCORD_WEBHOOK_URL`.
 - Never paste these into chat; GitHub Secrets only. Test: Actions → any daily workflow, or locally `python pipeline/notify.py "test"`.

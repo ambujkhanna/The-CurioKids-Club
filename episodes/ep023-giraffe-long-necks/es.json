@@ -1,0 +1,35 @@
+{
+  "title_es": "¿Por qué las jirafas tienen el cuello largo? 🦒",
+  "description_es": "¡El cuello largo de la jirafa tiene solo siete huesos, igual que el tuyo! Leo pregunta y su hermana mayor Mía le explica por qué las jirafas son tan altas, en menos de un minuto.",
+  "cover_text_es": "¡¿CUELLO LARGO?!",
+  "hook": "¿Por qué las jirafas tienen el cuello largo?",
+  "tags_es": ["por qué las jirafas tienen el cuello largo", "animales para niños", "datos curiosos de jirafas"],
+  "loop_card_es": {"text": "¿Por qué un cuello tan largo?", "cue": "próxima", "left": "🦒", "right": "📏"},
+  "lines": [
+    "Mía, ¿por qué las jirafas tienen el cuello tan largo?",
+    "¡Las jirafas son los animales más altos del mundo! Su cuello largo las ayuda a alcanzar hojas ricas allá arriba.",
+    "¿No pueden comer pasto y ya?",
+    "Sí pueden, pero muchos animales comen las plantas de abajo. Arriba, en los árboles altos, las jirafas tienen las hojas casi solo para ellas.",
+    "¿Cuántos huesos hay en ese cuello tan largo?",
+    "¿Sabes qué? ¡Solo siete, igual que tú! Los huesos del cuello de la jirafa son súper grandes.",
+    "¡No puede ser! ¿Igual que yo?",
+    "¡Sí! Los científicos creen que el cuello largo también ayuda a las jirafas macho. Balancean el cuello para mostrar quién es el más fuerte.",
+    "¿Y sus lenguas?",
+    "Sus lenguas también son muy largas, y de color morado oscuro. ¡Las enrollan alrededor de las hojas y jalan!",
+    "¿Cómo toman agua?",
+    "Abren mucho las patas de adelante y se agachan muchísimo. ¡Se ven un poco chistosas!",
+    "¡Cuello largo, lengua larga y siete huesos en el cuello, igual que yo!",
+    "¡Siempre por encima de todos! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué las jirafas tienen el cuello tan largo?"
+  ],
+  "punch": {"1": "altos", "5": "siete"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🦒", "label": "Jirafa"}, "right": {"icon": "📏", "label": "¿Cuello largo?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "🦒", "text": "¡El animal más alto!", "cue": "altos", "sub": "Alcanza hojas altas", "sub_cue": "hojas"},
+    "3": {"type": "compare", "left": {"label": "Abajo", "items": [{"text": "Muchos animales", "icon": "🦓", "cue": "muchos"}, {"text": "Plantas bajas", "icon": "🌿", "cue": "abajo"}]}, "right": {"label": "Arriba", "items": [{"text": "Solo jirafas", "icon": "🦒", "cue": "jirafas"}, {"text": "Árboles altos", "icon": "🌳", "cue": "árboles"}]}},
+    "5": {"type": "big", "icon": "🦴", "text": "7 huesos en el cuello", "cue": "siete", "sub": "¡Igual que tú!", "sub_cue": "igual"},
+    "7": {"type": "big", "icon": "🦒", "text": "Duelos de cuellos", "cue": "balancean", "sub": "Creen los científicos", "sub_cue": "científicos"},
+    "9": {"type": "big", "icon": "👅", "text": "Lenguas largas y oscuras", "cue": "lenguas", "sub": "¡Enrolla y jala!", "sub_cue": "enrollan"},
+    "11": {"type": "big", "icon": "💧", "text": "Patas abiertas para beber", "cue": "abren", "sub": "¡Un poco chistosas!", "sub_cue": "chistosas"},
+    "12": {"type": "summary", "rows": [{"icon": "🦒", "text": "Cuello largo", "cue": "cuello"}, {"icon": "👅", "text": "Lengua larga", "cue": "lengua"}, {"icon": "🦴", "text": "7 huesos del cuello", "cue": "siete"}]}
+  }
+}

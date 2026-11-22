@@ -1,0 +1,169 @@
+{
+  "title_es": "¿Cómo hacen erupción los volcanes? 🌋",
+  "description_es": "¿Cómo hacen erupción los volcanes? Roca derretida, gas que empuja, ¡y sale la lava! Leo pregunta y su hermana mayor Mía se lo explica en menos de un minuto.",
+  "cover_text_es": "¡ERUPCIÓN!",
+  "hook": "¿Cómo hacen erupción los volcanes?",
+  "tags_es": [
+    "cómo hace erupción un volcán",
+    "los volcanes para niños",
+    "ciencia para niños"
+  ],
+  "loop_card_es": {
+    "text": "¿Cómo hacen erupción?",
+    "cue": "próxima",
+    "left": "🌋",
+    "right": "💥"
+  },
+  "lines": [
+    "Mía, ¿cómo hacen erupción los volcanes?",
+    "Muy abajo de la tierra hace tanto calor que algunas rocas se derriten y se vuelven un líquido espeso y pegajoso llamado magma.",
+    "¿Roca derretida? ¡Guau!",
+    "El magma es más ligero que la roca dura que lo rodea, así que sube despacito, como una burbuja en la miel.",
+    "¿Y luego qué pasa?",
+    "Se junta en un hueco grande llamado cámara de magma. Los gases del magma empujan cada vez más fuerte, como un refresco con gas que agitaste.",
+    "¿Y entonces sale disparado?",
+    "¡Sí! El magma sale por arriba. Cuando ya está afuera, lo llamamos lava.",
+    "¿Todas las erupciones son grandes y ruidosas?",
+    "¡No! Algunos volcanes lanzan nubes de ceniza. Otros solo dejan salir lava aguadita que corre como un río lento y brillante.",
+    "¿La lava sirve para algo?",
+    "¡Sí! Cuando la lava se enfría, se convierte en roca nueva. ¡Algunas islas las hicieron los volcanes, capa por capa!",
+    "¡La roca derretida sube, el gas empuja, y sale la lava!",
+    "¡Así es! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿cómo hacen erupción los volcanes?"
+  ],
+  "punch": {
+    "1": "magma",
+    "7": "lava"
+  },
+  "boards": {
+    "0": {
+      "type": "title",
+      "left": {
+        "icon": "🌋",
+        "label": "Volcán"
+      },
+      "right": {
+        "icon": "💥",
+        "label": "¿Erupción?"
+      },
+      "mid": "?"
+    },
+    "1": {
+      "type": "big",
+      "icon": "🔥",
+      "text": "Roca derretida: magma",
+      "cue": "magma",
+      "sub": "Muy bajo tierra",
+      "sub_cue": "abajo"
+    },
+    "3": {
+      "type": "big",
+      "icon": "🍯",
+      "text": "El magma sube",
+      "cue": "sube",
+      "sub": "Como burbuja en miel",
+      "sub_cue": "burbuja"
+    },
+    "5": {
+      "type": "steps",
+      "title": "Dentro del volcán",
+      "items": [
+        {
+          "label": "Cámara de magma",
+          "icon": "🕳️",
+          "cue": "cámara"
+        },
+        {
+          "label": "Los gases empujan",
+          "icon": "💨",
+          "cue": "gases"
+        },
+        {
+          "label": "Como un refresco",
+          "icon": "🥤",
+          "cue": "refresco"
+        }
+      ]
+    },
+    "7": {
+      "type": "compare",
+      "left": {
+        "label": "Bajo tierra",
+        "items": [
+          {
+            "text": "Magma",
+            "icon": "🔴",
+            "cue": "magma"
+          }
+        ]
+      },
+      "right": {
+        "label": "Afuera",
+        "items": [
+          {
+            "text": "Lava",
+            "icon": "🌋",
+            "cue": "lava"
+          }
+        ]
+      }
+    },
+    "9": {
+      "type": "compare",
+      "left": {
+        "label": "Explota",
+        "items": [
+          {
+            "text": "Nubes de ceniza",
+            "icon": "💥",
+            "cue": "ceniza"
+          }
+        ]
+      },
+      "right": {
+        "label": "Fluye",
+        "items": [
+          {
+            "text": "Río de lava",
+            "icon": "🟠",
+            "cue": "río"
+          }
+        ]
+      }
+    },
+    "11": {
+      "type": "big",
+      "icon": "🏝️",
+      "text": "¡Volcanes hacen islas!",
+      "cue": "islas",
+      "sub": "La lava se vuelve roca",
+      "sub_cue": "enfría"
+    },
+    "12": {
+      "type": "journey",
+      "title": "Sale la lava",
+      "traveler": "🔥",
+      "items": [
+        {
+          "icon": "🪨",
+          "label": "La roca se derrite",
+          "cue": "derretida"
+        },
+        {
+          "icon": "⬆️",
+          "label": "El magma sube",
+          "cue": "sube"
+        },
+        {
+          "icon": "💨",
+          "label": "El gas empuja",
+          "cue": "gas"
+        },
+        {
+          "icon": "🌋",
+          "label": "¡Sale lava!",
+          "cue": "lava"
+        }
+      ]
+    }
+  }
+}

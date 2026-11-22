@@ -1,0 +1,35 @@
+{
+  "title_es": "¿Cómo una semilla se vuelve árbol? 🌳",
+  "description_es": "¡Una semilla es como una loncherita con una plantita bebé adentro! Leo pregunta y su hermana mayor Mía le explica cómo una semilla se convierte en árbol, en menos de un minuto.",
+  "cover_text_es": "¡DE SEMILLA A ÁRBOL!",
+  "hook": "¿Cómo una semillita se vuelve un árbol?",
+  "tags_es": ["cómo crece una semilla", "las plantas para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿De semilla a árbol?", "cue": "próxima", "left": "🌰", "right": "🌳"},
+  "lines": [
+    "Mía, ¿cómo una semillita se vuelve un árbol?",
+    "Una semilla es como una loncherita. Adentro hay una plantita bebé y comida para ayudarla a crecer.",
+    "¿Y qué necesita para despertar?",
+    "¡Agua, calorcito y aire! En la tierra húmeda y tibia, la semilla se toma el agua y se abre.",
+    "¿Y luego sale una hoja?",
+    "Primero crece una raíz hacia abajo para tomar agua. Luego un brote chiquito empuja hacia arriba, hacia la luz.",
+    "¿Y cómo come cuando su loncherita ya está vacía?",
+    "¡Sus hojas hacen comida con la luz del sol, el aire y el agua!",
+    "¿Y cómo se hace tan grande?",
+    "¡Poquito a poquito, año tras año! El tallo se pone grueso y duro como madera, y se vuelve un tronco.",
+    "¿Y cuánto tarda eso?",
+    "¡Muchos años! Un roble gigante empieza como una bellotita. ¡Y un día, hace sus propias semillas!",
+    "¡Entonces va semilla, raíz, brote, y luego un árbol!",
+    "¡Lo entendiste! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿cómo una semillita se vuelve un árbol?"
+  ],
+  "punch": {"1": "loncherita", "11": "bellotita"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🌰", "label": "Semillita"}, "right": {"icon": "🌳", "label": "Árbol grande"}, "mid": "?"},
+    "1": {"type": "big", "icon": "🌰", "text": "Dentro de una semilla", "cue": "loncherita", "sub": "Plantita bebé + comida", "sub_cue": "bebé"},
+    "3": {"type": "checklist", "title": "Una semilla necesita", "icon": "🌰", "items": [{"icon": "💧", "text": "Agua", "cue": "agua", "ok": true}, {"icon": "☀️", "text": "Calorcito", "cue": "calorcito", "ok": true}, {"icon": "💨", "text": "Aire", "cue": "aire", "ok": true}]},
+    "5": {"type": "plant_growth", "title": "Brotando", "items": [{"label": "Semilla", "cue": "primero"}, {"label": "Raíz hacia abajo", "cue": "raíz"}, {"label": "Brote hacia arriba", "cue": "brote"}, {"label": "Hacia la luz", "cue": "luz"}]},
+    "7": {"type": "big", "icon": "🍃", "text": "Las hojas hacen comida", "cue": "hojas", "sub": "Con sol, aire y agua", "sub_cue": "sol"},
+    "9": {"type": "transform", "title": "Año tras año", "from": {"icon": "🌱", "label": "Un tallito", "cue": "tallo"}, "to": {"icon": "🪵", "label": "Un tronco", "cue": "tronco"}},
+    "11": {"type": "big", "icon": "🌰", "text": "Los robles nacen de bellotas", "cue": "bellotita", "sub": "Y luego hace semillas", "sub_cue": "semillas"},
+    "12": {"type": "lifecycle", "title": "De semilla a árbol", "items": [{"icon": "🌰", "label": "Semilla", "cue": "semilla"}, {"icon": "🌱", "label": "Raíz", "cue": "raíz"}, {"icon": "🌿", "label": "Brote", "cue": "brote"}, {"icon": "🌳", "label": "¡Árbol!", "cue": "árbol"}]}
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "title_es": "¿Cómo se forma un arcoíris? 🌈",
+  "description_es": "¡Un arcoíris solo necesita dos cosas: sol y gotas de lluvia! Leo pregunta y su hermana mayor Mía le explica cómo se forman los arcoíris y dónde encontrar uno, en menos de un minuto.",
+  "cover_text_es": "¡ARCOÍRIS!",
+  "hook": "¿Cómo se forma un arcoíris?",
+  "tags_es": [
+    "cómo se forma el arcoíris",
+    "colores del arcoíris para niños",
+    "ciencia para niños"
+  ],
+  "loop_card_es": {
+    "text": "¿Cómo se forma un arcoíris?",
+    "cue": "próxima",
+    "left": "🌈",
+    "right": "❓"
+  },
+  "lines": [
+    "Mía, ¿cómo se forma un arcoíris?",
+    "¡Necesitas dos cosas: sol y gotas de lluvia!",
+    "¿Por qué esas dos?",
+    "La luz del sol se ve blanca, pero en realidad son muchos colores mezclados.",
+    "Cuando la luz del sol entra en una gota de lluvia, se dobla. Cada color se dobla distinto, así que se separan. Luego la luz rebota y sale hacia ti.",
+    "¿Por eso los colores siempre van en el mismo orden?",
+    "¡Sí! Rojo, naranja, amarillo, verde, azul, índigo y violeta. ¡El rojo siempre va por afuera!",
+    "¿Cuándo puedo ver uno?",
+    "Busca cuando el Sol esté detrás de ti y la lluvia esté enfrente. ¡Lo mejor es temprano en la mañana o al final de la tarde!",
+    "¿Podemos hacer nuestro propio arcoíris?",
+    "¡Sí! En un día de sol, pídele a un adulto que rocíe una lluvia finita con la manguera, con el Sol detrás de ti. ¡Tarán, un mini arcoíris!",
+    "Luz del sol, gotas de lluvia, y el Sol detrás de mí. ¡A buscar arcoíris!",
+    "¡A buscar arcoíris! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿cómo se forma un arcoíris?"
+  ],
+  "punch": {
+    "1": "dos",
+    "6": "afuera"
+  },
+  "boards": {
+    "0": {
+      "type": "title",
+      "left": {
+        "icon": "🌈",
+        "label": "Arcoíris"
+      },
+      "right": {
+        "icon": "🤔",
+        "label": "¿Cómo?"
+      },
+      "mid": "?"
+    },
+    "1": {
+      "type": "gallery",
+      "title": "Receta del arcoíris",
+      "items": [
+        {
+          "icon": "☀️",
+          "label": "Sol",
+          "cue": "sol"
+        },
+        {
+          "icon": "💧",
+          "label": "Gotas de lluvia",
+          "cue": "gotas"
+        }
+      ]
+    },
+    "3": {
+      "type": "big",
+      "icon": "☀️",
+      "text": "Luz blanca = muchos colores",
+      "cue": "colores",
+      "sub": "Todos mezclados",
+      "sub_cue": "mezclados"
+    },
+    "4": {
+      "type": "journey",
+      "title": "La luz en una gota",
+      "traveler": "✨",
+      "items": [
+        {
+          "icon": "☀️",
+          "label": "Luz del sol",
+          "cue": "luz"
+        },
+        {
+          "icon": "💧",
+          "label": "Entra en la gota",
+          "cue": "gota"
+        },
+        {
+          "icon": "🌈",
+          "label": "Colores separados",
+          "cue": "separan"
+        },
+        {
+          "icon": "🧒",
+          "label": "Hacia ti",
+          "cue": "rebota"
+        }
+      ]
+    },
+    "6": {
+      "type": "gallery",
+      "title": "Colores del arcoíris",
+      "items": [
+        {
+          "icon": "🔴",
+          "label": "Rojo",
+          "cue": "rojo"
+        },
+        {
+          "icon": "🟠",
+          "label": "Naranja",
+          "cue": "naranja"
+        },
+        {
+          "icon": "🟡",
+          "label": "Amarillo",
+          "cue": "amarillo"
+        },
+        {
+          "icon": "🟢",
+          "label": "Verde",
+          "cue": "verde"
+        },
+        {
+          "icon": "🔵",
+          "label": "Azul",
+          "cue": "azul"
+        },
+        {
+          "icon": "🟣",
+          "label": "Índigo, violeta",
+          "cue": "índigo"
+        }
+      ]
+    },
+    "8": {
+      "type": "compare",
+      "left": {
+        "label": "Detrás de ti",
+        "items": [
+          {
+            "text": "Sol",
+            "icon": "☀️",
+            "cue": "sol"
+          }
+        ]
+      },
+      "right": {
+        "label": "Enfrente",
+        "items": [
+          {
+            "text": "Lluvia",
+            "icon": "🌧️",
+            "cue": "lluvia"
+          }
+        ]
+      }
+    },
+    "10": {
+      "type": "big",
+      "icon": "🌈",
+      "text": "Haz un mini arcoíris",
+      "cue": "mini",
+      "sub": "¡Con un adulto!",
+      "sub_cue": "pídele"
+    },
+    "11": {
+      "type": "summary",
+      "rows": [
+        {
+          "text": "Luz del sol",
+          "icon": "☀️",
+          "cue": "luz"
+        },
+        {
+          "text": "Gotas de lluvia",
+          "icon": "💧",
+          "cue": "gotas"
+        },
+        {
+          "text": "Sol detrás de ti",
+          "icon": "😎",
+          "cue": "detrás"
+        }
+      ]
+    }
+  }
+}

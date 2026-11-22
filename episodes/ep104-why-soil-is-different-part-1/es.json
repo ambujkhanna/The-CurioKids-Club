@@ -1,0 +1,36 @@
+{
+  "title_es": "¿Por qué la tierra es diferente? 🪨 (Parte 1)",
+  "description_es": "¡La tierra empieza siendo roca! Leo pregunta y su hermana mayor Mía le explica de qué está hecha la tierra y por qué la tierra arenosa, la arcillosa y la marga son diferentes, en menos de un minuto.",
+  "cover_text_es": "¡TIERRA SECRETA!",
+  "hook": "¿Por qué la tierra es diferente en cada lugar?",
+  "tags_es": ["de qué está hecha la tierra", "tipos de suelo para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Por qué la tierra es diferente?", "cue": "próxima", "left": "🪨", "right": "🌱"},
+  "lines": [
+    "Mía, ¿por qué la tierra es diferente en cada lugar?",
+    "¡La tierra empieza siendo roca! La lluvia, el viento y el hielo rompen las rocas en pedacitos diminutos, durante muchísimo tiempo.",
+    "¿Entonces la tierra es solo roca molida?",
+    "¡No solo roca! También tiene humus: hojas y plantas viejas, todas deshechas.",
+    "¿Y quién lo mezcla todo?",
+    "¡Las lombrices ayudan! Mezclan la tierra y cavan túneles, para que entren el aire y el agua.",
+    "¿Y por qué no toda la tierra es igual?",
+    "¡Rocas diferentes hacen pedacitos diferentes! Los pedacitos más grandes forman arena. Los superchiquitos forman arcilla.",
+    "¿Y cuál es la diferencia?",
+    "La tierra arenosa es rasposa, y el agua pasa rápido. La tierra arcillosa es pegajosa y guarda el agua.",
+    "¿Hay una tierra en el medio?",
+    "¡Sí! La marga es una buena mezcla de arena, arcilla y humus. ¡A muchas plantas les encanta!",
+    "¡Pedacitos de roca, humus y lombrices hacen la tierra!",
+    "¿Qué exploramos ahora? ¡Pídele a un adulto que deje un tema en los comentarios!",
+    "¡Gran excavación! Pronto: ¡qué plantas aman cada tierra! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué la tierra es diferente en cada lugar?"
+  ],
+  "punch": {"1": "diminutos", "3": "humus", "11": "marga"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🟫", "label": "Tierra aquí"}, "right": {"icon": "🏜️", "label": "Tierra allá"}, "mid": "?"},
+    "1": {"type": "lifecycle", "title": "De roca a tierra", "items": [{"icon": "🪨", "label": "Roca", "cue": "roca"}, {"icon": "🧊", "label": "Se rompe", "cue": "rompen"}, {"icon": "🟤", "label": "Pedacitos", "cue": "pedacitos"}, {"icon": "⏳", "label": "Mucho tiempo", "cue": "tiempo"}]},
+    "3": {"type": "big", "icon": "🍂", "text": "Y humus", "cue": "humus", "sub": "Hojas y plantas viejas", "sub_cue": "hojas"},
+    "5": {"type": "big", "icon": "🪱", "text": "Las lombrices mezclan", "cue": "lombrices", "sub": "Túneles para el aire", "sub_cue": "túneles"},
+    "7": {"type": "picture", "art": "soil_layers", "caption": "Rocas diferentes", "cue": "diferentes", "icon": "🪨"},
+    "9": {"type": "compare", "left": {"label": "Arenosa", "items": [{"text": "Rasposa", "icon": "🏖️", "cue": "rasposa"}, {"text": "Drena rápido", "icon": "💨", "cue": "rápido"}]}, "right": {"label": "Arcillosa", "items": [{"text": "Pegajosa", "icon": "🤏", "cue": "pegajosa"}, {"text": "Guarda agua", "icon": "💧", "cue": "guarda"}]}},
+    "11": {"type": "big", "icon": "🌻", "text": "Marga = buena mezcla", "cue": "marga", "sub": "Arena + arcilla + humus", "sub_cue": "mezcla"},
+    "12": {"type": "summary", "rows": [{"text": "Pedacitos de roca", "icon": "🪨", "cue": "roca"}, {"text": "Humus", "icon": "🍂", "cue": "humus"}, {"text": "Lombrices", "icon": "🪱", "cue": "lombrices"}]}
+  }
+}

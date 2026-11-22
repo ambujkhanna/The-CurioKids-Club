@@ -1,0 +1,35 @@
+{
+  "title_es": "¿Por qué los flamencos son rosados? 🦩",
+  "description_es": "¡Los flamencos son rosados por la comida que comen! Leo pregunta y su hermana mayor Mía le explica, y además por qué los flamencos bebés son grises, en menos de un minuto.",
+  "cover_text_es": "¿¡ROSADOS!?",
+  "hook": "¿Por qué los flamencos son rosados?",
+  "tags_es": ["por qué los flamencos son rosados", "datos de flamencos para niños", "animales para niños"],
+  "loop_card_es": {"text": "¿Por qué rosados?", "cue": "próxima", "left": "🦩", "right": "💗"},
+  "lines": [
+    "Mía, ¿por qué los flamencos son rosados?",
+    "¡Por lo que comen! Camarones chiquititos y unas plantitas del agua llamadas algas.",
+    "¿Y la comida los pinta de rosado?",
+    "¡Sí! Esa comida tiene colores naturales, como el naranja de las zanahorias. Los colores pasan a sus plumas y las vuelven rosadas.",
+    "¿Los flamencos bebés también son rosados?",
+    "¡No! Los flamencos bebés son esponjositos y grises. Se vuelven rosados al crecer y comer esa comida.",
+    "¿Y si un flamenco comiera otra comida?",
+    "Sus plumas se pondrían más pálidas. Por eso en los zoológicos les dan comida especial, para que sigan rosados.",
+    "¿Y cómo comen con ese pico doblado tan chistoso?",
+    "Meten la cabeza al revés. Su pico funciona como un colador: guarda la comida y deja salir el agua.",
+    "¿Y por qué se paran en una sola pata?",
+    "Los científicos creen que así se mantienen calentitos o ahorran energía. ¡Todavía es un pequeño misterio!",
+    "¡Entonces los flamencos son rosados por los camarones y las algas que comen!",
+    "¡Así es! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué los flamencos son rosados?"
+  ],
+  "punch": {"1": "comen", "11": "misterio"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🦩", "label": "Flamenco"}, "right": {"icon": "💗", "label": "¿Rosado?"}, "mid": "?"},
+    "1": {"type": "gallery", "title": "Comida de flamenco", "items": [{"icon": "img:Animals/DBCLS/Japanese_tiger_prawn", "label": "Camaroncitos", "cue": "camarones"}, {"icon": "🌿", "label": "Algas", "cue": "algas"}]},
+    "3": {"type": "big", "icon": "🥕", "text": "Colores de la comida", "cue": "colores", "sub": "¡A las plumas!", "sub_cue": "plumas"},
+    "5": {"type": "compare", "left": {"label": "Bebé", "items": [{"icon": "🐣", "text": "Esponjoso y gris", "cue": "grises"}]}, "right": {"label": "Adulto", "items": [{"icon": "🦩", "text": "Plumas rosadas", "cue": "rosados"}]}},
+    "7": {"type": "big", "icon": "🦩", "text": "Menos color, más pálido", "cue": "pálidas", "sub": "Comida especial del zoológico", "sub_cue": "zoológicos"},
+    "9": {"type": "big", "icon": "🙃", "text": "¡Comen de cabeza!", "cue": "revés", "sub": "Pico = colador", "sub_cue": "colador"},
+    "11": {"type": "big", "icon": "🤔", "text": "El misterio de una pata", "cue": "misterio", "sub": "Quizás para estar calentitos", "sub_cue": "calentitos"},
+    "12": {"type": "summary", "rows": [{"icon": "🦐", "text": "Camarones y algas", "cue": "camarones"}, {"icon": "💗", "text": "La comida los pinta", "cue": "rosados"}]}
+  }
+}

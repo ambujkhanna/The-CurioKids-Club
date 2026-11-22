@@ -116,6 +116,10 @@ def _hero(c, K, x, y, r, fn, tf, ep, answer=True):
         w = (_re.findall(r"[A-Za-z]+", ep.get("title", "")) or ["WHY"])[0].upper()
         w = w if w in ("WHY", "HOW", "WHAT", "WHERE", "WHO", "CAN", "DO", "DOES", "IS", "ARE") else "WHY"
         w = {"DO": "WHY", "DOES": "HOW", "IS": "WHY", "ARE": "WHY", "CAN": "HOW"}.get(w, w) + "?"
+        if ep.get("title_es"):  # Spanish version: ¿POR QUÉ? / ¿CÓMO? / ¿QUÉ? / ¿DÓNDE? ...
+            t_ = ep["title_es"].lstrip("¿¡ ").lower()
+            w = next((v for k, v in (("por qué", "¿POR QUÉ?"), ("cómo", "¿CÓMO?"), ("dónde", "¿DÓNDE?"), ("cuándo", "¿CUÁNDO?"),
+                                     ("quién", "¿QUIÉN?"), ("qué", "¿QUÉ?"), ("cuál", "¿CUÁL?")) if t_.startswith(k)), "¿POR QUÉ?")
         f = skia.Font(tf, r * 0.42); tw = f.measureText(w); bw, bh = tw + r * 0.5, r * 0.62
         # centred under the picture (kept inside the frame); the tail always points straight up at the picture's centre
         # fully below the picture's ring (small gap), inside the frame; only the pointer touches the ring

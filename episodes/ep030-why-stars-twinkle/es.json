@@ -1,0 +1,34 @@
+{
+  "title_es": "¿Por qué titilan las estrellas? ✨",
+  "description_es": "Las estrellas en realidad no titilan: ¡es nuestro aire en movimiento el que las hace parpadear! Leo pregunta y su hermana mayor Mía se lo explica en menos de un minuto.",
+  "cover_text_es": "¿TITILAN?",
+  "hook": "¿Por qué titilan las estrellas?",
+  "tags_es": ["por qué titilan las estrellas", "las estrellas para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Por qué titilan las estrellas?", "cue": "próxima", "left": "⭐", "right": "✨"},
+  "lines": [
+    "Mía, ¿por qué titilan las estrellas?",
+    "Te tengo una sorpresa. ¡Las estrellas en realidad no titilan! Es nuestro aire el que las hace verse así.",
+    "¿El aire? ¿Cómo?",
+    "La luz de las estrellas viaja muchísimo por el espacio para llegar hasta nosotros. Al final, tiene que pasar por el aire que rodea la Tierra.",
+    "Nuestro aire siempre se está moviendo, con partes calientes y frías que dan vueltas. Esas partes doblan la luz un poquito, para acá y para allá.",
+    "¿Entonces la luz se tambalea?",
+    "¡Exacto! La luz se tambalea, y por eso parece que la estrella parpadea. ¡Eso es el titileo!",
+    "¿Los planetas también titilan?",
+    "Las estrellas están tan lejos que se ven como puntitos. Los planetas están mucho más cerca, así que casi siempre titilan menos.",
+    "¿Cómo se ven las estrellas desde el espacio?",
+    "Los astronautas en el espacio ven estrellas que no titilan nada, ¡porque allá arriba no hay aire!",
+    "¡Entonces el titileo es la luz de las estrellas bailando en nuestro aire que se mueve!",
+    "¡Sigue brillando! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué titilan las estrellas?"
+  ],
+  "punch": {"1": "aire", "6": "titileo"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "⭐", "label": "Estrellas"}, "right": {"icon": "✨", "label": "¿Titilan?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "🌍", "text": "¡Es nuestro aire!", "cue": "aire", "sub": "Las estrellas brillan fijas", "sub_cue": "estrellas"},
+    "3": {"type": "journey", "title": "Viaje de la luz", "traveler": "✨", "items": [{"icon": "⭐", "label": "Luz de estrella", "cue": "luz"}, {"icon": "🌌", "label": "Por el espacio", "cue": "espacio"}, {"icon": "💨", "label": "Nuestro aire", "cue": "aire"}, {"icon": "🌍", "label": "Tierra", "cue": "tierra"}]},
+    "4": {"type": "big", "icon": "💨", "text": "El aire dobla la luz", "cue": "doblan", "sub": "Remolinos calientes y fríos", "sub_cue": "calientes"},
+    "6": {"type": "big", "icon": "✨", "text": "Luz que tiembla = titileo", "cue": "titileo", "sub": "¡Parpadea, parpadea!", "sub_cue": "parpadea"},
+    "8": {"type": "compare", "left": {"label": "Estrellas", "items": [{"text": "Lejísimos", "icon": "🔭", "cue": "lejos"}, {"text": "Puntitos", "icon": "✨", "cue": "puntitos"}]}, "right": {"label": "Planetas", "items": [{"text": "Mucho más cerca", "icon": "🪐", "cue": "cerca"}, {"text": "Titilan menos", "icon": "🙂", "cue": "menos"}]}},
+    "10": {"type": "big", "icon": "🚀", "text": "Sin aire, sin titileo", "cue": "astronautas", "sub": "Estrellas fijas en el espacio", "sub_cue": "espacio"},
+    "11": {"type": "summary", "rows": [{"icon": "⭐", "text": "La luz viaja", "cue": "luz"}, {"icon": "💨", "text": "El aire la mueve", "cue": "bailando"}, {"icon": "✨", "text": "¡Titileo!", "cue": "titileo"}]}
+  }
+}

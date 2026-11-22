@@ -36,6 +36,8 @@ IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
 HI = "--lang" in sys.argv and sys.argv[sys.argv.index("--lang") + 1] == "hi"
 HINDI_START = dt.date(2026, 11, 9)  # alternate days: Hindi on this date and every second day after it, English in between
 BRAND_LINE_HI = "🌈 बच्चों के लिए मज़ेदार साइंस: YouTube पर The CurioKids Club खोजें"
+ES = "--lang" in sys.argv and sys.argv[sys.argv.index("--lang") + 1] == "es"  # Spanish track (owner, 2026-11-22): its own daily slot
+BRAND_LINE_ES = "🌈 Ciencia divertida para niños curiosos: busca The CurioKids Club en YouTube"
 
 
 def hindi_day(d):
@@ -43,7 +45,23 @@ def hindi_day(d):
 
 
 def window(lang):
+    if lang == "es":  # Latin America's evening: 18:00-20:00 Mexico City = 05:30-07:30 IST (next day)
+        return os.environ.get("PUBLISH_WINDOW_ES") or "05:30-07:30"
     return os.environ.get("PUBLISH_WINDOW_HI" if lang == "hi" else "PUBLISH_WINDOW") or ("09:00-11:00" if lang == "hi" else "17:00-20:00")
+
+
+def plan_es(state, now=None):
+    """Scheduled Spanish runs: the earliest day (today or tomorrow) whose Spanish window is still reachable and empty."""
+    now = now or dt.datetime.now(IST)
+    filled = {(r.get("es") or {}).get("publish_at_ist", "")[:10] for r in state["episodes"].values()
+              if (r.get("es") or {}).get("status") == "uploaded"}
+    a, b = window("es").split("-")
+    for add in (0, 1):
+        d = (now + dt.timedelta(days=add)).date()
+        end = dt.datetime.combine(d, dt.time(*map(int, b.split(":"))), IST)
+        if end - dt.timedelta(minutes=50) < now or d.isoformat() in filled: continue
+        return d
+    return None
 
 
 # Chatterbox voice style per category (exaggeration: 0.5 natural, 0.8 animated); an episode can set "exaggeration".
@@ -81,6 +99,9 @@ def pick(state, forced=None):
         if HI:  # Hindi track: its own progress (rec["hi"]); needs episodes/<id>/hi.json
             if not os.path.exists(os.path.join(os.path.dirname(ep["_file"]), "hi.json")): continue
             r = r.get("hi", {})
+        elif ES:  # Spanish track: its own progress (rec["es"]); needs episodes/<id>/es.json
+            if not os.path.exists(os.path.join(os.path.dirname(ep["_file"]), "es.json")): continue
+            r = r.get("es", {})
         if ep.get("status") == "ready" and r.get("status") not in ("uploaded", "published", "manual"):
             return ep
     return None
@@ -330,21 +351,37 @@ def hindi_ep(ep):
     return e
 
 
-def hindi_badge(jpg):
-    """Small 'HINDI' tag on the thumbnail."""
+def spanish_ep(ep):
+    """Upload/social metadata of the Spanish version: 'Spanish | English' title, Spanish + English description."""
+    es = json.load(open(os.path.join(os.path.dirname(ep["_file"]), "es.json"), encoding="utf-8"))
+    en_title = re.sub(r"\s*Fun Facts for Kids\s*$", "", ep["title"]).strip(" |-")
+    tags = es.get("tags_es") or ["ciencia para niños", "datos curiosos", "niños curiosos"]
+    es_t = es["title_es"].strip()
+    m_ = re.search(r"\s*([^\w\s¿?¡!.,:'\-|]+)\s*$", es_t)
+    if m_ and m_.group(1) in en_title:  # the English part already shows this emoji: show it once
+        es_t = es_t[:m_.start()]
+    return dict(ep, lang="es", title=f"{es_t} | {en_title}"[:100],
+                description=es["description_es"].strip() + "\n\n" + ep["description"],
+                tags=(ep.get("tags", [])[:8] + ["español", "en español"] + tags)[:15],
+                hashtags=(lambda t: t[:1] + ["#EnEspañol"] + t[1:] + ["#CienciaParaNiños", "#Shorts"])([h for h in ep.get("hashtags", []) if h.lower() != "#shorts"]))
+
+
+def hindi_badge(jpg, label="HINDI", color=(255, 122, 0), below_logo=False):
+    """Small 'HINDI' (or 'ESPAÑOL') tag on the thumbnail."""
     try:
         import skia
         img = skia.Image.open(jpg); W, H = img.width(), img.height()
         surf = skia.Surface(W, H); c = surf.getCanvas(); c.drawImage(img, 0, 0)
         tf = skia.Typeface.MakeFromFile(os.path.join(ROOT, "fonts", "LilitaOne-Regular.ttf"))
         k = min(W, H)  # corner tag: top-left on Shorts (the logo is centred), top-right on 16:9 (the logo is top-left)
-        f = skia.Font(tf, k * 0.055); tw = f.measureText("HINDI"); h = k * 0.082
+        f = skia.Font(tf, k * 0.055); tw = f.measureText(label); h = k * 0.082
         x, y = (k * 0.03, H * 0.022) if H > W else (W - tw - h * 0.9 - k * 0.04, H * 0.035)
-        c.drawRRect(skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(x, y, tw + h * 0.9, h), h / 2, h / 2), skia.Paint(AntiAlias=True, Color=skia.Color(255, 122, 0)))
-        c.drawString("HINDI", x + h * 0.45, y + h * 0.72, f, skia.Paint(AntiAlias=True, Color=skia.ColorWHITE))
+        if below_logo and H > W: y = H * 0.07  # a longer label (ESPAÑOL) would cover the centred logo pill
+        c.drawRRect(skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(x, y, tw + h * 0.9, h), h / 2, h / 2), skia.Paint(AntiAlias=True, Color=skia.Color(*color)))
+        c.drawString(label, x + h * 0.45, y + h * 0.72, f, skia.Paint(AntiAlias=True, Color=skia.ColorWHITE))
         surf.makeImageSnapshot().save(jpg, skia.kJPEG, 90)
     except Exception as e:
-        print("note: no Hindi badge:", e)
+        print(f"note: no {label} badge:", e)
 
 
 def ig_episode_test(mp4, eid, ep=None):
@@ -437,7 +474,7 @@ def main():
         return social_backfill(int(args[args.index("--social-backfill") + 1]))
     if "--refresh-thumbnails" in args:  # with 'episode' filled in: only that video (e.g. s-ollama)
         return refresh_thumbnails(args[args.index("--episode") + 1] if "--episode" in args else None)
-    global HI
+    global HI, ES
     dry = "--dry-run" in args
     forced = args[args.index("--episode") + 1] if "--episode" in args else None
     now_mode = "--now" in args
@@ -468,18 +505,25 @@ def main():
             summary(f"### ⚠️ `{SCRIPT}` was already uploaded ({prev.get('url', '')}). To post a new video, save the script under a new file name.")
             print("already uploaded:", forced); return 1
     target_day = None
-    if "--auto" in args and not CATEGORY and not LONG:
+    if "--auto" in args and ES and not CATEGORY and not LONG:  # the Spanish cron: one Spanish Short a day
+        target_day = plan_es(state)
+        if not target_day:
+            print("Nothing due right now (Spanish: one a day, " + window("es") + " IST)."); return 0
+        print(f"== auto: Spanish video for {target_day}")
+    elif "--auto" in args and not CATEGORY and not LONG:
         plan = plan_auto(state)
         if not plan:
             print("Nothing due right now (alternate days: Hindi 09-11 IST, English 17-20 IST)."); return 0
         HI = plan[0] == "hi"; target_day = plan[1]
         print(f"== auto: {'Hindi' if HI else 'English'} video for {target_day}")
-    if HI and LONG:
-        print("Hindi versions are made for Shorts (daily episodes and categories), not the long videos."); return 1
+    if (HI or ES) and LONG:
+        print("Hindi/Spanish versions are made for Shorts (daily episodes and categories), not the long videos."); return 1
     ep = pick(state, forced)
     if not ep:
         if HI:
             msg = f"No episode with a Hindi version (hi.json) left in {os.path.relpath(EPDIR, ROOT)}/."
+        elif ES:
+            msg = f"No episode with a Spanish version (es.json) left in {os.path.relpath(EPDIR, ROOT)}/."
         else:
             msg = f"No ready episode left in the backlog. Add {os.path.relpath(EPDIR, ROOT)}/<id>/episode.json files."
         print(msg); summary("### ℹ️ " + msg); return 0
@@ -494,28 +538,30 @@ def main():
         import stock; stock.prefetch(json.load(open(ep["_file"], encoding="utf-8")))
     except Exception as e:
         print("note: could not fetch stock photos/clips:", e)
-    from validate_episode import check, check_hi
-    errs = check(epf) + (check_hi(epf) if HI else [])
+    from validate_episode import check, check_hi, check_es
+    errs = check(epf) + (check_hi(epf) if HI else []) + (check_es(epf) if ES else [])
     if errs:
         rec = state["episodes"].setdefault(eid, {}); rec.update({"status": "invalid", "problems": errs})
         json.dump(state, open(STATE, "w"), indent=2)
         print("Episode file invalid - not rendering:", errs); return 1
     os.makedirs(OUT, exist_ok=True)
-    frames = os.path.join(OUT, f"{eid}_frames"); mp4 = os.path.join(OUT, f"CurioKids_{'long_' if LONG else ''}{eid}{'_hi' if HI else ''}.mp4")
+    frames = os.path.join(OUT, f"{eid}_frames"); mp4 = os.path.join(OUT, f"CurioKids_{'long_' if LONG else ''}{eid}{'_hi' if HI else '_es' if ES else ''}.mp4")
     def render(voice_env):
         import shutil; shutil.rmtree(frames, ignore_errors=True)
         if os.path.exists(THUMB): os.remove(THUMB)  # never upload an older video's thumbnail
-        sh([sys.executable, os.path.join(PIPE, "tts.py")], {"EPISODE": epf, **VOICE_ENV, "TTS_LANG": "hi" if HI else "en", **voice_env})
+        sh([sys.executable, os.path.join(PIPE, "tts.py")], {"EPISODE": epf, **VOICE_ENV, "TTS_LANG": "hi" if HI else "es" if ES else "en", **voice_env})
         sh([sys.executable, os.path.join(PIPE, "episode_engine.py"), frames], {"EPISODE": epf, "BG": "kids", "DOODLE": "chars", "FORMAT": "long" if LONG else "short"}, cwd=PIPE)
         sh([sys.executable, os.path.join(PIPE, "finish.py"), frames, "24", mp4], {"EPISODE": epf, "FORMAT": "long" if LONG else "short"})
     render({})
-    if not HI and json.load(open(os.path.join(PIPE, "build", "timing.json"))).get("engine") == "chatterbox" and \
+    if not HI and not ES and json.load(open(os.path.join(PIPE, "build", "timing.json"))).get("engine") == "chatterbox" and \
             float(probe(mp4)["format"]["duration"]) > (900 if LONG else 180):  # too long with the expressive voices
         print("note: video too long with Chatterbox voices - re-rendering with Kokoro voices")
         render({"TTS_ENGINE": "kokoro"})
     import bumpers  # "Welcome to …" logo intro + "Find us online" links card (repo variables INTRO / OUTRO)
     try:
         topic = bumpers.topic_from(ep, bool(globals().get("HI")))
+        if ES:  # Spanish intro (only if SHORT_INTRO=on): the Spanish question
+            topic = json.load(open(os.path.join(os.path.dirname(epf), "es.json"), encoding="utf-8"))["title_es"]
     except Exception:
         topic = None
     extras = bumpers.wrap(mp4, LONG, topic); print("intro/outro:", extras, "| topic:", topic)
@@ -523,11 +569,12 @@ def main():
     if os.path.exists(os.path.join(PIPE, "build", "thumbnail.jpg")):
         import shutil; shutil.copy(os.path.join(PIPE, "build", "thumbnail.jpg"), thumb)
         if HI: hindi_badge(thumb)
+        if ES: hindi_badge(thumb, "ESPAÑOL", (0, 168, 107), below_logo=True)
     else:
         thumb = None
     problems = qc(mp4, ep)
     sc_report = None
-    if not problems and not LONG and not HI:  # R6 self-check: listen to the video, compare with the script (warns only)
+    if not problems and not LONG and not HI and not ES:  # R6 self-check (English script only): listen to the video, compare with the script (warns only)
         try:
             import selfcheck; sc_report = selfcheck.check(mp4, ep)
         except Exception as e:
@@ -535,6 +582,8 @@ def main():
     rec = state["episodes"].setdefault(eid, {})
     if HI:  # the Hindi version keeps its own record inside the episode's record
         rec = rec.setdefault("hi", {}); ep = hindi_ep(ep)
+    elif ES:  # the Spanish version keeps its own record too
+        rec = rec.setdefault("es", {}); ep = spanish_ep(ep)
     rec["voices"] = json.load(open(os.path.join(PIPE, "build", "timing.json"))).get("engine", "kokoro")
     if sc_report:
         rec["selfcheck"] = {"heard": sc_report["heard"], "ok": sc_report["ok"]}
@@ -564,7 +613,7 @@ def main():
     if "--ig-test" in args:  # which version of this episode does Instagram accept? (nothing is posted)
         return ig_episode_test(mp4, eid, ep)
     if "--social-only" in args and not dry:  # post this episode to Facebook / Instagram only (no YouTube)
-        social = meta_post.post_all(mp4, ep, BRAND_LINE_HI if HI else BRAND_LINE, LONG, rec) if meta_post.have_meta() else {"facebook": "no META secrets configured"}
+        social = meta_post.post_all(mp4, ep, BRAND_LINE_HI if HI else BRAND_LINE_ES if ES else BRAND_LINE, LONG, rec) if meta_post.have_meta() else {"facebook": "no META secrets configured"}
         rec.update({k: v.replace(" (kept, not re-posted)", "") for k, v in social.items()}); json.dump(state, open(STATE, "w"), indent=2)
         print("Social only:", social)
         summary(f"### 📣 Social post for {eid}\n\n" + "\n".join(f"- {k.title()}: {v}" for k, v in social.items())); return 0
@@ -572,20 +621,20 @@ def main():
         rec.update({"status": "rendered", "note": "dry run" if dry else "no YouTube credentials configured"})
         json.dump(state, open(STATE, "w"), indent=2)
         print("Rendered + QC passed (not uploaded):", mp4)
-        summary(f"### 🎬 Rendered {eid}{' (Hindi)' if HI else ''} (not uploaded: {rec['note']})\n\n- {ep['title']} — {rec['duration_s']} s, QC passed, voices: {rec['voices']}\n- Download the video and its thumbnail from this run's **Artifacts**.")
+        summary(f"### 🎬 Rendered {eid}{' (Hindi)' if HI else ' (Spanish)' if ES else ''} (not uploaded: {rec['note']})\n\n- {ep['title']} — {rec['duration_s']} s, QC passed, voices: {rec['voices']}\n- Download the video and its thumbnail from this run's **Artifacts**.")
         return 0
     if now_mode:
         vid = upload(mp4, ep, None); when = "immediately (public now, if the API project is audited)"
         rec["publish_at_ist"] = dt.datetime.now(IST).isoformat(timespec="minutes")
     else:
-        slot = next_slot(window=window("hi" if HI else "en"), day=target_day)
+        slot = next_slot(window=window("hi" if HI else "es" if ES else "en"), day=target_day)
         vid = upload(mp4, ep, slot.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"))
         when = slot.strftime("%d %b %Y, %H:%M IST"); rec["publish_at_ist"] = slot.isoformat(timespec="minutes")
     rec.pop("note", None)
     rec["thumbnail"] = set_thumbnail(vid, thumb) if thumb else "not rendered"
-    rec["playlist"] = add_to_playlist(vid)
+    rec["playlist"] = add_to_playlist(vid, name=(os.environ.get("YT_PLAYLIST_ES") or "CurioKids_Spanish") if ES else None)
     rec["made_for_kids"] = "yes" if made_for_kids() else "no"
-    social = meta_post.post_all(mp4, ep, BRAND_LINE_HI if HI else BRAND_LINE, LONG, rec)  # Facebook Page + Instagram (if META secrets are set)
+    social = meta_post.post_all(mp4, ep, BRAND_LINE_HI if HI else BRAND_LINE_ES if ES else BRAND_LINE, LONG, rec)  # Facebook Page + Instagram (if META secrets are set)
     rec.update(social)
     if thumb and str(rec.get("thumbnail", "")).startswith(("set", "not set")):  # again, now that YouTube has processed the upload
         again = set_thumbnail(vid, thumb); rec["thumbnail"] = rec["thumbnail"] + f" (re-applied after posting: {again})"
@@ -602,7 +651,7 @@ def main():
         import notify; notify.send(f"✅ Uploaded: {ep['title']}\n{rec['url']}\nPublish: {when}")
     except Exception:
         pass
-    summary(f"### ✅ Uploaded {eid}{' (Hindi)' if HI else ''}: {ep['title']}\n\n- Link: {rec['url']}\n- Publish: {when}\n- Length: {rec['duration_s']} s\n- Voices: {rec['voices']}\n- Thumbnail: {rec['thumbnail']}\n- Playlist: {rec['playlist']}\n- Made for kids: {rec['made_for_kids']}\n" + "".join(f"- {k.title()}: {v}\n" for k, v in social.items()) +
+    summary(f"### ✅ Uploaded {eid}{' (Hindi)' if HI else ' (Spanish)' if ES else ''}: {ep['title']}\n\n- Link: {rec['url']}\n- Publish: {when}\n- Length: {rec['duration_s']} s\n- Voices: {rec['voices']}\n- Thumbnail: {rec['thumbnail']}\n- Playlist: {rec['playlist']}\n- Made for kids: {rec['made_for_kids']}\n" + "".join(f"- {k.title()}: {v}\n" for k, v in social.items()) +
             "- Note: until the YouTube API audit is approved, YouTube keeps API uploads **Private** — "
             "set it to Public (or Schedule) in YouTube Studio → Content.")
     if kept: summary("\n- Thumbnails re-applied on recent videos: " + "; ".join(kept))

@@ -1,0 +1,35 @@
+{
+  "title_es": "¿Por qué el globo se pega a la pared? 🎈",
+  "description_es": "¡Frota un globo en tu pelo y se pega a la pared! Leo pregunta y papá le explica la electricidad estática de forma sencilla y segura, en menos de un minuto.",
+  "cover_text_es": "¡PEGADO!",
+  "hook": "¿Por qué el globo se pega a la pared?",
+  "tags_es": ["electricidad estática para niños", "experimento con globo para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Por qué se pega?", "cue": "próxima", "left": "🎈", "right": "🧱"},
+  "lines": [
+    "Papá, ¿por qué un globo frotado se pega a la pared?",
+    "Es algo invisible llamado electricidad estática. Al frotar un globo se hace un poquito, y no hace daño.",
+    "¿Electricidad? ¿De mi pelo?",
+    "Todo está hecho de pedacitos superchiquitos con cargas. Al frotar, algunas cargas saltan de tu pelo al globo.",
+    "¿Y qué pasa en la pared?",
+    "El globo jala las cargas de la pared. Las cargas opuestas se atraen, ¡así que se agarran fuerte!",
+    "¿Por eso se me para el pelo?",
+    "¡Sí! Ahora todos tus pelos tienen la misma carga. Las cargas iguales se empujan, así que cada pelo quiere alejarse.",
+    "¿Por qué el globo se cae después de un rato?",
+    "Las cargas se escapan despacito al aire. Y entonces, ¡se cae!",
+    "¿Es como el toquecito que da la manija de la puerta?",
+    "¡Es la misma idea! Ese toquecito también es estática. Pasa más en los días secos.",
+    "Entonces frotar mueve las cargas, y los opuestos se pegan. ¡Eso es la estática!",
+    "¡Lo entendiste! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué un globo frotado se pega a la pared?"
+  ],
+  "punch": {"1": "estática"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🎈", "label": "Globo"}, "right": {"icon": "🧱", "label": "Pared"}, "mid": "?"},
+    "1": {"type": "big", "icon": "⚡", "text": "¡Electricidad estática!", "cue": "estática", "sub": "Poquita y sin peligro", "sub_cue": "poquito"},
+    "3": {"type": "journey", "title": "¡Salten, cargas!", "traveler": "⚡", "items": [{"icon": "✋", "label": "Frotar", "cue": "frotar"}, {"icon": "🧒", "label": "Tu pelo", "cue": "pelo"}, {"icon": "🎈", "label": "Globo", "cue": "globo"}]},
+    "5": {"type": "big", "icon": "🧲", "text": "Los opuestos se atraen", "cue": "opuestas", "sub": "Globo y pared se agarran", "sub_cue": "agarran"},
+    "7": {"type": "big", "icon": "💇", "text": "Cargas iguales se empujan", "cue": "empujan", "sub": "¡Y el pelo se para!", "sub_cue": "alejarse"},
+    "9": {"type": "big", "icon": "💨", "text": "Las cargas se escapan", "cue": "escapan", "sub": "Y luego se cae", "sub_cue": "cae"},
+    "11": {"type": "big", "icon": "⚡", "text": "Ese toque es estática", "cue": "toquecito", "sub": "Más en días secos", "sub_cue": "secos"},
+    "12": {"type": "summary", "rows": [{"icon": "💇", "text": "Frotar mueve cargas", "cue": "frotar"}, {"icon": "🧲", "text": "Los opuestos se pegan", "cue": "opuestos"}, {"icon": "⚡", "text": "¡Es estática!", "cue": "estática"}]}
+  }
+}

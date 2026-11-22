@@ -1,0 +1,36 @@
+{
+  "title_es": "¿Por qué los ríos van al mar? 🏞️",
+  "description_es": "¿Por qué los ríos siempre terminan en el mar? Leo pregunta y su hermana mayor Mía le explica cómo la gravedad jala el agua cuesta abajo desde las montañas, en menos de un minuto.",
+  "cover_text_es": "¡CUESTA ABAJO!",
+  "hook": "¿Por qué los ríos van hacia el mar?",
+  "tags_es": ["por qué los ríos van al mar", "ríos para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Por qué los ríos van al mar?", "cue": "próxima", "left": "🏞️", "right": "🌊"},
+  "lines": [
+    "Mía, ¿por qué los ríos van hacia el mar?",
+    "¡Porque el agua siempre corre cuesta abajo! La gravedad la jala hacia abajo, cada vez más bajo.",
+    "¿Y dónde empieza un río?",
+    "Muy arriba, en las colinas y las montañas. Ahí cae la lluvia, y la nieve se derrite con el sol calentito.",
+    "¿Y es un río grande desde el principio?",
+    "¡No! Primero es un arroyito chiquito. Los arroyitos se juntan y crecen hasta ser un río grande.",
+    "¿Y luego a dónde va?",
+    "Baja de las montañas, pasa por campos y pueblos, y llega hasta el mar.",
+    "¿Y por qué se detiene en el mar?",
+    "El mar es el lugar más bajo al que puede llegar el agua. ¡Ya no queda más cuesta abajo!",
+    "¿Y el agua se queda ahí para siempre?",
+    "¡No! El Sol la calienta, sube y forma nubes, y vuelve a llover en las colinas. ¡Ese es el ciclo del agua!",
+    "¡Lluvia en las montañas, cuesta abajo, y al mar!",
+    "¿Qué exploramos ahora? ¡Pídele a un adulto que deje un tema en los comentarios!",
+    "¡Qué chapuzón! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué los ríos van hacia el mar?"
+  ],
+  "punch": {"1": "cuesta", "9": "bajo"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🏞️", "label": "Río"}, "right": {"icon": "🌊", "label": "Mar"}, "mid": "?"},
+    "1": {"type": "big", "icon": "💧", "text": "El agua baja", "cue": "cuesta", "sub": "La gravedad la jala", "sub_cue": "gravedad"},
+    "3": {"type": "checklist", "title": "Un río empieza", "icon": "⛰️", "items": [{"text": "Colinas altas", "icon": "⛰️", "cue": "colinas", "ok": true}, {"text": "Lluvia", "icon": "🌧️", "cue": "lluvia", "ok": true}, {"text": "Nieve derretida", "icon": "❄️", "cue": "nieve", "ok": true}]},
+    "5": {"type": "lifecycle", "title": "Un río crece", "items": [{"icon": "💧", "label": "Arroyito", "cue": "arroyito"}, {"icon": "🤝", "label": "Se juntan", "cue": "juntan"}, {"icon": "🏞️", "label": "Río grande", "cue": "río"}]},
+    "7": {"type": "flow", "title": "Viaje del río", "packet": "💧", "items": [{"icon": "⛰️", "label": "Montañas", "cue": "montañas"}, {"icon": "🏘️", "label": "Pueblos", "cue": "pueblos"}, {"icon": "🌊", "label": "Mar", "cue": "mar"}]},
+    "9": {"type": "big", "icon": "🌊", "text": "El mar es lo más bajo", "cue": "bajo", "sub": "No hay más bajada", "sub_cue": "cuesta"},
+    "11": {"type": "big", "icon": "🔁", "text": "El ciclo del agua", "cue": "ciclo", "sub": "De vuelta a las colinas", "sub_cue": "colinas"},
+    "12": {"type": "summary", "rows": [{"text": "Lluvia y nieve", "icon": "🌧️", "cue": "lluvia"}, {"text": "Baja la cuesta", "icon": "⬇️", "cue": "cuesta"}, {"text": "Llega al mar", "icon": "🌊", "cue": "mar"}]}
+  }
+}

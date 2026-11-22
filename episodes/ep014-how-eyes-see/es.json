@@ -1,0 +1,34 @@
+{
+  "title_es": "¿Cómo ven tus ojos? 👀",
+  "description_es": "Tus ojos atrapan la luz, ¡y tu cerebro hace una vuelta muy ingeniosa! Leo pregunta y su hermana mayor Mía le explica cómo vemos, en menos de un minuto.",
+  "cover_text_es": "¡ASÍ VEMOS!",
+  "hook": "¿Cómo ven las cosas tus ojos?",
+  "tags_es": ["cómo funcionan los ojos", "el cuerpo humano para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Cómo ven los ojos?", "cue": "próxima", "left": "👀", "right": "💡"},
+  "lines": [
+    "Mía, ¿cómo ven las cosas mis ojos?",
+    "¡Todo empieza con la luz! La luz rebota en todo lo que te rodea, y un poquito entra en tus ojos.",
+    "¿Y cómo entra?",
+    "Por el puntito negro en el centro de tu ojo. Se llama pupila, ¡y en realidad es un agujerito!",
+    "¿Y qué es la parte de color que la rodea?",
+    "¡Es el iris! Puede ser café, azul, verde o gris. Hace la pupila más grande en la oscuridad y más chiquita con mucha luz.",
+    "¿Y luego qué pasa adentro?",
+    "Una parte transparente llamada cristalino enfoca la luz en el fondo de tu ojo. ¿Y sabes qué? ¡La imagen llega al revés!",
+    "¿Al revés? ¡Pero yo veo todo derechito!",
+    "¡Ese es el trabajo de tu cerebro! Tu ojo le manda un mensaje a tu cerebro, y él voltea la imagen para que quede derechita.",
+    "Una regla de seguridad: nunca mires directo al Sol. Brilla demasiado y puede lastimar tus ojos.",
+    "Entonces la luz entra, el cristalino la enfoca, y mi cerebro voltea la imagen. ¡Guau!",
+    "¡Ojo-tástico! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿cómo ven las cosas mis ojos?"
+  ],
+  "punch": {"1": "luz", "7": "revés"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "img:Human_physiology/Servier/eye", "label": "Ojos"}, "right": {"icon": "💡", "label": "¿Ver?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "💡", "text": "La luz rebota", "cue": "rebota", "sub": "¡Hasta tus ojos!", "sub_cue": "ojos"},
+    "3": {"type": "big", "icon": "img:Human_physiology/Servier/eye", "text": "La pupila: un agujerito", "cue": "pupila", "sub": "Deja pasar la luz", "sub_cue": "agujerito"},
+    "5": {"type": "compare", "left": {"label": "En la oscuridad", "items": [{"text": "Pupila grande", "icon": "🌑", "cue": "grande"}]}, "right": {"label": "Mucha luz", "items": [{"text": "Pupila chica", "icon": "☀️", "cue": "chiquita"}]}},
+    "7": {"type": "steps", "title": "Dentro de tu ojo", "items": [{"label": "El cristalino enfoca", "icon": "img:Human_physiology/Servier/eye-crosssection", "cue": "cristalino"}, {"label": "Imagen en el fondo", "icon": "img:Human_physiology/Servier/retina", "cue": "fondo"}, {"label": "¡Está al revés!", "icon": "🙃", "cue": "revés"}]},
+    "9": {"type": "big", "icon": "img:Human_physiology/Servier/brain-1", "text": "¡Tu cerebro la voltea!", "cue": "voltea", "sub": "Un mensaje del ojo", "sub_cue": "mensaje"},
+    "10": {"type": "big", "icon": "🚫", "text": "Nunca mires al Sol", "cue": "nunca", "sub": "Demasiado brillante", "sub_cue": "brilla"},
+    "11": {"type": "journey", "title": "El viaje de la luz", "traveler": "✨", "items": [{"icon": "💡", "label": "Entra la luz", "cue": "luz"}, {"icon": "img:Human_physiology/Servier/eye-crosssection", "label": "El cristalino enfoca", "cue": "cristalino"}, {"icon": "🧠", "label": "El cerebro la voltea", "cue": "cerebro"}]}
+  }
+}

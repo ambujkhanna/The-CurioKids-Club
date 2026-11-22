@@ -1,0 +1,160 @@
+{
+  "title_es": "¿Por qué el mar es salado? 🌊",
+  "description_es": "¡La sal del mar viene de las rocas! Leo pregunta y su hermana mayor Mía le explica cómo la lluvia y los ríos llevan la sal hasta el mar, en menos de un minuto.",
+  "cover_text_es": "¿MAR SALADO?",
+  "hook": "¿Por qué el mar es salado?",
+  "tags_es": [
+    "por qué el mar es salado",
+    "el mar para niños",
+    "ciencia para niños"
+  ],
+  "loop_card_es": {
+    "text": "¿Por qué tan salado?",
+    "cue": "próxima",
+    "left": "🌊",
+    "right": "🧂"
+  },
+  "lines": [
+    "Mía, ¿por qué el mar es salado?",
+    "¡Empieza con la lluvia! Cuando la lluvia cae sobre la tierra, poco a poco lava pedacitos de sal de las rocas y del suelo.",
+    "¿Las rocas tienen sal?",
+    "¡Pedacitos, sí! Luego los ríos llevan esa sal hasta el mar.",
+    "Pero el agua del río no sabe salada.",
+    "¡Exacto! Cada río lleva solo un poquito, tan poquito que no se siente. Pero en el mar, se va juntando y juntando.",
+    "¿Y por qué la sal no se va del mar?",
+    "El sol calienta el mar, y el agua sube flotando al aire para formar nubes. Pero la sal no puede subir. ¡Se queda abajo!",
+    "Luego las nubes vuelven a llover, más sal baja, y así da vueltas y vueltas, por muchísimo tiempo.",
+    "¡Por eso la lluvia no es salada, pero el mar sí!",
+    "¡Sí! La lluvia es agua dulce. Y algo de lo salado también sale de grietas muy hondas en el fondo del mar.",
+    "¡La lluvia lava la sal de las rocas, los ríos la llevan, y la sal se queda en el mar!",
+    "¡Eso es! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué el mar es salado?"
+  ],
+  "punch": {
+    "7": "queda"
+  },
+  "boards": {
+    "0": {
+      "type": "title",
+      "left": {
+        "icon": "🌊",
+        "label": "Mar"
+      },
+      "right": {
+        "icon": "🧂",
+        "label": "¿Salado?"
+      },
+      "mid": "?"
+    },
+    "1": {
+      "type": "big",
+      "icon": "🌧️",
+      "text": "La lluvia lava las rocas",
+      "cue": "lluvia",
+      "sub": "Recoge pedacitos de sal",
+      "sub_cue": "sal"
+    },
+    "3": {
+      "type": "big",
+      "icon": "🏞️",
+      "text": "Los ríos la llevan al mar",
+      "cue": "ríos"
+    },
+    "5": {
+      "type": "big",
+      "icon": "🤏",
+      "text": "Muy poquita para sentirla",
+      "cue": "poquito",
+      "sub": "¡Pero se va juntando!",
+      "sub_cue": "juntando"
+    },
+    "7": {
+      "type": "steps",
+      "title": "La sal se queda",
+      "items": [
+        {
+          "icon": "☀️",
+          "label": "El sol calienta",
+          "cue": "sol"
+        },
+        {
+          "icon": "☁️",
+          "label": "El agua sube",
+          "cue": "flotando"
+        },
+        {
+          "icon": "img:Chemistry/OpenClipart/particles-salt-solution",
+          "label": "La sal se queda",
+          "cue": "queda"
+        }
+      ]
+    },
+    "8": {
+      "type": "cycle",
+      "title": "Vuelta y vuelta",
+      "center": "🌊",
+      "items": [
+        {
+          "icon": "☁️",
+          "label": "Nubes",
+          "cue": "nubes"
+        },
+        {
+          "icon": "🌧️",
+          "label": "Llueve",
+          "cue": "llover"
+        },
+        {
+          "icon": "🧂",
+          "label": "Sal al mar",
+          "cue": "sal"
+        },
+        {
+          "icon": "☀️",
+          "label": "El sol calienta",
+          "cue": "vueltas"
+        }
+      ]
+    },
+    "10": {
+      "type": "gallery",
+      "title": "¿Dónde hay sal?",
+      "items": [
+        {
+          "icon": "💧",
+          "label": "Lluvia: dulce",
+          "cue": "lluvia"
+        },
+        {
+          "icon": "🌊",
+          "label": "Mar: salado",
+          "cue": "mar"
+        },
+        {
+          "icon": "🕳️",
+          "label": "Grietas hondas",
+          "cue": "grietas"
+        }
+      ]
+    },
+    "11": {
+      "type": "summary",
+      "rows": [
+        {
+          "icon": "🌧️",
+          "text": "La lluvia lava rocas",
+          "cue": "lluvia"
+        },
+        {
+          "icon": "🏞️",
+          "text": "Los ríos la llevan",
+          "cue": "ríos"
+        },
+        {
+          "icon": "img:Chemistry/OpenClipart/particles-salt-solution",
+          "text": "La sal se queda",
+          "cue": "queda"
+        }
+      ]
+    }
+  }
+}

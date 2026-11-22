@@ -1,0 +1,35 @@
+{
+  "title_es": "¿Por qué hay día y noche? 🌍",
+  "description_es": "¿Por qué hay día y noche? ¡Porque la Tierra gira! Leo pregunta y su hermana mayor Mía se lo explica en menos de un minuto.",
+  "cover_text_es": "¿DÍA? ¿NOCHE?",
+  "hook": "¿Por qué hay día y noche?",
+  "tags_es": ["por qué hay día y noche", "la tierra gira para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Día y noche?", "cue": "próxima", "left": "☀️", "right": "🌙"},
+  "lines": [
+    "Mía, ¿por qué hay día y noche?",
+    "¡Porque la Tierra gira, como un trompo gigante!",
+    "¡Pero yo no siento que gire!",
+    "Es porque gira suave y parejito, y todo gira junto con ella. ¡Tú, tu casa, hasta el aire!",
+    "¿Y cómo hace la noche al girar?",
+    "El Sol solo puede iluminar un lado de la Tierra a la vez. El lado que mira al Sol tiene día. El lado que está de espaldas tiene noche.",
+    "¿Entonces cuando aquí es de noche, en otro lugar es de día?",
+    "¡Sí! Mientras tú duermes, los niños del otro lado del mundo se están despertando.",
+    "¿Cuánto tarda una vuelta?",
+    "Una vuelta completa tarda unas veinticuatro horas. ¡Eso es un día y una noche enteros!",
+    "¡Pero yo veo que el Sol se mueve por el cielo!",
+    "Parece que el Sol sale y se mete. ¡Pero en realidad, es nuestra Tierra que va girando!",
+    "¡Una Tierra que gira nos da el día y la noche!",
+    "¡Así es! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué hay día y noche?"
+  ],
+  "punch": {"1": "gira", "7": "despertando"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "☀️", "label": "Día"}, "right": {"icon": "🌙", "label": "Noche"}, "mid": "?"},
+    "1": {"type": "big", "icon": "🌍", "text": "¡La Tierra gira!", "cue": "gira", "sub": "Como un trompo", "sub_cue": "trompo"},
+    "3": {"type": "big", "icon": "🏠", "text": "Todos giramos juntos", "cue": "todo", "sub": "Suave y parejito", "sub_cue": "suave"},
+    "5": {"type": "compare", "left": {"label": "Mira al Sol", "items": [{"text": "Día", "icon": "☀️", "cue": "día"}]}, "right": {"label": "De espaldas", "items": [{"text": "Noche", "icon": "🌙", "cue": "noche"}]}},
+    "7": {"type": "big", "icon": "🌏", "text": "Otro lado: ¡de día!", "cue": "otro", "sub": "Niños despertando", "sub_cue": "despertando"},
+    "9": {"type": "big", "icon": "🕛", "text": "Una vuelta = un día", "cue": "vuelta", "sub": "Unas 24 horas", "sub_cue": "veinticuatro"},
+    "11": {"type": "steps", "title": "Lo que vemos", "items": [{"label": "El Sol parece salir", "icon": "🌅", "cue": "sale"}, {"label": "El Sol parece meterse", "icon": "🌇", "cue": "mete"}, {"label": "¡La Tierra gira!", "icon": "🌍", "cue": "girando"}]},
+    "12": {"type": "summary", "rows": [{"text": "La Tierra gira", "icon": "🌍", "cue": "gira"}, {"text": "Lado del Sol: día", "icon": "☀️", "cue": "día"}, {"text": "Otro lado: noche", "icon": "🌙", "cue": "noche"}]}
+  }
+}

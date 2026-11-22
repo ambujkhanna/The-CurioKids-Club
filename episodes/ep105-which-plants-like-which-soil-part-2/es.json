@@ -1,0 +1,36 @@
+{
+  "title_es": "¿Qué planta prefiere cada suelo? 🌵 (Parte 2)",
+  "description_es": "¿Por qué al cactus le encanta la arena y al arroz los campos mojados? Leo pregunta y su hermana mayor Mía le explica qué plantas y árboles crecen mejor en cada suelo, en menos de un minuto.",
+  "cover_text_es": "¡PAREJA PERFECTA!",
+  "hook": "¿Por qué cada planta quiere un suelo distinto?",
+  "tags_es": ["tipos de suelo para niños", "plantas y suelos para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Qué suelo para cada planta?", "cue": "próxima", "left": "🌵", "right": "🌾"},
+  "lines": [
+    "Mía, ¿por qué las plantas crecen en suelos diferentes?",
+    "¡Repasemos! El suelo arenoso deja pasar el agua rápido, el arcilloso la guarda, y la marga es una buena mezcla.",
+    "¿Y a quién le gusta el suelo arenoso?",
+    "¡A los cactus! Vienen de lugares secos. En el suelo arenoso, la lluvia se escurre rápido, así que sus raíces quedan secas.",
+    "¿Y a quién le gusta el suelo arcilloso?",
+    "¡Al arroz le encanta el agua! Los agricultores lo siembran en campos inundados, y el suelo arcilloso ayuda a guardar el agua.",
+    "¿Y las verduras?",
+    "Muchas verduras crecen mejor en la marga. Guarda algo de agua, deja ir la que sobra y tiene mucho humus.",
+    "¿Los árboles también eligen su suelo?",
+    "¡Más o menos! Los pinos pueden crecer en suelo arenoso. Los manglares crecen en lodo mojado y salado junto al mar.",
+    "¿Y cómo ayudan las lombrices a las plantas?",
+    "Las lombrices se comen las hojas viejas y las convierten en tierra rica. ¡A las plantas les encanta!",
+    "¡Cactus en arena, arroz en arcilla mojada y verduras en marga!",
+    "¿Qué descubrimos ahora? ¡Pídele a un adulto que deje un tema en los comentarios!",
+    "¡Pareja perfecta! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué las plantas crecen en suelos diferentes?"
+  ],
+  "punch": {"3": "cactus", "9": "manglares"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🌵", "label": "Cactus"}, "right": {"icon": "🌾", "label": "Arroz"}, "mid": "?"},
+    "1": {"type": "summary", "rows": [{"text": "Arenoso: drena rápido", "icon": "🏖️", "cue": "arenoso"}, {"text": "Arcilloso: guarda agua", "icon": "💧", "cue": "arcilloso"}, {"text": "Marga: una mezcla", "icon": "🌻", "cue": "marga"}]},
+    "3": {"type": "flow", "title": "Lluvia en la arena", "packet": "💧", "items": [{"icon": "🌧️", "label": "Lluvia", "cue": "lluvia"}, {"icon": "🏖️", "label": "Suelo arenoso", "cue": "arenoso"}, {"icon": "⬇️", "label": "Se escurre", "cue": "escurre"}]},
+    "5": {"type": "big", "icon": "🌾", "text": "Arroz en campos mojados", "cue": "arroz", "sub": "La arcilla guarda agua", "sub_cue": "arcilloso"},
+    "7": {"type": "checklist", "title": "La marga tiene", "icon": "🥕", "items": [{"text": "Algo de agua", "icon": "💧", "cue": "guarda", "ok": true}, {"text": "Drena lo que sobra", "icon": "⬇️", "cue": "sobra", "ok": true}, {"text": "Mucho humus", "icon": "🍂", "cue": "humus", "ok": true}]},
+    "9": {"type": "compare", "left": {"label": "Arenoso", "items": [{"text": "Pinos", "icon": "🌲", "cue": "pinos"}]}, "right": {"label": "Lodo salado", "items": [{"text": "Manglares", "icon": "🌊", "cue": "manglares"}]}},
+    "11": {"type": "transform", "title": "Magia de lombriz", "from": {"icon": "🍂", "label": "Hojas viejas", "cue": "hojas"}, "to": {"icon": "🌱", "label": "Tierra rica", "cue": "rica"}},
+    "12": {"type": "summary", "rows": [{"text": "Cactus: arena", "icon": "🌵", "cue": "cactus"}, {"text": "Arroz: arcilla mojada", "icon": "🌾", "cue": "arroz"}, {"text": "Verduras: marga", "icon": "🥕", "cue": "verduras"}]}
+  }
+}

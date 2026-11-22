@@ -1,0 +1,37 @@
+{
+  "title_es": "¿Por qué la Luna cambia de forma? 🌙",
+  "description_es": "Un secreto: ¡la Luna en realidad nunca cambia de forma! Leo pregunta y su hermana mayor Mía le explica las fases de la Luna, en menos de un minuto.",
+  "cover_text_es": "¿FORMAS DE LUNA?",
+  "hook": "¿Por qué la Luna cambia de forma?",
+  "tags_es": ["fases de la luna para niños", "por qué cambia la luna", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Por qué cambia la Luna?", "cue": "próxima", "left": "🌕", "right": "🌙"},
+  "lines": [
+    "Mía, ¿por qué la Luna cambia de forma?",
+    "Te cuento un secreto: la Luna en realidad nunca cambia de forma. ¡Siempre es una gran bola redonda!",
+    "¿Entonces por qué se ve diferente?",
+    "La Luna no tiene luz propia. Brilla porque la luz del sol la ilumina, como una linterna sobre una pelota.",
+    "El Sol siempre ilumina la mitad de la Luna. La otra mitad está oscura.",
+    "¿Y por qué no siempre vemos la mitad brillante?",
+    "Porque la Luna viaja alrededor de la Tierra. Mientras se mueve, vemos más o menos de su lado brillante.",
+    "Primero vemos una rebanadita delgada, luego la mitad, y luego una Luna llena y redonda. ¡Y después se achica otra vez!",
+    "¿Y cuánto tarda todo eso?",
+    "¡Más o menos un mes, de una Luna llena a la otra! Por eso, hace mucho, la gente usaba la Luna como calendario.",
+    "Espera, ¿no es la sombra de la Tierra tapando la Luna?",
+    "¡No! Es solo cuánto de su lado soleado podemos ver. La sombra de la Tierra solo tapa la Luna en un eclipse.",
+    "¡Entonces la Luna sigue redonda, y solo vemos más o menos de su lado soleado!",
+    "¡Exacto! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué la Luna cambia de forma?"
+  ],
+  "punch": {"1": "nunca", "9": "mes"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🌕", "label": "Redonda"}, "right": {"icon": "🌙", "label": "¿Flaquita?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "🌕", "text": "Siempre una bola redonda", "cue": "redonda", "sub": "¡Nunca cambia!", "sub_cue": "nunca"},
+    "3": {"type": "big", "icon": "☀️", "text": "La luz del sol la ilumina", "cue": "ilumina", "sub": "Como una linterna", "sub_cue": "linterna"},
+    "4": {"type": "compare", "left": {"label": "Mitad soleada", "items": [{"text": "Iluminada", "icon": "☀️", "cue": "ilumina"}]}, "right": {"label": "Otra mitad", "items": [{"text": "Oscura", "icon": "🌑", "cue": "oscura"}]}},
+    "6": {"type": "orbit", "title": "La Luna da vueltas", "center": "🌍", "items": [{"icon": "🌙", "label": "Luna", "cue": "luna"}]},
+    "7": {"type": "cycle", "title": "Formas de la Luna", "center": "🌍", "items": [{"icon": "🌒", "label": "Rebanadita", "cue": "rebanadita"}, {"icon": "🌓", "label": "Mitad", "cue": "mitad"}, {"icon": "🌕", "label": "Luna llena", "cue": "llena"}, {"icon": "🌘", "label": "Se achica", "cue": "achica"}]},
+    "9": {"type": "big", "icon": "📅", "text": "Más o menos un mes", "cue": "mes", "sub": "¡Un calendario en el cielo!", "sub_cue": "calendario"},
+    "10": {"type": "big", "icon": "🤔", "text": "¿La sombra de la Tierra?", "cue": "sombra"},
+    "11": {"type": "checklist", "title": "Las formas son...", "icon": "🌙", "items": [{"text": "Sombra de la Tierra", "icon": "🌑", "cue": "sombra", "ok": false}, {"text": "Cuánto lado soleado", "icon": "☀️", "cue": "soleado", "ok": true}]},
+    "12": {"type": "summary", "rows": [{"text": "La Luna sigue redonda", "icon": "🌕", "cue": "redonda"}, {"text": "Mitad siempre soleada", "icon": "☀️", "cue": "soleado"}, {"text": "Vemos más o menos", "icon": "👀", "cue": "más"}]}
+  }
+}

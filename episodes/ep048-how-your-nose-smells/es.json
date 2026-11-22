@@ -1,0 +1,34 @@
+{
+  "title_es": "¿Cómo hace tu nariz para oler las cosas? 👃",
+  "description_es": "¡Los olores están hechos de pedacitos chiquititos que flotan! Leo pregunta y su hermana mayor Mía le explica cómo tu nariz y tu cerebro trabajan juntos para oler, en menos de un minuto.",
+  "cover_text_es": "¡SNIF SNIF!",
+  "hook": "¿Cómo hace tu nariz para oler las cosas?",
+  "tags_es": ["cómo funciona la nariz para niños", "los sentidos para niños", "el cuerpo humano para niños"],
+  "loop_card_es": {"text": "¿Cómo olemos?", "cue": "próxima", "left": "img:Human_physiology/Servier/nasal-cavity", "right": "🌸"},
+  "lines": [
+    "Mía, ¿cómo hace mi nariz para oler las cosas?",
+    "Todo lo que tiene olor suelta pedacitos chiquititos llamados moléculas. ¡Flotan por el aire, y son demasiado pequeños para verlos!",
+    "¿O sea que cuando huelo galletas, tengo pedacitos de galleta en la nariz?",
+    "¡Sí! Cuando respiras, esos pedacitos suben rápido por tu nariz hasta un parche especial, muy arriba por dentro.",
+    "Ese parche tiene muchas células del olfato. Cada tipo atrapa olores distintos, un poco como llaves que entran en cerraduras.",
+    "¿Y luego qué pasa?",
+    "Las células del olfato mandan un mensaje a tu cerebro, y tu cerebro lo descifra y dice: \"¡Mmm, galletas!\"",
+    "¿Por qué olfateo cuando quiero oler algo mejor?",
+    "Olfatear mete más aire, así que llegan más pedacitos de olor al parche. ¡Gran olfateada, gran olor!",
+    "¿Mi nariz también me ayuda a saborear?",
+    "¡Claro que sí! El olfato y el gusto trabajan en equipo. Por eso la comida sabe a nada cuando tienes la nariz tapada.",
+    "Pedacitos de olor, células del olfato y mi cerebro. ¡Las narices son geniales!",
+    "¡Claro que sí! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿cómo hace tu nariz para oler las cosas?"
+  ],
+  "punch": {"2": "galleta", "8": "olfatear"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "img:Human_physiology/Servier/nasal-cavity", "label": "Nariz"}, "right": {"icon": "🌸", "label": "¿Oler?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "🌸", "text": "Moléculas que flotan", "cue": "moléculas", "sub": "¡Muy pequeñas para verlas!", "sub_cue": "pequeños"},
+    "3": {"type": "big", "icon": "img:Human_physiology/Servier/nasal-cavity", "text": "Al parche del olfato", "cue": "parche", "sub": "Muy arriba en tu nariz", "sub_cue": "arriba"},
+    "4": {"type": "big", "icon": "img:Human_physiology/Servier/olfactory-bulb", "text": "Muchas células del olfato", "cue": "llaves", "sub": "Atrapan los olores", "sub_cue": "células"},
+    "6": {"type": "journey", "title": "Mensaje de olor", "traveler": "🍪", "items": [{"icon": "👃", "label": "Células del olfato", "cue": "células"}, {"icon": "img:Human_physiology/Servier/brain-1", "label": "Cerebro", "cue": "cerebro"}, {"icon": "😋", "label": "¡Mmm, galletas!", "cue": "galletas"}]},
+    "8": {"type": "big", "icon": "💨", "text": "Olfatear = más olor", "cue": "olfatear", "sub": "¡Gran olfateada, gran olor!", "sub_cue": "gran"},
+    "10": {"type": "big", "icon": "🤝", "text": "Olfato + gusto = equipo", "cue": "equipo", "sub": "Nariz tapada, sin sabor", "sub_cue": "tapada"},
+    "11": {"type": "summary", "rows": [{"icon": "🌸", "text": "Pedacitos de olor", "cue": "pedacitos"}, {"icon": "👃", "text": "Células del olfato", "cue": "células"}, {"icon": "🧠", "text": "Tu cerebro", "cue": "cerebro"}]}
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "title_es": "¿Por qué los pingüinos no pueden volar? 🐧",
+  "description_es": "¡Los pingüinos SÍ vuelan... bajo el agua! Leo pregunta y su hermana mayor Mía le explica sus alas de aleta y sus huesos pesados, en menos de un minuto.",
+  "cover_text_es": "¿NO VUELAN?",
+  "hook": "¿Por qué los pingüinos no pueden volar?",
+  "tags_es": ["por qué los pingüinos no vuelan", "pingüinos para niños", "animales para niños"],
+  "loop_card_es": {"text": "¿Por qué no vuelan?", "cue": "próxima", "left": "🐧", "right": "🌊"},
+  "lines": [
+    "Mía, ¿por qué los pingüinos no pueden volar?",
+    "¡Los pingüinos sí vuelan... bajo el agua! Sus alas son aletas duras y planas, perfectas para ir rapidísimo por el mar.",
+    "¿Y por qué las aletas no pueden aletear en el aire?",
+    "Para volar en el aire se necesitan alas grandes y ligeras. Las alas del pingüino son cortas y fuertes, geniales para empujar el agua, pero muy pequeñas para levantarlo.",
+    "¿Los pingüinos son pesados?",
+    "¡Para su tamaño, sí! Tienen huesos macizos y pesados, y casi todas las aves que vuelan los tienen ligeros. Los huesos pesados los ayudan a bucear hondo.",
+    "¿Los pingüinos volaron alguna vez?",
+    "Los científicos creen que los tatarabuelos de los pingüinos, hace muchísimo tiempo, podían volar. Con el tiempo, sus alas cambiaron para nadar mejor.",
+    "¡Entonces cambiaron volar por nadar!",
+    "¡Sí! Y nadan increíble. Pueden ir como flecha, girar, ¡y hasta saltar fuera del agua como los delfines!",
+    "En tierra, caminan como patitos, dan saltitos, ¡o se deslizan de panza sobre el hielo!",
+    "Alas de aleta, huesos pesados y súper natación. ¡Los pingüinos son geniales!",
+    "¡De verdad que sí! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué los pingüinos no pueden volar?"
+  ],
+  "punch": {"1": "agua", "9": "saltar"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🐧", "label": "Pingüino"}, "right": {"icon": "🐦", "label": "¿Volar?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "🌊", "text": "¡Vuelan bajo el agua!", "cue": "agua", "sub": "Alas = aletas", "sub_cue": "aletas"},
+    "3": {"type": "compare", "left": {"label": "Ave voladora", "items": [{"icon": "🪶", "text": "Alas grandes", "cue": "grandes"}, {"icon": "🎈", "text": "Ligeras", "cue": "ligeras"}]}, "right": {"label": "Pingüino", "items": [{"icon": "💪", "text": "Cortas y fuertes", "cue": "cortas"}, {"icon": "🌊", "text": "Empujan agua", "cue": "empujar"}]}},
+    "5": {"type": "big", "icon": "🦴", "text": "Huesos macizos y pesados", "cue": "macizos", "sub": "Para bucear hondo", "sub_cue": "bucear"},
+    "7": {"type": "big", "icon": "🕰️", "text": "Hace mucho, volaban", "cue": "muchísimo", "sub": "Alas para nadar", "sub_cue": "nadar"},
+    "9": {"type": "gallery", "title": "Súper nadadores", "items": [{"icon": "🏊", "label": "Como flecha", "cue": "flecha"}, {"icon": "🌀", "label": "Girar", "cue": "girar"}, {"icon": "🐬", "label": "Saltar", "cue": "saltar"}]},
+    "10": {"type": "gallery", "title": "En tierra", "items": [{"icon": "🐧", "label": "Caminar", "cue": "caminan"}, {"icon": "⬆️", "label": "Saltitos", "cue": "saltitos"}, {"icon": "🛷", "label": "Deslizarse", "cue": "deslizan"}]},
+    "11": {"type": "summary", "rows": [{"icon": "🌊", "text": "Alas de aleta", "cue": "aleta"}, {"icon": "🦴", "text": "Huesos pesados", "cue": "pesados"}, {"icon": "🏊", "text": "Súper nadadores", "cue": "natación"}]}
+  }
+}

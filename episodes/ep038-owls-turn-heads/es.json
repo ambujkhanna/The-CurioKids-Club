@@ -1,0 +1,35 @@
+{
+  "title_es": "¿Cómo giran tanto la cabeza los búhos? 🦉",
+  "description_es": "¿Cómo pueden los búhos girar tanto la cabeza? ¡Ojos con forma de tubo y un cuello súper flexible! Leo pregunta y su hermana mayor Mía se lo explica en menos de un minuto.",
+  "cover_text_es": "¡A GIRAR!",
+  "hook": "¿Cómo giran tanto la cabeza los búhos?",
+  "tags_es": ["cómo giran la cabeza los búhos", "búhos para niños", "animales para niños"],
+  "loop_card_es": {"text": "¿Cómo giran tanto los búhos?", "cue": "próxima", "left": "🦉", "right": "🔄"},
+  "lines": [
+    "Mía, ¿cómo pueden los búhos girar tanto la cabeza?",
+    "¡Los búhos pueden girar la cabeza casi tres cuartos de vuelta! Eso es mucho más de lo que puedes tú.",
+    "¿Y para qué lo necesitan?",
+    "Los ojos del búho tienen forma de tubo, así que no los pueden mover como nosotros. En cambio, el búho gira toda la cabeza.",
+    "¿Pero cómo hace eso el cuello?",
+    "El cuello del búho tiene el doble de huesos que el tuyo. ¡Más huesitos hacen un cuello más flexible y que se tuerce más!",
+    "¿Y no le duele torcerse tanto?",
+    "¡No! Unos vasos sanguíneos especiales en su cuello mantienen la sangre llegando a su cerebro, aunque se tuerza.",
+    "¿Puedo intentarlo?",
+    "¡Con cuidado! Nuestro cuello no está hecho así. Nosotros movemos los ojos, y los búhos mueven la cabeza.",
+    "¿Qué más tienen de genial los búhos?",
+    "¡Su súper oído! Muchos búhos pueden encontrar un ratón en la oscuridad solo escuchando.",
+    "Ojos de tubo, huesos de más en el cuello y súper oído. ¡Los búhos son geniales!",
+    "¡Hurra por los búhos! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿cómo pueden los búhos girar tanto la cabeza?"
+  ],
+  "punch": {"3": "tubo"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🦉", "label": "Búho"}, "right": {"icon": "🔄", "label": "¿Girar?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "🦉", "text": "¡Tres cuartos de vuelta!", "cue": "tres", "sub": "Mucho más que tú", "sub_cue": "más"},
+    "3": {"type": "big", "icon": "👀", "text": "Ojos que no se mueven", "cue": "tubo", "sub": "Por eso gira la cabeza", "sub_cue": "gira"},
+    "5": {"type": "big", "icon": "🦴", "text": "El doble de huesos", "cue": "doble", "sub": "Se dobla y se tuerce", "sub_cue": "flexible"},
+    "7": {"type": "big", "icon": "img:Human_physiology/Servier/capillaries", "text": "La sangre sigue fluyendo", "cue": "sangre", "sub": "¡Aunque se tuerza!", "sub_cue": "tuerza"},
+    "9": {"type": "compare", "left": {"label": "Tú", "items": [{"text": "Mueves los ojos", "icon": "👀", "cue": "ojos"}, {"text": "Giros suaves", "icon": "🙂", "cue": "cuidado"}]}, "right": {"label": "Búho", "items": [{"text": "Gira la cabeza", "icon": "🦉", "cue": "cabeza"}]}},
+    "11": {"type": "big", "icon": "👂", "text": "Súper oído", "cue": "oído", "sub": "Caza en la oscuridad", "sub_cue": "oscuridad"},
+    "12": {"type": "summary", "rows": [{"text": "Ojos de tubo", "icon": "👀", "cue": "tubo"}, {"text": "Más huesos en el cuello", "icon": "🦴", "cue": "huesos"}, {"text": "Súper oído", "icon": "👂", "cue": "súper"}]}
+  }
+}

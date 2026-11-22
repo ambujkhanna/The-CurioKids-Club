@@ -1,0 +1,35 @@
+{
+  "title_es": "¿Por qué las burbujas son siempre redondas? 🫧",
+  "description_es": "¡Hasta una varita cuadrada hace burbujas redondas! Leo pregunta y Papá le explica la piel elástica de jabón que aprieta las burbujas hasta volverlas bolitas, en menos de un minuto.",
+  "cover_text_es": "¡¿REDONDAS?!",
+  "hook": "¿Por qué las burbujas son siempre redondas?",
+  "tags_es": ["por qué las burbujas son redondas", "experimentos con burbujas para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Por qué redondas?", "cue": "próxima", "left": "🫧", "right": "⚪"},
+  "lines": [
+    "Papá, ¿por qué las burbujas siempre son redondas?",
+    "Una burbuja es un poquito de aire envuelto en una piel súper delgada de agua con jabón.",
+    "¿Una piel? ¿Como un globo?",
+    "¡Algo así! Esa piel de jabón siempre está jalando fuerte, como un abrazo elástico que aprieta el aire de adentro.",
+    "¿Pero por qué eso hace una forma de bola?",
+    "Una bola guarda el aire con la piel más pequeña. ¡Así que cuando la piel aprieta fuerte, se forma una bola!",
+    "¿Y si la soplo con una varita cuadrada?",
+    "Aunque salga de una varita cuadrada, ¡se vuelve redonda en cuanto flota libre!",
+    "¿Por qué las burbujas tienen colores de arcoíris?",
+    "La luz rebota por dentro y por fuera de esa piel delgadita, y hace remolinos de colores de arcoíris.",
+    "¿Y por qué se revientan?",
+    "El agua de la piel se va secando poco a poco. La piel se pone más y más delgada hasta que... ¡pop!",
+    "¡Entonces la piel de la burbuja aprieta fuerte, y por eso es redonda!",
+    "¡Eso es! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué las burbujas siempre son redondas?"
+  ],
+  "punch": {"5": "bola", "11": "pop"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🫧", "label": "Burbujas"}, "right": {"icon": "⚪", "label": "¿Redondas?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "🫧", "text": "Aire en piel de jabón", "cue": "piel", "sub": "¡Súper delgada!", "sub_cue": "delgada"},
+    "3": {"type": "big", "icon": "🫧", "text": "La piel jala fuerte", "cue": "jalando", "sub": "Un apretón elástico", "sub_cue": "aprieta"},
+    "5": {"type": "big", "icon": "🔵", "text": "Bola = piel más pequeña", "cue": "pequeña", "sub": "Apretada al máximo", "sub_cue": "aprieta"},
+    "7": {"type": "big", "icon": "🟦", "text": "¿Una varita cuadrada?", "cue": "cuadrada", "sub": "¡Igual sale redonda!", "sub_cue": "redonda"},
+    "9": {"type": "big", "icon": "🌈", "text": "La luz hace los colores", "cue": "luz", "sub": "¡Remolinos de arcoíris!", "sub_cue": "remolinos"},
+    "11": {"type": "big", "icon": "💥", "text": "¡Pop!", "cue": "pop", "sub": "La piel queda muy delgada", "sub_cue": "delgada"},
+    "12": {"type": "summary", "rows": [{"icon": "🧼", "text": "Una piel de jabón", "cue": "piel"}, {"icon": "🫧", "text": "Aprieta fuerte", "cue": "aprieta"}, {"icon": "⚪", "text": "Forma de bola", "cue": "redonda"}]}
+  }
+}

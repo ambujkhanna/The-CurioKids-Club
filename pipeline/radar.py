@@ -188,6 +188,96 @@ def viewer_requests(yt, limit_videos=30):
 
 
 # ------------------------------------------------------------------ report
+# ------------------------------------------------------------------ what is trending right now (owner, 2026-11-22)
+TREND_GEOS = [g.strip().upper() for g in os.environ.get("RADAR_GEOS", "IN,US,MX").split(",") if g.strip()]
+# extra subject words that show up in news trends (kids: sky events, weather, seasons, festivals; Spanish for Mexico)
+TREND_TOPIC = set(("""eclipse comet comets meteor asteroid aurora supermoon moon nasa isro spacex launch hurricane cyclone storm
+monsoon tornado earthquake volcano heatwave fog smog snowfall flood tsunami diwali holi christmas halloween fireworks
+dinosaur fossil zoo panda tiger pollution climate
+eclipse cometa luna sol lluvia tormenta huracán sismo terremoto volcán animales animal planeta estrellas espacio dinosaurio
+navidad nieve calor frío ciencia""").split()) if KIDS else set(
+"""ai chatgpt gemini claude copilot openai llm gpt nvidia deepseek grok perplexity sora midjourney apple intelligence
+robot robots deepfake chip chips iphone android google microsoft meta ia inteligencia artificial""".split())
+
+
+def _words(t):
+    """Words of a text plus simple singulars (volcanoes -> volcano, bees -> bee), so plurals match the topic lists."""
+    w = set(re.findall(r"[a-záéíóúñü0-9]+", t.lower()))
+    return w | {x[:-2] for x in w if x.endswith("es") and len(x) > 4} | {x[:-1] for x in w if x.endswith("s") and len(x) > 3}
+
+
+# words too common in news/sport/celebrity names to mean a science topic on their own ("Minnesota Wild", "The Sun", "Star Wars")
+EXTRA_SUBJECTS = set("""octopus jellyfish dolphin turtle crab koala kangaroo cheetah gorilla monkey parrot eagle bat bats wolf fox bear
+camel zebra giraffe hippo crocodile shark coral microscope telescope chemistry physics biology planet atom atoms cell cells
+bacteria virus vaccine dna""".split()) if KIDS else set()
+GENERIC = set("""day night light star stars sun fire water air food spring summer winter autumn color colors colour colours energy
+machine machines sound rock rocks model models data agent agents eye eyes heart brain body sea earth day sky bird birds
+animal animals fish tree trees snow ice wind rain cloud clouds seasons science sleep dream dreams""".split())
+
+
+def _fits(text, loose=False):
+    """Only the trending search itself counts (headlines mention too many everyday words), and it needs a real subject word.
+    loose=True (YouTube charts, already limited to Education / Science / Animals): everyday science words count too."""
+    w = _words(text)
+    return bool(w & ((TOPIC if loose else TOPIC - GENERIC) | TREND_TOPIC | EXTRA_SUBJECTS)) and not (w & BLOCK) and not (w & NOISE)
+
+
+def google_trends(geos=None):
+    """Today's trending Google searches per country (public RSS, no key). Returns [(geo, term, traffic, headline, fits)]."""
+    import xml.etree.ElementTree as ET
+    ns = {"ht": "https://trends.google.com/trending/rss"}
+    out = []
+    for g in geos or TREND_GEOS:
+        try:
+            req = urllib.request.Request(f"https://trends.google.com/trending/rss?geo={g}", headers=UA)
+            root = ET.fromstring(urllib.request.urlopen(req, timeout=20).read())
+        except Exception as e:
+            print(f"note: Google Trends {g} unavailable:", str(e)[:80]); continue
+        for it in root.iter("item"):
+            term = (it.findtext("title") or "").strip()
+            traffic = (it.findtext("ht:approx_traffic", namespaces=ns) or "").strip()
+            news = [n.findtext("ht:news_item_title", namespaces=ns) or "" for n in it.findall("ht:news_item", ns)]
+            head = next((h for h in news if h), "")
+            out.append((g, term, traffic, head, _fits(term)))
+    return out
+
+
+def trend_angles(term):
+    """Questions kids/viewers actually search about a trending subject (YouTube suggestions), e.g. 'why does an eclipse happen'."""
+    qs = [f"why does {term}", f"how does {term}", f"what is {term}"] + ([f"{term} for kids"] if KIDS else [f"{term} explained"])
+    seen = []
+    for q in qs:
+        for x in suggestions(q)[:4]:
+            x = _clean(x)
+            if x and x not in seen and not (set(x.split()) & BLOCK) and len(x.split()) >= 3: seen.append(x)
+        time.sleep(0.15)
+    return seen[:4]
+
+
+TREND_CATS = {"27": "Education", "28": "Science & Technology", "15": "Pets & Animals"} if KIDS else {"28": "Science & Technology", "27": "Education"}
+
+
+def youtube_trending(yt, geos=None):
+    """YouTube's 'most popular' videos per country in our categories (Data API, 1 quota unit per call).
+    Returns [(geo, category, title, views, is_short, fits)] - for ideas only; never copy titles or content."""
+    out = []
+    if not yt: return out
+    for g in geos or TREND_GEOS:
+        for cid, cname in TREND_CATS.items():
+            try:
+                r = yt.videos().list(part="snippet,statistics,contentDetails", chart="mostPopular", regionCode=g,
+                                     videoCategoryId=cid, maxResults=25).execute()
+            except Exception as e:  # some countries have no chart for some categories
+                print(f"note: YouTube trending {g}/{cname}:", str(e)[:80]); continue
+            for v in r.get("items", []):
+                t = v["snippet"]["title"]; views = int(v.get("statistics", {}).get("viewCount", 0) or 0)
+                d = v.get("contentDetails", {}).get("duration", "")
+                m_ = re.fullmatch(r"PT(?:(\d+)M)?(?:(\d+)S)?", d)
+                short = bool(m_) and int(m_.group(1) or 0) * 60 + int(m_.group(2) or 0) <= 180
+                out.append((g, cname, t, views, short, _fits(t, loose=True)))
+    return out
+
+
 def report():
     name = "The CurioKids Club" if KIDS else "AInation Studio"
     titles = covered_titles()
@@ -225,6 +315,7 @@ def report():
     if terms:
         md += ["", "## Searches that already bring viewers to us (last 90 days)", ""] + [f"- {t} ({n} views)" for t, n in terms[:15]]
         md += ["", "Make more around these: they already work for us."]
+    md += trends_md(yt, titles)
     reqs = viewer_requests(yt)
     if reqs:
         md += ["", "## Viewers asked (from comments)", ""] + [f"- [ ] {t}" for t in reqs]
@@ -234,12 +325,95 @@ def report():
     return "\n".join(md)
 
 
-def open_issue(body):
+def trends_md(yt, titles):
+    """Report sections: Google Trends + YouTube trending, only what fits the channel (kids: science/nature, never BLOCK words)."""
+    f = lambda n: f"{n/1e6:.1f}M" if n >= 1e6 else f"{n/1e3:.0f}k" if n >= 1e3 else str(n)
+    md = []
+    gt = google_trends()
+    fit = [x for x in gt if x[4]]
+    md += ["", "## Trending on Google right now (" + ", ".join(TREND_GEOS) + ")", "",
+           "Today's fastest-rising Google searches that fit this channel, with the questions people search about them on YouTube. "
+           "Trends move fast: a Short made within 1-3 days rides the wave.", ""]
+    if fit:
+        md += ["| | Country | Trending search | Searches | Headline | Questions people ask |", "|---|---|---|---|---|---|"]
+        seen = set()
+        for g, term, traffic, head, _ in fit[:12]:
+            if term.lower() in seen: continue
+            seen.add(term.lower())
+            ang = "; ".join(trend_angles(term)) or "–"
+            md.append(f"| - [ ] | {g} | **{term}** | {traffic or '–'} | {head[:90].replace('|', '/')} | {ang} |")
+    else:
+        md.append(f"_No trending search fits the channel today ({len(gt)} checked). Normal: most trends are news, sport and celebrities._")
+    md += ["", "## Trending on YouTube (most popular in " + ", ".join(TREND_CATS.values()) + ")", ""]
+    if not yt:
+        md.append("_Skipped: add the free `YT_API_KEY` secret to see YouTube's trending charts._")
+        return md
+    yv = youtube_trending(yt)
+    keep = [x for x in yv if x[5] or not KIDS]  # kids: only kid-suitable subjects
+    keep.sort(key=lambda x: (not x[4], -x[3]))  # Shorts first, then by views
+    if keep:
+        md += ["Ideas only: look at the subject, never copy titles or content.", "",
+               "| Country | Category | Video title | Views | Short? | Already covered? |", "|---|---|---|---|---|---|"]
+        seen = set()
+        for g, cat, t, views, short, _ in keep[:20]:
+            if t in seen: continue
+            seen.add(t)
+            md.append(f"| {g} | {cat} | {t[:80].replace('|', '/')} | {f(views)} | {'yes' if short else ''} | {'yes' if _covered(_clean(t), titles) else ''} |")
+    else:
+        md.append(f"_Nothing in today's charts fits the channel ({len(yv)} videos checked)._")
+    return md
+
+
+def recent_alerts(days=7):
+    """Text of trend-alert issues from the last `days` days (so the daily check never alerts the same trend twice)."""
+    repo, tok = os.environ.get("GITHUB_REPOSITORY"), os.environ.get("GITHUB_TOKEN")
+    if not (repo and tok): return ""
+    since = (dt.datetime.utcnow() - dt.timedelta(days=days)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    req = urllib.request.Request(f"https://api.github.com/repos/{repo}/issues?labels=trend-alert&state=all&since={since}&per_page=50",
+                                 headers={"Authorization": f"Bearer {tok}", "Accept": "application/vnd.github+json", **UA})
+    try:
+        with urllib.request.urlopen(req, timeout=20) as r:
+            return "\n".join((i.get("title") or "") + "\n" + (i.get("body") or "") for i in json.loads(r.read())).lower()
+    except Exception as e:
+        print("note: could not read earlier trend alerts:", str(e)[:80]); return ""
+
+
+def trend_alert():
+    """Daily quick check (RADAR_TRENDS): a GitHub issue only when a NEW trend fits the channel. Returns the body or None."""
+    name = "The CurioKids Club" if KIDS else "AInation Studio"
+    old = recent_alerts()
+    gt = [x for x in google_trends() if x[4] and x[1].lower() not in old]
+    yt = youtube(); titles = covered_titles(); yv, seen_t = [], set()
+    for x in (youtube_trending(yt) if yt else []):  # each video once, only fitting, not already covered by us, not alerted before
+        if x[5] and x[2] not in seen_t and x[2].lower() not in old and not _covered(_clean(x[2]), titles):
+            seen_t.add(x[2]); yv.append(x)
+    yv.sort(key=lambda x: (not x[4], -x[3]))
+    if not gt and not yv:
+        print("no new trend fits the channel today"); return None
+    terms = []
+    for x in gt:
+        if x[1] not in terms: terms.append(x[1])
+    md = [f"# Trend alert {dt.date.today().isoformat()}: {', '.join(terms[:3]) or 'YouTube trending'} ({name})", "",
+          "A trending subject fits the channel. A Short made in the next 1-3 days can ride the wave: "
+          "write the script (or paste it in Run workflow → script) and publish with `Next video, publish now`.", ""]
+    if gt:
+        md += ["| | Country | Trending search | Searches | Headline | Questions people ask |", "|---|---|---|---|---|---|"]
+        for g, term, traffic, head, _ in gt[:8]:
+            md.append(f"| - [ ] | {g} | **{term}** | {traffic or '–'} | {head[:90].replace('|', '/')} | {'; '.join(trend_angles(term)) or '–'} |")
+    if yv:
+        f = lambda n: f"{n/1e6:.1f}M" if n >= 1e6 else f"{n/1e3:.0f}k" if n >= 1e3 else str(n)
+        md += ["", "**On YouTube's trending charts (ideas only, never copy):**", ""]
+        md += [f"- {g} · {cat}: {t[:90]} ({f(v)} views{', Short' if sh else ''})" for g, cat, t, v, sh, _ in yv[:8]]
+    md += ["", "_Daily check by `pipeline/radar.py --trends-only` (Google Trends RSS + YouTube most-popular). Repo variable `RADAR_TRENDS=off` stops it._"]
+    return "\n".join(md)
+
+
+def open_issue(body, label="topic-radar"):
     repo, tok = os.environ.get("GITHUB_REPOSITORY"), os.environ.get("GITHUB_TOKEN")
     if not (repo and tok): print("note: no GITHUB_TOKEN/GITHUB_REPOSITORY: issue not opened"); return None
     title = body.split("\n", 1)[0].lstrip("# ").strip()
     req = urllib.request.Request(f"https://api.github.com/repos/{repo}/issues", method="POST",
-                                 data=json.dumps({"title": title, "body": body[:60000], "labels": ["topic-radar"]}).encode(),
+                                 data=json.dumps({"title": title, "body": body[:60000], "labels": [label]}).encode(),
                                  headers={"Authorization": f"Bearer {tok}", "Accept": "application/vnd.github+json", **UA})
     try:
         with urllib.request.urlopen(req, timeout=20) as r:
@@ -252,6 +426,16 @@ def main(argv=None):
     argv = argv or sys.argv[1:]
     if os.environ.get("RADAR", "on").strip().lower() in ("off", "0", "no", "false"):
         print("radar off (RADAR=off)"); return 0
+    if "--trends-only" in argv:  # the daily quick check
+        if os.environ.get("RADAR_TRENDS", "on").strip().lower() in ("off", "0", "no", "false"):
+            print("daily trend check off (RADAR_TRENDS=off)"); return 0
+        body = trend_alert()
+        if body:
+            if os.environ.get("GITHUB_STEP_SUMMARY"):
+                open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8").write(body + "\n")
+            print(body)
+            if "--no-issue" not in argv: open_issue(body, "trend-alert")
+        return 0
     body = report()
     os.makedirs(os.path.join(ROOT, "radar"), exist_ok=True)
     open(os.path.join(ROOT, "radar", "latest.md"), "w", encoding="utf-8").write(body)

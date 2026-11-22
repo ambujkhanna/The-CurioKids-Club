@@ -1,0 +1,34 @@
+{
+  "title_es": "¿Cómo te muestra el espejo tu reflejo? 🪞",
+  "description_es": "¡Un espejo hace rebotar la luz derechito hacia tus ojos! Leo pregunta y papá le explica cómo funcionan los reflejos, en menos de un minuto.",
+  "cover_text_es": "¿MI REFLEJO?",
+  "hook": "¿Cómo me muestra el espejo mi reflejo?",
+  "tags_es": ["cómo funciona un espejo", "la luz y los reflejos para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿La magia del espejo?", "cue": "próxima", "left": "🪞", "right": "👦"},
+  "lines": [
+    "Papá, ¿cómo me muestra el espejo mi reflejo?",
+    "¡Todo se trata de la luz! La luz de una lámpara o de una ventana rebota en ti, en todas las direcciones.",
+    "¿La luz rebota? ¿Como una pelota?",
+    "¡Igual que una pelota! Un poco de esa luz viaja hasta el espejo. Y un espejo es superliso y brillante.",
+    "Entonces la luz choca con el espejo y rebota derechito, bien ordenada, hasta tus ojos. Y tus ojos ven... ¡a ti!",
+    "¿Y por qué no me veo en mi camiseta?",
+    "El espejo es liso, así que la luz rebota ordenada. Tu camiseta, de cerca, es rugosa, así que la luz se desparrama para todos lados.",
+    "¿De qué está hecho un espejo?",
+    "Casi siempre de vidrio, con una capa muy delgada y brillante de metal atrás. El vidrio mantiene el metal liso y protegido.",
+    "¡Oye, cuando pongo una palabra frente al espejo, las letras se ven al revés!",
+    "Eso es porque el espejo voltea las cosas. ¡Prueba con tu nombre y verás!",
+    "¡Entonces la luz rebota en mí, choca con el espejo liso y vuelve a mis ojos!",
+    "¡Lo lograste! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿cómo te muestra el espejo tu reflejo?"
+  ],
+  "punch": {"1": "luz", "10": "voltea"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🪞", "label": "Espejo"}, "right": {"icon": "👦", "label": "¿Yo?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "💡", "text": "La luz rebota en ti", "cue": "rebota", "sub": "En todas direcciones", "sub_cue": "direcciones"},
+    "3": {"type": "big", "icon": "🪞", "text": "Superliso y brillante", "cue": "superliso"},
+    "4": {"type": "journey", "title": "El viaje de la luz", "traveler": "✨", "items": [{"icon": "💡", "label": "Luz", "cue": "luz"}, {"icon": "🪞", "label": "Espejo", "cue": "espejo"}, {"icon": "img:Human_physiology/Servier/eye", "label": "Tus ojos", "cue": "ojos"}]},
+    "6": {"type": "compare", "left": {"label": "Espejo", "items": [{"icon": "✨", "text": "Liso", "cue": "liso"}, {"icon": "✅", "text": "Rebote ordenado", "cue": "ordenada"}]}, "right": {"label": "Camiseta", "items": [{"icon": "👕", "text": "Rugosa", "cue": "rugosa"}, {"icon": "🔀", "text": "Se desparrama", "cue": "desparrama"}]}},
+    "8": {"type": "big", "icon": "✨", "text": "Vidrio + metal brillante", "cue": "vidrio", "sub": "Metal por detrás", "sub_cue": "metal"},
+    "10": {"type": "big", "icon": "🔄", "text": "¡Palabras al revés!", "cue": "voltea", "sub": "Prueba con tu nombre", "sub_cue": "nombre"},
+    "11": {"type": "summary", "rows": [{"icon": "💡", "text": "La luz rebota en ti", "cue": "rebota"}, {"icon": "🪞", "text": "Espejo liso", "cue": "liso"}, {"icon": "👀", "text": "De vuelta a tus ojos", "cue": "ojos"}]}
+  }
+}

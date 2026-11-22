@@ -1,0 +1,36 @@
+{
+  "title_es": "¿Por qué el metal se siente más frío que la madera? 🥄",
+  "description_es": "El metal y la madera en el mismo cuarto están a la misma temperatura, entonces ¿por qué el metal se siente más frío? Leo pregunta y su hermana mayor Mía le explica cómo se mueve el calor, en menos de un minuto.",
+  "cover_text_es": "¿FRÍO?",
+  "hook": "¿Por qué el metal se siente más frío?",
+  "tags_es": ["por qué el metal se siente frío", "conductores de calor para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Por qué el metal se siente frío?", "cue": "próxima", "left": "🥄", "right": "🪵"},
+  "lines": [
+    "Mía, ¿por qué el metal se siente más frío que la madera?",
+    "Aquí va una sorpresa: ¡en el mismo cuarto, los dos están a la misma temperatura!",
+    "¡No puede ser! ¡El metal se siente mucho más frío!",
+    "Tu mano está tibia. Cuando tocas algo más fresco, el calor pasa de tu mano hacia eso.",
+    "¿Y qué tiene de diferente el metal?",
+    "El metal se lleva el calor de tu piel superrápido. Tu piel pierde calorcito muy pronto, ¡y por eso se siente frío!",
+    "¿Y la madera?",
+    "La madera se lleva el calor muy despacio. Tu mano se queda tibia, así que la madera se siente calentita.",
+    "¿Eso tiene un nombre?",
+    "¡Sí! El metal es un buen conductor. Eso quiere decir que lleva bien el calor. La madera es un mal conductor.",
+    "¿Dónde más puedo sentir esto?",
+    "En una mañana fresca, una resbaladilla de metal se siente helada, pero una banca de madera se siente más tibia. ¡El mismo aire, pero se sienten distinto!",
+    "¡El metal se roba mi calorcito rápido, y la madera es lenta!",
+    "¿Qué exploramos ahora? ¡Pídele a un adulto que deje un tema en los comentarios!",
+    "¡Qué dato tan fresco! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué el metal se siente más frío que la madera?"
+  ],
+  "punch": {"1": "sorpresa", "5": "superrápido", "9": "conductor"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🥄", "label": "Metal"}, "right": {"icon": "🪵", "label": "Madera"}, "mid": "?"},
+    "1": {"type": "picture", "art": "kf_metal_wood", "caption": "¡Misma temperatura!", "cue": "misma", "icon": "🌡️"},
+    "3": {"type": "flow", "title": "El calor viaja", "packet": "🌡️", "items": [{"icon": "✋", "label": "Mano tibia", "cue": "tibia"}, {"icon": "➡️", "label": "El calor pasa", "cue": "calor"}, {"icon": "🥄", "label": "Hacia el objeto", "cue": "hacia"}]},
+    "5": {"type": "big", "icon": "🥄", "text": "El metal lleva rápido el calor", "cue": "metal", "sub": "Tu piel siente frío", "sub_cue": "frío"},
+    "7": {"type": "big", "icon": "🪵", "text": "La madera es lenta", "cue": "madera", "sub": "La mano sigue tibia", "sub_cue": "tibia"},
+    "9": {"type": "compare", "left": {"label": "Metal", "items": [{"text": "Buen conductor", "icon": "🥄", "cue": "buen"}]}, "right": {"label": "Madera", "items": [{"text": "Mal conductor", "icon": "🪵", "cue": "mal"}]}},
+    "11": {"type": "gallery", "title": "Siente la diferencia", "items": [{"icon": "🛝", "label": "Resbaladilla de metal", "cue": "resbaladilla"}, {"icon": "🪑", "label": "Banca de madera", "cue": "banca"}]},
+    "12": {"type": "summary", "rows": [{"text": "Metal: rápido", "icon": "🥄", "cue": "metal"}, {"text": "Madera: lenta", "icon": "🪵", "cue": "madera"}, {"text": "El calor se mueve", "icon": "✋", "cue": "calorcito"}]}
+  }
+}

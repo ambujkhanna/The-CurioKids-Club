@@ -1,0 +1,174 @@
+{
+  "title_es": "¿Cómo te ayudan a moverte los músculos? 💪",
+  "description_es": "¡Tus músculos solo pueden JALAR, nunca empujar! Leo pregunta y su hermana mayor Mía le explica cómo los músculos mueven tus huesos, en menos de un minuto.",
+  "cover_text_es": "¡A JALAR!",
+  "hook": "¿Cómo me hacen mover mis músculos?",
+  "tags_es": [
+    "cómo funcionan los músculos",
+    "el cuerpo humano para niños",
+    "ciencia para niños"
+  ],
+  "loop_card_es": {
+    "text": "¿Cómo funcionan los músculos?",
+    "cue": "próxima",
+    "left": "img:Human_physiology/Servier/muscle-1",
+    "right": "🦴"
+  },
+  "lines": [
+    "Mía, ¿cómo me hacen mover mis músculos?",
+    "Los músculos son como ligas elásticas amarradas a tus huesos. Cuando un músculo se encoge, jala un hueso, ¡y te mueves!",
+    "¿Cuántos músculos tengo?",
+    "¡Más de seiscientos! Te ayudan a sonreír, saltar y agarrar cosas.",
+    "¿Un músculo también puede empujar?",
+    "¡No! Los músculos solo jalan, por eso trabajan en equipos. Uno dobla tu brazo, y su compañero lo estira.",
+    "¡Como jugar a jalar la cuerda dentro de mi brazo!",
+    "¡Algo así! Con un adulto, toca la parte de arriba de tu brazo y dobla el codo. ¿Sientes esa bolita? ¡Es tu músculo!",
+    "¿Hay músculos que trabajan solitos?",
+    "¡Sí! Tu corazón es un músculo. Bombea todo el día y toda la noche, hasta cuando duermes.",
+    "¿Cómo hago para que mis músculos se pongan fuertes?",
+    "¡Corre, trepa y juega! Los músculos se ponen más fuertes cuando los usas. La buena comida y dormir bien también ayudan.",
+    "¡Entonces los músculos jalan, trabajan en pares, y mi corazón también es uno!",
+    "¡Exacto! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿cómo me hacen mover mis músculos?"
+  ],
+  "punch": {
+    "3": "seiscientos",
+    "5": "jalan"
+  },
+  "boards": {
+    "0": {
+      "type": "title",
+      "left": {
+        "icon": "img:Human_physiology/Servier/muscle-1",
+        "label": "Músculos"
+      },
+      "right": {
+        "icon": "🏃",
+        "label": "¿Moverse?"
+      },
+      "mid": "?"
+    },
+    "1": {
+      "type": "body",
+      "title": "Jalar y mover",
+      "show": [
+        "muscles",
+        "bones"
+      ],
+      "labels": [
+        {
+          "text": "Músculo",
+          "at": "muscles",
+          "cue": "músculos"
+        },
+        {
+          "text": "Hueso",
+          "at": "bones",
+          "cue": "hueso"
+        },
+        {
+          "text": "¡A moverse!",
+          "at": "leg",
+          "cue": "mueves"
+        }
+      ]
+    },
+    "3": {
+      "type": "gallery",
+      "title": "¡Más de 600 músculos!",
+      "items": [
+        {
+          "icon": "😄",
+          "label": "Sonreír",
+          "cue": "sonreír"
+        },
+        {
+          "icon": "🦵",
+          "label": "Saltar",
+          "cue": "saltar"
+        },
+        {
+          "icon": "✋",
+          "label": "Agarrar",
+          "cue": "agarrar"
+        }
+      ]
+    },
+    "5": {
+      "type": "big",
+      "icon": "💪",
+      "text": "Trabajan en pares",
+      "cue": "equipos",
+      "sub": "Uno dobla, otro estira",
+      "sub_cue": "dobla"
+    },
+    "7": {
+      "type": "big",
+      "icon": "img:Human_physiology/Servier/muscle-3",
+      "text": "Siente la bolita",
+      "cue": "bolita",
+      "sub": "Con un adulto",
+      "sub_cue": "adulto"
+    },
+    "9": {
+      "type": "body",
+      "title": "Músculo del corazón",
+      "show": [
+        "heart"
+      ],
+      "flow": "blood",
+      "cue": "bombea",
+      "labels": [
+        {
+          "text": "Corazón",
+          "at": "heart",
+          "cue": "corazón"
+        }
+      ]
+    },
+    "11": {
+      "type": "checklist",
+      "title": "Músculos fuertes",
+      "icon": "💪",
+      "items": [
+        {
+          "icon": "🏃",
+          "text": "Corre y juega",
+          "cue": "corre",
+          "ok": true
+        },
+        {
+          "icon": "🥦",
+          "text": "Buena comida",
+          "cue": "comida",
+          "ok": true
+        },
+        {
+          "icon": "😴",
+          "text": "Dormir bien",
+          "cue": "dormir",
+          "ok": true
+        }
+      ]
+    },
+    "12": {
+      "type": "summary",
+      "rows": [
+        {
+          "icon": "img:Human_physiology/Servier/muscle-1",
+          "text": "Los músculos jalan",
+          "cue": "jalan"
+        },
+        {
+          "icon": "💪",
+          "text": "Trabajan en pares",
+          "cue": "pares"
+        },
+        {
+          "icon": "img:Human_physiology/Servier/heart-front",
+          "text": "El corazón también",
+          "cue": "corazón"
+        }
+      ]
+    }
+  }
+}

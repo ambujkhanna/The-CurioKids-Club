@@ -1,0 +1,161 @@
+{
+  "title_es": "¿Cómo cambian de color los camaleones? 🦎",
+  "description_es": "¡Los camaleones cambian de color gracias a cristalitos en su piel! Leo pregunta y su hermana mayor Mía le explica cómo funciona y por qué lo hacen, en menos de un minuto.",
+  "cover_text_es": "¿COLOR MÁGICO?",
+  "hook": "¿Cómo cambian de color los camaleones?",
+  "tags_es": [
+    "cómo cambia de color el camaleón",
+    "camaleones para niños",
+    "ciencia para niños"
+  ],
+  "loop_card_es": {
+    "text": "¿Cambio de color?",
+    "cue": "próxima",
+    "left": "🦎",
+    "right": "🌈"
+  },
+  "lines": [
+    "Mía, ¿cómo cambian de color los camaleones?",
+    "¡Su piel tiene un secreto! Debajo de la capa de arriba hay células especiales llenas de cristalitos chiquititos.",
+    "¿Cristales? ¿Como joyitas brillantes?",
+    "¡Más o menos! Cuando un camaleón está tranquilo, los cristales están juntitos. Cuando se emociona, su piel se estira y se separan.",
+    "Eso cambia qué colores de luz rebotan hacia nuestros ojos. ¡Un camaleón tranquilo se puede ver verde, y uno emocionado amarillo o naranja!",
+    "¿Entonces cambian de color para esconderse?",
+    "¡Mucha gente lo cree! Pero los científicos dicen que más que nada cambian de color para mostrar cómo se sienten, y para mandar mensajes a otros camaleones.",
+    "¡Entonces un camaleón lleva su humor en la piel!",
+    "¡Exacto! Los colores brillantes pueden decir: ¡este es mi lugar! Los colores más oscuros y apagados pueden decir: no quiero problemas.",
+    "¿También cambian de color cuando tienen frío?",
+    "¡Sí! Un camaleón se puede poner más oscuro para absorber más sol y calentarse.",
+    "Cristalitos, sentimientos y calentarse. ¡Los camaleones son geniales!",
+    "¡De verdad que sí! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿cómo cambian de color los camaleones?"
+  ],
+  "punch": {
+    "1": "cristalitos",
+    "6": "sienten"
+  },
+  "boards": {
+    "0": {
+      "type": "title",
+      "left": {
+        "icon": "🦎",
+        "label": "Camaleón"
+      },
+      "right": {
+        "icon": "🌈",
+        "label": "¿Otro color?"
+      },
+      "mid": "?"
+    },
+    "1": {
+      "type": "big",
+      "icon": "💎",
+      "text": "Cristalitos en la piel",
+      "cue": "cristalitos",
+      "sub": "Bajo la capa de arriba",
+      "sub_cue": "debajo"
+    },
+    "3": {
+      "type": "compare",
+      "left": {
+        "label": "Tranquilo",
+        "items": [
+          {
+            "icon": "🤏",
+            "text": "Cristales juntos",
+            "cue": "juntitos"
+          }
+        ]
+      },
+      "right": {
+        "label": "Emocionado",
+        "items": [
+          {
+            "icon": "↔️",
+            "text": "Se separan",
+            "cue": "separan"
+          }
+        ]
+      }
+    },
+    "4": {
+      "type": "compare",
+      "left": {
+        "label": "Tranquilo",
+        "items": [
+          {
+            "icon": "🟢",
+            "text": "Verde",
+            "cue": "verde"
+          }
+        ]
+      },
+      "right": {
+        "label": "Emocionado",
+        "items": [
+          {
+            "icon": "🟡",
+            "text": "Amarillo",
+            "cue": "amarillo"
+          },
+          {
+            "icon": "🟠",
+            "text": "Naranja",
+            "cue": "naranja"
+          }
+        ]
+      }
+    },
+    "6": {
+      "type": "big",
+      "icon": "💬",
+      "text": "Colores que hablan",
+      "cue": "sienten",
+      "sub": "Y mandan mensajes",
+      "sub_cue": "mensajes"
+    },
+    "8": {
+      "type": "gallery",
+      "title": "Mensajes de color",
+      "items": [
+        {
+          "icon": "🌟",
+          "label": "¡Mi lugar!",
+          "cue": "brillantes"
+        },
+        {
+          "icon": "🌑",
+          "label": "Sin problemas",
+          "cue": "oscuros"
+        }
+      ]
+    },
+    "10": {
+      "type": "big",
+      "icon": "☀️",
+      "text": "Más oscuro = más calor",
+      "cue": "oscuro",
+      "sub": "Absorbe el sol",
+      "sub_cue": "absorber"
+    },
+    "11": {
+      "type": "summary",
+      "rows": [
+        {
+          "icon": "💎",
+          "text": "Cristalitos",
+          "cue": "cristalitos"
+        },
+        {
+          "icon": "💬",
+          "text": "Muestran sentimientos",
+          "cue": "sentimientos"
+        },
+        {
+          "icon": "☀️",
+          "text": "Se calientan",
+          "cue": "calentarse"
+        }
+      ]
+    }
+  }
+}

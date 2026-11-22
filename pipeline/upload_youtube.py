@@ -98,9 +98,10 @@ def _why(e):
 _PL = {}
 
 
-def playlist_id(yt=None):
-    """Find the playlist named YT_PLAYLIST (case-insensitive) on the channel; an id (PL...) also works."""
-    want = (os.environ.get("YT_PLAYLIST") or "").strip()
+def playlist_id(yt=None, name=None, create=False):
+    """Find the playlist named YT_PLAYLIST (or `name`, case-insensitive) on the channel; an id (PL...) also works.
+    create=True: make it (public) when it doesn't exist yet (owner, 2026-11-22: 'curiokids' + 'CurioKids_Spanish')."""
+    want = (name or os.environ.get("YT_PLAYLIST") or "").strip()
     if want in _PL: return _PL[want]
     if want.startswith("PL") and len(want) > 16:
         _PL[want] = want; return want
@@ -113,20 +114,25 @@ def playlist_id(yt=None):
                 _PL[want] = it["id"]; return it["id"]
         tok = r.get("nextPageToken")
         if not tok: break
+    if create and not want.startswith("PL"):
+        r = yt.playlists().insert(part="snippet,status", body={"snippet": {"title": want, "description": "The CurioKids Club"},
+                                                                "status": {"privacyStatus": "public"}}).execute()
+        print("playlist created:", want, r["id"]); _PL[want] = r["id"]; return r["id"]
     raise RuntimeError(f"no playlist called '{want}' on this channel (create it in YouTube Studio, or set the YT_PLAYLIST variable)")
 
 
-def add_to_playlist(video_id, existing=None):
-    """Add the video to the playlist. Never fails the run: returns 'added ...' or the reason it was skipped."""
-    if not (os.environ.get("YT_PLAYLIST") or "").strip():
+def add_to_playlist(video_id, existing=None, name=None):
+    """Add the video to the playlist (YT_PLAYLIST, or `name`; created if missing). Never fails the run."""
+    name = (name or os.environ.get("YT_PLAYLIST") or "").strip()
+    if not name:
         return "off (added by hand)"
     try:
-        yt = _service(); pid = playlist_id(yt)
+        yt = _service(); pid = playlist_id(yt, name, create=True)
         if existing is not None and video_id in existing:
             return "already in playlist"
         yt.playlistItems().insert(part="snippet", body={"snippet": {"playlistId": pid,
                                   "resourceId": {"kind": "youtube#video", "videoId": video_id}}}).execute()
-        return f"added ({os.environ['YT_PLAYLIST']})"
+        return f"added ({name})"
     except Exception as e:
         print("playlist:", e); return "not added: " + _why(e)
 

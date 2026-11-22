@@ -1,0 +1,35 @@
+{
+  "title_es": "¿Cómo una oruga se vuelve mariposa? 🦋",
+  "description_es": "¡De un huevito diminuto a una mariposa preciosa! Leo pregunta y su hermana mayor Mía le explica la metamorfosis paso a paso, en menos de un minuto.",
+  "cover_text_es": "¡GRAN CAMBIO!",
+  "hook": "¿Cómo se convierte una oruga en mariposa?",
+  "tags_es": ["de oruga a mariposa para niños", "metamorfosis de la mariposa", "ciencia para niños"],
+  "loop_card_es": {"text": "¿De oruga a mariposa?", "cue": "próxima", "left": "🐛", "right": "🦋"},
+  "lines": [
+    "Mía, ¿cómo se convierte una oruga en mariposa?",
+    "Se llama metamorfosis. ¡Es una palabra grande para un cambio muy grande!",
+    "¿Meta-qué? ¿Cómo empieza?",
+    "Empieza como un huevito sobre una hoja. De ahí sale una orugita, ¡y se pone a comer enseguida!",
+    "¿Y qué come?",
+    "¡Hojas y más hojas! Come tanto que su piel le queda chiquita, así que se la quita varias veces.",
+    "¿Y luego se convierte en mariposa?",
+    "¡Todavía no! Primero hace una cubierta dura a su alrededor, llamada crisálida. ¡Como un regalo envuelto!",
+    "¿Y qué pasa adentro?",
+    "¡Algo increíble! Su cuerpo cambia casi por completo. Se forma alas, patas nuevas y ojos grandes nuevos.",
+    "¿Y cómo sale?",
+    "La crisálida se abre, ¡y sale una mariposa! Sus alas se secan, y luego se va volando.",
+    "Entonces es huevo, oruga, crisálida, mariposa. ¡Qué cambio!",
+    "¡La naturaleza es increíble! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿cómo se convierte una oruga en mariposa?"
+  ],
+  "punch": {"1": "metamorfosis"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🐛", "label": "Oruga"}, "right": {"icon": "🦋", "label": "Mariposa"}, "mid": "?"},
+    "1": {"type": "big", "icon": "✨", "text": "Metamorfosis", "cue": "metamorfosis", "sub": "¡Un cambio muy grande!", "sub_cue": "cambio"},
+    "3": {"type": "steps", "title": "Cómo empieza", "items": [{"icon": "🥚", "label": "Un huevito en una hoja", "cue": "huevito"}, {"icon": "🐛", "label": "Sale una oruga", "cue": "orugita"}]},
+    "5": {"type": "big", "icon": "🍃", "text": "¡Ñam, ñam, a crecer!", "cue": "come", "sub": "Cambia de piel", "sub_cue": "piel"},
+    "7": {"type": "big", "icon": "img:Animals/DBCLS/pupa_icon", "text": "La crisálida", "cue": "crisálida", "sub": "Un regalo envuelto", "sub_cue": "regalo"},
+    "9": {"type": "gallery", "title": "Dentro de la crisálida", "items": [{"icon": "🦋", "label": "Alas", "cue": "alas"}, {"icon": "🦵", "label": "Patas nuevas", "cue": "patas"}, {"icon": "👀", "label": "Ojos grandes", "cue": "ojos"}]},
+    "11": {"type": "transform", "title": "¡Hola, mariposa!", "from": {"icon": "🫛", "label": "Crisálida", "cue": "crisálida"}, "to": {"icon": "🦋", "label": "¡Mariposa!", "cue": "mariposa"}},
+    "12": {"type": "lifecycle", "title": "Ciclo de la mariposa", "items": [{"icon": "🥚", "label": "Huevo", "cue": "huevo"}, {"icon": "🐛", "label": "Oruga", "cue": "oruga"}, {"icon": "🫛", "label": "Crisálida", "cue": "crisálida"}, {"icon": "🦋", "label": "Mariposa", "cue": "mariposa"}]}
+  }
+}

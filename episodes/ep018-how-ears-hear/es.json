@@ -1,0 +1,35 @@
+{
+  "title_es": "¿Cómo escuchan tus oídos? 👂",
+  "description_es": "¡El sonido es aire que tiembla, y tus oídos lo convierten en mensajes para tu cerebro! Leo pregunta y su hermana mayor Mía sigue un sonido hasta adentro, en menos de un minuto.",
+  "cover_text_es": "¿CÓMO OÍMOS?",
+  "hook": "¿Cómo escuchan tus oídos?",
+  "tags_es": ["cómo funciona el oído para niños", "los sentidos para niños", "el cuerpo humano para niños"],
+  "loop_card_es": {"text": "¿Cómo escuchan los oídos?", "cue": "próxima", "left": "👂", "right": "🔊"},
+  "lines": [
+    "Mía, ¿cómo escuchan mis oídos?",
+    "Cada sonido es un pequeño temblor en el aire. Los científicos lo llaman vibración.",
+    "¿Aire que tiembla? ¡Pero no lo puedo ver!",
+    "¡No, es invisible! La parte de afuera de tu oreja tiene forma de embudo. Atrapa esos temblores y los manda hacia adentro.",
+    "¿Y a dónde van?",
+    "Primero chocan con tu tímpano, una piel finita y elástica que vibra como un tamborcito.",
+    "Luego, tres huesitos pasan la vibración. ¡Uno de ellos es el hueso más pequeño de todo tu cuerpo!",
+    "¡Guau! ¿Y luego qué?",
+    "Luego viene un tubo enroscado con forma de caracol. Está lleno de líquido y de pelitos que también se mueven.",
+    "Esos pelitos mandan un mensaje a tu cerebro, y tu cerebro dice: ¡es un perro ladrando!",
+    "¡Entonces el sonido entra en mi oreja, va al tímpano, a los huesitos, al caracol y luego a mi cerebro!",
+    "¡Exacto! Así que cuida tus oídos. Baja los sonidos fuertes, y nunca te metas cosas en ellos.",
+    "¡Qué bien escuchas! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿cómo escuchan mis oídos?"
+  ],
+  "punch": {"6": "pequeño"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "img:Human_physiology/Servier/ear", "label": "Oídos"}, "right": {"icon": "🔊", "label": "¿Sonidos?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "🔊", "text": "Aire que tiembla", "cue": "temblor", "sub": "Se llama vibración", "sub_cue": "vibración"},
+    "3": {"type": "big", "icon": "👂", "text": "Tu oreja atrapa el sonido", "cue": "embudo", "sub": "Y lo manda adentro", "sub_cue": "adentro"},
+    "5": {"type": "big", "icon": "img:Human_physiology/Servier/ear", "text": "El tímpano vibra", "cue": "tímpano", "sub": "Como un tamborcito", "sub_cue": "tambor"},
+    "6": {"type": "big", "icon": "🦴", "text": "3 huesitos", "cue": "tres", "sub": "¡El más pequeño del cuerpo!", "sub_cue": "pequeño"},
+    "8": {"type": "big", "icon": "🐌", "text": "Un tubo como caracol", "cue": "caracol", "sub": "Lleno de pelitos", "sub_cue": "pelitos"},
+    "9": {"type": "big", "icon": "img:Human_physiology/Servier/brain-1", "text": "¡Tu cerebro sabe!", "cue": "cerebro", "sub": "¡Guau! ¡Un perro!", "sub_cue": "perro"},
+    "10": {"type": "journey", "title": "El viaje del sonido", "traveler": "🎵", "items": [{"icon": "👂", "label": "A la oreja", "cue": "oreja"}, {"icon": "img:Human_physiology/Servier/ear", "label": "Tímpano", "cue": "tímpano"}, {"icon": "🦴", "label": "Huesitos", "cue": "huesitos"}, {"icon": "🐌", "label": "Tubo caracol", "cue": "caracol"}, {"icon": "🧠", "label": "Cerebro", "cue": "cerebro"}]},
+    "11": {"type": "checklist", "title": "Cuida tus oídos", "icon": "👂", "items": [{"icon": "🔉", "text": "Baja el volumen", "cue": "fuertes", "ok": true}, {"icon": "🚫", "text": "Meter cosas", "cue": "metas", "ok": false}]}
+  }
+}

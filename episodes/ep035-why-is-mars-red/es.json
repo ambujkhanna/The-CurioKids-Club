@@ -1,0 +1,35 @@
+{
+  "title_es": "¿Por qué Marte es rojo? 🔴",
+  "description_es": "¿Por qué Marte es rojo? ¡Por su polvo oxidado! Leo pregunta y su hermana mayor Mía le explica el óxido, los cielos rosados y los atardeceres azules de Marte, en menos de un minuto.",
+  "cover_text_es": "PLANETA ROJO",
+  "hook": "¿Por qué Marte es rojo?",
+  "tags_es": ["por qué marte es rojo", "marte para niños", "el espacio para niños"],
+  "loop_card_es": {"text": "¿Por qué Marte es rojo?", "cue": "próxima", "left": "🔴", "right": "❓"},
+  "lines": [
+    "Mía, ¿por qué Marte es rojo?",
+    "¡Marte está cubierto de polvo oxidado! Sus rocas y su polvo tienen mucho hierro.",
+    "¿Óxido? ¿Como en una bici vieja?",
+    "¡Igualito! Los científicos creen que hace mucho tiempo, el hierro de Marte se mezcló despacito con oxígeno y se volvió óxido.",
+    "¿El cielo también es rojo?",
+    "Los vientos fuertes levantan el polvo muy alto. ¡Así que de día, el cielo de Marte muchas veces se ve de un color rosado polvoso!",
+    "¿Y cómo son los atardeceres en Marte?",
+    "Te tengo una sorpresa. ¡En Marte, los atardeceres se ven azules, no anaranjados como en la Tierra!",
+    "¿Marte es caliente?",
+    "No, Marte es mucho más frío que la Tierra, porque está más lejos del Sol.",
+    "¿Alguien ha ido allá?",
+    "¡Todavía ninguna persona! Pero unos robots exploradores pasean por Marte, tomando fotos y estudiando las rocas rojas.",
+    "Polvo oxidado, un cielo rosado y atardeceres azules. ¡Marte es genial!",
+    "¡De verdad que sí! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué Marte es rojo?"
+  ],
+  "punch": {"1": "oxidado", "7": "azules"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🔴", "label": "Marte"}, "right": {"icon": "🤔", "label": "¿Por qué rojo?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "🔴", "text": "Polvo rojo oxidado", "cue": "oxidado", "sub": "Mucho hierro", "sub_cue": "hierro"},
+    "3": {"type": "steps", "title": "Así se hace óxido", "items": [{"label": "Hierro", "icon": "🔩", "cue": "hierro"}, {"label": "Se mezcla con oxígeno", "icon": "💨", "cue": "oxígeno"}, {"label": "Se vuelve óxido", "icon": "🟠", "cue": "óxido"}]},
+    "5": {"type": "big", "icon": "🌬️", "text": "Vientos con polvo", "cue": "vientos", "sub": "¡Un cielo rosado!", "sub_cue": "rosado"},
+    "7": {"type": "compare", "left": {"label": "Tierra", "items": [{"text": "Atardecer naranja", "icon": "🌅", "cue": "anaranjados"}]}, "right": {"label": "Marte", "items": [{"text": "Atardecer azul", "icon": "🔵", "cue": "azules"}]}},
+    "9": {"type": "orbit", "title": "Más lejos, más frío", "center": "☀️", "items": [{"icon": "🌍", "label": "Tierra", "cue": "tierra"}, {"icon": "🔴", "label": "Marte", "cue": "lejos"}]},
+    "11": {"type": "big", "icon": "🤖", "text": "Robots exploradores", "cue": "robots", "sub": "Estudian las rocas", "sub_cue": "rocas"},
+    "12": {"type": "summary", "rows": [{"text": "Polvo rojo oxidado", "icon": "🔴", "cue": "oxidado"}, {"text": "Cielo rosado", "icon": "🌸", "cue": "rosado"}, {"text": "Atardeceres azules", "icon": "🔵", "cue": "azules"}]}
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "title_es": "¿Por qué no sentimos que la Tierra gira? 🌍",
+  "description_es": "¿Por qué no sentimos que la Tierra gira? Gira suavemente a una velocidad constante y nosotros nos movemos con ella, ¡como en un viaje suave en auto! Leo pregunta y su hermana mayor Mía se lo explica en menos de un minuto.",
+  "cover_text_es": "¿GIRANDO?",
+  "hook": "¿Por qué no sentimos que la Tierra gira?",
+  "tags_es": ["por qué no sentimos girar la Tierra", "la Tierra para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Sientes cómo gira?", "cue": "próxima", "left": "🌍", "right": "🤔"},
+  "lines": [
+    "Mía, la Tierra gira. ¿Por qué no lo siento?",
+    "Porque la Tierra gira muy suavemente, a una velocidad constante. ¡Sin baches ni sacudidas!",
+    "¡Pero yo no estoy girando!",
+    "¡Sí lo estás! Tú, el aire, las casas y los árboles se mueven juntos con la Tierra.",
+    "¿Entonces por qué no siento que me muevo?",
+    "Piensa en un viaje suave en auto. No sientes la velocidad, solo los baches y los frenazos.",
+    "¿O sea que la Tierra nunca acelera ni frena?",
+    "¡Exacto! Mantiene la misma velocidad constante, todos los días. Así tu cuerpo no nota que se mueve.",
+    "¿Entonces cómo sabemos que gira?",
+    "¡Podemos verlo! Mientras la Tierra gira, el Sol parece salir, cruzar el cielo y ponerse.",
+    "¿Por eso tenemos día y noche?",
+    "¡Sí! Cuando tu lado de la Tierra mira al Sol, es de día. Cuando se aleja, es de noche.",
+    "¡La Tierra gira suave y constante, y todos giramos con ella!",
+    "¿Qué debería explicar Mía ahora? ¡Pídele a un adulto que deje un tema en los comentarios!",
+    "¡Y tú estás girando ahora mismo! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué no siento que la Tierra gira?"
+  ],
+  "punch": {"1": "suavemente", "7": "constante"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🌍", "label": "Girando"}, "right": {"icon": "🤔", "label": "¿No se siente?"}, "mid": "?"},
+    "1": {"type": "picture", "art": "earth", "caption": "Suave y constante", "cue": "suavemente", "icon": "🌍"},
+    "3": {"type": "gallery", "title": "Todos juntos", "items": [{"icon": "🧒", "label": "Tú", "cue": "tú"}, {"icon": "💨", "label": "Aire", "cue": "aire"}, {"icon": "🏠", "label": "Casas", "cue": "casas"}, {"icon": "🌳", "label": "Árboles", "cue": "árboles"}]},
+    "5": {"type": "big", "icon": "🚗", "text": "Viaje suave", "cue": "suave", "sub": "No sientes la velocidad", "sub_cue": "velocidad"},
+    "7": {"type": "big", "icon": "⏱️", "text": "Misma velocidad", "cue": "constante", "sub": "Todos los días", "sub_cue": "todos"},
+    "9": {"type": "lifecycle", "title": "Un día girando", "items": [{"icon": "🌅", "label": "Amanecer", "cue": "salir"}, {"icon": "☀️", "label": "Cruza el cielo", "cue": "cruzar"}, {"icon": "🌇", "label": "Atardecer", "cue": "ponerse"}]},
+    "11": {"type": "transform", "title": "La Tierra gira", "from": {"icon": "☀️", "label": "Día", "cue": "día"}, "to": {"icon": "🌙", "label": "Noche", "cue": "noche"}},
+    "12": {"type": "summary", "rows": [{"text": "Suave y constante", "icon": "🌍", "cue": "suave"}, {"text": "Giramos con ella", "icon": "🧒", "cue": "giramos"}]}
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "title_es": "¿Por qué revientan las palomitas? 🍿",
+  "description_es": "¿Por qué revientan las palomitas de maíz? ¡Una gotita de agua se convierte en vapor! Leo pregunta y papá le explica la ciencia de las palomitas, en menos de un minuto.",
+  "cover_text_es": "¡POP!",
+  "hook": "¿Por qué revientan las palomitas?",
+  "tags_es": ["por qué revientan las palomitas", "ciencia de las palomitas de maíz", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Por qué revientan las palomitas?", "cue": "próxima", "left": "🍿", "right": "💥"},
+  "lines": [
+    "Papá, ¿por qué revientan las palomitas?",
+    "Dentro de cada granito de maíz hay una gotita de agua, escondida en un almidón suave.",
+    "¿Agua? ¿En una semillita dura?",
+    "¡Sí! Cuando el grano se calienta, esa agua se vuelve vapor. El vapor necesita mucho más espacio, así que empuja y empuja.",
+    "¡Pero la cáscara es muy dura!",
+    "La cáscara dura guarda el vapor adentro, hasta que... ¡POP! La cáscara revienta.",
+    "¿Y por qué se vuelve blanca y esponjosa?",
+    "El almidón suave se infla como una espuma blanca. Se enfría rápido y se vuelve la palomita crujiente y esponjosa que comes.",
+    "¿Cualquier maíz puede reventar?",
+    "¡No! El maíz palomero es especial: tiene una cáscara muy resistente y revienta. En otros maíces, el vapor se escapa, así que no hace pop.",
+    "¿Podemos hacer unas?",
+    "¡Claro! Para reventarlas se necesita calor, así que siempre pídele a un adulto que las haga. Luego escuchamos los pops juntos.",
+    "¡Agua, vapor y POP! ¡Las palomitas son ciencia!",
+    "¡Ciencia deliciosa! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué revientan las palomitas?"
+  ],
+  "punch": {"5": "pop"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🍿", "label": "Palomitas"}, "right": {"icon": "💥", "label": "¿Pop?"}, "mid": "?"},
+    "1": {"type": "gallery", "title": "Dentro de un grano", "items": [{"icon": "🌽", "label": "Grano", "cue": "granito"}, {"icon": "💧", "label": "Gotita de agua", "cue": "gotita"}, {"icon": "🌾", "label": "Almidón suave", "cue": "almidón"}]},
+    "3": {"type": "journey", "title": "El poder del pop", "traveler": "💧", "items": [{"icon": "🌡️", "label": "Se calienta", "cue": "calienta"}, {"icon": "💧", "label": "Agua adentro", "cue": "agua"}, {"icon": "♨️", "label": "Se vuelve vapor", "cue": "vapor"}, {"icon": "💥", "label": "¡Empuja, empuja!", "cue": "empuja"}]},
+    "5": {"type": "big", "icon": "💥", "text": "¡POP!", "cue": "pop", "sub": "La cáscara revienta", "sub_cue": "revienta"},
+    "7": {"type": "big", "icon": "☁️", "text": "El almidón se infla", "cue": "infla", "sub": "Esponjosa y crujiente", "sub_cue": "esponjosa"},
+    "9": {"type": "compare", "left": {"label": "Maíz palomero", "items": [{"text": "Cáscara resistente", "icon": "🌽", "cue": "resistente"}, {"text": "¡Revienta!", "icon": "💥", "cue": "revienta"}]}, "right": {"label": "Otro maíz", "items": [{"text": "El vapor se escapa", "icon": "💨", "cue": "escapa"}, {"text": "No revienta", "icon": "😶", "cue": "hace"}]}},
+    "11": {"type": "checklist", "title": "Hora de palomitas", "icon": "🍿", "items": [{"text": "Pídele a un adulto", "icon": "🧑", "cue": "pídele", "ok": true}, {"text": "Escucha los pops", "icon": "👂", "cue": "escuchamos", "ok": true}]},
+    "12": {"type": "summary", "rows": [{"text": "Agua adentro", "icon": "💧", "cue": "agua"}, {"text": "El vapor empuja", "icon": "♨️", "cue": "vapor"}, {"text": "¡POP!", "icon": "💥", "cue": "pop"}]}
+  }
+}

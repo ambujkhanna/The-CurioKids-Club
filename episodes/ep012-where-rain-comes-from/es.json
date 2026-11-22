@@ -1,0 +1,170 @@
+{
+  "title_es": "¿De dónde viene la lluvia? 🌧️",
+  "description_es": "¡La lluvia es agua que se fue de viaje al cielo! Leo pregunta y su hermana mayor Mía le explica cómo se forman las nubes y por qué caen las gotas de lluvia, en menos de un minuto.",
+  "cover_text_es": "¿LLUVIA?",
+  "hook": "¿De dónde viene la lluvia?",
+  "tags_es": [
+    "de dónde viene la lluvia",
+    "el ciclo del agua para niños",
+    "ciencia para niños"
+  ],
+  "loop_card_es": {
+    "text": "¿De dónde viene la lluvia?",
+    "cue": "próxima",
+    "left": "☁️",
+    "right": "🌧️"
+  },
+  "lines": [
+    "Mía, ¿de dónde viene la lluvia?",
+    "¡De las nubes! Y las nubes están hechas de agua de los ríos, los lagos y el mar.",
+    "¿Y cómo llega el agua hasta allá arriba?",
+    "El Sol calienta el agua, y una parte se convierte en un gas invisible llamado vapor de agua. Ese vapor flota hacia el cielo.",
+    "¿Y luego qué pasa?",
+    "Allá arriba, el aire está frío. El vapor se enfría y vuelve a ser gotitas de agua chiquititas. ¡Muchas gotitas juntas forman una nube!",
+    "¿Y por qué se caen las gotitas?",
+    "Las gotitas chocan entre ellas y se juntan. Cuando son muy grandes y pesadas para flotar, ¡se caen como lluvia!",
+    "¿Por qué las nubes de lluvia son tan oscuras y grises?",
+    "Las nubes delgadas dejan pasar la luz del sol, por eso se ven blancas. Las nubes de lluvia son gruesas y llenas de agua, por eso se ven oscuras y grises.",
+    "Prueba esto: echa tu aliento en una ventana fría. La mancha empañada está hecha de gotitas de agua, ¡como una mini nube!",
+    "Entonces el agua flota hacia arriba, forma nubes, y luego cae otra vez como lluvia. ¡Y vuelta y vuelta!",
+    "¡Ese es el ciclo del agua! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿de dónde viene la lluvia?"
+  ],
+  "punch": {
+    "7": "pesadas"
+  },
+  "boards": {
+    "0": {
+      "type": "title",
+      "left": {
+        "icon": "☁️",
+        "label": "Nube"
+      },
+      "right": {
+        "icon": "🌧️",
+        "label": "¿Lluvia?"
+      },
+      "mid": "?"
+    },
+    "1": {
+      "type": "big",
+      "icon": "☁️",
+      "text": "La lluvia viene de las nubes",
+      "cue": "nubes",
+      "sub": "¡Hechas de agua!",
+      "sub_cue": "agua"
+    },
+    "3": {
+      "type": "steps",
+      "title": "Arriba, arriba",
+      "items": [
+        {
+          "label": "El Sol calienta el agua",
+          "icon": "☀️",
+          "cue": "calienta"
+        },
+        {
+          "label": "Se vuelve vapor",
+          "icon": "💨",
+          "cue": "vapor"
+        },
+        {
+          "label": "Flota hacia arriba",
+          "icon": "⬆️",
+          "cue": "flota"
+        }
+      ]
+    },
+    "5": {
+      "type": "big",
+      "icon": "☁️",
+      "text": "Gotitas = una nube",
+      "cue": "nube",
+      "sub": "Aire frío allá arriba",
+      "sub_cue": "frío"
+    },
+    "7": {
+      "type": "steps",
+      "title": "Gota a gota",
+      "items": [
+        {
+          "label": "Chocan y se juntan",
+          "icon": "💧",
+          "cue": "chocan"
+        },
+        {
+          "label": "Grandes y pesadas",
+          "icon": "💦",
+          "cue": "pesadas"
+        },
+        {
+          "label": "¡Cae la lluvia!",
+          "icon": "🌧️",
+          "cue": "lluvia"
+        }
+      ]
+    },
+    "9": {
+      "type": "compare",
+      "left": {
+        "label": "Nube blanca",
+        "items": [
+          {
+            "text": "Delgada",
+            "icon": "☁️",
+            "cue": "delgadas"
+          },
+          {
+            "text": "Deja pasar luz",
+            "icon": "☀️",
+            "cue": "luz"
+          }
+        ]
+      },
+      "right": {
+        "label": "Nube de lluvia",
+        "items": [
+          {
+            "text": "Gruesa",
+            "icon": "🌧️",
+            "cue": "gruesas"
+          },
+          {
+            "text": "Se ve oscura",
+            "icon": "⚫",
+            "cue": "oscuras"
+          }
+        ]
+      }
+    },
+    "10": {
+      "type": "big",
+      "icon": "🪟",
+      "text": "Echa aliento en el vidrio",
+      "cue": "aliento",
+      "sub": "¡Una mini nube!",
+      "sub_cue": "mini"
+    },
+    "11": {
+      "type": "water_cycle",
+      "title": "El ciclo del agua",
+      "items": [
+        {
+          "label": "El agua sube",
+          "cue": "flota"
+        },
+        {
+          "label": "Se forman nubes",
+          "cue": "nubes"
+        },
+        {
+          "label": "Cae la lluvia",
+          "cue": "cae"
+        },
+        {
+          "label": "Otra vez",
+          "cue": "vuelta"
+        }
+      ]
+    }
+  }
+}

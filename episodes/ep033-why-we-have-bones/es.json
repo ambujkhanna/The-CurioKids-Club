@@ -1,0 +1,35 @@
+{
+  "title_es": "¿Por qué tenemos huesos? 🦴",
+  "description_es": "¿Por qué tenemos huesos? ¡Te sostienen, protegen tu corazón y tu cerebro, y te ayudan a moverte! Leo pregunta y su hermana mayor Mía se lo explica en menos de un minuto.",
+  "cover_text_es": "¡HUESOS!",
+  "hook": "¿Por qué tenemos huesos?",
+  "tags_es": ["por qué tenemos huesos", "el esqueleto para niños", "el cuerpo humano para niños"],
+  "loop_card_es": {"text": "¿Por qué huesos?", "cue": "próxima", "left": "🦴", "right": "❓"},
+  "lines": [
+    "Mía, ¿por qué tenemos huesos?",
+    "¡Los huesos son el armazón de tu cuerpo! Sin ellos, serías blandito, como una gelatina.",
+    "¿Qué más hacen los huesos?",
+    "Protegen las partes blanditas de adentro. Tu cráneo cuida tu cerebro, y tus costillas cuidan tu corazón y tus pulmones.",
+    "¿Los huesos también me ayudan a moverme?",
+    "¡Sí! Los músculos jalan tus huesos para moverlos, y las articulaciones, como tus rodillas y codos, te dejan doblarte.",
+    "¿Cuántos huesos tengo?",
+    "Los adultos tienen doscientos seis huesos. ¡Los bebés nacen con más, unos trescientos, y algunos se unen mientras crecen!",
+    "¡Guau! ¿Los huesos están vivos?",
+    "¡Sí! Los huesos están vivos y crecen. Y dentro de muchos huesos hay médula, una parte blandita que hace células de sangre nuevas.",
+    "¿Cómo mantengo mis huesos fuertes?",
+    "Corre, salta y juega todos los días, y come alimentos con calcio, como leche, yogur y verduras de hoja verde.",
+    "¡Los huesos me sostienen, me protegen y me ayudan a moverme!",
+    "¡Así es! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué tenemos huesos?"
+  ],
+  "punch": {"1": "blandito", "9": "vivos"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🦴", "label": "Huesos"}, "right": {"icon": "🧒", "label": "¿Por qué?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "🦴", "text": "Los huesos te sostienen", "cue": "armazón", "sub": "¡Nada de blandito!", "sub_cue": "blandito"},
+    "3": {"type": "gallery", "title": "Huesos guardianes", "items": [{"icon": "img:Human_physiology/Servier/brain-1", "label": "Cráneo: cerebro", "cue": "cráneo"}, {"icon": "img:Human_physiology/Servier/heart-front", "label": "Costillas: corazón", "cue": "costillas"}, {"icon": "img:Human_physiology/Servier/healthy-lung", "label": "Costillas: pulmones", "cue": "pulmones"}]},
+    "5": {"type": "gallery", "title": "¡A movernos!", "items": [{"icon": "img:Human_physiology/Servier/muscle-1", "label": "Músculos jalan", "cue": "músculos"}, {"icon": "🦵", "label": "Rodillas se doblan", "cue": "rodillas"}, {"icon": "🤸", "label": "Codos se doblan", "cue": "codos"}]},
+    "7": {"type": "big", "icon": "👶", "text": "Bebés: unos 300", "cue": "bebés", "sub": "Adultos: 206", "sub_cue": "adultos"},
+    "9": {"type": "big", "icon": "img:Blood_Immunology/Servier/erythrocyte", "text": "La médula hace sangre", "cue": "médula", "sub": "¡Los huesos están vivos!", "sub_cue": "vivos"},
+    "11": {"type": "checklist", "title": "Huesos fuertes", "icon": "🦴", "items": [{"text": "Corre, salta y juega", "icon": "🏃", "cue": "corre", "ok": true}, {"text": "Leche y yogur", "icon": "🥛", "cue": "leche", "ok": true}, {"text": "Verduras de hoja", "icon": "🥬", "cue": "verduras", "ok": true}]},
+    "12": {"type": "summary", "rows": [{"text": "Te sostienen", "icon": "🦴", "cue": "sostienen"}, {"text": "Protegen lo blandito", "icon": "🛡️", "cue": "protegen"}, {"text": "Te ayudan a moverte", "icon": "🤸", "cue": "mover"}]}
+  }
+}

@@ -47,8 +47,11 @@ When you add or change a variable, update this file in both repos and add a line
 | `SHORT_OUTRO` | empty = follow `OUTRO` | empty = follow `OUTRO` | `off` = no end card on Shorts |
 | `PUBLISH_WINDOW` | `17:00-20:00` | `17:00-20:00` | IST time window the upload is scheduled inside (English videos) |
 | `PUBLISH_WINDOW_HI` | `09:00-11:00` | – | Kids Hindi videos' window |
+| `ES_SHORTS` | `on` | – | Kids **Spanish** Short, one a day (own slot, own queue; episodes need `es.json`). `off` pauses it |
+| `PUBLISH_WINDOW_ES` | `05:30-07:30` | – | Spanish window in IST = 18:00–20:00 Mexico City (Latin America's evening) |
 | `MADE_FOR_KIDS` | `false` | – | YouTube "made for kids" flag. `false` keeps comments and the end screen on (needed for the topic radar's "viewers asked") |
-| `YT_PLAYLIST` | empty | – | Playlist id to add each kids upload to (empty = none) |
+| `YT_PLAYLIST` | `curiokids` | – | Playlist (name or `PL…` id) for English + Hindi Shorts and long videos. Created automatically (public) if it doesn't exist |
+| `YT_PLAYLIST_ES` | `CurioKids_Spanish` | – | Playlist for the Spanish Shorts (created automatically) |
 | `YT_TIMEOUT` | `300` | `300` | Seconds before a YouTube upload call gives up |
 
 ## 3. Repo variables: voices
@@ -66,6 +69,8 @@ When you add or change a variable, update this file in both repos and add a line
 | Variable | Kids default | AInation default | Values and what they do |
 |---|---|---|---|
 | `RADAR` | `on` | `on` | Weekly topic radar issue (Mondays 03:17 UTC): what people search for + what viewers asked. See `docs/RADAR_AND_ALERTS.md` |
+| `RADAR_TRENDS` | `on` | `on` | Daily trend check (07:17 IST): a "Trend alert" issue when a new Google/YouTube trend fits the channel |
+| `RADAR_GEOS` | `IN,US,MX` | `IN,US,MX` | Countries for Google Trends and YouTube trending |
 | `SELFCHECK` | `on` | `on` | After rendering, faster-whisper listens to the video and compares it with the script; flags garbled or silent audio |
 
 ## 5. Secrets
@@ -78,6 +83,7 @@ When you add or change a variable, update this file in both repos and add a line
 | `META_PAGE_ID`, `META_PAGE_TOKEN`, `META_IG_USER_ID` | optional | daily/long workflows | Facebook Page + Instagram posting. Missing = YouTube only |
 | `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` | optional | daily/long workflows | "✅ posted / ❌ failed" alert to your phone |
 | `DISCORD_WEBHOOK_URL` | optional | daily/long workflows | Same alerts to a Discord channel |
+| `WHATSAPP_PHONE`, `WHATSAPP_APIKEY` | optional (**owner's choice**) | daily/long workflows | Same alerts on WhatsApp via the free CallMeBot service. Setup: `docs/RADAR_AND_ALERTS.md` §3 |
 | `GITHUB_TOKEN` | automatic | radar | Given by GitHub to every run (opens the radar issue). Nothing to set |
 | `HF_TOKEN` (**Kaggle Secret**, not GitHub) | for art runs | `tools/kaggle/*.ipynb` | Hugging Face read token so Kaggle can download FLUX.1-schnell |
 | `KAGGLE_USERNAME`, `KAGGLE_KEY` | planned (R7) | weekly art run | Kaggle API token. Not used yet; see `docs/AUTOMATION_KAGGLE.md` |
@@ -90,9 +96,9 @@ Variables planned but **not built yet** (`docs/AUTOMATION_KAGGLE.md`, `docs/ROAD
 
 | Workflow | Kids file | AInation file | Schedule (UTC → IST) |
 |---|---|---|---|
-| Daily Short | `curio-kids-short.yml` | `daily-short.yml` | Kids 08:40 + 15:40 (14:10 + 21:10 IST) · AInation 09:23 (14:53 IST) |
+| Daily Short | `curio-kids-short.yml` | `daily-short.yml` | Kids 08:40 + 15:40 (14:10 + 21:10 IST, English/Hindi alternate days) + **21:41 (03:11 IST) Spanish** · AInation 09:23 (14:53 IST) |
 | Weekly long video | `curio-kids-long.yml` | `weekly-long.yml` | Kids Sat 04:30 (10:00 IST) · AInation Sun 04:37 (10:07 IST) |
-| Topic radar | `topic-radar.yml` | `topic-radar.yml` | Mon 03:17 (08:47 IST) |
+| Topic radar | `topic-radar.yml` | `topic-radar.yml` | Mon 03:17 (08:47 IST) full report · daily 01:47 (07:17 IST) trend check |
 | YouTube analytics | `youtube-analytics.yml` | `youtube-analytics.yml` | daily 12:00 (17:30 IST) |
 | Growth tests | `growth-tests.yml` | `growth-tests.yml` | automatic on pull requests that touch `pipeline/growth.py` or `tests/` |
 | Voice lab (kids) | `voice-lab.yml` | – | manual: `which` = `hindi` · `turbo` · `chatterbox` sample voices |
@@ -101,11 +107,11 @@ Boxes in the Run workflow form (Short and long workflows):
 
 | Box | Values |
 |---|---|
-| **action** | `Next video (scheduled)` · `Next video, publish now` · `Dry run (render only, nothing uploaded)` · `Refresh thumbnails` · `Post 1 old video to Facebook + Instagram` · `Post 3 old videos to Facebook + Instagram` (long workflows have fewer) |
+| **action** | `Next video (scheduled)` · `Next video, publish now` · `Dry run (render only, nothing uploaded)` · `Refresh thumbnails` · `Post 1 old video to Facebook + Instagram` · `Post 3 old videos to Facebook + Instagram` · `Send a test alert (WhatsApp)` (daily Shorts only; long workflows have fewer) |
 | **post_to** | `YouTube + Facebook + Instagram` · `YouTube only` · `Facebook + Instagram only` · `YouTube + Facebook` · `YouTube + Instagram` · `Facebook only` · `Instagram only` |
 | **episode** | an episode id (`ep094`, `s-ollama`); empty = next in line. With *Refresh thumbnails* = only that video |
 | **script** | (Shorts) a file path like `scripts/bees.txt` or the whole script pasted (format: `scripts/README.md`) → becomes `custom/<id>/` |
-| **language** | (kids Shorts) `en` · `hi` (Hindi voices + English subtitles) |
+| **language** | (kids Shorts) `en` · `hi` (Hindi voices + English subtitles) · `es` (Spanish voices + Spanish subtitles) |
 | **category** | (kids Shorts) make a category video instead of the daily Short: `none` (normal) · `comedy` · `quiz` · `knowledge` · `science` · `abc` · `counting` · `rhymes` · `varnamala` |
 | **board_style** | (AInation long) `default` · `hanging` · `display` · `whiteboard`, this run only |
 | **start_date / end_date** | (analytics) optional `YYYY-MM-DD` |
@@ -116,6 +122,7 @@ Boxes in the Run workflow form (Short and long workflows):
 
 | Field | Meaning |
 |---|---|
+| `es.json` (file next to `episode.json`) | Kids Spanish version: `title_es`, `description_es`, `cover_text_es`, `hook`, `tags_es`, `loop_card_es`, `lines`, `punch`, `boards` (every board translated, same shape). Checked by `validate_episode.py` |
 | `"backdrop"` | Kids: background picture name from `assets/art/` (`"none"` = drawn room). Wins over the automatic choice |
 | `"board_style"` | AInation: board look for this episode only (`hanging` · `display` · `whiteboard`) |
 | `"order"` | Position in the queue (lower = sooner) |
@@ -136,7 +143,7 @@ Full board reference: `SCRIPT_GUIDE_*.md` and `docs/ANIMATED_SCENES.md`.
 | `EPISODE` | Path of the episode being rendered (set by `daily.py`) |
 | `FORMAT` | `long` for long videos, else Short |
 | `VARIANT` | `full` · `short` (cut-down voice track) |
-| `TTS_LANG` | `en` · `hi` (set from the language box / alternate-day Hindi runs) |
+| `TTS_LANG` | `en` · `hi` · `es` (set from the language box / scheduled runs) |
 | `BG` | `kids` = kids look (set per repo) |
 | `WORKERS` | Parallel render processes (default = CPU count) |
 | `THUMB_ONLY` | Render only the thumbnail (Refresh thumbnails) |
@@ -159,3 +166,7 @@ Fixed in code (not variables): Shorts render at 24 fps; intro 2.0 s, outro 3.5 s
 | When | Change |
 |---|---|
 | 2026-11-22 12:40 IST (07:10 UTC) | File created (owner asked for one place with all variables). Covers both channels' workflows, secrets, run options, episode fields and internal settings. |
+| 2026-11-22 13:10 IST (07:40 UTC) | Added `WHATSAPP_PHONE` + `WHATSAPP_APIKEY` (WhatsApp alerts via CallMeBot). Telegram/Discord stay available but the owner doesn't use them. |
+| 2026-11-22 14:30 IST (09:00 UTC) | Kids Spanish Shorts: `ES_SHORTS`, `PUBLISH_WINDOW_ES`, `YT_PLAYLIST_ES`, language box `es`, new 03:11 IST cron. `YT_PLAYLIST` now defaults to `curiokids` (English + Hindi), Spanish goes to `CurioKids_Spanish`; both created automatically. |
+| 2026-11-22 17:00 IST (11:30 UTC) | Run option **Send a test alert (WhatsApp)** in both daily Short workflows. |
+| 2026-11-22 18:30 IST (13:00 UTC) | Radar: Google Trends + YouTube trending (`RADAR_TRENDS`, `RADAR_GEOS`), daily trend-alert issue. |

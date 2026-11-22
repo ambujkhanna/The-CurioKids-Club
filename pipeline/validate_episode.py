@@ -143,10 +143,72 @@ def check_hi(path):
     return errs
 
 
+def _shape(b):
+    """Board skeleton for comparing translations: type + item counts + icons (the words may differ)."""
+    if isinstance(b, dict):
+        return {k: _shape(v) for k, v in b.items() if k in ("type", "left", "right", "items", "steps", "rows", "from", "to", "icon", "art", "stock", "options")}
+    if isinstance(b, list):
+        return [_shape(x) for x in b]
+    return b
+
+
+def _cues(b):
+    out = []
+    if isinstance(b, dict):
+        for k, v in b.items():
+            if k in ("cue", "sub_cue") and isinstance(v, str) and v: out.append(v)
+            else: out += _cues(v)
+    elif isinstance(b, list):
+        for x in b: out += _cues(x)
+    return out
+
+
+def check_es(path):
+    """Spanish version (es.json, owner 2026-11-22): same lines, every board translated with the same shape, cues spoken."""
+    import os, re
+    sp = os.path.join(os.path.dirname(path), "es.json")
+    if not os.path.exists(sp): return ["no es.json (Spanish version) for this episode"]
+    ep = json.load(open(path, encoding="utf-8")); es = json.load(open(sp, encoding="utf-8")); errs = []
+    for k in ("title_es", "description_es", "cover_text_es", "lines"):
+        if not es.get(k): errs.append(f"es.json: missing {k}")
+    if errs: return errs
+    n = len(ep["lines"])
+    if len(es["lines"]) != n: return [f"es.json: {len(es['lines'])} lines, episode has {n}"]
+    en_title = re.sub(r"\s*Fun Facts for Kids\s*$", "", ep["title"]).strip(" |-")
+    if len(es["title_es"]) + len(en_title) > 97: errs.append("es.json: 'Spanish | English' title longer than 100 chars")
+    words = [[w.lower().strip(".,!?¿¡'\"():;…") for w in re.sub(r"\[[a-z_ ]+\]", " ", t).split()] for t in es["lines"]]
+    for i, t in enumerate(es["lines"]):
+        if len(t) > 260: errs.append(f"es.json line {i}: too long (> 260 chars)")
+        if not t.strip(): errs.append(f"es.json line {i}: empty")
+    if not re.search(r"(?i)suscr", es["lines"][-1]): errs.append("es.json: last line has no 'suscríbete' call-to-action")
+    boards = es.get("boards") or {}
+    for i, l in enumerate(ep["lines"]):
+        if l.get("board") and str(i) not in boards: errs.append(f"es.json boards: line {i} has a board in English but none in Spanish")
+    for k, b in boards.items():
+        if not str(k).isdigit() or int(k) >= n: errs.append(f"es.json boards: line '{k}' does not exist"); continue
+        i = int(k); en_b = ep["lines"][i].get("board")
+        if b.get("type") not in TYPES: errs.append(f"es.json boards {k}: unknown type {b.get('type')}")
+        if en_b and _shape(b) != _shape(en_b): errs.append(f"es.json boards {k}: different shape from the English board (keep type, items, icons, art)")
+        for ic in icons(b):
+            if bad_icon(ic): errs.append(f"es.json boards {k}: icon '{ic}' is not an emoji or known icon")
+        for c in _cues(b):
+            pre = c.lower().strip(".,!?¿¡")
+            if not any(w.startswith(pre) for j in range(i, min(n, i + 3)) for w in words[j]):
+                errs.append(f"es.json boards {k}: cue '{c}' is not said in Spanish line {i} (or the next two)")
+    for k, w in (es.get("punch") or {}).items():
+        if not str(k).isdigit() or int(k) >= n or not any(x.startswith(w.lower()) for x in words[int(k)]):
+            errs.append(f"es.json punch {k}: '{w}' is not said in that line")
+    lc = es.get("loop_card_es")
+    if lc and lc.get("cue") and not any(w.startswith(lc["cue"].lower()) for w in words[-1]):
+        errs.append(f"es.json loop_card_es: cue '{lc['cue']}' is not said in the last line (the end card waits for it)")
+    return errs
+
+
 if __name__ == "__main__":
     bad = 0
     for p in sys.argv[1:]:
         import os
-        e = check(p) + (check_hi(p) if os.path.exists(os.path.join(os.path.dirname(p), "hi.json")) else []); bad += bool(e)
+        e = check(p) + (check_hi(p) if os.path.exists(os.path.join(os.path.dirname(p), "hi.json")) else []) + \
+            (check_es(p) if os.path.exists(os.path.join(os.path.dirname(p), "es.json")) else []); bad += bool(e)
         print(("OK   " if not e else "FAIL ") + p + ("" if not e else "\n  - " + "\n  - ".join(e)))
     sys.exit(1 if bad else 0)

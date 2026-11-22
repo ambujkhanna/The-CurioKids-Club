@@ -1,0 +1,34 @@
+{
+  "title_es": "¿Cómo tejen las arañas sus telarañas? 🕸️",
+  "description_es": "¡Las arañas fabrican seda dentro de su cuerpo! Leo pregunta y su hermana mayor Mía le explica, paso a paso, cómo una araña construye su telaraña, en menos de un minuto.",
+  "cover_text_es": "¡CONSTRUCTORAS!",
+  "hook": "¿Cómo tejen las arañas sus telarañas?",
+  "tags_es": ["cómo hacen las arañas sus telarañas", "arañas para niños", "bichos para niños"],
+  "loop_card_es": {"text": "¿Cómo tejen telarañas?", "cue": "próxima", "left": "img:Animals/DBCLS/Koganegumo_spider", "right": "🕸️"},
+  "lines": [
+    "Mía, ¿cómo tejen las arañas sus telarañas?",
+    "¡Las arañas hacen seda dentro de su cuerpo! Sale por unas partecitas en su parte de atrás, llamadas hileras.",
+    "¿La seda está mojada o seca?",
+    "Adentro empieza líquida, pero cuando la araña la jala hacia afuera, se convierte en un hilo fuerte y elástico.",
+    "¿Cómo empieza una telaraña entre dos ramas?",
+    "Muchas arañas sueltan un hilo y esperan a que la brisa lo lleve al otro lado. Cuando se pega, ¡ese es el primer puente!",
+    "Después, agrega un marco, luego rayos como los de una rueda de bici, y al final, una espiral pegajosa que da vueltas y vueltas.",
+    "¿Por qué la araña no se queda pegada?",
+    "¡Es muy lista! No todos los hilos son pegajosos, y la araña pisa con cuidado, casi siempre en los que no pegan.",
+    "¿Para qué sirve la telaraña?",
+    "Es una trampa para bichos que vuelan, como las moscas. ¡Y algunas arañas hasta se comen su telaraña vieja para hacer seda nueva!",
+    "Seda de las hileras, un puente, rayos y una espiral pegajosa. ¡Las arañas son constructoras muy listas!",
+    "¡Claro que sí! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿cómo tejen las arañas sus telarañas?"
+  ],
+  "punch": {"1": "seda", "8": "lista"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "img:Animals/DBCLS/Koganegumo_spider", "label": "Araña"}, "right": {"icon": "🕸️", "label": "¿Telaraña?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "img:Animals/DBCLS/Koganegumo_spider", "text": "Seda de las hileras", "cue": "hileras", "sub": "Hecha dentro del cuerpo", "sub_cue": "dentro"},
+    "3": {"type": "big", "icon": "🧵", "text": "¡Líquida, y luego hilo!", "cue": "líquida", "sub": "Fuerte y elástico", "sub_cue": "fuerte"},
+    "5": {"type": "big", "icon": "🌬️", "text": "La brisa lo lleva", "cue": "brisa", "sub": "¡El primer puente!", "sub_cue": "puente"},
+    "6": {"type": "journey", "title": "Construyendo la telaraña", "traveler": "🕷️", "items": [{"icon": "🖼️", "label": "Marco", "cue": "marco"}, {"icon": "🚲", "label": "Rayos", "cue": "rayos"}, {"icon": "🌀", "label": "Espiral pegajosa", "cue": "espiral"}]},
+    "8": {"type": "big", "icon": "🕷️", "text": "Pisa los hilos que no pegan", "cue": "pisa"},
+    "10": {"type": "gallery", "title": "Datos de telarañas", "items": [{"icon": "🪰", "label": "Atrapa moscas", "cue": "moscas"}, {"icon": "♻️", "label": "Se come la vieja", "cue": "comen"}]},
+    "11": {"type": "summary", "rows": [{"icon": "🕷️", "text": "Seda de las hileras", "cue": "seda"}, {"icon": "🌬️", "text": "Un puente en la brisa", "cue": "puente"}, {"icon": "🕸️", "text": "Rayos", "cue": "rayos"}, {"icon": "🌀", "text": "Espiral pegajosa", "cue": "pegajosa"}]}
+  }
+}

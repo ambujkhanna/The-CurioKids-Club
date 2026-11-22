@@ -117,6 +117,8 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          WHATSAPP_PHONE: ${{ secrets.WHATSAPP_PHONE }}
+          WHATSAPP_APIKEY: ${{ secrets.WHATSAPP_APIKEY }}
           LIST_STYLE: ${{ vars.LIST_STYLE || 'tiles' }}
           CTA_STYLE: ${{ vars.CTA_STYLE || 'bar' }}
           CHAR_STYLE: ${{ vars.CHAR_STYLE || 'doodle' }}
@@ -133,7 +135,7 @@ jobs:
           INTRO: ${{ vars.INTRO || 'on' }}
           OUTRO: ${{ vars.OUTRO || 'on' }}
           MADE_FOR_KIDS: ${{ vars.MADE_FOR_KIDS || 'false' }}
-          YT_PLAYLIST: ${{ vars.YT_PLAYLIST }}
+          YT_PLAYLIST: ${{ vars.YT_PLAYLIST || 'curiokids' }}  # English long videos join the same playlist
         run: |
           ARGS=""
           case "$ACTION" in
@@ -173,6 +175,8 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          WHATSAPP_PHONE: ${{ secrets.WHATSAPP_PHONE }}
+          WHATSAPP_APIKEY: ${{ secrets.WHATSAPP_APIKEY }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           python pipeline/notify.py "❌ ${{ github.workflow }} failed in ${{ github.repository }} - $RUN_URL"

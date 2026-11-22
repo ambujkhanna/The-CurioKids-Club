@@ -1,0 +1,33 @@
+{
+  "title_es": "¿Por qué sopla el viento? 🌬️",
+  "description_es": "¿De dónde viene el viento? Leo pregunta y su hermana mayor Mía le explica cómo el Sol, el aire caliente y el aire fresco hacen el viento, en menos de un minuto.",
+  "cover_text_es": "¡FIUU!",
+  "hook": "¿Por qué sopla el viento?",
+  "tags_es": ["por qué sopla el viento", "el viento para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Por qué sopla el viento?", "cue": "próxima", "left": "☀️", "right": "🌬️"},
+  "lines": [
+    "Mía, ¿por qué sopla el viento?",
+    "¡Todo empieza con el Sol! El Sol calienta la tierra, el mar y el aire, pero no todo igual.",
+    "¿Por qué no igual?",
+    "En un día de sol, la tierra se calienta más rápido que el agua. Así que un poco de aire queda más caliente que el otro.",
+    "¿Y qué hace el aire caliente?",
+    "El aire caliente es más ligero, así que sube. Luego el aire fresco corre a ocupar su lugar. ¡Ese aire que se mueve es el viento!",
+    "¿Puedo sentir eso en la playa?",
+    "¡Sí! En un día de sol, el aire caliente sobre la playa sube. El aire fresco del mar sopla hacia la orilla. ¡Esa es la brisa del mar!",
+    "¿Podemos ver el viento?",
+    "¡No, el aire es invisible! Pero vemos lo que hace: los papalotes vuelan, las hojas bailan y los árboles se mecen.",
+    "El Sol calienta el aire, el aire caliente sube, y el aire fresco corre a su lugar. ¡Fiuu!",
+    "¿Qué exploramos ahora? ¡Pídele a un adulto que deje un tema en los comentarios!",
+    "¡Qué brisa tan rica! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué sopla el viento?"
+  ],
+  "punch": {"1": "sol", "5": "viento", "7": "brisa"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🌬️", "label": "Viento"}, "right": {"icon": "🤔", "label": "¿Por qué?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "☀️", "text": "El Sol calienta", "cue": "sol", "sub": "Pero no todo igual", "sub_cue": "igual"},
+    "3": {"type": "compare", "left": {"label": "Tierra", "items": [{"text": "Se calienta rápido", "icon": "🏜️", "cue": "rápido"}]}, "right": {"label": "Agua", "items": [{"text": "Se calienta lento", "icon": "🌊", "cue": "agua"}]}},
+    "5": {"type": "lifecycle", "title": "Así se hace viento", "items": [{"icon": "☀️", "label": "El aire se calienta", "cue": "caliente"}, {"icon": "⬆️", "label": "El aire sube", "cue": "sube"}, {"icon": "➡️", "label": "Llega aire fresco", "cue": "corre"}, {"icon": "🌬️", "label": "¡Viento!", "cue": "viento"}]},
+    "7": {"type": "flow", "title": "Brisa del mar", "packet": "💨", "items": [{"icon": "🌊", "label": "Aire fresco del mar", "cue": "fresco"}, {"icon": "🏖️", "label": "Sopla a la orilla", "cue": "sopla"}, {"icon": "😎", "label": "¡Brisa del mar!", "cue": "brisa"}]},
+    "9": {"type": "gallery", "title": "El viento trabaja", "items": [{"icon": "🪁", "label": "Papalotes", "cue": "papalotes"}, {"icon": "🍃", "label": "Hojas que bailan", "cue": "hojas"}, {"icon": "🌳", "label": "Árboles", "cue": "árboles"}]},
+    "10": {"type": "summary", "rows": [{"text": "El Sol calienta", "icon": "☀️", "cue": "sol"}, {"text": "El aire caliente sube", "icon": "⬆️", "cue": "sube"}, {"text": "Llega aire fresco", "icon": "🌬️", "cue": "corre"}]}
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "title_es": "¿Por qué temblamos cuando hace frío? 🥶",
+  "description_es": "¿Por qué temblamos cuando hace frío? Tus músculos se sacuden superrápido para hacer calor, ¡y tu cerebro lo hace solito! Leo pregunta y su hermana mayor Mía se lo explica en menos de un minuto.",
+  "cover_text_es": "¡BRRR!",
+  "hook": "¿Por qué temblamos cuando hace frío?",
+  "tags_es": ["por qué temblamos de frío", "cuerpo humano para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Por qué temblamos?", "cue": "próxima", "left": "🥶", "right": "💪"},
+  "lines": [
+    "Mía, ¿por qué tiemblo cuando tengo frío?",
+    "¡Temblar es la forma en que tu cuerpo hace calor! Tus músculos se sacuden muy, muy rápido.",
+    "¿Cómo es que sacudirse da calor?",
+    "Cuando los músculos trabajan, se calientan. ¡Es como cuando corres y te sientes calentito!",
+    "¿Yo les digo a mis músculos que tiemblen?",
+    "¡No! Cuando te da frío, tu cerebro se da cuenta solito. Les manda un mensaje a tus músculos: ¡a sacudirse!",
+    "¿Y luego qué pasa?",
+    "Las sacudidas hacen calor hasta que vuelves a sentirte calentito. ¡Y entonces se acaba el temblor!",
+    "¿Puedo ayudar a mi cuerpo a calentarse más rápido?",
+    "¡Sí! Ponte un abrigo, un gorro y calcetines calentitos, o acurrúcate bajo una manta suavecita.",
+    "¿Los animales también tiemblan?",
+    "¡Muchos sí! Los perros, los gatos y hasta los pájaros pueden temblar para mantenerse calentitos.",
+    "¡Entonces cuando tengo frío, mi cerebro les dice a mis músculos que se sacudan, y eso hace calor!",
+    "¿Qué exploramos ahora? ¡Pídele a un adulto que deje un tema en los comentarios!",
+    "¡Brrr-illante! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué temblamos cuando hace frío?"
+  ],
+  "punch": {"1": "calor"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🥶", "label": "Frío"}, "right": {"icon": "💪", "label": "¿Temblar?"}, "mid": "?"},
+    "1": {"type": "picture", "art": "kf_shiver", "caption": "Temblar da calor", "cue": "calor", "icon": "🔥"},
+    "3": {"type": "big", "icon": "🏃", "text": "Trabajar da calor", "cue": "trabajan", "sub": "Como al correr", "sub_cue": "corres"},
+    "5": {"type": "flow", "title": "Mensaje de temblor", "packet": "⚡", "items": [{"icon": "🥶", "label": "Sientes frío", "cue": "frío"}, {"icon": "🧠", "label": "Cerebro", "cue": "cerebro"}, {"icon": "💪", "label": "Músculos se sacuden", "cue": "sacudirse"}]},
+    "7": {"type": "transform", "title": "Entrando en calor", "from": {"icon": "🥶", "label": "Sacudidas", "cue": "sacudidas"}, "to": {"icon": "😊", "label": "Calentito otra vez", "cue": "calentito"}},
+    "9": {"type": "checklist", "title": "Para entrar en calor", "icon": "🧣", "items": [{"text": "Abrigo", "icon": "🧥", "cue": "abrigo", "ok": true}, {"text": "Gorro", "icon": "🧢", "cue": "gorro", "ok": true}, {"text": "Calcetines", "icon": "🧦", "cue": "calcetines", "ok": true}, {"text": "Manta", "icon": "🛏️", "cue": "manta", "ok": true}]},
+    "11": {"type": "gallery", "title": "Amigos que tiemblan", "items": [{"icon": "🐶", "label": "Perros", "cue": "perros"}, {"icon": "🐱", "label": "Gatos", "cue": "gatos"}, {"icon": "🐦", "label": "Pájaros", "cue": "pájaros"}]},
+    "12": {"type": "summary", "rows": [{"text": "Sientes frío", "icon": "🥶", "cue": "frío"}, {"text": "El cerebro avisa", "icon": "🧠", "cue": "cerebro"}, {"text": "Músculos se sacuden", "icon": "💪", "cue": "músculos"}, {"text": "Hace calor", "icon": "🔥", "cue": "calor"}]}
+  }
+}

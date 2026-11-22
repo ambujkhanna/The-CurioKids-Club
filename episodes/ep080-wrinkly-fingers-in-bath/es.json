@@ -1,0 +1,36 @@
+{
+  "title_es": "¿Por qué se arrugan los dedos en el baño? 🛁",
+  "description_es": "¿Por qué se arrugan los dedos después de un baño largo? ¡Tus nervios ayudan, y los científicos creen que podría ayudarte a agarrar mejor! Leo pregunta y su hermana mayor Mía se lo explica en menos de un minuto.",
+  "cover_text_es": "¡ARRUGADOS!",
+  "hook": "¿Por qué se arrugan los dedos en el baño?",
+  "tags_es": ["por qué se arrugan los dedos en el agua", "dedos arrugados para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Dedos arrugados?", "cue": "próxima", "left": "🛁", "right": "🖐️"},
+  "lines": [
+    "Mía, ¿por qué se me arrugan los dedos en el baño?",
+    "Después de mucho rato en el agua, la piel de los dedos de tus manos y pies se arruga. ¡Es totalmente normal!",
+    "¿Mi piel está chupando agua como una esponja?",
+    "¡Los científicos descubrieron que no es solo el agua! Tus nervios ayudan a hacer las arrugas.",
+    "¿Mis nervios? ¿Cómo?",
+    "Tus nervios les dicen a unos vasitos de sangre bajo la piel que se encojan. Entonces la piel de arriba se dobla en arrugas.",
+    "¿Pero por qué mi cuerpo haría eso?",
+    "Los científicos creen que los dedos arrugados te ayudan a agarrar cosas mojadas, ¡como el dibujo de una llanta en una calle mojada!",
+    "¿Entonces puedo agarrar mejor mis juguetes mojados?",
+    "¡Tal vez! Los científicos todavía están probando esa idea.",
+    "¿Mis dedos se quedarán arrugados para siempre?",
+    "¡Para nada! Cuando sales y te secas, tus dedos arrugados pronto vuelven a estar lisos.",
+    "¡Mucho rato en el agua, los nervios hacen arrugas y tal vez agarro mejor!",
+    "¿Qué nos preguntamos ahora? ¡Pídele a un adulto que deje un tema en los comentarios!",
+    "¡Arrugatástico! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué se me arrugan los dedos en el baño?"
+  ],
+  "punch": {"3": "nervios", "7": "agarrar"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🛁", "label": "Baño"}, "right": {"icon": "🖐️", "label": "¿Arrugas?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "🖐️", "text": "Manos y pies", "cue": "dedos", "sub": "Arrugados tras el agua", "sub_cue": "arruga"},
+    "3": {"type": "big", "icon": "⚡", "text": "¡Los nervios ayudan!", "cue": "nervios", "sub": "No es solo el agua", "sub_cue": "agua"},
+    "5": {"type": "flow", "title": "Hora de arrugas", "packet": "💧", "items": [{"icon": "⚡", "label": "Nervios", "cue": "nervios"}, {"icon": "🩸", "label": "Vasos se encogen", "cue": "encojan"}, {"icon": "🖐️", "label": "La piel se dobla", "cue": "dobla"}]},
+    "7": {"type": "big", "icon": "🛞", "text": "¿Mejor agarre?", "cue": "agarrar", "sub": "Como una llanta", "sub_cue": "llanta"},
+    "9": {"type": "big", "icon": "🔬", "text": "¡Siguen probando!", "cue": "probando"},
+    "11": {"type": "transform", "title": "Todo vuelve a la normalidad", "from": {"icon": "🛁", "label": "Arrugados", "cue": "arrugados"}, "to": {"icon": "✋", "label": "Lisos otra vez", "cue": "lisos"}},
+    "12": {"type": "summary", "rows": [{"text": "Mucho rato en el agua", "icon": "🛁", "cue": "rato"}, {"text": "Nervios hacen arrugas", "icon": "⚡", "cue": "nervios"}, {"text": "Quizás mejor agarre", "icon": "🖐️", "cue": "agarro"}]}
+  }
+}

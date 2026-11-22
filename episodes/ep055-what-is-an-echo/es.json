@@ -1,0 +1,35 @@
+{
+  "title_es": "¿Qué es el eco? 🔊",
+  "description_es": "¡El eco es un sonido que rebota y regresa a ti! Leo pregunta y Papá le explica las ondas de sonido, el eco y cómo lo usan los murciélagos, en menos de un minuto.",
+  "cover_text_es": "ECO... ¡ECO!",
+  "hook": "¿Qué es el eco?",
+  "tags_es": ["qué es el eco para niños", "el sonido para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Qué es el eco?", "cue": "próxima", "left": "🗣️", "right": "🏔️"},
+  "lines": [
+    "Papá, ¿qué es el eco?",
+    "El eco es un sonido que rebota y regresa a ti. Como cuando gritas '¡Hola!' cerca de un gran acantilado, y vuelves a oír 'hola'.",
+    "¿El sonido puede rebotar?",
+    "¡Sí puede! El sonido viaja por el aire en ondas invisibles, un poco como las ondas en un estanque.",
+    "Cuando esas ondas chocan con algo grande y duro, como un acantilado o una pared, rebotan hasta tus oídos.",
+    "¿Y por qué no oigo eco en mi cuarto?",
+    "Tu cuarto es chico, así que el sonido regresa súper rápido y se mezcla con tu voz. En un lugar grande tarda más, y lo vuelves a oír.",
+    "Las cosas suaves como las almohadas, las cortinas y los peluches se tragan el sonido, así que hacen el eco más bajito.",
+    "¿Los animales usan el eco?",
+    "¡Sí! Los murciélagos hacen chillidos agudos y escuchan el eco. Eso les ayuda a encontrar su camino y atrapar bichos en la oscuridad.",
+    "¡Los delfines también lo hacen, bajo el agua! Usar el eco así se llama ecolocalización.",
+    "¡Entonces el eco es un sonido que rebota en algo grande y duro!",
+    "¡Así es! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿qué es el eco?"
+  ],
+  "punch": {"1": "rebota", "9": "murciélagos"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🗣️", "label": "¡Hola!"}, "right": {"icon": "🔁", "label": "¿Eco?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "🏔️", "text": "Sonido que rebota", "cue": "rebota", "sub": "Hola... ¡hola!", "sub_cue": "hola"},
+    "3": {"type": "big", "icon": "〰️", "text": "El sonido viaja en ondas", "cue": "ondas", "sub": "Como en un estanque", "sub_cue": "estanque"},
+    "4": {"type": "journey", "title": "Viaje del eco", "traveler": "🔊", "items": [{"icon": "〰️", "label": "Ondas", "cue": "ondas"}, {"icon": "⛰️", "label": "Acantilado", "cue": "acantilado"}, {"icon": "img:Human_physiology/Servier/ear", "label": "Tus oídos", "cue": "oídos"}]},
+    "6": {"type": "compare", "left": {"label": "Cuarto chico", "items": [{"icon": "⚡", "text": "Regresa rápido", "cue": "rápido"}, {"icon": "🔀", "text": "Se mezcla", "cue": "mezcla"}]}, "right": {"label": "Lugar grande", "items": [{"icon": "⏳", "text": "Tarda más", "cue": "tarda"}, {"icon": "🔁", "text": "¡Se oye otra vez!", "cue": "oír"}]}},
+    "7": {"type": "gallery", "title": "Cosas suaves", "items": [{"icon": "🛏️", "label": "Almohadas", "cue": "almohadas"}, {"icon": "🪟", "label": "Cortinas", "cue": "cortinas"}, {"icon": "🧸", "label": "Peluches", "cue": "peluches"}]},
+    "9": {"type": "big", "icon": "🦇", "text": "Los murciélagos escuchan", "cue": "murciélagos", "sub": "Para encontrar el camino", "sub_cue": "encontrar"},
+    "10": {"type": "big", "icon": "🐬", "text": "¡Ecolocalización!", "cue": "ecolocalización", "sub": "Los delfines también", "sub_cue": "delfines"},
+    "11": {"type": "summary", "rows": [{"icon": "〰️", "text": "El sonido viaja en ondas", "cue": "sonido"}, {"icon": "🧱", "text": "Rebota en lo duro", "cue": "rebota"}, {"icon": "👂", "text": "Regresa a ti", "cue": "duro"}]}
+  }
+}

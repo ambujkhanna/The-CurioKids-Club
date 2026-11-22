@@ -1,0 +1,36 @@
+{
+  "title_es": "¿Por qué parpadeamos? 👀",
+  "description_es": "¡Cada parpadeo mantiene tus ojos húmedos, limpios y seguros! Leo pregunta y su hermana mayor Mía se lo explica en menos de un minuto.",
+  "cover_text_es": "¡PARPADEA!",
+  "hook": "¿Por qué parpadeamos?",
+  "tags_es": ["por qué parpadeamos", "los ojos para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Por qué parpadeamos?", "cue": "próxima", "left": "👀", "right": "😉"},
+  "lines": [
+    "Mía, ¿por qué parpadeamos?",
+    "¡Parpadear mantiene tus ojos húmedos y limpios! Cada parpadeo extiende una capa finita de lágrimas sobre tus ojos.",
+    "¿Lágrimas? ¡Pero si no estoy llorando!",
+    "Tus ojos hacen un poquito de lágrimas todo el tiempo. Cuando parpadeas, tus párpados las reparten, ¡como un limpiaparabrisas!",
+    "¿Y qué más hace parpadear?",
+    "¡También protege tus ojos! Tus párpados se cierran rápido para frenar el polvo, y parpadeas y entrecierras los ojos con la luz muy brillante.",
+    "¿Tengo que acordarme de parpadear?",
+    "¡No! Tu cerebro lo hace por ti, sin que tengas que pensarlo. ¡Parpadeas cada pocos segundos!",
+    "¿Puedo dejar de parpadear?",
+    "Puedes aguantar un ratito. Pero pronto tus ojos se sienten secos, y vuelves a parpadear.",
+    "¿Y cuando duermo?",
+    "Cuando duermes, tus párpados se quedan cerrados. Así tus ojos están tapados y cómodos toda la noche.",
+    "¡Entonces parpadear mantiene mis ojos húmedos, limpios y seguros!",
+    "¿Qué aprendemos ahora? ¡Pídele a un adulto que deje un tema en los comentarios!",
+    "¡Parpadeo, parpadeo, hurra! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué parpadeamos?"
+  ],
+  "punch": {"1": "lágrimas", "3": "limpiaparabrisas", "7": "pensarlo"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "👀", "label": "Ojos"}, "right": {"icon": "😉", "label": "¿Parpadear?"}, "mid": "?"},
+    "1": {"type": "picture", "art": "kf_blink", "caption": "Parpadear reparte lágrimas", "cue": "lágrimas", "icon": "💧"},
+    "3": {"type": "flow", "title": "Lavado de ojos", "packet": "💧", "items": [{"icon": "💧", "label": "Lágrimas", "cue": "lágrimas"}, {"icon": "😌", "label": "Parpadeo", "cue": "parpadeas"}, {"icon": "🧽", "label": "Limpieza", "cue": "limpiaparabrisas"}]},
+    "5": {"type": "checklist", "title": "Parpadear ayuda", "icon": "👀", "items": [{"text": "Protege los ojos", "icon": "🛡️", "cue": "protege", "ok": true}, {"text": "Frena el polvo", "icon": "💨", "cue": "polvo", "ok": true}, {"text": "Luz brillante", "icon": "☀️", "cue": "brillante", "ok": true}]},
+    "7": {"type": "big", "icon": "🧠", "text": "Parpadeos automáticos", "cue": "cerebro", "sub": "Cada pocos segundos", "sub_cue": "cada"},
+    "9": {"type": "transform", "title": "Hora de parpadear", "from": {"icon": "😳", "label": "Ojos secos", "cue": "secos"}, "to": {"icon": "😌", "label": "¡Parpadeo!", "cue": "parpadear"}},
+    "11": {"type": "big", "icon": "😴", "text": "Cerrados toda la noche", "cue": "duermes"},
+    "12": {"type": "summary", "rows": [{"text": "Húmedos", "icon": "💧", "cue": "húmedos"}, {"text": "Limpios", "icon": "🧽", "cue": "limpios"}, {"text": "Seguros", "icon": "🛡️", "cue": "seguros"}]}
+  }
+}

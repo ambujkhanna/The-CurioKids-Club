@@ -1,0 +1,35 @@
+{
+  "title_es": "¿Cómo quita el jabón los gérmenes? 🧼",
+  "description_es": "¿Cómo quita el jabón los gérmenes? ¡Atrapa la grasa, envuelve los gérmenes y el agua se los lleva! Leo pregunta y Papá se lo explica en menos de un minuto.",
+  "cover_text_es": "¡ADIÓS, GÉRMENES!",
+  "hook": "¿Cómo quita el jabón los gérmenes?",
+  "tags_es": ["cómo funciona el jabón", "lavarse las manos para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Cómo funciona el jabón?", "cue": "próxima", "left": "🧼", "right": "img:Microbiology/Servier/bacterium"},
+  "lines": [
+    "Papá, ¿cómo quita el jabón los gérmenes?",
+    "Los gérmenes son demasiado chiquitos para verlos. Muchos se pegan a la grasita natural de nuestra piel.",
+    "¿Y el agua sola no los puede quitar?",
+    "El agua sola no es muy buena para eso, porque la grasa y el agua no se mezclan. Los gérmenes solo se resbalan.",
+    "¿Y qué hace el jabón?",
+    "El jabón está hecho de pedacitos con dos puntas. Una punta ama el agua. ¡La otra punta ama la grasa y la atrapa fuerte!",
+    "¿Como un jueguito de jalar la cuerda?",
+    "¡Algo así! Los pedacitos de jabón atrapan la grasa y los gérmenes y los envuelven en burbujitas. El jabón hasta puede romper algunos gérmenes.",
+    "¿Y luego qué?",
+    "¡Luego el agua enjuaga las burbujas, con todo y gérmenes!",
+    "¿Cuánto tiempo me tengo que tallar?",
+    "Mójate las manos, ponte jabón y tállalas unos veinte segundos. ¡Cuenta despacito hasta veinte, y luego enjuaga!",
+    "¡El jabón atrapa la grasa, envuelve los gérmenes, y el agua se los lleva!",
+    "¡Rechinando de limpio! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿cómo quita el jabón los gérmenes?"
+  ],
+  "punch": {"3": "mezclan", "5": "atrapa"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🧼", "label": "Jabón"}, "right": {"icon": "img:Microbiology/Servier/bacterium", "label": "¿Gérmenes?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "img:Microbiology/Servier/bacterium", "text": "Gérmenes chiquitos", "cue": "gérmenes", "sub": "Pegados a la grasita", "sub_cue": "grasita"},
+    "3": {"type": "big", "icon": "💧", "text": "Grasa y agua no se mezclan", "cue": "mezclan"},
+    "5": {"type": "compare", "left": {"label": "Una punta", "items": [{"text": "Ama el agua", "icon": "💧", "cue": "agua"}]}, "right": {"label": "Otra punta", "items": [{"text": "Ama la grasa", "icon": "🫒", "cue": "grasa"}]}},
+    "7": {"type": "journey", "title": "El jabón trabaja", "traveler": "🦠", "items": [{"icon": "🧼", "label": "Atrapa", "cue": "atrapan"}, {"icon": "🫧", "label": "Envuelve", "cue": "envuelven"}, {"icon": "💥", "label": "Rompe gérmenes", "cue": "romper"}]},
+    "9": {"type": "big", "icon": "🚿", "text": "¡A enjuagar!", "cue": "enjuaga"},
+    "11": {"type": "checklist", "title": "Lavado de manos", "icon": "img:General_items/Servier/hand-washing", "items": [{"text": "Mójate las manos", "icon": "💧", "cue": "mójate", "ok": true}, {"text": "Jabón y a tallar", "icon": "🧼", "cue": "tállalas", "ok": true}, {"text": "Unos 20 segundos", "icon": "⏱️", "cue": "veinte", "ok": true}, {"text": "Enjuaga", "icon": "🚿", "cue": "enjuaga", "ok": true}]},
+    "12": {"type": "summary", "rows": [{"text": "Atrapa la grasa", "icon": "🧼", "cue": "atrapa"}, {"text": "Envuelve gérmenes", "icon": "🫧", "cue": "envuelve"}, {"text": "El agua se los lleva", "icon": "💧", "cue": "lleva"}]}
+  }
+}

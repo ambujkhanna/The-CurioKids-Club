@@ -1,0 +1,149 @@
+{
+  "title_es": "¿Por qué cambian de color las hojas? 🍂",
+  "description_es": "¡Los colores del otoño estuvieron escondidos en las hojas todo el verano! Leo pregunta y su hermana mayor Mía le explica a dónde se va el verde, en menos de un minuto.",
+  "cover_text_es": "¿POR QUÉ NARANJA?",
+  "hook": "¿Por qué las hojas cambian de color?",
+  "tags_es": [
+    "por qué las hojas cambian de color en otoño",
+    "el otoño para niños",
+    "ciencia para niños"
+  ],
+  "loop_card_es": {
+    "text": "¿Por qué cambian de color?",
+    "cue": "próxima",
+    "left": "🍃",
+    "right": "🍂"
+  },
+  "lines": [
+    "Mía, ¿por qué las hojas cambian de color?",
+    "¡Es un secreto de colores! En verano, las hojas están llenas de una cosa verde que se llama clorofila.",
+    "¿Y qué hace la clorofila?",
+    "Ayuda a la hoja a convertir la luz del sol en comida para el árbol.",
+    "¿Entonces por qué las hojas se ponen naranjas?",
+    "En otoño, los días se hacen más cortos y más frescos. El árbol deja de hacer clorofila, y el verde se va borrando poco a poco.",
+    "Y aquí está el secreto. El amarillo y el naranja estaban escondidos en la hoja todo el verano. ¡Ahora por fin los podemos ver!",
+    "¿Y las hojas rojas?",
+    "Algunos árboles fabrican colores nuevos, rojos y morados, en otoño. Por eso los arces se ven tan brillantes.",
+    "¿Y por qué se caen las hojas?",
+    "El árbol las suelta, y descansa todo el invierno. ¡Luego en primavera le crecen hojas verdes nuevecitas!",
+    "¡Entonces el verde se va, y los colores escondidos salen a jugar!",
+    "¡Así es! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué las hojas cambian de color?"
+  ],
+  "punch": {
+    "6": "escondidos"
+  },
+  "boards": {
+    "0": {
+      "type": "title",
+      "left": {
+        "icon": "🍃",
+        "label": "Verde"
+      },
+      "right": {
+        "icon": "🍂",
+        "label": "¿Naranja?"
+      },
+      "mid": "?"
+    },
+    "1": {
+      "type": "big",
+      "icon": "🍃",
+      "text": "Clorofila verde",
+      "cue": "verde",
+      "sub": "Se dice: clo-ro-fi-la",
+      "sub_cue": "clorofila"
+    },
+    "3": {
+      "type": "big",
+      "icon": "☀️",
+      "text": "Luz en comida",
+      "cue": "luz",
+      "sub": "Comida para el árbol",
+      "sub_cue": "comida"
+    },
+    "5": {
+      "type": "steps",
+      "title": "En otoño",
+      "items": [
+        {
+          "icon": "🌙",
+          "label": "Días más cortos",
+          "cue": "cortos"
+        },
+        {
+          "icon": "🌡️",
+          "label": "Más fresco",
+          "cue": "frescos"
+        },
+        {
+          "icon": "🍃",
+          "label": "El verde se va",
+          "cue": "borrando"
+        }
+      ]
+    },
+    "6": {
+      "type": "big",
+      "icon": "🍂",
+      "text": "Amarillo y naranja escondidos",
+      "cue": "escondidos",
+      "sub": "¡Todo el verano!",
+      "sub_cue": "verano"
+    },
+    "8": {
+      "type": "big",
+      "icon": "🍁",
+      "text": "¡El rojo es nuevo!",
+      "cue": "rojos",
+      "sub": "En árboles como el arce",
+      "sub_cue": "arces"
+    },
+    "10": {
+      "type": "cycle",
+      "title": "El año de un árbol",
+      "center": "🌳",
+      "items": [
+        {
+          "icon": "🍂",
+          "label": "Caen las hojas",
+          "cue": "suelta"
+        },
+        {
+          "icon": "❄️",
+          "label": "El árbol descansa",
+          "cue": "invierno"
+        },
+        {
+          "icon": "🌱",
+          "label": "Hojas nuevas",
+          "cue": "primavera"
+        },
+        {
+          "icon": "☀️",
+          "label": "Verde de verano",
+          "cue": "crecen"
+        }
+      ]
+    },
+    "11": {
+      "type": "summary",
+      "rows": [
+        {
+          "icon": "🍃",
+          "text": "El verde se va",
+          "cue": "verde"
+        },
+        {
+          "icon": "🍂",
+          "text": "Salen los escondidos",
+          "cue": "escondidos"
+        },
+        {
+          "icon": "🍁",
+          "text": "¡Salen los colores!",
+          "cue": "colores"
+        }
+      ]
+    }
+  }
+}

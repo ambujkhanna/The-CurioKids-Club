@@ -1,0 +1,35 @@
+{
+  "title_es": "¿Por qué las serpientes cambian de piel? 🐍",
+  "description_es": "¿Por qué las serpientes cambian de piel? ¡Su piel vieja les queda muy apretada, así que se retuercen para salir de ella! Leo pregunta y su hermana mayor Mía se lo explica en menos de un minuto.",
+  "cover_text_es": "¡PIEL NUEVA!",
+  "hook": "¿Por qué las serpientes cambian de piel?",
+  "tags_es": ["por qué las serpientes cambian de piel", "serpientes para niños", "animales para niños"],
+  "loop_card_es": {"text": "¿Por qué cambian de piel?", "cue": "próxima", "left": "🐍", "right": "✨"},
+  "lines": [
+    "Mía, ¿por qué las serpientes cambian de piel?",
+    "La piel de afuera de la serpiente no se estira. Así que cuando la serpiente crece, su piel le queda muy apretada.",
+    "¿Como cuando mis zapatos me quedan chicos?",
+    "¡Exacto! Entonces le crece una piel nueva debajo, y se retuerce para salir de la vieja.",
+    "¿Y cómo sale?",
+    "Se frota la nariz contra una roca para aflojar la piel vieja. Luego avanza arrastrándose y se desliza afuera, ¡como cuando te quitas un calcetín!",
+    "¿La piel vieja sale en pedazos?",
+    "Muchas veces sale en un solo pedazo largo, al revés, ¡con la forma de cada escama!",
+    "¿La serpiente sabe cuándo le toca?",
+    "Antes de cambiar de piel, sus ojos se ponen nublados y azulados, ¡porque hasta sus ojos reciben una tapita transparente nueva!",
+    "¿Nosotros también cambiamos de piel?",
+    "¡Sí! Pero soltamos pedacitos muy chiquitos todo el tiempo, así que nunca lo notamos. Las serpientes lo hacen todo de una vez.",
+    "¡Piel muy apretada, una gran retorcida, y escamas nuevas y brillantes!",
+    "¡Eso es! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué las serpientes cambian de piel?"
+  ],
+  "punch": {"2": "zapatos", "7": "revés"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🐍", "label": "Serpiente"}, "right": {"icon": "✨", "label": "¿Piel nueva?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "🐍", "text": "La piel queda apretada", "cue": "apretada", "sub": "La serpiente sigue creciendo", "sub_cue": "crece"},
+    "3": {"type": "big", "icon": "✨", "text": "Piel nueva debajo", "cue": "nueva", "sub": "Se retuerce para salir", "sub_cue": "retuerce"},
+    "5": {"type": "journey", "title": "Fuera la piel vieja", "traveler": "🐍", "items": [{"icon": "🪨", "label": "Frota la nariz", "cue": "frota"}, {"icon": "➡️", "label": "Avanza", "cue": "avanza"}, {"icon": "🧦", "label": "Se desliza", "cue": "desliza"}]},
+    "7": {"type": "big", "icon": "🐍", "text": "¡Un solo pedazo largo!", "cue": "pedazo", "sub": "Al revés", "sub_cue": "revés"},
+    "9": {"type": "big", "icon": "👀", "text": "Ojos nublados y azules", "cue": "nublados", "sub": "¡Los ojos también cambian!", "sub_cue": "tapita"},
+    "11": {"type": "compare", "left": {"label": "Tú", "items": [{"text": "Pedacitos chiquitos", "icon": "img:Human_physiology/Servier/skin-normal", "cue": "pedacitos"}, {"text": "Todo el tiempo", "icon": "⏰", "cue": "tiempo"}]}, "right": {"label": "Serpiente", "items": [{"text": "Todo de una vez", "icon": "🐍", "cue": "vez"}]}},
+    "12": {"type": "summary", "rows": [{"text": "Piel muy apretada", "icon": "🐍", "cue": "apretada"}, {"text": "Salir retorciéndose", "icon": "✨", "cue": "retorcida"}, {"text": "Escamas brillantes", "icon": "🌟", "cue": "brillantes"}]}
+  }
+}

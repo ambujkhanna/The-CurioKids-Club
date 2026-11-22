@@ -1,0 +1,33 @@
+{
+  "title_es": "¿Por qué necesitamos tomar agua? 💧",
+  "description_es": "¡Tu cuerpo es más de la mitad agua! Leo pregunta y su hermana mayor Mía le explica todos los trabajos que hace el agua dentro de ti, en menos de un minuto.",
+  "cover_text_es": "¿POR QUÉ AGUA?",
+  "hook": "¿Por qué necesitamos tomar agua?",
+  "tags_es": ["por qué tomar agua niños", "el cuerpo humano para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Por qué tomar agua?", "cue": "próxima", "left": "💧", "right": "👦"},
+  "lines": [
+    "Mía, ¿por qué necesitamos tomar agua?",
+    "¡Porque tu cuerpo es más de la mitad agua! Está en tu sangre, en tus músculos y hasta en tu cerebro.",
+    "¿Y qué hace toda esa agua?",
+    "¡Muchos trabajos! Lleva las cosas buenas de tu comida por todo tu cuerpo, y te ayuda a digerir el almuerzo.",
+    "También te mantiene fresco. Cuando tienes calor, sudas, y cuando el sudor se seca, te refresca la piel.",
+    "¿Entonces pierdo agua cuando sudo?",
+    "¡Sí! Pierdes un poquito cuando sudas, cuando respiras, y cuando vas al baño. ¡Por eso hay que volver a llenarse!",
+    "¿Cómo sé cuándo necesito tomar agua?",
+    "¡Tu cuerpo te avisa! Tener sed es la forma en que tu cuerpo dice: '¡Agua, por favor!'",
+    "Así que toma traguitos de agua durante el día, sobre todo cuando hace calor o has estado corriendo.",
+    "¡El agua lleva cosas buenas, me mantiene fresco y me ayuda a sentirme genial!",
+    "¡Salud por eso! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué necesitamos tomar agua?"
+  ],
+  "punch": {"1": "mitad", "8": "sed"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "💧", "label": "Agua"}, "right": {"icon": "👦", "label": "¿Por qué?"}, "mid": "?"},
+    "1": {"type": "gallery", "title": "El agua está en tu...", "items": [{"icon": "🩸", "label": "Sangre", "cue": "sangre"}, {"icon": "img:Human_physiology/Servier/muscle-1", "label": "Músculos", "cue": "músculos"}, {"icon": "img:Human_physiology/Servier/brain-1", "label": "Cerebro", "cue": "cerebro"}]},
+    "3": {"type": "body", "title": "El agua trabaja", "show": ["heart", "stomach"], "flow": "blood", "cue": "lleva", "labels": [{"text": "Lleva", "at": "heart", "cue": "lleva"}, {"text": "Comida", "at": "stomach", "cue": "comida"}, {"text": "Digerir", "at": "stomach", "cue": "digerir"}]},
+    "4": {"type": "big", "icon": "😅", "text": "El sudor te refresca", "cue": "sudas", "sub": "Se seca y te enfría", "sub_cue": "seca"},
+    "6": {"type": "gallery", "title": "El agua sale", "items": [{"icon": "💦", "label": "Sudor", "cue": "sudas"}, {"icon": "💨", "label": "Al respirar", "cue": "respiras"}, {"icon": "🚽", "label": "Baño", "cue": "baño"}]},
+    "8": {"type": "big", "icon": "🗣️", "text": "Sed = ¡agua, por favor!", "cue": "sed"},
+    "9": {"type": "checklist", "title": "Hora de un traguito", "icon": "💧", "items": [{"icon": "🕐", "text": "Durante el día", "cue": "día", "ok": true}, {"icon": "☀️", "text": "Cuando hace calor", "cue": "calor", "ok": true}, {"icon": "🏃", "text": "Después de correr", "cue": "corriendo", "ok": true}]},
+    "10": {"type": "summary", "rows": [{"icon": "img:Human_physiology/Servier/bloodstream", "text": "Lleva cosas buenas", "cue": "lleva"}, {"icon": "😅", "text": "Te mantiene fresco", "cue": "fresco"}, {"icon": "😊", "text": "Te sientes genial", "cue": "sentirme"}]}
+  }
+}

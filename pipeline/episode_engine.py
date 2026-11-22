@@ -25,10 +25,17 @@ import char_line, bg_line
 
 EP = json.load(open(os.environ["EPISODE"]))
 ELINES = EP["lines"]
-if K.T.get("lang") == "hi":  # Hindi version: hi.json may replace boards where the Hindi joke differs from the English one
-    _hp = os.path.join(os.path.dirname(os.environ["EPISODE"]), "hi.json")
-    for _i, _b in (json.load(open(_hp, encoding="utf-8")).get("boards", {}) if os.path.exists(_hp) else {}).items():
+if K.T.get("lang") in ("hi", "es"):  # Hindi/Spanish version: <lang>.json may replace boards (Spanish: all boards translated)
+    _hp = os.path.join(os.path.dirname(os.environ["EPISODE"]), K.T["lang"] + ".json")
+    _lj = json.load(open(_hp, encoding="utf-8")) if os.path.exists(_hp) else {}
+    for _i, _b in _lj.get("boards", {}).items():
         ELINES[int(_i)] = dict(ELINES[int(_i)], board=_b)
+    if K.T["lang"] == "es":  # Spanish thumbnail headline, end card and picture choice
+        for _k in ("cover_text", "loop_card"):
+            if _lj.get(_k + "_es"): EP[_k] = _lj[_k + "_es"]
+        if _lj.get("title_es"): EP["title_es"] = _lj["title_es"]
+        for _i, _w in (_lj.get("punch") or {}).items():  # Spanish punch word per line ("3": "vacío"); missing = line start
+            ELINES[int(_i)] = dict(ELINES[int(_i)], punch=_w)
 assert len(ELINES) == len(LN), "timing.json does not match the episode: run tts.py with the same EPISODE first"
 
 ICONS = {"chat": icon_chat, "robot": icon_robot, "check": icon_check, "sun": icon_sun, "train": icon_train,
@@ -665,6 +672,11 @@ if __name__ == "__main__":
     out = sys.argv[1]; os.makedirs(out, exist_ok=True)
     frames = [int(x) for x in sys.argv[2:]] or list(range(NF))
     n = int(os.environ.get("WORKERS", os.cpu_count() or 2))
+    try:  # every board icon downloaded ONCE here; workers never download -> the same picture in every frame (no flicker)
+        print("3D icons ready:", icons3d.prefetch([ELINES, EP.get("loop_card"), EP.get("cast")]))
+    except Exception as e:
+        print("note: icon prefetch skipped:", str(e)[:100])
+    os.environ["ICONS3D_NO_DOWNLOAD"] = "1"
     with Pool(n) as pool:
         print("rendered", sum(pool.map(worker, [(out, frames[j::n]) for j in range(n)])))
     pops = sorted(set(round(e[0], 3) for e in ELEMS if e[0] > 0.3))

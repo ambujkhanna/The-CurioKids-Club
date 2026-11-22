@@ -1,0 +1,36 @@
+{
+  "title_es": "¿Por qué necesitamos dormir? 😴",
+  "description_es": "¡Mientras duermes, tu cerebro y tu cuerpo están muy ocupados! Leo pregunta y su hermana mayor Mía le explica por qué dormir es tan importante, con consejos fáciles para dormir bien, en menos de un minuto.",
+  "cover_text_es": "¿POR QUÉ DORMIR?",
+  "hook": "¿Por qué necesitamos dormir?",
+  "tags_es": ["por qué necesitamos dormir", "rutina de sueño para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Por qué dormimos?", "cue": "próxima", "left": "😴", "right": "🌙"},
+  "lines": [
+    "Mía, ¿por qué necesitamos dormir?",
+    "¡Dormir es como cargar tus baterías! Tu cuerpo y tu cerebro descansan y se reparan.",
+    "¿Pero qué hace mi cerebro mientras duermo?",
+    "¡Está ocupado! Tu cerebro ordena lo que aprendiste hoy y guarda lo importante, como cuando ordenas tu caja de juguetes.",
+    "¿Ahí es cuando sueño?",
+    "Sí, los sueños pasan mientras duermes. ¡Los científicos todavía están aprendiendo por qué soñamos!",
+    "¿Y qué hace mi cuerpo?",
+    "Mientras duermes, tu cuerpo crece, tus músculos se hacen más fuertes, y te ayuda a combatir los gérmenes.",
+    "¿Por eso me pongo gruñón cuando me quedo despierto hasta tarde?",
+    "¡Sí! Si no duermes lo suficiente, cuesta más pensar, jugar y estar feliz. Y los niños necesitan dormir más que los adultos.",
+    "¿Cómo puedo dormir bien?",
+    "Acuéstate a la misma hora cada noche, con un cuento tranquilo, en un cuarto oscuro y cómodo. ¡Nada de pantallas antes de dormir!",
+    "Entonces dormir me ayuda a crecer, aprender y estar feliz. ¡Buenas noches!",
+    "¡Dulces sueños! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué necesitamos dormir?"
+  ],
+  "punch": {"1": "cargar", "8": "gruñón"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "😴", "label": "Dormir"}, "right": {"icon": "🤔", "label": "¿Por qué?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "🛌", "text": "¡A recargar!", "cue": "cargar", "sub": "Cuerpo y cerebro descansan", "sub_cue": "descansan"},
+    "3": {"type": "big", "icon": "img:Human_physiology/Servier/brain-1", "text": "Hora de ordenar", "cue": "ordena", "sub": "Guarda lo aprendido", "sub_cue": "guarda"},
+    "5": {"type": "big", "icon": "💭", "text": "Hora de soñar", "cue": "sueños", "sub": "¡Aún es un misterio!", "sub_cue": "científicos"},
+    "7": {"type": "gallery", "title": "Dormir te ayuda", "items": [{"icon": "📏", "label": "Crecer", "cue": "crece"}, {"icon": "img:Human_physiology/Servier/muscle-1", "label": "Músculos fuertes", "cue": "músculos"}, {"icon": "img:Microbiology/Servier/bacterium", "label": "Vencer gérmenes", "cue": "gérmenes"}]},
+    "8": {"type": "big", "icon": "😫", "text": "¿Gruñón?", "cue": "gruñón"},
+    "9": {"type": "compare", "left": {"label": "Niños", "items": [{"text": "Más sueño", "icon": "🧒", "cue": "niños"}]}, "right": {"label": "Adultos", "items": [{"text": "Menos sueño", "icon": "🧑", "cue": "adultos"}]}},
+    "11": {"type": "checklist", "title": "Dormir bien", "icon": "🌙", "items": [{"text": "Misma hora", "icon": "⏰", "cue": "misma", "ok": true}, {"text": "Un cuento tranquilo", "icon": "📖", "cue": "cuento", "ok": true}, {"text": "Cuarto oscuro", "icon": "🌑", "cue": "oscuro", "ok": true}, {"text": "Pantallas al dormir", "icon": "📱", "cue": "pantallas", "ok": false}]},
+    "12": {"type": "summary", "rows": [{"text": "Crecer", "icon": "📏", "cue": "crecer"}, {"text": "Aprender", "icon": "🧠", "cue": "aprender"}, {"text": "Estar feliz", "icon": "😊", "cue": "feliz"}]}
+  }
+}

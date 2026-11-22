@@ -1,0 +1,35 @@
+{
+  "title_es": "¿Por qué las huellas son diferentes? 👆",
+  "description_es": "¡Nadie en el mundo tiene huellas digitales iguales a las tuyas, ni siquiera los gemelos! Leo pregunta y su hermana mayor Mía se lo explica en menos de un minuto.",
+  "cover_text_es": "¡SOLO TÚ!",
+  "hook": "¿Por qué todos tenemos huellas diferentes?",
+  "tags_es": ["por qué las huellas digitales son diferentes", "huellas digitales para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Huellas diferentes?", "cue": "próxima", "left": "👆", "right": "🔍"},
+  "lines": [
+    "Mía, ¿por qué todos tenemos huellas digitales diferentes?",
+    "Mira las puntas de tus dedos. ¿Ves esas rayitas chiquitas en remolino? Se llaman crestas.",
+    "¿Y cuándo me salieron?",
+    "¡Antes de que nacieras! Se formaron mientras crecías dentro de tu mamá.",
+    "¿Y por qué las mías son diferentes de las tuyas?",
+    "Los científicos creen que empujoncitos y toquecitos le dieron forma a tu piel mientras crecía. Así las crestas hicieron un dibujo solo tuyo.",
+    "¿Y los gemelos? ¡Se ven exactamente iguales!",
+    "¡Hasta los gemelos idénticos tienen huellas diferentes! Las puntas de sus dedos crecieron a su propia manera.",
+    "¿Hay distintos tipos de huellas?",
+    "¡Sí! Tres formas principales: lazos, remolinos y arcos. ¡Con un adulto, mira las tuyas con una lupa!",
+    "¿Y para qué sirven las huellas?",
+    "Los científicos creen que las crestas nos ayudan a agarrar y a sentir. Y un dato divertido: ¡los koalas también tienen huellas!",
+    "¡Entonces mis huellas crecieron antes de que naciera, y nadie más tiene las mías!",
+    "¡Así es! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué todos tenemos huellas digitales diferentes?"
+  ],
+  "punch": {"3": "nacieras", "7": "gemelos"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "👆", "label": "Huellas"}, "right": {"icon": "🔍", "label": "¿Diferentes?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "img:Human_physiology/Servier/skin-normal", "text": "Crestas chiquitas", "cue": "crestas", "sub": "¡Rayitas en remolino!", "sub_cue": "remolino"},
+    "3": {"type": "big", "icon": "👶", "text": "Antes de nacer", "cue": "nacieras"},
+    "5": {"type": "big", "icon": "👆", "text": "Un dibujo solo tuyo", "cue": "dibujo", "sub": "Por empujoncitos", "sub_cue": "empujoncitos"},
+    "7": {"type": "big", "icon": "👯", "text": "¿Gemelos? ¡Diferentes!", "cue": "gemelos", "sub": "Cada uno la suya", "sub_cue": "propia"},
+    "9": {"type": "gallery", "title": "Tres formas", "items": [{"icon": "➰", "label": "Lazo", "cue": "lazos"}, {"icon": "🌀", "label": "Remolino", "cue": "remolinos"}, {"icon": "🌈", "label": "Arco", "cue": "arcos"}]},
+    "11": {"type": "big", "icon": "🐨", "text": "¡Los koalas también!", "cue": "koalas", "sub": "Para agarrar", "sub_cue": "agarrar"},
+    "12": {"type": "summary", "rows": [{"icon": "👆", "text": "Mis huellas", "cue": "huellas"}, {"icon": "👶", "text": "Antes de nacer", "cue": "naciera"}, {"icon": "🌟", "text": "Nadie más las tiene", "cue": "nadie"}]}
+  }
+}

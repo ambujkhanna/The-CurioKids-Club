@@ -103,14 +103,21 @@ def _hook_text():
     except Exception:
         ep_ = {}
     h = ep_.get("hook")
+    if T.get("lang") == "es":  # Spanish version: hook from es.json, else the first Spanish question
+        try:
+            h = json.load(open(os.path.join(os.path.dirname(_ep), "es.json"), encoding="utf-8")).get("hook")
+        except Exception:
+            h = None
     if not h:
         first = (T["lines"][0]["text"] if T["lines"] else "").strip()
         q = [s_ for s_ in re.split(r"(?<=[?!.])\s+", first) if s_.endswith("?")]
         h = q[-1] if q else (ep_.get("cover_text") or "")
-        h = re.sub(r"^(mia|leo|dad|teen|hey)[, ]+", "", h, flags=re.I).strip()
+        h = re.sub(r"^(m[ií]a|le[oó]|dad|pap[aá]|teen|hey|oye)[, ]+", "", h, flags=re.I).strip()
+        if "¿" in h: h = h[h.index("¿"):]  # Spanish: the question starts at its opening mark
     h = h.strip()
     if not h or len(h) > 60: return None
-    return h[0].upper() + h[1:]
+    k = 1 if h[0] in "¿¡" and len(h) > 1 else 0
+    return h[:k] + h[k].upper() + h[k + 1:]
 _hk = _hook_text()
 if _hk:
     try:  # kids glass card: the card is empty for the first 2.3 s, so the hook sits in its middle (not over the board)

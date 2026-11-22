@@ -1,0 +1,158 @@
+{
+  "title_es": "¿Cómo le habla tu cerebro a tu cuerpo? 🧠",
+  "description_es": "¡Tus nervios llevan mensajes superrápido, como cablecitos! Leo pregunta y su hermana mayor Mía le explica cómo tu cerebro le habla a tu cuerpo, en menos de un minuto.",
+  "cover_text_es": "¡CORREO CEREBRAL!",
+  "hook": "¿Cómo le habla mi cerebro a mi cuerpo?",
+  "tags_es": [
+    "cómo funciona el cerebro",
+    "el sistema nervioso para niños",
+    "ciencia para niños"
+  ],
+  "loop_card_es": {
+    "text": "¿Del cerebro al cuerpo?",
+    "cue": "próxima",
+    "left": "img:Human_physiology/Servier/brain-1",
+    "right": "🖐️"
+  },
+  "lines": [
+    "Mía, ¿cómo le habla mi cerebro a mi cuerpo?",
+    "¡Con los nervios! Los nervios son como cablecitos que van de tu cerebro a cada parte de ti.",
+    "¿Cables? ¿Dentro de mí?",
+    "¡No son cables de verdad! Los nervios están hechos de células vivas que se pasan mensajes superrápido.",
+    "¿Y cómo llegan los mensajes hasta los dedos de mis pies?",
+    "Tu médula espinal es como una gran carretera que baja por tu espalda. Los mensajes corren por ahí hasta los nervios de tus pies.",
+    "Entonces, cuando quiero patear una pelota...",
+    "Tu cerebro le manda un mensaje a los músculos de tu pierna: ¡patea! Y tu pierna patea, en un abrir y cerrar de ojos.",
+    "¿Los mensajes también van al revés?",
+    "¡Sí! Tus ojos, oídos, nariz, lengua y piel mandan mensajes a tu cerebro. ¡Así sientes el mundo!",
+    "¿Mi cerebro descansa alguna vez?",
+    "¡Nunca del todo! Hasta cuando duermes, hace que tu corazón siga latiendo y te ayuda a respirar.",
+    "¡Entonces los nervios llevan mensajes, y mi cerebro es el jefe!",
+    "¡Exacto! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿cómo le habla mi cerebro a mi cuerpo?"
+  ],
+  "punch": {
+    "1": "nervios"
+  },
+  "boards": {
+    "0": {
+      "type": "title",
+      "left": {
+        "icon": "img:Human_physiology/Servier/brain-1",
+        "label": "Cerebro"
+      },
+      "right": {
+        "icon": "🖐️",
+        "label": "Cuerpo"
+      },
+      "mid": "?"
+    },
+    "1": {
+      "type": "big",
+      "icon": "img:Cell_types/almaCELL/Neurons",
+      "text": "Nervios por todas partes",
+      "cue": "nervios",
+      "sub": "A cada parte de ti",
+      "sub_cue": "cada"
+    },
+    "3": {
+      "type": "big",
+      "icon": "⚡",
+      "text": "Mensajes superrápidos",
+      "cue": "mensajes",
+      "sub": "De célula a célula",
+      "sub_cue": "células"
+    },
+    "5": {
+      "type": "steps",
+      "title": "El viaje del mensaje",
+      "items": [
+        {
+          "icon": "⬇️",
+          "label": "Por la médula espinal",
+          "cue": "médula"
+        },
+        {
+          "icon": "🦶",
+          "label": "Hasta tus pies",
+          "cue": "pies"
+        }
+      ]
+    },
+    "7": {
+      "type": "body",
+      "title": "Mensaje de patada",
+      "show": [
+        "brain",
+        "muscles"
+      ],
+      "flow": "nerves",
+      "cue": "manda",
+      "labels": [
+        {
+          "text": "Cerebro",
+          "at": "brain",
+          "cue": "cerebro"
+        },
+        {
+          "text": "¡Patea!",
+          "at": "leg",
+          "cue": "patea"
+        }
+      ]
+    },
+    "9": {
+      "type": "gallery",
+      "title": "Tus sentidos",
+      "items": [
+        {
+          "icon": "👀",
+          "label": "Ver",
+          "cue": "ojos"
+        },
+        {
+          "icon": "👂",
+          "label": "Oír",
+          "cue": "oídos"
+        },
+        {
+          "icon": "👃",
+          "label": "Oler",
+          "cue": "nariz"
+        },
+        {
+          "icon": "👅",
+          "label": "Saborear",
+          "cue": "lengua"
+        },
+        {
+          "icon": "✋",
+          "label": "Tocar",
+          "cue": "piel"
+        }
+      ]
+    },
+    "11": {
+      "type": "big",
+      "icon": "😴",
+      "text": "¡Siempre trabajando!",
+      "cue": "duermes",
+      "sub": "Corazón y respiración",
+      "sub_cue": "corazón"
+    },
+    "12": {
+      "type": "summary",
+      "rows": [
+        {
+          "icon": "img:Cell_types/almaCELL/Neurons",
+          "text": "Los nervios llevan mensajes",
+          "cue": "nervios"
+        },
+        {
+          "icon": "🧠",
+          "text": "El cerebro es el jefe",
+          "cue": "jefe"
+        }
+      ]
+    }
+  }
+}

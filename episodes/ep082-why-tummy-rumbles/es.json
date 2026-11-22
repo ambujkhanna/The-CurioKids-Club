@@ -1,0 +1,36 @@
+{
+  "title_es": "¿Por qué me suena la pancita? 🍽️",
+  "description_es": "¡Glu, glu, qué ruido! Tu pancita aprieta y empuja la comida, el aire y el líquido. Leo pregunta y su hermana mayor Mía se lo explica en menos de un minuto.",
+  "cover_text_es": "¡GLU, GLU!",
+  "hook": "¿Por qué me suena la pancita?",
+  "tags_es": ["por qué suena la panza", "cuerpo humano para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Por qué suena la pancita?", "cue": "próxima", "left": "🍽️", "right": "🔊"},
+  "lines": [
+    "Mía, ¿por qué me suena la pancita?",
+    "¡Tu estómago y tus intestinos aprietan mucho! Al apretar, empujan la comida, el aire y el líquido.",
+    "¿Qué son los intestinos?",
+    "Son tubos largos y enroscados en tu pancita. La comida va de tu boca al estómago, y luego pasa por los intestinos.",
+    "¿Y de dónde sale el ruido?",
+    "Cuando los músculos aprietan, empujan el aire y el líquido de adentro. ¡Glu, glu, qué ruido!",
+    "¿Y por qué suena tan fuerte cuando tengo hambre?",
+    "Cuando tu estómago está vacío, no hay comida que apague el sonido. ¡Por eso el ruido suena más fuerte!",
+    "¿Mi pancita habla con mi cerebro?",
+    "¡Algo así! Cuando tu pancita está vacía un rato, le manda señales a tu cerebro, y sientes hambre.",
+    "¿Entonces si suena, necesito una merienda?",
+    "¡A veces! Pero la pancita también puede sonar después de comer, porque siempre está ocupada moviendo la comida.",
+    "¡Músculos que aprietan, aire y líquido, y la pancita vacía suena más fuerte!",
+    "¿Qué exploramos ahora? ¡Pídele a un adulto que deje un tema en los comentarios!",
+    "¡Qué ruido tan divertido! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué me suena la pancita?"
+  ],
+  "punch": {"1": "apretar", "5": "ruido"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🍽️", "label": "Pancita"}, "right": {"icon": "🔊", "label": "¿Ruido?"}, "mid": "?"},
+    "1": {"type": "picture", "art": "kf_tummy", "caption": "¡Aprieta, aprieta!", "cue": "apretar", "icon": "💪"},
+    "3": {"type": "flow", "title": "Viaje de la comida", "packet": "🍎", "items": [{"icon": "👄", "label": "Boca", "cue": "boca"}, {"icon": "🎒", "label": "Estómago", "cue": "estómago"}, {"icon": "🌀", "label": "Intestinos", "cue": "intestinos"}]},
+    "5": {"type": "big", "icon": "🫧", "text": "Aire + líquido = ruido", "cue": "aire", "sub": "¡Glu, glu!", "sub_cue": "glu"},
+    "7": {"type": "compare", "left": {"label": "Lleno", "items": [{"icon": "🔉", "text": "Apagado", "cue": "apague"}]}, "right": {"label": "Vacío", "items": [{"icon": "🔊", "text": "¡Más fuerte!", "cue": "fuerte"}]}},
+    "9": {"type": "transform", "title": "¿Hora de merendar?", "from": {"icon": "🍽️", "label": "Pancita vacía", "cue": "vacía"}, "to": {"icon": "🧠", "label": "Sientes hambre", "cue": "hambre"}},
+    "11": {"type": "big", "icon": "🍎", "text": "Suena siempre", "cue": "sonar", "sub": "Hasta después de comer", "sub_cue": "después"},
+    "12": {"type": "summary", "rows": [{"text": "Músculos que aprietan", "icon": "💪", "cue": "aprietan"}, {"text": "Aire y líquido", "icon": "🫧", "cue": "aire"}, {"text": "Vacía suena más", "icon": "🔊", "cue": "vacía"}]}
+  }
+}

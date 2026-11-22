@@ -1,0 +1,35 @@
+{
+  "title_es": "¿Por qué hay estaciones? 🌍",
+  "description_es": "¡No es porque estemos más cerca del Sol! Leo pregunta y su hermana mayor Mía le explica cómo la inclinación de la Tierra nos da el verano y el invierno, en menos de un minuto.",
+  "cover_text_es": "¡INCLINADA!",
+  "hook": "¿Por qué hay estaciones del año?",
+  "tags_es": ["por qué hay estaciones del año", "las estaciones para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Por qué hay estaciones?", "cue": "próxima", "left": "☀️", "right": "❄️"},
+  "lines": [
+    "Mía, ¿por qué hay estaciones del año?",
+    "¡Porque la Tierra está inclinada! Se ladea un poquito mientras viaja alrededor del Sol.",
+    "¿Inclinada? ¿Como un trompo que se tambalea?",
+    "¡Un poco! La Tierra tarda un año en darle la vuelta al Sol, y siempre se queda ladeada hacia el mismo lado.",
+    "¿Y cómo hace el verano al ladearse?",
+    "Cuando tu mitad se ladea hacia el Sol, los días son más largos y calientes. ¡Es verano! Cuando se aleja, los días son más cortos y fríos. Es invierno.",
+    "¿Y la primavera y el otoño?",
+    "Esas vienen en medio. En primavera, salen las flores. En otoño, las hojas cambian de color.",
+    "¿Es verano porque estamos más cerca del Sol?",
+    "¡No! Todo es por la inclinación, no por qué tan lejos está el Sol.",
+    "¿Y es verano en todos lados al mismo tiempo?",
+    "¡No! Cuando la mitad de arriba tiene verano, la mitad de abajo tiene invierno. ¡Y luego cambian!",
+    "¡Entonces las estaciones pasan porque la Tierra está inclinada mientras da la vuelta al Sol!",
+    "¡Así es! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué hay estaciones del año?"
+  ],
+  "punch": {"1": "inclinada", "11": "cambian"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "☀️", "label": "Verano"}, "right": {"icon": "❄️", "label": "Invierno"}, "mid": "?"},
+    "1": {"type": "big", "icon": "🌍", "text": "¡La Tierra está inclinada!", "cue": "inclinada", "sub": "Se ladea un poquito", "sub_cue": "ladea"},
+    "3": {"type": "orbit", "title": "Un viaje de un año", "center": "☀️", "items": [{"icon": "🌍", "label": "Tierra", "cue": "tierra"}]},
+    "5": {"type": "compare", "left": {"label": "Verano", "items": [{"icon": "☀️", "text": "Mira hacia el Sol", "cue": "hacia"}, {"icon": "🌞", "text": "Días largos y calientes", "cue": "largos"}]}, "right": {"label": "Invierno", "items": [{"icon": "❄️", "text": "Se aleja", "cue": "aleja"}, {"icon": "🌙", "text": "Días cortos y fríos", "cue": "cortos"}]}},
+    "7": {"type": "gallery", "title": "En medio", "items": [{"icon": "🌸", "label": "Primavera", "cue": "primavera"}, {"icon": "🌷", "label": "Salen flores", "cue": "flores"}, {"icon": "🍂", "label": "Otoño", "cue": "otoño"}, {"icon": "🍁", "label": "Hojas de colores", "cue": "hojas"}]},
+    "9": {"type": "big", "icon": "🚫", "text": "¡No es la distancia!", "cue": "lejos", "sub": "Es la inclinación", "sub_cue": "inclinación"},
+    "11": {"type": "compare", "left": {"label": "Mitad de arriba", "items": [{"icon": "☀️", "text": "Verano", "cue": "verano"}]}, "right": {"label": "Mitad de abajo", "items": [{"icon": "❄️", "text": "Invierno", "cue": "invierno"}]}},
+    "12": {"type": "summary", "rows": [{"icon": "🌍", "text": "La Tierra está inclinada", "cue": "inclinada"}, {"icon": "🔄", "text": "Da la vuelta al Sol", "cue": "vuelta"}, {"icon": "🍂", "text": "Así hay estaciones", "cue": "estaciones"}]}
+  }
+}

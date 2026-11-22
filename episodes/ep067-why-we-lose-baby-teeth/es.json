@@ -1,0 +1,166 @@
+{
+  "title_es": "¿Por qué se nos caen los dientes de leche? 🦷",
+  "description_es": "¡Los dientes grandes ya están escondidos debajo de tus dientes de leche! Leo pregunta y su hermana mayor Mía le explica por qué se caen los dientes de leche, en menos de un minuto.",
+  "cover_text_es": "¡DIENTE FLOJITO!",
+  "hook": "¿Por qué se nos caen los dientes de leche?",
+  "tags_es": [
+    "por qué se caen los dientes de leche",
+    "dientes de leche para niños",
+    "ciencia para niños"
+  ],
+  "loop_card_es": {
+    "text": "¿Por qué se caen?",
+    "cue": "próxima",
+    "left": "img:Human_physiology/Servier/teeth-gum-child",
+    "right": "👋"
+  },
+  "lines": [
+    "Mía, ¿por qué se nos caen los dientes de leche?",
+    "¡Porque estás creciendo! Tu boca y tu mandíbula se hacen más grandes, pero tus dientes de leche se quedan chiquitos.",
+    "¿Entonces los dientes chiquitos ya no caben?",
+    "¡Exacto! Una boca de grande necesita dientes más grandes. Y ya están esperando en tus encías, debajo de tus dientes de leche.",
+    "Espera, ¿ahorita hay dientes escondidos ahí adentro?",
+    "¡Sí! Un diente grande empuja hacia arriba, y las raíces del diente de leche se van deshaciendo. Entonces se pone flojito y se cae.",
+    "¿Duele?",
+    "Casi siempre solo un poquito. Y pronto el diente nuevo crece y llena el hueco.",
+    "¿Cuántos dientes de leche tengo?",
+    "La mayoría de los niños tienen veinte dientes de leche. ¡Los adultos pueden llegar a tener treinta y dos dientes grandes!",
+    "¿Cuándo se empiezan a caer?",
+    "Muchas veces como a los seis años. Pero cada niño es diferente, así que temprano o tarde está bien.",
+    "¡Entonces los dientes de leche se caen para dejar lugar a dientes grandes y fuertes!",
+    "¡Sí! Los grandes deben durar, así que cepíllalos a diario. Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué se nos caen los dientes de leche?"
+  ],
+  "punch": {
+    "1": "creciendo",
+    "9": "veinte"
+  },
+  "boards": {
+    "0": {
+      "type": "title",
+      "left": {
+        "icon": "img:Human_physiology/Servier/teeth-gum-child",
+        "label": "Dientes de leche"
+      },
+      "right": {
+        "icon": "👋",
+        "label": "¿Adiós?"
+      },
+      "mid": "?"
+    },
+    "1": {
+      "type": "big",
+      "icon": "📏",
+      "text": "¡Estás creciendo!",
+      "cue": "creciendo",
+      "sub": "Tu mandíbula crece",
+      "sub_cue": "mandíbula"
+    },
+    "3": {
+      "type": "big",
+      "icon": "🦷",
+      "text": "Dientes grandes esperan",
+      "cue": "esperando",
+      "sub": "Escondidos en tus encías",
+      "sub_cue": "encías"
+    },
+    "5": {
+      "type": "journey",
+      "title": "Cambio de dientes",
+      "traveler": "🦷",
+      "items": [
+        {
+          "icon": "⬆️",
+          "label": "El grande sube",
+          "cue": "empuja"
+        },
+        {
+          "icon": "✨",
+          "label": "Las raíces se van",
+          "cue": "raíces"
+        },
+        {
+          "icon": "〰️",
+          "label": "Se pone flojito",
+          "cue": "flojito"
+        },
+        {
+          "icon": "⬇️",
+          "label": "Se cae",
+          "cue": "cae"
+        }
+      ]
+    },
+    "7": {
+      "type": "big",
+      "icon": "😁",
+      "text": "El nuevo llena el hueco",
+      "cue": "hueco",
+      "sub": "Solo hay que esperar",
+      "sub_cue": "crece"
+    },
+    "9": {
+      "type": "compare",
+      "left": {
+        "label": "Niños",
+        "items": [
+          {
+            "icon": "img:Human_physiology/Servier/teeth-gum-child",
+            "text": "20 de leche",
+            "cue": "veinte"
+          }
+        ]
+      },
+      "right": {
+        "label": "Adultos",
+        "items": [
+          {
+            "icon": "img:Human_physiology/Servier/teeth-gum-adult",
+            "text": "32 grandes",
+            "cue": "treinta"
+          }
+        ]
+      }
+    },
+    "11": {
+      "type": "big",
+      "icon": "🎂",
+      "text": "Como a los 6 años",
+      "cue": "seis",
+      "sub": "Temprano o tarde, ¡bien!",
+      "sub_cue": "temprano"
+    },
+    "12": {
+      "type": "summary",
+      "rows": [
+        {
+          "icon": "🦷",
+          "text": "Se caen los de leche",
+          "cue": "caen"
+        },
+        {
+          "icon": "⬆️",
+          "text": "Lugar para los grandes",
+          "cue": "lugar"
+        },
+        {
+          "icon": "💪",
+          "text": "¡Grandes y fuertes!",
+          "cue": "fuertes"
+        }
+      ]
+    },
+    "13": {
+      "type": "checklist",
+      "title": "Dientes felices",
+      "icon": "🪥",
+      "items": [
+        {
+          "icon": "🪥",
+          "text": "Cepíllalos a diario",
+          "cue": "cepíllalos",
+          "ok": true
+        }
+      ]
+    }
+  }
+}

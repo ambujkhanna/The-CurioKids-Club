@@ -1,0 +1,34 @@
+{
+  "title_es": "¿Por qué flota el hielo? 🧊",
+  "description_es": "¡El agua hace algo especial cuando se congela! Leo pregunta y papá le explica por qué los cubos de hielo flotan en tu bebida, en menos de un minuto.",
+  "cover_text_es": "¿EL HIELO FLOTA?",
+  "hook": "¿Por qué flota el hielo?",
+  "tags_es": ["por qué flota el hielo", "experimentos con hielo para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Por qué flota el hielo?", "cue": "próxima", "left": "🧊", "right": "🥤"},
+  "lines": [
+    "Papá, ¿por qué flota el hielo?",
+    "¡Buena pregunta! Mira tu bebida. Los cubos de hielo se mecen arriba, en vez de hundirse hasta el fondo.",
+    "Pero el hielo es duro. ¿No debería ser pesado y hundirse?",
+    "Aquí está el secreto. Cuando el agua se congela, se expande y ocupa más espacio.",
+    "Espera, ¿entonces el hielo es más grande que el agua de donde salió?",
+    "¡Un poquito, sí! En el agua, las partecitas están muy apretadas. En el hielo, se enganchan en un patrón con huequitos.",
+    "¿Y esos huequitos hacen que el hielo sea más ligero?",
+    "¡Exacto! Para su tamaño, el hielo es más ligero que el agua, así que el agua lo empuja hacia arriba y flota.",
+    "¿Todo se hace más grande cuando se congela?",
+    "¡No! Casi todas las cosas se hacen más pequeñas al congelarse. ¡El agua es especial, porque se hace más grande!",
+    "¡Y eso ayuda a los animales! En invierno, el hielo flota sobre los estanques como una tapa, y los peces quedan a salvo en el agua de abajo.",
+    "Entonces el hielo tiene huequitos, es más ligero y flota. ¡Genial!",
+    "¡Muy genial! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué flota el hielo?"
+  ],
+  "punch": {"3": "espacio", "9": "especial"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🧊", "label": "Cubo de hielo"}, "right": {"icon": "img:General_items/Servier/glass-cold-drink", "label": "¿Flota?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "img:General_items/Servier/glass-cold-drink", "text": "¡El hielo queda arriba!", "cue": "mecen", "sub": "No se hunde", "sub_cue": "hundirse"},
+    "3": {"type": "big", "icon": "🧊", "text": "El agua congelada se expande", "cue": "expande", "sub": "Ocupa más espacio", "sub_cue": "espacio"},
+    "5": {"type": "compare", "left": {"label": "Agua", "items": [{"text": "Muy apretadas", "icon": "💧", "cue": "apretadas"}]}, "right": {"label": "Hielo", "items": [{"text": "Patrón fijo", "icon": "🧊", "cue": "enganchan"}, {"text": "Huequitos", "icon": "🕳️", "cue": "huequitos"}]}},
+    "7": {"type": "big", "icon": "⬆️", "text": "Más ligero para su tamaño", "cue": "ligero", "sub": "¡Por eso flota!", "sub_cue": "flota"},
+    "9": {"type": "big", "icon": "⭐", "text": "¡El agua es especial!", "cue": "especial", "sub": "¡Se hace más grande!", "sub_cue": "grande"},
+    "10": {"type": "gallery", "title": "Tapa de hielo", "items": [{"icon": "❄️", "label": "Invierno", "cue": "invierno"}, {"icon": "🧊", "label": "Hielo arriba", "cue": "hielo"}, {"icon": "🐟", "label": "Peces abajo", "cue": "peces"}]},
+    "11": {"type": "summary", "rows": [{"text": "El hielo tiene huequitos", "icon": "🧊", "cue": "huequitos"}, {"text": "Más ligero", "icon": "🪶", "cue": "ligero"}, {"text": "¡Por eso flota!", "icon": "⬆️", "cue": "flota"}]}
+  }
+}

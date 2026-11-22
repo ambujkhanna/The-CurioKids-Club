@@ -1,0 +1,34 @@
+{
+  "title_es": "¿Por qué bostezamos? 🥱",
+  "description_es": "¡Hasta los científicos siguen pensando en los bostezos, y sí, se contagian! Leo pregunta y su hermana mayor Mía le cuenta las mejores ideas, en menos de un minuto.",
+  "cover_text_es": "¿POR QUÉ BOSTEZAMOS?",
+  "hook": "¿Por qué bostezamos?",
+  "tags_es": ["por qué bostezamos", "por qué se contagian los bostezos", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Por qué bostezamos?", "cue": "próxima", "left": "🥱", "right": "🤔"},
+  "lines": [
+    "Mía, ¿por qué bostezamos?",
+    "Te cuento un secreto chistoso: ¡los científicos todavía no están del todo seguros!",
+    "¿En serio? ¡Pero todo el mundo bosteza!",
+    "¡Sí! Bostezamos cuando tenemos sueño, cuando nos despertamos, y a veces cuando estamos aburridos.",
+    "¿Y qué piensan los científicos?",
+    "Una gran idea es que el bostezo ayuda a enfriar tu cerebro, con una gran bocanada de aire.",
+    "Otra idea es que bostezar y estirarte ayuda a despertar tu cuerpo.",
+    "¿Por qué bostezo cuando tú bostezas?",
+    "¡Los bostezos se contagian! Con solo ver a alguien bostezar, o hasta oír hablar de bostezos, tú también puedes bostezar.",
+    "¿Los animales también bostezan?",
+    "¡Muchos sí! Los perros, los gatos, los leones y hasta los peces pueden bostezar.",
+    "¡Ay, no, creo que estoy bostezando ahora mismo! ¿Tú también estás bostezando?",
+    "¡Te dije que se contagian! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué bostezamos?"
+  ],
+  "punch": {"1": "seguros", "8": "contagian"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🥱", "label": "Bostezo"}, "right": {"icon": "🤔", "label": "¿Por qué?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "🤔", "text": "¡Ni los científicos saben!", "cue": "científicos"},
+    "3": {"type": "gallery", "title": "Cuándo bostezamos", "items": [{"icon": "😴", "label": "Con sueño", "cue": "sueño"}, {"icon": "🌅", "label": "Al despertar", "cue": "despertamos"}, {"icon": "😐", "label": "Aburridos", "cue": "aburridos"}]},
+    "5": {"type": "big", "icon": "img:Human_physiology/Servier/brain-1", "text": "¿Enfría tu cerebro?", "cue": "enfriar", "sub": "Una gran bocanada de aire", "sub_cue": "bocanada"},
+    "6": {"type": "big", "icon": "🙆", "text": "¿Estirarse para despertar?", "cue": "estirarte", "sub": "¡Arriba, dormilón!", "sub_cue": "despertar"},
+    "8": {"type": "big", "icon": "😮", "text": "¡Los bostezos se contagian!", "cue": "contagian", "sub": "Con solo verlo", "sub_cue": "ver"},
+    "10": {"type": "gallery", "title": "Animales que bostezan", "items": [{"icon": "🐶", "label": "Perros", "cue": "perros"}, {"icon": "🐱", "label": "Gatos", "cue": "gatos"}, {"icon": "🦁", "label": "Leones", "cue": "leones"}, {"icon": "🐟", "label": "Peces", "cue": "peces"}]},
+    "11": {"type": "big", "icon": "🥱", "text": "¿Tú también bostezas?", "cue": "bostezando"}
+  }
+}

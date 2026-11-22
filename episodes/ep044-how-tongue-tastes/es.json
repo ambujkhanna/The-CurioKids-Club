@@ -1,0 +1,35 @@
+{
+  "title_es": "¿Cómo saborea la comida tu lengua? 👅",
+  "description_es": "¿Cómo saborea la comida tu lengua? ¡Miles de papilas gustativas, cinco sabores principales y una ayudita de tu nariz! Leo pregunta y su hermana mayor Mía se lo explica en menos de un minuto.",
+  "cover_text_es": "¡QUÉ RICO!",
+  "hook": "¿Cómo saborea la comida tu lengua?",
+  "tags_es": ["cómo funciona la lengua", "los cinco sabores para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Cómo sentimos los sabores?", "cue": "próxima", "left": "👅", "right": "🍓"},
+  "lines": [
+    "Mía, ¿cómo saborea la comida mi lengua?",
+    "Tu lengua está cubierta de bolitas chiquitas. Adentro están las papilas gustativas, ¡y tienes miles!",
+    "¿Y cómo funcionan?",
+    "Primero, la saliva moja la comida. Luego tus papilas la sienten y le mandan un mensaje a tu cerebro.",
+    "¿Cuántos sabores hay?",
+    "Hay cinco sabores principales: dulce, salado, ácido, amargo y umami. El umami es un sabor sabroso, como el del caldo.",
+    "¿Cada parte de mi lengua siente un sabor diferente?",
+    "¡Eso es un mito! Todas las partes de tu lengua con papilas pueden sentir los cinco sabores.",
+    "¿Por qué la comida sabe rara cuando estoy resfriado?",
+    "¡Porque tu nariz también te ayuda a saborear! El olfato y el gusto trabajan en equipo para hacer el sabor.",
+    "¿Puedo probarlo?",
+    "¡Primero pídele permiso a un adulto! Tápate la nariz y muerde un pedazo de manzana. ¡Luego suelta la nariz y nota la diferencia!",
+    "¡Papilas, cinco sabores, y mi nariz también ayuda!",
+    "¡Delicioso! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿cómo saborea la comida mi lengua?"
+  ],
+  "punch": {"1": "miles", "7": "mito"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "👅", "label": "Lengua"}, "right": {"icon": "🍓", "label": "¿Rico?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "img:Human_physiology/Servier/taste-buds", "text": "Miles de papilas", "cue": "papilas", "sub": "Escondidas en bolitas", "sub_cue": "bolitas"},
+    "3": {"type": "journey", "title": "Viaje del sabor", "traveler": "🍎", "items": [{"icon": "💦", "label": "Saliva", "cue": "saliva"}, {"icon": "img:Human_physiology/Servier/papillae", "label": "Papilas", "cue": "papilas"}, {"icon": "img:Human_physiology/Servier/brain-1", "label": "Cerebro", "cue": "cerebro"}]},
+    "5": {"type": "gallery", "title": "Cinco sabores", "items": [{"icon": "🍯", "label": "Dulce", "cue": "dulce"}, {"icon": "🧂", "label": "Salado", "cue": "salado"}, {"icon": "🍋", "label": "Ácido", "cue": "ácido"}, {"icon": "🥦", "label": "Amargo", "cue": "amargo"}, {"icon": "🍄", "label": "Umami", "cue": "umami"}]},
+    "7": {"type": "big", "icon": "👅", "text": "Cinco sabores en todas partes", "cue": "todas", "sub": "¡El viejo mapa es un mito!", "sub_cue": "mito"},
+    "9": {"type": "big", "icon": "👃", "text": "Nariz + lengua = sabor", "cue": "nariz", "sub": "Un equipo delicioso", "sub_cue": "equipo"},
+    "11": {"type": "checklist", "title": "Prueba del sabor", "icon": "🍎", "items": [{"text": "Pide permiso", "icon": "🧑", "cue": "pídele", "ok": true}, {"text": "Tápate la nariz", "icon": "🤏", "cue": "tápate", "ok": true}, {"text": "Muerde", "icon": "🍎", "cue": "muerde", "ok": true}, {"text": "¡Suelta y saborea!", "icon": "😋", "cue": "suelta", "ok": true}]},
+    "12": {"type": "summary", "rows": [{"text": "Miles de papilas", "icon": "img:Human_physiology/Servier/taste-buds", "cue": "papilas"}, {"text": "Cinco sabores", "icon": "🍋", "cue": "cinco"}, {"text": "La nariz ayuda", "icon": "👃", "cue": "nariz"}]}
+  }
+}

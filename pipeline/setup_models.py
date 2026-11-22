@@ -13,22 +13,24 @@ SHA_PREFIX = "fbae9257"
 
 
 HINDI = ("hf_alpha", "hf_beta", "hm_omega", "hm_psi")
+SPANISH = ("ef_dora", "em_alex", "em_santa")  # Spanish kids Shorts (owner, 2026-11-22): Mia = Dora, Leo = Alex
+EXTRA = HINDI + SPANISH
 V1_URL = "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin"
 
 
 def add_hindi_voices():
-    """Add Kokoro v1.0's Hindi voices (Apache-2.0) to voices.bin if missing (for the Hindi videos)."""
+    """Add Kokoro v1.0's Hindi + Spanish voices (Apache-2.0) to voices.bin if missing (Hindi and Spanish videos)."""
     have = dict(np.load(VOICES))
-    if all(h in have for h in HINDI): return
+    if all(h in have for h in EXTRA): return
     import urllib.request
     tmp = tempfile.mkdtemp(); f = os.path.join(tmp, "v1.bin")
     urllib.request.urlretrieve(V1_URL, f)
     v1 = np.load(f)
-    for h in HINDI: have[h] = v1[h]
+    for h in EXTRA: have[h] = v1[h]
     with open(VOICES, "wb") as fh:
         np.savez(fh, **have)
     shutil.rmtree(tmp, ignore_errors=True)
-    print("added Hindi voices:", ", ".join(HINDI))
+    print("added Hindi + Spanish voices:", ", ".join(EXTRA))
 
 
 def main():

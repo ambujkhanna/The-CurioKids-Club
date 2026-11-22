@@ -1,0 +1,36 @@
+{
+  "title_es": "¿Por qué nos mareamos después de girar? 😵",
+  "description_es": "Giras, paras... ¡y el cuarto sigue dando vueltas! Unos tubitos dentro de tus oídos tienen la culpa. Leo pregunta y su hermana mayor Mía se lo explica en menos de un minuto.",
+  "cover_text_es": "¡QUÉ MAREO!",
+  "hook": "¿Por qué nos mareamos al dar vueltas?",
+  "tags_es": ["por qué nos mareamos al girar", "el oído para niños", "el cuerpo humano para niños"],
+  "loop_card_es": {"text": "¿Por qué tanto mareo?", "cue": "próxima", "left": "🌀", "right": "😵"},
+  "lines": [
+    "Mía, ¿por qué me mareo después de dar vueltas?",
+    "¡Es por tus oídos! Muy adentro de cada oído hay tubitos enroscados llenos de líquido.",
+    "¿Líquido? ¿Como agua?",
+    "¡Algo parecido al agua! Cuando te mueves, el líquido se agita, y tu cerebro siente hacia dónde giras.",
+    "¿Y qué pasa cuando me detengo?",
+    "Das vueltas y luego te detienes. ¡Pero el líquido de tus oídos sigue girando un ratito!",
+    "¿Y entonces mi cerebro se confunde?",
+    "¡Sí! Tus oídos dicen \"¡sigo girando!\", pero tus ojos dicen \"¡ya paré!\". Esos mensajes mezclados te marean.",
+    "¿Cómo se me quita el mareo?",
+    "Solo siéntate y espera. Pronto el líquido se calma, y el mareo desaparece.",
+    "¿Puedo girar otra vez?",
+    "¡Primero pídele permiso a un adulto! Gira despacio sobre pasto suave, lejos de cosas duras, y para si te sientes tambaleante.",
+    "¡El líquido sigue moviéndose, mi cerebro recibe mensajes mezclados, y me mareo!",
+    "¿Qué descubrimos ahora? ¡Pídele a un adulto que deje un tema en los comentarios!",
+    "¡Uiii! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué me mareo después de dar vueltas?"
+  ],
+  "punch": {"1": "oídos", "7": "mezclados"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🌀", "label": "Girar"}, "right": {"icon": "😵", "label": "¿Mareo?"}, "mid": "?"},
+    "1": {"type": "picture", "art": "kf_dizzy", "caption": "Tubitos con líquido", "cue": "tubitos", "icon": "👂"},
+    "3": {"type": "flow", "title": "Mensaje de equilibrio", "packet": "💧", "items": [{"icon": "🔄", "label": "Te mueves", "cue": "mueves"}, {"icon": "💧", "label": "El líquido se agita", "cue": "agita"}, {"icon": "🧠", "label": "El cerebro sabe", "cue": "cerebro"}]},
+    "5": {"type": "lifecycle", "title": "Por qué te mareas", "items": [{"icon": "🌀", "label": "Girar", "cue": "vueltas"}, {"icon": "✋", "label": "Parar", "cue": "detienes"}, {"icon": "💧", "label": "El líquido gira", "cue": "girando"}]},
+    "7": {"type": "compare", "left": {"label": "Oídos", "items": [{"icon": "🌀", "text": "¡Girando!", "cue": "girando"}]}, "right": {"label": "Ojos", "items": [{"icon": "🛑", "text": "¡Paré!", "cue": "paré"}]}},
+    "9": {"type": "transform", "title": "A calmarse", "from": {"icon": "😵", "label": "Mareado", "cue": "espera"}, "to": {"icon": "😊", "label": "¡Ya estoy bien!", "cue": "desaparece"}},
+    "11": {"type": "checklist", "title": "Girar seguro", "icon": "🌀", "items": [{"text": "Pide a un adulto", "icon": "🧑", "cue": "pídele", "ok": true}, {"text": "Pasto suave", "icon": "🌱", "cue": "pasto", "ok": true}, {"text": "Cosas duras cerca", "icon": "🪨", "cue": "duras", "ok": false}, {"text": "Para si te tambaleas", "icon": "🛑", "cue": "tambaleante", "ok": true}]},
+    "12": {"type": "summary", "rows": [{"text": "El líquido sigue", "icon": "💧", "cue": "líquido"}, {"text": "Mensajes mezclados", "icon": "🧠", "cue": "mezclados"}, {"text": "¡Mareo!", "icon": "😵", "cue": "mareo"}]}
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "title_es": "¿Cómo hacen su comida las plantas? 🌱",
+  "description_es": "¡Las plantas hacen su propia comida con luz del sol, agua y aire, y además nos dan oxígeno! Leo pregunta y su hermana mayor Mía se lo explica en menos de un minuto.",
+  "cover_text_es": "¿COMIDA DE PLANTA?",
+  "hook": "¿Cómo hacen su comida las plantas?",
+  "tags_es": [
+    "cómo se alimentan las plantas",
+    "fotosíntesis para niños",
+    "ciencia para niños"
+  ],
+  "loop_card_es": {
+    "text": "¿Cómo hacen comida las plantas?",
+    "cue": "próxima",
+    "left": "🌱",
+    "right": "☀️"
+  },
+  "lines": [
+    "Mía, ¿cómo hacen su comida las plantas?",
+    "Las plantas no comen como nosotros. ¡Hacen su propia comida, adentro de sus hojas!",
+    "¿Y qué necesitan para hacerla?",
+    "Solo tres cosas: luz del sol, agua y aire.",
+    "Las raíces toman agua de la tierra, y el agua sube por el tallo hasta las hojas.",
+    "¿Y cómo consiguen el aire?",
+    "Las hojas tienen hoyitos chiquititos, tan pequeños que no se ven. Por ahí toman un gas del aire que se llama dióxido de carbono.",
+    "La parte verde de las hojas atrapa la luz del sol, y la usa para convertir el agua y el aire en azúcar. ¡Esa es la comida de la planta!",
+    "¿Las plantas hacen azúcar? ¡Qué genial! ¿Eso tiene nombre?",
+    "Se llama fotosíntesis. Y hay un premio extra: ¡las plantas sueltan oxígeno, el aire que necesitamos para respirar!",
+    "Entonces la luz del sol, el agua y el aire hacen la comida de la planta, y nosotros recibimos oxígeno. ¡Gracias, plantas!",
+    "¡Así es! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿cómo hacen su comida las plantas?"
+  ],
+  "punch": {
+    "3": "tres",
+    "9": "oxígeno"
+  },
+  "boards": {
+    "0": {
+      "type": "title",
+      "left": {
+        "icon": "🌱",
+        "label": "Planta"
+      },
+      "right": {
+        "icon": "🍽️",
+        "label": "¿Comida?"
+      },
+      "mid": "?"
+    },
+    "1": {
+      "type": "big",
+      "icon": "🍃",
+      "text": "Comida en las hojas",
+      "cue": "hojas",
+      "sub": "Su propia comida",
+      "sub_cue": "propia"
+    },
+    "3": {
+      "type": "gallery",
+      "title": "Receta de planta",
+      "items": [
+        {
+          "icon": "☀️",
+          "label": "Luz del sol",
+          "cue": "luz"
+        },
+        {
+          "icon": "💧",
+          "label": "Agua",
+          "cue": "agua"
+        },
+        {
+          "icon": "💨",
+          "label": "Aire",
+          "cue": "aire"
+        }
+      ]
+    },
+    "4": {
+      "type": "journey",
+      "title": "El viaje del agua",
+      "traveler": "💧",
+      "items": [
+        {
+          "icon": "🌱",
+          "label": "Las raíces beben",
+          "cue": "raíces"
+        },
+        {
+          "icon": "🌿",
+          "label": "Sube por el tallo",
+          "cue": "tallo"
+        },
+        {
+          "icon": "🍃",
+          "label": "A las hojas",
+          "cue": "hojas"
+        }
+      ]
+    },
+    "6": {
+      "type": "big",
+      "icon": "🍃",
+      "text": "Hoyitos toman aire",
+      "cue": "hoyitos",
+      "sub": "Dióxido de carbono",
+      "sub_cue": "dióxido"
+    },
+    "7": {
+      "type": "steps",
+      "title": "Hacer comida",
+      "items": [
+        {
+          "icon": "☀️",
+          "label": "Atrapa la luz",
+          "cue": "atrapa"
+        },
+        {
+          "icon": "🔄",
+          "label": "Agua y aire...",
+          "cue": "convertir"
+        },
+        {
+          "icon": "img:General_items/Servier/sugar",
+          "label": "...¡en azúcar!",
+          "cue": "azúcar"
+        }
+      ]
+    },
+    "9": {
+      "type": "big",
+      "icon": "🌳",
+      "text": "Nos dan oxígeno",
+      "cue": "oxígeno",
+      "sub": "Se dice: fo-to-sín-te-sis",
+      "sub_cue": "fotosíntesis"
+    },
+    "10": {
+      "type": "summary",
+      "rows": [
+        {
+          "icon": "☀️",
+          "text": "Luz del sol",
+          "cue": "luz"
+        },
+        {
+          "icon": "💧",
+          "text": "Agua",
+          "cue": "agua"
+        },
+        {
+          "icon": "💨",
+          "text": "Aire",
+          "cue": "aire"
+        },
+        {
+          "icon": "🌳",
+          "text": "¡Oxígeno para ti!",
+          "cue": "oxígeno"
+        }
+      ]
+    }
+  }
+}

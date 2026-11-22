@@ -1,0 +1,36 @@
+{
+  "title_es": "¿Cómo siente las cosas tu piel? 🖐️",
+  "description_es": "¿Cómo siente las cosas tu piel? ¡Unas terminaciones nerviosas diminutas sienten el tacto, el calor, el frío y el dolor, y mandan mensajes a tu cerebro! Leo pregunta y su hermana mayor Mía se lo explica en menos de un minuto.",
+  "cover_text_es": "¡AL TACTO!",
+  "hook": "¿Cómo siente las cosas mi piel?",
+  "tags_es": ["el sentido del tacto para niños", "cómo funciona la piel para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Cómo siente la piel?", "cue": "próxima", "left": "🖐️", "right": "🪶"},
+  "lines": [
+    "Mía, ¿cómo siente las cosas mi piel?",
+    "Tu piel está llena de terminaciones nerviosas diminutas. ¡Son como mensajeros chiquitos que sienten lo que te toca!",
+    "¿Y qué pueden sentir?",
+    "¡Muchísimas cosas! Un toque suave, un apretón fuerte, calor, frío y dolor.",
+    "¿Y cómo se entera mi cerebro?",
+    "Tu piel manda un mensaje por tus nervios, todo el camino hasta tu cerebro. ¡Superrápido!",
+    "¿Y luego qué hace mi cerebro?",
+    "Descubre qué tocaste. ¿Un pelaje suave y esponjoso? ¿O un cubo de hielo frío y mojado?",
+    "¿Qué partes de mí sienten más?",
+    "¡Las yemas de tus dedos y tus labios! Tienen muchísimas terminaciones nerviosas muy juntitas.",
+    "¿Por qué me duele cuando toco algo muy caliente?",
+    "¡El dolor es una alarma! Te dice que quites la mano rápido, para cuidarte.",
+    "¡Las terminaciones nerviosas lo sienten, los nervios lo llevan y mi cerebro lo sabe!",
+    "¿Qué quieres descubrir ahora? ¡Pídele a un adulto que deje un tema en los comentarios!",
+    "¡Lo lograste! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿cómo siente las cosas mi piel?"
+  ],
+  "punch": {"1": "mensajeros", "9": "yemas"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🖐️", "label": "Piel"}, "right": {"icon": "🪶", "label": "¿Sentir?"}, "mid": "?"},
+    "1": {"type": "picture", "art": "kf_touch", "caption": "Terminaciones nerviosas", "cue": "terminaciones", "icon": "🖐️"},
+    "3": {"type": "gallery", "title": "La piel siente", "items": [{"icon": "🪶", "label": "Toque", "cue": "toque"}, {"icon": "👇", "label": "Presión", "cue": "apretón"}, {"icon": "🔥", "label": "Calor", "cue": "calor"}, {"icon": "🧊", "label": "Frío", "cue": "frío"}, {"icon": "🤕", "label": "Dolor", "cue": "dolor"}]},
+    "5": {"type": "flow", "title": "Mensaje de tacto", "packet": "⚡", "items": [{"icon": "🖐️", "label": "Piel", "cue": "piel"}, {"icon": "〰️", "label": "Nervios", "cue": "nervios"}, {"icon": "🧠", "label": "Cerebro", "cue": "cerebro"}]},
+    "7": {"type": "big", "icon": "🧠", "text": "El cerebro lo descubre", "cue": "descubre", "sub": "¿Suave o frío?", "sub_cue": "suave"},
+    "9": {"type": "big", "icon": "👆", "text": "Yemas y labios", "cue": "yemas", "sub": "Llenos de nervios", "sub_cue": "juntitas"},
+    "11": {"type": "big", "icon": "⚠️", "text": "El dolor es una alarma", "cue": "dolor", "sub": "Te cuida", "sub_cue": "cuidarte"},
+    "12": {"type": "summary", "rows": [{"text": "Las terminaciones sienten", "icon": "🖐️", "cue": "terminaciones"}, {"text": "Los nervios lo llevan", "icon": "⚡", "cue": "llevan"}, {"text": "El cerebro sabe", "icon": "🧠", "cue": "cerebro"}]}
+  }
+}

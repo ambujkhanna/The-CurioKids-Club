@@ -1,0 +1,34 @@
+{
+  "title_es": "¿Qué es el Sol? ☀️",
+  "description_es": "¡El Sol es una estrella, y la más cercana a la Tierra! Leo pregunta y su hermana mayor Mía le explica de qué está hecho el Sol y por qué lo necesitamos, en menos de un minuto.",
+  "cover_text_es": "¡ES UNA ESTRELLA!",
+  "hook": "¿Qué es el Sol, de verdad?",
+  "tags_es": ["qué es el sol para niños", "el sistema solar para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Qué es el Sol?", "cue": "próxima", "left": "☀️", "right": "⭐"},
+  "lines": [
+    "Mía, ¿qué es el Sol, de verdad?",
+    "¡El Sol es una estrella! Es la estrella más cercana a la Tierra.",
+    "¡Pero las estrellas son puntitos chiquitos!",
+    "Las otras estrellas están lejísimos, por eso se ven chiquitas. El Sol está mucho más cerca, así que se ve grande y brillante.",
+    "¿El Sol está hecho de fuego?",
+    "No como una fogata. Es una bola gigante de gas muy caliente que brilla.",
+    "¿Qué tan grande es?",
+    "¡Enorme! Cabrían como un millón de Tierras adentro.",
+    "¡Guau! ¿Y qué hace el Sol por nosotros?",
+    "Nos da luz y nos mantiene calentitos. Las plantas usan la luz del sol para crecer, y las plantas alimentan a los animales y a las personas.",
+    "Una regla importante: nunca mires directo al Sol, ni siquiera con lentes de sol. Puede lastimar tus ojos.",
+    "¡Entonces el Sol es nuestra propia estrella, una bola gigante de gas que brilla y nos mantiene calentitos!",
+    "¡Respuesta brillante! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿qué es el Sol, de verdad?"
+  ],
+  "punch": {"1": "estrella", "7": "millón"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "img:General_items/Servier/sun", "label": "El Sol"}, "right": {"icon": "⭐", "label": "¿Qué es?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "⭐", "text": "El Sol es una ESTRELLA", "cue": "estrella", "sub": "La más cercana", "sub_cue": "cercana"},
+    "3": {"type": "compare", "left": {"label": "Otras estrellas", "items": [{"text": "Lejísimos", "icon": "🔭", "cue": "lejísimos"}, {"text": "Se ven chiquitas", "icon": "✨", "cue": "chiquitas"}]}, "right": {"label": "El Sol", "items": [{"text": "Mucho más cerca", "icon": "☀️", "cue": "cerca"}, {"text": "Grande y brillante", "icon": "🔆", "cue": "brillante"}]}},
+    "5": {"type": "big", "icon": "☀️", "text": "Una bola gigante de gas", "cue": "bola", "sub": "¡Y brilla!", "sub_cue": "brilla"},
+    "7": {"type": "big", "icon": "🌍", "text": "¡Un millón de Tierras!", "cue": "millón"},
+    "9": {"type": "journey", "title": "Comida de sol", "traveler": "✨", "items": [{"icon": "☀️", "label": "Luz del sol", "cue": "luz"}, {"icon": "🌱", "label": "Crecen plantas", "cue": "plantas"}, {"icon": "🐄", "label": "Comen animales", "cue": "animales"}, {"icon": "🧒", "label": "Y las personas", "cue": "personas"}]},
+    "10": {"type": "big", "icon": "🙈", "text": "Nunca mires al Sol", "cue": "nunca", "sub": "Cuida tus ojos", "sub_cue": "ojos"},
+    "11": {"type": "summary", "rows": [{"icon": "⭐", "text": "Nuestra estrella", "cue": "estrella"}, {"icon": "☀️", "text": "Gas que brilla", "cue": "brilla"}, {"icon": "🌡️", "text": "Nos da calor", "cue": "calentitos"}]}
+  }
+}

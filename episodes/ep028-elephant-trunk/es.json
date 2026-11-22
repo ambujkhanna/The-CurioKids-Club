@@ -1,0 +1,36 @@
+{
+  "title_es": "¿Qué puede hacer la trompa de un elefante? 🐘",
+  "description_es": "Oler, beber, ducharse, agarrar y abrazar: ¡la trompa del elefante lo hace todo! Leo pregunta y su hermana mayor Mía se lo explica en menos de un minuto.",
+  "cover_text_es": "¡TRUCOS DE TROMPA!",
+  "hook": "¿Qué puede hacer la trompa de un elefante?",
+  "tags_es": ["qué hace la trompa del elefante", "elefantes para niños", "animales para niños"],
+  "loop_card_es": {"text": "¿Trucos de trompa?", "cue": "próxima", "left": "🐘", "right": "💧"},
+  "lines": [
+    "Mía, ¿qué puede hacer la trompa de un elefante?",
+    "¡Muchísimo! La trompa es una nariz y un labio de arriba, unidos en un tubo largo y fuerte.",
+    "¿Entonces huele con ella?",
+    "¡Sí! Los elefantes huelen increíblemente bien. Pueden olfatear comida y agua desde muy lejos.",
+    "¿Toman agua con ella, como con una pajita?",
+    "¡No exactamente! Sorben agua dentro de la trompa, y luego la echan a chorro en su boca.",
+    "También rocían agua para darse una ducha, o se echan tierra en la espalda, ¡como protector solar!",
+    "¿Puede agarrar cosas?",
+    "¡Sí! Una trompa puede agarrar algo tan pequeño como una sola hoja, o tan pesado como un tronco grande.",
+    "¿Qué más puede hacer?",
+    "Los elefantes usan la trompa para saludar, abrazar a sus bebés, ¡y hacer sonidos fuertes como una trompeta!",
+    "Y la trompa no tiene ni un hueso, solo miles de músculos. Por eso se puede doblar para todos lados.",
+    "Oler, beber, ducharse, agarrar y abrazar. ¡La trompa lo hace todo!",
+    "¡Trompa-tástico! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿qué puede hacer la trompa de un elefante?"
+  ],
+  "punch": {"5": "chorro"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🐘", "label": "Elefante"}, "right": {"icon": "👃", "label": "¿Trompa?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "🐘", "text": "Nariz + labio = trompa", "cue": "nariz", "sub": "Larga y fuerte", "sub_cue": "fuerte"},
+    "3": {"type": "big", "icon": "👃", "text": "Un súper olfato", "cue": "olfatear", "sub": "Comida y agua, a lo lejos", "sub_cue": "lejos"},
+    "5": {"type": "journey", "title": "Trago de trompa", "traveler": "💧", "items": [{"icon": "🌊", "label": "Sorbe agua", "cue": "sorben"}, {"icon": "🐘", "label": "En la trompa", "cue": "trompa"}, {"icon": "💦", "label": "¡Chorro!", "cue": "chorro"}, {"icon": "👄", "label": "A la boca", "cue": "boca"}]},
+    "6": {"type": "gallery", "title": "Hora de rociar", "items": [{"icon": "🚿", "label": "Ducha", "cue": "ducha"}, {"icon": "💨", "label": "Baño de tierra", "cue": "tierra"}, {"icon": "☀️", "label": "Protector solar", "cue": "protector"}]},
+    "8": {"type": "big", "icon": "🌿", "text": "Agarra chico y grande", "cue": "agarrar", "sub": "¡Una hoja o un tronco!", "sub_cue": "tronco"},
+    "10": {"type": "gallery", "title": "La trompa habla", "items": [{"icon": "👋", "label": "Saludar", "cue": "saludar"}, {"icon": "🤗", "label": "Abrazar bebés", "cue": "abrazar"}, {"icon": "🎺", "label": "¡Trompeta!", "cue": "trompeta"}]},
+    "11": {"type": "big", "icon": "img:Human_physiology/Servier/muscle-1", "text": "Sin huesos, puro músculo", "cue": "hueso", "sub": "Se dobla para todos lados", "sub_cue": "doblar"},
+    "12": {"type": "summary", "rows": [{"icon": "👃", "text": "Oler", "cue": "oler"}, {"icon": "💧", "text": "Beber y ducharse", "cue": "beber"}, {"icon": "🌿", "text": "Agarrar", "cue": "agarrar"}, {"icon": "🤗", "text": "Abrazar", "cue": "abrazar"}]}
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "title_es": "¿Por qué los perros lo huelen todo? 🐶",
+  "description_es": "¡La nariz de un perro es un verdadero superpoder! Leo pregunta y su hermana mayor Mía le explica qué aprenden los perros con tanto olfatear, en menos de un minuto.",
+  "cover_text_es": "¡SNIF, SNIF!",
+  "hook": "¿Por qué los perros lo huelen todo?",
+  "tags_es": ["por qué los perros huelen todo", "datos de perros para niños", "animales para niños"],
+  "loop_card_es": {"text": "¿Por qué huelen tanto?", "cue": "próxima", "left": "img:Animals/Servier/dog_beagle", "right": "👃"},
+  "lines": [
+    "Mía, ¿por qué los perros lo huelen todo?",
+    "¡Porque la nariz de un perro es un superpoder! Los perros huelen muchísimo mejor que las personas.",
+    "¿Y cómo es mejor?",
+    "La nariz de un perro tiene muchísimas más células del olfato que la tuya. Y una gran parte de su cerebro trabaja con los olores.",
+    "¿Y qué huelen cuando salen a pasear?",
+    "¡Pistas! Una olfateada le dice al perro quién pasó por ahí, si era un amigo, y hasta qué comió de almuerzo.",
+    "¡Es como leer las noticias con la nariz!",
+    "¡Exacto! Olfatear es la forma en que los perros leen las noticias. Los expertos en perros creen que los paseos olfateando los hacen sentir felices y tranquilos.",
+    "¿Por qué los perros se huelen cuando se conocen?",
+    "¡Es un hola perruno! Una olfateada rápida les dice quién es el otro perro, como leer una etiqueta con su nombre.",
+    "Aquí va un truco genial. Cuando un perro suelta el aire, este sale por unas ranuritas a los lados de su nariz, así que siguen entrando olores nuevos.",
+    "Supernarices, pistas olfateadas y saludos perrunos. ¡Los perros son olfateadores increíbles!",
+    "¡Claro que sí! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué los perros lo huelen todo?"
+  ],
+  "punch": {"1": "superpoder", "9": "hola"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "img:Animals/Servier/dog_beagle", "label": "Perro"}, "right": {"icon": "👃", "label": "¿Olfatear?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "👃", "text": "¡Nariz con superpoder!", "cue": "superpoder", "sub": "Mucho mejor que la nuestra", "sub_cue": "mejor"},
+    "3": {"type": "compare", "left": {"label": "Tú", "items": [{"icon": "👃", "text": "Menos células", "cue": "tuya"}]}, "right": {"label": "Perro", "items": [{"icon": "🐶", "text": "Muchas más células", "cue": "más"}, {"icon": "🧠", "text": "Gran cerebro olfateador", "cue": "cerebro"}]}},
+    "5": {"type": "gallery", "title": "Pistas olfativas", "items": [{"icon": "🐕", "label": "Quién pasó", "cue": "pasó"}, {"icon": "🤝", "label": "¿Un amigo?", "cue": "amigo"}, {"icon": "🍖", "label": "Su almuerzo", "cue": "almuerzo"}]},
+    "7": {"type": "big", "icon": "img:Animals/Servier/dog", "text": "Olfatear encuentra pistas", "cue": "noticias", "sub": "Paseo olfateando, perro feliz", "sub_cue": "felices"},
+    "9": {"type": "big", "icon": "👋", "text": "¡Un hola perruno!", "cue": "hola", "sub": "Como una etiqueta", "sub_cue": "nombre"},
+    "10": {"type": "big", "icon": "💨", "text": "Ranuritas en la nariz", "cue": "ranuritas", "sub": "Siguen entrando olores", "sub_cue": "olores"},
+    "11": {"type": "summary", "rows": [{"icon": "👃", "text": "Supernarices", "cue": "supernarices"}, {"icon": "🔍", "text": "Pistas olfateadas", "cue": "pistas"}, {"icon": "👋", "text": "Saludos perrunos", "cue": "saludos"}]}
+  }
+}

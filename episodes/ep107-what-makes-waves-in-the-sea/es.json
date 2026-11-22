@@ -1,0 +1,33 @@
+{
+  "title_es": "¿Qué hace las olas del mar? 🌊",
+  "description_es": "¿De dónde vienen las olas del mar? Leo pregunta y su hermana mayor Mía le explica cómo el viento hace las olas y por qué revientan en la playa, en menos de un minuto.",
+  "cover_text_es": "¡ZAS, OLAS!",
+  "hook": "¿Qué hace las olas del mar?",
+  "tags_es": ["cómo se forman las olas", "el mar para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Qué hace las olas?", "cue": "próxima", "left": "🌬️", "right": "🌊"},
+  "lines": [
+    "Mía, ¿qué hace las olas del mar?",
+    "¡Casi siempre, el viento! Cuando el viento sopla sobre el agua, empuja la parte de arriba del mar y hace montoncitos.",
+    "¿Y por qué algunas olas son enormes?",
+    "Un viento más fuerte hace olas más grandes. ¡Y el viento que sopla por más tiempo, sobre más mar, también!",
+    "¿Y el agua viaja hasta la playa?",
+    "¡En realidad no! El agua casi solo sube y baja, como un corcho. Lo que avanza es la ola.",
+    "¿Entonces por qué las olas revientan en la playa?",
+    "Cerca de la playa, el agua es poco profunda. La parte de abajo de la ola se frena, la de arriba se voltea, ¡y splash!",
+    "¿Puedo hacer mis propias olas?",
+    "¡Primero pregúntale a un adulto! Llena un tazón grande con agua y sopla suavecito por encima. ¡Olas chiquititas!",
+    "¡El viento hace olas, el viento fuerte las hace grandes, y el agua poco profunda las hace reventar!",
+    "¿Qué averiguamos ahora? ¡Pídele a un adulto que deje un tema en los comentarios!",
+    "¡Olas-tástico! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿qué hace las olas del mar?"
+  ],
+  "punch": {"1": "viento", "7": "splash"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🌊", "label": "Olas"}, "right": {"icon": "🤔", "label": "¿Por qué?"}, "mid": "?"},
+    "1": {"type": "transform", "title": "El viento trabaja", "from": {"icon": "🌬️", "label": "Sopla el viento", "cue": "viento"}, "to": {"icon": "🌊", "label": "Montoncitos", "cue": "montoncitos"}},
+    "3": {"type": "checklist", "title": "Olas grandes", "icon": "🌊", "items": [{"text": "Viento fuerte", "icon": "💪", "cue": "fuerte", "ok": true}, {"text": "Mucho tiempo", "icon": "⏳", "cue": "tiempo", "ok": true}, {"text": "Mucho mar", "icon": "🗺️", "cue": "mar", "ok": true}]},
+    "5": {"type": "picture", "art": "waves", "caption": "El agua sube y baja", "cue": "sube", "icon": "🔄"},
+    "7": {"type": "lifecycle", "title": "Una ola revienta", "items": [{"icon": "🏖️", "label": "Poca profundidad", "cue": "profunda"}, {"icon": "🐢", "label": "Abajo se frena", "cue": "frena"}, {"icon": "💥", "label": "Arriba se voltea", "cue": "voltea"}, {"icon": "💦", "label": "¡Splash!", "cue": "splash"}]},
+    "9": {"type": "checklist", "title": "Prueba de olas", "icon": "🥣", "items": [{"text": "Pregunta a un adulto", "icon": "🧑", "cue": "pregúntale", "ok": true}, {"text": "Tazón con agua", "icon": "🥣", "cue": "tazón", "ok": true}, {"text": "Sopla suavecito", "icon": "🌬️", "cue": "sopla", "ok": true}, {"text": "¡Olas chiquititas!", "icon": "🌊", "cue": "chiquititas", "ok": true}]},
+    "10": {"type": "summary", "rows": [{"text": "El viento hace olas", "icon": "🌬️", "cue": "viento"}, {"text": "Viento fuerte = grandes", "icon": "💪", "cue": "fuerte"}, {"text": "Revientan en la orilla", "icon": "💥", "cue": "reventar"}]}
+  }
+}

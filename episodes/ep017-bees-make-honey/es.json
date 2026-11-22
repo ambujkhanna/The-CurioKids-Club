@@ -1,0 +1,142 @@
+{
+  "title_es": "¿Cómo hacen miel las abejas? 🍯",
+  "description_es": "¡Las abejas convierten el jugo de las flores en miel dulce y pegajosa! Leo pregunta y su hermana mayor Mía le explica cada paso, en menos de un minuto.",
+  "cover_text_es": "¡¿MIEL?!",
+  "hook": "¿Cómo hacen miel las abejas?",
+  "tags_es": [
+    "cómo hacen miel las abejas",
+    "las abejas para niños",
+    "ciencia para niños"
+  ],
+  "loop_card_es": {
+    "text": "¿Cómo hacen miel las abejas?",
+    "cue": "próxima",
+    "left": "🐝",
+    "right": "🍯"
+  },
+  "lines": [
+    "Mía, ¿cómo hacen miel las abejas?",
+    "¡Todo empieza con las flores! Las abejas sorben un jugo dulce de las flores que se llama néctar.",
+    "¿Y se lo toman todo?",
+    "No todo. Una abeja guarda el néctar en una pancita especial para miel, y lo lleva volando a la colmena.",
+    "¿Y ahí se convierte en miel?",
+    "¡Casi! En la colmena, las abejas se pasan el néctar de abeja en abeja. Le mezclan jugos especiales y luego lo ponen en celditas de cera.",
+    "Pero el néctar es aguadito. ¡La miel es espesa!",
+    "¡Muy bien observado! Las abejas abanican sus alas superrápido para secar el agua. Así se pone espesa y pegajosa.",
+    "Cuando está lista, tapan cada celdita con una tapa de cera, como un frasquito.",
+    "¿Por qué las abejas guardan tanta miel?",
+    "Es su comida para el invierno, cuando no hay flores. ¡Y la miel puede durar muchísimo tiempo!",
+    "Entonces sorben néctar, se lo pasan, lo abanican para secarlo y lo tapan. ¡Miel!",
+    "¡Qué dulce trabajo! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿cómo hacen miel las abejas?"
+  ],
+  "punch": {
+    "7": "abanican"
+  },
+  "boards": {
+    "0": {
+      "type": "title",
+      "left": {
+        "icon": "🐝",
+        "label": "Abeja"
+      },
+      "right": {
+        "icon": "🍯",
+        "label": "¿Miel?"
+      },
+      "mid": "?"
+    },
+    "1": {
+      "type": "big",
+      "icon": "🌸",
+      "text": "Néctar de flores",
+      "cue": "néctar",
+      "sub": "Un jugo dulce",
+      "sub_cue": "dulce"
+    },
+    "3": {
+      "type": "big",
+      "icon": "🐝",
+      "text": "Una pancita para miel",
+      "cue": "pancita",
+      "sub": "Y de vuelta a la colmena",
+      "sub_cue": "colmena"
+    },
+    "5": {
+      "type": "steps",
+      "title": "En la colmena",
+      "items": [
+        {
+          "icon": "🐝",
+          "label": "De abeja en abeja",
+          "cue": "pasan"
+        },
+        {
+          "icon": "🧪",
+          "label": "Mezclan jugos",
+          "cue": "mezclan"
+        },
+        {
+          "icon": "🍯",
+          "label": "En celditas de cera",
+          "cue": "celditas"
+        }
+      ]
+    },
+    "7": {
+      "type": "big",
+      "icon": "🌬️",
+      "text": "Las alas la secan",
+      "cue": "abanican",
+      "sub": "¡Espesa y pegajosa!",
+      "sub_cue": "espesa"
+    },
+    "8": {
+      "type": "big",
+      "icon": "🍯",
+      "text": "Tapa de cera",
+      "cue": "cera",
+      "sub": "¡Como un frasquito!",
+      "sub_cue": "frasquito"
+    },
+    "10": {
+      "type": "big",
+      "icon": "❄️",
+      "text": "Comida para el invierno",
+      "cue": "invierno",
+      "sub": "La miel dura mucho",
+      "sub_cue": "durar"
+    },
+    "11": {
+      "type": "journey",
+      "title": "Del néctar a la miel",
+      "traveler": "🐝",
+      "items": [
+        {
+          "icon": "🌸",
+          "label": "Sorben néctar",
+          "cue": "sorben"
+        },
+        {
+          "icon": "🔁",
+          "label": "Se lo pasan",
+          "cue": "pasan"
+        },
+        {
+          "icon": "💨",
+          "label": "Lo secan",
+          "cue": "abanican"
+        },
+        {
+          "icon": "🔒",
+          "label": "Lo tapan",
+          "cue": "tapan"
+        },
+        {
+          "icon": "🍯",
+          "label": "¡Miel!",
+          "cue": "miel"
+        }
+      ]
+    }
+  }
+}

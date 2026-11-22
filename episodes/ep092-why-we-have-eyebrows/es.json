@@ -1,0 +1,36 @@
+{
+  "title_es": "¿Por qué tenemos cejas? 🤨",
+  "description_es": "¿Por qué tenemos cejas? Mantienen el sudor y la lluvia lejos de tus ojos, ¡y te ayudan a mostrar lo que sientes! Leo pregunta y su hermana mayor Mía se lo explica en menos de un minuto.",
+  "cover_text_es": "¿CEJAS?",
+  "hook": "¿Por qué tenemos cejas?",
+  "tags_es": ["para qué sirven las cejas", "el cuerpo humano para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Por qué tenemos cejas?", "cue": "próxima", "left": "🤨", "right": "💦"},
+  "lines": [
+    "Mía, ¿por qué tenemos cejas?",
+    "¡Las cejas son como paragüitas para tus ojos!",
+    "¿Paragüitas? ¿Cómo?",
+    "Cuando el sudor o la lluvia bajan por tu frente, tus cejas los mandan hacia los lados.",
+    "¿Y eso por qué importa?",
+    "El sudor te puede picar en los ojos y no te deja ver bien. Las cejas ayudan a que tus ojos vean claro.",
+    "¿Las cejas hacen algo más?",
+    "¡Sí! Las cejas nos ayudan a mostrar lo que sentimos, sin decir ni una palabra.",
+    "¡Enséñame!",
+    "¿Cejas bien arriba? ¡Sorpresa! ¿Suaves y tranquilas? Feliz. ¿Bajitas y apretadas? ¡Enojado!",
+    "¿Puedo practicar mis caras con las cejas?",
+    "¡Primero pregúntale a un adulto! Luego ponte frente a un espejo y haz una cara de sorpresa, una cara feliz y una cara enojada.",
+    "¡Las cejas sacan el sudor de mis ojos y muestran lo que siento!",
+    "¿Tienes una pregunta para nosotros? ¡Pídele a un adulto que deje un tema en los comentarios!",
+    "¡Ceja-tástico! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué tenemos cejas?"
+  ],
+  "punch": {"1": "paragüitas", "7": "sentimos"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🤨", "label": "Cejas"}, "right": {"icon": "❓", "label": "¿Por qué?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "☂️", "text": "Paragüitas para los ojos", "cue": "paragüitas"},
+    "3": {"type": "flow", "title": "¡Gota, gota, fuera!", "packet": "💧", "items": [{"icon": "💦", "label": "Sudor o lluvia", "cue": "sudor"}, {"icon": "🤨", "label": "Cejas", "cue": "cejas"}, {"icon": "↔️", "label": "A los lados", "cue": "lados"}]},
+    "5": {"type": "big", "icon": "👀", "text": "Ojos claros", "cue": "claro", "sub": "Sin sudor que pica", "sub_cue": "picar"},
+    "7": {"type": "big", "icon": "🙂", "text": "Muestran lo que sientes", "cue": "sentimos", "sub": "Sin palabras", "sub_cue": "palabra"},
+    "9": {"type": "gallery", "title": "Caras con cejas", "items": [{"icon": "😲", "label": "Sorpresa", "cue": "sorpresa"}, {"icon": "😊", "label": "Feliz", "cue": "feliz"}, {"icon": "😠", "label": "Enojado", "cue": "enojado"}]},
+    "11": {"type": "checklist", "title": "Juego del espejo", "icon": "🪞", "items": [{"text": "Pregunta a un adulto", "icon": "🧑", "cue": "pregúntale", "ok": true}, {"text": "Busca un espejo", "icon": "🪞", "cue": "espejo", "ok": true}, {"text": "Haz caras", "icon": "😲", "cue": "haz", "ok": true}]},
+    "12": {"type": "summary", "rows": [{"text": "Sacan el sudor", "icon": "💦", "cue": "sudor"}, {"text": "Muestran lo que sientes", "icon": "😲", "cue": "siento"}]}
+  }
+}

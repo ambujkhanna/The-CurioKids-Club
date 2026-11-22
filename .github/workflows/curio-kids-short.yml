@@ -4,6 +4,7 @@ on:
   schedule:
     - cron: "40 8 * * *"     # 08:40 UTC = 14:10 IST } scheduled runs use --auto: alternate days, the English video
     - cron: "40 15 * * *"    # 15:40 UTC = 21:10 IST }   posts 17:00-20:00 IST, the Hindi video 09:00-11:00 IST
+    - cron: "41 21 * * *"    # 21:41 UTC = 03:11 IST: the daily SPANISH Short, posts 05:30-07:30 IST (18:00-20:00 Mexico City)
   workflow_dispatch:
     inputs:
       action:
@@ -17,6 +18,7 @@ on:
           - "Refresh thumbnails"
           - "Post 1 old video to Facebook + Instagram"
           - "Post 3 old videos to Facebook + Instagram"
+          - "Send a test alert (WhatsApp)"
       post_to:
         description: "Where to post"
         type: choice
@@ -36,12 +38,13 @@ on:
         description: "Make a video from YOUR script: a file path (scripts/bees.txt) OR paste the whole script (format: scripts/README.md)"
         required: false
       language:
-        description: "Language (manual runs): en = English, hi = Hindi voices + English subtitles"
+        description: "Language (manual runs): en = English, hi = Hindi voices + English subtitles, es = Spanish voices + Spanish subtitles"
         type: choice
         default: "en"
         options:
           - "en"
           - "hi"
+          - "es"
       category:
         description: "Category instead of the daily Short (none = normal)"
         type: choice
@@ -178,6 +181,8 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          WHATSAPP_PHONE: ${{ secrets.WHATSAPP_PHONE }}
+          WHATSAPP_APIKEY: ${{ secrets.WHATSAPP_APIKEY }}
           LIST_STYLE: ${{ vars.LIST_STYLE || 'tiles' }}
           CTA_STYLE: ${{ vars.CTA_STYLE || 'bar' }}
           CHAR_STYLE: ${{ vars.CHAR_STYLE || 'doodle' }}
@@ -199,8 +204,12 @@ jobs:
           HI_TTS_ENGINE: ${{ vars.HI_TTS_ENGINE || 'kokoro' }}
           HI_VOICE_CLIP: ${{ vars.HI_VOICE_CLIP || 'english' }}
           CB_CFG_HI: ${{ vars.CB_CFG_HI || '' }}
+          PUBLISH_WINDOW_ES: ${{ vars.PUBLISH_WINDOW_ES || '05:30-07:30' }}
+          ES_SHORTS: ${{ vars.ES_SHORTS || 'on' }}
+          CRON: ${{ github.event.schedule }}
           MADE_FOR_KIDS: ${{ vars.MADE_FOR_KIDS || 'false' }}
-          YT_PLAYLIST: ${{ vars.YT_PLAYLIST }}
+          YT_PLAYLIST: ${{ vars.YT_PLAYLIST || 'curiokids' }}  # English + Hindi Shorts (owner, 2026-11-22)
+          YT_PLAYLIST_ES: ${{ vars.YT_PLAYLIST_ES || 'CurioKids_Spanish' }}  # Spanish Shorts
         run: |
           ARGS=""
           case "$ACTION" in
@@ -209,6 +218,7 @@ jobs:
             "Refresh thumbnails") ARGS="--refresh-thumbnails" ;;
             "Post 1 old"*) ARGS="--social-backfill 1" ;;
             "Post 3 old"*) ARGS="--social-backfill 3" ;;
+            "Send a test alert"*) R="$(python pipeline/notify.py "✅ Test alert from $GITHUB_REPOSITORY - alerts work")"; echo "$R"; echo "### 🔔 Test alert: $R" >> "$GITHUB_STEP_SUMMARY"; exit 0 ;;
           esac
           if [ -n "$EPISODE_IN" ]; then
             if ! printf "%s" "$EPISODE_IN" | grep -Eq "^[A-Za-z0-9_-]+$"; then echo "episode must be an id like ep014"; exit 1; fi
@@ -217,7 +227,12 @@ jobs:
           case "$POST_TO" in ""|*YouTube*) ;; *) ARGS="$ARGS --social-only" ;; esac  # no YouTube: post to the chosen social platforms only
           if [ -n "$CATEGORY_IN" ] && [ "$CATEGORY_IN" != "none" ]; then ARGS="$ARGS --category $CATEGORY_IN"; fi
           if [ "${{ github.event_name }}" = "schedule" ]; then ARGS="--auto"; fi
+          if [ "$CRON" = "41 21 * * *" ]; then  # the Spanish slot (repo variable ES_SHORTS=off pauses it)
+            case "$ES_SHORTS" in off|Off|OFF|0|no|false) echo "Spanish Shorts are paused (ES_SHORTS=off)"; exit 0 ;; esac
+            ARGS="--auto --lang es"
+          fi
           if [ "$LANG_IN" = "hi" ]; then ARGS="$ARGS --lang hi"; fi
+          if [ "$LANG_IN" = "es" ]; then ARGS="$ARGS --lang es"; fi
           python pipeline/daily.py $ARGS
 
       - name: Keep the video as a downloadable artifact (14 days)
@@ -244,6 +259,8 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          WHATSAPP_PHONE: ${{ secrets.WHATSAPP_PHONE }}
+          WHATSAPP_APIKEY: ${{ secrets.WHATSAPP_APIKEY }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           python pipeline/notify.py "❌ ${{ github.workflow }} failed in ${{ github.repository }} - $RUN_URL"

@@ -1,0 +1,36 @@
+{
+  "title_es": "¿Por qué las cebras tienen rayas? 🦓",
+  "description_es": "¡Las rayas de la cebra podrían ser un truco ingenioso para engañar a las moscas! Leo pregunta y su hermana mayor Mía le explica lo que piensan los científicos, en menos de un minuto.",
+  "cover_text_es": "¿POR QUÉ RAYAS?",
+  "hook": "¿Por qué las cebras tienen rayas?",
+  "tags_es": ["por qué las cebras tienen rayas", "animales para niños", "datos curiosos para niños"],
+  "loop_card_es": {"text": "¿Por qué las rayas?", "cue": "próxima", "left": "🦓", "right": "❓"},
+  "lines": [
+    "Mía, ¿por qué las cebras tienen rayas?",
+    "¡Es un verdadero misterio! Los científicos tienen algunas ideas.",
+    "¿Cuál es la idea favorita?",
+    "Muchos científicos creen que las rayas alejan a las moscas que pican. Las rayas confunden a las moscas y no logran aterrizar bien.",
+    "¡Ja! ¿Las moscas se hacen un lío?",
+    "¡Sí! Cuando los científicos les pusieron mantas a rayas a unos caballos, aterrizaron menos moscas sobre ellos.",
+    "¿Hay otras ideas?",
+    "Algunos creen que las rayas ayudan a las cebras a mantenerse frescas bajo el sol, o a confundir a un león cuando toda la manada corre junta.",
+    "¿Todas las cebras tienen las mismas rayas?",
+    "¡No! Las rayas de cada cebra son diferentes, como tus huellas digitales.",
+    "Entonces, ¿la cebra es blanca con rayas negras, o negra con rayas blancas?",
+    "Debajo del pelaje, la piel de la cebra es oscura. ¡Por eso mucha gente dice que es negra con rayas blancas!",
+    "Rayas que engañan a las moscas y que son únicas. ¡Las cebras son geniales!",
+    "¡Claro que sí! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué las cebras tienen rayas?"
+  ],
+  "punch": {"1": "misterio", "5": "menos"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🦓", "label": "Cebra"}, "right": {"icon": "🤔", "label": "¿Rayas?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "🔍", "text": "¡Un misterio de cebras!", "cue": "misterio", "sub": "Los científicos tienen ideas", "sub_cue": "científicos"},
+    "3": {"type": "big", "icon": "🪰", "text": "¡Adiós, moscas que pican!", "cue": "moscas", "sub": "Las rayas las confunden", "sub_cue": "confunden"},
+    "5": {"type": "big", "icon": "img:Animals/Servier/horse", "text": "Caballos con rayas", "cue": "caballos", "sub": "¡Llegaron menos moscas!", "sub_cue": "menos"},
+    "7": {"type": "gallery", "title": "Otras ideas", "items": [{"icon": "🌡️", "label": "Estar frescas", "cue": "frescas"}, {"icon": "🦁", "label": "Confundir al león", "cue": "león"}, {"icon": "🦓", "label": "La manada corre", "cue": "manada"}]},
+    "9": {"type": "big", "icon": "🦓", "text": "¡No hay dos iguales!", "cue": "diferentes", "sub": "Como huellas digitales", "sub_cue": "huellas"},
+    "10": {"type": "big", "icon": "🤔", "text": "¿Negra o blanca?", "cue": "negra"},
+    "11": {"type": "big", "icon": "🦓", "text": "Piel oscura debajo", "cue": "piel", "sub": "Negra con rayas blancas", "sub_cue": "blancas"},
+    "12": {"type": "summary", "rows": [{"text": "Engañan a las moscas", "icon": "🪰", "cue": "moscas"}, {"text": "Únicas", "icon": "🦓", "cue": "únicas"}]}
+  }
+}

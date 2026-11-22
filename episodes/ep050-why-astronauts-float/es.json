@@ -1,0 +1,34 @@
+{
+  "title_es": "¿Por qué flotan los astronautas? 🚀",
+  "description_es": "¡Los astronautas flotan porque siempre están cayendo! Leo pregunta y su hermana mayor Mía le explica la gravedad y las órbitas de forma sencilla, en menos de un minuto.",
+  "cover_text_es": "¡¿FLOTANDO?!",
+  "hook": "¿Por qué flotan los astronautas en el espacio?",
+  "tags_es": ["por qué flotan los astronautas", "astronautas para niños", "el espacio para niños"],
+  "loop_card_es": {"text": "¿Por qué flotan?", "cue": "próxima", "left": "🚀", "right": "🌍"},
+  "lines": [
+    "Mía, ¿por qué flotan los astronautas en el espacio?",
+    "Te tengo una sorpresa: ¡la gravedad sigue ahí! Allá arriba en la estación espacial, la Tierra los sigue jalando.",
+    "¿Entonces por qué no se caen?",
+    "¡Sí se están cayendo! La estación espacial y todos los que van adentro están cayendo juntos, todo el tiempo.",
+    "¿Cayendo? ¡Pero nunca chocan con el suelo!",
+    "Es porque la estación va de lado súper rápido. Mientras cae, la Tierra se curva debajo de ella, ¡y siempre falla!",
+    "¿Entonces dan vueltas y vueltas alrededor de la Tierra?",
+    "¡Sí! Dar vueltas y vueltas así se llama estar en órbita.",
+    "Y como todo cae junto, nada aprieta contra el piso. ¡Así que los astronautas, su comida y hasta las gotas de agua flotan por todos lados!",
+    "¡Es como cuando la montaña rusa baja y siento cosquillas en la panza!",
+    "¡Exacto! Esas cosquillas de flotar son una probadita de lo que sienten los astronautas todo el día.",
+    "La gravedad sigue ahí, siempre están cayendo, y siempre fallan la Tierra. ¡Qué genial!",
+    "¡De verdad que sí! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué flotan los astronautas en el espacio?"
+  ],
+  "punch": {"1": "gravedad", "3": "cayendo"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🚀", "label": "Astronauta"}, "right": {"icon": "🎈", "label": "¿Flota?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "🌍", "text": "¡La gravedad sigue ahí!", "cue": "gravedad", "sub": "La Tierra los jala", "sub_cue": "jalando"},
+    "3": {"type": "big", "icon": "⬇️", "text": "¡Siempre cayendo!", "cue": "cayendo", "sub": "Todos juntos", "sub_cue": "juntos"},
+    "5": {"type": "steps", "title": "Cayendo alrededor", "items": [{"icon": "🚀", "label": "Va de lado rápido", "cue": "lado"}, {"icon": "⬇️", "label": "Cae hacia la Tierra", "cue": "cae"}, {"icon": "🌍", "label": "La Tierra se curva", "cue": "curva"}, {"icon": "🔄", "label": "¡Siempre falla!", "cue": "falla"}]},
+    "7": {"type": "orbit", "title": "En órbita", "center": "🌍", "items": [{"icon": "🛰️", "label": "Estación", "cue": "vueltas"}]},
+    "8": {"type": "gallery", "title": "Cosas que flotan", "items": [{"icon": "🚀", "label": "Astronautas", "cue": "astronautas"}, {"icon": "🥪", "label": "Comida", "cue": "comida"}, {"icon": "💧", "label": "Gotas de agua", "cue": "gotas"}]},
+    "10": {"type": "big", "icon": "🎢", "text": "¡Esas cosquillas!", "cue": "cosquillas", "sub": "Todo el día en el espacio", "sub_cue": "día"},
+    "11": {"type": "summary", "rows": [{"icon": "🌍", "text": "La gravedad jala", "cue": "gravedad"}, {"icon": "⬇️", "text": "Siempre cayendo", "cue": "cayendo"}, {"icon": "🔄", "text": "Siempre fallan", "cue": "fallan"}]}
+  }
+}

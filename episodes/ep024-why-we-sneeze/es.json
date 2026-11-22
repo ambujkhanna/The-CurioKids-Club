@@ -1,0 +1,34 @@
+{
+  "title_es": "¿Por qué estornudamos? 🤧",
+  "description_es": "¡Un estornudo es tu nariz limpiándose por dentro! Leo pregunta y su hermana mayor Mía le explica qué te hace decir ¡achís!, en menos de un minuto.",
+  "cover_text_es": "¡ACHÍS!",
+  "hook": "¿Por qué estornudamos?",
+  "tags_es": ["por qué estornudamos", "el cuerpo humano para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Por qué estornudamos?", "cue": "próxima", "left": "👃", "right": "🤧"},
+  "lines": [
+    "Mía, ¿por qué estornudamos?",
+    "¡Un estornudo es tu nariz limpiándose! A veces entran cositas, como polvo, polen de las flores o una pizca de pimienta.",
+    "¡Y hacen cosquillas!",
+    "¡Sí! Tu nariz siente las cosquillas y le manda un mensaje rápido a tu cerebro.",
+    "Tu cerebro dice: ¡sácalo! Respiras muy hondo, y luego... ¡achís!",
+    "¡Mis ojos siempre se cierran cuando estornudo!",
+    "A casi todos se nos cierran los ojos al estornudar. Pasa solito, sin que lo intentes.",
+    "¿Por qué estornudo cuando salgo al sol?",
+    "La luz fuerte hace estornudar a algunas personas. ¡Los científicos todavía no saben bien por qué!",
+    "¿Qué hago cuando estornudo?",
+    "Estornuda en un pañuelo o en tu codo, y luego lávate las manos. Así los gérmenes no les llegan a tus amigos.",
+    "Entonces un estornudo es mi nariz sacando lo que pica. ¡Achís!",
+    "¡Salud! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué estornudamos?"
+  ],
+  "punch": {"4": "achís"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "img:Human_physiology/Servier/nasal-cavity", "label": "Nariz"}, "right": {"icon": "🤧", "label": "¿Achís?"}, "mid": "?"},
+    "1": {"type": "gallery", "title": "Cosas que pican", "items": [{"icon": "💨", "label": "Polvo", "cue": "polvo"}, {"icon": "🌼", "label": "Polen", "cue": "polen"}, {"icon": "🧂", "label": "Pimienta", "cue": "pimienta"}]},
+    "3": {"type": "big", "icon": "img:Human_physiology/Servier/brain-1", "text": "La nariz avisa al cerebro", "cue": "mensaje", "sub": "¡Alerta de cosquillas!", "sub_cue": "cosquillas"},
+    "4": {"type": "body", "title": "¡Achís!", "show": ["brain", "lungs"], "flow": "air", "cue": "respiras", "labels": [{"text": "Cerebro", "at": "brain", "cue": "cerebro"}, {"text": "Respiro hondo", "at": "lungs", "cue": "respiras"}, {"text": "¡Achís!", "at": "nose", "cue": "achís"}]},
+    "6": {"type": "big", "icon": "😌", "text": "Los ojos se cierran solos", "cue": "cierran", "sub": "Pasa solito", "sub_cue": "solito"},
+    "8": {"type": "big", "icon": "☀️", "text": "¡Estornudos de sol!", "cue": "luz", "sub": "Un misterio científico", "sub_cue": "científicos"},
+    "10": {"type": "checklist", "title": "Estornuda bien", "icon": "🤧", "items": [{"icon": "🧻", "text": "Usa un pañuelo", "cue": "pañuelo", "ok": true}, {"icon": "💪", "text": "O tu codo", "cue": "codo", "ok": true}, {"icon": "🧼", "text": "Lávate las manos", "cue": "lávate", "ok": true}]},
+    "11": {"type": "summary", "rows": [{"icon": "👃", "text": "La nariz se limpia", "cue": "nariz"}, {"icon": "💨", "text": "Lo saca afuera", "cue": "sacando"}, {"icon": "🤧", "text": "¡Achís!", "cue": "achís"}]}
+  }
+}

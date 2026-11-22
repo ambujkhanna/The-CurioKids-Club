@@ -1,0 +1,162 @@
+{
+  "title_es": "¿Por qué las manzanas se ponen cafés? 🍎",
+  "description_es": "¿Por qué una manzana cortada se pone café? El aire entra y causa un cambio natural, ¡y un poquito de jugo de limón lo hace más lento! Leo pregunta y su hermana mayor Mía se lo explica en menos de un minuto.",
+  "cover_text_es": "¿MANZANA CAFÉ?",
+  "hook": "¿Por qué mi manzana se pone café?",
+  "tags_es": [
+    "por qué la manzana se pone café",
+    "experimentos con manzana para niños",
+    "ciencia para niños"
+  ],
+  "loop_card_es": {
+    "text": "¿Por qué se pone café?",
+    "cue": "próxima",
+    "left": "🍎",
+    "right": "🟤"
+  },
+  "lines": [
+    "Mía, ¿por qué mi manzana se pone café después de que la cortas?",
+    "¡Es el aire! Al cortar la manzana, el aire puede llegar hasta adentro.",
+    "¿Y qué hace el aire?",
+    "El aire tiene un gas llamado oxígeno. El oxígeno se mezcla con cositas dentro de la manzana, y la parte blanca se pone café.",
+    "¿Ahora mi manzana está podrida?",
+    "¡No! Una rebanada de manzana café se puede comer sin problema. Es solo un cambio natural.",
+    "¿Otras frutas también se ponen cafés?",
+    "¡Sí! Los plátanos, las peras y los aguacates también se ponen cafés.",
+    "¿Lo podemos detener?",
+    "¡Lo podemos hacer más lento! Un poquito de jugo de limón en las rebanadas las ayuda a quedarse blancas por más tiempo.",
+    "¿Lo puedo probar?",
+    "¡Primero pídele ayuda a un adulto! Que corte dos rebanadas. Ponle jugo de limón a una, luego espera y compáralas.",
+    "¡El aire entra, la manzana se pone café, pero el limón lo hace más lento!",
+    "¿Qué debería explicar Mía ahora? ¡Pídele a un adulto que deje un tema en los comentarios!",
+    "¡Qué manzanástico! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué mi manzana se pone café después de que la cortas?"
+  ],
+  "punch": {
+    "1": "aire",
+    "5": "comer"
+  },
+  "boards": {
+    "0": {
+      "type": "title",
+      "left": {
+        "icon": "🍎",
+        "label": "Manzana"
+      },
+      "right": {
+        "icon": "🟤",
+        "label": "¿Café?"
+      },
+      "mid": "?"
+    },
+    "1": {
+      "type": "big",
+      "icon": "💨",
+      "text": "El aire entra",
+      "cue": "aire",
+      "sub": "Al cortarla",
+      "sub_cue": "cortar"
+    },
+    "3": {
+      "type": "transform",
+      "title": "Un cambio natural",
+      "from": {
+        "icon": "🍏",
+        "label": "Blanca por dentro",
+        "cue": "blanca"
+      },
+      "to": {
+        "icon": "🟤",
+        "label": "Café",
+        "cue": "café"
+      }
+    },
+    "5": {
+      "type": "big",
+      "icon": "✅",
+      "text": "Se puede comer",
+      "cue": "comer",
+      "sub": "Un cambio natural",
+      "sub_cue": "natural"
+    },
+    "7": {
+      "type": "gallery",
+      "title": "Frutas que se oscurecen",
+      "items": [
+        {
+          "icon": "🍌",
+          "label": "Plátanos",
+          "cue": "plátanos"
+        },
+        {
+          "icon": "🍐",
+          "label": "Peras",
+          "cue": "peras"
+        },
+        {
+          "icon": "🥑",
+          "label": "Aguacates",
+          "cue": "aguacates"
+        }
+      ]
+    },
+    "9": {
+      "type": "big",
+      "icon": "🍋",
+      "text": "El limón ayuda",
+      "cue": "limón",
+      "sub": "Más lento",
+      "sub_cue": "lento"
+    },
+    "11": {
+      "type": "checklist",
+      "title": "Prueba de la manzana",
+      "icon": "🍎",
+      "items": [
+        {
+          "text": "Pide ayuda",
+          "icon": "🧑",
+          "cue": "pídele",
+          "ok": true
+        },
+        {
+          "text": "Dos rebanadas",
+          "icon": "🍎",
+          "cue": "dos",
+          "ok": true
+        },
+        {
+          "text": "Limón en una",
+          "icon": "🍋",
+          "cue": "limón",
+          "ok": true
+        },
+        {
+          "text": "Espera y compara",
+          "icon": "⏰",
+          "cue": "espera",
+          "ok": true
+        }
+      ]
+    },
+    "12": {
+      "type": "summary",
+      "rows": [
+        {
+          "text": "El aire entra",
+          "icon": "💨",
+          "cue": "aire"
+        },
+        {
+          "text": "Se pone café",
+          "icon": "🟤",
+          "cue": "café"
+        },
+        {
+          "text": "El limón la frena",
+          "icon": "🍋",
+          "cue": "limón"
+        }
+      ]
+    }
+  }
+}

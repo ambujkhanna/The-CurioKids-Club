@@ -1,0 +1,146 @@
+{
+  "title_es": "¿Cómo se forman los copos de nieve? ❄️",
+  "description_es": "¡Cada copo de nieve empieza con una motita de polvo! Leo pregunta y su hermana mayor Mía le explica cómo a los copos les crecen sus seis lados, en menos de un minuto.",
+  "cover_text_es": "¿COPOS DE NIEVE?",
+  "hook": "¿Cómo se forman los copos de nieve?",
+  "tags_es": [
+    "cómo se forman los copos de nieve",
+    "la nieve para niños",
+    "ciencia para niños"
+  ],
+  "loop_card_es": {
+    "text": "¿Copos de nieve?",
+    "cue": "próxima",
+    "left": "❄️",
+    "right": "☁️"
+  },
+  "lines": [
+    "Mía, ¿cómo se forman los copos de nieve?",
+    "¡Muy arriba, en una nube helada! Todo empieza con una motita de polvo que flota en el aire.",
+    "El agua de la nube se congela sobre esa motita y forma un cristal de hielo chiquitito.",
+    "¿Y cómo se pone tan grande y tan bonito?",
+    "Mientras flota y da vueltas, más agua se le congela encima, poquito a poquito. ¡Le crecen brazos, y a los brazos les crecen ramitas!",
+    "¿Por qué los copos de nieve tienen seis lados?",
+    "Por cómo se acomodan los pedacitos de agua cuando se congelan. Se ordenan en un patrón de seis lados, así que el copo también crece así.",
+    "¿Todos los copos de nieve son iguales?",
+    "¡No! Cada uno hace su propio viaje movido por la nube, donde puede estar más frío o más húmedo. Eso cambia cómo crece.",
+    "¡Por eso los científicos creen que es muy, muy difícil que dos copos grandes sean exactamente iguales!",
+    "Y cuando ya pesan lo suficiente, bajan flotando hasta el suelo como nieve.",
+    "Una motita de polvo, agua que se congela, seis lados, y cada uno es diferente. ¡Guau!",
+    "¡La nieve es increíble! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿cómo se forman los copos de nieve?"
+  ],
+  "punch": {
+    "2": "cristal",
+    "6": "seis"
+  },
+  "boards": {
+    "0": {
+      "type": "title",
+      "left": {
+        "icon": "❄️",
+        "label": "Copo de nieve"
+      },
+      "right": {
+        "icon": "☁️",
+        "label": "¿Cómo se forma?"
+      },
+      "mid": "?"
+    },
+    "1": {
+      "type": "big",
+      "icon": "☁️",
+      "text": "En una nube helada",
+      "cue": "nube",
+      "sub": "Alrededor de una motita",
+      "sub_cue": "motita"
+    },
+    "2": {
+      "type": "big",
+      "icon": "🧊",
+      "text": "Un cristal de hielo",
+      "cue": "cristal"
+    },
+    "4": {
+      "type": "journey",
+      "title": "Un copo crece",
+      "traveler": "❄️",
+      "items": [
+        {
+          "icon": "☁️",
+          "label": "En la nube",
+          "cue": "flota"
+        },
+        {
+          "icon": "💧",
+          "label": "El agua se congela",
+          "cue": "agua"
+        },
+        {
+          "icon": "🧊",
+          "label": "Le salen brazos",
+          "cue": "brazos"
+        },
+        {
+          "icon": "❄️",
+          "label": "Ramitas",
+          "cue": "ramitas"
+        }
+      ]
+    },
+    "6": {
+      "type": "big",
+      "icon": "❄️",
+      "text": "¡Seis lados!",
+      "cue": "seis",
+      "sub": "El agua se ordena",
+      "sub_cue": "patrón"
+    },
+    "8": {
+      "type": "big",
+      "icon": "🌬️",
+      "text": "Cada uno, su viaje",
+      "cue": "viaje",
+      "sub": "¿Frío? ¿Húmedo? ¡Otra forma!",
+      "sub_cue": "frío"
+    },
+    "9": {
+      "type": "big",
+      "icon": "🔍",
+      "text": "¿Nunca dos iguales?",
+      "cue": "iguales"
+    },
+    "10": {
+      "type": "big",
+      "icon": "🌨️",
+      "text": "¡Y bajan flotando!",
+      "cue": "bajan",
+      "sub": "¡Hola, nieve!",
+      "sub_cue": "nieve"
+    },
+    "11": {
+      "type": "summary",
+      "rows": [
+        {
+          "icon": "🟤",
+          "text": "Motita de polvo",
+          "cue": "polvo"
+        },
+        {
+          "icon": "🧊",
+          "text": "El agua se congela",
+          "cue": "congela"
+        },
+        {
+          "icon": "❄️",
+          "text": "Seis lados",
+          "cue": "seis"
+        },
+        {
+          "icon": "🔍",
+          "text": "Todos diferentes",
+          "cue": "diferente"
+        }
+      ]
+    }
+  }
+}

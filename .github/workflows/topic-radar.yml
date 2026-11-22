@@ -2,9 +2,12 @@ name: Weekly topic radar
 
 # Roadmap R2 + R3 (2026-11-22): what people search for + what viewers ask for in comments.
 # Opens a GitHub issue "Topic radar YYYY-WNN" with tick boxes. Read-only towards YouTube. Repo variable RADAR=off stops it.
+# + Google Trends and YouTube trending (owner, 2026-11-22): in the weekly report, and a DAILY quick check that opens a
+#   "Trend alert" issue only when a new trending subject fits the channel (RADAR_TRENDS=off stops the daily check).
 on:
   schedule:
-    - cron: "17 3 * * 1"   # Mondays 03:17 UTC (08:47 IST)
+    - cron: "17 3 * * 1"   # Mondays 03:17 UTC (08:47 IST): the full weekly report
+    - cron: "47 1 * * *"   # every day 01:47 UTC (07:17 IST): quick trend check (issue only if something new fits)
   workflow_dispatch: {}
 
 permissions:
@@ -29,6 +32,9 @@ jobs:
       - name: Topic radar
         env:
           RADAR: ${{ vars.RADAR || 'on' }}
+          RADAR_TRENDS: ${{ vars.RADAR_TRENDS || 'on' }}
+          RADAR_GEOS: ${{ vars.RADAR_GEOS || 'IN,US,MX' }}
+          CRON: ${{ github.event.schedule }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           YT_API_KEY: ${{ secrets.YT_API_KEY }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
@@ -37,7 +43,8 @@ jobs:
           YT_ANALYTICS_REFRESH_TOKEN: ${{ secrets.YT_ANALYTICS_REFRESH_TOKEN }}
           YT_ANALYTICS_CLIENT_ID: ${{ secrets.YT_ANALYTICS_CLIENT_ID }}
           YT_ANALYTICS_CLIENT_SECRET: ${{ secrets.YT_ANALYTICS_CLIENT_SECRET }}
-        run: python pipeline/radar.py
+        run: |
+          if [ "$CRON" = "47 1 * * *" ]; then python pipeline/radar.py --trends-only; else python pipeline/radar.py; fi
       - uses: actions/upload-artifact@v4
         if: always()
         with:

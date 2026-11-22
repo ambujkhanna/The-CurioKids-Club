@@ -3,7 +3,7 @@
 **Status:** PLANNED, 2026-11-21 (owner: "looks nice"). Same file in both repos. Each item below is written so it can be picked up and built directly.
 Rules: free first; no paid AI APIs inside the pipeline; secrets only in GitHub Secrets; a human approves anything that changes facts or what goes public; every feature has an off switch and falls back to today's behaviour.
 
-**Recommended order:** R1 real stock clips → R2 topic radar → R3 comments → topics → R4 subtitles → R5 dubbed versions → R6 self-check + alerts → R7 weekly Kaggle run (`docs/AUTOMATION_KAGGLE.md`) → R8 more platforms → R9 extra Kaggle tools.
+**Recommended order:** (R1, R2, R3, R5, R6 built) R1 real stock clips → R2 topic radar → R3 comments → topics → R4 subtitles → R5 dubbed versions → R6 self-check + alerts → R7 weekly Kaggle run (`docs/AUTOMATION_KAGGLE.md`) → R8 more platforms → R9 extra Kaggle tools.
 
 ---
 
@@ -60,7 +60,7 @@ Rules: free first; no paid AI APIs inside the pipeline; secrets only in GitHub S
   3. Upload with `captions.insert` (400 quota units per track, so about 6 tracks per video a day is fine). Also translate the title and description into the same languages (`localizations` in `videos.update`).
 - **Variables:** `SUBS_LANGS=es,pt,id,ar,fr,de`, `SUBS=on|off`. **Effort:** about 1 day. **Risks:** machine translation quality → keep lines short (already the style); owner spot-checks one language a week.
 
-## R5. Dubbed versions (Spanish first): the biggest reach lever
+## R5. ✅ BUILT 2026-11-22 for kids Spanish (see docs/SPANISH.md in the kids repo; Portuguese later): dubbed versions, the biggest reach lever
 
 - **Goal:** a Spanish (then Portuguese) version of each kids Short, like the Hindi version today.
 - **How:** the same pattern as `hi.json`:

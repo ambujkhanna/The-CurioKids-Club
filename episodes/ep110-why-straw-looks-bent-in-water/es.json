@@ -1,0 +1,36 @@
+{
+  "title_es": "¿Por qué una pajita se ve doblada en el agua? 🥤",
+  "description_es": "¿Por qué una pajita se ve rota dentro de un vaso de agua? Leo pregunta y su hermana mayor Mía le explica cómo se dobla la luz, algo que se llama refracción, en menos de un minuto.",
+  "cover_text_es": "¿DOBLADA?",
+  "hook": "¿Por qué la pajita se ve doblada en el agua?",
+  "tags_es": ["por qué la pajita se ve doblada en el agua", "refracción de la luz para niños", "experimentos para niños"],
+  "loop_card_es": {"text": "¿Por qué la pajita se ve doblada?", "cue": "próxima", "left": "🥤", "right": "💡"},
+  "lines": [
+    "Mía, ¿por qué mi pajita se ve doblada en el agua?",
+    "La pajita no está doblada de verdad. ¡Es un truco de la luz!",
+    "¿Un truco? ¿Cómo?",
+    "Vemos las cosas cuando la luz rebota en ellas y viaja hasta nuestros ojos.",
+    "¿Y qué hace el agua?",
+    "La luz va más lenta en el agua que en el aire. Así que cuando sale del agua, cambia un poquito de dirección.",
+    "¿Eso tiene nombre?",
+    "¡Sí! Cuando la luz se dobla así, se llama refracción. Dilo conmigo: ¡re-frac-ción!",
+    "¿Pero por qué la pajita se ve rota?",
+    "Tus ojos creen que la luz siempre viaja en línea recta. Por eso ven la pajita donde parece que viene la luz. ¡Un poquito fuera de lugar!",
+    "¿Puedo probarlo?",
+    "¡Primero pídele permiso a un adulto! Pon una pajita en un vaso transparente con agua. ¡Mira desde un lado y verás cómo se dobla!",
+    "¡La luz se dobla al pasar del agua al aire, por eso la pajita se ve doblada!",
+    "¿Qué exploramos ahora? ¡Pídele a un adulto que deje un tema en los comentarios!",
+    "¡Qué buena vista! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué mi pajita se ve doblada en el agua?"
+  ],
+  "punch": {"1": "truco", "7": "refracción"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🥤", "label": "Pajita"}, "right": {"icon": "💧", "label": "¿Doblada?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "💡", "text": "Un truco de luz", "cue": "truco", "sub": "La pajita está recta", "sub_cue": "pajita"},
+    "3": {"type": "flow", "title": "Cómo vemos", "packet": "💡", "items": [{"icon": "💡", "label": "Luz", "cue": "luz"}, {"icon": "🥤", "label": "Rebota", "cue": "rebota"}, {"icon": "👀", "label": "A nuestros ojos", "cue": "ojos"}]},
+    "5": {"type": "transform", "title": "La luz gira", "from": {"icon": "💧", "label": "En el agua", "cue": "agua"}, "to": {"icon": "🔀", "label": "Nueva dirección", "cue": "dirección"}},
+    "7": {"type": "big", "icon": "🔀", "text": "Refracción", "cue": "refracción", "sub": "La luz se dobla", "sub_cue": "dobla"},
+    "9": {"type": "big", "icon": "👀", "text": "Ojos engañados", "cue": "ojos", "sub": "La pajita parece movida", "sub_cue": "pajita"},
+    "11": {"type": "checklist", "title": "Pruébalo", "icon": "🥛", "items": [{"text": "Pide a un adulto", "icon": "🧑", "cue": "pídele", "ok": true}, {"text": "Pajita en agua", "icon": "🥤", "cue": "pajita", "ok": true}, {"text": "Mira de lado", "icon": "👀", "cue": "mira", "ok": true}]},
+    "12": {"type": "summary", "rows": [{"text": "La luz se dobla", "icon": "💡", "cue": "dobla"}, {"text": "Del agua al aire", "icon": "💧", "cue": "agua"}, {"text": "La pajita se ve doblada", "icon": "🥤", "cue": "pajita"}]}
+  }
+}

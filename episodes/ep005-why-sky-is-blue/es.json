@@ -1,0 +1,32 @@
+{
+  "title_es": "¿Por qué el cielo es azul? ☀️",
+  "description_es": "¡La luz del sol tiene escondidos todos los colores del arcoíris! Leo pregunta y su hermana mayor Mía le explica por qué el cielo es azul y por qué los atardeceres brillan anaranjados, en menos de un minuto.",
+  "cover_text_es": "¿POR QUÉ AZUL?",
+  "hook": "¿Por qué el cielo es azul?",
+  "tags_es": ["por qué el cielo es azul", "el cielo para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Por qué el cielo es azul?", "cue": "próxima", "left": "🌤️", "right": "🔵"},
+  "lines": [
+    "Mía, ¿por qué el cielo es azul?",
+    "¡Todo empieza con la luz del sol! Se ve blanca, pero en realidad son todos los colores del arcoíris mezclados.",
+    "¿Todos los colores? ¿Hasta el azul?",
+    "¡Sí! Cuando la luz del sol entra zumbando en nuestro aire, choca con pedacitos de aire chiquititos, demasiado pequeños para verlos.",
+    "La luz azul rebota por todo el cielo, mucho más que la luz roja o amarilla, que casi siempre siguen derecho.",
+    "¿Entonces cuando miro arriba, la luz azul viene de todas partes?",
+    "¡Exacto! Por eso un día despejado y soleado se ve tan azul.",
+    "¿Y por qué el cielo se pone anaranjado en el atardecer?",
+    "En el atardecer, la luz del sol atraviesa muchísimo más aire para llegar a ti. El azul se dispersa, y quedan los rojos y los naranjas.",
+    "¡La luz del sol tiene todos los colores, el azul rebota más, y en el atardecer ganan los rojos!",
+    "¡Lo entendiste! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué el cielo es azul?"
+  ],
+  "punch": {"1": "arcoíris", "4": "rebota"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🌤️", "label": "Cielo"}, "right": {"icon": "🔵", "label": "¿Azul?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "☀️", "text": "Luz del sol = todos los colores", "cue": "luz", "sub": "¡Mezclados!", "sub_cue": "mezclados"},
+    "3": {"type": "journey", "title": "Viaje de la luz", "traveler": "✨", "items": [{"icon": "☀️", "label": "Luz del sol", "cue": "luz"}, {"icon": "💨", "label": "Entra al aire", "cue": "zumbando"}, {"icon": "💥", "label": "Choca con el aire", "cue": "choca"}]},
+    "4": {"type": "compare", "left": {"label": "Azul", "items": [{"text": "Rebota mucho", "icon": "🔵", "cue": "azul"}, {"text": "Por todo el cielo", "icon": "💫", "cue": "cielo"}]}, "right": {"label": "Rojo y amarillo", "items": [{"text": "Rojo: derecho", "icon": "🔴", "cue": "roja"}, {"text": "Amarillo: derecho", "icon": "🟡", "cue": "amarilla"}]}},
+    "5": {"type": "big", "icon": "👀", "text": "¡Azul por todas partes!", "cue": "partes"},
+    "7": {"type": "big", "icon": "🌅", "text": "¿Atardecer naranja?", "cue": "atardecer"},
+    "8": {"type": "steps", "title": "En el atardecer", "items": [{"label": "La luz viaja lejos", "icon": "🛤️", "cue": "atraviesa"}, {"label": "El azul se dispersa", "icon": "🔵", "cue": "dispersa"}, {"label": "Quedan rojos y naranjas", "icon": "🟠", "cue": "rojos"}]},
+    "9": {"type": "summary", "rows": [{"text": "Luz: todos los colores", "icon": "☀️", "cue": "luz"}, {"text": "El azul rebota más", "icon": "🔵", "cue": "azul"}, {"text": "Atardecer: ganan los rojos", "icon": "🌅", "cue": "atardecer"}]}
+  }
+}

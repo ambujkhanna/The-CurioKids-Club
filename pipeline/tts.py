@@ -61,8 +61,8 @@ def strip_tags(t):
 
 
 RAW = LINES
-LANG = os.environ.get("TTS_LANG", "en")  # "hi" = Hindi voices from episodes/<id>/hi.json, English captions
-KLANG = {"en": "en-us", "hi": "hi"}[LANG]
+LANG = os.environ.get("TTS_LANG", "en")  # "hi" = Hindi voices from episodes/<id>/hi.json, English captions; "es" = Spanish (es.json), Spanish captions
+KLANG = {"en": "en-us", "hi": "hi", "es": "es"}[LANG]
 EN_TEXT = None
 EP_FILE = os.environ.get("EPISODE")
 if EP_FILE:  # data-driven episode (episodes/<id>/episode.json)
@@ -79,9 +79,15 @@ if EP_FILE:  # data-driven episode (episodes/<id>/episode.json)
         RAW = [(w, h) for (w, _), h in zip(RAW, _hi["lines"])]
         LINES = [(w, strip_tags(t)) for w, t in RAW]
         VOICES = {"MIA": ("hf_alpha", 1.0), "LEO": ("hf_beta", 0.92, 2.5), "DAD": ("hm_omega", 0.95), "TEEN": ("hf_alpha", 1.0)}  # Leo slowed 1.05 -> 0.92 (owner 2026-11-10)
+    if LANG == "es":  # Spanish version (owner, 2026-11-22): lines from es.json, captions in Spanish with real word timing
+        _es = json.load(open(os.path.join(os.path.dirname(EP_FILE), "es.json"), encoding="utf-8"))
+        assert len(_es["lines"]) == len(RAW), "es.json must have the same number of lines as episode.json"
+        RAW = [(w, t) for (w, _), t in zip(RAW, _es["lines"])]
+        LINES = [(w, strip_tags(t)) for w, t in RAW]
+        VOICES = {"MIA": ("ef_dora", 1.0), "LEO": ("em_alex", 1.05, 5.0), "DAD": ("em_santa", 0.95), "TEEN": ("ef_dora", 1.05)}  # voice pair B
 def speakable(t, lang="en"):
     """Text as it should be SAID: 'llama3.2' -> 'llama 3 point 2', 'ollama.com' -> 'ollama dot com', 'v2.1.0' -> 'v 2 point 1 point 0'."""
-    pt, dt_ = (" दशमलव ", " डॉट ") if lang == "hi" else (" point ", " dot ")
+    pt, dt_ = (" दशमलव ", " डॉट ") if lang == "hi" else (" coma ", " punto ") if lang == "es" else (" point ", " dot ")
     t = re.sub(r"\b([A-Za-z0-9-]+)\.(com|org|net|ai|io|in|dev|app|co)\b", lambda m: m.group(1) + dt_.rstrip() + " " + m.group(2), t)
     t = re.sub(r"(?<=[A-Za-z])(?=\d)", " ", t)  # llama3 -> llama 3
     t = re.sub(r"\d+(?:\.\d+)+", lambda m: pt.join(m.group(0).split(".")) if not re.fullmatch(r"\d+\.\d{3,}", m.group(0)) else m.group(0), t)
@@ -263,6 +269,9 @@ def chatterbox_all():
     import sfx
     py = os.environ.get("CB_PYTHON")
     if os.environ.get("TTS_ENGINE", "kokoro") != "chatterbox" or not py:
+        return None
+    if LANG == "es":
+        print("Spanish voices: Kokoro (Dora + Alex, owner's choice 2026-11-22)")
         return None
     if LANG != "en" and os.environ.get("HI_TTS_ENGINE", "kokoro").strip().lower() != "chatterbox":
         print("Hindi voices: Kokoro native Hindi (owner's choice 2026-11-10; repo variable HI_TTS_ENGINE=chatterbox to clone instead)")

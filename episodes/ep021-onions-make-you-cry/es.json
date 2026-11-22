@@ -1,0 +1,34 @@
+{
+  "title_es": "¿Por qué la cebolla te hace llorar? 🧅",
+  "description_es": "¡Al cortar una cebolla sale un gas astuto que te hace llorar los ojos! Leo pregunta y papá le explica el truco secreto de la cebolla, en menos de un minuto.",
+  "cover_text_es": "¿LÁGRIMAS DE CEBOLLA?",
+  "hook": "¿Por qué la cebolla te hace llorar?",
+  "tags_es": ["por qué la cebolla hace llorar", "datos curiosos para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Lágrimas de cebolla?", "cue": "próxima", "left": "🧅", "right": "😢"},
+  "lines": [
+    "Papá, ¿por qué la cebolla te hace llorar?",
+    "¡Ja! No estoy triste, te lo prometo. La cebolla tiene un truco muy astuto.",
+    "¿Qué truco?",
+    "La cebolla está hecha de partecitas llamadas células. Cuando un adulto la corta, las células se rompen.",
+    "Adentro, dos jugos de la cebolla se mezclan y hacen un gas invisible que sube flotando por el aire.",
+    "¿Y el gas se te mete en los ojos?",
+    "¡Sí! Pica un poquito. Por eso tus ojos hacen lágrimas para lavarlo.",
+    "¿Y por qué la cebolla hace eso?",
+    "Los científicos creen que así se protegen las cebollas, para que los animales no se las quieran comer.",
+    "¿Podemos evitar las lágrimas?",
+    "Un truco es enfriar la cebolla en el refri primero. Las cebollas frías sueltan menos gas.",
+    "¡Entonces cortar rompe las células, el gas sube flotando y mis ojos lo lavan!",
+    "¡Lo lograste! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿por qué la cebolla te hace llorar?"
+  ],
+  "punch": {"1": "astuto", "6": "lágrimas"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🧅", "label": "Cebolla"}, "right": {"icon": "😢", "label": "¿Lágrimas?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "🧅", "text": "Un truco muy astuto", "cue": "truco"},
+    "3": {"type": "big", "icon": "🧅", "text": "Cortar rompe las células", "cue": "células", "sub": "¡Solo cortan los adultos!", "sub_cue": "adulto"},
+    "4": {"type": "steps", "title": "El gas astuto", "items": [{"icon": "🧪", "label": "Los jugos se mezclan", "cue": "mezclan"}, {"icon": "💨", "label": "Se forma un gas", "cue": "gas"}, {"icon": "⬆️", "label": "Sube flotando", "cue": "flotando"}]},
+    "6": {"type": "big", "icon": "img:Human_physiology/Servier/tear-duct", "text": "Las lágrimas lo lavan", "cue": "lágrimas", "sub": "Los ojos se protegen", "sub_cue": "ojos"},
+    "8": {"type": "big", "icon": "🛡️", "text": "¡Cebolla protegida!", "cue": "protegen", "sub": "Creen los científicos", "sub_cue": "científicos"},
+    "10": {"type": "big", "icon": "❄️", "text": "Enfríala primero", "cue": "enfriar", "sub": "Menos gas, menos lágrimas", "sub_cue": "menos"},
+    "11": {"type": "journey", "title": "Lágrimas de cebolla", "traveler": "💨", "items": [{"icon": "🧅", "label": "Células rotas", "cue": "rompe"}, {"icon": "💨", "label": "El gas sube", "cue": "sube"}, {"icon": "👀", "label": "Ojos que pican", "cue": "ojos"}, {"icon": "💧", "label": "Lágrimas que lavan", "cue": "lavan"}]}
+  }
+}

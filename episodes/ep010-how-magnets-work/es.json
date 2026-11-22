@@ -1,0 +1,35 @@
+{
+  "title_es": "¿Cómo funcionan los imanes? 🧲",
+  "description_es": "¡Los imanes pueden jalar sin tocar, y la Tierra entera funciona como uno! Leo pregunta y Papá le explica cómo funcionan los imanes, en menos de un minuto.",
+  "cover_text_es": "¿IMÁN MÁGICO?",
+  "hook": "¿Cómo funcionan los imanes?",
+  "tags_es": ["cómo funcionan los imanes", "imanes para niños", "ciencia para niños"],
+  "loop_card_es": {"text": "¿Cómo funcionan los imanes?", "cue": "próxima", "left": "🧲", "right": "❓"},
+  "lines": [
+    "Papá, ¿cómo funcionan los imanes?",
+    "Un imán tiene una fuerza invisible. ¡Puede jalar algunas cosas de metal sin siquiera tocarlas!",
+    "¿Jala todos los metales?",
+    "¡No! Los imanes jalan cosas hechas con hierro, como clips y clavos. No jalan la madera ni el plástico.",
+    "¿Por qué el hierro se pega, pero la madera no?",
+    "El hierro está lleno de pedacitos de imán chiquititos, apuntando para todos lados. ¡Un imán los pone en fila, y así jalan juntos!",
+    "¿Los imanes a veces empujan en vez de jalar?",
+    "¡Sí! Cada imán tiene dos extremos, llamados norte y sur. El norte y el sur se jalan juntos, ¡pero dos nortes se empujan!",
+    "¡Guau! ¿Hay algo más que sea un imán?",
+    "¡La Tierra entera es como un imán gigante! Por eso la aguja de una brújula siempre apunta al norte.",
+    "¿Puedo jugar con imanes?",
+    "¡Claro, con un adulto! Pero nunca te pongas imanes en la boca, y mantenlos lejos de los bebés.",
+    "Una fuerza invisible, extremos norte y sur, y una Tierra que es un imán gigante. ¡Los imanes son geniales!",
+    "¡Son súper atractivos! Pídele a un adulto que se suscriba a The CurioKids Club para ver más maravillas, ¡y compártelo con un amigo! Y la próxima vez que alguien pregunte... ¿cómo funcionan los imanes?"
+  ],
+  "punch": {"1": "invisible", "7": "empujan"},
+  "boards": {
+    "0": {"type": "title", "left": {"icon": "🧲", "label": "Imán"}, "right": {"icon": "🤔", "label": "¿Cómo?"}, "mid": "?"},
+    "1": {"type": "big", "icon": "🧲", "text": "¡Una fuerza invisible!", "cue": "invisible", "sub": "Sin tocar", "sub_cue": "tocarlas"},
+    "3": {"type": "checklist", "title": "¿Se pega?", "icon": "🧲", "items": [{"text": "Clip", "icon": "📎", "cue": "clips", "ok": true}, {"text": "Clavos", "icon": "🔩", "cue": "clavos", "ok": true}, {"text": "Bloque de madera", "icon": "🪵", "cue": "madera", "ok": false}, {"text": "Vaso de plástico", "icon": "🥤", "cue": "plástico", "ok": false}]},
+    "5": {"type": "steps", "title": "Dentro del hierro", "items": [{"label": "Imancitos chiquititos", "icon": "✨", "cue": "chiquititos"}, {"label": "Apuntan a todos lados", "icon": "🔀", "cue": "apuntando"}, {"label": "El imán los pone en fila", "icon": "➡️", "cue": "fila"}]},
+    "7": {"type": "compare", "left": {"label": "Opuestos", "items": [{"text": "Norte + Sur", "icon": "🧲", "cue": "juntos"}]}, "right": {"label": "Iguales", "items": [{"text": "Norte + Norte", "icon": "↔️", "cue": "empujan"}]}},
+    "9": {"type": "gallery", "title": "Imán gigante", "items": [{"icon": "🌍", "label": "Tierra", "cue": "tierra"}, {"icon": "🧭", "label": "Brújula", "cue": "brújula"}, {"icon": "⬆️", "label": "Apunta al norte", "cue": "norte"}]},
+    "11": {"type": "checklist", "title": "Reglas del imán", "icon": "🧲", "items": [{"text": "Juega con un adulto", "icon": "🧑", "cue": "adulto", "ok": true}, {"text": "Imanes en la boca", "icon": "👄", "cue": "boca", "ok": false}, {"text": "Lejos de los bebés", "icon": "👶", "cue": "bebés", "ok": true}]},
+    "12": {"type": "summary", "rows": [{"text": "Fuerza invisible", "icon": "🧲", "cue": "invisible"}, {"text": "Norte y sur", "icon": "↔️", "cue": "norte"}, {"text": "La Tierra es un imán", "icon": "🌍", "cue": "tierra"}]}
+  }
+}
