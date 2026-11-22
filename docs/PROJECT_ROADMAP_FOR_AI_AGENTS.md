@@ -28,7 +28,7 @@
 
 1. **Kids audience = "not made for kids"** (`MADE_FOR_KIDS=false`), deliberate for reach (2026-11-07, reconfirmed 2026-11-10).
 2. **`containsSyntheticMedia: true`** on every upload (conservative default). A per-episode override may be added later; don't remove the default.
-3. **No new OAuth tokens** without explicit owner approval (the current token is `youtube.upload` only). Playlists are added by hand.
+3. **No new OAuth tokens** without explicit owner approval. Current upload tokens (renewed by the owner 2026-11-22): scope `youtube.force-ssl` (uploads, playlists, subtitles, charts).
 4. **Free tools only; no paid APIs; no Claude/OpenAI API calls inside the pipeline.**
 5. **Markdown/JSON files in the repo instead of databases or dashboards** (no Metabase/Superset). Exception (owner, 2026-11-18): the analytics job keeps an SQLite file **only** in Actions cache/artifacts as a working store; it is never committed and the readable outputs stay CSV + Markdown.
 6. Uploads stay **Private** until the YouTube API audit; the owner publishes/schedules in Studio (this is the human approval gate).

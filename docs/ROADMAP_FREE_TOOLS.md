@@ -51,7 +51,7 @@ Rules: free first; no paid AI APIs inside the pipeline; secrets only in GitHub S
 - **Kids channel:** comments are on (the channel is "not made for kids"). Show only the topic text, never names.
 - **Effort:** half a day, built together with R2.
 
-## R4. ⏸ NEEDS A NEW LOGIN (captions.insert needs the youtube.force-ssl scope; both upload logins lack it; owner's decision): subtitles in more languages (reach + search)
+## R4. ✅ BUILT 2026-11-22 (pipeline/subtitles.py; exact tracks in the spoken language(s) + YouTube auto-translate; translated titles from es.json/hi.json; Argos/Ollama translation of more languages still open): subtitles in more languages (reach + search)
 
 - **Goal:** Spanish, Portuguese, Indonesian, Arabic, French and German subtitle tracks on every video, for both channels.
 - **How:**

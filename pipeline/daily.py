@@ -634,6 +634,10 @@ def main():
     rec["thumbnail"] = set_thumbnail(vid, thumb) if thumb else "not rendered"
     rec["playlist"] = add_to_playlist(vid, name=(os.environ.get("YT_PLAYLIST_ES") or "CurioKids_Spanish") if ES else None)
     rec["made_for_kids"] = "yes" if made_for_kids() else "no"
+    try:  # R4: exact caption tracks + translated titles (never fails the run)
+        import subtitles; rec["subtitles"] = subtitles.add(vid, epf, "hi" if HI else "es" if ES else "en", subtitles.intro_offset(extras))
+    except Exception as e:
+        rec["subtitles"] = f"skipped: {e}"[:120]
     social = meta_post.post_all(mp4, ep, BRAND_LINE_HI if HI else BRAND_LINE_ES if ES else BRAND_LINE, LONG, rec)  # Facebook Page + Instagram (if META secrets are set)
     rec.update(social)
     if thumb and str(rec.get("thumbnail", "")).startswith(("set", "not set")):  # again, now that YouTube has processed the upload
@@ -651,7 +655,7 @@ def main():
         import notify; notify.send(f"✅ Uploaded: {ep['title']}\n{rec['url']}\nPublish: {when}")
     except Exception:
         pass
-    summary(f"### ✅ Uploaded {eid}{' (Hindi)' if HI else ' (Spanish)' if ES else ''}: {ep['title']}\n\n- Link: {rec['url']}\n- Publish: {when}\n- Length: {rec['duration_s']} s\n- Voices: {rec['voices']}\n- Thumbnail: {rec['thumbnail']}\n- Playlist: {rec['playlist']}\n- Made for kids: {rec['made_for_kids']}\n" + "".join(f"- {k.title()}: {v}\n" for k, v in social.items()) +
+    summary(f"### ✅ Uploaded {eid}{' (Hindi)' if HI else ' (Spanish)' if ES else ''}: {ep['title']}\n\n- Link: {rec['url']}\n- Publish: {when}\n- Length: {rec['duration_s']} s\n- Voices: {rec['voices']}\n- Thumbnail: {rec['thumbnail']}\n- Playlist: {rec['playlist']}\n- Subtitles: {rec.get('subtitles', '–')}\n- Made for kids: {rec['made_for_kids']}\n" + "".join(f"- {k.title()}: {v}\n" for k, v in social.items()) +
             "- Note: until the YouTube API audit is approved, YouTube keeps API uploads **Private** — "
             "set it to Public (or Schedule) in YouTube Studio → Content.")
     if kept: summary("\n- Thumbnails re-applied on recent videos: " + "; ".join(kept))

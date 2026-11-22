@@ -68,6 +68,8 @@ When you add or change a variable, update this file in both repos and add a line
 
 | Variable | Kids default | AInation default | Values and what they do |
 |---|---|---|---|
+| `SUBS` | `on` | `on` | After each upload: exact subtitle tracks from our script (English; Spanish video es+en; Hindi video hi+en) + translated titles (kids: Spanish, Hindi). Needs the `youtube.force-ssl` login |
+| `SUBS_TRACKS` | `2` | `2` | Max subtitle tracks per video (each costs 400 of the 10,000 daily API units shared by both channels) |
 | `RADAR` | `on` | `on` | Weekly topic radar issue (Mondays 03:17 UTC): what people search for + what viewers asked. See `docs/RADAR_AND_ALERTS.md` |
 | `RADAR_TRENDS` | `on` | `on` | Daily trend check (07:17 IST): a "Trend alert" issue when a new Google/YouTube trend fits the channel |
 | `RADAR_GEOS` | `IN,US,MX` | `IN,US,MX` | Countries for Google Trends and YouTube trending |
@@ -77,7 +79,7 @@ When you add or change a variable, update this file in both repos and add a line
 
 | Secret | Needed? | Used by | What it is |
 |---|---|---|---|
-| `YT_CLIENT_ID`, `YT_CLIENT_SECRET`, `YT_REFRESH_TOKEN` | **required** for uploads | daily/long workflows, radar | YouTube upload login (Google OAuth app + refresh token) |
+| `YT_CLIENT_ID`, `YT_CLIENT_SECRET`, `YT_REFRESH_TOKEN` | **required** for uploads | daily/long workflows, radar | YouTube login (Google OAuth app + refresh token, scope `youtube.force-ssl` since 2026-11-22: uploads, playlists, subtitles, charts) |
 | `YT_ANALYTICS_CLIENT_ID`, `YT_ANALYTICS_CLIENT_SECRET`, `YT_ANALYTICS_REFRESH_TOKEN` | optional | analytics, radar | YouTube Analytics login (our own search terms, retention). Missing = those parts are skipped |
 | `YT_API_KEY` | optional | radar | YouTube Data API key: competition check for radar topics. Missing = suggestions only |
 | `META_PAGE_ID`, `META_PAGE_TOKEN`, `META_IG_USER_ID` | optional | daily/long workflows | Facebook Page + Instagram posting. Missing = YouTube only |
@@ -170,3 +172,4 @@ Fixed in code (not variables): Shorts render at 24 fps; intro 2.0 s, outro 3.5 s
 | 2026-11-22 14:30 IST (09:00 UTC) | Kids Spanish Shorts: `ES_SHORTS`, `PUBLISH_WINDOW_ES`, `YT_PLAYLIST_ES`, language box `es`, new 03:11 IST cron. `YT_PLAYLIST` now defaults to `curiokids` (English + Hindi), Spanish goes to `CurioKids_Spanish`; both created automatically. |
 | 2026-11-22 17:00 IST (11:30 UTC) | Run option **Send a test alert (WhatsApp)** in both daily Short workflows. |
 | 2026-11-22 18:30 IST (13:00 UTC) | Radar: Google Trends + YouTube trending (`RADAR_TRENDS`, `RADAR_GEOS`), daily trend-alert issue. |
+| 2026-11-22 20:30 IST (15:00 UTC) | `SUBS`, `SUBS_TRACKS` (R4 subtitles). Login scope now `youtube.force-ssl`. |

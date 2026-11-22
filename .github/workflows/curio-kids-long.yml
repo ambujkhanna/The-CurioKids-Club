@@ -132,6 +132,8 @@ jobs:
           EPISODE_IN: ${{ inputs.episode }}
           KEEP_THUMBS: ${{ vars.KEEP_THUMBS || '2' }}
           YT_TIMEOUT: ${{ vars.YT_TIMEOUT || '300' }}
+          SUBS: ${{ vars.SUBS || 'on' }}
+          SUBS_TRACKS: ${{ vars.SUBS_TRACKS || '2' }}
           INTRO: ${{ vars.INTRO || 'on' }}
           OUTRO: ${{ vars.OUTRO || 'on' }}
           MADE_FOR_KIDS: ${{ vars.MADE_FOR_KIDS || 'false' }}

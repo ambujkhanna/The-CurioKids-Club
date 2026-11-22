@@ -56,7 +56,7 @@ This is the quick reference for both channels: links, schedules, workflow option
 | Secret | Purpose |
 |---|---|
 | `YT_CLIENT_ID`, `YT_CLIENT_SECRET` | Google OAuth app (same values in both repos) |
-| `YT_REFRESH_TOKEN` | Per channel: the token for that YouTube channel (scope `youtube.upload`) |
+| `YT_REFRESH_TOKEN` | Per channel: the token for that YouTube channel (scope `youtube.force-ssl` since 2026-11-22: uploads, playlists, subtitles, charts) |
 | `META_PAGE_ID` | Facebook Page id |
 | `META_PAGE_TOKEN` | Never-expiring Page token (from `me/accounts` with an extended user token) |
 | `META_IG_USER_ID` | Instagram Business account id (`instagram_business_account.id`) |
@@ -165,3 +165,4 @@ Never paste tokens into chat, files or commits; they go only into GitHub Secrets
 | 2026-11-22 15:30 IST (10:00 UTC) | Kids: **Spanish Shorts**, one a day (05:30-07:30 IST, own queue, `ES_SHORTS`), Spanish voices/captions/boards/thumbnails, 81 episodes with es.json, playlist `CurioKids_Spanish`; English + Hindi → `curiokids`. Guide: `docs/SPANISH.md`. |
 | 2026-11-22 17:00 IST (11:30 UTC) | Both: **fixed blinking icons** (3D icons prefetched once before the parallel render, incl. end-card SUBSCRIBE/LIKE/SHARE icons). Run option 'Send a test alert (WhatsApp)'. |
 | 2026-11-22 18:30 IST (13:00 UTC) | Both: radar adds **Google Trends + YouTube trending** (weekly) and a **daily Trend alert** issue (07:17 IST) when a new trend fits; `RADAR_TRENDS`, `RADAR_GEOS`. |
+| 2026-11-22 20:30 IST (15:00 UTC) | Both: owner renewed `YT_REFRESH_TOKEN` with `youtube.force-ssl`. **Subtitles (R4)**: exact caption tracks from our script + timing after each upload (English; Spanish video es+en; Hindi video hi+en) + translated titles/descriptions (kids: from es.json/hi.json). `SUBS`, `SUBS_TRACKS` (quota: 400 units per track). |

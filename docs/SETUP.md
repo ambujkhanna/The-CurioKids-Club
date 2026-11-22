@@ -52,9 +52,9 @@ You can use the **same** Google Cloud project, "AInation Automation". It's alrea
 2. Click the gear icon, tick **Use your own OAuth credentials**, and paste the **same** Client ID and Client secret you used for AInation.
 3. In Step 1, scope:
    ```text
-   https://www.googleapis.com/auth/youtube.upload
+   https://www.googleapis.com/auth/youtube.force-ssl
    ```
-   (`youtube.upload` is enough. Use `https://www.googleapis.com/auth/youtube` instead only if you want automatic playlists or fix_existing.)
+   (Since 2026-11-22: `youtube.force-ssl` = uploads + playlists + subtitles + trending charts. The older `youtube.upload` token still uploads, but nothing else.)
    Click **Authorize APIs**. When asked which channel, **choose The CurioKids Club**.
 4. In Step 2, click **Exchange authorization code for tokens** and copy the **Refresh token**.
 5. In the new repo, go to **Settings → Secrets and variables → Actions → New repository secret**, three times:
