@@ -193,7 +193,7 @@ jobs:
           CATEGORY_IN: ${{ inputs.category }}
           KEEP_THUMBS: ${{ vars.KEEP_THUMBS || '2' }}
           YT_TIMEOUT: ${{ vars.YT_TIMEOUT || '300' }}
-          INTRO: ${{ vars.SHORT_INTRO || vars.INTRO || 'on' }}
+          INTRO: ${{ vars.SHORT_INTRO || 'off' }}  # Shorts start straight with the content (owner, 2026-11-22); on = intro WITH the topic
           OUTRO: ${{ vars.SHORT_OUTRO || vars.OUTRO || 'on' }}
           SCRIPT_IN: ${{ inputs.script }}
           HI_TTS_ENGINE: ${{ vars.HI_TTS_ENGINE || 'kokoro' }}

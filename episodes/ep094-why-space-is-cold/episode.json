@@ -51,12 +51,11 @@
       "text": "Because space is almost empty! There's hardly any air or stuff out there.",
       "punch": "empty",
       "board": {
-        "type": "big",
-        "icon": "🌌",
-        "text": "Space is almost empty",
+        "type": "picture",
+        "art": "kf_space_cold",
+        "caption": "Space is almost empty",
         "cue": "empty",
-        "sub": "Hardly any air",
-        "sub_cue": "air"
+        "icon": "🌌"
       }
     },
     {

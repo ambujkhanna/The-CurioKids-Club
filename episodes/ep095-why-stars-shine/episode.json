@@ -51,12 +51,11 @@
       "text": "Stars are giant balls of super hot gas. They are so hot that they glow!",
       "punch": "glow",
       "board": {
-        "type": "big",
-        "icon": "⭐",
-        "text": "Giant balls of hot gas",
+        "type": "picture",
+        "art": "kf_star_glow",
+        "caption": "Giant balls of hot gas",
         "cue": "giant",
-        "sub": "So hot they glow",
-        "sub_cue": "glow"
+        "icon": "⭐"
       }
     },
     {

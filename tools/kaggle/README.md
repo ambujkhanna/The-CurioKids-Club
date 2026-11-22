@@ -20,3 +20,4 @@
 - Edit the `PICTURES` list in cell 3. Use the `CLAY` style for new ones, keep "no people, no text", and use 2 seeds each.
 - The same prompt and seed always give the same picture.
 - The pink "CLIP … truncated" notes in the log are harmless.
+- `art_kids_v3.ipynb` / `art_v3_both.ipynb`: kids 3D picture boards (+ AInation key visuals in the merged one). The merged notebook runs both channels at once (model loads once, about 50 min).

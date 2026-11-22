@@ -5,6 +5,10 @@
 
     import bumpers; bumpers.wrap("out/video.mp4", long=False)     # adds both in place (re-encodes once)
 
+Shorts: NO intro by default since 2026-11-22 (owner: viewers should land straight in the content; workflows pass
+INTRO from SHORT_INTRO, default off). RULE: whenever an intro is used (long videos, or SHORT_INTRO=on), it shows the
+video's topic big at the top instead of "Welcome to" (wrap(topic=...), topic_from(ep)) - the Shorts feed shows no
+thumbnail, so the first frames must say what the video is about.
 Switch off with repo variables INTRO=off / OUTRO=off. Shorts stay under 180 s: if adding them would go over,
 they are left out (logged). All drawing and music are generated here (no third-party assets); the kids logo is the
 owner's own artwork (assets/brand/logo.png).
@@ -112,6 +116,55 @@ def _sparkle(c, x, y, s, a, col="#FFFFFF"):
     c.drawPath(p, _p(col, a))
 
 
+_RNG = random.Random(2026)
+# kids intro "blasting sparklers": firework-style bursts of glowing sparks (fixed seed -> every video looks the same)
+_SPARK_COLS = ["#FFE14D", "#FFB000", "#FF6A00", "#FF3D7F", "#B04DFF", "#00B4FF", "#FFE14D"]
+_BLASTS = [  # (x, y as share of the frame, start time s, size)
+    (0.14, 0.12, 0.30, 1.00), (0.86, 0.10, 0.45, 1.05), (0.12, 0.40, 0.62, 0.90),
+    (0.88, 0.38, 0.78, 0.95), (0.50, 0.70, 0.95, 1.00), (0.20, 0.62, 1.10, 0.80), (0.80, 0.64, 1.22, 0.80)]
+_BSPARKS = [[dict(ang=_RNG.uniform(0, 6.2832), v=_RNG.uniform(800, 1700), col=_RNG.choice(_SPARK_COLS),
+                  w=_RNG.uniform(5.0, 9.0), life=_RNG.uniform(0.6, 0.95)) for _ in range(60)] for _ in _BLASTS]
+_SPARKS = [(_RNG.uniform(-1, 1), _RNG.uniform(-1, 1), _RNG.uniform(0, 6.28), _RNG.uniform(10, 24)) for _ in range(14)]
+
+
+def _blasts(c, W, H, t):
+    """Animated blasting sparklers (kids intro): each burst flashes, then sparks shoot out with glowing trails and fall."""
+    sc = W / 1080.0
+    glow = skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 8 * sc)
+    shade = skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 3 * sc)
+    for (bx, by, t0, size), sparks in zip(_BLASTS, _BSPARKS):
+        u = t - t0
+        if u < 0 or u > 1.0: continue
+        x0, y0 = bx * W, by * H
+        if u < 0.16:  # the bang: a bright core flash
+            fa = 1 - u / 0.16; r = (40 + 190 * u / 0.16) * sc * size
+            fl = _p("#FFF3B0", 0.85 * fa); fl.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 22 * sc))
+            c.drawCircle(x0, y0, r, fl); c.drawCircle(x0, y0, r * 0.35, _p("#FFFFFF", fa))
+        for q in sparks:
+            if u > q["life"]: continue
+            def pos(uu):
+                d = (1 - math.exp(-3.2 * uu)) / 3.2 * q["v"] * size * sc
+                return x0 + math.cos(q["ang"]) * d, y0 + math.sin(q["ang"]) * d + 420 * sc * uu * uu
+            xa, ya = pos(max(0.0, u - 0.10)); xb, yb = pos(u)
+            a = (1 - u / q["life"]) ** 0.7 * (0.75 + 0.25 * math.sin(u * 60 + q["ang"] * 7))  # flicker
+            for wmul, col, aa, mf in ((1.5, "#1B2A6B", 0.28 * a, shade), (3.0, q["col"], 0.5 * a, glow), (1.0, q["col"], a, None), (0.4, "#FFFFFF", 0.9 * a, None)):
+                st = _p(col, aa); st.setStyle(skia.Paint.kStroke_Style); st.setStrokeWidth(q["w"] * wmul * sc)
+                st.setStrokeCap(skia.Paint.kRound_Cap)
+                if mf: st.setMaskFilter(mf)
+                c.drawLine(xa, ya, xb, yb, st)
+            if q["w"] > 8.0 and u > 0.25:  # a few sparks crackle into tiny stars
+                _sparkle(c, xb, yb, 14 * sc * a, a, "#FFFFFF")
+
+
+def _sparklers(c, cx, cy, wid, hei, t):
+    """Twinkling sparkles dancing around the topic text."""
+    for k, (rx, ry, ph, sz) in enumerate(_SPARKS):
+        tw = 0.5 + 0.5 * math.sin(t * 9 + ph)
+        a = min(1.0, t / 0.25) * (0.35 + 0.65 * tw)
+        x = cx + rx * wid * 0.62 + math.sin(t * 2 + ph) * 10; y = cy + ry * hei * 0.9 + math.cos(t * 2.4 + ph) * 8
+        _sparkle(c, x, y, sz * (0.6 + 0.6 * tw), a, "#FFF7C2" if k % 3 else "#FFFFFF")
+
+
 _LOGO = {}
 
 
@@ -142,8 +195,62 @@ def _draw_logo(c, cx, cy, size, a=1.0):
     _text(c, "AI", cx, cy + b * 0.02, b * 0.52, NAVY, F_HEAD, a)
 
 
+TOPIC = None  # the video's topic, shown big at the top of the intro (set by wrap)
+
+
+def topic_from(ep, hindi=False):
+    """Short topic line for the intro from the episode title (Hindi title for the Hindi version)."""
+    import json as _j, re as _r
+    t = ep.get("title", "")
+    if hindi:
+        try:
+            t = _j.load(open(os.path.join(os.path.dirname(ep["_file"]), "hi.json"), encoding="utf-8")).get("title_hi") or t
+        except Exception:
+            pass
+    t = t.split(" | ")[0]
+    t = "".join(ch for ch in t if not (ord(ch) > 0x2100 and not ("ऀ" <= ch <= "ॿ")))  # drop emoji / symbols, keep Hindi
+    for suf in ("Fun Facts for Kids", "Fun Science for Kids", "Science for Kids", "Kids Science", "Facts for Kids", "for Kids", "Explained"):
+        t = t.replace(suf, "")
+    t = _r.sub(r"\s+", " ", t).strip(" -–—:|")
+    if "?" in t: t = t[:t.index("?") + 1]                      # the main question only ("...Body? Nerves & Senses")
+    else: t = _r.split(r"\s*[:(]\s*|\s+[-–—]\s+", t)[0]      # or the part before a subtitle
+    return t.strip() if 3 <= len(t.strip()) <= 70 else None
+
+
+def _text3d(c, s, x, y, size, tf, face, side, a=1.0):
+    """Punchy extruded headline (same look as the thumbnails): dark 3D depth, outline, glossy gradient face."""
+    if any("ऀ" <= ch <= "ॿ" for ch in s):  # Hindi: shaped text - depth + outline + face colour
+        for d in range(int(size * 0.10), 0, -2): _text(c, s, x + d * 0.7, y + d, size, side, tf, a)
+        for dx, dy in ((-4, 0), (4, 0), (0, -4), (0, 4)): _text(c, s, x + dx, y + dy, size, side, tf, a)
+        return _text(c, s, x, y, size, face[1], tf, a)
+    f = skia.Font(tf, size); w = f.measureText(s); x0 = x - w / 2; yb = y + size * 0.36
+    depth = max(6, int(size * 0.10))
+    sh = _p("#000000", 0.35 * a); sh.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, size * 0.08))
+    c.drawString(s, x0 + depth + 6, yb + depth + 10, f, sh)
+    for d in range(depth, 0, -1): c.drawString(s, x0 + d * 0.8, yb + d, f, _p(side, a))
+    ol = _p(side, a); ol.setStyle(skia.Paint.kStroke_Style); ol.setStrokeWidth(size * 0.13); ol.setStrokeJoin(skia.Paint.kRound_Join)
+    c.drawString(s, x0, yb, f, ol)
+    g = skia.Paint(AntiAlias=True); g.setAlphaf(a)
+    g.setShader(skia.GradientShader.MakeLinear([skia.Point(0, yb - size * 0.75), skia.Point(0, yb + size * 0.1)],
+                [_p(col).getColor() for col in face], [0, 0.55, 1]))
+    c.drawString(s, x0, yb, f, g)
+    hl = skia.Paint(AntiAlias=True)
+    hl.setShader(skia.GradientShader.MakeLinear([skia.Point(0, yb - size * 0.75), skia.Point(0, yb - size * 0.35)],
+                 [skia.Color(255, 255, 255, int(150 * a)), skia.Color(255, 255, 255, 0)]))
+    c.drawString(s, x0, yb, f, hl)
+    return w
+
+
+def _lines2(s, f, maxw):
+    """Split into at most two balanced lines that fit maxw."""
+    if f.measureText(s) <= maxw or " " not in s: return [s]
+    w = s.split(); best = min(range(1, len(w)), key=lambda k: abs(len(" ".join(w[:k])) - len(" ".join(w[k:]))))
+    return [" ".join(w[:best]), " ".join(w[best:])]
+
+
 def _intro_frame(c, W, H, t):
     _bg(c, W, H, t)
+    if KIDS: _blasts(c, W, H, t)  # animated blasting sparklers, behind the title and logo so words stay clean
     tall = H > W
     cx, cy = W / 2, H * (0.45 if tall else 0.47)
     size = (560 if KIDS else 520) if tall else (430 if KIDS else 400)
@@ -159,10 +266,27 @@ def _intro_frame(c, W, H, t):
         if 0 < u < 1:
             ang = math.radians(k * 45 + 20); d = size * (0.55 + 0.45 * _ease(u))
             _sparkle(c, cx + d * math.cos(ang), cy + d * math.sin(ang), 26 * (1 - u) + 6, 1 - u, "#FFF3A0")
-    hi = "आपका स्वागत है" if (KIDS and HINDI) else "Welcome to"
-    a1 = _ease((t - 0.25) / 0.35); dy = 40 * (1 - _back((t - 0.25) / 0.45))
-    head_y = cy - size * 0.5 - (150 if tall else 95)
-    _text(c, hi, cx, head_y + dy, 84 if tall else 70, "#FFFFFF", F_HEAD, a1, W - 120)
+    if TOPIC:  # the topic, big and visible from the first frame (the Shorts feed shows no thumbnail)
+        tsize = 112 if tall else 80; maxw = W - 110
+        txt = TOPIC.upper() if TOPIC.isascii() else TOPIC
+        f_ = skia.Font(F_HEAD, tsize)
+        lines = _lines2(txt, skia.Font(F_HEAD, 1), 0) if len(txt) > 14 and " " in txt else [txt]  # two balanced lines -> bigger letters
+        while any(f_.measureText(l_) > maxw for l_ in lines) and tsize > 50:
+            tsize -= 4; f_ = skia.Font(F_HEAD, tsize)
+        top = cy - size * 0.5 - (105 if tall else 75) - (len(lines) - 0.5) * tsize * 1.12
+        face = ("#FFF27A", "#FFC21A", "#FF8F1F") if KIDS else ("#FFF6B0", "#FFC93C", "#F2A81D")   # kids yellow-orange / AInation gold (matches the AI badge; blue vanished on the dark intro)
+        side = "#1F2D44" if KIDS else "#0B1530"
+        pop = 0.82 + 0.18 * _back(min(1.0, t / 0.35))  # quick bounce in, but readable from the first frame
+        c.save(); c.translate(cx, top + tsize * 0.5); c.rotate(-3); c.scale(pop, pop); c.translate(-cx, -(top + tsize * 0.5))
+        if KIDS: _sparklers(c, cx, top + (len(lines) - 1) * tsize * 0.56, W - 140, tsize * (len(lines) + 0.6), t)
+        for k, ln in enumerate(lines):
+            _text3d(c, ln, cx, top + k * tsize * 1.12, tsize, F_HEAD, face, side)
+        c.restore()
+    else:
+        hi = "आपका स्वागत है" if (KIDS and HINDI) else "Welcome to"
+        a1 = _ease((t - 0.25) / 0.35); dy = 40 * (1 - _back((t - 0.25) / 0.45))
+        head_y = cy - size * 0.5 - (150 if tall else 95)
+        _text(c, hi, cx, head_y + dy, 84 if tall else 70, "#FFFFFF", F_HEAD, a1, W - 120)
     a2 = _ease((t - 0.55) / 0.35); sc = 0.6 + 0.4 * _back((t - 0.55) / 0.45)
     name_y = cy + size * 0.5 + (130 if tall else 85)
     c.save(); c.translate(cx, name_y); c.scale(sc, sc); c.translate(-cx, -name_y)
@@ -295,8 +419,11 @@ def _dur(path):
     return float(r.stdout.strip() or 0)
 
 
-def wrap(mp4, long=False):
-    """Put the intro before and the outro after the finished video (in place). Returns a short status."""
+def wrap(mp4, long=False, topic=None):
+    """Put the intro before and the outro after the finished video (in place). Returns a short status.
+    topic: shown big at the top of the intro instead of "Welcome to" (the Shorts feed shows no thumbnail)."""
+    global TOPIC
+    TOPIC = topic
     use_in = os.environ.get("INTRO", "on").strip().lower() not in ("off", "0", "false", "no")
     use_out = os.environ.get("OUTRO", "on").strip().lower() not in ("off", "0", "false", "no")
     if not (use_in or use_out): return "intro/outro off"

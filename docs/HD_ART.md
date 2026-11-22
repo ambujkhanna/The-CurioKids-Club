@@ -16,6 +16,15 @@ The characters stay 2D. Backgrounds and some boards are HD pictures in a soft 3D
 - Left out: the straw-in-a-glass picture (the straw wasn't bent) and the cut apple (it didn't show browning, and one version had a signature).
 - The notebook that made them, with run steps, is `tools/kaggle/art_v2.ipynb` (see `tools/kaggle/README.md`).
 
+## 3D picture boards for the fun-facts series (art v3, 2026-11-22)
+
+13 more pictures (`kf_*`, landscape) in a soft, realistic animated-film 3D look, some with a cute 3D child:
+kf_blink, kf_blink_eye, kf_space_cold, kf_star_glow, kf_shiver, kf_touch, kf_cloud_drops, kf_dizzy, kf_shadows, kf_metal_wood, kf_tummy, kf_rumble_food, kf_plants_soil.
+- **Used as `picture` boards in:** ep081 (blink; the English version was already posted, so the Hindi version gets it), ep094, ep095, ep082, ep090, ep091, ep109, ep083, ep111, ep112.
+- **Rejected:** apple browning and bent straw (still didn't show the effect); eyebrows (the drop sits on the eye: wrong fact); brushing teeth and bath fingers (no bath-time child images).
+- **Not used yet:** kf_plants_soil (ep105's only icon board is about rice, which doesn't match), kf_blink_eye, kf_rumble_food (in the library for later).
+- Made with `tools/kaggle/art_v3_both.ipynb` (both channels in one run).
+
 ## How a video gets its background
 
 1. Repo variable **`BACKDROP`**: forces one picture for every video (tests only).

@@ -1,6 +1,6 @@
 # Channels reference: The CurioKids Club & AInation Studio
 
-**Last updated:** 2026-11-22 03:10 IST (21:40 UTC)
+**Last updated:** 2026-11-22 11:30 IST (06:00 UTC)
 
 This is the quick reference for both channels: links, schedules, workflow options, secrets and variables. It's updated whenever any of these change; see the change log at the bottom. The full history is in `TheCurioKidsClub_handoff.md` and `AInation_Studio_handoff.md`.
 
@@ -26,7 +26,7 @@ This is the quick reference for both channels: links, schedules, workflow option
 | **Voice Lab** | *Voice Lab (Chatterbox / Turbo voice samples)*: manual only | – |
 | **Topic radar** | *Weekly topic radar*: Mondays 08:47 → GitHub issue with topics + viewers' requests | same |
 | **Opening hook** | The episode's question in big yellow letters for the first 2.3 s; curtains start half open (optional `"hook"` field in episode.json overrides the text) | Same (no curtains) |
-| **Intro** | 2 s: "Welcome to" + animated round logo + music sting (Hindi: "आपका स्वागत है"); repo variable `INTRO` | 2 s: "Welcome to" + animated yellow "AI" badge + music sting |
+| **Intro** | **Shorts: none** (since 2026-11-22: they open straight on the question hook; `SHORT_INTRO=on` brings it back). Long videos: 2 s logo intro + music sting. **Rule:** whenever an intro is used, it shows the video's topic big at the top (instead of "Welcome to"), because the Shorts feed shows no thumbnail | same |
 | **Ending** | Spoken: "…subscribe… and share this with a friend!"; end card Subscribe / Like / Share; then 3.5 s **"Find us online"** card with the YouTube, Facebook, Instagram links (`OUTRO`) | Spoken: "Subscribe to AI Nation Studio, and share this with a friend!"; same end card + links card |
 | **Caption / description** | Save & share line (IG: "📌 Save this… share it with a curious kid", FB/YouTube share lines) + **'🔗 Find us online' block with the YouTube, Facebook, Instagram links** (YouTube description + Facebook caption; Instagram captions can't have clickable links) | Same, AI wording |
 | **Channel hashtag** | **#TheCurioKidsClub**: right after the YouTube title and the first line of FB/IG captions (visible without 'more'), counted once | **#AInationstudio**: same |
@@ -70,6 +70,8 @@ Never paste tokens into chat, files or commits; they go only into GitHub Secrets
 
 ## Repo Variables (optional; defaults apply if not set)
 
+> Full list with every value, secret and run option: **`CONFIGURATION.md`** (repo root).
+
 | Variable | Default | Kids | AInation |
 |---|---|---|---|
 | `TTS_ENGINE` | `chatterbox` (`kokoro` = the old voices) | ✅ | ✅ |
@@ -95,7 +97,8 @@ Never paste tokens into chat, files or commits; they go only into GitHub Secrets
 | `ART_AUTO` | `on` (episodes/scripts without a `backdrop` get one picked from the title; `off` = drawn playroom for those) | ✅ | – |
 | `PANEL` | empty = automatic (glass card on a picture, puppet stage without); `stage` / `card` / `cloud` / `book` force one look | ✅ | – |
 | `BACKDROP` | empty (tests only: forces one background picture for every video) | ✅ | – |
-| `SHORT_INTRO` / `SHORT_OUTRO` | empty = follow `INTRO` / `OUTRO` (Shorts only; `off` = no 2 s logo intro / no links card on Shorts, long videos keep them) | ✅ | – |
+| `SHORT_INTRO` | `off` (Shorts start straight with the content; `on` = 2 s intro **with the topic** at the top) | ✅ | ✅ |
+| `SHORT_OUTRO` | empty = follow `OUTRO` (`off` = no 'Find us online' links card on Shorts) | ✅ | ✅ |
 | `KEEP_THUMBS` | `2` (each upload run re-applies the designed thumbnail of this many recent videos from the last 3 days; `0` = off) | ✅ | ✅ |
 | `YT_TIMEOUT` | `300` seconds per YouTube call | ✅ | ✅ |
 | `INTRO` / `OUTRO` | `on` (`off` = no logo intro / no links card) | ✅ | ✅ |
@@ -154,3 +157,7 @@ Never paste tokens into chat, files or commits; they go only into GitHub Secrets
 | 2026-11-22 00:50 IST (19:20 UTC) | Owner reviewed real photos: fine for AInation, not for kids (pasted-in look, also as polaroids; a paint filter looked muddy). Kids workflows default `STOCK=off`; AInation `STOCK=on`, `STOCK_STYLE=plain` (polaroid style available). |
 | 2026-11-22 02:10 IST (20:40 UTC) | Both: **topic radar** (R2+R3: weekly issue with search-suggestion topics, competition, our own search terms, viewers' comment requests; `pipeline/radar.py`, workflow *Weekly topic radar*, variable `RADAR`, optional secret `YT_API_KEY`), **self-check** (R6: faster-whisper vs script, warns below 85 %; `SELFCHECK`), **phone alerts** (Telegram/Discord secrets; uploaded / QC failed / self-check warning / run failed). AInation: real photos pinned in ep031 and ep036 (ep033 back to an icon board: its photo was unclear) (`pin` = reviewed photo, no new search). R4 subtitles wait for a login with the caption scope. |
 | 2026-11-22 03:10 IST (21:40 UTC) | Kids: the opening hook no longer overlaps the glass card (it sits in the middle of the still-empty card for 0–2.3 s and the first board pops in after it; engine writes `hook_in_card` to build/shots.json, finish.py reads it). Both: photo boards use our realistic 3D art first (`"art"` → assets/art), raw photos only as the fallback (owner's preference); AInation Kaggle notebook `tools/kaggle/art_ain_v1.ipynb` (21 key visuals for ep023–ep043); ep031/ep036 linked to `ain_jobs_ai` / `ain_health_scan`. |
+| 2026-11-22 10:20 IST (04:50 UTC) | Art v3 (one merged Kaggle run, `tools/kaggle/art_v3_both.ipynb`): kids 13 realistic 3D picture-board images (incl. a 3D child blinking, shivering, spinning) used in 10 fun-facts episodes; AInation 20 realistic 3D key visuals used as `photo` boards with `"art"` in 18 upcoming episodes (3D art first, raw photo fallback). Rejected: apple/straw/eyebrows (wrong or missing effect), bath-time child images, AInation family rules (logo, made-up text). |
+| 2026-11-22 10:45 IST (05:15 UTC) | Owner wants to test starting Shorts straight with the content (views). AInation's Shorts workflow now also reads `SHORT_INTRO` / `SHORT_OUTRO` (kids already did). Test: set `SHORT_INTRO=off` in both repos, compare 'Viewed vs swiped away' in YouTube Studio after 1–2 weeks; delete the variable to bring the intro back. |
+| 2026-11-22 11:30 IST (06:00 UTC) | Both: **no intro on Shorts** by default (owner). If an intro is used (long videos, or `SHORT_INTRO=on`), it shows the topic big at the top instead of "Welcome to" (`bumpers.topic_from`, Hindi title for Hindi versions). |
+| 2026-11-22 12:40 IST (07:10 UTC) | Kids intro: animated **blasting sparklers** (firework bursts behind the title/logo; no poppers). Both: new **`CONFIGURATION.md`** with every variable, secret and run option. |

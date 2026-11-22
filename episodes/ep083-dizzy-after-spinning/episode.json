@@ -51,12 +51,11 @@
       "text": "It's because of your ears! Deep inside each ear are tiny, curly tubes filled with fluid.",
       "punch": "ears",
       "board": {
-        "type": "big",
-        "icon": "👂",
-        "text": "Tiny tubes of fluid",
+        "type": "picture",
+        "art": "kf_dizzy",
+        "caption": "Tiny tubes of fluid",
         "cue": "tubes",
-        "sub": "Deep inside your ears",
-        "sub_cue": "deep"
+        "icon": "👂"
       }
     },
     {

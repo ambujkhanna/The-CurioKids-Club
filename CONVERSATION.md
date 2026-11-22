@@ -184,3 +184,14 @@ Read first: the channel handoff (`TheCurioKidsClub_handoff.md` / `AInation_Studi
 - **Open items now:** (1) the owner may add `TELEGRAM_BOT_TOKEN` + `TELEGRAM_CHAT_ID` (or `DISCORD_WEBHOOK_URL`) for alerts, and `YT_API_KEY` for the AInation radar competition check and comments; (2) R4 subtitles need a new YouTube login with the caption scope (owner's decision); (3) R5 Spanish dub (same channel or new?); (4) R7 weekly Kaggle run (needs a Kaggle API key); (5) R8 more platforms (accounts/apps); (6) the polished characters and `SHORT_INTRO`/`SHORT_OUTRO` are still the owner's switches; (7) the hook text vs kids glass card fix is still pending.
 
 - 2026-11-22 03:10 IST (21:40 UTC): kids hook overlap fixed. **Picture rule (owner): realistic 3D art first; raw photos only when no better 3D art exists.** AInation art notebook `tools/kaggle/art_ain_v1.ipynb` is waiting for the owner to run it on Kaggle; after that: check, pick, add `assets/art/` and link the boards.
+
+## 2026-11-22 10:20 IST (04:50 UTC) — 3D picture boards in both channels
+
+- The owner ran the merged notebook. Kids: 3D picture boards in 10 fun-facts episodes (a 3D child blinking, shivering, spinning; astronaut; star; clouds; touch; shadows; spoons; tummy). AInation: 3D key visuals in 18 upcoming episodes (3D art first, raw photos only as the fallback). Rejects and reasons are in the handoffs.
+
+- 2026-11-22 10:45 IST (05:15 UTC): **Views test:** the owner sets `SHORT_INTRO=off` (both repos) so Shorts start with the hook. Compare YouTube Studio → Shorts → 'Viewed vs swiped away' before/after (1–2 weeks). Delete the variable to undo.
+
+- 2026-11-22 11:30 IST (06:00 UTC): **Decision: no intro on Shorts** (they open on the question hook). **Rule for the future: any intro must show the video's title/topic** (already built: big yellow topic at the top of the intro, Hindi title for Hindi). Long videos keep the intro, with the topic. Measure 'Viewed vs swiped away' after 1–2 weeks.
+- 2026-11-22 12:05 IST (06:35 UTC): intro topic restyled: punchy 3D lettering (kids yellow-orange, AInation gold), as the owner asked. Used whenever an intro is on (long videos; Shorts only if `SHORT_INTRO=on`).
+- 2026-11-22 12:40 IST (07:10 UTC): kids intro: **animated blasting sparklers** only (poppers dropped by the owner); bursts sit behind the words.
+- 2026-11-22 12:40 IST (07:10 UTC): **`CONFIGURATION.md`** added (both repos): the single list of every variable, secret, run option and episode field. Update it whenever a variable changes.

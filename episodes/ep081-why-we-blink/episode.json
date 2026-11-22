@@ -51,12 +51,11 @@
       "text": "Blinking keeps your eyes wet and clean! Each blink spreads a thin layer of tears over your eyes.",
       "punch": "tears",
       "board": {
-        "type": "big",
-        "icon": "💧",
-        "text": "Blinks spread tears",
+        "type": "picture",
+        "art": "kf_blink",
+        "caption": "Blinks spread tears",
         "cue": "tears",
-        "sub": "Wet, clean eyes",
-        "sub_cue": "wet"
+        "icon": "💧"
       }
     },
     {

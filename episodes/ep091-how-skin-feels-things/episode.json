@@ -51,12 +51,11 @@
       "text": "Your skin is full of tiny nerve endings. They are like little messengers that feel what touches you!",
       "punch": "messengers",
       "board": {
-        "type": "big",
-        "icon": "🖐️",
-        "text": "Tiny nerve endings",
+        "type": "picture",
+        "art": "kf_touch",
+        "caption": "Tiny nerve endings",
         "cue": "nerve",
-        "sub": "Little messengers",
-        "sub_cue": "messengers"
+        "icon": "🖐️"
       }
     },
     {

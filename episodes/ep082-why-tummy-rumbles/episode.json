@@ -51,12 +51,11 @@
       "text": "Your stomach and intestines squeeze a lot! The squeezing moves food, air and liquid along.",
       "punch": "squeezing",
       "board": {
-        "type": "big",
-        "icon": "💪",
-        "text": "Squeeze, squeeze!",
+        "type": "picture",
+        "art": "kf_tummy",
+        "caption": "Squeeze, squeeze!",
         "cue": "squeezing",
-        "sub": "Stomach and intestines",
-        "sub_cue": "stomach"
+        "icon": "💪"
       }
     },
     {

@@ -82,12 +82,11 @@
       "text": "In the morning, the Sun is low. Its light comes from the side, so your shadow stretches long!",
       "punch": "stretches",
       "board": {
-        "type": "big",
-        "icon": "🌅",
-        "text": "Low Sun = long shadow",
+        "type": "picture",
+        "art": "kf_shadows",
+        "caption": "Low Sun = long shadow",
         "cue": "low",
-        "sub": "Morning and evening",
-        "sub_cue": "morning"
+        "icon": "🌅"
       }
     },
     {

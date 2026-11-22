@@ -514,7 +514,11 @@ def main():
         print("note: video too long with Chatterbox voices - re-rendering with Kokoro voices")
         render({"TTS_ENGINE": "kokoro"})
     import bumpers  # "Welcome to …" logo intro + "Find us online" links card (repo variables INTRO / OUTRO)
-    extras = bumpers.wrap(mp4, LONG); print("intro/outro:", extras)
+    try:
+        topic = bumpers.topic_from(ep, bool(globals().get("HI")))
+    except Exception:
+        topic = None
+    extras = bumpers.wrap(mp4, LONG, topic); print("intro/outro:", extras, "| topic:", topic)
     thumb = mp4[:-4] + "_thumbnail.jpg"
     if os.path.exists(os.path.join(PIPE, "build", "thumbnail.jpg")):
         import shutil; shutil.copy(os.path.join(PIPE, "build", "thumbnail.jpg"), thumb)

@@ -650,5 +650,278 @@
   "date": "2026-11-21",
   "source_file": "waves_landscape_s11.png",
   "use": "board"
+ },
+ {
+  "file": "kf_blink_landscape.jpg",
+  "name": "kf_blink",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a cute 3D animated-film-style child about 7 years old, friendly face, close-up of the face in the middle of a blink, one eye closing, long eyelashes, a tiny sparkle of tear film, realistic 3D render in the style of a modern animated family film, soft rounded shapes, bright cheerful colours, soft warm cinematic lighting, gentle depth of field, high detail, friendly and safe for children, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "kf_blink_landscape_s11.png",
+  "use": "picture board"
+ },
+ {
+  "file": "kf_blink_eye_landscape.jpg",
+  "name": "kf_blink_eye",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a close-up of a big friendly 3D animated-film-style eye with long eyelashes, half closed in a blink, a shiny tear film, realistic 3D render in the style of a modern animated family film, soft rounded shapes, bright cheerful colours, soft warm cinematic lighting, gentle depth of field, high detail, friendly and safe for children, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "kf_blink_eye_landscape_s11.png",
+  "use": "picture board"
+ },
+ {
+  "file": "kf_cloud_drops_landscape.jpg",
+  "name": "kf_cloud_drops",
+  "orientation": "landscape",
+  "seed": 42,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a fluffy white cloud with a magnified circle showing it is made of tiny water droplets, sunny blue sky, realistic 3D render in the style of a modern animated family film, soft rounded shapes, bright cheerful colours, soft warm cinematic lighting, gentle depth of field, high detail, friendly and safe for children, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "kf_cloud_drops_landscape_s42.png",
+  "use": "picture board"
+ },
+ {
+  "file": "kf_dizzy_landscape.jpg",
+  "name": "kf_dizzy",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a cute 3D animated-film-style child about 7 years old, friendly face, spinning happily on a playground roundabout, motion blur on the background, giggling, realistic 3D render in the style of a modern animated family film, soft rounded shapes, bright cheerful colours, soft warm cinematic lighting, gentle depth of field, high detail, friendly and safe for children, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "kf_dizzy_landscape_s11.png",
+  "use": "picture board"
+ },
+ {
+  "file": "kf_metal_wood_landscape.jpg",
+  "name": "kf_metal_wood",
+  "orientation": "landscape",
+  "seed": 42,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a shiny metal spoon and a wooden spoon side by side on a table, a frosty cold sparkle on the metal one, realistic 3D render in the style of a modern animated family film, soft rounded shapes, bright cheerful colours, soft warm cinematic lighting, gentle depth of field, high detail, friendly and safe for children, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "kf_metal_wood_landscape_s42.png",
+  "use": "picture board"
+ },
+ {
+  "file": "kf_plants_soil_landscape.jpg",
+  "name": "kf_plants_soil",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "two cut-away flower pots side by side: a cactus in dry sandy soil and a fern in dark moist soil, roots visible, realistic 3D render in the style of a modern animated family film, soft rounded shapes, bright cheerful colours, soft warm cinematic lighting, gentle depth of field, high detail, friendly and safe for children, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "kf_plants_soil_landscape_s11.png",
+  "use": "picture board"
+ },
+ {
+  "file": "kf_rumble_food_landscape.jpg",
+  "name": "kf_rumble_food",
+  "orientation": "landscape",
+  "seed": 42,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a plate with an apple, bread and a glass of milk on a sunny kitchen table, cosy, realistic 3D render in the style of a modern animated family film, soft rounded shapes, bright cheerful colours, soft warm cinematic lighting, gentle depth of field, high detail, friendly and safe for children, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "kf_rumble_food_landscape_s42.png",
+  "use": "picture board"
+ },
+ {
+  "file": "kf_shadows_landscape.jpg",
+  "name": "kf_shadows",
+  "orientation": "landscape",
+  "seed": 42,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a small toy figure on a table lit by a torch, casting one long shadow and one short shadow, realistic 3D render in the style of a modern animated family film, soft rounded shapes, bright cheerful colours, soft warm cinematic lighting, gentle depth of field, high detail, friendly and safe for children, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "kf_shadows_landscape_s42.png",
+  "use": "picture board"
+ },
+ {
+  "file": "kf_shiver_landscape.jpg",
+  "name": "kf_shiver",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a cute 3D animated-film-style child about 7 years old, friendly face, wrapped in a red scarf in the snow, shivering, tiny goosebumps, breath visible in the cold air, realistic 3D render in the style of a modern animated family film, soft rounded shapes, bright cheerful colours, soft warm cinematic lighting, gentle depth of field, high detail, friendly and safe for children, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "kf_shiver_landscape_s11.png",
+  "use": "picture board"
+ },
+ {
+  "file": "kf_space_cold_landscape.jpg",
+  "name": "kf_space_cold",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "an astronaut in a white suit floating in dark cold space, frost crystals on the visor, Earth small and far away, realistic 3D render in the style of a modern animated family film, soft rounded shapes, bright cheerful colours, soft warm cinematic lighting, gentle depth of field, high detail, friendly and safe for children, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "kf_space_cold_landscape_s11.png",
+  "use": "picture board"
+ },
+ {
+  "file": "kf_star_glow_landscape.jpg",
+  "name": "kf_star_glow",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a glowing star close-up with swirling golden plasma and soft rays in deep blue space, realistic 3D render in the style of a modern animated family film, soft rounded shapes, bright cheerful colours, soft warm cinematic lighting, gentle depth of field, high detail, friendly and safe for children, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "kf_star_glow_landscape_s11.png",
+  "use": "picture board"
+ },
+ {
+  "file": "kf_touch_landscape.jpg",
+  "name": "kf_touch",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a cute 3D animated-film-style child about 7 years old, friendly face, hand gently touching a soft white feather next to a rough brown pine cone, close-up, realistic 3D render in the style of a modern animated family film, soft rounded shapes, bright cheerful colours, soft warm cinematic lighting, gentle depth of field, high detail, friendly and safe for children, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "kf_touch_landscape_s11.png",
+  "use": "picture board"
+ },
+ {
+  "file": "kf_tummy_landscape.jpg",
+  "name": "kf_tummy",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a friendly 3D model of a stomach with little bubbles and soft sound-wave rings around it, playful, realistic 3D render in the style of a modern animated family film, soft rounded shapes, bright cheerful colours, soft warm cinematic lighting, gentle depth of field, high detail, friendly and safe for children, no text, no letters, no numbers, no logos, no watermark",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "kf_tummy_landscape_s11.png",
+  "use": "picture board"
  }
 ]

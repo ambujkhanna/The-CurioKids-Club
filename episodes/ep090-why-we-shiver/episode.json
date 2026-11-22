@@ -51,12 +51,11 @@
       "text": "Shivering is your body's way of making heat! Your muscles shake very, very fast.",
       "punch": "heat",
       "board": {
-        "type": "big",
-        "icon": "🔥",
-        "text": "Shivers make heat",
+        "type": "picture",
+        "art": "kf_shiver",
+        "caption": "Shivers make heat",
         "cue": "heat",
-        "sub": "Muscles shake fast",
-        "sub_cue": "muscles"
+        "icon": "🔥"
       }
     },
     {

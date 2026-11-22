@@ -50,12 +50,11 @@
       "who": "MIA",
       "text": "A cloud is made of lots and lots of tiny drops of water, or tiny bits of ice!",
       "board": {
-        "type": "big",
-        "icon": "💧",
-        "text": "Tiny water drops",
+        "type": "picture",
+        "art": "kf_cloud_drops",
+        "caption": "Tiny water drops",
         "cue": "drops",
-        "sub": "Or tiny bits of ice",
-        "sub_cue": "ice"
+        "icon": "💧"
       }
     },
     {

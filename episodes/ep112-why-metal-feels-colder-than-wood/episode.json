@@ -51,12 +51,11 @@
       "text": "Here's a surprise: in the same room, they're the same temperature!",
       "punch": "surprise",
       "board": {
-        "type": "big",
-        "icon": "🌡️",
-        "text": "Same temperature!",
+        "type": "picture",
+        "art": "kf_metal_wood",
+        "caption": "Same temperature!",
         "cue": "same",
-        "sub": "Both in one room",
-        "sub_cue": "room"
+        "icon": "🌡️"
       }
     },
     {
