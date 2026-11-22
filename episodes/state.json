@@ -328,7 +328,25 @@
       "status": "uploaded",
       "video_id": "7pED02yqIN8",
       "url": "https://www.youtube.com/shorts/7pED02yqIN8",
-      "uploaded_at": "2026-11-21T22:08:42+05:30"
+      "uploaded_at": "2026-11-21T22:08:42+05:30",
+      "hi": {
+        "voices": "kokoro",
+        "title": "\u0939\u092e \u092a\u0932\u0915\u0947\u0902 \u0915\u094d\u092f\u094b\u0902 \u091d\u092a\u0915\u093e\u0924\u0947 \u0939\u0948\u0902? | Why Do We Blink? \ud83d\udc40",
+        "rendered_at": "2026-11-22T22:17:06+05:30",
+        "duration_s": 113.54,
+        "publish_at_ist": "2026-11-23T09:50+05:30",
+        "thumbnail": "set (re-applied after posting: set)",
+        "playlist": "added (curiokids)",
+        "made_for_kids": "no",
+        "subtitles": "hi; en; titles: en",
+        "facebook": "posted (reel 3030842007249349), cover set",
+        "instagram": "failed: 1) direct: [size-budget] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Reque [3 Mbps] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Reque [2 Mbps] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"R | 2) hidden copy: processing Error: Media upload has failed with error code 2207076 | 3) FB reel copy: processing Error: Media upload has failed with error code 2207076",
+        "status": "uploaded",
+        "video_id": "_SrWKOyoRf0",
+        "url": "https://www.youtube.com/shorts/_SrWKOyoRf0",
+        "uploaded_at": "2026-11-22T22:24:53+05:30"
+      },
+      "thumbnail_checked": "2026-11-22T22:25+05:30 set"
     },
     "ep094": {
       "voices": "chatterbox",
