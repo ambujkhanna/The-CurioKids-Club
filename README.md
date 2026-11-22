@@ -1,5 +1,7 @@
 # The CurioKids Club: automated YouTube Shorts for kids
 
+> **© 2026. All rights reserved.** Not open source: viewing this repository does not allow copying or reuse. See [`LICENSE`](LICENSE).
+
 **Created:** 2026-11-04 (Claude Code session), built from the AInation Studio pipeline.
 
 The CurioKids Club makes short, curious answers to kids' big questions (animals, the human body, space, nature, everyday science) plus original rhymes, jokes and quizzes. Each Short is about 45–90 seconds (QC allows 20–180 s). Shorts alternate daily between **English** and **Hindi** (Hindi voices with English subtitles).

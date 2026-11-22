@@ -59,7 +59,7 @@ AInation then has its own 10,000 units and the kids channel gets more room too.
 
 ## Quality notes
 
-- The 7B model writes simple, correct, slightly plain scripts. For livelier writing try `TREND_MODEL=qwen2.5:14b` (fits the free runner; the job takes ~10 min longer).
+- The 7B model writes simple, correct, slightly plain scripts. **Tested 2026-11-23: `qwen2.5:14b` is NOT better here**: 7 min 43 s for one script (7B: ~3 min) and it dropped the board pictures (`| emoji text`) and picked odd emoji (🧆 for biscuits). Keep 7B. A hybrid (`TREND_MODEL=qwen2.5:14b`, `TREND_CHECK_MODEL=qwen2.5:7b`) is possible but not recommended.
 - If a trend Short looks wrong: delete it in YouTube Studio; to stop the feature set `TREND_SHORTS=off`.
 
 ## Troubleshooting (log)
