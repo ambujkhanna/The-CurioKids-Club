@@ -13,6 +13,7 @@ on:
 permissions:
   contents: read
   issues: write
+  actions: read   # to download the latest analytics (what works on our channel)
 
 concurrency:
   group: topic-radar
@@ -29,6 +30,16 @@ jobs:
           python-version: "3.12"
       - name: Install
         run: pip install -q google-api-python-client google-auth
+      - name: Latest analytics (what works on our channel; optional)
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p out/analytics
+          RUN_ID="$(gh run list --repo "$GITHUB_REPOSITORY" --workflow youtube-analytics.yml --json databaseId,status,conclusion --jq '[.[] | select(.status == "completed" and .conclusion == "success")] | .[0].databaseId // empty')"
+          if [ -n "$RUN_ID" ]; then gh run download "$RUN_ID" --repo "$GITHUB_REPOSITORY" --dir out/analytics || true; fi
+          find out/analytics -name "*.csv" | head -3
       - name: Topic radar
         env:
           RADAR: ${{ vars.RADAR || 'on' }}

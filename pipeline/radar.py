@@ -304,6 +304,7 @@ def report():
         seen.append(w); cands.append((s_, v))
         if len(cands) >= 60: break
     yt = youtube()
+    import growth_signal  # what already works on OUR channel (analytics): ranks topics, never blocks one
     rows = []
     for s, v in cands[:25]:
         comp = competition(yt, s) if yt else None
@@ -312,23 +313,25 @@ def report():
             opp = v * (1 + old) * math.log10(med + 10) / math.log10(top + 100)  # demand, old results, beatable top
         else:
             med = top = old = None; opp = v
-        rows.append((s, v, med, top, old, opp))
+        gb = growth_signal.boost(s)
+        rows.append((s, v, med, top, old, opp * (1 + gb), gb))
     rows.sort(key=lambda r: -r[5])
     wk = dt.date.today().isocalendar()
     md = [f"# Topic radar {wk[0]}-W{wk[1]:02d}: {name}", "",
           "Tick the topics to make. Demand = how strongly YouTube suggests the phrase across our seed searches. "
           "Competition (when available) = median / top views of the current top 10 videos, and the share of them older than a year "
           "(old results are easier to beat). Already-covered topics are left out.", ""]
-    md += ["## Top topics", "", "| | Search phrase | Demand | Median views | Top views | Old results |", "|---|---|---|---|---|---|"]
-    for s, v, med, top, old, opp in rows[:20]:
+    md += ["## Top topics", "", "| | Search phrase | Demand | Median views | Top views | Old results | Our channel |", "|---|---|---|---|---|---|---|"]
+    for s, v, med, top, old, opp, gb in rows[:20]:
         f = lambda n: "–" if n is None else (f"{n/1e6:.1f}M" if n >= 1e6 else f"{n/1e3:.0f}k" if n >= 1e3 else str(n))
-        md.append(f"| - [ ] | {s} | {v:.0f} | {f(med)} | {f(top)} | {'–' if old is None else f'{old:.0%}'} |")
+        md.append(f"| - [ ] | {s} | {v:.0f} | {f(med)} | {f(top)} | {'–' if old is None else f'{old:.0%}'} | {growth_signal.mark(gb)} |")
     more = [s for s, _ in cands[25:45]]
     if more: md += ["", "**Also suggested:** " + ", ".join(more)]
     terms = our_search_terms()
     if terms:
         md += ["", "## Searches that already bring viewers to us (last 90 days)", ""] + [f"- {t} ({n} views)" for t, n in terms[:15]]
         md += ["", "Make more around these: they already work for us."]
+    md += growth_signal.summary_md()
     md += trends_md(yt, titles)
     reqs = viewer_requests(yt)
     if reqs:

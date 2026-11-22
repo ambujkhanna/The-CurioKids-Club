@@ -48,3 +48,11 @@
   - **Telegram:** create a bot with **@BotFather** → `TELEGRAM_BOT_TOKEN`. Send your bot a message, then open `https://api.telegram.org/bot<token>/getUpdates` and copy `chat.id` → `TELEGRAM_CHAT_ID`.
   - **or Discord:** a channel → Edit → Integrations → Webhooks → copy URL → `DISCORD_WEBHOOK_URL`.
 - Never paste these into chat; GitHub Secrets only. Test: Actions → any daily workflow, or locally `python pipeline/notify.py "test"`.
+
+
+## What works on our channel (added 2026-11-23 03:15 IST (2026-11-22 21:45 UTC))
+
+`pipeline/growth_signal.py` reads the latest YouTube Analytics table (downloaded by the daily and radar workflows) and scores each title word and **subject group** (animals, space, body, weather, plants, earth, everyday; AInation: chatbots, privacy & safety, work & money, images & video, phones & apps) by how our Shorts with it did: half engaged views, half average % viewed, compared with our other Shorts.
+- **Weekly report:** a column "Our channel" (★ works for us / ▼ weak for us) and a section "What works on our channel"; topics are ranked by demand × competition × this signal.
+- **Trend Shorts:** among the evergreen search topics, the order is demand × this signal (hot Google/YouTube trends still go first).
+- Needs at least 6 Shorts with analytics; before that, nothing changes. Advisory only: it re-orders, never blocks.

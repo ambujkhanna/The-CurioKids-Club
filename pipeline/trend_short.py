@@ -63,9 +63,11 @@ def candidates(limit=8):
     yt = radar.youtube()
     for g, cat, t, views, short, fits in (radar.youtube_trending(yt) if yt else []):
         if fits: add(f"YouTube trending {g}/{cat}", re.sub(r"#\w+", "", t), re.sub(r"#\w+", "", t))
-    if len(out) < limit:  # evergreen: what people type into YouTube search most (the radar's demand list)
-        for s, v in sorted(radar.demand().items(), key=lambda x: -x[1]):
-            add(f"YouTube search (demand {v:.0f})", s, s)
+    if len(out) < limit:  # evergreen: what people type into YouTube search most (the radar's demand list),
+        import growth_signal  # ranked by demand x what already works on our channel (analytics)
+        ranked = sorted(((s, v, growth_signal.boost(s)) for s, v in radar.demand().items()), key=lambda x: -x[1] * (1 + x[2]))
+        for s, v, gb in ranked:
+            add(f"YouTube search (demand {v:.0f}{', ' + growth_signal.mark(gb) if growth_signal.mark(gb) else ''})", s, s)
             if len(out) >= limit: break
     return out
 
