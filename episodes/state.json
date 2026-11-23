@@ -345,9 +345,9 @@
         "video_id": "_SrWKOyoRf0",
         "url": "https://www.youtube.com/shorts/_SrWKOyoRf0",
         "uploaded_at": "2026-11-22T22:24:53+05:30",
-        "thumbnail_checked": "2026-11-23T07:36+05:30 set"
+        "thumbnail_checked": "2026-11-24T02:19+05:30 set"
       },
-      "thumbnail_checked": "2026-11-22T22:25+05:30 set",
+      "thumbnail_checked": "2026-11-24T02:20+05:30 set",
       "es": {
         "voices": "kokoro",
         "title": "\u00bfPor qu\u00e9 parpadeamos? | Why Do We Blink? \ud83d\udc40",
@@ -373,10 +373,20 @@
         "ok": true
       },
       "title": "Why Is Space So Cold? \ud83c\udf0c Fun Facts for Kids",
-      "rendered_at": "2026-11-22T10:36:58+05:30",
+      "rendered_at": "2026-11-24T02:17:01+05:30",
       "duration_s": 74.11,
-      "status": "rendered",
-      "note": "dry run"
+      "status": "uploaded",
+      "note": "dry run",
+      "publish_at_ist": "2026-11-24T19:25+05:30",
+      "thumbnail": "set (re-applied after posting: set)",
+      "playlist": "added (curiokids)",
+      "made_for_kids": "no",
+      "subtitles": "en; titles: es, hi",
+      "facebook": "posted (reel 1145792607843162), cover set",
+      "instagram": "posted (reel 18144685084618778), designed cover",
+      "video_id": "38g77vEm4FA",
+      "url": "https://www.youtube.com/shorts/38g77vEm4FA",
+      "uploaded_at": "2026-11-24T02:19:04+05:30"
     }
   }
 }
