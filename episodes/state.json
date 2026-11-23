@@ -344,9 +344,27 @@
         "status": "uploaded",
         "video_id": "_SrWKOyoRf0",
         "url": "https://www.youtube.com/shorts/_SrWKOyoRf0",
-        "uploaded_at": "2026-11-22T22:24:53+05:30"
+        "uploaded_at": "2026-11-22T22:24:53+05:30",
+        "thumbnail_checked": "2026-11-23T07:36+05:30 set"
       },
-      "thumbnail_checked": "2026-11-22T22:25+05:30 set"
+      "thumbnail_checked": "2026-11-22T22:25+05:30 set",
+      "es": {
+        "voices": "kokoro",
+        "title": "\u00bfPor qu\u00e9 parpadeamos? | Why Do We Blink? \ud83d\udc40",
+        "rendered_at": "2026-11-23T07:34:00+05:30",
+        "duration_s": 82.75,
+        "publish_at_ist": "2026-11-24T07:00+05:30",
+        "thumbnail": "set (re-applied after posting: set)",
+        "playlist": "not added: <HttpError 409 when requesting https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&alt=json returned \"The operation was aborted.\". Details: \"[{'domain': 'youtube.CoreErrorDomain', 're",
+        "made_for_kids": "no",
+        "subtitles": "es; en; titles: en",
+        "facebook": "posted (reel 2208457763212275), cover set",
+        "instagram": "posted (reel 18136512013745201), designed cover",
+        "status": "uploaded",
+        "video_id": "yxMxkNJck8c",
+        "url": "https://www.youtube.com/shorts/yxMxkNJck8c",
+        "uploaded_at": "2026-11-23T07:36:05+05:30"
+      }
     },
     "ep094": {
       "voices": "chatterbox",
