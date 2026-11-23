@@ -174,3 +174,4 @@ Never paste tokens into chat, files or commits; they go only into GitHub Secrets
 | 2026-11-23 05:00 IST (2026-11-22 23:30 UTC) | AInation: **steady camera + golden speaker spotlight** (`CAM_STYLE`); AInation trend Shorts **on** (own Google Cloud project). |
 | 2026-11-23 07:15 IST (01:45 UTC) | Both: **audience by country** (analytics), **weekly Kaggle art run** (`ART_WEEKLY`, `ART_AUTO_COMMIT`), `TREND_CHECK_MODEL`, AInation `BOARD_BRIDGE`, `docs/PLATFORMS.md`. |
 | 2026-11-23 08:30 IST (03:00 UTC) | Both: `LICENSE` (All rights reserved); plans `docs/PRIVATE_CODE_PLAN.md`, `docs/PINTEREST_PLAN.md`; task list `docs/TODO.md`. |
+| 2026-11-23 09:15 IST (03:45 UTC) | Both: **▶ CURRENT STATE** snapshot at the top of `CONVERSATION.md`; `docs/HOW_IT_WORKS.md` refreshed. |

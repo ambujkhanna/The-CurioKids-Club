@@ -1,5 +1,47 @@
 # CurioKids Club — conversation log
 
+## ▶ CURRENT STATE: start here (2026-11-23 09:15 IST (03:45 UTC); replaces every older "open items / pending" note below)
+
+The entries further down are **history**. Older "pending"/"open" notes there may already be resolved: trust this snapshot and **`docs/TODO.md`**.
+
+**Project:** two YouTube channels made by an automatic "factory" on GitHub Actions (free runners), free/open tools only.
+- **The CurioKids Club** (kids science Shorts): repo `ambujkhanna/The-CurioKids-Club`
+- **AInation Studio** (AI explained simply): repo `ambujkhanna/youtube-studio-automation`
+- Owner's PC: repos in `C:\Users\Ambuj\Documents\GitHub\The-CurioKids-Club` and `...\AInation-studio`; bundles downloaded to `C:\Users\Ambuj\Downloads\Youtube <date>\`. The owner pushes by hand (Git Bash, one command per repo); the assistant never pushes.
+- Plain-language overview with diagrams: **`docs/HOW_IT_WORKS.md`**. All switches: **`CONFIGURATION.md`**. Daily task list: **`docs/TODO.md`**.
+
+**What runs every day (IST)**
+| Time | Kids | AInation |
+|---|---|---|
+| 03:11 | Spanish Short (`ES_SHORTS`), posts 05:30–07:30 | – |
+| 07:17 | trend check → "Trend alert" issue if a hot topic fits | same |
+| 11:41 / 11:53 | automatic **trend Short** (Ollama Qwen 2.5 7B + Wikipedia facts + checks), posts 12:00–14:00 | same (`TREND_SHORTS=on`) |
+| 14:10 / 21:10 | English or Hindi Short (alternate days), posts 17:00–20:00 / 09:00–11:00 | 14:53 daily Short, posts 17:00–20:00 |
+| 17:30 | analytics + growth brief + **audience by country** | same |
+| Mon 08:47 | weekly topic report (searches, trends, comments, ★/▼ "what works for us") | same |
+| Fri night | **weekly Kaggle art run** (built, `ART_WEEKLY` off until the first manual test) | same |
+| Weekend | long video (Sat) | long video (Sun) |
+
+**Key decisions (all still valid)**
+- Look: kids = HD clay backgrounds + glass card, **steady camera + golden speaker spotlight**, board stays until the next picture (`BOARD_BRIDGE`); AInation = plain Studio Open, same steady camera/spotlight. Sticker thumbnails. No intro on Shorts; any intro must show the topic (kids intro has blasting sparklers).
+- Pictures: 3D realistic art first, real photos only for AInation. House icons (curated mix) → Fluent 3D → flat. Combined emoji are turned into plain ones automatically.
+- Voices: Kokoro / Chatterbox; Spanish = Dora (Mia) + Alex (Leo). Subtitles + translated titles after every upload (login scope `youtube.force-ssl` in both repos; never hard-code a scope).
+- Languages: Spanish runs; **more languages only if "audience by country" data supports it** (owner, 2026-11-23). Rhymes/poems and English-grammar episodes are not translated.
+- Trend Shorts: public automatically in their slot (owner's choice); 7B model (14B tested: slower, not better).
+- Each channel has its **own Google Cloud project** (separate 10,000-unit API quotas).
+- Alerts: none for now (CallMeBot was full; owner checks daily).
+- Code is "All rights reserved" (`LICENSE`). Planned: private core repos + public runner repos (`docs/PRIVATE_CODE_PLAN.md`) and Pinterest for kids (`docs/PINTEREST_PLAN.md`).
+
+**Open right now (details in `docs/TODO.md`)**
+1. Owner: first weekly art run by hand (kids), then tick `HF_TOKEN` on the Kaggle kernel and re-run.
+2. Owner: delete the merged old branches (commands in the 2026-11-23 chat; still on GitHub at 09:00 IST).
+3. Owner: watch the first automatic trend Shorts and the "audience by country" tables; make API uploads public in YouTube Studio (until Google's API audit).
+4. Later, owner first: private-code plan §3, Pinterest plan §1.
+
+**Standing rules for any assistant**
+One copy-paste push command per repo; update the handoff + this file + both channel-reference copies + `CONFIGURATION.md` for every change (timestamped IST with UTC, never delete old entries); show stills before big visual changes; free tools only; never include `state.json` in bundles; never paste or store secrets anywhere but GitHub/Kaggle Secrets; validate everything (compile, YAML, episodes, tests, secret scan) before handing over a bundle.
+
+
 ## 2026-11-18T22:04:00+05:30 — Current analytics-led growth implementation status
 
 User asked for implementation, validation and merge after satisfaction. The feature branch now contains the read-only analytics collector, channel-specific growth brief generator, tests, workflow integration and documentation. Latest analytics workflow run #18 succeeded and generated artifact 14444286367. The artifact includes CSV, Markdown, SQLite and growth brief outputs.
@@ -146,6 +188,8 @@ A fresh audit found CurioKids analytics run 44739181837 successful. A newer AIna
 
 ## 2026-11-21 20:55 IST (15:25 UTC) — Open items (start here in a new thread)
 
+> ⚠️ Superseded by **▶ CURRENT STATE** at the top of this file (2026-11-23).
+
 Read first: the channel handoff (`TheCurioKidsClub_handoff.md` / `AInation_Studio_handoff.md`), `Channels_Reference.md` (variables), this log. The kids repo also has `docs/HD_ART.md`, `tools/kaggle/` (the picture notebooks + how to run) and `docs/ICON_REFERENCE_LIST.md` / `docs/icons_all.csv`.
 
 1. **Polished characters**: built, but the owner has not switched them on. Set repo variable `CHAR_STYLE=polished` per repo when wanted.
@@ -208,3 +252,4 @@ Read first: the channel handoff (`TheCurioKidsClub_handoff.md` / `AInation_Studi
 - 2026-11-23 05:00 IST (2026-11-22 23:30 UTC): AInation: steady camera + golden speaker spotlight (like kids). Each channel has its own Google project → AInation trend Shorts switched on.
 - 2026-11-23 07:15 IST (01:45 UTC): Owner: decide more languages on data → **audience by country** added to analytics. **Weekly Kaggle art run** built (secrets added; first manual run next). Hybrid trend model option. AInation board bridge. **docs/PLATFORMS.md** for more platforms (advice: Threads → Pinterest → LinkedIn → Bluesky).
 - 2026-11-23 08:30 IST (03:00 UTC): **Plans:** make the code private but keep free runs (docs/PRIVATE_CODE_PLAN.md), Pinterest for kids (docs/PINTEREST_PLAN.md); open tasks in **docs/TODO.md**. LICENSE: All rights reserved. 14B model not better than 7B.
+- 2026-11-23 09:15 IST (03:45 UTC): ▶ CURRENT STATE snapshot added at the top of this file; HOW_IT_WORKS.md refreshed.

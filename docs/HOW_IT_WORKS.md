@@ -1,6 +1,6 @@
 # How it works: the video factory in plain words
 
-**For:** anyone, no technical background needed. **Same file in both repos.** Last updated 2026-11-23 (IST).
+**For:** anyone, no technical background needed. **Same file in both repos.** Last updated 2026-11-23 09:15 (IST).
 The diagrams below are drawn by GitHub automatically when you open this file on github.com.
 
 ---
@@ -35,7 +35,8 @@ timeline
     11.41 : Automatic trend Short made, posts 12.00-14.00
     14.10 and 21.10 : English or Hindi kids Short (alternate days), posts 17.00-20.00 or 09.00-11.00
     14.53 : AInation daily Short, posts 17.00-20.00
-    17.30 : Analytics collected for both channels
+    17.30 : Analytics collected for both channels, incl. views by country
+    Friday night : Weekly art run on Kaggle, new pictures and icons for the coming week
     Weekend : Long videos (kids Saturday 10.00, AInation Sunday 10.07)
 ```
 
@@ -97,8 +98,8 @@ What each step uses:
 | Step | What does the work | Free / open? |
 |---|---|---|
 | Voices | **Kokoro** (English, Hindi, Spanish voices) and **Chatterbox** (more expressive English) | yes, open licences (Apache 2.0, MIT) |
-| Characters, boards, animation | our own drawing code (**Skia** graphics library) | yes |
-| Background pictures, picture boards, 3D icons | made once on a free **Kaggle** GPU with **FLUX.1-schnell** (image AI) + **rembg** (cut-outs); extra icons from **Microsoft Fluent Emoji 3D** | yes (Apache 2.0, MIT) |
+| Characters, boards, animation | our own drawing code (**Skia** graphics library). Steady camera; the speaker gets a golden spotlight and steps forward; a board stays until the next picture appears | yes |
+| Background pictures, picture boards, 3D icons | made on a free **Kaggle** GPU with **FLUX.1-schnell** (image AI) + **rembg** (cut-outs): by hand so far, and from now on by the **weekly art run** (it makes only what upcoming episodes are missing); extra icons from **Microsoft Fluent Emoji 3D** | yes (Apache 2.0, MIT) |
 | Real photos (AInation) | **NASA** and **Openverse** (free-licence photos, credited) | yes |
 | Music | composed by our code for each episode | yes |
 | Captions, joining, sound | **FFmpeg** | yes |
@@ -131,7 +132,9 @@ No paid AI service is used: the AI model is downloaded free and runs on GitHub's
 
 ```mermaid
 flowchart LR
-    YTA["📊 YouTube Analytics<br/>(read-only)"] --> GB["Growth brief<br/>best / weakest videos"]
+    YTA["📊 YouTube Analytics<br/>(read-only)"] --> GB["Growth brief<br/>best / weakest videos<br/>+ views by country"]
+    GB --> RANK["Topics ranked by<br/>what works for us (★/▼)"]
+    RANK --> RAD
     GB --> SUM["Shown in each daily run's summary"]
     RAD["📋 Weekly topic report"] --> OWN["👤 Owner ticks topics"]
     OWN --> NEW["New scripts in the queue"]
@@ -160,6 +163,6 @@ flowchart LR
 | Make uploaded videos public in YouTube Studio | daily, until Google approves the API audit |
 | Tick topics in the weekly report / react to trend alerts | weekly / as they come |
 | Change switches (variables) | rarely: list in `CONFIGURATION.md` |
-| Run Kaggle for new pictures | when new backgrounds or icons are needed |
+| Check the weekly art run's new pictures (Artifacts) | weekly, until automatic install (`ART_AUTO_COMMIT=on`) is trusted |
 
-More detail: `CONFIGURATION.md` (all switches), `docs/TREND_SHORTS.md`, `docs/SPANISH.md`, `docs/RADAR_AND_ALERTS.md`, `docs/HD_ART.md`.
+Open tasks: `docs/TODO.md`. Plans: `docs/PRIVATE_CODE_PLAN.md`, `docs/PINTEREST_PLAN.md`. More detail: `CONFIGURATION.md` (all switches), `docs/AUTOMATION_KAGGLE.md`, `docs/TREND_SHORTS.md`, `docs/SPANISH.md`, `docs/RADAR_AND_ALERTS.md`, `docs/HD_ART.md`.
