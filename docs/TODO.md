@@ -33,19 +33,16 @@ Plan: [`docs/PINTEREST_PLAN.md`](PINTEREST_PLAN.md)
 ## E. Shared channel growth audit (2026-11-25)
 Plan and audit: [`docs/GROWTH_ROADMAP.md`](GROWTH_ROADMAP.md) · [`docs/GROWTH_AUDIT_2026-11-25.md`](GROWTH_AUDIT_2026-11-25.md)
 
-- [x] Create a fresh growth branch from current `main` in both repos; port only shared topic-fit/playlist-planner work.
-- [x] Record the latest retrievable historical analytics baseline and current published-state playlist inventory preview.
-- [x] Audit API availability for country/language, thumbnail reach, Stayed to watch, audience retention and age-matched cohorts.
-- [x] Verify fresh analytics collection artifacts in both repos: country/language, market opportunities, age cohorts, retention curves and playlist-plan outputs are present and inspected. Reach Basic remains blocked by disabled Google Cloud API.
-- [x] Implement primary-language market opportunity report from actual country metrics; localized evidence is separated from all-language country totals. India is Hindi-only; exclude Tamil, Telugu and Bengali. AInation remains English-only. Initial fresh artifacts verified; corrected localized average-viewed calculation is being revalidated.
-- [x] Improve planner taxonomy for obvious on-pillar titles and add regression tests (preview now leaves 2 CurioKids and 1 AInation manual-review videos).
-- [x] Extend country report with supported engaged/subscriber metrics, custom-script English grouping and a clearly labelled share of returned country views; fresh API artifact verification pending.
-- [x] Implement Reach Basic Reporting API collector and ensure-job workflow integration. **Owner action pending:** enable YouTube Reporting API in Google Cloud project 702229494667; the current run reports HTTP 403 SERVICE_DISABLED.
-- [x] Implement bounded retention curves for top 10 videos (one targeted request per video).
-- [x] Persist publish timestamps (publish_at_ist, with upload-time fallback) and implement complete 7/14/28-day age-matched cohorts for the top 20 videos.
-- [x] Run post-sync CurioKids growth-engine CI; run 45655541204 passed. New analytics/market-report test suite also passed on the latest code (run 45656948802); AInation latest suite passed (run 45656964107).
-- [ ] Run explicitly selected render-only Daily Curio Kids Short dry-run (workflow dispatch required; do not use scheduled/publish default).
-- [ ] Run AInation render-only Daily Short dry-run using EP020.
-- [ ] Run fresh analytics collection in both repos and inspect country/language + playlist-plan artifacts.
+- [x] Create a fresh growth branch from current `main` in both repos and sync latest `main` history; neither feature branch is behind.
+- [x] Implement strict channel-fit topic filtering, review-only playlist suggestions and regression tests.
+- [x] Implement country/language reports with engaged views, subscriber metrics, returned-row share denominator and custom-English grouping.
+- [x] Implement primary-language market reports from actual channel country data; CurioKids retains English/Hindi/Spanish, India is Hindi-only (no Tamil/Telugu/Bengali), and AInation remains English-only.
+- [x] Implement publish timestamp persistence, 7/14/28-day age-matched cohorts for top 20 videos and bounded retention curves for top 10 videos.
+- [x] Implement YouTube Reporting API Reach Basic collector and workflow job setup. **Blocked pending owner action:** enable YouTube Reporting API in Google Cloud project 702229494667 (current response: HTTP 403 SERVICE_DISABLED).
+- [x] Generate and inspect fresh analytics artifacts: CurioKids run 45657535212; AInation run 45657556902. Both include country reports, market opportunities, age cohorts, retention curves and review-only playlist plans.
+- [x] Verify playlist suggestions: CurioKids 66 assignments / 2 manual topic reviews; AInation 79 / 1.
+- [x] Latest growth/analytics unit tests passed: CurioKids run 45657681015; AInation run 45657748189.
+- [ ] **Owner validation:** run CurioKids Daily Short with the explicit `Dry run (render only, nothing uploaded)` action and visually inspect English/Hindi/Spanish thumbnail language badges.
+- [ ] **Owner validation:** run AInation Daily Short with the explicit `Dry run (render only, nothing uploaded)` action and episode `ep020` (EP020). Inspect render and ensure no upload occurs.
 
 **Guardrails:** no upload-token changes, no publishing/visibility/schedule changes, no live playlist or metadata edits, and no automatic script changes.
