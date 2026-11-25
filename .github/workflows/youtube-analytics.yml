@@ -5,14 +5,17 @@ on:
     branches:
       - main
       - feat/youtube-growth-engine
+      - feat/shared-growth-audit-2026-11
     paths:
       - "pipeline/analytics.py"
+      - "pipeline/reach_reporting.py"
       - "pipeline/growth.py"
       - "pipeline/playlist_plan.py"
       - "pipeline/analytics-requirements.txt"
       - "tests/**"
       - "episodes/state.json"
       - "long/state.json"
+      - "custom/state.json"
       - "library/**/state.json"
       - ".github/workflows/youtube-analytics.yml"
   schedule:
@@ -87,6 +90,14 @@ jobs:
         run: |
           CSV="$(ls -t out/analytics/*.csv | head -n 1)"
           python pipeline/growth.py --csv "$CSV" --channel-key curiokids-club --period "${{ inputs.start_date || 'default 28-day window' }} to ${{ inputs.end_date || 'latest complete day' }}" --output-dir out/analytics
+
+      - name: Collect read-only thumbnail reach report (Reporting API)
+        if: success()
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_ANALYTICS_REFRESH_TOKEN: ${{ secrets.YT_ANALYTICS_REFRESH_TOKEN }}
+        run: python pipeline/reach_reporting.py --output-dir out/analytics
 
       - name: Build review-only topic and language playlist plan
         if: success()
