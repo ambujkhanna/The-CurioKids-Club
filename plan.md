@@ -25,3 +25,5 @@ Use the owner's 2026 audience ranking as a candidate-market input, not as the fi
 10. Turkey ~57.9M — Turkish
 
 No schedule changes, new languages, or production-default changes are in scope for the badge task. The stale `feature/modern-visual-engine` branch is not a base for this work.
+
+Additional supplied country candidates: Japan (~83.3M; Japanese), Germany (~68.8M; German/Turkish), Vietnam (~62.1M; Vietnamese), Philippines (~59.6M; Filipino/Tagalog and English), and Turkey (~57.9M; Turkish). These remain part of the same evidence-led top-10 review.
