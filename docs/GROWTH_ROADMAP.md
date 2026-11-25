@@ -111,3 +111,8 @@ Family-friendly, accurate, curiosity-led learning with Leo and Mia. Science, nat
 - The analytics collector now preserves publish timestamps from episode state (scheduled publish time preferred; upload time is a fallback), produces complete 7/14/28-day age-matched cohorts for the top 20 videos, and requests audience-retention curves for the top 10 videos.
 - A YouTube Reporting API Reach Basic collector captures thumbnail impressions and CTR. The workflow ensures a daily Reach Basic job exists; reports may take up to 24 hours after job creation to appear.
 - CI has passed for the analytics, market-opportunity and Reach API parsing tests. Fresh artifact/runtime verification is tracked separately; render-only video checks remain owner validation tasks.
+
+
+## Fresh data checkpoint — 2026-11-25
+
+The first live feature-branch analytics artifacts were generated for 2026-10-26 to 2026-11-22. CurioKids returned 25 per-video rows (3,247 views; 1,559 engaged views); AInation returned 28 rows (1,100 views; 443 engaged views). Country reports, review-only playlist plans, retention curves and age cohorts were generated. Country metrics cover returned rows only and may be anonymized; they are not a full-global denominator. The Reach Basic Reporting API is currently disabled in the shared Google Cloud project 702229494667, so thumbnail impressions/CTR remain blocked until the owner enables that API. See the audit for the data observations and exact run links.
