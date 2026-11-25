@@ -153,3 +153,12 @@
 - [ ] Fresh analytics collection and artifact inspection remain pending.
 - [ ] Explicit render-only Daily Short dry-run remains pending in both repos; AInation regression path should use EP020.
 - No PR merged. No publishing workflow dispatched. No upload credential or live channel state changed.
+
+
+## 2026-11-25 — Country report enrichment implemented
+
+- [x] Extended the read-only country report with engaged views, engaged views/views, subscribers gained/lost, subscribers gained per 1,000 views, average view duration and average viewed percentage.
+- [x] Added the `script` and `en` language groups so custom English/script uploads are not omitted from the language report.
+- [x] Increased country result retrieval to 200 rows and labelled the percentage as share of reported country views; anonymized/unavailable rows may still affect full-global coverage.
+- [x] Added unit tests for country aggregation and the custom-script language group. CI rerun pending.
+- No OAuth scope or secret changed. No YouTube write API used.
