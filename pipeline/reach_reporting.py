@@ -122,6 +122,11 @@ def collect(output_dir: Path, start_time: str, end_time: str, ensure_job: bool =
         writer.writeheader()
         writer.writerows(all_rows)
     summary = summarise_reach(all_rows)
+    summary_path = output_dir / "reach_by_video.csv"
+    with summary_path.open("w", encoding="utf-8-sig", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=["video_id", "impressions", "impressions_ctr", "report_days"])
+        writer.writeheader()
+        writer.writerows(summary)
     md = ["# Thumbnail reach report", "", f"**Report window:** {start_time} to {end_time}", "",
           "Reach metrics are reported for eligible thumbnail surfaces; they are not a Shorts-feed hook metric. CTR is stored as returned by the Reporting API (fractional ratio).", "",
           "| Video ID | Thumbnail impressions | Weighted CTR | Report days |", "|---|---:|---:|---:|"]
@@ -130,7 +135,7 @@ def collect(output_dir: Path, start_time: str, end_time: str, ensure_job: bool =
     if not summary:
         md.append("| No report rows available yet | | | |")
     (output_dir / "reach_basic.md").write_text("\n".join(md) + "\n", encoding="utf-8")
-    return len(all_rows), f"Downloaded {len(all_rows)} reach rows to {csv_path}"
+    return len(all_rows), f"Downloaded {len(all_rows)} reach rows to {csv_path}; video summary: {summary_path}"
 
 
 def main(argv=None) -> int:
