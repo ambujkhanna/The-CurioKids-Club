@@ -93,3 +93,11 @@ The existing read-only collector already retrieves per-video views, engaged view
 6. Run PR CI and explicitly selected render-only Daily Short dry-runs in both repos. For AInation use EP020. Do not select a scheduled/publishing action.
 
 **Guardrails:** analytics-only OAuth remains read-only; do not touch upload credentials. No publishing, live playlist, video metadata, queue, schedule or channel-setting changes. Recommendations remain advisory and require owner review.
+
+
+## Post-sync validation update — 2026-11-25
+
+- CurioKids feature branch was synced with the latest `main`, including the merged thumbnail language-badge work (sync PR #16; merge commit `49ddf4d3862fe9fbcab24647b859d9913ed78e46`). It is now 0 commits behind `main`.
+- Post-sync growth-engine CI passed in run 45655541204. The `unit-tests` job and analytics/growth unit-test step completed successfully.
+- The explicit render-only Daily Curio Kids Short workflow option was inspected. It is available as `Dry run (render only, nothing uploaded)`, but could not be dispatched through the connected GitHub actions interface. It remains pending; no scheduled or publishing action was selected.
+- Fresh analytics artifacts and the AInation EP020 render-only dry-run also remain pending.
