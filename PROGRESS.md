@@ -235,3 +235,13 @@
 - [x] Latest tests passed: CurioKids run 45658446499; AInation run 45658455277.
 - [x] Latest analytics workflows completed: CurioKids run 45658430722; AInation run 45658440732. Topic reports verified; long-form CTR remains blocked by disabled YouTube Reporting API.
 - [ ] Owner enable YouTube Reporting API in project 702229494667; rerun/allow the daily report to populate CTR.
+
+
+## 2026-11-25 — Same-language Related Video recommendations
+
+- [x] Added conservative Short-to-long candidate generation with topic and title evidence plus a same-language guard.
+- [x] Verified artifacts: CurioKids has 1 candidate; AInation has 3 candidates. All are review-only; no Related Video settings changed.
+- [x] Latest CI passed: CurioKids run 45659932438; AInation run 45659941356.
+- [x] Latest analytics workflows passed: CurioKids run 45659908250; AInation run 45659918354.
+- [ ] Owner to review Related Video candidates and playlist assignment CSVs.
+- [ ] Owner to verify publish timestamps, review Instagram profile CTAs, and run controlled hook/first-frame experiments.
