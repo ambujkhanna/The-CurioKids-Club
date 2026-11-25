@@ -80,8 +80,8 @@ class GrowthBriefTests(unittest.TestCase):
             short_title = "How to Spot a Deepfake"
             long_title = "How to Spot a Deepfake: Clues, Source Checks & Fake Voice Calls"
         rows = [
-            {"video_id": "short1", "title": short_title, "content_type": "short"},
-            {"video_id": "long1", "title": long_title, "content_type": "long"},
+            {"video_id": "short1", "title": short_title, "content_type": "short", "language": "default"},
+            {"video_id": "long1", "title": long_title, "content_type": "long", "language": "default"},
         ]
         candidates = growth.build_related_video_candidates(rows)
         self.assertEqual(len(candidates), 1)
@@ -99,8 +99,17 @@ class GrowthBriefTests(unittest.TestCase):
             short_title = "5 Things You Should Never Upload to AI"
             long_title = "Why AI Makes Things Up (and How to Catch It)"
         rows = [
-            {"video_id": "short1", "title": short_title, "content_type": "short"},
-            {"video_id": "long1", "title": long_title, "content_type": "long"},
+            {"video_id": "short1", "title": short_title, "content_type": "short", "language": "default"},
+            {"video_id": "long1", "title": long_title, "content_type": "long", "language": "default"},
+        ]
+        self.assertEqual(growth.build_related_video_candidates(rows), [])
+
+
+    def test_related_video_candidates_never_cross_languages(self):
+        title = "How to Spot a Deepfake"
+        rows = [
+            {"video_id": "short1", "title": title, "content_type": "short", "language": "hi"},
+            {"video_id": "long1", "title": title, "content_type": "long", "language": "default"},
         ]
         self.assertEqual(growth.build_related_video_candidates(rows), [])
 
