@@ -21,9 +21,10 @@ Family-friendly, accurate, curiosity-led learning with Leo and Mia. Science, nat
 ### 2. Topic pillars and search demand
 - Core pillars: Space & Universe; Nature & Plants; Animals; Human Body; Everyday Science & Discoveries.
 - Prioritise evergreen child/parent/teacher questions (why/how/what happens) and verified search demand.
-- Treat trends as candidates only after a strict family-learning fit check.
-- Reject unrelated consumer-tech launches and topics that attract a materially different audience unless there is a clear educational angle.
-- Use channel analytics and topic-radar evidence; do not assume a topic is high-search without data.
+- Treat search trends as discovery signals, never as automatic episode ideas. Every candidate must pass a strict CurioKids family-learning fit gate before it can enter the backlog.
+- Accept only topics that naturally fit the five pillars and can be explained accurately and age-appropriately for children with a Leo/Mia-style curiosity hook.
+- Reject unrelated news, finance/markets (for example, why gold prices are falling), celebrity gossip, generic consumer-tech launches and topics that would attract a different audience. Do not force an educational angle onto an unrelated trend.
+- Use channel analytics and topic-radar evidence to prioritise only after channel fit is established; search volume alone never overrides the channel promise.
 
 ### 3. Multilingual strategy — CurioKids-specific
 - Current language footprint includes English, Hindi and Spanish Shorts. Keep the existing language-specific production rules and playlists intact.
@@ -33,7 +34,10 @@ Family-friendly, accurate, curiosity-led learning with Leo and Mia. Science, nat
 - Keep rhymes/poems and English-grammar lessons excluded from Spanish translation as already documented unless the owner changes that decision.
 
 ### 4. Playlists and deeper learning
-- Maintain clear owner-curated playlists for Space, Human Body, Nature/Plants, Animals and Everyday Science as the library supports them.
+- Use two complementary playlist dimensions: **topic playlists** (Space, Human Body, Nature/Plants, Animals, Everyday Science) and **language playlists** (English, Hindi, Spanish).
+- A single video may belong to multiple playlists, so do not choose between topic and language organisation. Add each eligible video to its relevant topic playlist and its language playlist; a video may also belong to a focused series playlist when useful.
+- Keep language playlists clearly labelled and avoid mixing dubbed/separate-language versions in a way that misleads viewers. Use the actual spoken language of each upload.
+- Maintain playlists as owner-curated channel organisation; playlist membership does not require duplicate uploads.
 - Identify Shorts that have a genuinely matching long-form video and recommend a Related Video link when the feature and content are eligible.
 - Do not rely on end screens/cards/comments or viewer playlist-saving for Made for Kids content; check current YouTube restrictions before designing a CTA.
 
