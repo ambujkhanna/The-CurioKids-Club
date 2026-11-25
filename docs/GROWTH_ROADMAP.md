@@ -121,3 +121,15 @@ The first live feature-branch analytics artifacts were generated for 2026-10-26 
 ## Topic-level performance implementation — 2026-11-25
 
 Growth briefs now group analytics by the channel-specific topic taxonomy and format (Shorts vs long-form), including video count, views, engaged views, engaged-view rate, weighted average viewed percentage and subscribers per 1,000 views. A video may match more than one topic; unmatched titles remain manual review and are not guessed. If Reach Basic is available, the same brief adds long-form thumbnail impressions and CTR for packaging review; Shorts-feed swipe behaviour is never inferred from CTR.
+
+
+## Related Video recommendations — 2026-11-25
+
+The growth brief now generates conservative Short-to-long-form candidates using shared title terms, matching topic tags and a same-spoken-language guard. These are advisory only. Latest artifacts contain 1 CurioKids candidate and 3 AInation candidates. The owner must confirm that each long-form video is genuinely the same lesson before adding a Related Video in Studio. No links were changed automatically.
+
+## Remaining owner-led growth work
+
+- Review playlist assignment previews and decide whether to create/update live playlists; the current planner is intentionally review-only.
+- Validate the actual publish timestamps in episode state against YouTube before treating age-matched cohorts as authoritative.
+- Review Instagram profile bios, channel links and link-in-bio CTAs; no profile mutation is automated.
+- Run controlled creative experiments (opening hook/first frame/visual sequence/loop) and evaluate matched-age retention. No scripts or published assets are automatically changed.
