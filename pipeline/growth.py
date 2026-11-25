@@ -107,7 +107,7 @@ def read_reach_rows(path: Path) -> list[dict]:
 
 
 TITLE_STOPWORDS = {"why", "what", "how", "does", "do", "is", "are", "the", "a", "an", "your", "our",
-                   "my", "for", "kids", "fun", "facts", "full", "video", "short", "explained", "guide",
+                   "my", "for", "kids", "fun", "facts", "full", "video", "short", "explained", "guide", "thing", "things",
                    "and", "with", "to", "of", "in", "on", "can", "you", "it", "from", "this", "that", "ai"}
 
 
