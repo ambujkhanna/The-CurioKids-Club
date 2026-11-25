@@ -23,5 +23,22 @@ class PlaylistPlanTests(unittest.TestCase):
         keys = [(r["video_id"], r["playlist"]) for r in rows]
         self.assertEqual(len(keys), len(set(keys)))
 
+    def test_obvious_curiosity_topics_get_topic_assignments(self):
+        if not playlist_plan.KIDS:
+            self.skipTest("CurioKids topic taxonomy only")
+        cases = {
+            "Why Does an Octopus Have 3 Hearts?": "Animals",
+            "Why Do Zebras Have Stripes?": "Animals",
+            "Why Do We Blink?": "Human Body",
+            "Eight Planets Rhyme": "Space & Universe",
+            "Why Is the Sky Blue?": "Everyday Science & Discoveries",
+        }
+        for title, expected in cases.items():
+            with self.subTest(title=title):
+                rows = playlist_plan.assignments({"x": {"title": title, "language": "default"}})
+                names = {r["playlist"] for r in rows}
+                self.assertIn(expected, names)
+                self.assertNotIn("Needs manual topic review", names)
+
 if __name__ == "__main__":
     unittest.main()
