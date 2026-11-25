@@ -4,6 +4,8 @@ on:
   pull_request:
     paths:
       - "pipeline/growth.py"
+      - "pipeline/radar.py"
+      - "pipeline/playlist_plan.py"
       - "tests/**"
       - ".github/workflows/growth-tests.yml"
 
