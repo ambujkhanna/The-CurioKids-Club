@@ -71,6 +71,25 @@ class GrowthBriefTests(unittest.TestCase):
         self.assertEqual(data["long_form_packaging"][0]["impressions_ctr_pct"], 4.0)
         self.assertIn("Long-form thumbnail reach", md)
 
+
+    def test_related_video_candidates_are_review_only_and_topic_aware(self):
+        if growth.playlist_plan.KIDS:
+            short_title = "How Does Your Heart Pump Blood?"
+            long_title = "How Your Heart Works | Full Video for Kids"
+        else:
+            short_title = "What Not to Tell AI"
+            long_title = "What Not to Tell AI: Privacy Rules for Chatbots"
+        rows = [
+            {"video_id": "short1", "title": short_title, "content_type": "short"},
+            {"video_id": "long1", "title": long_title, "content_type": "long"},
+        ]
+        candidates = growth.build_related_video_candidates(rows)
+        self.assertEqual(len(candidates), 1)
+        self.assertEqual(candidates[0]["short_video_id"], "short1")
+        self.assertEqual(candidates[0]["long_video_id"], "long1")
+        self.assertEqual(candidates[0]["review_status"], "manual review")
+        self.assertTrue(candidates[0]["shared_topics"])
+
     def test_empty_rows_are_safe(self):
         data, md = growth.build_brief([], "aination-studio")
         self.assertEqual(data["video_rows"], 0)
