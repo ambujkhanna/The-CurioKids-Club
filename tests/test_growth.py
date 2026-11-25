@@ -32,6 +32,45 @@ class GrowthBriefTests(unittest.TestCase):
         self.assertIn("unmapped123", md)
         self.assertIn("not assigned to episodes automatically", md)
 
+
+    def test_topic_performance_uses_channel_taxonomy(self):
+        if growth.playlist_plan.KIDS:
+            title = "Why Is the Sky Blue?"
+            expected = "Everyday Science & Discoveries"
+        else:
+            title = "What Is AI? ChatGPT prompts"
+            expected = "AI Explained"
+        rows = [
+            {"video_id": "one", "title": title, "content_type": "short", "views": 100,
+             "engaged_views": 60, "average_view_percentage": 50, "subscribers_gained": 2},
+            {"video_id": "two", "title": title, "content_type": "short", "views": 50,
+             "engaged_views": 30, "average_view_percentage": 70, "subscribers_gained": 1},
+        ]
+        topics, unmatched = growth.aggregate_topic_performance(rows)
+        match = next(x for x in topics if x["topic"] == expected)
+        self.assertEqual(match["video_count"], 2)
+        self.assertEqual(match["views"], 150)
+        self.assertEqual(match["engaged_views"], 90)
+        self.assertEqual(match["engaged_view_rate_pct"], 60.0)
+        self.assertEqual(unmatched, [])
+
+    def test_reach_metrics_are_added_to_long_form_packaging_only(self):
+        rows = [
+            {"video_id": "short1", "title": "What Is AI? ChatGPT prompts", "content_type": "short",
+             "views": 100, "engaged_views": 60, "average_view_percentage": 50},
+            {"video_id": "long1", "title": "Full AI Tutorial", "content_type": "long",
+             "views": 200, "engaged_views": 100, "average_view_percentage": 45},
+        ]
+        reach = [
+            {"video_id": "short1", "impressions": 1000, "impressions_ctr": 0.05},
+            {"video_id": "long1", "impressions": 5000, "impressions_ctr": 0.04},
+        ]
+        data, md = growth.build_brief(rows, "aination-studio", reach_rows=reach)
+        self.assertEqual(len(data["long_form_packaging"]), 1)
+        self.assertEqual(data["long_form_packaging"][0]["video_id"], "long1")
+        self.assertEqual(data["long_form_packaging"][0]["impressions_ctr_pct"], 4.0)
+        self.assertIn("Long-form thumbnail reach", md)
+
     def test_empty_rows_are_safe(self):
         data, md = growth.build_brief([], "aination-studio")
         self.assertEqual(data["video_rows"], 0)
