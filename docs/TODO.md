@@ -28,3 +28,19 @@ Plan: [`docs/PINTEREST_PLAN.md`](PINTEREST_PLAN.md)
 - [ ] **Owner:** daily: make API uploads public in YouTube Studio until Google approves the API audit
 - [ ] Old branch `feature/modern-visual-engine` (kids): archive tag + delete, or keep
 - [ ] Old branches still on GitHub (both repos): `feat/growth-unmapped-review`, `feat/youtube-growth-engine`, `fix/analytics-push-paths` (+ AInation `fix/episode-id-case-insensitive`): delete (all merged)
+
+
+## E. Shared channel growth audit (2026-11-25)
+Plan and audit: [`docs/GROWTH_ROADMAP.md`](GROWTH_ROADMAP.md) · [`docs/GROWTH_AUDIT_2026-11-25.md`](GROWTH_AUDIT_2026-11-25.md)
+
+- [x] Create a fresh growth branch from current `main` in both repos; port only shared topic-fit/playlist-planner work.
+- [x] Record the latest retrievable historical analytics baseline and current published-state playlist inventory preview.
+- [x] Audit API availability for country/language, thumbnail reach, Stayed to watch, audience retention and age-matched cohorts.
+- [ ] Run fresh analytics collection in both repos; confirm country/language and playlist-plan artifacts.
+- [ ] Improve planner taxonomy for obvious on-pillar titles and add regression tests.
+- [ ] Extend country report with supported engaged/subscriber metrics, custom-script English grouping and correct share denominator.
+- [ ] Prototype Reporting API Reach Basic and bounded single-video retention collection.
+- [ ] Preserve publication timestamps and add 7/14/28-day age-matched comparisons.
+- [ ] Run CI and explicitly selected render-only Daily Short dry-runs; AInation regression check uses EP020.
+
+**Guardrails:** no upload-token changes, no publishing/visibility/schedule changes, no live playlist or metadata edits, and no automatic script changes.
