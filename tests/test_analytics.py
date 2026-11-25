@@ -141,12 +141,15 @@ class AnalyticsTests(unittest.TestCase):
             indonesia = next(x for x in kids if x["country_code"] == "ID")
             self.assertEqual(india["primary_market_language"], "Hindi")
             self.assertEqual(india["localized_views"], 60)
+            self.assertEqual(india["localized_avg_viewed_pct"], 65.0)
             self.assertIsNone(indonesia["localized_views"])
             analytics.market_opportunity_report(root, "aination-studio")
             ai = json.loads((root / "market_opportunities.json").read_text(encoding="utf-8"))
             india_ai = next(x for x in ai if x["country_code"] == "IN")
             self.assertEqual(india_ai["planned_production_language"], "English (current AInation policy)")
             self.assertEqual(india_ai["primary_market_language"], "Hindi")
+            us_ai = next(x for x in ai if x["country_code"] == "US")
+            self.assertEqual(us_ai["evidence_note"], "English-language performance (AInation; no localization)")
 
     def test_metadata_uses_publish_date_and_upload_fallback(self):
         import json
