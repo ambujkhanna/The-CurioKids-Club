@@ -28,7 +28,9 @@ Family-friendly, accurate, curiosity-led learning with Leo and Mia. Science, nat
 
 ### 3. Multilingual strategy — CurioKids-specific
 - Current language footprint includes English, Hindi and Spanish Shorts. Keep the existing language-specific production rules and playlists intact.
-- Review audience-by-country and language-version performance before adding any language or expanding translation scope.
+- Focus future market-specific production on one primary language per country: Hindi for India, English for the United States, Indonesian for Indonesia, Portuguese for Brazil, Spanish for Mexico, Japanese for Japan, German for Germany, Vietnamese for Vietnam, Filipino/Tagalog for the Philippines and Turkish for Turkey.
+- India is Hindi-only for new market targeting: do not create Tamil, Telugu or Bengali videos. Do not add secondary/regional-language variants in other markets merely because those languages are spoken there.
+- Review audience-by-country and language-version performance before adding any language or expanding translation scope; explicit owner approval is required.
 - Evaluate YouTube multi-language audio on a single upload as an option, but first verify channel/format eligibility, availability in Studio, dubbing quality, translated metadata and how it coexists with the current separate-language uploads/playlists.
 - Do not automatically migrate or duplicate content. Compare reach, watch behaviour and operational cost for the current setup versus a controlled pilot.
 - Keep rhymes/poems and English-grammar lessons excluded from Spanish translation as already documented unless the owner changes that decision.
