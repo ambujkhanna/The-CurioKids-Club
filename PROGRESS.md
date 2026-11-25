@@ -161,3 +161,6 @@
 - [ ] Generate the actual playlist assignment report from current published episode state and reconcile gaps against YouTube Analytics inventory.
 - [ ] Continue analytics enhancements (reach metrics, audience-retention report, format/age comparisons and historical opportunity report) after confirming the exact API/report support and safe credentials.
 - No YouTube write API was called. No live playlists, video metadata, upload state, schedules, credentials or publishing workflows were changed. All changes remain on `docs/channel-growth-roadmap-2026-11`.
+
+- [x] Wired the review-only playlist planner into the read-only analytics workflow so the generated CSV/Markdown mapping is included in the analytics artifact after the next scheduled or manually approved analytics run.
+- [x] Restored the accidental default-branch workflow edits; verified the original workflow blob is back on `main`. Intended workflow integration exists only on the roadmap branch.
