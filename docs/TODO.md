@@ -37,7 +37,7 @@ Plan and audit: [`docs/GROWTH_ROADMAP.md`](GROWTH_ROADMAP.md) · [`docs/GROWTH_A
 - [x] Record the latest retrievable historical analytics baseline and current published-state playlist inventory preview.
 - [x] Audit API availability for country/language, thumbnail reach, Stayed to watch, audience retention and age-matched cohorts.
 - [ ] Run fresh analytics collection in both repos; confirm country/language and playlist-plan artifacts.
-- [ ] After fresh country data, rank the top 3–4 country/language opportunities separately per channel using the owner-supplied shortlist; AInation multilingual expansion remains out of scope.
+- [ ] After fresh country data, rank country opportunities using the owner's primary-language-only rule (Hindi/India, English/US, Indonesian/Indonesia, etc.); exclude Tamil, Telugu and Bengali production. AInation remains English-only.
 - [x] Improve planner taxonomy for obvious on-pillar titles and add regression tests (preview now leaves 2 CurioKids and 1 AInation manual-review videos).
 - [x] Extend country report with supported engaged/subscriber metrics, custom-script English grouping and a clearly labelled share of returned country views; fresh API artifact verification pending.
 - [ ] Prototype Reporting API Reach Basic and bounded single-video retention collection.
