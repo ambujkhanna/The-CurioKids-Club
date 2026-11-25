@@ -1,6 +1,6 @@
 # CurioKids Club — channel growth roadmap
 
-**Status:** approved planning baseline; implementation not yet validated.  
+**Status:** implemented on the shared feature branch; analytics artifacts and CI validated. Reach API enablement and render-only visual checks remain pending.  
 **Updated:** 2026-11-25  
 **Scope:** The CurioKids Club only. This plan deliberately keeps kids-specific language, audience-safety and creative requirements out of AInation's plan.
 
