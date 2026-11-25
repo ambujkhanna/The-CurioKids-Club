@@ -77,8 +77,8 @@ class GrowthBriefTests(unittest.TestCase):
             short_title = "How Does Your Heart Pump Blood?"
             long_title = "How Your Heart Works | Full Video for Kids"
         else:
-            short_title = "What Not to Tell AI"
-            long_title = "What Not to Tell AI: Privacy Rules for Chatbots"
+            short_title = "How to Spot a Deepfake"
+            long_title = "How to Spot a Deepfake: Clues, Source Checks & Fake Voice Calls"
         rows = [
             {"video_id": "short1", "title": short_title, "content_type": "short"},
             {"video_id": "long1", "title": long_title, "content_type": "long"},
@@ -89,6 +89,20 @@ class GrowthBriefTests(unittest.TestCase):
         self.assertEqual(candidates[0]["long_video_id"], "long1")
         self.assertEqual(candidates[0]["review_status"], "manual review")
         self.assertTrue(candidates[0]["shared_topics"])
+
+
+    def test_related_video_candidates_reject_weak_cross-topic_matches(self):
+        if growth.playlist_plan.KIDS:
+            short_title = "Why Do Cats Purr?"
+            long_title = "How Your Heart Works | Full Video for Kids"
+        else:
+            short_title = "5 Things You Should Never Upload to AI"
+            long_title = "Why AI Makes Things Up (and How to Catch It)"
+        rows = [
+            {"video_id": "short1", "title": short_title, "content_type": "short"},
+            {"video_id": "long1", "title": long_title, "content_type": "long"},
+        ]
+        self.assertEqual(growth.build_related_video_candidates(rows), [])
 
     def test_empty_rows_are_safe(self):
         data, md = growth.build_brief([], "aination-studio")
