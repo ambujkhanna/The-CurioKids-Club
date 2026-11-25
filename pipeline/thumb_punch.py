@@ -161,6 +161,8 @@ def _language_badge(c, K, lang, x, y, tf, size):
     width = T._ms(font, label)
     pad_x, pad_y = size * 0.52, size * 0.30
     w, h = width + pad_x * 2, size + pad_y * 2
+    if x is None:  # center the badge beneath the portrait headline
+        x = (_FW - w) / 2
     rect = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(x, y, w, h), h / 2, h / 2)
     shadow = T._P(K, "#000000", a=0.28)
     shadow.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, size * 0.12))
@@ -238,8 +240,8 @@ def make(path, K, chars, ep, ico, t_pose=None):
     for ch, (x, y, s) in reversed(list(zip(cast, spots))):
         _char(c, K, ch, t, x, y, s)
     # headline last, on top of everything
-    _headline(c, K, ep, tf, 540, 350, 1000, 200)
-    _language_badge(c, K, os.environ.get("THUMB_LANG", "en"), 70, 175, tf, 42)
+    headline_bottom = _headline(c, K, ep, tf, 540, 350, 1000, 200)
+    _language_badge(c, K, os.environ.get("THUMB_LANG", "en"), None, headline_bottom + 24, tf, 42)
     _part_ribbon(c, K, ep, tf, 40, 1020, 64)
     img = surf.makeImageSnapshot()
     if hasattr(K, "grade"): img = K.grade(img)
@@ -265,8 +267,8 @@ def make_wide(path, K, chars, ep, ico, t_pose=None):
         _char(c, K, ch, t, x, y, s)
     c.drawRoundRect(skia.Rect.MakeXYWH(30, 22, 330, 60), 30, 30, T._P(K, "#FFFFFF", a=0.92))
     K.logo(c, 195, 52, 0.72, tcol="#1D1D1F")
-    _headline(c, K, ep, tf, 40, 200, 700, 118, align="l", rot=-3)
-    _language_badge(c, K, os.environ.get("THUMB_LANG", "en"), 390, 28, tf, 28)
+    headline_bottom = _headline(c, K, ep, tf, 40, 200, 700, 118, align="l", rot=-3)
+    _language_badge(c, K, os.environ.get("THUMB_LANG", "en"), 40, headline_bottom + 12, tf, 28)
     _part_ribbon(c, K, ep, tf, 640, 400, 40)
     hy = 490
     if len(icons) == 2:
