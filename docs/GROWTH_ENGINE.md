@@ -39,3 +39,24 @@ python pipeline/growth.py --csv out/analytics/<report>.csv --channel-key CHANNEL
 - The daily workflow loads the latest brief into its run summary. The step is optional (`continue-on-error`, 5-minute limit): a GitHub API problem there never stops a video.
 - Open check: one daily **Dry run** that shows the brief in its summary.
 - Dated validation notes are kept in `docs/GROWTH_ENGINE_LOG.md`; status changes go to the channel handoff's change log.
+
+
+## Channel growth roadmap (2026-11-25)
+
+The channel-specific approved plan is in [`docs/GROWTH_ROADMAP.md`](GROWTH_ROADMAP.md). It extends the existing analytics-led learning loop; it does not replace it.
+
+CurioKids priorities: immediate Leo question/first-frame hook; purposeful educational visuals and continuous 3D process animation; evergreen family-learning topic pillars; evidence-led English/Hindi/Spanish strategy; playlists and eligible Related Video links; Instagram profile alignment.
+
+### Delivery sequence
+1. Baseline and data quality (metadata coverage, metric availability, Shorts/long-form and publication-age cohorts).
+2. Analytics gap investigation: impressions/CTR where eligible, Shorts Stayed to watch where accessible, audience-retention curve availability.
+3. Advisory content intelligence: topic pillars, hook/first-frame/visual progression/payoff/factual checks, historical opportunities.
+4. Channel-specific workstreams and owner-reviewed packaging/link recommendations.
+5. Unit/sample-data tests, read-only analytics validation and explicit render-only dry-runs.
+
+### Non-negotiable guardrails
+- Analytics-only OAuth remains read-only; upload credentials are not touched.
+- Growth recommendations never automatically edit scripts, titles, thumbnails, queues, schedules or published videos.
+- No publishing workflow dispatch for validation. Use render-only dry-runs.
+- CurioKids must respect Made for Kids restrictions; do not rely on comments, cards, end screens or viewer playlist-saving.
+- Establish baselines before numerical targets. Missing API metrics are reported as unavailable, never fabricated.
