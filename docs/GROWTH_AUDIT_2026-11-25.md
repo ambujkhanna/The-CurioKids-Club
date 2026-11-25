@@ -143,3 +143,16 @@ Retention collection returned 10 curves per channel with 961 CurioKids points an
 Reach Basic code and workflow integration are implemented, but the run log reports HTTP 403 SERVICE_DISABLED: YouTube Reporting API is not enabled in Google Cloud project 702229494667. No Reach report job or Reach artifact was created. Enable the API in that project, then the next scheduled/triggered workflow will create the daily report job; YouTube may take up to 24 hours to produce the first report.
 
 The first market report exposed a calculation issue in the localized average-viewed field; the code and regression test have been corrected and a fresh run is in progress. Do not use the old 0.0% localized values.
+
+
+## Corrected market-report verification — 2026-11-25
+
+Latest code and regression tests passed, and fresh artifacts were regenerated:
+
+- CurioKids analytics run [45657535212](https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/45657535212); AInation run [45657556902](https://github.com/ambujkhanna/youtube-studio-automation/actions/runs/45657556902).
+- CurioKids primary-language report: United States 1,322 total country views / 1,233 English-main views (56.3% avg viewed); India 642 total / 344 Hindi views (13.3% avg viewed); Philippines 108 total with no Filipino/Tagalog version evidence; Indonesia 30 total with no Indonesian version evidence.
+- AInation report: India 90, United States 66 (25 from English-main group; 35.2% avg viewed), Philippines 51 (English group; 41.0% avg viewed), Indonesia 35 (English group; 45.6% avg viewed). These are English-only results; no local-language production is recommended.
+- The localized average-viewed calculation and evidence labels are now corrected. The earlier 0.0% localized averages were a bug and are superseded by these figures.
+- Playlist-plan artifacts: 66 CurioKids assignment rows with 2 manual topic reviews; 79 AInation rows with 1 manual topic review. All assignments remain review-only.
+- Retention curves: 10 videos per channel, 961 CurioKids points and 900 AInation points, zero query errors. Age cohorts: 16 CurioKids rows across 12 videos and 21 AInation rows across 15 videos, zero query errors.
+- Reach Basic still has no artifact: the Google Cloud project must enable YouTube Reporting API before the daily job can be created and reports collected.
