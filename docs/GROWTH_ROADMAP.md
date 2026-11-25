@@ -102,3 +102,12 @@ Family-friendly, accurate, curiosity-led learning with Leo and Mia. Science, nat
 - No new visual default until the owner reviews mobile-size rendered output.
 - No automatic changes to published videos or production schedules.
 - First deliverable is a data-quality-aware growth report; later implementation can add metrics and checks incrementally.
+
+
+## Analytics implementation update — 2026-11-25
+
+- Country reports include supported engaged-view and subscriber metrics and are grouped by published language version. The market-opportunity report ranks target countries by actual returned views and distinguishes localized-language evidence from all-language country totals.
+- The owner language policy is enforced in recommendations: India = Hindi only (no Tamil, Telugu or Bengali); CurioKids retains existing English/Hindi/Spanish; AInation remains English-only.
+- The analytics collector now preserves publish timestamps from episode state (scheduled publish time preferred; upload time is a fallback), produces complete 7/14/28-day age-matched cohorts for the top 20 videos, and requests audience-retention curves for the top 10 videos.
+- A YouTube Reporting API Reach Basic collector captures thumbnail impressions and CTR. The workflow ensures a daily Reach Basic job exists; reports may take up to 24 hours after job creation to appear.
+- CI has passed for the analytics, market-opportunity and Reach API parsing tests. Fresh artifact/runtime verification is tracked separately; render-only video checks remain owner validation tasks.
