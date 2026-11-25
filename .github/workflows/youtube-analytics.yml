@@ -97,7 +97,7 @@ jobs:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_ANALYTICS_REFRESH_TOKEN: ${{ secrets.YT_ANALYTICS_REFRESH_TOKEN }}
-        run: python pipeline/reach_reporting.py --output-dir out/analytics
+        run: python pipeline/reach_reporting.py --ensure-job --output-dir out/analytics
 
       - name: Build review-only topic and language playlist plan
         if: success()
