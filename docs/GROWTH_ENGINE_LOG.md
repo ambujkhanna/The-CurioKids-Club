@@ -114,3 +114,8 @@ PR #3 merged (`b067f31668b2217f01a304900a8b4122e0bc42fa`). Push-triggered analyt
 ## 2026-11-25 — Country report enrichment
 
 The country report now includes engaged views, engaged views/views (not Shorts Stayed to watch), subscribers gained/lost, subscribers gained per 1,000 views, average duration and average viewed percentage. Added custom `script` and explicit `en` language groups. Country share is labelled as a share of returned country rows (up to 200), not asserted to be a perfect global denominator. Unit tests added; CI rerun and live artifact verification pending.
+
+
+## 2026-11-25 — Country report CI result
+
+The enriched country-report tests passed in CurioKids run 45654199219 and AInation run 45654217704. Live API output still needs verification by manually running the YouTube Analytics workflow on `feat/shared-growth-audit-2026-11`.
