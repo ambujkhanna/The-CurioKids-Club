@@ -101,3 +101,11 @@ PR #3 merged (`b067f31668b2217f01a304900a8b4122e0bc42fa`). Push-triggered analyt
 - Official API audit: thumbnail impressions/CTR are in YouTube Reporting API Reach Basic/Reach Combined; audience-retention curves are supported through single-video Analytics API queries; Shorts Stayed-to-watch is not a standalone targeted API metric and must not be derived from engagedViews.
 - Publication-age cohorts require normalized publication timestamps from state plus daily video reports. Per-video subscribersGained must be labelled as watch-page-attributed, not total channel subscriber conversion.
 - Fresh analytics collection, CI and render-only workflow checks remain pending. No upload token or publishing behaviour was changed.
+
+
+## 2026-11-25 — CI validation
+
+- CurioKids growth-engine tests passed in GitHub Actions run 45653482421.
+- AInation growth-engine tests passed in run 45653499001 after normalizing topic-filter inputs in `_ok()`.
+- Playlist planner taxonomy refinements and regression tests are included in both branches. Current state preview leaves 2 CurioKids and 1 AInation item for manual review.
+- Fresh analytics artifact and explicit render-only daily workflow checks remain pending. No PR merged or publishing action dispatched.
