@@ -65,6 +65,50 @@ class AnalyticsTests(unittest.TestCase):
             finally:
                 db.close()
 
+    def test_country_report_includes_engaged_and_subscriber_metrics(self):
+        class Query:
+            def query(self, **kwargs):
+                self.kwargs = kwargs
+                return self
+            def execute(self):
+                return {
+                    "columnHeaders": [
+                        {"name": "country"}, {"name": "views"}, {"name": "engagedViews"},
+                        {"name": "estimatedMinutesWatched"}, {"name": "averageViewDuration"},
+                        {"name": "averageViewPercentage"}, {"name": "subscribersGained"},
+                        {"name": "subscribersLost"},
+                    ],
+                    "rows": [["IN", 100, 70, 50, 5, 60, 4, 1]],
+                }
+        query = Query()
+        class Service:
+            def reports(self):
+                return query
+
+        rows = analytics.fetch_countries(Service(), "2026-10-01", "2026-10-28")
+        self.assertEqual(query.kwargs["maxResults"], 200)
+        self.assertEqual(rows[0]["engaged_views"], 70)
+        self.assertEqual(rows[0]["engaged_view_rate_pct"], 70.0)
+        self.assertEqual(rows[0]["subscribers_gained"], 4)
+        self.assertEqual(rows[0]["subs_per_1k_views"], 40.0)
+
+    def test_audience_report_includes_custom_script_english_group(self):
+        from unittest.mock import patch
+        import tempfile
+        from pathlib import Path
+
+        calls = []
+        def fake_fetch(service, start, end, ids=None, top=15):
+            calls.append(ids)
+            return []
+        with tempfile.TemporaryDirectory() as folder:
+            with patch.object(analytics, "fetch_countries", side_effect=fake_fetch):
+                analytics.audience_report(None, "2026-10-01", "2026-10-28",
+                    {"script-video": {"language": "script"}}, Path(folder))
+            report = (Path(folder) / "audience_countries.md").read_text(encoding="utf-8")
+        self.assertIn(["script-video"], calls)
+        self.assertIn("English custom/script videos", report)
+
 
 if __name__ == "__main__":
     unittest.main()
