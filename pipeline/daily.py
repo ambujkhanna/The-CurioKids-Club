@@ -197,25 +197,26 @@ def chapters(ep):
 THUMB = os.path.join(PIPE, "build", "thumbnail.jpg")
 
 
-def remake_thumb(eid, epf, hi=False):
+def remake_thumb(eid, epf, lang="en"):
     """Make one video's designed thumbnail on its own (fresh file every time - never reuse an older one).
     Returns the JPG path, or None if it could not be made."""
     if os.path.exists(THUMB): os.remove(THUMB)
-    sh([sys.executable, os.path.join(PIPE, "tts.py")], {"EPISODE": epf, "TTS_ENGINE": "kokoro", "TTS_LANG": "hi" if hi else "en"})
+    sh([sys.executable, os.path.join(PIPE, "tts.py")], {"EPISODE": epf, "TTS_ENGINE": "kokoro", "TTS_LANG": lang})
     sh([sys.executable, os.path.join(PIPE, "episode_engine.py"), "x"],
-       {"EPISODE": epf, "BG": "kids", "DOODLE": "chars", "FORMAT": "long" if LONG else "short", "THUMB_ONLY": "1"}, cwd=PIPE)
+       {"EPISODE": epf, "BG": "kids", "DOODLE": "chars", "FORMAT": "long" if LONG else "short", "THUMB_ONLY": "1", "THUMB_LANG": lang}, cwd=PIPE)
     if not os.path.exists(THUMB): return None
     os.makedirs(OUT, exist_ok=True)
-    import shutil; dst = os.path.join(OUT, f"{eid}{'_hi' if hi else ''}_thumbnail.jpg"); shutil.copy(THUMB, dst)
-    if hi: hindi_badge(dst)
+    import shutil
+    suffix = "_hi" if lang == "hi" else "_es" if lang == "es" else ""
+    dst = os.path.join(OUT, f"{eid}{suffix}_thumbnail.jpg"); shutil.copy(THUMB, dst)
     return dst
 
 
 def _uploaded(state):
     """(eid, hi, record) for every uploaded video, incl. Hindi versions (record['hi'])."""
     for eid, rec in state["episodes"].items():
-        for hi, r in ((False, rec), (True, rec.get("hi") or {})):
-            if r.get("status") == "uploaded" and r.get("video_id"): yield eid, hi, r
+        for lang, r in (("en", rec), ("hi", rec.get("hi") or {}), ("es", rec.get("es") or {})):
+            if r.get("status") == "uploaded" and r.get("video_id"): yield eid, lang, r
 
 
 def _video_dirs():
@@ -289,18 +290,18 @@ def refresh_thumbnails(only=None):
         sf = os.path.join(d, "state.json")
         if not os.path.exists(sf): continue
         state = json.load(open(sf)); eps = _dir_episodes(d)
-        for eid, hi, rec in sorted(_uploaded(state), key=lambda x: (x[0], x[1])):
+        for eid, lang, rec in sorted(_uploaded(state), key=lambda x: (x[0], x[1])):
             if eid not in eps or (only and eid != only): continue
             rec.pop("facebook_cover", None)
             try:
-                dst = remake_thumb(eid, eps[eid], hi)
+                dst = remake_thumb(eid, eps[eid], lang)
                 rec["thumbnail"] = set_thumbnail(rec["video_id"], dst) if dst else "refresh failed: thumbnail could not be made"
                 m = _re.search(r"(\d{6,})", str(rec.get("facebook", "")))  # also the cover of the Facebook Reel/video
                 if dst and m and meta_post.have_meta() and str(rec.get("facebook", "")).startswith("posted"):
                     rec["facebook_cover"] = meta_post.fb_set_thumbnail(m.group(1), dst)
             except Exception as e:
                 rec["thumbnail"] = f"refresh failed: {e}"[:200]
-            label = eid + (" (Hindi)" if hi else "")
+            label = eid + (f" ({lang.upper()})" if lang != "en" else "")
             done.append(f"- {label}: YouTube {rec['thumbnail']}" + (f" | Facebook {rec['facebook_cover']}" if rec.get("facebook_cover") else ""))
             print(label, rec["thumbnail"], flush=True)
         json.dump(state, open(sf, "w"), indent=2)
@@ -550,7 +551,7 @@ def main():
         import shutil; shutil.rmtree(frames, ignore_errors=True)
         if os.path.exists(THUMB): os.remove(THUMB)  # never upload an older video's thumbnail
         sh([sys.executable, os.path.join(PIPE, "tts.py")], {"EPISODE": epf, **VOICE_ENV, "TTS_LANG": "hi" if HI else "es" if ES else "en", **voice_env})
-        sh([sys.executable, os.path.join(PIPE, "episode_engine.py"), frames], {"EPISODE": epf, "BG": "kids", "DOODLE": "chars", "FORMAT": "long" if LONG else "short"}, cwd=PIPE)
+        sh([sys.executable, os.path.join(PIPE, "episode_engine.py"), frames], {"EPISODE": epf, "BG": "kids", "DOODLE": "chars", "FORMAT": "long" if LONG else "short", "THUMB_LANG": "hi" if HI else "es" if ES else "en"}, cwd=PIPE)
         sh([sys.executable, os.path.join(PIPE, "finish.py"), frames, "24", mp4], {"EPISODE": epf, "FORMAT": "long" if LONG else "short"})
     render({})
     if not HI and not ES and json.load(open(os.path.join(PIPE, "build", "timing.json"))).get("engine") == "chatterbox" and \
@@ -568,8 +569,6 @@ def main():
     thumb = mp4[:-4] + "_thumbnail.jpg"
     if os.path.exists(os.path.join(PIPE, "build", "thumbnail.jpg")):
         import shutil; shutil.copy(os.path.join(PIPE, "build", "thumbnail.jpg"), thumb)
-        if HI: hindi_badge(thumb)
-        if ES: hindi_badge(thumb, "ESPAÑOL", (0, 168, 107), below_logo=True)
     else:
         thumb = None
     problems = qc(mp4, ep)
