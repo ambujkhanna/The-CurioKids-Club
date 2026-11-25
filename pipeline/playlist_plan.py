@@ -35,12 +35,17 @@ else:
     }
     LANGUAGE = {"default": "English", "en": "English", "hi": "Hindi", "es": "Spanish", "trend": "English", "script": "English"}
 
+def classify_topics(title: str) -> list[str]:
+    """Return deterministic topic matches; an empty list means manual review, never a guessed category."""
+    words = set(__import__("re").findall(r"[a-z0-9]+", (title or "").lower()))
+    return [name for name, terms in TOPICS.items() if words & terms]
+
+
 def assignments(meta: dict[str, dict[str, str]]) -> list[dict[str, str]]:
     out = []
     for video_id, item in sorted(meta.items()):
         title = item.get("title", "").strip()
-        words = set(__import__("re").findall(r"[a-z0-9]+", title.lower()))
-        matched = [name for name, terms in TOPICS.items() if words & terms]
+        matched = classify_topics(title)
         language = LANGUAGE.get(item.get("language", "default"))
         playlists = matched[:]
         if language:
