@@ -1,7 +1,7 @@
 # Shared channel growth audit — 2026-11-25
 
 **Scope:** Shared analytics/growth-engine work for The CurioKids Club and AInation Studio. Channel-specific creative decisions remain separate.  
-**Status:** Historical baseline and API gap audit completed; fresh analytics, planner taxonomy refinement, CI and render-only workflow validation remain pending.
+**Status:** Shared growth implementation, fresh analytics artifacts and CI validated. Reach Basic is blocked by a disabled Google Cloud API; render-only visual validation remains pending.
 
 ## Analytics baseline and freshness
 
