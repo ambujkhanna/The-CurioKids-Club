@@ -1,0 +1,1 @@
+"""CurioKids thumbnail language badges."""
