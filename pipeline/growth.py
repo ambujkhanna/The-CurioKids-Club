@@ -106,6 +106,17 @@ def read_reach_rows(path: Path) -> list[dict]:
 
 
 
+def normalize_language(value: str) -> str:
+    value = (value or "").strip().lower()
+    if value in {"default", "en", "english", "script", "custom", "trend"}:
+        return "en"
+    if value in {"hi", "hindi"}:
+        return "hi"
+    if value in {"es", "spanish"}:
+        return "es"
+    return value
+
+
 TITLE_STOPWORDS = {"why", "what", "how", "does", "do", "is", "are", "the", "a", "an", "your", "our",
                    "my", "for", "kids", "fun", "facts", "full", "video", "short", "explained", "guide", "thing", "things",
                    "and", "with", "to", "of", "in", "on", "can", "you", "it", "from", "this", "that", "ai"}
@@ -118,10 +129,16 @@ def build_related_video_candidates(rows: list[dict], per_short: int = 2) -> list
     candidates = []
     for short in shorts:
         short_title = str(short.get("title") or "")
+        short_language = normalize_language(str(short.get("language") or ""))
+        if not short_language:
+            continue
         short_words = set(re.findall(r"[a-z0-9]+", short_title.lower())) - TITLE_STOPWORDS
         short_topics = set(playlist_plan.classify_topics(short_title))
         matches = []
         for long in longs:
+            long_language = normalize_language(str(long.get("language") or ""))
+            if not long_language or long_language != short_language:
+                continue
             long_title = str(long.get("title") or "")
             long_words = set(re.findall(r"[a-z0-9]+", long_title.lower())) - TITLE_STOPWORDS
             shared = sorted(short_words & long_words)
@@ -136,7 +153,7 @@ def build_related_video_candidates(rows: list[dict], per_short: int = 2) -> list
             if score < 0.25:
                 continue
             matches.append({
-                "short_video_id": str(short.get("video_id") or ""),
+                "short_video_id": str(short.get("video_id") or ""), "language": short_language,
                 "short_title": short_title,
                 "long_video_id": str(long.get("video_id") or ""),
                 "long_title": long_title,
@@ -243,10 +260,10 @@ def build_brief(rows: list[dict], channel_key: str, period: str = "latest availa
     lines += ["", "## Short-to-long Related Video candidates", "",
               "Review-only suggestions based on shared title terms and topic tags. Confirm the long-form video is genuinely the same lesson before adding a Related Video in YouTube Studio; nothing is changed automatically.", ""]
     if related_video_candidates:
-        lines += ["| Short | Suggested long-form video | Shared terms | Shared topic | Match score | Review |",
-                  "|---|---|---|---|---:|---|"]
+        lines += ["| Short | Suggested long-form video | Language | Shared terms | Shared topic | Match score | Review |",
+                  "|---|---|---|---|---|---:|---|"]
         for item in related_video_candidates:
-            lines.append(f"| {item['short_title'].replace('|','/')} ({item['short_video_id']}) | {item['long_title'].replace('|','/')} ({item['long_video_id']}) | {', '.join(item['shared_terms'])} | {', '.join(item['shared_topics'])} | {item['match_score']:.3f} | manual review |")
+            lines.append(f"| {item['short_title'].replace('|','/')} ({item['short_video_id']}) | {item['long_title'].replace('|','/')} ({item['long_video_id']}) | {item['language']} | {', '.join(item['shared_terms'])} | {', '.join(item['shared_topics'])} | {item['match_score']:.3f} | manual review |")
     else:
         lines.append("No sufficiently similar Short-to-long title pairs were found in the current report window.")
     lines += ["", "## Long-form thumbnail reach", ""]
