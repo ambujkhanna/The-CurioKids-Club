@@ -65,6 +65,8 @@ def metadata_from_state(root: Path = ROOT) -> dict[str, dict[str, str]]:
                 metadata[str(item["video_id"])] = {
                     "episode_id": str(eid), "title": str(item.get("title") or record.get("title") or eid),
                     "content_type": kind, "language": language, "video_url": str(item.get("url") or ""),
+                    "published_at": str(item.get("publish_at_ist") or item.get("published_at") or ""),
+                    "published_at_source": "publish_at_ist" if item.get("publish_at_ist") else ("published_at" if item.get("published_at") else ""),
                 }
     return metadata
 
@@ -161,12 +163,17 @@ def initialise_db(db: sqlite3.Connection) -> None:
     db.execute("""CREATE TABLE IF NOT EXISTS video_snapshots (
       channel_key TEXT NOT NULL, period_start TEXT NOT NULL, period_end TEXT NOT NULL, video_id TEXT NOT NULL,
       episode_id TEXT NOT NULL DEFAULT '', title TEXT NOT NULL DEFAULT '', content_type TEXT NOT NULL DEFAULT 'unknown',
-      language TEXT NOT NULL DEFAULT '', video_url TEXT NOT NULL DEFAULT '', views INTEGER NOT NULL DEFAULT 0,
+      language TEXT NOT NULL DEFAULT '', video_url TEXT NOT NULL DEFAULT '', published_at TEXT NOT NULL DEFAULT '',
+      published_at_source TEXT NOT NULL DEFAULT '', views INTEGER NOT NULL DEFAULT 0,
       engaged_views INTEGER NOT NULL DEFAULT 0, estimated_minutes_watched REAL NOT NULL DEFAULT 0,
       average_view_duration REAL NOT NULL DEFAULT 0, average_view_percentage REAL NOT NULL DEFAULT 0,
       likes INTEGER NOT NULL DEFAULT 0, comments INTEGER NOT NULL DEFAULT 0, shares INTEGER NOT NULL DEFAULT 0,
       subscribers_gained INTEGER NOT NULL DEFAULT 0, subscribers_lost INTEGER NOT NULL DEFAULT 0,
       collected_at_utc TEXT NOT NULL, PRIMARY KEY(channel_key, period_start, period_end, video_id))""")
+    columns = {row[1] for row in db.execute("PRAGMA table_info(video_snapshots)")}
+    for name in ("published_at", "published_at_source"):
+        if name not in columns:
+            db.execute(f"ALTER TABLE video_snapshots ADD COLUMN {name} TEXT NOT NULL DEFAULT ''")
     db.execute("""CREATE TABLE IF NOT EXISTS collection_runs (
       id INTEGER PRIMARY KEY AUTOINCREMENT, channel_key TEXT NOT NULL, period_start TEXT NOT NULL,
       period_end TEXT NOT NULL, collected_at_utc TEXT NOT NULL, video_count INTEGER NOT NULL, status TEXT NOT NULL)""")
@@ -180,13 +187,14 @@ def store_snapshot(db, channel_key, start, end, rows, metadata) -> str:
             values = {**row, **meta, "channel_key": channel_key, "period_start": start, "period_end": end,
                 "episode_id": meta.get("episode_id", ""), "title": meta.get("title", row["video_id"]),
                 "content_type": meta.get("content_type", "unknown"), "language": meta.get("language", ""),
-                "video_url": meta.get("video_url", ""), "collected_at_utc": stamp}
+                "video_url": meta.get("video_url", ""), "published_at": meta.get("published_at", ""),
+                "published_at_source": meta.get("published_at_source", ""), "collected_at_utc": stamp}
             db.execute("""INSERT OR REPLACE INTO video_snapshots (
-              channel_key,period_start,period_end,video_id,episode_id,title,content_type,language,video_url,
+              channel_key,period_start,period_end,video_id,episode_id,title,content_type,language,video_url,published_at,published_at_source,
               views,engaged_views,estimated_minutes_watched,average_view_duration,average_view_percentage,
               likes,comments,shares,subscribers_gained,subscribers_lost,collected_at_utc)
-              VALUES (:channel_key,:period_start,:period_end,:video_id,:episode_id,:title,:content_type,:language,
-              :video_url,:views,:engaged_views,:estimated_minutes_watched,:average_view_duration,
+              VALUES (:channel_key,:period_start,:period_end,:video_id,:episode_id,:title,:content_type,:language,:video_url,:published_at,:published_at_source,
+              :views,:engaged_views,:estimated_minutes_watched,:average_view_duration,
               :average_view_percentage,:likes,:comments,:shares,:subscribers_gained,:subscribers_lost,:collected_at_utc)""", values)
         db.execute("""INSERT INTO collection_runs(channel_key,period_start,period_end,collected_at_utc,video_count,status)
           VALUES(?,?,?,?,?,'success')""", (channel_key, start, end, stamp, len(rows)))
@@ -226,11 +234,180 @@ def export_outputs(db, output_dir: Path, channel_key: str, start: str, end: str)
     md_path.write_text("\n".join(lines), encoding="utf-8")
     return csv_path, md_path
 
+
+def parse_daily_rows(response: dict[str, Any]) -> list[dict[str, Any]]:
+    headers = [item["name"] for item in response.get("columnHeaders", [])]
+    out = []
+    for values in response.get("rows", []) or []:
+        row = dict(zip(headers, values))
+        if not row.get("day"):
+            continue
+        out.append({
+            "day": str(row["day"]), "views": number(row.get("views")),
+            "engaged_views": number(row.get("engagedViews")),
+            "minutes": number(row.get("estimatedMinutesWatched")),
+            "avg_duration": number(row.get("averageViewDuration")),
+            "avg_viewed_pct": number(row.get("averageViewPercentage")),
+            "subs_gained": number(row.get("subscribersGained")),
+        })
+    return out
+
+
+def build_age_cohorts(daily_rows: list[dict[str, Any]], published_at: str, as_of: str) -> list[dict[str, Any]]:
+    """Return cumulative 7/14/28-day metrics only when the full age window has elapsed."""
+    try:
+        published = dt.date.fromisoformat(str(published_at)[:10])
+        cutoff = dt.date.fromisoformat(str(as_of)[:10])
+    except (TypeError, ValueError):
+        return []
+    by_day = {str(row["day"]): row for row in daily_rows}
+    results = []
+    for days in (7, 14, 28):
+        window_end = published + dt.timedelta(days=days - 1)
+        if window_end > cutoff:
+            continue
+        selected = [by_day.get((published + dt.timedelta(days=i)).isoformat(), {}) for i in range(days)]
+        views = sum(number(x.get("views")) for x in selected)
+        engaged = sum(number(x.get("engaged_views")) for x in selected)
+        minutes = sum(number(x.get("minutes")) for x in selected)
+        viewed_weight = sum(number(x.get("avg_viewed_pct")) * number(x.get("views")) for x in selected)
+        duration_weight = sum(number(x.get("avg_duration")) * number(x.get("views")) for x in selected)
+        subs = sum(number(x.get("subs_gained")) for x in selected)
+        results.append({
+            "age_days": days, "window_start": published.isoformat(), "window_end": window_end.isoformat(),
+            "views": int(views), "engaged_views": int(engaged), "engaged_view_rate_pct": safe_rate(engaged, views),
+            "watch_minutes": round(minutes, 1),
+            "average_view_percentage": round(viewed_weight / views, 2) if views else 0.0,
+            "average_view_duration": round(duration_weight / views, 2) if views else 0.0,
+            "subscribers_gained": int(subs),
+        })
+    return results
+
+
+def fetch_daily_video_rows(service, video_id: str, start_date: str, end_date: str) -> list[dict[str, Any]]:
+    response = service.reports().query(
+        ids="channel==MINE", startDate=start_date, endDate=end_date, dimensions="day",
+        metrics="views,engagedViews,estimatedMinutesWatched,averageViewDuration,averageViewPercentage,subscribersGained",
+        filters="video==" + video_id, sort="day", maxResults=200,
+    ).execute()
+    return parse_daily_rows(response)
+
+
+def age_cohort_report(service, rows: list[dict[str, Any]], metadata: dict[str, dict[str, str]],
+                      start: str, end: str, out: Path, top_n: int = 20) -> Path | None:
+    """Build age-matched cohorts for the top N videos; one daily query per video."""
+    if top_n <= 0:
+        return None
+    report_end = dt.date.fromisoformat(end)
+    selected = sorted(rows, key=lambda x: number(x.get("views")), reverse=True)[:top_n]
+    output = []
+    for item in selected:
+        video_id = str(item.get("video_id") or "")
+        meta = metadata.get(video_id, {})
+        published = meta.get("published_at", "")
+        if not video_id or not published:
+            continue
+        try:
+            published_date = dt.date.fromisoformat(str(published)[:10])
+        except ValueError:
+            continue
+        if published_date > report_end:
+            continue
+        query_end = min(published_date + dt.timedelta(days=27), report_end)
+        try:
+            daily = fetch_daily_video_rows(service, video_id, published_date.isoformat(), query_end.isoformat())
+        except Exception as exc:
+            output.append({"video_id": video_id, "title": meta.get("title", video_id), "error": str(exc)[:180]})
+            continue
+        cohorts = build_age_cohorts(daily, published, end)
+        for cohort in cohorts:
+            output.append({"video_id": video_id, "title": meta.get("title", video_id),
+                           "language": meta.get("language", ""), "content_type": meta.get("content_type", ""),
+                           **cohort})
+    out.mkdir(parents=True, exist_ok=True)
+    (out / "age_matched_cohorts.json").write_text(json.dumps(output, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    md = ["# Age-matched video cohorts", "", f"**As of:** {end}", "",
+          "Metrics are cumulative from each video's recorded publish date. Only complete 7/14/28-day windows are shown; compare the same format and age. Publish dates come from episode state (publish_at_ist preferred), not independently verified YouTube metadata.", "",
+          "| Video | Language | Format | Age | Views | Engaged views | Engaged rate | Avg viewed | Subs gained |",
+          "|---|---|---|---:|---:|---:|---:|---:|---:|"]
+    for item in output:
+        if "error" in item:
+            md.append(f"| {item['title']} ({item['video_id']}) | | | | | | | | |")
+        else:
+            md.append(f"| {item['title'].replace('|', '/')} | {item.get('language','')} | {item.get('content_type','')} | {item['age_days']}d | {item['views']:,} | {item['engaged_views']:,} | {item['engaged_view_rate_pct']}% | {item['average_view_percentage']}% | {item['subscribers_gained']} |")
+    if not output:
+        md.append("No eligible videos had a recorded publish date and a complete cohort window.")
+    path = out / "age_matched_cohorts.md"
+    path.write_text("\n".join(md) + "\n", encoding="utf-8")
+    return path
+
+
+def fetch_retention_curve(service, video_id: str, start_date: str, end_date: str) -> list[dict[str, Any]]:
+    """Targeted retention query; YouTube requires one video ID per request."""
+    response = service.reports().query(
+        ids="channel==MINE", startDate=start_date, endDate=end_date,
+        dimensions="elapsedVideoTimeRatio", metrics="audienceWatchRatio,relativeRetentionPerformance",
+        filters="video==" + video_id, sort="elapsedVideoTimeRatio", maxResults=200,
+    ).execute()
+    headers = [item["name"] for item in response.get("columnHeaders", [])]
+    points = []
+    for values in response.get("rows", []) or []:
+        row = dict(zip(headers, values))
+        points.append({
+            "elapsed_video_time_ratio": number(row.get("elapsedVideoTimeRatio")),
+            "audience_watch_ratio": number(row.get("audienceWatchRatio")),
+            "relative_retention_performance": number(row.get("relativeRetentionPerformance")),
+        })
+    return points
+
+
+def retention_report(service, rows: list[dict[str, Any]], metadata: dict[str, dict[str, str]],
+                     start: str, end: str, out: Path, top_n: int = 10) -> Path | None:
+    """Collect retention curves for the top N videos, bounded to avoid one request per library item."""
+    if top_n <= 0:
+        return None
+    selected = sorted(rows, key=lambda x: number(x.get("views")), reverse=True)[:top_n]
+    data = []
+    for item in selected:
+        video_id = str(item.get("video_id") or "")
+        if not video_id:
+            continue
+        try:
+            points = fetch_retention_curve(service, video_id, start, end)
+            data.append({"video_id": video_id, "title": metadata.get(video_id, {}).get("title", video_id),
+                         "language": metadata.get(video_id, {}).get("language", ""),
+                         "content_type": metadata.get(video_id, {}).get("content_type", "unknown"),
+                         "points": points})
+        except Exception as exc:
+            data.append({"video_id": video_id, "title": metadata.get(video_id, {}).get("title", video_id),
+                         "error": str(exc)[:180], "points": []})
+    out.mkdir(parents=True, exist_ok=True)
+    path = out / "retention_curves.json"
+    path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    md = ["# Audience retention curves", "", f"**Reporting period:** {start} to {end}", "",
+          "Each curve is a separate video-level request. audienceWatchRatio is the share of the video's audience still watching at each elapsed-video-time ratio; relativeRetentionPerformance compares retention with similar-length videos.", ""]
+    for video in data:
+        md.append(f"## {video['title']} ({video['video_id']})")
+        if "error" in video:
+            md.append(f"- Not available: {video['error']}")
+        elif not video["points"]:
+            md.append("- No retention points returned.")
+        else:
+            md += ["| Video elapsed | Audience watch ratio | Relative retention |", "|---:|---:|---:|"]
+            md += [f"| {p['elapsed_video_time_ratio']:.3f} | {p['audience_watch_ratio']:.3f} | {p['relative_retention_performance']:.3f} |" for p in video["points"]]
+        md.append("")
+    md_path = out / "retention_curves.md"
+    md_path.write_text("\n".join(md) + "\n", encoding="utf-8")
+    return md_path
+
+
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--start-date"); parser.add_argument("--end-date")
     parser.add_argument("--output-dir", default=os.environ.get("ANALYTICS_OUTPUT_DIR", str(DEFAULT_OUTPUT)))
     parser.add_argument("--channel-key", default=os.environ.get("ANALYTICS_CHANNEL_KEY") or ROOT.name)
+    parser.add_argument("--retention-top-n", type=int, default=int(os.environ.get("RETENTION_TOP_N", "10")))
+    parser.add_argument("--cohort-top-n", type=int, default=int(os.environ.get("COHORT_TOP_N", "20")))
     args = parser.parse_args(argv)
     ds, de = default_period()
     start, end = args.start_date or ds.isoformat(), args.end_date or de.isoformat()
@@ -251,6 +428,13 @@ def main(argv=None) -> int:
             print("Audience by country:", audience_report(service, start, end, meta, out))
         except Exception as exc:
             print(f"note: audience by country skipped: {exc}", file=sys.stderr)
+        for label, fn, count in (("age-matched cohorts", age_cohort_report, args.cohort_top_n),
+                                 ("retention curves", retention_report, args.retention_top_n)):
+            try:
+                result = fn(service, rows, meta, start, end, out, count)
+                if result: print(f"{label.title()}: {result}")
+            except Exception as exc:
+                print(f"note: {label} skipped: {exc}", file=sys.stderr)
     except Exception as exc:
         print(f"Analytics collection failed: {exc}", file=sys.stderr); return 1
     print(f"Collected {len(rows)} video rows for {args.channel_key} ({start} to {end}) at {stamp}.")
