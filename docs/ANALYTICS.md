@@ -44,7 +44,7 @@ This workflow is read-only: it does not upload, edit, schedule or publish videos
 
 - Review **engaged views** and average view percentage alongside public views for Shorts.
 - Compare videos at similar ages and formats; don't compare a new upload with a 28-day-old upload.
-- This targeted report does not include thumbnail impressions or CTR.
+- The targeted Analytics API report itself does not include thumbnail impressions or CTR; the separate Reach Basic Reporting API collector provides those metrics when that API is enabled.
 - Analytics reporting has a processing delay; recent dates can be incomplete.
 - Correlation is not proof of causation. Treat topic, hook, format and thumbnail changes as experiments.
 
@@ -74,3 +74,8 @@ The analytics collector now additionally produces:
 The workflow creates the Reach Basic reporting job if it does not exist. YouTube may take up to 24 hours to generate the first report. Reach CTR applies to eligible thumbnail surfaces and is not a Shorts-feed swipe metric. The analytics workflow uses the read-only Analytics OAuth token only; it does not touch upload credentials.
 
 To run the Reach collector manually after authorisation: `python pipeline/reach_reporting.py --ensure-job --output-dir out/analytics`. Normal workflow runs also ensure the job exists and collect reports when available.
+
+
+## Reporting API enablement blocker
+
+The Reach Basic collector is implemented and tested, but the first workflow run returned HTTP 403 SERVICE_DISABLED for Google Cloud project 702229494667. Enable **YouTube Reporting API** in the same Google Cloud project used by the analytics OAuth client: https://console.developers.google.com/apis/api/youtubereporting.googleapis.com/overview?project=702229494667. No new OAuth scope is needed; the existing read-only scope is supported. After enabling, allow propagation and rerun the analytics workflow. The workflow creates the Reach Basic daily job if absent; the first report may take up to 24 hours.
