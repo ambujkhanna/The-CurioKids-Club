@@ -169,3 +169,12 @@
 - [x] CurioKids country-report and growth-engine unit tests passed: run 45654199219.
 - [x] AInation country-report and growth-engine unit tests passed: run 45654217704.
 - [ ] Live analytics artifact verification remains pending; country reporting still requires a manual analytics workflow run on this feature branch.
+
+
+## 2026-11-25 — Main sync and post-sync validation
+
+- [x] Synced the latest CurioKids `main` history into `feat/shared-growth-audit-2026-11`, including the merged thumbnail language-badge implementation (PR #16; merge commit `49ddf4d3862fe9fbcab24647b859d9913ed78e46`). The branch is now 0 commits behind `main`.
+- [x] Post-sync growth-engine CI passed: GitHub Actions run 45655541204; the `unit-tests` job and its analytics/growth unit-test step completed successfully.
+- [ ] Render-only Daily Curio Kids Short validation remains pending. The workflow has an explicit `Dry run (render only, nothing uploaded)` option, but this GitHub connection has no workflow-dispatch action. Do not use the scheduled/publish default.
+- [ ] Fresh analytics workflow and artifact verification remain pending for both channels.
+- No video was rendered or uploaded in this validation; no publishing, playlist or metadata changes were made.
