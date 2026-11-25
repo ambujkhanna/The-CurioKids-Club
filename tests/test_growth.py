@@ -75,7 +75,7 @@ class GrowthBriefTests(unittest.TestCase):
     def test_related_video_candidates_are_review_only_and_topic_aware(self):
         if growth.playlist_plan.KIDS:
             short_title = "How Does Your Heart Pump Blood?"
-            long_title = "How Your Heart Works | Full Video for Kids"
+            long_title = "How Does Your Heart Pump Blood? | Full Video for Kids"
         else:
             short_title = "How to Spot a Deepfake"
             long_title = "How to Spot a Deepfake: Clues, Source Checks & Fake Voice Calls"
