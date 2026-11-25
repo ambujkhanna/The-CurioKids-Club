@@ -188,3 +188,17 @@
 - CurioKids retains its existing English/Hindi/Spanish library; any additional language requires owner approval and channel analytics evidence.
 - AInation remains English-only; multilingual production is outside current scope.
 - Updated growth roadmap, country/language audit, TODO and progress tracking. Analytics can still report audiences in other languages; reporting does not imply production approval.
+
+
+## 2026-11-25 — Analytics and measurement implementation
+
+- [x] Added publish timestamp fields to analytics metadata and SQLite with backward-compatible schema migration; use episode publish time first and upload time only as fallback.
+- [x] Added 7/14/28-day cumulative age-matched cohorts for top 20 videos using per-video daily Analytics API data; incomplete windows are omitted.
+- [x] Added bounded retention curve collection for top 10 videos (one query per video).
+- [x] Added YouTube Reporting API Reach Basic collector for thumbnail impressions and CTR; workflow ensures the daily report job exists and downloads available reports.
+- [x] Added primary-language market report based on actual country views, clearly separating localized-language evidence from all-language country totals. India Hindi only; AInation English-only.
+- [x] Added unit tests for new cohort, market-policy, publish-date and Reach API parsing logic. CurioKids run 45656948802 and AInation run 45656964107 passed.
+- [ ] Inspect fresh analytics artifacts and verify whether the OAuth token and Reach Reporting job produce live data.
+- [ ] Run CurioKids render-only Daily Short and verify language badges visually.
+- [ ] Run AInation Daily Short render-only using EP020.
+- No upload token, publishing state, live playlists, public metadata, queues or schedules were changed.
