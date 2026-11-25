@@ -94,7 +94,7 @@ def fetch_video_report(service, start_date: str, end_date: str) -> list[dict[str
         start_index += len(page)
     return rows
 
-COUNTRY_METRICS = "views,estimatedMinutesWatched,averageViewPercentage"
+COUNTRY_METRICS = "views,engagedViews,estimatedMinutesWatched,averageViewDuration,averageViewPercentage,subscribersGained,subscribersLost"
 
 
 def fetch_countries(service, start_date: str, end_date: str, video_ids=None, top=15) -> list[dict[str, Any]]:
@@ -104,16 +104,22 @@ def fetch_countries(service, start_date: str, end_date: str, video_ids=None, top
     for ids in groups:
         kw = {"filters": "video==" + ",".join(ids)} if ids else {}
         resp = service.reports().query(ids="channel==MINE", startDate=start_date, endDate=end_date, dimensions="country",
-                                       metrics=COUNTRY_METRICS, sort="-views", maxResults=50, **kw).execute()
+                                       metrics=COUNTRY_METRICS, sort="-views", maxResults=200, **kw).execute()
         heads = [h["name"] for h in resp.get("columnHeaders", [])]
         for vals in resp.get("rows", []) or []:
             r = dict(zip(heads, vals)); c = str(r.get("country") or "??")
-            a = acc.setdefault(c, {"views": 0.0, "minutes": 0.0, "pct_x_views": 0.0})
+            a = acc.setdefault(c, {"views": 0.0, "engaged_views": 0.0, "minutes": 0.0, "pct_x_views": 0.0, "subs_gained": 0.0, "subs_lost": 0.0})
             v = number(r.get("views")); a["views"] += v; a["minutes"] += number(r.get("estimatedMinutesWatched"))
+            a["engaged_views"] += number(r.get("engagedViews"))
+            a["subs_gained"] += number(r.get("subscribersGained")); a["subs_lost"] += number(r.get("subscribersLost"))
             a["pct_x_views"] += number(r.get("averageViewPercentage")) * v
     tot = sum(a["views"] for a in acc.values()) or 1.0
     out = [{"country": c, "views": int(a["views"]), "share_pct": round(100 * a["views"] / tot, 1),
-            "minutes": round(a["minutes"], 1), "avg_viewed_pct": round(a["pct_x_views"] / a["views"], 1) if a["views"] else 0.0}
+            "engaged_views": int(a["engaged_views"]),
+            "engaged_view_rate_pct": round(100 * a["engaged_views"] / a["views"], 1) if a["views"] else 0.0,
+            "minutes": round(a["minutes"], 1), "avg_viewed_pct": round(a["pct_x_views"] / a["views"], 1) if a["views"] else 0.0,
+            "subscribers_gained": int(a["subs_gained"]), "subscribers_lost": int(a["subs_lost"]),
+            "subs_per_1k_views": round(1000 * a["subs_gained"] / a["views"], 2) if a["views"] else 0.0}
            for c, a in acc.items()]
     return sorted(out, key=lambda x: -x["views"])[:top]
 
@@ -129,12 +135,12 @@ def audience_report(service, start: str, end: str, metadata: dict, out: Path) ->
     """audience_countries.md/.json: where viewers are, for the channel and per language version (owner, 2026-11-23:
     'is the audience really coming from these locations?' -> decide extra languages on data, not guesses)."""
     groups = {"All videos": None}
-    labels = {"default": "English (main) videos", "hi": "Hindi versions", "es": "Spanish versions", "trend": "Trend Shorts"}
+    labels = {"default": "English (main) videos", "script": "English custom/script videos", "en": "English (explicit) versions", "hi": "Hindi versions", "es": "Spanish versions", "trend": "Trend Shorts"}
     for lang, label in labels.items():
         ids = [vid for vid, m in metadata.items() if m.get("language") == lang]
         if ids: groups[label] = ids
     data, lines = {}, [f"## Audience by country ({start} to {end})", "",
-                       "Where the views come from, by language version. Use it before adding or keeping a language.", ""]
+                       "Where the views come from, by language version. Engaged views/views is not Shorts Stayed to watch. Country shares are based on returned country rows.", ""]
     for label, ids in groups.items():
         try:
             rows = fetch_countries(service, start, end, ids)
@@ -142,8 +148,8 @@ def audience_report(service, start: str, end: str, metadata: dict, out: Path) ->
             lines += [f"**{label}:** not available ({str(exc)[:80]})", ""]; continue
         data[label] = rows
         n = len(ids) if ids else len(metadata) or "all"
-        lines += [f"**{label}** ({n} videos)", "", "| Country | Views | Share | Avg % viewed |", "|---|---:|---:|---:|"]
-        lines += [f"| {COUNTRY_NAMES.get(r['country'], r['country'])} | {r['views']:,} | {r['share_pct']}% | {r['avg_viewed_pct']}% |" for r in rows[:8]]
+        lines += [f"**{label}** ({n} videos)", "", "| Country | Views | Share of reported views | Engaged views | Engaged/views | Subs gained | Subs/1k views | Avg % viewed |", "|---|---:|---:|---:|---:|---:|---:|---:|"]
+        lines += [f"| {COUNTRY_NAMES.get(r['country'], r['country'])} | {r['views']:,} | {r['share_pct']}% | {r['engaged_views']:,} | {r['engaged_view_rate_pct']}% | {r['subscribers_gained']} | {r['subs_per_1k_views']} | {r['avg_viewed_pct']}% |" for r in rows[:8]]
         lines += [""] if rows else ["| (no views yet) | | | |", ""]
     out.mkdir(parents=True, exist_ok=True)
     (out / "audience_countries.json").write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
