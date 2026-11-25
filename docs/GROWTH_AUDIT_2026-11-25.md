@@ -168,3 +168,14 @@ The latest analytics workflow runs [CurioKids 45658430722](https://github.com/am
 Topic assignments are non-exclusive and can overlap; the groups are directional and must not be summed as unique channel totals. Long-form thumbnail-reach rows remain empty because the Reach Basic API is disabled; after enablement, the workflow will populate the per-video reach summary and long-form packaging section.
 
 Latest topic/reach integration tests passed: CurioKids run 45658446499; AInation run 45658455277.
+
+
+## Same-language Related Video candidate verification — 2026-11-25
+
+Latest analytics artifacts: CurioKids [45659908250](https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/45659908250), AInation [45659918354](https://github.com/ambujkhanna/youtube-studio-automation/actions/runs/45659918354). Latest tests passed: CurioKids [45659932438](https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/45659932438), AInation [45659941356](https://github.com/ambujkhanna/youtube-studio-automation/actions/runs/45659941356).
+
+- CurioKids: one candidate — English Short “Where Does Rain Come From?” to the English long-form “The Water Cycle: Where Rain Comes From”.
+- AInation: three candidates — “How to Spot a Deepfake” to the deepfake tutorial; “Can AI Recognise a Fake Voice?” to the deepfake tutorial; “Why AI Makes Things Up” to the AI hallucinations tutorial.
+- Candidate generation now requires the same normalized spoken language and a shared topic plus strong title evidence. All are marked manual review. No YouTube Related Video setting was changed.
+
+Other owner-led tasks still pending: review these candidates, review playlist assignments, verify state-file publish dates against Studio, inspect Instagram bios/links, run render-only visual checks and conduct controlled hook/first-frame experiments. Reach Basic remains blocked by the disabled Reporting API.
