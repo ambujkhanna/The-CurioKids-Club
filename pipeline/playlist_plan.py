@@ -75,7 +75,7 @@ def main(argv=None) -> int:
             md.append(f"| [{label}]({url}) | {r['language']} | {r['playlist']} | {r['review_status']} |")
     else:
         md.append("No published video IDs were found in the local episode state files.")
-    (out / "playlist_plan.md").write_text("\\n".join(md) + "\\n", encoding="utf-8")
+    (out / "playlist_plan.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     print(f"Wrote {len(rows)} playlist assignments to {csv_path} (review only).")
     return 0
 
