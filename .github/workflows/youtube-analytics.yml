@@ -99,6 +99,14 @@ jobs:
           YT_ANALYTICS_REFRESH_TOKEN: ${{ secrets.YT_ANALYTICS_REFRESH_TOKEN }}
         run: python pipeline/reach_reporting.py --ensure-job --output-dir out/analytics
 
+      - name: Enrich growth brief with topic performance and thumbnail reach
+        if: success() && hashFiles('out/analytics/*.csv') != ''
+        run: |
+          CSV="$(find out/analytics -maxdepth 1 -type f -name '*_*.csv' ! -name 'reach*' | head -n 1)"
+          if [ -n "$CSV" ]; then
+            python pipeline/growth.py --csv "$CSV" --channel-key curiokids-club --reach-csv out/analytics/reach_by_video.csv --output-dir out/analytics
+          fi
+
       - name: Build review-only topic and language playlist plan
         if: success()
         run: python pipeline/playlist_plan.py --output-dir out/analytics
