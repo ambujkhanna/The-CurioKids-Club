@@ -39,7 +39,7 @@ Plan and audit: [`docs/GROWTH_ROADMAP.md`](GROWTH_ROADMAP.md) · [`docs/GROWTH_A
 - [ ] Run fresh analytics collection in both repos; confirm country/language and playlist-plan artifacts.
 - [ ] After fresh country data, rank the top 3–4 country/language opportunities separately per channel using the owner-supplied shortlist; AInation multilingual expansion remains out of scope.
 - [x] Improve planner taxonomy for obvious on-pillar titles and add regression tests (preview now leaves 2 CurioKids and 1 AInation manual-review videos).
-- [ ] Extend country report with supported engaged/subscriber metrics, custom-script English grouping and correct share denominator.
+- [x] Extend country report with supported engaged/subscriber metrics, custom-script English grouping and a clearly labelled share of returned country views; fresh API artifact verification pending.
 - [ ] Prototype Reporting API Reach Basic and bounded single-video retention collection.
 - [ ] Preserve publication timestamps and add 7/14/28-day age-matched comparisons.
 - [ ] Run CI and explicitly selected render-only Daily Short dry-runs; AInation regression check uses EP020.
