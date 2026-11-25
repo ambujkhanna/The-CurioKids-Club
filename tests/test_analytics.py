@@ -65,6 +65,54 @@ class AnalyticsTests(unittest.TestCase):
             finally:
                 db.close()
 
+
+    def test_build_age_cohorts_only_emits_complete_windows(self):
+        start = dt.date(2026, 1, 1)
+        daily = []
+        for i in range(28):
+            day = start + dt.timedelta(days=i)
+            daily.append({"day": day.isoformat(), "views": 10, "engaged_views": 6,
+                          "minutes": 2.5, "avg_duration": 15, "avg_viewed_pct": 50,
+                          "subs_gained": 1})
+        cohorts = analytics.build_age_cohorts(daily, "2026-01-01T10:00:00+05:30", "2026-01-20")
+        self.assertEqual([x["age_days"] for x in cohorts], [7, 14])
+        self.assertEqual(cohorts[0]["views"], 70)
+        self.assertEqual(cohorts[0]["engaged_view_rate_pct"], 60.0)
+        full = analytics.build_age_cohorts(daily, "2026-01-01", "2026-01-28")
+        self.assertEqual([x["age_days"] for x in full], [7, 14, 28])
+        self.assertEqual(full[-1]["views"], 280)
+
+    def test_parse_daily_rows_uses_header_names(self):
+        response = {
+            "columnHeaders": [{"name": "day"}, {"name": "views"}, {"name": "engagedViews"},
+                              {"name": "averageViewPercentage"}],
+            "rows": [["2026-01-01", 20, 12, 60]],
+        }
+        rows = analytics.parse_daily_rows(response)
+        self.assertEqual(rows[0]["views"], 20)
+        self.assertEqual(rows[0]["engaged_views"], 12)
+        self.assertEqual(rows[0]["avg_viewed_pct"], 60)
+
+    def test_snapshot_schema_migrates_published_at_columns(self):
+        import sqlite3
+        import tempfile
+        with tempfile.TemporaryDirectory() as folder:
+            db = sqlite3.connect(Path(folder) / "old.sqlite3")
+            try:
+                db.execute("""CREATE TABLE video_snapshots (
+                    channel_key TEXT, period_start TEXT, period_end TEXT, video_id TEXT,
+                    episode_id TEXT, title TEXT, content_type TEXT, language TEXT, video_url TEXT,
+                    views INTEGER, engaged_views INTEGER, estimated_minutes_watched REAL,
+                    average_view_duration REAL, average_view_percentage REAL, likes INTEGER,
+                    comments INTEGER, shares INTEGER, subscribers_gained INTEGER, subscribers_lost INTEGER,
+                    collected_at_utc TEXT)""")
+                analytics.initialise_db(db)
+                cols = {x[1] for x in db.execute("PRAGMA table_info(video_snapshots)")}
+                self.assertIn("published_at", cols)
+                self.assertIn("published_at_source", cols)
+            finally:
+                db.close()
+
     def test_country_report_includes_engaged_and_subscriber_metrics(self):
         class Query:
             def query(self, **kwargs):
