@@ -135,6 +135,7 @@
 - [x] Audited current published episode-state inventory: 33 video IDs per channel. Current playlist rules preview: CurioKids 66 assignment rows with 2 manual-topic-review videos; AInation 79 rows with 1 manual-topic-review video.
 - [x] Identified and improved narrow planner vocabulary; added regression tests for common on-pillar topics. See `docs/GROWTH_AUDIT_2026-11-25.md`.
 - [x] Audited API support: country reports are supported; thumbnail impressions/CTR are available through Reporting API Reach reports; retention curves are available through single-video Analytics API queries; Stayed-to-watch is not a standalone targeted API metric and must not be inferred from engaged views.
+- [x] Recorded the owner-supplied top-10 country/language opportunity shortlist as a market reference; the top 3–4 opportunities must be ranked separately per channel from actual YouTube analytics. AInation multilingual production remains out of scope.
 - [ ] Obtain fresh analytics artifacts including country/language report and playlist plan; manual workflow dispatch is required.
 - [x] Improve planner taxonomy and add regression tests; remaining manual review is 2 CurioKids videos and 1 AInation video.
 - [ ] Fix country report language grouping/share denominator and add supported country metrics.
