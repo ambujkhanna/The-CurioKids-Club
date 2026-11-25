@@ -38,26 +38,17 @@ def _ds(c, s, x, y, f, p):
 
 def apply_language_badge(path, K, lang=None):
     """Attach a language pill to the title group, never to a thumbnail corner."""
-    label = {"en": "ENGLISH", "hi": "हिन्दी", "es": "ESPAÑOL"}.get((lang or os.environ.get("THUMB_LANG") or "en").lower(), "ENGLISH")
-    colors = {"ENGLISH": "#1769AA", "हिन्दी": "#E87516", "ESPAÑOL": "#16865A"}
+    import language_badges
     img = skia.Image.open(path)
     W, H = img.width(), img.height()
     scale = min(W, H) / 1080
-    size = 36 * scale
-    tf = K.FONT_XB
-    f = skia.Font(tf, size)
-    tw = _ms(f, label)
-    h, pad = size * 1.55, size * 0.55
-    w = tw + pad * 2
-    # Portrait badge is just below the headline; landscape badge is alongside its right edge.
+    # Portrait: below/right of the headline. Landscape: alongside its right edge.
     cx = W * (0.83 if H > W else 0.72)
     cy = H * (0.265 if H > W else 0.30)
     surf = skia.Surface(W, H)
     c = surf.getCanvas()
     c.drawImage(img, 0, 0)
-    x, y = cx - w / 2, cy - h / 2
-    c.drawRRect(skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(x, y, w, h), h / 2, h / 2), _P(K, colors[label]))
-    _ds(c, label, cx - tw / 2, cy + size * 0.34, f, _P(K, WHITE))
+    language_badges.draw(c, K, lang, cx, cy, scale)
     surf.makeImageSnapshot().save(path, skia.kJPEG, 90)
     return path
 
