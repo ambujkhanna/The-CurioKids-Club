@@ -28,24 +28,26 @@ Current custom/script state now contains `r_GUBf5Flho` (CurioKids) and `ToSaTHND
 
 The following 2026 audience estimates and language options were supplied by the owner as a **market-size reference**. They have not been independently validated in this audit and must not be treated as YouTube audience counts.
 
-| Rank | Country | Estimated audience | Language opportunities |
+| Rank | Country | Estimated audience | Primary language focus |
 |---:|---|---:|---|
-| 1 | India | ~573M | Hindi, English, Tamil, Telugu, Bengali |
-| 2 | United States | ~268M | English, Spanish |
-| 3 | Indonesia | ~155M | Indonesian, Javanese |
+| 1 | India | ~573M | Hindi only |
+| 2 | United States | ~268M | English |
+| 3 | Indonesia | ~155M | Indonesian |
 | 4 | Brazil | ~154M | Portuguese |
 | 5 | Mexico | ~89.4M | Spanish |
 | 6 | Japan | ~83.3M | Japanese |
-| 7 | Germany | ~68.8M | German, Turkish |
+| 7 | Germany | ~68.8M | German |
 | 8 | Vietnam | ~62.1M | Vietnamese |
-| 9 | Philippines | ~59.6M | Filipino/Tagalog, English |
+| 9 | Philippines | ~59.6M | Filipino/Tagalog |
 | 10 | Turkey | ~57.9M | Turkish |
 
-**Decision rule:** use this list to generate candidate country/language pairs, then rank the top 3–4 opportunities separately for each channel using that channel's actual country-level views, watch time, average viewed percentage, engaged views, subscribers gained where supported, returning viewers, sample size, content fit, localization quality and production cost. Population rank alone never justifies a new language.
+**Decision rule:** use one primary language per target country as the default. The country list is a market-size reference only; rank opportunities using each channel's actual country-level views, watch time, average viewed percentage, engaged views, subscribers gained where supported, returning viewers, sample size, content fit, localization quality and production cost. Population rank alone never justifies a new language. Do not create regional/secondary-language variants just because they are spoken in a market.
 
-- CurioKids: assess the current English/Hindi/Spanish footprint first. Consider any additional language only after the channel's own audience evidence and a small quality-controlled pilot.
-- AInation: multilingual expansion remains out of scope in the approved roadmap. This list is a future research reference only and does not authorize translation or language production.
-- A country with several language options does not imply all those languages should be produced. Choose language-country pairs based on measured demand and ability to localize naturally.
+- India: Hindi is the sole planned language focus. Do not create Tamil, Telugu or Bengali videos.
+- United States: English. Indonesia: Indonesian. Brazil: Portuguese. Mexico: Spanish. Japan: Japanese. Germany: German. Vietnam: Vietnamese. Philippines: Filipino/Tagalog. Turkey: Turkish.
+- CurioKids: preserve its existing English, Hindi and Spanish library; use the country mapping above to guide any future market-specific production. No new language is added without explicit owner approval and audience evidence.
+- AInation: English-only production remains the current approved scope; no multilingual expansion is authorised. If that policy is revisited, start with the single primary language for a target market, not secondary/regional variants.
+- Do not interpret the presence of multiple languages in a country as a production requirement.
 
 ## Published-video playlist inventory preview
 
@@ -101,3 +103,13 @@ The existing read-only collector already retrieves per-video views, engaged view
 - Post-sync growth-engine CI passed in run 45655541204. The `unit-tests` job and analytics/growth unit-test step completed successfully.
 - The explicit render-only Daily Curio Kids Short workflow option was inspected. It is available as `Dry run (render only, nothing uploaded)`, but could not be dispatched through the connected GitHub actions interface. It remains pending; no scheduled or publishing action was selected.
 - Fresh analytics artifacts and the AInation EP020 render-only dry-run also remain pending.
+
+
+## Owner language direction — 2026-11-25
+
+- Use one primary language per target country; do not expand into secondary or regional languages by default.
+- India: Hindi only. Explicitly exclude Tamil, Telugu and Bengali video production.
+- United States: English; Indonesia: Indonesian; Brazil: Portuguese; Mexico: Spanish; Japan: Japanese; Germany: German; Vietnam: Vietnamese; Philippines: Filipino/Tagalog; Turkey: Turkish.
+- CurioKids may continue its existing English/Hindi/Spanish library. New language production still requires owner approval and audience evidence.
+- AInation remains English-only; multilingual production is not in scope unless separately approved.
+- Analytics may still report other languages or audience locations. Reporting them does not authorise creating videos in those languages.
