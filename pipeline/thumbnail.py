@@ -208,7 +208,7 @@ def make_wide(path, K, chars, ep, ico, t_pose=None):
     img = surf.makeImageSnapshot()
     if hasattr(K, "grade"): img = K.grade(img)
     img.save(path, skia.kJPEG, 90)
-    return path
+    return apply_language_badge(path, K)
 
 
 def make(path, K, chars, ep, ico, t_pose=None):
