@@ -24,6 +24,29 @@ Historical unknown IDs:
 
 Current custom/script state now contains `r_GUBf5Flho` (CurioKids) and `ToSaTHNDoEg` (AInation), so the old artifact predates those mappings. `5iwnr-Y9hqc` and `uhSn_4CVPHQ` were not found in the current state files scanned and need manual verification. Do not guess episode IDs.
 
+## Owner-supplied country and language opportunity shortlist
+
+The following 2026 audience estimates and language options were supplied by the owner as a **market-size reference**. They have not been independently validated in this audit and must not be treated as YouTube audience counts.
+
+| Rank | Country | Estimated audience | Language opportunities |
+|---:|---|---:|---|
+| 1 | India | ~573M | Hindi, English, Tamil, Telugu, Bengali |
+| 2 | United States | ~268M | English, Spanish |
+| 3 | Indonesia | ~155M | Indonesian, Javanese |
+| 4 | Brazil | ~154M | Portuguese |
+| 5 | Mexico | ~89.4M | Spanish |
+| 6 | Japan | ~83.3M | Japanese |
+| 7 | Germany | ~68.8M | German, Turkish |
+| 8 | Vietnam | ~62.1M | Vietnamese |
+| 9 | Philippines | ~59.6M | Filipino/Tagalog, English |
+| 10 | Turkey | ~57.9M | Turkish |
+
+**Decision rule:** use this list to generate candidate country/language pairs, then rank the top 3–4 opportunities separately for each channel using that channel's actual country-level views, watch time, average viewed percentage, engaged views, subscribers gained where supported, returning viewers, sample size, content fit, localization quality and production cost. Population rank alone never justifies a new language.
+
+- CurioKids: assess the current English/Hindi/Spanish footprint first. Consider any additional language only after the channel's own audience evidence and a small quality-controlled pilot.
+- AInation: multilingual expansion remains out of scope in the approved roadmap. This list is a future research reference only and does not authorize translation or language production.
+- A country with several language options does not imply all those languages should be produced. Choose language-country pairs based on measured demand and ability to localize naturally.
+
 ## Published-video playlist inventory preview
 
 The current published state was read from episode/long/custom state files and CurioKids' configured library category state files. Counts below are a preview from applying the current planner keyword rules; the Python workflow has not yet produced a fresh downloadable artifact.
