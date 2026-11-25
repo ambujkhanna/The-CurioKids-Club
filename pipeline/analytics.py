@@ -301,9 +301,9 @@ def market_opportunity_report(output_dir: Path, channel_key: str) -> Path | None
             "country_views_all_videos": int(number(total.get("views"))),
             "localized_views": int(number(localized.get("views"))) if localized else None,
             "localized_engaged_views": int(number(localized.get("engaged_views"))) if localized else None,
-            "localized_avg_viewed_pct": round(number(localized.get("avg_viewed_pct")), 1) if localized else None,
+            "localized_avg_viewed_pct": round(number(localized.get("viewed_x_views")) / number(localized.get("views")) , 1) if localized and number(localized.get("views")) else None,
             "localized_subscribers_gained": int(number(localized.get("subscribers_gained"))) if localized else None,
-            "evidence_note": ("localized-language evidence" if localized else
+            "evidence_note": (("English-language performance (AInation; no localization)" if not kids else "published primary-language version performance") if localized else
                               "country-level channel baseline only; no localized-language evidence"),
         })
     output.sort(key=lambda x: x["country_views_all_videos"], reverse=True)
