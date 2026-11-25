@@ -65,8 +65,8 @@ def metadata_from_state(root: Path = ROOT) -> dict[str, dict[str, str]]:
                 metadata[str(item["video_id"])] = {
                     "episode_id": str(eid), "title": str(item.get("title") or record.get("title") or eid),
                     "content_type": kind, "language": language, "video_url": str(item.get("url") or ""),
-                    "published_at": str(item.get("publish_at_ist") or item.get("published_at") or ""),
-                    "published_at_source": "publish_at_ist" if item.get("publish_at_ist") else ("published_at" if item.get("published_at") else ""),
+                    "published_at": str(item.get("publish_at_ist") or item.get("published_at") or item.get("uploaded_at") or ""),
+                    "published_at_source": "publish_at_ist" if item.get("publish_at_ist") else ("published_at" if item.get("published_at") else ("uploaded_at_fallback" if item.get("uploaded_at") else "")),
                 }
     return metadata
 
