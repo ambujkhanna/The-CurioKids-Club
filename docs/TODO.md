@@ -36,12 +36,13 @@ Plan and audit: [`docs/GROWTH_ROADMAP.md`](GROWTH_ROADMAP.md) · [`docs/GROWTH_A
 - [x] Create a fresh growth branch from current `main` in both repos and sync latest `main` history; neither feature branch is behind.
 - [x] Implement strict channel-fit topic filtering, review-only playlist suggestions and regression tests.
 - [x] Implement country/language reports with engaged views, subscriber metrics, returned-row share denominator and custom-English grouping.
+- [x] Implement topic-level performance by channel taxonomy and format, including engaged views, average viewed and subscriber conversion; unmatched titles stay manual review.
 - [x] Implement primary-language market reports from actual channel country data; CurioKids retains English/Hindi/Spanish, India is Hindi-only (no Tamil/Telugu/Bengali), and AInation remains English-only.
 - [x] Implement publish timestamp persistence, 7/14/28-day age-matched cohorts for top 20 videos and bounded retention curves for top 10 videos.
-- [x] Implement YouTube Reporting API Reach Basic collector and workflow job setup. **Blocked pending owner action:** enable YouTube Reporting API in Google Cloud project 702229494667 (current response: HTTP 403 SERVICE_DISABLED).
-- [x] Generate and inspect fresh analytics artifacts: CurioKids run 45657535212; AInation run 45657556902. Both include country reports, market opportunities, age cohorts, retention curves and review-only playlist plans.
+- [x] Implement YouTube Reporting API Reach Basic collector, per-video CTR summary and long-form packaging integration. **Blocked pending owner action:** enable YouTube Reporting API in Google Cloud project 702229494667 (current response: HTTP 403 SERVICE_DISABLED).
+- [x] Generate and inspect fresh analytics artifacts: CurioKids run 45658430722; AInation run 45658440732. Both include country reports, market opportunities, topic performance, age cohorts, retention curves and review-only playlist plans.
 - [x] Verify playlist suggestions: CurioKids 66 assignments / 2 manual topic reviews; AInation 79 / 1.
-- [x] Latest growth/analytics unit tests passed: CurioKids run 45657681015; AInation run 45657748189.
+- [x] Latest growth/analytics unit tests passed after topic/reach integration: CurioKids run 45658446499; AInation run 45658455277.
 - [ ] **Owner validation:** run CurioKids Daily Short with the explicit `Dry run (render only, nothing uploaded)` action and visually inspect English/Hindi/Spanish thumbnail language badges.
 - [ ] **Owner validation:** run AInation Daily Short with the explicit `Dry run (render only, nothing uploaded)` action and episode `ep020` (EP020). Inspect render and ensure no upload occurs.
 
