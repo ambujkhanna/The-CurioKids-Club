@@ -45,6 +45,10 @@ alcohol beer rum weed vape smoke smoking suicide horror scary creepy fear 3am da
 mating tiktok roblox minecraft fortnite gta skibidi mrbeast batman marvel trump biden election religion god woman stock
 market money crypto bitcoin juggalo goodbye rabies""".split()) if KIDS else set("porn nude sex onlyfans".split())
 NOISE = set("song lyrics meme tiktok reaction asmr prank challenge live stream download free apk mod hack crack".split())
+# Explicitly reject unrelated finance/news topics on BOTH channels, even if a trend headline contains an AI brand.
+OFF_CHANNEL = set("gold price prices pricing stock stocks market markets share shares crypto bitcoin ethereum forex currency currencies
+exchange trading trader economy economic inflation recession interest rates bond bonds commodity commodities commodities
+politics politician election celebrity celebrities gossip breaking news war conflict".split())
 
 
 def _get(url, timeout=15):
@@ -74,7 +78,7 @@ def _ok(s):
     if _TITLE_WORDS is None:  # our own episode title words count as topic words too
         _TITLE_WORDS = {w for t in covered_titles() for w in t.split() if len(w) > 3} - STOP
     w = set(s.split())
-    return len(s) >= 8 and len(w) >= 3 and not (w & BLOCK) and not (w & NOISE) and bool(w & (TOPIC | _TITLE_WORDS))
+    return len(s) >= 8 and len(w) >= 3 and not (w & BLOCK) and not (w & NOISE) and not (w & OFF_CHANNEL) and bool(w & (TOPIC | _TITLE_WORDS))
 
 
 def demand():
@@ -188,7 +192,7 @@ def viewer_requests(yt, limit_videos=30):
         for it in r.get("items", []):
             t = it["snippet"]["topLevelComment"]["snippet"].get("textDisplay", "")
             t = re.sub(r"https?://\S+|\S+@\S+|\+?\d[\d \-]{7,}\d|@\w+", "", t).strip()  # no links, emails, phones, handles
-            if 10 <= len(t) <= 220 and REQ.search(t) and not (set(_clean(t).split()) & BLOCK):
+            if 10 <= len(t) <= 220 and REQ.search(t) and _ok(_clean(t)):
                 out.append(t.replace("\n", " "))
     return list(dict.fromkeys(out))[:30]
 
@@ -225,7 +229,7 @@ def _fits(text, loose=False):
     """Only the trending search itself counts (headlines mention too many everyday words), and it needs a real subject word.
     loose=True (YouTube charts, already limited to Education / Science / Animals): everyday science words count too."""
     w = _words(text)
-    return bool(w & ((TOPIC if loose else TOPIC - GENERIC) | TREND_TOPIC | EXTRA_SUBJECTS)) and not (w & BLOCK) and not (w & NOISE)
+    return _ok(_clean(text)) and bool(w & ((TOPIC if loose else TOPIC - GENERIC) | TREND_TOPIC | EXTRA_SUBJECTS))
 
 
 def google_trends(geos=None):
@@ -255,7 +259,7 @@ def trend_angles(term):
     for q in qs:
         for x in suggestions(q)[:4]:
             x = _clean(x)
-            if x and x not in seen and not (set(x.split()) & BLOCK) and len(x.split()) >= 3: seen.append(x)
+            if x and x not in seen and _ok(x): seen.append(x)
         time.sleep(0.15)
     return seen[:4]
 
@@ -366,7 +370,7 @@ def trends_md(yt, titles):
         md.append("_Skipped: add the free `YT_API_KEY` secret to see YouTube's trending charts._")
         return md
     yv = youtube_trending(yt)
-    keep = [x for x in yv if x[5] or not KIDS]  # kids: only kid-suitable subjects
+    keep = [x for x in yv if x[5]]  # both channels: only subjects that pass the strict channel-fit gate
     keep.sort(key=lambda x: (not x[4], -x[3]))  # Shorts first, then by views
     if keep:
         md += ["Ideas only: look at the subject, never copy titles or content.", "",
