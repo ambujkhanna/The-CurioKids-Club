@@ -42,6 +42,9 @@ Plan and audit: [`docs/GROWTH_ROADMAP.md`](GROWTH_ROADMAP.md) · [`docs/GROWTH_A
 - [x] Extend country report with supported engaged/subscriber metrics, custom-script English grouping and a clearly labelled share of returned country views; fresh API artifact verification pending.
 - [ ] Prototype Reporting API Reach Basic and bounded single-video retention collection.
 - [ ] Preserve publication timestamps and add 7/14/28-day age-matched comparisons.
-- [ ] Run CI and explicitly selected render-only Daily Short dry-runs; AInation regression check uses EP020.
+- [x] Run post-sync CurioKids growth-engine CI; run 45655541204 passed on the updated feature branch.
+- [ ] Run explicitly selected render-only Daily Curio Kids Short dry-run (workflow dispatch required; do not use scheduled/publish default).
+- [ ] Run AInation render-only Daily Short dry-run using EP020.
+- [ ] Run fresh analytics collection in both repos and inspect country/language + playlist-plan artifacts.
 
 **Guardrails:** no upload-token changes, no publishing/visibility/schedule changes, no live playlist or metadata edits, and no automatic script changes.
