@@ -17,11 +17,11 @@ KIDS = (ROOT / "library").exists() or "curio" in ROOT.name.lower()
 
 if KIDS:
     TOPICS = {
-        "Space & Universe": {"space", "moon", "sun", "star", "planet", "mars", "galaxy", "astronaut", "rocket", "eclipse", "comet", "earth"},
+        "Space & Universe": {"space", "moon", "sun", "star", "planet", "planets", "solar", "mars", "galaxy", "astronaut", "rocket", "eclipse", "comet", "earth"},
         "Nature & Plants": {"plant", "plants", "tree", "trees", "seed", "seeds", "leaf", "leaves", "flower", "flowers", "soil", "garden", "photosynthesis"},
-        "Animals": {"animal", "animals", "cat", "cats", "dog", "dogs", "bee", "bees", "bird", "birds", "fish", "whale", "shark", "dinosaur", "butterfly", "frog", "elephant", "lion"},
-        "Human Body": {"body", "brain", "heart", "blood", "bone", "bones", "teeth", "tooth", "eye", "eyes", "ear", "ears", "skin", "muscle", "sleep", "stomach", "lungs"},
-        "Everyday Science & Discoveries": {"science", "magnet", "magnets", "shadow", "shadows", "light", "sound", "water", "rain", "rainbow", "cloud", "clouds", "gravity", "energy", "electricity", "experiment", "experiments", "metal", "ice"},
+        "Animals": {"animal", "animals", "cat", "cats", "dog", "dogs", "bee", "bees", "bird", "birds", "fish", "whale", "shark", "dinosaur", "butterfly", "frog", "elephant", "lion", "octopus", "zebra", "stripe", "stripes"},
+        "Human Body": {"body", "brain", "heart", "blood", "bone", "bones", "teeth", "tooth", "eye", "eyes", "ear", "ears", "skin", "muscle", "sleep", "stomach", "lungs", "blink", "blinking", "eyelid", "eyelids"},
+        "Everyday Science & Discoveries": {"science", "magnet", "magnets", "shadow", "shadows", "light", "sound", "water", "rain", "rainbow", "cloud", "clouds", "gravity", "energy", "electricity", "experiment", "experiments", "metal", "ice", "sky", "blue", "color", "colour"},
     }
     LANGUAGE = {"default": "English", "trend": "English", "script": "English", "hi": "Hindi", "es": "Spanish"}
 else:
