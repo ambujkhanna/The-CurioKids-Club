@@ -126,3 +126,18 @@
 - [ ] New Visual Engine integrated dry-run 44739867903, triggered by the episode-validator fix on `feature/modern-visual-engine`, is still in progress. Inspect its final MP4/contact-sheet artifact and visually review before accepting.
 - [ ] Safe Daily Short dry-run remains pending in both repositories; the GitHub integration used here does not expose workflow dispatch. Do not use the scheduled/publish default.
 - [ ] Visual Engine remains feature-branch-only; no merge to `main` or production default change without owner visual approval.
+
+
+## 2026-11-25 — Shared channel growth audit
+
+- [x] Compared the previous roadmap branch with current `main`: it was diverged and behind (CurioKids by 5 commits; AInation by 3). Created fresh branch `feat/shared-growth-audit-2026-11` from each current `main`; did not force-update the old branch.
+- [x] Retrieved the latest available successful analytics artifacts (runs 44739181837 and 44724594920; collected 2026-11-20; report window 2026-10-21 to 2026-11-17). Historical baseline: CurioKids 18 rows / 88.9% metadata coverage / 3,004 views / 1,465 engaged views; AInation 21 rows / 90.5% / 919 views / 376 engaged views.
+- [x] Audited current published episode-state inventory: 33 video IDs per channel. Current playlist rules preview: CurioKids 66 assignment rows with 11 manual-topic-review videos; AInation 77 rows with 5 manual-topic-review videos.
+- [x] Identified narrow planner vocabulary causing obvious on-pillar titles to be sent to manual review. See `docs/GROWTH_AUDIT_2026-11-25.md`.
+- [x] Audited API support: country reports are supported; thumbnail impressions/CTR are available through Reporting API Reach reports; retention curves are available through single-video Analytics API queries; Stayed-to-watch is not a standalone targeted API metric and must not be inferred from engaged views.
+- [ ] Obtain fresh analytics artifacts including country/language report and playlist plan; manual workflow dispatch is required.
+- [ ] Improve planner taxonomy and tests; fix country report language grouping/share denominator; add supported country metrics.
+- [ ] Prototype Reporting API Reach Basic and bounded retention collection; preserve publication timestamps for age-matched cohorts.
+- [ ] Run PR CI and explicit render-only Daily Short dry-runs in both repositories (AInation EP020). No scheduled/publishing action.
+
+**Safety:** no upload token was touched; no live playlist, video metadata, queue, schedule or publishing behaviour changed. Historical analytics are not presented as current. Work is scoped to shared analytics and recommendations.
