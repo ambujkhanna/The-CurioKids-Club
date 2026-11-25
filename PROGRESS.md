@@ -126,3 +126,26 @@
 - [ ] New Visual Engine integrated dry-run 44739867903, triggered by the episode-validator fix on `feature/modern-visual-engine`, is still in progress. Inspect its final MP4/contact-sheet artifact and visually review before accepting.
 - [ ] Safe Daily Short dry-run remains pending in both repositories; the GitHub integration used here does not expose workflow dispatch. Do not use the scheduled/publish default.
 - [ ] Visual Engine remains feature-branch-only; no merge to `main` or production default change without owner visual approval.
+
+
+## 2026-11-25 — Channel growth roadmap approved and documented
+
+- [x] Reviewed current `main` growth-engine code and documentation before planning.
+- [x] Created channel-specific `docs/GROWTH_ROADMAP.md` with priorities, experiments, measures, acceptance gates and safety boundaries.
+- [x] Updated `docs/GROWTH_ENGINE.md` to link the roadmap and record the delivery sequence.
+- [x] Updated `docs/TODO.md` with shared implementation tasks and channel-specific owner/assistant actions.
+- [x] Recorded this decision in `CONVERSATION.md` and the channel handoff.
+- [ ] Analytics metric gap investigation and implementation (next engineering phase; not started in this documentation-only change).
+- [ ] Baseline report, sample-data tests and safe render-only dry-run validation.
+
+**Important:** this is a documentation/planning change only. No analytics code, credentials, episode state, workflow, publishing schedule, video metadata or production behaviour was changed. No video was uploaded or published. Work is on branch `docs/channel-growth-roadmap-2026-11`; owner hand-push convention remains in force.
+
+
+## 2026-11-25 — Topic relevance and language playlist decision
+
+- [x] Confirmed one YouTube video can be included in multiple playlists; topic and language organisation are complementary, not mutually exclusive.
+- [x] Updated the growth roadmap and TODO to plan topic + language playlist mapping without duplicate uploads.
+- [x] Added a strict editorial topic-fit gate: search trends are discovery signals only; reject unrelated finance/market news (including gold-price movement topics), general news, gossip and other off-pillar subjects.
+- [ ] Build the concrete playlist-to-video mapping from the current published video inventory; owner review required before creating or changing live playlists in YouTube Studio.
+- [ ] Implement and test the topic-fit gate in the topic discovery/recommendation pipeline so off-channel trends cannot enter the suggested backlog.
+- No live playlist, video metadata, episode queue, publishing schedule, credential or workflow was changed. All documentation updates are on `docs/channel-growth-roadmap-2026-11`; `main` remains untouched.
