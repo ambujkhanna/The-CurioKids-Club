@@ -84,3 +84,8 @@ The Reach Basic collector is implemented and tested, but the first workflow run 
 ## Topic and packaging insights
 
 The growth brief groups video performance by channel-specific topic taxonomy and format (Shorts/long-form). Metrics include video count, views, engaged views, engaged-view rate, weighted average viewed percentage and subscribers per 1,000 views. Topic matches are non-exclusive; unmatched titles remain manual review. When Reach Basic data is available, the brief also shows long-form thumbnail impressions and CTR by video. Do not use thumbnail CTR as a Shorts-feed swipe metric.
+
+
+## Related Video candidate artifact
+
+The growth brief includes review-only Short-to-long-form candidates. Matching requires same normalized spoken language, shared channel topic tags and sufficient title evidence. This is a shortlist, not an automatic recommendation to link every pair. Confirm that both videos teach the same lesson before adding a Related Video in Studio. No YouTube write API call is made.
