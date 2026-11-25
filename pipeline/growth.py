@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse, csv, json
 from pathlib import Path
 import playlist_plan
+import re
 
 PROFILES = {
     "curiokids-club": {
@@ -103,6 +104,47 @@ def read_reach_rows(path: Path) -> list[dict]:
     return out
 
 
+
+TITLE_STOPWORDS = {"why", "what", "how", "does", "do", "is", "are", "the", "a", "an", "your", "our",
+                   "my", "for", "kids", "fun", "facts", "full", "video", "short", "explained", "guide",
+                   "and", "with", "to", "of", "in", "on", "can", "you", "it", "from", "this", "that", "ai"}
+
+
+def build_related_video_candidates(rows: list[dict], per_short: int = 2) -> list[dict]:
+    """Suggest only reviewable Short-to-long matches; never edits YouTube Related Video settings."""
+    shorts = [r for r in rows if str(r.get("content_type") or "").lower() == "short"]
+    longs = [r for r in rows if str(r.get("content_type") or "").lower() == "long"]
+    candidates = []
+    for short in shorts:
+        short_title = str(short.get("title") or "")
+        short_words = set(re.findall(r"[a-z0-9]+", short_title.lower())) - TITLE_STOPWORDS
+        short_topics = set(playlist_plan.classify_topics(short_title))
+        matches = []
+        for long in longs:
+            long_title = str(long.get("title") or "")
+            long_words = set(playlist_plan.re.findall(r"[a-z0-9]+", long_title.lower())) - TITLE_STOPWORDS
+            shared = sorted(short_words & long_words)
+            long_topics = set(playlist_plan.classify_topics(long_title))
+            shared_topics = sorted(short_topics & long_topics)
+            if not shared or (not shared_topics and len(shared) < 2):
+                continue
+            union = short_words | long_words
+            score = (len(shared) / len(union) if union else 0.0) + (0.15 if shared_topics else 0.0)
+            if score < 0.18:
+                continue
+            matches.append({
+                "short_video_id": str(short.get("video_id") or ""),
+                "short_title": short_title,
+                "long_video_id": str(long.get("video_id") or ""),
+                "long_title": long_title,
+                "shared_terms": shared, "shared_topics": shared_topics,
+                "match_score": round(score, 3), "review_status": "manual review",
+            })
+        matches.sort(key=lambda x: (-x["match_score"], x["long_video_id"]))
+        candidates.extend(matches[:per_short])
+    return candidates
+
+
 def build_brief(rows: list[dict], channel_key: str, period: str = "latest available report", reach_rows: list[dict] | None = None) -> tuple[dict, str]:
     # Accept raw CSV strings as well as already-normalised numeric rows (useful for tests and reuse).
     rows = [dict(r) for r in rows]
@@ -114,6 +156,7 @@ def build_brief(rows: list[dict], channel_key: str, period: str = "latest availa
         r["title"] = str(r.get("title") or "").strip()
     profile = PROFILES.get(channel_key, PROFILES["aination-studio"])
     topic_performance, unclassified_topics = aggregate_topic_performance(rows)
+    related_video_candidates = build_related_video_candidates(rows)
     reach_map = {str(x.get("video_id") or ""): x for x in (reach_rows or []) if x.get("video_id")}
     shorts = [r for r in rows if r["content_type"] == "short" and r["views"] > 0]
     identified = [r for r in rows if r["content_type"] != "unknown"]
@@ -149,7 +192,7 @@ def build_brief(rows: list[dict], channel_key: str, period: str = "latest availa
         "video_rows": len(rows), "short_rows": len(shorts), "identified_rows": len(identified),
         "metadata_coverage_pct": mapping_pct, "unmapped_videos": unmapped_videos,
         "topic_performance": topic_performance, "unclassified_topic_video_ids": unclassified_topics,
-        "long_form_packaging": long_form_packaging,
+        "long_form_packaging": long_form_packaging, "related_video_candidates": related_video_candidates,
         "views": int(total_views), "engaged_views": int(total_engaged),
         "top_shorts": [{"title": r["title"] or r.get("video_id", "unknown video"),
                         "video_id": r.get("video_id", ""), "views": int(r["views"]),
@@ -194,6 +237,15 @@ def build_brief(rows: list[dict], channel_key: str, period: str = "latest availa
         lines.append("No titles matched the configured topic taxonomy.")
     if unclassified_topics:
         lines += ["", f"Titles needing manual topic classification: {len(unclassified_topics)}."]
+    lines += ["", "## Short-to-long Related Video candidates", "",
+              "Review-only suggestions based on shared title terms and topic tags. Confirm the long-form video is genuinely the same lesson before adding a Related Video in YouTube Studio; nothing is changed automatically.", ""]
+    if related_video_candidates:
+        lines += ["| Short | Suggested long-form video | Shared terms | Shared topic | Match score | Review |",
+                  "|---|---|---|---|---:|---|"]
+        for item in related_video_candidates:
+            lines.append(f"| {item['short_title'].replace('|','/')} ({item['short_video_id']}) | {item['long_title'].replace('|','/')} ({item['long_video_id']}) | {', '.join(item['shared_terms'])} | {', '.join(item['shared_topics'])} | {item['match_score']:.3f} | manual review |")
+    else:
+        lines.append("No sufficiently similar Short-to-long title pairs were found in the current report window.")
     lines += ["", "## Long-form thumbnail reach", ""]
     if long_form_packaging:
         lines += ["| Video | Impressions | CTR | Views | Avg viewed |", "|---|---:|---:|---:|---:|"]
