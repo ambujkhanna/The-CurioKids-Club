@@ -162,3 +162,10 @@
 - [x] Increased country result retrieval to 200 rows and labelled the percentage as share of reported country views; anonymized/unavailable rows may still affect full-global coverage.
 - [x] Added unit tests for country aggregation and the custom-script language group. CI rerun pending.
 - No OAuth scope or secret changed. No YouTube write API used.
+
+
+## 2026-11-25 — Country report tests passed
+
+- [x] CurioKids country-report and growth-engine unit tests passed: run 45654199219.
+- [x] AInation country-report and growth-engine unit tests passed: run 45654217704.
+- [ ] Live analytics artifact verification remains pending; country reporting still requires a manual analytics workflow run on this feature branch.
