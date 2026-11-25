@@ -113,6 +113,58 @@ class AnalyticsTests(unittest.TestCase):
             finally:
                 db.close()
 
+
+    def test_primary_market_report_obeys_channel_language_policy(self):
+        import json
+        import tempfile
+        from pathlib import Path
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            payload = {
+                "All videos": [
+                    {"country": "IN", "views": 100, "engaged_views": 70, "minutes": 50,
+                     "avg_viewed_pct": 60, "subscribers_gained": 2},
+                    {"country": "US", "views": 80, "engaged_views": 50, "minutes": 40,
+                     "avg_viewed_pct": 55, "subscribers_gained": 1},
+                    {"country": "ID", "views": 30, "engaged_views": 20, "minutes": 15,
+                     "avg_viewed_pct": 50, "subscribers_gained": 0},
+                ],
+                "Hindi versions": [{"country": "IN", "views": 60, "engaged_views": 45,
+                                    "minutes": 30, "avg_viewed_pct": 65, "subscribers_gained": 2}],
+                "English (main) videos": [{"country": "US", "views": 70, "engaged_views": 45,
+                                           "minutes": 35, "avg_viewed_pct": 58, "subscribers_gained": 1}],
+            }
+            (root / "audience_countries.json").write_text(json.dumps(payload), encoding="utf-8")
+            analytics.market_opportunity_report(root, "curiokids-club")
+            kids = json.loads((root / "market_opportunities.json").read_text(encoding="utf-8"))
+            india = next(x for x in kids if x["country_code"] == "IN")
+            indonesia = next(x for x in kids if x["country_code"] == "ID")
+            self.assertEqual(india["primary_market_language"], "Hindi")
+            self.assertEqual(india["localized_views"], 60)
+            self.assertIsNone(indonesia["localized_views"])
+            analytics.market_opportunity_report(root, "aination-studio")
+            ai = json.loads((root / "market_opportunities.json").read_text(encoding="utf-8"))
+            india_ai = next(x for x in ai if x["country_code"] == "IN")
+            self.assertEqual(india_ai["planned_production_language"], "English (current AInation policy)")
+            self.assertEqual(india_ai["primary_market_language"], "Hindi")
+
+    def test_metadata_uses_publish_date_and_upload_fallback(self):
+        import json
+        import tempfile
+        from pathlib import Path
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            state = root / "episodes"
+            state.mkdir()
+            (state / "state.json").write_text(json.dumps({"episodes": {
+                "ep001": {"video_id": "vid1", "publish_at_ist": "2026-11-01T10:00:00+05:30"},
+                "ep002": {"video_id": "vid2", "uploaded_at": "2026-11-02T10:00:00+05:30"},
+            }}), encoding="utf-8")
+            meta = analytics.metadata_from_state(root)
+            self.assertEqual(meta["vid1"]["published_at"], "2026-11-01T10:00:00+05:30")
+            self.assertEqual(meta["vid1"]["published_at_source"], "publish_at_ist")
+            self.assertEqual(meta["vid2"]["published_at_source"], "uploaded_at_fallback")
+
     def test_country_report_includes_engaged_and_subscriber_metrics(self):
         class Query:
             def query(self, **kwargs):
