@@ -404,7 +404,7 @@
         "url": "https://www.youtube.com/shorts/KR68k2Tn2Wk",
         "uploaded_at": "2026-11-24T11:29:44+05:30"
       },
-      "thumbnail_checked": "2026-11-25T01:27+05:30 set",
+      "thumbnail_checked": "2026-11-25T10:23+05:30 set",
       "hi": {
         "voices": "kokoro",
         "title": "\u0905\u0902\u0924\u0930\u093f\u0915\u094d\u0937 \u0907\u0924\u0928\u093e \u0920\u0902\u0921\u093e \u0915\u094d\u092f\u094b\u0902 \u0939\u0948? | Why Is Space So Cold? \ud83c\udf0c",
@@ -420,7 +420,27 @@
         "status": "uploaded",
         "video_id": "Ws0Bmw3cOnY",
         "url": "https://www.youtube.com/shorts/Ws0Bmw3cOnY",
-        "uploaded_at": "2026-11-25T01:26:58+05:30"
+        "uploaded_at": "2026-11-25T01:26:58+05:30",
+        "thumbnail_checked": "2026-11-25T10:22+05:30 set"
+      }
+    },
+    "ep104": {
+      "es": {
+        "voices": "kokoro",
+        "title": "\u00bfPor qu\u00e9 la tierra es diferente? \ud83e\udea8 (Parte 1 | Why Is Soil Different? \ud83e\udea8 Fun Facts for Kids (Part 1)",
+        "rendered_at": "2026-11-25T10:16:18+05:30",
+        "duration_s": 84.56,
+        "publish_at_ist": "2026-11-26T07:15+05:30",
+        "thumbnail": "set (re-applied after posting: set)",
+        "playlist": "added (CurioKids_Spanish)",
+        "made_for_kids": "no",
+        "subtitles": "es; en; titles: en",
+        "facebook": "posted (reel 3404468446391516), cover set",
+        "instagram": "posted (reel 18117617345037973) with the 2 Mbps copy, designed cover",
+        "status": "uploaded",
+        "video_id": "xsL48hFMdxg",
+        "url": "https://www.youtube.com/shorts/xsL48hFMdxg",
+        "uploaded_at": "2026-11-25T10:21:42+05:30"
       }
     }
   }
