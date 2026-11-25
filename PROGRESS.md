@@ -202,3 +202,15 @@
 - [ ] Run CurioKids render-only Daily Short and verify language badges visually.
 - [ ] Run AInation Daily Short render-only using EP020.
 - No upload token, publishing state, live playlists, public metadata, queues or schedules were changed.
+
+
+## 2026-11-25 — First live analytics artifact review
+
+- [x] CurioKids read-only analytics workflow completed and artifact verified: run 45657091511; period 2026-10-26 to 2026-11-22; 25 per-video rows, 3,247 views, 1,559 engaged views.
+- [x] AInation read-only analytics workflow completed and artifact verified: run 45657143932; same period; 28 per-video rows, 1,100 views, 443 engaged views.
+- [x] Country reports and review-only playlist plans generated for both channels.
+- [x] Retention curves collected for top 10 videos per channel (961 CurioKids points; 900 AInation points; no per-video query errors).
+- [x] Age-matched cohort reports generated (16 CurioKids rows/12 videos; 21 AInation rows/15 videos; no query errors).
+- [ ] Reach Basic report is blocked because YouTube Reporting API is disabled in Google Cloud project 702229494667 (HTTP 403 SERVICE_DISABLED). Owner must enable API; workflow will create the job and collect reports after propagation (first report may take up to 24 hours).
+- [ ] Review corrected market report output after latest re-run; prior 0.0% localized average-viewed values are invalid and should not be used.
+- [ ] Owner render-only visual checks remain pending in both production workflows.
