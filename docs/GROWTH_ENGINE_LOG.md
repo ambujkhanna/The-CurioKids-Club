@@ -119,3 +119,11 @@ The country report now includes engaged views, engaged views/views (not Shorts S
 ## 2026-11-25 — Country report CI result
 
 The enriched country-report tests passed in CurioKids run 45654199219 and AInation run 45654217704. Live API output still needs verification by manually running the YouTube Analytics workflow on `feat/shared-growth-audit-2026-11`.
+
+
+## 2026-11-25 — Main sync and post-sync validation
+
+- Synced latest CurioKids `main` into the shared growth branch, including language-badge changes (PR #16; merge commit `49ddf4d3862fe9fbcab24647b859d9913ed78e46`). Branch is 0 commits behind `main`.
+- Post-sync growth-engine CI passed: run 45655541204 (`unit-tests` job).
+- Render-only Daily Curio Kids Short remains pending because workflow dispatch is not exposed by the connected GitHub action tools. The workflow option is confirmed as `Dry run (render only, nothing uploaded)`; do not select the scheduled/publish default.
+- No video render/upload, live playlist change, metadata edit or publishing action was performed.
