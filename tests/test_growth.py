@@ -91,7 +91,7 @@ class GrowthBriefTests(unittest.TestCase):
         self.assertTrue(candidates[0]["shared_topics"])
 
 
-    def test_related_video_candidates_reject_weak_cross-topic_matches(self):
+    def test_related_video_candidates_reject_weak_cross_topic_matches(self):
         if growth.playlist_plan.KIDS:
             short_title = "Why Do Cats Purr?"
             long_title = "How Your Heart Works | Full Video for Kids"
