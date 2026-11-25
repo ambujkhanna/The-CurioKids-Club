@@ -127,3 +127,19 @@ Implemented on `feat/shared-growth-audit-2026-11` in both repositories:
 - Unit tests for cohort windows, publish-date migration/fallback, primary-language market policy, Reach CSV parsing and weighted CTR.
 
 CI results: CurioKids latest analytics/growth suite run 45656948802 passed; AInation latest suite run 45656964107 passed. Fresh collection workflows were triggered on the feature branch; report artifacts and Reach API job/report availability still require run completion and inspection. No publishing credentials or upload workflows were used.
+
+
+## Fresh analytics verification — 2026-11-25
+
+Both read-only analytics workflows completed successfully on the feature branch and uploaded artifacts:
+
+- CurioKids: run [45657091511](https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/45657091511), report window 2026-10-26 to 2026-11-22, 25 per-video rows, 3,247 views and 1,559 engaged views.
+- AInation: run [45657143932](https://github.com/ambujkhanna/youtube-studio-automation/actions/runs/45657143932), same report window, 28 per-video rows, 1,100 views and 443 engaged views.
+
+Country data is partial/anonymized and shares are explicitly shares of returned rows, not all channel views. CurioKids returned-country leaders: USA 1,322 views (English-main group 1,233); India 642 (Hindi group 344); Philippines 108; Indonesia 30. The Hindi group had 344 views and 13.3% average viewed in this period; this is a signal for editorial review, not a causal conclusion or reason to discontinue Hindi. AInation returned-country leaders: India 90, USA 66, Philippines 51, Indonesia 35; AInation remains English-only.
+
+Retention collection returned 10 curves per channel with 961 CurioKids points and 900 AInation points, no per-video query errors. Age-cohort output contains 16 CurioKids rows across 12 videos and 21 AInation rows across 15 videos, with no query errors; only complete 7/14/28-day windows are included. Playlist plan artifacts were generated and uploaded; assignments remain review-only and no live playlists were changed.
+
+Reach Basic code and workflow integration are implemented, but the run log reports HTTP 403 SERVICE_DISABLED: YouTube Reporting API is not enabled in Google Cloud project 702229494667. No Reach report job or Reach artifact was created. Enable the API in that project, then the next scheduled/triggered workflow will create the daily report job; YouTube may take up to 24 hours to produce the first report.
+
+The first market report exposed a calculation issue in the localized average-viewed field; the code and regression test have been corrected and a fresh run is in progress. Do not use the old 0.0% localized values.
