@@ -224,3 +224,14 @@
 - [x] Verified retention and age-cohort artifacts: 10 curves per channel; 961/900 retention points; 16/21 cohort rows; no per-video errors.
 - [ ] Enable YouTube Reporting API in Google Cloud project 702229494667; Reach Basic collector currently receives HTTP 403 SERVICE_DISABLED.
 - [ ] Owner visual validation: CurioKids render-only run and AInation EP020 render-only run.
+
+
+## 2026-11-25 — Topic-performance and reach integration
+
+- [x] Exposed the channel-specific playlist taxonomy classifier for growth reporting.
+- [x] Added non-exclusive topic-by-format performance summaries to growth briefs; unmatched titles are left for manual review.
+- [x] Added Reach Basic per-video summary CSV and optional long-form thumbnail impressions/CTR enrichment in the growth brief.
+- [x] Updated analytics workflows to enrich the growth brief after the Reach collector step.
+- [x] Latest tests passed: CurioKids run 45658446499; AInation run 45658455277.
+- [x] Latest analytics workflows completed: CurioKids run 45658430722; AInation run 45658440732. Topic reports verified; long-form CTR remains blocked by disabled YouTube Reporting API.
+- [ ] Owner enable YouTube Reporting API in project 702229494667; rerun/allow the daily report to populate CTR.
