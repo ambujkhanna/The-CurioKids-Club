@@ -152,6 +152,25 @@ def _headline(c, K, ep, tf, x, y, maxw, size0, align="c", rot=-4):
     return y + (len(lines) - 1) * size * 0.52 + size * 0.6
 
 
+
+def _language_badge(c, K, lang, x, y, tf, size):
+    """Compact language pill in the headline zone; its width follows the label."""
+    labels = {"en": ("ENGLISH", "#2463EB"), "hi": ("हिन्दी", "#F07818"), "es": ("ESPAÑOL", "#00A86B")}
+    label, color = labels.get((lang or "en").lower(), labels["en"])
+    font = skia.Font(tf, size)
+    width = T._ms(font, label)
+    pad_x, pad_y = size * 0.52, size * 0.30
+    w, h = width + pad_x * 2, size + pad_y * 2
+    if x is None:  # center the badge beneath the portrait headline
+        x = (_FW - w) / 2
+    rect = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(x, y, w, h), h / 2, h / 2)
+    shadow = T._P(K, "#000000", a=0.28)
+    shadow.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, size * 0.12))
+    c.save(); c.translate(0, size * 0.10); c.drawRRect(rect, shadow); c.restore()
+    c.drawRRect(rect, T._P(K, color))
+    c.drawRRect(rect, T._P(K, "#FFFFFF", max(2, size * 0.055)))
+    T._ds(c, label, x + pad_x, y + pad_y + size * 0.80, font, T._P(K, "#FFFFFF"))
+
 def _background(c, K, t, W, H, orient):
     try:
         import art
@@ -221,7 +240,8 @@ def make(path, K, chars, ep, ico, t_pose=None):
     for ch, (x, y, s) in reversed(list(zip(cast, spots))):
         _char(c, K, ch, t, x, y, s)
     # headline last, on top of everything
-    _headline(c, K, ep, tf, 540, 350, 1000, 200)
+    headline_bottom = _headline(c, K, ep, tf, 540, 350, 1000, 200)
+    _language_badge(c, K, os.environ.get("THUMB_LANG", "en"), None, headline_bottom + 24, tf, 42)
     _part_ribbon(c, K, ep, tf, 40, 1020, 64)
     img = surf.makeImageSnapshot()
     if hasattr(K, "grade"): img = K.grade(img)
@@ -247,7 +267,8 @@ def make_wide(path, K, chars, ep, ico, t_pose=None):
         _char(c, K, ch, t, x, y, s)
     c.drawRoundRect(skia.Rect.MakeXYWH(30, 22, 330, 60), 30, 30, T._P(K, "#FFFFFF", a=0.92))
     K.logo(c, 195, 52, 0.72, tcol="#1D1D1F")
-    _headline(c, K, ep, tf, 40, 200, 700, 118, align="l", rot=-3)
+    headline_bottom = _headline(c, K, ep, tf, 40, 200, 700, 118, align="l", rot=-3)
+    _language_badge(c, K, os.environ.get("THUMB_LANG", "en"), 40, headline_bottom + 12, tf, 28)
     _part_ribbon(c, K, ep, tf, 640, 400, 40)
     hy = 490
     if len(icons) == 2:
