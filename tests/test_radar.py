@@ -8,6 +8,10 @@ class EditorialTopicGateTests(unittest.TestCase):
         self.assertFalse(radar._ok("why is gold price dropping"))
         self.assertFalse(radar._fits("gold prices are falling"))
 
+
+    def test_finance_blocklist_is_channel_independent(self):
+        self.assertFalse(radar._ok("why gold price dropped yesterday"))
+
     def test_unrelated_market_news_is_rejected(self):
         self.assertFalse(radar._ok("stock market prices are falling"))
         self.assertFalse(radar._fits("crypto market news today"))
