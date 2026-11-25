@@ -433,7 +433,7 @@
         "video_id": "Ws0Bmw3cOnY",
         "url": "https://www.youtube.com/shorts/Ws0Bmw3cOnY",
         "uploaded_at": "2026-11-25T01:26:58+05:30",
-        "thumbnail_checked": "2026-11-25T10:22+05:30 set",
+        "thumbnail_checked": "2026-11-26T00:36+05:30 set",
         "facebook_cover": "cover set"
       },
       "facebook_cover": "cover set"
@@ -455,8 +455,30 @@
         "video_id": "xsL48hFMdxg",
         "url": "https://www.youtube.com/shorts/xsL48hFMdxg",
         "uploaded_at": "2026-11-25T10:21:42+05:30",
-        "facebook_cover": "cover set"
+        "facebook_cover": "cover set",
+        "thumbnail_checked": "2026-11-26T00:36+05:30 set"
       }
+    },
+    "ep076": {
+      "voices": "chatterbox",
+      "selfcheck": {
+        "heard": 0.899,
+        "ok": true
+      },
+      "title": "Why Does \"The\" Sound Different? \ud83d\udd24 Fun Facts for Kids",
+      "rendered_at": "2026-11-26T00:33:40+05:30",
+      "duration_s": 74.64,
+      "publish_at_ist": "2026-11-26T18:05+05:30",
+      "thumbnail": "set (re-applied after posting: set)",
+      "playlist": "added (curiokids)",
+      "made_for_kids": "no",
+      "subtitles": "en; titles: hi",
+      "facebook": "posted (reel 1956848338816341), cover set",
+      "instagram": "posted (reel 18156456688497198), designed cover",
+      "status": "uploaded",
+      "video_id": "nV-KMMNmemI",
+      "url": "https://www.youtube.com/shorts/nV-KMMNmemI",
+      "uploaded_at": "2026-11-26T00:35:49+05:30"
     }
   }
 }
