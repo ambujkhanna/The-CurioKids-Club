@@ -45,10 +45,10 @@ alcohol beer rum weed vape smoke smoking suicide horror scary creepy fear 3am da
 mating tiktok roblox minecraft fortnite gta skibidi mrbeast batman marvel trump biden election religion god woman stock
 market money crypto bitcoin juggalo goodbye rabies""".split()) if KIDS else set("porn nude sex onlyfans".split())
 NOISE = set("song lyrics meme tiktok reaction asmr prank challenge live stream download free apk mod hack crack".split())
-# Explicitly reject unrelated finance/news topics on BOTH channels, even if a trend headline contains an AI brand.
-OFF_CHANNEL = set("gold price prices pricing stock stocks market markets share shares crypto bitcoin ethereum forex currency currencies
-exchange trading trader economy economic inflation recession interest rates bond bonds commodity commodities commodities
-politics politician election celebrity celebrities gossip breaking news war conflict".split())
+# Reject unrelated finance/news topics on BOTH channels, even if a trend headline contains an AI brand.
+OFF_CHANNEL = set("""gold price prices stock stocks market markets share shares crypto bitcoin ethereum forex currency currencies
+exchange trading trader economy economic inflation recession interest rates bond bonds commodity commodities
+politics politician election celebrity celebrities gossip breaking news war conflict""".split())
 
 
 def _get(url, timeout=15):
@@ -370,7 +370,7 @@ def trends_md(yt, titles):
         md.append("_Skipped: add the free `YT_API_KEY` secret to see YouTube's trending charts._")
         return md
     yv = youtube_trending(yt)
-    keep = [x for x in yv if x[5]]  # both channels: only subjects that pass the strict channel-fit gate
+    keep = [x for x in yv if x[5]]  # both channels: only strict channel-fit subjects
     keep.sort(key=lambda x: (not x[4], -x[3]))  # Shorts first, then by views
     if keep:
         md += ["Ideas only: look at the subject, never copy titles or content.", "",
