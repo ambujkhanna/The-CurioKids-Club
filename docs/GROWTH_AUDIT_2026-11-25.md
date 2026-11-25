@@ -113,3 +113,17 @@ The existing read-only collector already retrieves per-video views, engaged view
 - CurioKids may continue its existing English/Hindi/Spanish library. New language production still requires owner approval and audience evidence.
 - AInation remains English-only; multilingual production is not in scope unless separately approved.
 - Analytics may still report other languages or audience locations. Reporting them does not authorise creating videos in those languages.
+
+
+## Implementation update — 2026-11-25
+
+Implemented on `feat/shared-growth-audit-2026-11` in both repositories:
+
+- Read-only YouTube Analytics country reports with engaged views, subscribers gained/lost and clearly labelled returned-country share.
+- Primary-language market opportunity report ranked by actual channel country views. Localized-language metrics are only shown when matching published language-version data exists; country totals are not treated as proof of local-language demand.
+- Publish timestamp persistence from episode state, with upload timestamp fallback, and complete 7/14/28-day cumulative age cohorts for the top 20 videos.
+- Bounded audience-retention curves for the top 10 videos using one targeted query per video.
+- YouTube Reporting API Reach Basic collector for thumbnail impressions and CTR; workflow creates the daily reporting job if absent and downloads available reports.
+- Unit tests for cohort windows, publish-date migration/fallback, primary-language market policy, Reach CSV parsing and weighted CTR.
+
+CI results: CurioKids latest analytics/growth suite run 45656948802 passed; AInation latest suite run 45656964107 passed. Fresh collection workflows were triggered on the feature branch; report artifacts and Reach API job/report availability still require run completion and inspection. No publishing credentials or upload workflows were used.
