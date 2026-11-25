@@ -79,3 +79,8 @@ To run the Reach collector manually after authorisation: `python pipeline/reach_
 ## Reporting API enablement blocker
 
 The Reach Basic collector is implemented and tested, but the first workflow run returned HTTP 403 SERVICE_DISABLED for Google Cloud project 702229494667. Enable **YouTube Reporting API** in the same Google Cloud project used by the analytics OAuth client: https://console.developers.google.com/apis/api/youtubereporting.googleapis.com/overview?project=702229494667. No new OAuth scope is needed; the existing read-only scope is supported. After enabling, allow propagation and rerun the analytics workflow. The workflow creates the Reach Basic daily job if absent; the first report may take up to 24 hours.
+
+
+## Topic and packaging insights
+
+The growth brief groups video performance by channel-specific topic taxonomy and format (Shorts/long-form). Metrics include video count, views, engaged views, engaged-view rate, weighted average viewed percentage and subscribers per 1,000 views. Topic matches are non-exclusive; unmatched titles remain manual review. When Reach Basic data is available, the brief also shows long-form thumbnail impressions and CTR by video. Do not use thumbnail CTR as a Shorts-feed swipe metric.
