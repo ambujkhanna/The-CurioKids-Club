@@ -235,6 +235,96 @@ def export_outputs(db, output_dir: Path, channel_key: str, start: str, end: str)
     return csv_path, md_path
 
 
+
+PRIMARY_MARKETS = {
+    "IN": ("India", "Hindi"), "US": ("United States", "English"),
+    "ID": ("Indonesia", "Indonesian"), "BR": ("Brazil", "Portuguese"),
+    "MX": ("Mexico", "Spanish"), "JP": ("Japan", "Japanese"),
+    "DE": ("Germany", "German"), "VN": ("Vietnam", "Vietnamese"),
+    "PH": ("Philippines", "Filipino/Tagalog"), "TR": ("Turkey", "Turkish"),
+}
+
+
+def _merge_country_groups(data: dict, labels: list[str]) -> dict[str, dict[str, float]]:
+    merged: dict[str, dict[str, float]] = {}
+    for label in labels:
+        for row in data.get(label, []):
+            code = str(row.get("country") or "")
+            item = merged.setdefault(code, {"views": 0.0, "engaged_views": 0.0, "minutes": 0.0,
+                                             "viewed_x_views": 0.0, "subs": 0.0})
+            views = number(row.get("views"))
+            item["views"] += views
+            item["engaged_views"] += number(row.get("engaged_views"))
+            item["minutes"] += number(row.get("minutes"))
+            item["viewed_x_views"] += number(row.get("avg_viewed_pct")) * views
+            item["subs"] += number(row.get("subscribers_gained"))
+    return merged
+
+
+def market_opportunity_report(output_dir: Path, channel_key: str) -> Path | None:
+    """Rank target markets from actual country views; distinguish localized evidence from mixed-language totals."""
+    source = output_dir / "audience_countries.json"
+    if not source.exists():
+        return None
+    try:
+        data = json.loads(source.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    all_country = {str(r.get("country")): r for r in data.get("All videos", [])}
+    english_labels = ["English (main) videos", "English custom/script videos", "English (explicit) versions"]
+    english = _merge_country_groups(data, english_labels)
+    hindi = _merge_country_groups(data, ["Hindi versions"])
+    spanish = _merge_country_groups(data, ["Spanish versions"])
+    kids = "curio" in channel_key.lower()
+    output = []
+    for code, (country, primary_language) in PRIMARY_MARKETS.items():
+        total = all_country.get(code)
+        if not total:
+            continue
+        localized = None
+        if kids:
+            if primary_language == "Hindi":
+                localized = hindi.get(code)
+            elif primary_language == "English":
+                localized = english.get(code)
+            elif primary_language == "Spanish":
+                localized = spanish.get(code)
+            production_language = primary_language
+            available = primary_language if localized else "No matching language version in current library"
+        else:
+            localized = english.get(code)
+            production_language = "English (current AInation policy)"
+            available = "English only"
+        output.append({
+            "country_code": code, "country": country, "primary_market_language": primary_language,
+            "planned_production_language": production_language, "current_library_language_evidence": available,
+            "country_views_all_videos": int(number(total.get("views"))),
+            "localized_views": int(number(localized.get("views"))) if localized else None,
+            "localized_engaged_views": int(number(localized.get("engaged_views"))) if localized else None,
+            "localized_avg_viewed_pct": round(number(localized.get("avg_viewed_pct")), 1) if localized else None,
+            "localized_subscribers_gained": int(number(localized.get("subscribers_gained"))) if localized else None,
+            "evidence_note": ("localized-language evidence" if localized else
+                              "country-level channel baseline only; no localized-language evidence"),
+        })
+    output.sort(key=lambda x: x["country_views_all_videos"], reverse=True)
+    (output_dir / "market_opportunities.json").write_text(
+        json.dumps(output, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    lines = ["# Primary-language market opportunities", "", f"**Channel:** {channel_key}", "",
+             "Ranked by actual country views in the collected report, not population estimates. Localized metrics are shown only when the channel has a matching language-version group. Country totals alone do not prove demand for a new language.", "",
+             "| Rank | Country | Primary language focus | Production policy | Country views | Localized views | Localized avg viewed | Evidence |",
+             "|---:|---|---|---|---:|---:|---:|---|"]
+    for rank, item in enumerate(output, 1):
+        localized_views = f"{item['localized_views']:,}" if item["localized_views"] is not None else "—"
+        viewed = f"{item['localized_avg_viewed_pct']}%" if item["localized_avg_viewed_pct"] is not None else "—"
+        lines.append(f"| {rank} | {item['country']} | {item['primary_market_language']} | {item['planned_production_language']} | {item['country_views_all_videos']:,} | {localized_views} | {viewed} | {item['evidence_note']} |")
+    if not output:
+        lines.append("| — | No target-country rows returned | | | | | | |")
+    lines += ["", "India production focus is Hindi only; Tamil, Telugu and Bengali are excluded. AInation remains English-only. Analytics may report other audience languages without authorising production in them.", ""]
+    path = output_dir / "market_opportunities.md"
+    path.write_text("\n".join(lines), encoding="utf-8")
+    return path
+
+
 def parse_daily_rows(response: dict[str, Any]) -> list[dict[str, Any]]:
     headers = [item["name"] for item in response.get("columnHeaders", [])]
     out = []
@@ -426,6 +516,8 @@ def main(argv=None) -> int:
         finally: db.close()
         try:  # optional extra: views by country (never fails the collection)
             print("Audience by country:", audience_report(service, start, end, meta, out))
+            market_path = market_opportunity_report(out, args.channel_key)
+            if market_path: print("Primary-language market report:", market_path)
         except Exception as exc:
             print(f"note: audience by country skipped: {exc}", file=sys.stderr)
         for label, fn, count in (("age-matched cohorts", age_cohort_report, args.cohort_top_n),
