@@ -75,6 +75,7 @@ _TITLE_WORDS = None
 
 def _ok(s):
     global _TITLE_WORDS
+    s = _clean(s)  # normalize case/punctuation for direct callers and test inputs
     if _TITLE_WORDS is None:  # our own episode title words count as topic words too
         _TITLE_WORDS = {w for t in covered_titles() for w in t.split() if len(w) > 3} - STOP
     w = set(s.split())
