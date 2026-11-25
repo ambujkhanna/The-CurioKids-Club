@@ -36,6 +36,22 @@ def _ds(c, s, x, y, f, p):
     if d and d.has(s): d.draw(c, s, x, y - f.getSize() * 0.30, f.getSize(), p, align="l")
     else: c.drawString(s, x, y, f, p)
 
+def apply_language_badge(path, K, lang=None):
+    """Attach a language pill to the title group, never to a thumbnail corner."""
+    import language_badges
+    img = skia.Image.open(path)
+    W, H = img.width(), img.height()
+    scale = min(W, H) / 1080
+    # Portrait: below/right of the headline. Landscape: alongside its right edge.
+    cx = W * (0.83 if H > W else 0.72)
+    cy = H * (0.265 if H > W else 0.30)
+    surf = skia.Surface(W, H)
+    c = surf.getCanvas()
+    c.drawImage(img, 0, 0)
+    language_badges.draw(c, K, lang, cx, cy, scale)
+    surf.makeImageSnapshot().save(path, skia.kJPEG, 90)
+    return path
+
 
 
 def text3d(c, K, s, x, y, size, tf, align="c", depth=None, face=("#FFF27A", "#FFC21A", "#FF8F1F"), side="#1F2D44"):
@@ -143,7 +159,9 @@ def make_wide(path, K, chars, ep, ico, t_pose=None):
     """16:9 thumbnail (1280x720) for long videos: big headline + pictures on the left, characters in their room on the right."""
     if os.environ.get("THUMB_STYLE", "punch").strip().lower() != "classic":  # punchy design (thumb_punch.py)
         try:
-            import thumb_punch; return thumb_punch.make_wide(path, K, chars, ep, ico, t_pose)
+            import thumb_punch
+            result = thumb_punch.make_wide(path, K, chars, ep, ico, t_pose)
+            return apply_language_badge(result, K)
         except Exception as e:
             print("note: punch thumbnail failed, using the classic one:", e)
     W, H = 1280, 720
@@ -181,7 +199,7 @@ def make_wide(path, K, chars, ep, ico, t_pose=None):
     img = surf.makeImageSnapshot()
     if hasattr(K, "grade"): img = K.grade(img)
     img.save(path, skia.kJPEG, 90)
-    return path
+    return apply_language_badge(path, K)
 
 
 def make(path, K, chars, ep, ico, t_pose=None):
@@ -189,7 +207,9 @@ def make(path, K, chars, ep, ico, t_pose=None):
         return make_wide(path, K, chars, ep, ico, t_pose)
     if os.environ.get("THUMB_STYLE", "punch").strip().lower() != "classic":  # punchy design (thumb_punch.py)
         try:
-            import thumb_punch; return thumb_punch.make(path, K, chars, ep, ico, t_pose)
+            import thumb_punch
+            result = thumb_punch.make(path, K, chars, ep, ico, t_pose)
+            return apply_language_badge(result, K)
         except Exception as e:
             print("note: punch thumbnail failed, using the classic one:", e)
     W, H = 1080, 1920
@@ -239,4 +259,4 @@ def make(path, K, chars, ep, ico, t_pose=None):
     img = surf.makeImageSnapshot()
     if hasattr(K, "grade"): img = K.grade(img)
     img.save(path, skia.kJPEG, 90)
-    return path
+    return apply_language_badge(path, K)
