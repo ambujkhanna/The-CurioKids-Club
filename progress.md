@@ -2,16 +2,17 @@
 
 **Active branch:** `feature/language-title-badges-v2`  
 **Base:** `main`  
-**Draft PR:** [#11 — Add inline language badges to CurioKids thumbnails](https://github.com/ambujkhanna/The-CurioKids-Club/pull/11)  
-**Status:** Implementation is on the feature branch; automated execution and visual review remain pending.
+**Draft PR:** [#12 — Add inline language badges to CurioKids thumbnails](https://github.com/ambujkhanna/The-CurioKids-Club/pull/12)  
+**Status:** Implementation is on the clean feature branch; automated execution and visual review remain pending.
 
 ## 2026-11-25 — Task A: language badges
 
 ### Repository and branch
 - Confirmed repository: `ambujkhanna/The-CurioKids-Club`; default branch: `main`.
 - Compared old `feature/modern-visual-engine` with `main`: 85 commits ahead and 89 behind. Did not reuse that stale branch.
-- Created `feature/language-title-badges-v2` from `main`.
-- Created this v2 branch directly from the latest `main` after the two add/delete commits on `main`; it is therefore based on the current main head.
+- Created `feature/language-title-badges-v2` directly from the latest `main`.
+- Verified branch comparison: 8 commits ahead, 0 behind at initial sync; later task commits are on this branch only.
+- Superseded and closed draft PR #11. No changes from PR #11 were merged.
 
 ### Implementation
 - Added `pipeline/language_badges.py` with EN/HI/ES labels and a reusable Skia badge renderer. Hindi label uses Devanagari shaping when `deva` is available.
@@ -28,7 +29,7 @@
 - No publishing cadence or language rotation has been changed.
 
 ## Validation checklist
-- [x] Fresh feature branch created from main
+- [x] Fresh feature branch created from latest main (0 commits behind)
 - [x] Shared EN/HI/ES labels and reusable badge renderer
 - [x] Badge integrated in punch and classic portrait/landscape paths
 - [x] Language passed through normal rendering and thumbnail refresh
@@ -39,11 +40,9 @@
 - [ ] Render portrait EN/HI/ES samples and inspect at phone size
 - [ ] Render landscape sample and inspect
 - [ ] Confirm headline/badge spacing and Hindi glyph shaping visually
-- [ ] Synchronize branch with latest main before merge
 - [ ] Owner review and approval; do not merge automatically
 
 ## Next actions
 1. Run the branch validation workflow from GitHub Actions after a normal push/synchronize event.
 2. Generate and inspect actual portrait/landscape thumbnails; adjust placement if any headline collision occurs.
-3. Confirm v2 remains based on latest main.
-4. Update this log and PR #11 with final validation evidence.
+3. Update this log and PR #12 with final validation evidence.
