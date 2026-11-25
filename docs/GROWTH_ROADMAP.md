@@ -116,3 +116,8 @@ Family-friendly, accurate, curiosity-led learning with Leo and Mia. Science, nat
 ## Fresh data checkpoint — 2026-11-25
 
 The first live feature-branch analytics artifacts were generated for 2026-10-26 to 2026-11-22. CurioKids returned 25 per-video rows (3,247 views; 1,559 engaged views); AInation returned 28 rows (1,100 views; 443 engaged views). Country reports, review-only playlist plans, retention curves and age cohorts were generated. Country metrics cover returned rows only and may be anonymized; they are not a full-global denominator. The Reach Basic Reporting API is currently disabled in the shared Google Cloud project 702229494667, so thumbnail impressions/CTR remain blocked until the owner enables that API. See the audit for the data observations and exact run links.
+
+
+## Topic-level performance implementation — 2026-11-25
+
+Growth briefs now group analytics by the channel-specific topic taxonomy and format (Shorts vs long-form), including video count, views, engaged views, engaged-view rate, weighted average viewed percentage and subscribers per 1,000 views. A video may match more than one topic; unmatched titles remain manual review and are not guessed. If Reach Basic is available, the same brief adds long-form thumbnail impressions and CTR for packaging review; Shorts-feed swipe behaviour is never inferred from CTR.
