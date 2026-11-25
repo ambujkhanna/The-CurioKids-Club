@@ -126,3 +126,16 @@
 - [ ] New Visual Engine integrated dry-run 44739867903, triggered by the episode-validator fix on `feature/modern-visual-engine`, is still in progress. Inspect its final MP4/contact-sheet artifact and visually review before accepting.
 - [ ] Safe Daily Short dry-run remains pending in both repositories; the GitHub integration used here does not expose workflow dispatch. Do not use the scheduled/publish default.
 - [ ] Visual Engine remains feature-branch-only; no merge to `main` or production default change without owner visual approval.
+
+
+## 2026-11-25 — Channel growth roadmap approved and documented
+
+- [x] Reviewed current `main` growth-engine code and documentation before planning.
+- [x] Created channel-specific `docs/GROWTH_ROADMAP.md` with priorities, experiments, measures, acceptance gates and safety boundaries.
+- [x] Updated `docs/GROWTH_ENGINE.md` to link the roadmap and record the delivery sequence.
+- [x] Updated `docs/TODO.md` with shared implementation tasks and channel-specific owner/assistant actions.
+- [x] Recorded this decision in `CONVERSATION.md` and the channel handoff.
+- [ ] Analytics metric gap investigation and implementation (next engineering phase; not started in this documentation-only change).
+- [ ] Baseline report, sample-data tests and safe render-only dry-run validation.
+
+**Important:** this is a documentation/planning change only. No analytics code, credentials, episode state, workflow, publishing schedule, video metadata or production behaviour was changed. No video was uploaded or published. Work is on branch `docs/channel-growth-roadmap-2026-11`; owner hand-push convention remains in force.
