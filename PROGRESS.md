@@ -142,3 +142,13 @@
 - [ ] Run PR CI and explicit render-only Daily Short dry-runs in both repositories (AInation EP020). No scheduled/publishing action.
 
 **Safety:** no upload token was touched; no live playlist, video metadata, queue, schedule or publishing behaviour changed. Historical analytics are not presented as current. Work is scoped to shared analytics and recommendations.
+
+
+## 2026-11-25 — Shared growth CI validation update
+
+- [x] CurioKids growth-engine PR unit tests passed: run 45653482421.
+- [x] AInation growth-engine PR unit tests passed after normalizing topic-filter input case: run 45653499001.
+- [x] Expanded playlist planner vocabulary and added regression tests for on-pillar topic titles. Current preview leaves 2 CurioKids items and 1 AInation item for manual review.
+- [ ] Fresh analytics collection and artifact inspection remain pending.
+- [ ] Explicit render-only Daily Short dry-run remains pending in both repos; AInation regression path should use EP020.
+- No PR merged. No publishing workflow dispatched. No upload credential or live channel state changed.
