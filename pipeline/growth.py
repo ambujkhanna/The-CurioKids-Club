@@ -122,7 +122,7 @@ def build_related_video_candidates(rows: list[dict], per_short: int = 2) -> list
         matches = []
         for long in longs:
             long_title = str(long.get("title") or "")
-            long_words = set(playlist_plan.re.findall(r"[a-z0-9]+", long_title.lower())) - TITLE_STOPWORDS
+            long_words = set(re.findall(r"[a-z0-9]+", long_title.lower())) - TITLE_STOPWORDS
             shared = sorted(short_words & long_words)
             long_topics = set(playlist_plan.classify_topics(long_title))
             shared_topics = sorted(short_topics & long_topics)
