@@ -8,7 +8,6 @@ on:
     paths:
       - "pipeline/analytics.py"
       - "pipeline/growth.py"
-      - "pipeline/playlist_plan.py"
       - "pipeline/analytics-requirements.txt"
       - "tests/**"
       - "episodes/state.json"
@@ -87,10 +86,6 @@ jobs:
         run: |
           CSV="$(ls -t out/analytics/*.csv | head -n 1)"
           python pipeline/growth.py --csv "$CSV" --channel-key curiokids-club --period "${{ inputs.start_date || 'default 28-day window' }} to ${{ inputs.end_date || 'latest complete day' }}" --output-dir out/analytics
-
-      - name: Build review-only topic and language playlist plan
-        if: success()
-        run: python pipeline/playlist_plan.py --output-dir out/analytics
 
       - name: Save analytics database cache
         if: always() && hashFiles('out/analytics/analytics.sqlite3') != ''
