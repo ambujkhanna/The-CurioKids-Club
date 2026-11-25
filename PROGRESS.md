@@ -214,3 +214,13 @@
 - [ ] Reach Basic report is blocked because YouTube Reporting API is disabled in Google Cloud project 702229494667 (HTTP 403 SERVICE_DISABLED). Owner must enable API; workflow will create the job and collect reports after propagation (first report may take up to 24 hours).
 - [ ] Review corrected market report output after latest re-run; prior 0.0% localized average-viewed values are invalid and should not be used.
 - [ ] Owner render-only visual checks remain pending in both production workflows.
+
+
+## 2026-11-25 — Corrected market report and artifact validation
+
+- [x] Regenerated and inspected corrected market-opportunity outputs: CurioKids run 45657535212; AInation run 45657556902.
+- [x] Verified localized average-viewed values (CurioKids US English 56.3%, India Hindi 13.3%; AInation English-only US 35.2%, Philippines 41.0%, Indonesia 45.6%). Earlier 0.0% values were a calculation defect and are superseded.
+- [x] Verified playlist plan counts: CurioKids 66 assignments / 2 manual reviews; AInation 79 / 1.
+- [x] Verified retention and age-cohort artifacts: 10 curves per channel; 961/900 retention points; 16/21 cohort rows; no per-video errors.
+- [ ] Enable YouTube Reporting API in Google Cloud project 702229494667; Reach Basic collector currently receives HTTP 403 SERVICE_DISABLED.
+- [ ] Owner visual validation: CurioKids render-only run and AInation EP020 render-only run.
