@@ -69,7 +69,7 @@ The existing read-only collector already retrieves per-video views, engaged view
 | Requirement | Finding | Recommended next step |
 |---|---|---|
 | Audience by country/language | Targeted Analytics API supports country reports. Current code requests views, watch time and average viewed percentage by all videos and selected language groups. | Run fresh collection; add supported engagedViews/subscriber metrics; include the missing `script` language group for custom English videos. |
-| Country share | Current calculation is based on returned country rows (currently capped at 50), so it may not represent the full channel total. | Retrieve all supported countries for the denominator or label share as share of returned countries. |
+| Country share | Current calculation uses up to 200 returned country rows and labels the value as share of reported views; API anonymization or unavailable rows can still mean it is not a mathematically complete global denominator. | Keep the label explicit and verify coverage from fresh report output. |
 | Thumbnail impressions/CTR | Not part of the current targeted per-video query. Reporting API provides `channel_reach_basic_a1` and `channel_reach_combined_a1`, with `video_thumbnail_impressions` and `video_thumbnail_impressions_ctr`. | Check/enable YouTube Reporting API in each Cloud project; create Reach report jobs and ingest daily CSVs. |
 | Shorts Stayed to watch | Not exposed as a standalone metric in the targeted API list. `engagedViews` is not the ratio and does not expose the swiped-away denominator. | Do not derive it from engaged views. Use Studio/exported data if available; otherwise mark unavailable via API. |
 | Audience-retention curve | Supported with `elapsedVideoTimeRatio` and `audienceWatchRatio` / `relativeRetentionPerformance`; one video ID per request. | Add bounded optional queries for selected/top videos, not every video on every daily run. |
@@ -86,8 +86,8 @@ The existing read-only collector already retrieves per-video views, engaged view
 ## Safe next steps
 
 1. Run analytics manually in each repo and verify a fresh artifact includes `audience_countries.md/.json` and `playlist_plan.csv/.md`. This GitHub integration does not expose workflow dispatch.
-2. Improve planner vocabulary and add regression tests for the on-pillar examples above.
-3. Extend country reporting with supported engaged/subscriber metrics, the English custom-script cohort and a correct share denominator.
+2. Improve planner vocabulary and add regression tests for the on-pillar examples above. (Done; 2 CurioKids and 1 AInation item remain for manual review.)
+3. Extend country reporting with supported engaged/subscriber metrics, the English custom-script cohort and a clear returned-country share denominator. (Implemented; fresh API artifact verification pending.)
 4. Prototype Reporting API Reach Basic and bounded retention collection.
 5. Preserve publication timestamps and add age-matched cohorts.
 6. Run PR CI and explicitly selected render-only Daily Short dry-runs in both repos. For AInation use EP020. Do not select a scheduled/publishing action.
