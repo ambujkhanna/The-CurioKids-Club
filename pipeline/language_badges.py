@@ -25,7 +25,8 @@ def draw(c, K, lang, cx, cy, scale=1.0):
     h, pad = size * 1.55, size * 0.55
     w = tw + pad * 2
     x, y = cx - w / 2, cy - h / 2
-    color = COLORS.get((lang or "en").lower(), COLORS["en"])
+    lang_key = (lang or os.environ.get("THUMB_LANG") or "en").lower()
+    color = COLORS.get(lang_key, COLORS["en"])
     c.drawRRect(skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(x, y, w, h), h / 2, h / 2),
                 skia.Paint(AntiAlias=True, Color=K.hexc(color)))
     paint = skia.Paint(AntiAlias=True, Color=K.hexc("#FFFFFF"))
