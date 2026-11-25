@@ -5,6 +5,7 @@ import argparse, csv, json
 from pathlib import Path
 import playlist_plan
 import re
+from difflib import SequenceMatcher
 
 PROFILES = {
     "curiokids-club": {
@@ -126,18 +127,20 @@ def build_related_video_candidates(rows: list[dict], per_short: int = 2) -> list
             shared = sorted(short_words & long_words)
             long_topics = set(playlist_plan.classify_topics(long_title))
             shared_topics = sorted(short_topics & long_topics)
-            if not shared or (not shared_topics and len(shared) < 2):
+            similarity = SequenceMatcher(None, " ".join(sorted(short_words)), " ".join(sorted(long_words))).ratio()
+            if not shared or not shared_topics or (len(shared) < 2 and similarity < 0.5):
                 continue
             union = short_words | long_words
-            score = (len(shared) / len(union) if union else 0.0) + (0.15 if shared_topics else 0.0)
-            if score < 0.18:
+            jaccard = len(shared) / len(union) if union else 0.0
+            score = 0.6 * jaccard + 0.4 * similarity + 0.1
+            if score < 0.25:
                 continue
             matches.append({
                 "short_video_id": str(short.get("video_id") or ""),
                 "short_title": short_title,
                 "long_video_id": str(long.get("video_id") or ""),
                 "long_title": long_title,
-                "shared_terms": shared, "shared_topics": shared_topics,
+                "shared_terms": shared, "shared_topics": shared_topics, "title_similarity": round(similarity, 3),
                 "match_score": round(score, 3), "review_status": "manual review",
             })
         matches.sort(key=lambda x: (-x["match_score"], x["long_video_id"]))
