@@ -149,3 +149,15 @@
 - [ ] Build the concrete playlist-to-video mapping from the current published video inventory; owner review required before creating or changing live playlists in YouTube Studio.
 - [ ] Implement and test the topic-fit gate in the topic discovery/recommendation pipeline so off-channel trends cannot enter the suggested backlog.
 - No live playlist, video metadata, episode queue, publishing schedule, credential or workflow was changed. All documentation updates are on `docs/channel-growth-roadmap-2026-11`; `main` remains untouched.
+
+
+## 2026-11-25 — Growth implementation pass
+
+- [x] Added a strict editorial channel-fit gate to the topic radar. Search suggestions, Google/YouTube trend candidates, suggested trend angles and viewer comment requests must fit the channel vocabulary; unrelated finance/market terms are explicitly blocked, including gold-price and stock-market topics.
+- [x] Added regression tests for unrelated gold/stock/crypto topics and positive channel-fit examples.
+- [x] Added `pipeline/playlist_plan.py` to create a review-only topic + language playlist mapping from published episode state. Videos can appear in both dimensions; unknown topic classifications are sent to manual review rather than guessed.
+- [x] Added playlist planner tests and expanded the growth test workflow path filters.
+- [ ] Run and inspect CI results; fix any failures before marking implementation validated.
+- [ ] Generate the actual playlist assignment report from current published episode state and reconcile gaps against YouTube Analytics inventory.
+- [ ] Continue analytics enhancements (reach metrics, audience-retention report, format/age comparisons and historical opportunity report) after confirming the exact API/report support and safe credentials.
+- No YouTube write API was called. No live playlists, video metadata, upload state, schedules, credentials or publishing workflows were changed. All changes remain on `docs/channel-growth-roadmap-2026-11`.
