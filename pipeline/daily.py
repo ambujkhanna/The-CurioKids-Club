@@ -369,24 +369,6 @@ def spanish_ep(ep):
                 hashtags=(lambda t: t[:1] + ["#EnEspañol"] + t[1:] + ["#CienciaParaNiños", "#Shorts"])([h for h in ep.get("hashtags", []) if h.lower() != "#shorts"]))
 
 
-def hindi_badge(jpg, label="HINDI", color=(255, 122, 0), below_logo=False):
-    """Small 'HINDI' (or 'ESPAÑOL') tag on the thumbnail."""
-    try:
-        import skia
-        img = skia.Image.open(jpg); W, H = img.width(), img.height()
-        surf = skia.Surface(W, H); c = surf.getCanvas(); c.drawImage(img, 0, 0)
-        tf = skia.Typeface.MakeFromFile(os.path.join(ROOT, "fonts", "LilitaOne-Regular.ttf"))
-        k = min(W, H)  # corner tag: top-left on Shorts (the logo is centred), top-right on 16:9 (the logo is top-left)
-        f = skia.Font(tf, k * 0.055); tw = f.measureText(label); h = k * 0.082
-        x, y = (k * 0.03, H * 0.022) if H > W else (W - tw - h * 0.9 - k * 0.04, H * 0.035)
-        if below_logo and H > W: y = H * 0.07  # a longer label (ESPAÑOL) would cover the centred logo pill
-        c.drawRRect(skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(x, y, tw + h * 0.9, h), h / 2, h / 2), skia.Paint(AntiAlias=True, Color=skia.Color(*color)))
-        c.drawString(label, x + h * 0.45, y + h * 0.72, f, skia.Paint(AntiAlias=True, Color=skia.ColorWHITE))
-        surf.makeImageSnapshot().save(jpg, skia.kJPEG, 90)
-    except Exception as e:
-        print(f"note: no {label} badge:", e)
-
-
 def ig_episode_test(mp4, eid, ep=None):
     """Which version of this episode does Instagram accept? Uploads unpublished containers only (nothing is posted)."""
     import meta_post
