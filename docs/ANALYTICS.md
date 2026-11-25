@@ -59,3 +59,18 @@ This workflow is read-only: it does not upload, edit, schedule or publish videos
 
 Every analytics run also asks YouTube where the views come from (`dimensions=country`), for the whole channel and for each language version (English/main, Hindi, Spanish, trend Shorts). The result (`audience_countries.md/.json`) is added to the growth brief, so it shows in every daily run's summary. Use it to decide whether a language version is worth keeping or adding (owner, 2026-11-23: "is the audience really coming from these locations?").
 Also fixed the same day: Spanish versions (`es`) and script/trend Shorts (`custom/`) are now matched to their episodes (they were "unknown" before).
+
+
+## Extended reports (2026-11-25)
+
+The analytics collector now additionally produces:
+
+- `audience_countries.md/.json`: country distribution for all videos and each published language group.
+- `market_opportunities.md/.json`: target-country view ranking using the owner's primary-language policy. It separates localized-language evidence from all-language country totals. India is Hindi only; Tamil, Telugu and Bengali are excluded. CurioKids retains its existing English/Hindi/Spanish versions; AInation remains English-only.
+- `age_matched_cohorts.md/.json`: cumulative 7/14/28-day performance windows from state-file publish dates (upload timestamp fallback), for the top 20 videos with complete windows. State timestamps should be checked against actual YouTube publish dates before drawing conclusions.
+- `retention_curves.md/.json`: bounded audience retention curves for the top 10 videos, one Analytics API query per video.
+- `reach_basic_daily.csv` and `reach_basic.md`: thumbnail impressions and CTR from YouTube Reporting API Reach Basic.
+
+The workflow creates the Reach Basic reporting job if it does not exist. YouTube may take up to 24 hours to generate the first report. Reach CTR applies to eligible thumbnail surfaces and is not a Shorts-feed swipe metric. The analytics workflow uses the read-only Analytics OAuth token only; it does not touch upload credentials.
+
+To run the Reach collector manually after authorisation: `python pipeline/reach_reporting.py --ensure-job --output-dir out/analytics`. Normal workflow runs also ensure the job exists and collect reports when available.
