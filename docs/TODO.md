@@ -40,6 +40,7 @@ Plan: [`docs/GROWTH_ROADMAP.md`](GROWTH_ROADMAP.md)
 - [ ] **Claude:** investigate audience-retention curve availability; document gaps if unavailable.
 - [ ] **Claude:** separate Shorts and long-form comparisons and account for publication age.
 - [ ] **Claude:** enrich growth brief with topic-pillar, search, retention and subscriber-conversion insights only where supported by data.
+- [ ] **Claude:** enforce strict channel-fit filtering on every searched/trending topic before it can be recommended; reject unrelated finance/news/gossip and off-pillar trends.
 - [ ] **Claude:** add advisory script/content quality checks for opening hook, first frame, purposeful visual progression, payoff and factual/editorial quality.
 - [ ] **Claude:** create historical-video opportunity report; suggestions only, no automatic metadata edits.
 - [ ] **Claude + owner:** validate sample reports, tests and explicit render-only dry-runs; owner reviews before any production behaviour changes.
@@ -48,7 +49,8 @@ Plan: [`docs/GROWTH_ROADMAP.md`](GROWTH_ROADMAP.md)
 - [ ] **Claude:** evaluate English/Hindi/Spanish performance using language/country data; flag sample-size limitations.
 - [ ] **Claude + owner:** compare current separate-language workflow with a small YouTube multi-language-audio feasibility pilot; no migration or language expansion without approval.
 - [ ] **Owner:** review Instagram bio/channel link and update it to reflect Leo & Mia's family-learning show.
-- [ ] **Owner:** review playlist taxonomy and approve any new topic playlists.
+- [ ] **Claude:** prepare a combined topic + language playlist mapping (English/Hindi/Spanish); each video can be assigned to both a topic playlist and its language playlist without duplicating the upload.
+- [ ] **Owner:** review and create/approve the playlist set in YouTube Studio; no live playlist changes until owner review.
 - [ ] **Claude:** identify eligible Shorts ↔ long-video matches for Related Video recommendations; owner applies links in Studio.
 - [ ] **Claude + owner:** continue 3D storytelling work separately; require mobile-size MP4 visual approval.
 
