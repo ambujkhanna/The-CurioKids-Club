@@ -156,3 +156,15 @@ Latest code and regression tests passed, and fresh artifacts were regenerated:
 - Playlist-plan artifacts: 66 CurioKids assignment rows with 2 manual topic reviews; 79 AInation rows with 1 manual topic review. All assignments remain review-only.
 - Retention curves: 10 videos per channel, 961 CurioKids points and 900 AInation points, zero query errors. Age cohorts: 16 CurioKids rows across 12 videos and 21 AInation rows across 15 videos, zero query errors.
 - Reach Basic still has no artifact: the Google Cloud project must enable YouTube Reporting API before the daily job can be created and reports collected.
+
+
+## Topic-performance report verification — 2026-11-25
+
+The latest analytics workflow runs [CurioKids 45658430722](https://github.com/ambujkhanna/The-CurioKids-Club/actions/runs/45658430722) and [AInation 45658440732](https://github.com/ambujkhanna/youtube-studio-automation/actions/runs/45658440732) now include topic-by-format performance:
+
+- CurioKids Shorts: Everyday Science & Discoveries — 9 videos, 2,819 views, 1,394 engaged views, 42.6% average viewed; Human Body — 4 videos, 119 views, 47 engaged; Animals — 4 videos, 109 views, 30 engaged. The report also includes the long-form groups separately. Three analytics rows remain unclassified for manual topic review.
+- AInation Shorts: AI Explained — 20 videos, 896 views, 369 engaged, 46.7% average viewed; AI Tools & Workflows — 5 videos, 252 views, 85 engaged, 49.2% average viewed; AI in Everyday Life — 4 videos, 100 views, 48 engaged. One analytics row remains unclassified.
+
+Topic assignments are non-exclusive and can overlap; the groups are directional and must not be summed as unique channel totals. Long-form thumbnail-reach rows remain empty because the Reach Basic API is disabled; after enablement, the workflow will populate the per-video reach summary and long-form packaging section.
+
+Latest topic/reach integration tests passed: CurioKids run 45658446499; AInation run 45658455277.
