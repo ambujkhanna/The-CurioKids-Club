@@ -23,7 +23,7 @@ if KIDS:
         "Human Body": {"body", "brain", "heart", "blood", "bone", "bones", "teeth", "tooth", "eye", "eyes", "ear", "ears", "skin", "muscle", "sleep", "stomach", "lungs"},
         "Everyday Science & Discoveries": {"science", "magnet", "magnets", "shadow", "shadows", "light", "sound", "water", "rain", "rainbow", "cloud", "clouds", "gravity", "energy", "electricity", "experiment", "experiments", "metal", "ice"},
     }
-    LANGUAGE = {"default": "English", "hi": "Hindi", "es": "Spanish"}
+    LANGUAGE = {"default": "English", "trend": "English", "script": "English", "hi": "Hindi", "es": "Spanish"}
 else:
     TOPICS = {
         "AI Explained": {"ai", "artificial", "intelligence", "llm", "llms", "gpt", "model", "models", "token", "tokens", "embedding", "embeddings", "context", "prompt", "prompts"},
