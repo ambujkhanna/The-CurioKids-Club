@@ -479,7 +479,24 @@
       "video_id": "nV-KMMNmemI",
       "url": "https://www.youtube.com/shorts/nV-KMMNmemI",
       "uploaded_at": "2026-11-26T00:35:49+05:30",
-      "thumbnail_checked": "2026-11-26T09:27+05:30 set"
+      "thumbnail_checked": "2026-11-27T00:25+05:30 set",
+      "hi": {
+        "voices": "kokoro",
+        "title": "\"\u0926\" \u0915\u0940 \u0906\u0935\u093e\u091c\u093c \u092c\u0926\u0932\u0924\u0940 \u0915\u094d\u092f\u094b\u0902 \u0939\u0948? | Why Does \"The\" Sound Different? \ud83d\udd24",
+        "rendered_at": "2026-11-27T00:17:13+05:30",
+        "duration_s": 99.48,
+        "publish_at_ist": "2026-11-27T09:25+05:30",
+        "thumbnail": "set (re-applied after posting: set)",
+        "playlist": "added (curiokids)",
+        "made_for_kids": "no",
+        "subtitles": "hi; en; titles: en",
+        "facebook": "posted (reel 1710474564010307), cover set",
+        "instagram": "failed: 1) direct: [size-budget] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Reque [3 Mbps] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Reque [2 Mbps] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"R | 2) hidden copy: processing Error: Media upload has failed with error code 2207076 | 3) FB reel copy: processing Error: Media upload has failed with error code 2207076",
+        "status": "uploaded",
+        "video_id": "1RzcEEnl-cE",
+        "url": "https://www.youtube.com/shorts/1RzcEEnl-cE",
+        "uploaded_at": "2026-11-27T00:24:50+05:30"
+      }
     },
     "ep105": {
       "es": {
@@ -497,7 +514,8 @@
         "status": "uploaded",
         "video_id": "p8l4yu7jr18",
         "url": "https://www.youtube.com/shorts/p8l4yu7jr18",
-        "uploaded_at": "2026-11-26T09:27:02+05:30"
+        "uploaded_at": "2026-11-26T09:27:02+05:30",
+        "thumbnail_checked": "2026-11-27T00:25+05:30 set"
       }
     }
   }
