@@ -456,7 +456,7 @@
         "url": "https://www.youtube.com/shorts/xsL48hFMdxg",
         "uploaded_at": "2026-11-25T10:21:42+05:30",
         "facebook_cover": "cover set",
-        "thumbnail_checked": "2026-11-26T00:36+05:30 set"
+        "thumbnail_checked": "2026-11-26T09:27+05:30 set"
       }
     },
     "ep076": {
@@ -478,7 +478,27 @@
       "status": "uploaded",
       "video_id": "nV-KMMNmemI",
       "url": "https://www.youtube.com/shorts/nV-KMMNmemI",
-      "uploaded_at": "2026-11-26T00:35:49+05:30"
+      "uploaded_at": "2026-11-26T00:35:49+05:30",
+      "thumbnail_checked": "2026-11-26T09:27+05:30 set"
+    },
+    "ep105": {
+      "es": {
+        "voices": "kokoro",
+        "title": "\u00bfQu\u00e9 planta prefiere cada suelo? \ud83c\udf35 (Parte 2 | Which Plants Like Which Soil? \ud83c\udf35 Fun Facts (Part 2)",
+        "rendered_at": "2026-11-26T09:25:07+05:30",
+        "duration_s": 86.83,
+        "publish_at_ist": "2026-11-27T07:30+05:30",
+        "thumbnail": "set (re-applied after posting: set)",
+        "playlist": "added (CurioKids_Spanish)",
+        "made_for_kids": "no",
+        "subtitles": "es; en; titles: en",
+        "facebook": "posted (reel 1828048338287086), cover set",
+        "instagram": "posted (reel 18114388592217898), designed cover",
+        "status": "uploaded",
+        "video_id": "p8l4yu7jr18",
+        "url": "https://www.youtube.com/shorts/p8l4yu7jr18",
+        "uploaded_at": "2026-11-26T09:27:02+05:30"
+      }
     }
   }
 }
