@@ -245,3 +245,14 @@
 - [x] Latest analytics workflows passed: CurioKids run 45659908250; AInation run 45659918354.
 - [ ] Owner to review Related Video candidates and playlist assignment CSVs.
 - [ ] Owner to verify publish timestamps, review Instagram profile CTAs, and run controlled hook/first-frame experiments.
+
+
+## 2026-11-27 — Main sync and post-sync validation
+
+- [x] Merged latest `main` into `feat/shared-growth-audit-2026-11` via a temporary sync PR targeting the feature branch only.
+- [x] Feature branch is 0 commits behind `main`; CurioKids feature branch is 99 commits ahead, AInation is 90 commits ahead.
+- [x] Post-sync growth-engine unit tests passed: CurioKids run 45964613356; AInation run 45964621665.
+- [x] Confirmed AInation EP020 is already uploaded (video ID `AFd6R1UiNRA`); updated the pending dry-run instruction to use the explicit Trend Short dry-run path or an unpublished test script.
+- [ ] Render-only visual inspection remains owner-triggered; the connected GitHub integration does not expose a workflow-dispatch operation.
+- [ ] Reach Basic remains blocked until the owner enables YouTube Reporting API in Google Cloud project 702229494667.
+- No feature work was merged into `main`; no upload, publishing, playlist, public metadata, queue or schedule settings were changed by this sync.
