@@ -39,3 +39,10 @@ python pipeline/growth.py --csv out/analytics/<report>.csv --channel-key CHANNEL
 - The daily workflow loads the latest brief into its run summary. The step is optional (`continue-on-error`, 5-minute limit): a GitHub API problem there never stops a video.
 - Open check: one daily **Dry run** that shows the brief in its summary.
 - Dated validation notes are kept in `docs/GROWTH_ENGINE_LOG.md`; status changes go to the channel handoff's change log.
+
+
+## Shared channel growth roadmap and audit (2026-11-25)
+
+See [`docs/GROWTH_ROADMAP.md`](GROWTH_ROADMAP.md) for channel-specific priorities and [`docs/GROWTH_AUDIT_2026-11-25.md`](GROWTH_AUDIT_2026-11-25.md) for the latest shared analytics baseline, playlist inventory preview and API metric-gap audit.
+
+The growth brief remains advisory. Topic-fit filtering and review-only playlist planning do not modify episode queues, live playlists, metadata or publishing. Fresh analytics collection, planner taxonomy refinement, CI and render-only workflow validation remain pending.

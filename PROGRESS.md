@@ -126,3 +126,133 @@
 - [ ] New Visual Engine integrated dry-run 44739867903, triggered by the episode-validator fix on `feature/modern-visual-engine`, is still in progress. Inspect its final MP4/contact-sheet artifact and visually review before accepting.
 - [ ] Safe Daily Short dry-run remains pending in both repositories; the GitHub integration used here does not expose workflow dispatch. Do not use the scheduled/publish default.
 - [ ] Visual Engine remains feature-branch-only; no merge to `main` or production default change without owner visual approval.
+
+
+## 2026-11-25 — Shared channel growth audit
+
+- [x] Compared the previous roadmap branch with current `main`: it was diverged and behind (CurioKids by 5 commits; AInation by 3). Created fresh branch `feat/shared-growth-audit-2026-11` from each current `main`; did not force-update the old branch.
+- [x] Retrieved the latest available successful analytics artifacts (runs 44739181837 and 44724594920; collected 2026-11-20; report window 2026-10-21 to 2026-11-17). Historical baseline: CurioKids 18 rows / 88.9% metadata coverage / 3,004 views / 1,465 engaged views; AInation 21 rows / 90.5% / 919 views / 376 engaged views.
+- [x] Audited current published episode-state inventory: 33 video IDs per channel. Current playlist rules preview: CurioKids 66 assignment rows with 2 manual-topic-review videos; AInation 79 rows with 1 manual-topic-review video.
+- [x] Identified and improved narrow planner vocabulary; added regression tests for common on-pillar topics. See `docs/GROWTH_AUDIT_2026-11-25.md`.
+- [x] Audited API support: country reports are supported; thumbnail impressions/CTR are available through Reporting API Reach reports; retention curves are available through single-video Analytics API queries; Stayed-to-watch is not a standalone targeted API metric and must not be inferred from engaged views.
+- [x] Recorded the owner-supplied top-10 country/language opportunity shortlist as a market reference; the top 3–4 opportunities must be ranked separately per channel from actual YouTube analytics. AInation multilingual production remains out of scope.
+- [ ] Obtain fresh analytics artifacts including country/language report and playlist plan; manual workflow dispatch is required.
+- [x] Improve planner taxonomy and add regression tests; remaining manual review is 2 CurioKids videos and 1 AInation video.
+- [ ] Fix country report language grouping/share denominator and add supported country metrics.
+- [ ] Prototype Reporting API Reach Basic and bounded retention collection; preserve publication timestamps for age-matched cohorts.
+- [ ] Run PR CI and explicit render-only Daily Short dry-runs in both repositories (AInation EP020). No scheduled/publishing action.
+
+**Safety:** no upload token was touched; no live playlist, video metadata, queue, schedule or publishing behaviour changed. Historical analytics are not presented as current. Work is scoped to shared analytics and recommendations.
+
+
+## 2026-11-25 — Shared growth CI validation update
+
+- [x] CurioKids growth-engine PR unit tests passed: run 45653482421.
+- [x] AInation growth-engine PR unit tests passed after normalizing topic-filter input case: run 45653499001.
+- [x] Expanded playlist planner vocabulary and added regression tests for on-pillar topic titles. Current preview leaves 2 CurioKids items and 1 AInation item for manual review.
+- [ ] Fresh analytics collection and artifact inspection remain pending.
+- [ ] Explicit render-only Daily Short dry-run remains pending in both repos; AInation regression path should use EP020.
+- No PR merged. No publishing workflow dispatched. No upload credential or live channel state changed.
+
+
+## 2026-11-25 — Country report enrichment implemented
+
+- [x] Extended the read-only country report with engaged views, engaged views/views, subscribers gained/lost, subscribers gained per 1,000 views, average view duration and average viewed percentage.
+- [x] Added the `script` and `en` language groups so custom English/script uploads are not omitted from the language report.
+- [x] Increased country result retrieval to 200 rows and labelled the percentage as share of reported country views; anonymized/unavailable rows may still affect full-global coverage.
+- [x] Added unit tests for country aggregation and the custom-script language group. CI rerun pending.
+- No OAuth scope or secret changed. No YouTube write API used.
+
+
+## 2026-11-25 — Country report tests passed
+
+- [x] CurioKids country-report and growth-engine unit tests passed: run 45654199219.
+- [x] AInation country-report and growth-engine unit tests passed: run 45654217704.
+- [ ] Live analytics artifact verification remains pending; country reporting still requires a manual analytics workflow run on this feature branch.
+
+
+## 2026-11-25 — Main sync and post-sync validation
+
+- [x] Synced the latest CurioKids `main` history into `feat/shared-growth-audit-2026-11`, including the merged thumbnail language-badge implementation (PR #16; merge commit `49ddf4d3862fe9fbcab24647b859d9913ed78e46`). The branch is now 0 commits behind `main`.
+- [x] Post-sync growth-engine CI passed: GitHub Actions run 45655541204; the `unit-tests` job and its analytics/growth unit-test step completed successfully.
+- [ ] Render-only Daily Curio Kids Short validation remains pending. The workflow has an explicit `Dry run (render only, nothing uploaded)` option, but this GitHub connection has no workflow-dispatch action. Do not use the scheduled/publish default.
+- [ ] Fresh analytics workflow and artifact verification remain pending for both channels.
+- No video was rendered or uploaded in this validation; no publishing, playlist or metadata changes were made.
+
+
+## 2026-11-25 — Primary-language market focus clarified
+
+- Owner direction: target one primary language per country; do not produce secondary/regional-language variants by default.
+- India: Hindi only. Explicitly do not create Tamil, Telugu or Bengali videos.
+- United States: English; Indonesia: Indonesian; Brazil: Portuguese; Mexico: Spanish; Japan: Japanese; Germany: German; Vietnam: Vietnamese; Philippines: Filipino/Tagalog; Turkey: Turkish.
+- CurioKids retains its existing English/Hindi/Spanish library; any additional language requires owner approval and channel analytics evidence.
+- AInation remains English-only; multilingual production is outside current scope.
+- Updated growth roadmap, country/language audit, TODO and progress tracking. Analytics can still report audiences in other languages; reporting does not imply production approval.
+
+
+## 2026-11-25 — Analytics and measurement implementation
+
+- [x] Added publish timestamp fields to analytics metadata and SQLite with backward-compatible schema migration; use episode publish time first and upload time only as fallback.
+- [x] Added 7/14/28-day cumulative age-matched cohorts for top 20 videos using per-video daily Analytics API data; incomplete windows are omitted.
+- [x] Added bounded retention curve collection for top 10 videos (one query per video).
+- [x] Added YouTube Reporting API Reach Basic collector for thumbnail impressions and CTR; workflow ensures the daily report job exists and downloads available reports.
+- [x] Added primary-language market report based on actual country views, clearly separating localized-language evidence from all-language country totals. India Hindi only; AInation English-only.
+- [x] Added unit tests for new cohort, market-policy, publish-date and Reach API parsing logic. CurioKids run 45656948802 and AInation run 45656964107 passed.
+- [ ] Inspect fresh analytics artifacts and verify whether the OAuth token and Reach Reporting job produce live data.
+- [ ] Run CurioKids render-only Daily Short and verify language badges visually.
+- [ ] Run AInation Daily Short render-only using EP020.
+- No upload token, publishing state, live playlists, public metadata, queues or schedules were changed.
+
+
+## 2026-11-25 — First live analytics artifact review
+
+- [x] CurioKids read-only analytics workflow completed and artifact verified: run 45657091511; period 2026-10-26 to 2026-11-22; 25 per-video rows, 3,247 views, 1,559 engaged views.
+- [x] AInation read-only analytics workflow completed and artifact verified: run 45657143932; same period; 28 per-video rows, 1,100 views, 443 engaged views.
+- [x] Country reports and review-only playlist plans generated for both channels.
+- [x] Retention curves collected for top 10 videos per channel (961 CurioKids points; 900 AInation points; no per-video query errors).
+- [x] Age-matched cohort reports generated (16 CurioKids rows/12 videos; 21 AInation rows/15 videos; no query errors).
+- [ ] Reach Basic report is blocked because YouTube Reporting API is disabled in Google Cloud project 702229494667 (HTTP 403 SERVICE_DISABLED). Owner must enable API; workflow will create the job and collect reports after propagation (first report may take up to 24 hours).
+- [ ] Review corrected market report output after latest re-run; prior 0.0% localized average-viewed values are invalid and should not be used.
+- [ ] Owner render-only visual checks remain pending in both production workflows.
+
+
+## 2026-11-25 — Corrected market report and artifact validation
+
+- [x] Regenerated and inspected corrected market-opportunity outputs: CurioKids run 45657535212; AInation run 45657556902.
+- [x] Verified localized average-viewed values (CurioKids US English 56.3%, India Hindi 13.3%; AInation English-only US 35.2%, Philippines 41.0%, Indonesia 45.6%). Earlier 0.0% values were a calculation defect and are superseded.
+- [x] Verified playlist plan counts: CurioKids 66 assignments / 2 manual reviews; AInation 79 / 1.
+- [x] Verified retention and age-cohort artifacts: 10 curves per channel; 961/900 retention points; 16/21 cohort rows; no per-video errors.
+- [ ] Enable YouTube Reporting API in Google Cloud project 702229494667; Reach Basic collector currently receives HTTP 403 SERVICE_DISABLED.
+- [ ] Owner visual validation: CurioKids render-only run and AInation EP020 render-only run.
+
+
+## 2026-11-25 — Topic-performance and reach integration
+
+- [x] Exposed the channel-specific playlist taxonomy classifier for growth reporting.
+- [x] Added non-exclusive topic-by-format performance summaries to growth briefs; unmatched titles are left for manual review.
+- [x] Added Reach Basic per-video summary CSV and optional long-form thumbnail impressions/CTR enrichment in the growth brief.
+- [x] Updated analytics workflows to enrich the growth brief after the Reach collector step.
+- [x] Latest tests passed: CurioKids run 45658446499; AInation run 45658455277.
+- [x] Latest analytics workflows completed: CurioKids run 45658430722; AInation run 45658440732. Topic reports verified; long-form CTR remains blocked by disabled YouTube Reporting API.
+- [ ] Owner enable YouTube Reporting API in project 702229494667; rerun/allow the daily report to populate CTR.
+
+
+## 2026-11-25 — Same-language Related Video recommendations
+
+- [x] Added conservative Short-to-long candidate generation with topic and title evidence plus a same-language guard.
+- [x] Verified artifacts: CurioKids has 1 candidate; AInation has 3 candidates. All are review-only; no Related Video settings changed.
+- [x] Latest CI passed: CurioKids run 45659932438; AInation run 45659941356.
+- [x] Latest analytics workflows passed: CurioKids run 45659908250; AInation run 45659918354.
+- [ ] Owner to review Related Video candidates and playlist assignment CSVs.
+- [ ] Owner to verify publish timestamps, review Instagram profile CTAs, and run controlled hook/first-frame experiments.
+
+
+## 2026-11-27 — Main sync and post-sync validation
+
+- [x] Merged latest `main` into `feat/shared-growth-audit-2026-11` via a temporary sync PR targeting the feature branch only.
+- [x] Feature branch is 0 commits behind `main`; CurioKids feature branch is 99 commits ahead, AInation is 90 commits ahead.
+- [x] Post-sync growth-engine unit tests passed: CurioKids run 45964613356; AInation run 45964621665.
+- [x] Confirmed AInation EP020 is already uploaded (video ID `AFd6R1UiNRA`); updated the pending dry-run instruction to use the explicit Trend Short dry-run path or an unpublished test script.
+- [ ] Render-only visual inspection remains owner-triggered; the connected GitHub integration does not expose a workflow-dispatch operation.
+- [ ] Reach Basic remains blocked until the owner enables YouTube Reporting API in Google Cloud project 702229494667.
+- No feature work was merged into `main`; no upload, publishing, playlist, public metadata, queue or schedule settings were changed by this sync.

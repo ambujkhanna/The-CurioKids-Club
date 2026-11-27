@@ -1,0 +1,135 @@
+# CurioKids Club — channel growth roadmap
+
+**Status:** implemented on the shared feature branch; analytics artifacts and CI validated. Reach API enablement and render-only visual checks remain pending.  
+**Updated:** 2026-11-25  
+**Scope:** The CurioKids Club only. This plan deliberately keeps kids-specific language, audience-safety and creative requirements out of AInation's plan.
+
+## Channel promise
+
+Family-friendly, accurate, curiosity-led learning with Leo and Mia. Science, nature, space, animals, the human body and everyday discoveries are the core territory. Keep the existing no-intro-on-Shorts decision: the question/topic hook should be visible from frame 0.
+
+## Priority workstreams
+
+### 1. First seconds and retention — highest priority
+- Open directly with Leo's question or an immediate visual mystery; no greeting/title-card delay.
+- Make the first frame communicate the question even before the spoken line finishes.
+- Use visual changes when the explanation advances, not a mechanical cut every 2–3 seconds.
+- Use the actual visual to explain the concept. For growth sequences, prefer continuous motion (e.g. seed coat splits, roots extend/branch, shoot emerges, leaves unfold) over a slideshow of unrelated stills.
+- Give Mia a concise, satisfying explanation and test natural callbacks/loop endings without making every ending artificial.
+- Preserve age-appropriate vocabulary, scientific accuracy and calm, non-frightening framing.
+
+### 2. Topic pillars and search demand
+- Core pillars: Space & Universe; Nature & Plants; Animals; Human Body; Everyday Science & Discoveries.
+- Prioritise evergreen child/parent/teacher questions (why/how/what happens) and verified search demand.
+- Treat search trends as discovery signals, never as automatic episode ideas. Every candidate must pass a strict CurioKids family-learning fit gate before it can enter the backlog.
+- Accept only topics that naturally fit the five pillars and can be explained accurately and age-appropriately for children with a Leo/Mia-style curiosity hook.
+- Reject unrelated news, finance/markets (for example, why gold prices are falling), celebrity gossip, generic consumer-tech launches and topics that would attract a different audience. Do not force an educational angle onto an unrelated trend.
+- Use channel analytics and topic-radar evidence to prioritise only after channel fit is established; search volume alone never overrides the channel promise.
+
+### 3. Multilingual strategy — CurioKids-specific
+- Current language footprint includes English, Hindi and Spanish Shorts. Keep the existing language-specific production rules and playlists intact.
+- Focus future market-specific production on one primary language per country: Hindi for India, English for the United States, Indonesian for Indonesia, Portuguese for Brazil, Spanish for Mexico, Japanese for Japan, German for Germany, Vietnamese for Vietnam, Filipino/Tagalog for the Philippines and Turkish for Turkey.
+- India is Hindi-only for new market targeting: do not create Tamil, Telugu or Bengali videos. Do not add secondary/regional-language variants in other markets merely because those languages are spoken there.
+- Review audience-by-country and language-version performance before adding any language or expanding translation scope; explicit owner approval is required.
+- Evaluate YouTube multi-language audio on a single upload as an option, but first verify channel/format eligibility, availability in Studio, dubbing quality, translated metadata and how it coexists with the current separate-language uploads/playlists.
+- Do not automatically migrate or duplicate content. Compare reach, watch behaviour and operational cost for the current setup versus a controlled pilot.
+- Keep rhymes/poems and English-grammar lessons excluded from Spanish translation as already documented unless the owner changes that decision.
+
+### 4. Playlists and deeper learning
+- Use two complementary playlist dimensions: **topic playlists** (Space, Human Body, Nature/Plants, Animals, Everyday Science) and **language playlists** (English, Hindi, Spanish).
+- A single video may belong to multiple playlists, so do not choose between topic and language organisation. Add each eligible video to its relevant topic playlist and its language playlist; a video may also belong to a focused series playlist when useful.
+- Keep language playlists clearly labelled and avoid mixing dubbed/separate-language versions in a way that misleads viewers. Use the actual spoken language of each upload.
+- Maintain playlists as owner-curated channel organisation; playlist membership does not require duplicate uploads.
+- Identify Shorts that have a genuinely matching long-form video and recommend a Related Video link when the feature and content are eligible.
+- Do not rely on end screens/cards/comments or viewer playlist-saving for Made for Kids content; check current YouTube restrictions before designing a CTA.
+
+### 5. Instagram discovery bridge
+- Align the Instagram bio with the real show: Leo and Mia answering family-friendly science/nature questions.
+- Put the direct CurioKids YouTube channel link in the bio and use a specific, truthful link-in-bio CTA.
+- Use episode/series-specific links where practical; do not promise a full video if only a Short exists.
+
+### 6. Historical optimisation
+- Identify videos with strong average percentage viewed/engaged views but weak reach; investigate topic fit and discovery.
+- Review title/thumbnail only where the surface and format support meaningful packaging changes/testing. Shorts-feed success is primarily an opening-frame/hook question, not classic thumbnail CTR.
+- Review search-performing episodes for follow-up topics and connected series.
+- All proposed changes require owner review; do not change published metadata automatically.
+
+### 7. Visual identity and educational quality
+- Keep Leo/Mia, the established classroom/theatre world and the agreed 3D-first art direction recognisable.
+- Prioritise readable, well-framed, coherent 3D visuals and actual process animation where motion teaches the concept.
+- Review the rendered mobile-size MP4, not just CI status or individual source images. Visual acceptance remains owner-controlled.
+
+## Experiments and measures
+
+- Hook/opening: compare Stayed to watch / Viewed vs. swiped away and early retention where available.
+- Visual storytelling: editorial review plus average percentage viewed and average duration; distinguish creative judgement from causal analytics.
+- Loop ending: run limited sequential experiments on comparable topics; check average percentage viewed, engaged views and negative feedback together.
+- Languages: compare per-language views, watch time, average viewed percentage, country distribution and subscribers gained; require sufficient sample size before decisions.
+- Topic pillars: compare topic-level engaged views and average viewed after metadata coverage is high enough.
+
+## Measurement rules (both channels)
+
+- Establish a fresh baseline from the latest successful YouTube Analytics report before setting numerical targets.
+- Compare Shorts with Shorts and long-form with long-form; compare videos at similar publication ages and report windows.
+- Keep public views, engaged views, average view duration and average percentage viewed distinct. For Shorts, use **Stayed to watch / Viewed vs. swiped away** when the relevant report is available.
+- Use impressions and impressions CTR for eligible long-form/discovery surfaces where YouTube reports them; do not treat CTR as a Shorts-feed metric.
+- Segment by language, format, topic pillar and episode age only when the source data supports that segmentation.
+- Label small samples and missing metrics. No causal claims from simple correlations; no guessed video-to-episode mappings.
+- Track subscribers gained per 1,000 views, returning viewers, search traffic and (where available) traffic from Shorts to related long-form videos.
+- A recommendation is advisory until a human reviews it. Never auto-rewrite scripts, titles, thumbnails, queues, schedules or publishing state.
+
+## Shared execution phases
+
+1. **Baseline and data quality:** refresh analytics, map videos to episodes, report coverage, identify missing dimensions and API limitations.
+2. **Content intelligence:** topic pillars, search demand, channel-fit checks, historical opportunities and format/age-aware comparisons.
+3. **Creative quality:** first-frame, opening hook, visual progression, explanation/payoff, ending and factual/editorial checks.
+4. **Packaging and connections:** title/thumbnail review where applicable, playlists, related-video candidates and Instagram profile/link review.
+5. **Validation:** unit tests, sample-data tests, read-only analytics run, report inspection and safe render-only dry-run.
+6. **Measured experiments:** change one creative variable at a time where practical; compare a suitable baseline and record the result before making it a standing rule.
+
+## Safety and scope
+
+- Analytics remains read-only and uses the analytics-only OAuth credential. Do not touch upload credentials.
+- No publishing, visibility, schedule, queue or live metadata changes are part of this roadmap.
+- Do not dispatch a publishing workflow to validate growth work. Use explicitly labelled render-only/dry-run actions.
+- Respect Made for Kids restrictions. Do not depend on comments, cards, end screens, notifications or viewer playlist-saving features where YouTube disables them. Channel-owned playlists may still be curated and measured where reporting permits.
+- Prefer free/open tooling already in the repositories. No paid SEO service is required for this roadmap.
+
+
+## Acceptance gates
+
+- No language expansion or migration without owner approval and audience evidence.
+- No new visual default until the owner reviews mobile-size rendered output.
+- No automatic changes to published videos or production schedules.
+- First deliverable is a data-quality-aware growth report; later implementation can add metrics and checks incrementally.
+
+
+## Analytics implementation update — 2026-11-25
+
+- Country reports include supported engaged-view and subscriber metrics and are grouped by published language version. The market-opportunity report ranks target countries by actual returned views and distinguishes localized-language evidence from all-language country totals.
+- The owner language policy is enforced in recommendations: India = Hindi only (no Tamil, Telugu or Bengali); CurioKids retains existing English/Hindi/Spanish; AInation remains English-only.
+- The analytics collector now preserves publish timestamps from episode state (scheduled publish time preferred; upload time is a fallback), produces complete 7/14/28-day age-matched cohorts for the top 20 videos, and requests audience-retention curves for the top 10 videos.
+- A YouTube Reporting API Reach Basic collector captures thumbnail impressions and CTR. The workflow ensures a daily Reach Basic job exists; reports may take up to 24 hours after job creation to appear.
+- CI has passed for the analytics, market-opportunity and Reach API parsing tests. Fresh artifact/runtime verification is tracked separately; render-only video checks remain owner validation tasks.
+
+
+## Fresh data checkpoint — 2026-11-25
+
+The first live feature-branch analytics artifacts were generated for 2026-10-26 to 2026-11-22. CurioKids returned 25 per-video rows (3,247 views; 1,559 engaged views); AInation returned 28 rows (1,100 views; 443 engaged views). Country reports, review-only playlist plans, retention curves and age cohorts were generated. Country metrics cover returned rows only and may be anonymized; they are not a full-global denominator. The Reach Basic Reporting API is currently disabled in the shared Google Cloud project 702229494667, so thumbnail impressions/CTR remain blocked until the owner enables that API. See the audit for the data observations and exact run links.
+
+
+## Topic-level performance implementation — 2026-11-25
+
+Growth briefs now group analytics by the channel-specific topic taxonomy and format (Shorts vs long-form), including video count, views, engaged views, engaged-view rate, weighted average viewed percentage and subscribers per 1,000 views. A video may match more than one topic; unmatched titles remain manual review and are not guessed. If Reach Basic is available, the same brief adds long-form thumbnail impressions and CTR for packaging review; Shorts-feed swipe behaviour is never inferred from CTR.
+
+
+## Related Video recommendations — 2026-11-25
+
+The growth brief now generates conservative Short-to-long-form candidates using shared title terms, matching topic tags and a same-spoken-language guard. These are advisory only. Latest artifacts contain 1 CurioKids candidate and 3 AInation candidates. The owner must confirm that each long-form video is genuinely the same lesson before adding a Related Video in Studio. No links were changed automatically.
+
+## Remaining owner-led growth work
+
+- Review playlist assignment previews and decide whether to create/update live playlists; the current planner is intentionally review-only.
+- Validate the actual publish timestamps in episode state against YouTube before treating age-matched cohorts as authoritative.
+- Review Instagram profile bios, channel links and link-in-bio CTAs; no profile mutation is automated.
+- Run controlled creative experiments (opening hook/first frame/visual sequence/loop) and evaluate matched-age retention. No scripts or published assets are automatically changed.

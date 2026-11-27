@@ -90,3 +90,40 @@ PR #3 merged (`b067f31668b2217f01a304900a8b4122e0bc42fa`). Push-triggered analyt
 - CurioKids analytics run 44739181837 completed successfully after the refresh-token update.
 - The newer AInation push-triggered analytics run 44724594920 was initially a failure from before the token correction; retry attempt 2 completed successfully. Current analytics refresh-token configuration is validated in both channels.
 - Separate end-to-end integration validation is still required: run each Daily Short workflow using its explicit `Dry run (render only, nothing uploaded)` action and verify that the current growth brief appears in the Actions summary. Do not use the scheduled/publish default.
+
+
+## 2026-11-25 — Shared growth baseline and API metric-gap audit
+
+- Latest retrievable successful artifacts: CurioKids run 44739181837 and AInation run 44724594920, collected 2026-11-20 for 2026-10-21 through 2026-11-17. These are historical, not a fresh baseline.
+- CurioKids: 18 video rows, 13 Shorts, 16 mapped (88.9%), 3,004 views and 1,465 engaged views. AInation: 21 rows, 17 Shorts, 19 mapped (90.5%), 919 views and 376 engaged views.
+- Current state inventory preview: 33 video IDs per channel. Planner preview: 66 CurioKids assignment rows (11 videos need manual topic review) and 77 AInation rows (5 need manual review). Improve keyword/phrase coverage before treating this as the final owner-facing playlist plan.
+- Country-report code exists in the targeted Analytics collector, but retrieved artifacts predate it. Country report needs the English custom-script cohort, supported engaged/subscriber metrics and a correct denominator for country shares.
+- Official API audit: thumbnail impressions/CTR are in YouTube Reporting API Reach Basic/Reach Combined; audience-retention curves are supported through single-video Analytics API queries; Shorts Stayed-to-watch is not a standalone targeted API metric and must not be derived from engagedViews.
+- Publication-age cohorts require normalized publication timestamps from state plus daily video reports. Per-video subscribersGained must be labelled as watch-page-attributed, not total channel subscriber conversion.
+- Fresh analytics collection, CI and render-only workflow checks remain pending. No upload token or publishing behaviour was changed.
+
+
+## 2026-11-25 — CI validation
+
+- CurioKids growth-engine tests passed in GitHub Actions run 45653482421.
+- AInation growth-engine tests passed in run 45653499001 after normalizing topic-filter inputs in `_ok()`.
+- Playlist planner taxonomy refinements and regression tests are included in both branches. Current state preview leaves 2 CurioKids and 1 AInation item for manual review.
+- Fresh analytics artifact and explicit render-only daily workflow checks remain pending. No PR merged or publishing action dispatched.
+
+
+## 2026-11-25 — Country report enrichment
+
+The country report now includes engaged views, engaged views/views (not Shorts Stayed to watch), subscribers gained/lost, subscribers gained per 1,000 views, average duration and average viewed percentage. Added custom `script` and explicit `en` language groups. Country share is labelled as a share of returned country rows (up to 200), not asserted to be a perfect global denominator. Unit tests added; CI rerun and live artifact verification pending.
+
+
+## 2026-11-25 — Country report CI result
+
+The enriched country-report tests passed in CurioKids run 45654199219 and AInation run 45654217704. Live API output still needs verification by manually running the YouTube Analytics workflow on `feat/shared-growth-audit-2026-11`.
+
+
+## 2026-11-25 — Main sync and post-sync validation
+
+- Synced latest CurioKids `main` into the shared growth branch, including language-badge changes (PR #16; merge commit `49ddf4d3862fe9fbcab24647b859d9913ed78e46`). Branch is 0 commits behind `main`.
+- Post-sync growth-engine CI passed: run 45655541204 (`unit-tests` job).
+- Render-only Daily Curio Kids Short remains pending because workflow dispatch is not exposed by the connected GitHub action tools. The workflow option is confirmed as `Dry run (render only, nothing uploaded)`; do not select the scheduled/publish default.
+- No video render/upload, live playlist change, metadata edit or publishing action was performed.

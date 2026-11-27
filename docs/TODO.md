@@ -28,3 +28,36 @@ Plan: [`docs/PINTEREST_PLAN.md`](PINTEREST_PLAN.md)
 - [ ] **Owner:** daily: make API uploads public in YouTube Studio until Google approves the API audit
 - [ ] Old branch `feature/modern-visual-engine` (kids): archive tag + delete, or keep
 - [ ] Old branches still on GitHub (both repos): `feat/growth-unmapped-review`, `feat/youtube-growth-engine`, `fix/analytics-push-paths` (+ AInation `fix/episode-id-case-insensitive`): delete (all merged)
+
+
+## E. Shared channel growth audit (2026-11-25)
+Plan and audit: [`docs/GROWTH_ROADMAP.md`](GROWTH_ROADMAP.md) · [`docs/GROWTH_AUDIT_2026-11-25.md`](GROWTH_AUDIT_2026-11-25.md)
+
+- [x] Create a fresh growth branch from current `main` in both repos and sync latest `main` history; neither feature branch is behind.
+- [x] Implement strict channel-fit topic filtering, review-only playlist suggestions and regression tests.
+- [x] Implement country/language reports with engaged views, subscriber metrics, returned-row share denominator and custom-English grouping.
+- [x] Implement topic-level performance by channel taxonomy and format, including engaged views, average viewed and subscriber conversion; unmatched titles stay manual review.
+- [x] Implement primary-language market reports from actual channel country data; CurioKids retains English/Hindi/Spanish, India is Hindi-only (no Tamil/Telugu/Bengali), and AInation remains English-only.
+- [x] Generate conservative Short-to-long Related Video candidates using title/topic similarity and same-language matching; candidates are review-only and never update YouTube automatically.
+- [x] Implement publish timestamp persistence, 7/14/28-day age-matched cohorts for top 20 videos and bounded retention curves for top 10 videos.
+- [x] Implement YouTube Reporting API Reach Basic collector, per-video CTR summary and long-form packaging integration. **Blocked pending owner action:** enable YouTube Reporting API in Google Cloud project 702229494667 (current response: HTTP 403 SERVICE_DISABLED).
+- [x] Generate and inspect latest analytics artifacts: CurioKids run 45659908250; AInation run 45659918354. Both include country reports, market opportunities, topic performance, age cohorts, retention curves, related-video candidates and review-only playlist plans.
+- [x] Verify playlist suggestions: CurioKids 66 assignments / 2 manual topic reviews; AInation 79 / 1.
+- [x] Latest growth/analytics unit tests passed after related-video language guard: CurioKids run 45659932438; AInation run 45659941356.
+- [ ] **Owner review:** review Related Video candidates in the latest growth brief (CurioKids: 1; AInation: 3). Only add a link in Studio when the long-form video is genuinely the same lesson and spoken language.
+- [ ] **Owner review:** review playlist_plan.csv (CurioKids: 66 suggestions / 2 manual reviews; AInation: 79 / 1). No live playlists have been modified.
+- [ ] **Owner validation:** verify state-file publish dates against actual YouTube publish dates for the top videos before relying on age-cohort comparisons.
+- [ ] **Owner review:** check both Instagram bios, channel links and link-in-bio CTAs against the current channel promises; no profile changes have been made.
+- [ ] **Editorial experiment:** plan a controlled first-frame/hook test for each channel and review retention after a comparable cohort; no scripts or published videos have been modified.
+- [ ] **Owner validation:** run CurioKids Daily Short with the explicit `Dry run (render only, nothing uploaded)` action and visually inspect English/Hindi/Spanish thumbnail language badges.
+- [ ] **Owner validation:** run AInation Daily Short using `Trend Short dry run (auto topic)` (explicit dry-run path; no upload) or select a current unpublished test script. EP020 is already uploaded and is no longer a suitable pending-episode target.
+
+**Guardrails:** no upload-token changes, no publishing/visibility/schedule changes, no live playlist or metadata edits, and no automatic script changes.
+
+
+## 2026-11-27 — Branch sync and validation refresh
+
+- [x] Synced latest `main` into this feature branch (main → feature only); feature branch is now 0 commits behind `main`.
+- [x] Growth-engine unit tests passed on the post-sync commit.
+- [ ] Owner render-only checks remain pending. The AInation EP020 instruction is superseded: EP020 is already uploaded; use the explicit `Trend Short dry run (auto topic)` action or an unpublished test script instead.
+- [ ] Reach Basic still requires owner enablement of YouTube Reporting API in Google Cloud project 702229494667; no API settings were changed here.
