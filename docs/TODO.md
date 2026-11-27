@@ -50,6 +50,14 @@ Plan and audit: [`docs/GROWTH_ROADMAP.md`](GROWTH_ROADMAP.md) · [`docs/GROWTH_A
 - [ ] **Owner review:** check both Instagram bios, channel links and link-in-bio CTAs against the current channel promises; no profile changes have been made.
 - [ ] **Editorial experiment:** plan a controlled first-frame/hook test for each channel and review retention after a comparable cohort; no scripts or published videos have been modified.
 - [ ] **Owner validation:** run CurioKids Daily Short with the explicit `Dry run (render only, nothing uploaded)` action and visually inspect English/Hindi/Spanish thumbnail language badges.
-- [ ] **Owner validation:** run AInation Daily Short with the explicit `Dry run (render only, nothing uploaded)` action and episode `ep020` (EP020). Inspect render and ensure no upload occurs.
+- [ ] **Owner validation:** run AInation Daily Short using `Trend Short dry run (auto topic)` (explicit dry-run path; no upload) or select a current unpublished test script. EP020 is already uploaded and is no longer a suitable pending-episode target.
 
 **Guardrails:** no upload-token changes, no publishing/visibility/schedule changes, no live playlist or metadata edits, and no automatic script changes.
+
+
+## 2026-11-27 — Branch sync and validation refresh
+
+- [x] Synced latest `main` into this feature branch (main → feature only); feature branch is now 0 commits behind `main`.
+- [x] Growth-engine unit tests passed on the post-sync commit.
+- [ ] Owner render-only checks remain pending. The AInation EP020 instruction is superseded: EP020 is already uploaded; use the explicit `Trend Short dry run (auto topic)` action or an unpublished test script instead.
+- [ ] Reach Basic still requires owner enablement of YouTube Reporting API in Google Cloud project 702229494667; no API settings were changed here.
