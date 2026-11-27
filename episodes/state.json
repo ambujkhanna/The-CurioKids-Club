@@ -495,7 +495,8 @@
         "status": "uploaded",
         "video_id": "1RzcEEnl-cE",
         "url": "https://www.youtube.com/shorts/1RzcEEnl-cE",
-        "uploaded_at": "2026-11-27T00:24:50+05:30"
+        "uploaded_at": "2026-11-27T00:24:50+05:30",
+        "thumbnail_checked": "2026-11-27T09:24+05:30 set"
       }
     },
     "ep105": {
@@ -515,7 +516,26 @@
         "video_id": "p8l4yu7jr18",
         "url": "https://www.youtube.com/shorts/p8l4yu7jr18",
         "uploaded_at": "2026-11-26T09:27:02+05:30",
-        "thumbnail_checked": "2026-11-27T00:25+05:30 set"
+        "thumbnail_checked": "2026-11-27T09:25+05:30 set"
+      }
+    },
+    "ep079": {
+      "es": {
+        "voices": "kokoro",
+        "title": "\u00bfPor qu\u00e9 cepillarse los dientes dos veces al d\u00eda? | Why Do We Brush Our Teeth Twice a Day? \ud83e\udea5",
+        "rendered_at": "2026-11-27T09:22:11+05:30",
+        "duration_s": 83.84,
+        "publish_at_ist": "2026-11-28T07:25+05:30",
+        "thumbnail": "set (re-applied after posting: set)",
+        "playlist": "added (CurioKids_Spanish)",
+        "made_for_kids": "no",
+        "subtitles": "es; en; titles: en",
+        "facebook": "posted (reel 30084539507799210), cover set",
+        "instagram": "posted (reel 18181056514442941), designed cover",
+        "status": "uploaded",
+        "video_id": "jmU4x-KTdPA",
+        "url": "https://www.youtube.com/shorts/jmU4x-KTdPA",
+        "uploaded_at": "2026-11-27T09:24:28+05:30"
       }
     }
   }
