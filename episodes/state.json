@@ -457,7 +457,26 @@
         "uploaded_at": "2026-11-25T10:21:42+05:30",
         "facebook_cover": "cover set",
         "thumbnail_checked": "2026-11-26T09:27+05:30 set"
-      }
+      },
+      "voices": "chatterbox",
+      "selfcheck": {
+        "heard": 0.99,
+        "ok": true
+      },
+      "title": "Why Is Soil Different? \ud83e\udea8 Fun Facts for Kids (Part 1)",
+      "rendered_at": "2026-11-28T00:17:03+05:30",
+      "duration_s": 73.62,
+      "publish_at_ist": "2026-11-28T18:50+05:30",
+      "thumbnail": "set (re-applied after posting: set)",
+      "playlist": "added (curiokids)",
+      "made_for_kids": "no",
+      "subtitles": "en; titles: es, hi",
+      "facebook": "posted (reel 1881125593312000), cover set",
+      "instagram": "posted (reel 18117438764134819), designed cover",
+      "status": "uploaded",
+      "video_id": "rzrCvApNto4",
+      "url": "https://www.youtube.com/shorts/rzrCvApNto4",
+      "uploaded_at": "2026-11-28T00:19:20+05:30"
     },
     "ep076": {
       "voices": "chatterbox",
@@ -496,7 +515,7 @@
         "video_id": "1RzcEEnl-cE",
         "url": "https://www.youtube.com/shorts/1RzcEEnl-cE",
         "uploaded_at": "2026-11-27T00:24:50+05:30",
-        "thumbnail_checked": "2026-11-27T09:24+05:30 set"
+        "thumbnail_checked": "2026-11-28T00:20+05:30 set"
       }
     },
     "ep105": {
@@ -535,7 +554,8 @@
         "status": "uploaded",
         "video_id": "jmU4x-KTdPA",
         "url": "https://www.youtube.com/shorts/jmU4x-KTdPA",
-        "uploaded_at": "2026-11-27T09:24:28+05:30"
+        "uploaded_at": "2026-11-27T09:24:28+05:30",
+        "thumbnail_checked": "2026-11-28T00:19+05:30 set"
       }
     }
   }
