@@ -476,7 +476,8 @@
       "status": "uploaded",
       "video_id": "rzrCvApNto4",
       "url": "https://www.youtube.com/shorts/rzrCvApNto4",
-      "uploaded_at": "2026-11-28T00:19:20+05:30"
+      "uploaded_at": "2026-11-28T00:19:20+05:30",
+      "thumbnail_checked": "2026-11-28T09:15+05:30 set"
     },
     "ep076": {
       "voices": "chatterbox",
@@ -555,7 +556,26 @@
         "video_id": "jmU4x-KTdPA",
         "url": "https://www.youtube.com/shorts/jmU4x-KTdPA",
         "uploaded_at": "2026-11-27T09:24:28+05:30",
-        "thumbnail_checked": "2026-11-28T00:19+05:30 set"
+        "thumbnail_checked": "2026-11-28T09:16+05:30 set"
+      }
+    },
+    "ep095": {
+      "es": {
+        "voices": "kokoro",
+        "title": "\u00bfPor qu\u00e9 brillan las estrellas? | Why Do Stars Shine? \u2b50",
+        "rendered_at": "2026-11-28T09:07:52+05:30",
+        "duration_s": 79.53,
+        "publish_at_ist": "2026-11-29T05:50+05:30",
+        "thumbnail": "set (re-applied after posting: set)",
+        "playlist": "added (CurioKids_Spanish)",
+        "made_for_kids": "no",
+        "subtitles": "es; en; titles: en",
+        "facebook": "posted (reel 1130216113221422), cover set",
+        "instagram": "failed: 1) direct: [size-budget] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Reque [3 Mbps] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Reque [2 Mbps] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"R | 2) hidden copy: processing Error: Media upload has failed with error code 2207076 | 3) FB reel copy: processing Error: Media upload has failed with error code 2207076",
+        "status": "uploaded",
+        "video_id": "VC_fUxnGHwc",
+        "url": "https://www.youtube.com/shorts/VC_fUxnGHwc",
+        "uploaded_at": "2026-11-28T09:15:41+05:30"
       }
     }
   }
